@@ -20,7 +20,7 @@ SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
 === GROUP: identitas - Identitas Diri (18 fields) ===
 01. no | No Urut | integer | format=digit
 02. nama | Nama Siswa | text | required; max_len=150; format=kapital
-03. nisn | NISN | text | max_len=20; format=nisn
+03. nisn | NISN | text | max_len=10; format=nisn
 04. nipd_dapodik | NIPD Dapodik | text | max_len=30; format=digit
 05. nipd_rapor | NIPD Rapor | text | max_len=30; format=digit
 06. rombel_id | Kelas | class | 
@@ -28,7 +28,7 @@ SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
 08. jk | Jenis Kelamin | select | required; options=jk
 09. tempat_lahir | Tempat Lahir | text | max_len=100; format=proper
 10. tanggal_lahir | Tanggal Lahir | date | required; format=tanggal; range=[-20 tahun, -9 tahun]
-11. nik | NIK Siswa | text | max_len=30; format=nik
+11. nik | NIK Siswa | text | required; max_len=16; format=nik
 12. agama | Agama | select | required; options=agama; other_allowed
 13. anak_ke | Anak ke- | integer | required; range=[1, 10]
 14. jml_saudara | Jumlah Saudara Kandung | integer | range=[0, 10]
@@ -46,7 +46,7 @@ SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
 23. pekerjaan_ayah | Pekerjaan Ayah | select | required; options=pekerjaan; other_allowed; hide_if(status_ayah = "Wafat")
 24. penghasilan_ayah | Penghasilan Ayah | select | options=penghasilan; hide_if(status_ayah = "Wafat")
 25. nama_ibu | Nama Ibu | text | required; max_len=150; format=kapital
-26. nik_ibu | NIK Ibu | text | required; max_len=30; format=nik
+26. nik_ibu | NIK Ibu | text | required; max_len=16; format=nik
 27. status_ibu | Status Hidup Ibu | select | required; options=status_hidup
 28. tahun_lahir_ibu | Tahun Lahir Ibu | integer | format=tahun; range=[1930, tahun_ini-10]
 29. pendidikan_ibu | Jenjang Pendidikan Ibu | select | required; options=pendidikan
@@ -91,7 +91,7 @@ SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
 58. penerima_kps | Penerima KPS | select | options=ya_tidak
 59. no_kps | Nomor KPS | text | max_len=50; hide_if(penerima_kps != "Ya"); required_if(penerima_kps = "Ya")
 60. no_akta_lahir | No. Registrasi Akta Lahir | text | max_len=60
-61. no_kk | Nomor KK | text | max_len=30; format=kk
+61. no_kk | Nomor KK | text | max_len=16; format=kk
 
 === NOTES ===
 - Region block (unit=wilayah): provinsi, kabupaten, kecamatan, desa, kode_pos picked together; kode_wilayah = official village code (auto).
@@ -99,6 +99,7 @@ SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
 - Format codes: kapital=UPPERCASE, proper=Proper Case, digit=digits only, nik/kk=16 digits, nisn=10 digits,
   wa=WhatsApp phone number, kode_pos=5 digits, tahun=4-digit year, tanggal=date.
 - tanggal_lahir range is relative: age between 9 and 20 years. 'tahun_ini' = current year.
+- [penghasilan] is the shared income list for every app (Fondasi F-024).
 - Option "PNS/TNI/Polri" is a combined legacy value (from Dapodik exports); keep it alongside the split options.
 - Option "Ibu Rumah Tangga (IRT)" is only offered for: pekerjaan_ibu.
 - Option hint "Sepeda Motor": Dikendarai sendiri. Kalau dibonceng orang tua/wali, pilih Antar Jemput Ortu / Wali.

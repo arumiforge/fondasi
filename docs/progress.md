@@ -19,6 +19,9 @@ visual-asset workflow and templates.
 
 ## Next steps
 
+0. SPMB: switch the parent income list to `skema-siswa`'s `[penghasilan]` (F-024) with a migration that maps
+   existing answers ("Tidak berpenghasilan" and "Kurang dari Rp500.000" → the combined first option; "Rp5.000.000 –
+   Rp20.000.000" needs a choice: ask the school or keep the old text for old records).
 0. SPMB: add `deploy/server/check-app` (its environments, image, Super Admin, backups, off-site — the logic now only in
    SPMB's own `deploy/server/check.sh`) and let `spmb init` link it to `/opt/apps/spmb/check-app`; other apps
    (milklife…) start from `server/templates/check-app`.

@@ -1,0 +1,41 @@
+R-05 kaldik-jateng — Kalender Pendidikan Provinsi Jawa Tengah
+Diunduh: 2026-11-25 (UTC), tanpa login, halaman publik saja.
+File disimpan apa adanya (byte-for-byte dari server, tidak diubah).
+
+CATATAN SUMBER
+- disdikbud.jatengprov.go.id tidak dapat dimuat (gagal di browser dan di cloud) pada 2026-11-25.
+- Dinas kini berganti nama menjadi Dinas Pendidikan Provinsi Jawa Tengah; situs resminya
+  https://pdk.jatengprov.go.id/ — kedua dokumen diambil dari situs ini.
+- Halaman indeks: https://pdk.jatengprov.go.id/index.php/informasi/kalender-pendidikan/
+- Kalender 2027/2028 BELUM terbit di situs ini per 2026-11-25 (pencarian media/pos tidak menemukan apa pun).
+- Tiap PDF adalah Peraturan Kepala Dinas (dasar hukum/"SK") lengkap beserta lampiran kalendernya
+  (Lampiran I–IV/V, kalender per bulan Juli–Juli). Tidak ada SK terpisah yang dipublikasikan.
+
+------------------------------------------------------------------
+1) PEDOMAN-PENYUSUNAN-KALDIK-2025-2026-.pdf
+   Tahun ajaran : 2025/2026
+   Dasar hukum  : Peraturan Kepala Dinas Pendidikan dan Kebudayaan Provinsi Jawa Tengah
+                  Nomor 400.3.1/07209 tentang Pedoman Penyusunan Kalender Pendidikan
+                  Tahun Ajaran 2025/2026; ditetapkan di Semarang, 11 Juni 2025
+   URL file     : https://pdk.jatengprov.go.id/wp-content/uploads/2025/07/PEDOMAN-PENYUSUNAN-KALDIK-2025-2026-.pdf
+   Halaman      : https://pdk.jatengprov.go.id/index.php/2025/07/03/pedoman-penyusunan-kalender-pendidikan-provinsi-jawa-tengah-tahun-pelajaran-2025-2026/
+   Diunduh      : 2026-11-25T15:54:38Z
+   Ukuran       : 1623991 byte, 55 halaman
+   Last-Modified: Sat, 06 Jun 2026 15:24:45 GMT (pos aslinya 2025-07-03; file tampaknya diunggah ulang)
+   SHA-256      : b10f6f1a735b7c66bbdd34dd6bf9d35f9d54b81e39bed059965d07e1551d5f25
+
+2) KALDIK-PROV-JATENG-2026-2027.pdf
+   Tahun ajaran : 2026/2027
+   Dasar hukum  : Peraturan Kepala Dinas Pendidikan Provinsi Jawa Tengah
+                  Nomor 400.3/23862/2026 tentang Pedoman Penyusunan Kalender Pendidikan
+                  Tahun Ajaran 2026/2027; ditetapkan di Semarang, 29 Mei 2026
+   URL file     : https://pdk.jatengprov.go.id/wp-content/uploads/2026/06/KALDIK-PROV-JATENG-2026-2027.pdf
+   Halaman      : https://pdk.jatengprov.go.id/index.php/2026/06/06/pedoman-penyusunan-kalender-pendidikan-provinsi-jawa-tengah-tahun-ajaran-2026-2027/
+   Diunduh      : 2026-11-25T15:54:46Z
+   Ukuran       : 2090179 byte, 52 halaman
+   Last-Modified: Sat, 06 Jun 2026 15:41:42 GMT
+   SHA-256      : 4559834b17d1f6da520e34cc5f956a3c2ca00995857ce43724383b859e061eff
+
+DATA PRIBADI
+Dokumen memuat nama/tanda tangan pejabat penandatangan (dibiarkan di file mentah sesuai brief);
+tidak ada data pribadi yang diambil ke data set.

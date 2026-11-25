@@ -1,0 +1,943 @@
+{
+ "name": "Kalender pendidikan Provinsi Jawa Tengah",
+ "province_code": "33",
+ "years": [
+  {
+   "academic_year": "2026/2027",
+   "regulation": "Peraturan Kepala Dinas Pendidikan Provinsi Jawa Tengah Nomor 400.3/23862/2026 tentang Pedoman Penyusunan Kalender Pendidikan Tahun Ajaran 2026/2027 (ditetapkan 29 Mei 2026)",
+   "applies_to": "SMA, SMK and SLB in Jawa Tengah (Pasal 31); SD/SMP calendars are set by each kabupaten/kota and madrasah calendars by Kanwil Kemenag, usually following this one",
+   "source_file": "sources/kaldik-jateng/KALDIK-PROV-JATENG-2026-2027.pdf",
+   "rules": {
+    "first_day": "2026-07-13",
+    "first_days": [
+     "2026-07-13",
+     "2026-07-17"
+    ],
+    "summative_semester_1": "minggu ke-4 November – minggu ke-1 Desember 2026 (Pasal 19)",
+    "summative_year_end": "minggu ke-4 Mei – minggu ke-1 Juni 2027 (Pasal 19)",
+    "graduation": {
+     "SD/SMP": "hari Senin pertama Juni 2027 (Pasal 22)",
+     "SMA/SMK": "hari Senin pertama Mei 2027 (Pasal 22)"
+    },
+    "year_end": {
+     "5": "2027-06-18",
+     "6": "2027-06-19"
+    },
+    "ramadan_lesson_minutes": {
+     "SD/MI": 30,
+     "SMP/MTs": 35,
+     "SMA/MA/SMK/MAK": 40
+    },
+    "min_effective_weeks": 36,
+    "ramadan_and_eid_holidays": "follow the government's decision on holidays and cuti bersama (Pasal 24, 27); private schools may set other Ramadan days with the school committee"
+   },
+   "events": [
+    {
+     "start": "2026-07-13",
+     "end": "2026-07-13",
+     "kind": "first_day",
+     "label": "Hari pertama masuk sekolah",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 1"
+    },
+    {
+     "start": "2026-07-13",
+     "end": "2026-07-17",
+     "kind": "orientation",
+     "label": "Kegiatan MPLS",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 2"
+    },
+    {
+     "start": "2026-08-17",
+     "end": "2026-08-17",
+     "kind": "ceremony",
+     "label": "Upacara HUT Kemerdekaan RI",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 3"
+    },
+    {
+     "start": "2026-09-05",
+     "end": "2026-09-05",
+     "kind": "public_holiday",
+     "label": "Libur umum: Maulid Nabi Muhammad SAW 1448 H",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 4",
+     "note": "Pasal 25 of the same regulation says 25 Agustus 2026; check against the SKB 2026"
+    },
+    {
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "kind": "ceremony",
+     "label": "Upacara Hari Kesaktian Pancasila",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 5"
+    },
+    {
+     "start": "2026-10-28",
+     "end": "2026-10-28",
+     "kind": "ceremony",
+     "label": "Upacara Hari Sumpah Pemuda",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 6"
+    },
+    {
+     "start": "2026-11-10",
+     "end": "2026-11-10",
+     "kind": "ceremony",
+     "label": "Upacara Hari Pahlawan",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 7"
+    },
+    {
+     "start": "2026-12-18",
+     "end": "2026-12-18",
+     "kind": "report",
+     "label": "Penyerahan rapor semester gasal",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "school_days": 5,
+     "ref": "Lampiran I–II no. 8"
+    },
+    {
+     "start": "2026-12-19",
+     "end": "2026-12-19",
+     "kind": "report",
+     "label": "Penyerahan rapor semester gasal",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "school_days": 6,
+     "ref": "Lampiran I–II no. 9"
+    },
+    {
+     "start": "2026-12-21",
+     "end": "2027-01-01",
+     "kind": "semester_break",
+     "label": "Libur akhir semester gasal",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "school_days": 5,
+     "ref": "Lampiran I–II no. 10"
+    },
+    {
+     "start": "2026-12-21",
+     "end": "2027-01-02",
+     "kind": "semester_break",
+     "label": "Libur akhir semester gasal",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "school_days": 6,
+     "ref": "Lampiran I–II no. 11",
+     "note": "Pasal 23 says until 1 Januari 2027 for six-day schools too"
+    },
+    {
+     "start": "2026-12-24",
+     "end": "2026-12-24",
+     "kind": "cuti_bersama",
+     "label": "Cuti bersama Natal",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 12"
+    },
+    {
+     "start": "2026-12-25",
+     "end": "2026-12-25",
+     "kind": "public_holiday",
+     "label": "Libur umum: Hari Raya Natal",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 13"
+    },
+    {
+     "start": "2027-01-01",
+     "end": "2027-01-01",
+     "kind": "public_holiday",
+     "label": "Libur umum: Tahun Baru Masehi 2027",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 14"
+    },
+    {
+     "start": "2027-01-05",
+     "end": "2027-01-05",
+     "kind": "public_holiday",
+     "label": "Libur umum: Isra Mikraj 1448 H",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 15; Pasal 26"
+    },
+    {
+     "start": "2027-02-06",
+     "end": "2027-02-06",
+     "kind": "public_holiday",
+     "label": "Libur umum: Tahun Baru Imlek 2578",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 16; Pasal 26"
+    },
+    {
+     "start": "2027-02-10",
+     "end": "2027-02-10",
+     "kind": "ramadan",
+     "label": "Libur perkiraan awal puasa Ramadan 1448 H",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 17"
+    },
+    {
+     "start": "2027-03-08",
+     "end": "2027-03-08",
+     "kind": "public_holiday",
+     "label": "Libur umum: Hari Raya Nyepi (Tahun Baru Saka 1949)",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 18",
+     "note": "Pasal 26 says 9 Maret 2027"
+    },
+    {
+     "start": "2027-03-09",
+     "end": "2027-03-09",
+     "kind": "eid_break",
+     "label": "Libur sebelum Hari Raya Idul Fitri 1448 H",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 19"
+    },
+    {
+     "start": "2027-03-10",
+     "end": "2027-03-11",
+     "kind": "public_holiday",
+     "label": "Libur umum: Hari Raya Idul Fitri 1448 H",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 20"
+    },
+    {
+     "start": "2027-03-12",
+     "end": "2027-03-13",
+     "kind": "eid_break",
+     "label": "Libur sesudah Hari Raya Idul Fitri 1448 H",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 21"
+    },
+    {
+     "start": "2027-03-26",
+     "end": "2027-03-26",
+     "kind": "public_holiday",
+     "label": "Libur umum: Wafat Yesus Kristus",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 22"
+    },
+    {
+     "start": "2027-04-19",
+     "end": "2027-04-29",
+     "kind": "national_test",
+     "label": "Tes Kemampuan Akademik (TKA)",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB"
+     ],
+     "ref": "Lampiran I no. 23"
+    },
+    {
+     "start": "2027-04-05",
+     "end": "2027-04-15",
+     "kind": "national_test",
+     "label": "Tes Kemampuan Akademik (TKA)",
+     "levels": [
+      "SMP",
+      "SMPLB",
+      "MTs"
+     ],
+     "ref": "Lampiran II no. 23",
+     "note": "the source prints '5 – 15 April 2026'; the year is taken as 2027 (the academic year 2026/2027); TKA dates follow the government's schedule (Pasal 20)"
+    },
+    {
+     "start": "2027-04-21",
+     "end": "2027-04-21",
+     "kind": "ceremony",
+     "label": "Upacara Hari Kartini",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 24"
+    },
+    {
+     "start": "2027-05-01",
+     "end": "2027-05-01",
+     "kind": "public_holiday",
+     "label": "Libur umum: Hari Buruh",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 25"
+    },
+    {
+     "start": "2027-05-02",
+     "end": "2027-05-02",
+     "kind": "ceremony",
+     "label": "Upacara Hari Pendidikan Nasional",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 26"
+    },
+    {
+     "start": "2027-05-06",
+     "end": "2027-05-06",
+     "kind": "public_holiday",
+     "label": "Libur umum: Kenaikan Yesus Kristus",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 27"
+    },
+    {
+     "start": "2027-05-17",
+     "end": "2027-05-17",
+     "kind": "public_holiday",
+     "label": "Libur umum: Hari Raya Idul Adha 1448 H",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 28"
+    },
+    {
+     "start": "2027-05-20",
+     "end": "2027-05-20",
+     "kind": "ceremony",
+     "label": "Upacara Hari Kebangkitan Nasional",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 29"
+    },
+    {
+     "start": "2027-05-20",
+     "end": "2027-05-20",
+     "kind": "public_holiday",
+     "label": "Libur umum: Hari Raya Waisak 2571 BE",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 30"
+    },
+    {
+     "start": "2027-06-01",
+     "end": "2027-06-01",
+     "kind": "public_holiday",
+     "label": "Upacara dan libur umum: Hari Lahir Pancasila",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 31–32"
+    },
+    {
+     "start": "2027-06-06",
+     "end": "2027-06-06",
+     "kind": "public_holiday",
+     "label": "Libur umum: Tahun Baru Islam 1449 H",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 33"
+    },
+    {
+     "start": "2027-06-07",
+     "end": "2027-06-07",
+     "kind": "graduation",
+     "label": "Perkiraan pengumuman kelulusan",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 34"
+    },
+    {
+     "start": "2027-06-18",
+     "end": "2027-06-18",
+     "kind": "report",
+     "label": "Penyerahan rapor semester genap",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "school_days": 5,
+     "ref": "Lampiran I–II no. 35"
+    },
+    {
+     "start": "2027-06-19",
+     "end": "2027-06-19",
+     "kind": "report",
+     "label": "Penyerahan rapor semester genap",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "school_days": 6,
+     "ref": "Lampiran I–II no. 36"
+    },
+    {
+     "start": "2027-06-21",
+     "end": "2027-07-10",
+     "kind": "semester_break",
+     "label": "Libur akhir tahun ajaran 2026/2027",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "ref": "Lampiran I–II no. 37",
+     "note": "Pasal 23 says until 9 Juli 2027 for five-day schools and 10 Juli 2027 for six-day schools"
+    },
+    {
+     "start": "2027-07-12",
+     "end": "2027-07-12",
+     "kind": "next_year",
+     "label": "Permulaan tahun ajaran 2027/2028",
+     "levels": [
+      "SD",
+      "SDLB",
+      "MI",
+      "MILB",
+      "SMP",
+      "SMPLB",
+      "MTs",
+      "SMA",
+      "SMALB",
+      "MA",
+      "SMK",
+      "MAK",
+      "SLB"
+     ],
+     "estimate": true,
+     "ref": "Lampiran I–II no. 38"
+    }
+   ]
+  },
+  {
+   "academic_year": "2025/2026",
+   "regulation": "Peraturan Kepala Dinas Pendidikan dan Kebudayaan Provinsi Jawa Tengah Nomor 400.3.1/07209 tentang Pedoman Penyusunan Kalender Pendidikan Tahun Ajaran 2025/2026 (ditetapkan 11 Juni 2025)",
+   "applies_to": "SMA, SMK and SLB in Jawa Tengah (Pasal on scope); key dates only, the year is over",
+   "source_file": "sources/kaldik-jateng/PEDOMAN-PENYUSUNAN-KALDIK-2025-2026-.pdf",
+   "rules": {
+    "first_day": "2025-07-14",
+    "first_days": [
+     "2025-07-14",
+     "2025-07-16"
+    ],
+    "summative_semester_1": "minggu ke-5 November – minggu ke-1 Desember 2025",
+    "summative_year_end": "minggu ke-5 Mei – minggu ke-1 Juni 2026",
+    "report_semester_1": {
+     "5": "2025-12-19",
+     "6": "2025-12-20"
+    },
+    "semester_break_1": {
+     "5": [
+      "2025-12-22",
+      "2026-01-02"
+     ],
+     "6": [
+      "2025-12-22",
+      "2026-01-03"
+     ]
+    },
+    "report_semester_2": {
+     "5": "2026-06-19",
+     "6": "2026-06-20"
+    },
+    "year_break": {
+     "5": [
+      "2026-06-22",
+      "2026-07-10"
+     ],
+     "6": [
+      "2026-06-22",
+      "2026-07-11"
+     ]
+    },
+    "year_end": {
+     "5": "2026-06-19",
+     "6": "2026-06-20"
+    }
+   },
+   "events": []
+  }
+ ],
+ "kinds": [
+  "first_day",
+  "orientation",
+  "ceremony",
+  "public_holiday",
+  "cuti_bersama",
+  "ramadan",
+  "eid_break",
+  "report",
+  "semester_break",
+  "national_test",
+  "graduation",
+  "next_year"
+ ],
+ "notes": [
+  "Dates marked estimate follow the province's estimate; the national SKB on holidays and cuti bersama (data set libur-nasional, R-04) wins where it differs.",
+  "Source inconsistencies are kept and explained in 'note' fields; nothing was corrected silently except the TKA year for SMP, which is marked.",
+  "2027/2028 was not published on 2026-11-25; re-check pdk.jatengprov.go.id in June 2027."
+ ]
+}
