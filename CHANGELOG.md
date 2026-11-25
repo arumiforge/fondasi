@@ -5,6 +5,11 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Athletics sets `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` 2026-03-20 (R-10) from World Athletics rules
+  and the combined-events scoring tables, converter `tools/converters/atletik.py` with scoring checks (F-027).
+- `tools/converters/sekolah.py` (R-01 crawler/converter for referensi.data.kemendikdasmen.go.id; data not built yet).
+
+### Added
 - Data set `kodepos` 2025-06-30 (R-03): postal code of all 83,762 villages keyed by the `wilayah` codes, from
   cahyadsn/wilayah_kodepos (MIT), converter `tools/converters/kodepos.py` with checks against `wilayah`.
 - Data set `libur-nasional` 2026-09-15 (R-04): national holidays and cuti bersama 2026 and 2027 from the SKB 3 Menteri,

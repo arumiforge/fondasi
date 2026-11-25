@@ -107,3 +107,7 @@ Decision: Calendar data has three layers: national (SKB 3 Menteri holidays and c
 ## F-026 — Sessions in Fondasi may merge their own PRs when CI is green (2026-11-25)
 Status: accepted (user, 2026-11-25: "boleh sesi baru me-merge PR-nya sendiri setelah CI hijau")
 Decision: In `arumiforge/fondasi` only, a session may merge its own PR into `main` when CI is green on the current head and there is no conflict, then report it to the user. It never merges other people's PRs. App repositories keep "agents never merge unless the user asks" unless they record the same decision. Work for the next rounds runs in the dedicated cloud environment "Fondasi".
+
+## F-027 — World Athletics documents: facts with references, raw PDFs kept privately (2026-11-26)
+Status: accepted (user, 2026-11-26: "Fakta + PDF di sources/")
+Decision: The athletics sets use World Athletics' Competition & Technical Rules and the Scoring Tables for Combined Events although their licence is not on the list of F-003 (copyright World Athletics). The sets hold facts (weights, heights, rounding, codes, formula parameters) with rule or page references, not rule texts; the raw PDFs are kept in `sources/atletik/` because the repository is private. Athletics championships covered: O2SN, POPDA/POPNAS, PASI Kejurnas/Kejurda and championships run by the user; each championship keeps its own age reference date; combined-events scoring is included.

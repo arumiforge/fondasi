@@ -1,0 +1,11 @@
+{
+  "version": "2026-03-20",
+  "description": "Athletics events (40): code, Indonesian label, World Athletics name, kind, result unit, wind measurement; hurdle heights and spacings, steeplechase heights, implement weights per category, combined-events composition.",
+  "status": "ready for World Athletics rules; PASI U14/U16 and school championships (O2SN, POPDA/POPNAS) pending brief R-10b",
+  "source": "World Athletics Book C C1.1/C2.1 Competition & Technical Rules (amendments effective up to 2026-03-20, PDF 2026-07-17); IAAF Scoring Tables for Combined Events (2016). Raw PDFs and SOURCE.txt in sources/atletik/",
+  "licence": "Copyright World Athletics; facts with references used under decision F-027",
+  "procedure": "Transcribed by hand into tools/converters/atletik.py, which checks the scoring parameters against printed table rows and the tables for completeness, then writes the three sets.",
+  "files": [
+    "atletik-nomor.json"
+  ]
+}

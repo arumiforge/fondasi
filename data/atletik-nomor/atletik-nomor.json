@@ -1,0 +1,736 @@
+{
+ "name": "Nomor lomba atletik",
+ "categories": {
+  "U18_W": "Putri U18",
+  "U20_W": "Putri U20",
+  "SENIOR_W": "Putri senior",
+  "U18_M": "Putra U18",
+  "U20_M": "Putra U20",
+  "SENIOR_M": "Putra senior"
+ },
+ "events": [
+  {
+   "code": "60m",
+   "label": "Lari 60 m",
+   "label_en": "60m",
+   "kind": "track",
+   "group": "sprint",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "wind_seconds": 5,
+   "lanes": true
+  },
+  {
+   "code": "100m",
+   "label": "Lari 100 m",
+   "label_en": "100m",
+   "kind": "track",
+   "group": "sprint",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "wind_seconds": 10,
+   "lanes": true
+  },
+  {
+   "code": "200m",
+   "label": "Lari 200 m",
+   "label_en": "200m",
+   "kind": "track",
+   "group": "sprint",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "wind_seconds": 10,
+   "lanes": true,
+   "wind_note": "measured for 10 s from when the first athlete enters the straight"
+  },
+  {
+   "code": "400m",
+   "label": "Lari 400 m",
+   "label_en": "400m",
+   "kind": "track",
+   "group": "sprint",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "lanes": true
+  },
+  {
+   "code": "800m",
+   "label": "Lari 800 m",
+   "label_en": "800m",
+   "kind": "track",
+   "group": "middle",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "1500m",
+   "label": "Lari 1500 m",
+   "label_en": "1500m",
+   "kind": "track",
+   "group": "middle",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "3000m",
+   "label": "Lari 3000 m",
+   "label_en": "3000m",
+   "kind": "track",
+   "group": "long",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "5000m",
+   "label": "Lari 5000 m",
+   "label_en": "5000m",
+   "kind": "track",
+   "group": "long",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "10000m",
+   "label": "Lari 10.000 m",
+   "label_en": "10,000m",
+   "kind": "track",
+   "group": "long",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "100mH",
+   "label": "Lari gawang 100 m",
+   "label_en": "100m Hurdles",
+   "kind": "track",
+   "group": "hurdles",
+   "result": "time",
+   "sexes": [
+    "W"
+   ],
+   "wind_seconds": 13,
+   "lanes": true
+  },
+  {
+   "code": "110mH",
+   "label": "Lari gawang 110 m",
+   "label_en": "110m Hurdles",
+   "kind": "track",
+   "group": "hurdles",
+   "result": "time",
+   "sexes": [
+    "M"
+   ],
+   "wind_seconds": 13,
+   "lanes": true
+  },
+  {
+   "code": "300mH",
+   "label": "Lari gawang 300 m",
+   "label_en": "300m Hurdles",
+   "kind": "track",
+   "group": "hurdles",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "lanes": true
+  },
+  {
+   "code": "400mH",
+   "label": "Lari gawang 400 m",
+   "label_en": "400m Hurdles",
+   "kind": "track",
+   "group": "hurdles",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "lanes": true
+  },
+  {
+   "code": "2000mSC",
+   "label": "Lari halang rintang 2000 m",
+   "label_en": "2000m Steeplechase",
+   "kind": "track",
+   "group": "steeplechase",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "hurdle_jumps": 18,
+   "water_jumps": 5
+  },
+  {
+   "code": "3000mSC",
+   "label": "Lari halang rintang 3000 m",
+   "label_en": "3000m Steeplechase",
+   "kind": "track",
+   "group": "steeplechase",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "hurdle_jumps": 28,
+   "water_jumps": 7
+  },
+  {
+   "code": "4x100m",
+   "label": "Estafet 4 × 100 m",
+   "label_en": "4 × 100m",
+   "kind": "relay",
+   "group": "relay",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "lanes": true
+  },
+  {
+   "code": "4x100mX",
+   "label": "Estafet 4 × 100 m campuran",
+   "label_en": "4 × 100m Mixed",
+   "kind": "relay",
+   "group": "relay",
+   "result": "time",
+   "sexes": [
+    "X"
+   ],
+   "lanes": true
+  },
+  {
+   "code": "4x400m",
+   "label": "Estafet 4 × 400 m",
+   "label_en": "4 × 400m",
+   "kind": "relay",
+   "group": "relay",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "4x400mX",
+   "label": "Estafet 4 × 400 m campuran",
+   "label_en": "4 × 400m Mixed",
+   "kind": "relay",
+   "group": "relay",
+   "result": "time",
+   "sexes": [
+    "X"
+   ]
+  },
+  {
+   "code": "HJ",
+   "label": "Lompat tinggi",
+   "label_en": "High Jump",
+   "kind": "field",
+   "group": "vertical_jump",
+   "result": "height",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "bar_raise_combined_cm": 3
+  },
+  {
+   "code": "PV",
+   "label": "Lompat tinggi galah",
+   "label_en": "Pole Vault",
+   "kind": "field",
+   "group": "vertical_jump",
+   "result": "height",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "bar_raise_combined_cm": 10
+  },
+  {
+   "code": "LJ",
+   "label": "Lompat jauh",
+   "label_en": "Long Jump",
+   "kind": "field",
+   "group": "horizontal_jump",
+   "result": "distance",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "wind_seconds": 5
+  },
+  {
+   "code": "TJ",
+   "label": "Lompat jangkit",
+   "label_en": "Triple Jump",
+   "kind": "field",
+   "group": "horizontal_jump",
+   "result": "distance",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "wind_seconds": 5
+  },
+  {
+   "code": "SP",
+   "label": "Tolak peluru",
+   "label_en": "Shot Put",
+   "kind": "field",
+   "group": "throw",
+   "result": "distance",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "implement": "Shot"
+  },
+  {
+   "code": "DT",
+   "label": "Lempar cakram",
+   "label_en": "Discus Throw",
+   "kind": "field",
+   "group": "throw",
+   "result": "distance",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "implement": "Discus"
+  },
+  {
+   "code": "HT",
+   "label": "Lontar martil",
+   "label_en": "Hammer Throw",
+   "kind": "field",
+   "group": "throw",
+   "result": "distance",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "implement": "Hammer"
+  },
+  {
+   "code": "JT",
+   "label": "Lempar lembing",
+   "label_en": "Javelin Throw",
+   "kind": "field",
+   "group": "throw",
+   "result": "distance",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "implement": "Javelin"
+  },
+  {
+   "code": "5000mW",
+   "label": "Jalan cepat 5000 m",
+   "label_en": "5000m Race Walk",
+   "kind": "walk",
+   "group": "race_walk",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "10000mW",
+   "label": "Jalan cepat 10.000 m",
+   "label_en": "10,000m Race Walk",
+   "kind": "walk",
+   "group": "race_walk",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "10kmW",
+   "label": "Jalan cepat 10 km",
+   "label_en": "10km Race Walk",
+   "kind": "walk",
+   "group": "race_walk",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "road": true
+  },
+  {
+   "code": "20kmW",
+   "label": "Jalan cepat 20 km",
+   "label_en": "20km Race Walk",
+   "kind": "walk",
+   "group": "race_walk",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "road": true
+  },
+  {
+   "code": "HMW",
+   "label": "Jalan cepat half marathon",
+   "label_en": "Half Marathon Race Walk",
+   "kind": "walk",
+   "group": "race_walk",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "road": true
+  },
+  {
+   "code": "MarW",
+   "label": "Jalan cepat marathon",
+   "label_en": "Marathon Race Walk",
+   "kind": "walk",
+   "group": "race_walk",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "road": true
+  },
+  {
+   "code": "5km",
+   "label": "Lari jalan raya 5 km",
+   "label_en": "5km",
+   "kind": "road",
+   "group": "road",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "10km",
+   "label": "Lari jalan raya 10 km",
+   "label_en": "10km",
+   "kind": "road",
+   "group": "road",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "HM",
+   "label": "Half marathon",
+   "label_en": "Half Marathon",
+   "kind": "road",
+   "group": "road",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "Mar",
+   "label": "Marathon",
+   "label_en": "Marathon",
+   "kind": "road",
+   "group": "road",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "Pen",
+   "label": "Pancalomba",
+   "label_en": "Pentathlon",
+   "kind": "combined",
+   "group": "combined",
+   "result": "points",
+   "sexes": [
+    "M"
+   ]
+  },
+  {
+   "code": "Hep",
+   "label": "Saptalomba",
+   "label_en": "Heptathlon",
+   "kind": "combined",
+   "group": "combined",
+   "result": "points",
+   "sexes": [
+    "W"
+   ]
+  },
+  {
+   "code": "Dec",
+   "label": "Dasalomba",
+   "label_en": "Decathlon",
+   "kind": "combined",
+   "group": "combined",
+   "result": "points",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  }
+ ],
+ "hurdles": {
+  "ref": "WA C1.1/C2.1 (2026), Technical Rules, Hurdle Races (PDF p. 83–85)",
+  "tolerance_m": 0.003,
+  "note": "U20 110m Hurdles: hurdles up to 1.000 m are also acceptable (manufacturing variations).",
+  "spacing": {
+   "110mH": {
+    "first_m": 13.72,
+    "between_m": 9.14,
+    "last_m": 14.02,
+    "flights": 10
+   },
+   "100mH": {
+    "first_m": 13.0,
+    "between_m": 8.5,
+    "last_m": 10.5,
+    "flights": 10
+   },
+   "300mH": {
+    "first_m": 50.0,
+    "between_m": 35.0,
+    "last_m": 40.0,
+    "flights": 7
+   },
+   "400mH": {
+    "first_m": 45.0,
+    "between_m": 35.0,
+    "last_m": 40.0,
+    "flights": 10
+   }
+  },
+  "height_m": {
+   "110mH": {
+    "SENIOR_M": 1.067,
+    "U20_M": 0.991,
+    "U18_M": 0.914
+   },
+   "100mH": {
+    "SENIOR_W": 0.838,
+    "U20_W": 0.838,
+    "U18_W": 0.762
+   },
+   "300mH": {
+    "SENIOR_M": 0.914,
+    "U20_M": 0.914,
+    "U18_M": 0.838,
+    "SENIOR_W": 0.762,
+    "U20_W": 0.762,
+    "U18_W": 0.762
+   },
+   "400mH": {
+    "SENIOR_M": 0.914,
+    "U20_M": 0.914,
+    "U18_M": 0.838,
+    "SENIOR_W": 0.762,
+    "U20_W": 0.762,
+    "U18_W": 0.762
+   }
+  }
+ },
+ "steeplechase": {
+  "ref": "WA C1.1/C2.1 (2026), Technical Rules, Steeplechase Races (PDF p. 86–87)",
+  "tolerance_m": 0.003,
+  "height_m": {
+   "SENIOR_M": 0.914,
+   "U20_M": 0.914,
+   "U18_M": 0.838,
+   "SENIOR_W": 0.762,
+   "U20_W": 0.762,
+   "U18_W": 0.762
+  }
+ },
+ "implements": {
+  "ref": "WA C1.1/C2.1 (2026), Technical Rules, Official Implements (PDF p. 120)",
+  "note": "Weights for other age groups (U14, U16, masters, para) are not in the rules: brief R-10b.",
+  "weight_kg": {
+   "Shot": {
+    "U18_W": 3.0,
+    "U20_W": 4.0,
+    "SENIOR_W": 4.0,
+    "U18_M": 5.0,
+    "U20_M": 6.0,
+    "SENIOR_M": 7.26
+   },
+   "Discus": {
+    "U18_W": 1.0,
+    "U20_W": 1.0,
+    "SENIOR_W": 1.0,
+    "U18_M": 1.5,
+    "U20_M": 1.75,
+    "SENIOR_M": 2.0
+   },
+   "Hammer": {
+    "U18_W": 3.0,
+    "U20_W": 4.0,
+    "SENIOR_W": 4.0,
+    "U18_M": 5.0,
+    "U20_M": 6.0,
+    "SENIOR_M": 7.26
+   },
+   "Javelin": {
+    "U18_W": 0.5,
+    "U20_W": 0.6,
+    "SENIOR_W": 0.6,
+    "U18_M": 0.7,
+    "U20_M": 0.8,
+    "SENIOR_M": 0.8
+   }
+  }
+ },
+ "combined_events": {
+  "ref": "WA C1.1/C2.1 (2026), Technical Rules, Part IV Combined Events Competitions (PDF p. 144)",
+  "events": {
+   "Pen_M": {
+    "categories": [
+     "U18_M",
+     "U20_M",
+     "SENIOR_M"
+    ],
+    "days": 1,
+    "order": [
+     [
+      "LJ",
+      "JT",
+      "200m",
+      "DT",
+      "1500m"
+     ]
+    ]
+   },
+   "Dec_M": {
+    "categories": [
+     "U18_M",
+     "U20_M",
+     "SENIOR_M"
+    ],
+    "days": 2,
+    "order": [
+     [
+      "100m",
+      "LJ",
+      "SP",
+      "HJ",
+      "400m"
+     ],
+     [
+      "110mH",
+      "DT",
+      "PV",
+      "JT",
+      "1500m"
+     ]
+    ]
+   },
+   "Hep_W": {
+    "categories": [
+     "U18_W",
+     "U20_W",
+     "SENIOR_W"
+    ],
+    "days": 2,
+    "order": [
+     [
+      "100mH",
+      "HJ",
+      "SP",
+      "200m"
+     ],
+     [
+      "LJ",
+      "JT",
+      "800m"
+     ]
+    ]
+   },
+   "Dec_W": {
+    "categories": [
+     "U20_W",
+     "SENIOR_W"
+    ],
+    "days": 2,
+    "order": [
+     [
+      "100m",
+      "DT",
+      "PV",
+      "JT",
+      "400m"
+     ],
+     [
+      "100mH",
+      "LJ",
+      "SP",
+      "HJ",
+      "1500m"
+     ]
+    ],
+    "note": "The rules also allow the men's order for the women's decathlon."
+   }
+  },
+  "rules": [
+   "At least 30 minutes between events for each athlete where possible; at least 10 hours between the two days if possible.",
+   "Long Jump and each throw: three trials only.",
+   "Track events: one false start per race allowed; the athlete(s) responsible for any further false start are disqualified.",
+   "Vertical jumps: uniform bar raises of 3 cm (High Jump) and 10 cm (Pole Vault).",
+   "Without fully automatic timing, each athlete is timed by three timekeepers."
+  ]
+ },
+ "refs": {
+  "track": "WA C1.1/C2.1 (2026), Technical Rules: Hurdle Races (PDF p. 83), Steeplechase (PDF p. 86–87), Relays",
+  "walk": "WA C1.1/C2.1 (2026), Technical Rules, Race Walking standard distances",
+  "road": "WA C1.1/C2.1 (2026), Technical Rules, Road Races standard distances",
+  "wind": "WA C1.1/C2.1 (2026), Technical Rules, wind measurement periods (PDF p. 70–71) and Long/Triple Jump wind measurement (PDF p. 116)"
+ },
+ "notes": [
+  "sexes: M putra, W putri, X campuran. Events without wind_seconds have no wind reading.",
+  "School events outside World Athletics (e.g. 80 m, lempar bola kasti, lompat jauh tanpa awalan) and U14/U16 specifications follow the championships' technical handbooks: brief R-10b."
+ ]
+}

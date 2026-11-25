@@ -25,28 +25,30 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `data/sekolah-semua-jenjang` | session data-round | R-01: Dikdas + Dikmen of every province (crawl running, ~8 h); PAUD + Dikmas in a second PR | crawling |
-| `data/libur-nasional` | session data-round | R-04 `libur-nasional` 2026, 2027; `kaldik-jateng` checked against it; R-06 brief (browser) | PR #6 merged |
-| `data/kodepos` | session data-round | R-03 `kodepos` | PR #7 |
+| `data/atletik` | session data-round | R-10 World Athletics part (3 sets), F-027, brief R-10b, R-01 converter | PR open — merge when CI is green |
+| (next session) | — | R-01 crawl: rerun `tools/converters/sekolah.py fetch` (see Next steps 1) | to restart |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
-1. **R-01 `sekolah` all levels**: SMP, MTs (where Dapodik lists them), SMA, MA, SMK, SLB from `dapo.kemendikdasmen.go.id` /
-   `referensi.data.kemendikdasmen.go.id`, start with Jawa Tengah, then all provinces; new schema with the village/district
-   region codes of `wilayah`, NPSN, name, level, public/private, address; keep the SD/MI part; converter in
-   `tools/converters/`, polite rate (≥ 1 s between requests), version = source date. Madrasah gaps → R-02 (browser).
-2. **R-04 `libur-nasional`**: SKB 3 Menteri on national holidays and cuti bersama 2026 and 2027 from `kemenkopmk.go.id`
-   (raw PDFs to `sources/libur-nasional/`); then reconcile the `estimate` events and the notes in `kaldik-jateng`.
-   **R-06 `kaldik-madrasah-jateng`**: Kanwil Kemenag Jawa Tengah madrasah calendar 2026/2027 (`jateng.kemenag.go.id`).
-3. **R-03 `kodepos`**: postal code per village code (cahyadsn wilayah postal list; check its licence first, ask the user
-   if it is not MIT/BSD/Apache/ISC/CC-BY/public government data).
-4. **R-10 athletics**: `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` from World Athletics rules (and PASI /
-   O2SN technical handbooks via a browser brief where blocked). Ask the user which championships and age groups matter
-   before R-11 records.
-5. When the user uploads **R-12** (national education calendar + SKB) or R-02/R-07/R-08/R-09 zips: verify SHA-256,
-   keep raw files in `sources/<set>/`, build the set.
-6. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data via
-   `fondasi-sync`.
+1. **R-01 `sekolah` all levels** (user decisions 2026-11-25: every province; replace the old SD/MI data; madrasah
+   from Kemendikdasmen, R-02 only adds NSM; also PAUD (TK/KB/RA/TPA/SPS) and Dikmas (PKBM/SKB) in a second PR;
+   sequential crawl, ≥ 1 s between requests). Source `referensi.data.kemendikdasmen.go.id`: per district pages
+   `/satpen/dikdas/<kec6>/3?jalur=jf&status=all` (SD, MI, SMP, MTs) and `/satpen/dikmen/...` (SMA, MA, SMK, SLB);
+   PAUD `/satpen/paud/<code>%20%20/<lvl>?jalur=all&status=all`, Dikmas `/satpen/dikmas/...?jalur=jn` (extend
+   `GROUPS` in the converter). The raw cache of the last session is lost: run in the background, resumable,
+   `python3 -I tools/converters/sekolah.py fetch <scratch>/raw 030000 <other province codes>` (Jawa Tengah first; the
+   list is on `/satpen/dikdas/000000/0`; ~14,000 pages ≈ 8 h; the worker restarts kill it — check and relaunch on
+   each wake), then `build <raw> data/sekolah data/wilayah/wilayah.json.gz <date>`; check the unmatched report
+   (region codes are matched by name, never invented), update manifest (new fields: alamat, kode_desa…), catalogue,
+   R-01 status. Version = crawl date (the pages show no source date).
+2. **R-06** waits for the user's zip from brief R-06 (Kanwil site times out from the cloud).
+3. **R-10b** waits for the user's zip (PASI U14/U16, O2SN, POPDA/POPNAS); then extend `atletik-*`. **R-11** records
+   need the user's list of championships.
+4. When the user uploads R-12 or R-02/R-07/R-08/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
+   build the set.
+5. `wilayah` upstream (cahyadsn) now follows Kepmendagri 300.2.2-2430/2025: refresh `wilayah` and `kodepos` together.
+6. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
+   via `fondasi-sync`.
 
 ## Blockers / waiting on
 
@@ -56,6 +58,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round · `data/atletik` — PRs #5, #6 (libur-nasional, kaldik-jateng check), #7 (kodepos) merged; R-06 and R-10b briefs; R-10 World Athletics sets (F-027); R-01 crawler written, crawl not finished. Next: R-01 crawl.
 - 2026-11-25 · session data-round · `data/libur-nasional` — PR #5 merged; R-01 interview (all provinces, replace SD/MI, madrasah from Kemendikdasmen with R-02 for NSM, add PAUD and PKBM/kesetaraan, sequential crawl in two PRs); R-04 built; R-06 moved to a browser brief (Kanwil site times out). Next: R-03 while the R-01 crawl runs.
 - 2026-11-25 · session data-round prep · `pw/peaceful-tesla-bjooc9` — PR #4 merged (skema-siswa corrections F-024, kaldik-jateng, calendar layers F-025); environment Fondasi created; handoff for the data round. Next: R-01.
 - 2026-11-25 · session server-flow · `pw/peaceful-tesla-bjooc9` — repository created and filled: F-001…F-023 (PRs #1–#3), interview rounds with the user, first data sets. Next: data round.

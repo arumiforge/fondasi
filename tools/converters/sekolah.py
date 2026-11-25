@@ -1,0 +1,251 @@
+#!/usr/bin/env python3
+"""Build data/sekolah (schools of every level) from referensi.data.kemendikdasmen.go.id.
+
+Two steps, so the slow crawl and the conversion are separate and repeatable:
+
+  python3 -I tools/converters/sekolah.py fetch RAW_DIR [PROVINCE_CODE ...]
+      Saves the public list pages unchanged: per province, the Dikdas list (SD, MI, SMP, MTs…) and the
+      Dikmen list (SMA, MA, SMK, SLB…) of every district (kecamatan). Polite: one request per second,
+      resumable (pages already saved are skipped). PROVINCE_CODE is the 6-digit Dapodik code, e.g. 030000
+      for Jawa Tengah; without codes, every province is fetched.
+
+  python3 -I tools/converters/sekolah.py build RAW_DIR OUT_DIR WILAYAH_JSON_GZ VERSION
+      Parses the saved pages (untrusted input: parsed as text, never executed), links each school to the
+      Kemendagri region codes of the `wilayah` set by matching names (regency → district → village), and
+      writes one gzipped JSON file per province plus manifest.json and a match report.
+
+Region codes are never invented: when a name does not match uniquely, the code stays null and the school
+is listed in the report.
+"""
+import gzip
+import html
+import json
+import os
+import re
+import sys
+import time
+import unicodedata
+import urllib.request
+
+BASE = "https://referensi.data.kemendikdasmen.go.id"
+UA = "fondasi-data-converter (public reference data; 1 request/s)"
+GROUPS = ("dikdas", "dikmen")
+
+
+def get(url):
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read().decode("utf-8", "replace")
+        except Exception as e:  # network hiccups: back off and retry
+            if attempt == 4:
+                raise
+            time.sleep(5 * (attempt + 1))
+            print(f"  retry {url}: {e}", file=sys.stderr)
+
+
+def child_links(page, group, level, parent_prefix):
+    codes = re.findall(rf'href="/satpen/{group}/(\d{{6}})/{level}\?', page)
+    seen = []
+    for c in codes:
+        if c.startswith(parent_prefix) and c not in seen:
+            seen.append(c)
+    return seen
+
+
+def fetch(raw, provinces):
+    os.makedirs(raw, exist_ok=True)
+
+    def cached(path, url):
+        if os.path.exists(path):
+            return open(path, encoding="utf-8").read()
+        time.sleep(1)
+        page = get(url)
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            f.write(page)
+        os.replace(tmp, path)
+        return page
+
+    if not provinces:
+        top = cached(os.path.join(raw, "dikdas-000000.html"), f"{BASE}/satpen/dikdas/000000/0")
+        provinces = child_links(top, "dikdas", 1, "")
+    for prov in provinces:
+        for group in GROUPS:
+            d = os.path.join(raw, prov, group)
+            os.makedirs(d, exist_ok=True)
+            p1 = cached(os.path.join(d, f"{prov}.html"), f"{BASE}/satpen/{group}/{prov}/1?jalur=jf&status=all")
+            for kab in child_links(p1, group, 2, prov[:2]):
+                p2 = cached(os.path.join(d, f"{kab}.html"), f"{BASE}/satpen/{group}/{kab}/2?jalur=jf&status=all")
+                for kec in child_links(p2, group, 3, kab[:4]):
+                    cached(os.path.join(d, f"{kec}.html"), f"{BASE}/satpen/{group}/{kec}/3?jalur=jf&status=all")
+            print(f"fetched {prov} {group}", file=sys.stderr)
+
+
+# ---------------------------------------------------------------- build
+
+def text(cell):
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", cell))).strip()
+
+
+def rows(page):
+    out = []
+    for r in re.findall(r"<tr[^>]*>(.*?)</tr>", page, re.S):
+        cells = [text(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", r, re.S)]
+        if cells:
+            out.append(cells)
+    return out
+
+
+def region_names(page, group, level, prefix):
+    """Map child code → name from a list page (the name is the link text)."""
+    names = {}
+    for code, label in re.findall(rf'href="/satpen/{group}/(\d{{6}})/{level}\?[^"]*"[^>]*>(.*?)</a>', page, re.S):
+        if code.startswith(prefix):
+            names[code] = text(label)
+    return names
+
+
+def norm(name):
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
+    s = re.sub(r"^(prov\.|provinsi|kab\.|kabupaten|kota adm\.|kota administrasi|kota|kec\.|kecamatan|desa|kelurahan|kel\.)\s+", "", s)
+    s = re.sub(r"[^a-z0-9]", "", s)
+    return s
+
+
+def load_wilayah(path):
+    rows_ = json.load(gzip.open(path, "rt", encoding="utf-8"))
+    by_parent = {}
+    names = {}
+    for code, name in rows_:
+        names[code] = name
+        parent = code.rsplit(".", 1)[0] if "." in code else ""
+        by_parent.setdefault(parent, []).append((code, name))
+    return names, by_parent
+
+
+def match(by_parent, parent, name, kota=None):
+    """Unique match of `name` among the children of `parent` (exact normalised name, then loose)."""
+    cands = by_parent.get(parent, [])
+    if kota is not None and parent and len(parent) == 2:
+        cands = [c for c in cands if c[1].lower().startswith("kota") == kota]
+    key = norm(name)
+    hits = [c for c in cands if norm(c[1]) == key]
+    if len(hits) == 1:
+        return hits[0][0]
+    loose = key.replace("dj", "j").replace("oe", "u").replace("tj", "c")
+    hits = [c for c in cands if norm(c[1]).replace("dj", "j").replace("oe", "u").replace("tj", "c") == loose]
+    return hits[0][0] if len(hits) == 1 else None
+
+
+def slug(name):
+    s = norm_keep(name)
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", s)).strip("-")
+
+
+def norm_keep(name):
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"^prov\.\s+", "", s)
+
+
+PROVINCE_FIX = {"d.k.i. jakarta": "dki-jakarta", "d.i. yogyakarta": "di-yogyakarta"}
+
+
+def build(raw, out, wilayah_path, version):
+    names, by_parent = load_wilayah(wilayah_path)
+    top_path = os.path.join(raw, "dikdas-000000.html")
+    prov_names = {}
+    if os.path.exists(top_path):
+        prov_names = region_names(open(top_path, encoding="utf-8").read(), "dikdas", 1, "")
+    os.makedirs(out, exist_ok=True)
+    manifest_files, report = [], {"unmatched_regency": [], "unmatched_district": [], "unmatched_village": 0, "villages_unmatched_sample": []}
+    total = 0
+    levels_seen = {}
+    for prov in sorted(p for p in os.listdir(raw) if re.fullmatch(r"\d{6}", p)):
+        schools = {}
+        prov_label = None
+        kab_label, kec_label = {}, {}
+        for group in GROUPS:
+            d = os.path.join(raw, prov, group)
+            if not os.path.isdir(d):
+                continue
+            p1 = open(os.path.join(d, f"{prov}.html"), encoding="utf-8").read()
+            kab_label.update(region_names(p1, group, 2, prov[:2]))
+            for f in sorted(os.listdir(d)):
+                code = f[:-5]
+                if re.fullmatch(r"\d{4}00", code) and code != prov:
+                    kec_label.update(region_names(open(os.path.join(d, f), encoding="utf-8").read(), group, 3, code[:4]))
+            for f in sorted(os.listdir(d)):
+                code = f[:-5]
+                if not (re.fullmatch(r"\d{6}", code) and code[4:] != "00"):
+                    continue
+                for cells in rows(open(os.path.join(d, f), encoding="utf-8").read()):
+                    if len(cells) < 7 or not re.fullmatch(r"[0-9A-Z]{8}", cells[1]):
+                        continue
+                    npsn, nama, bentuk, status, alamat, desa = cells[1:7]
+                    schools[npsn] = {"npsn": npsn, "nama": nama, "bentuk_pendidikan": bentuk,
+                                     "status_sekolah": status.upper(), "alamat": alamat, "desa": desa,
+                                     "_kec": code}
+        if not schools:
+            continue
+        prov_label = prov_names.get(prov) or prov
+        wprov = match(by_parent, "", prov_label)
+        kab_code, kec_code = {}, {}
+        for k, label in kab_label.items():
+            c = match(by_parent, wprov, label, kota=label.lower().startswith("kota")) if wprov else None
+            kab_code[k] = c
+            if not c:
+                report["unmatched_regency"].append(f"{k} {label}")
+        for k, label in kec_label.items():
+            parent = kab_code.get(k[:4] + "00")
+            c = match(by_parent, parent, label) if parent else None
+            kec_code[k] = c
+            if not c:
+                report["unmatched_district"].append(f"{k} {label} ({kab_label.get(k[:4] + '00')})")
+        items = []
+        for s in schools.values():
+            kec = s.pop("_kec")
+            kab = kec[:4] + "00"
+            kc = kec_code.get(kec)
+            vc = match(by_parent, kc, s["desa"]) if kc else None
+            if kc and not vc:
+                report["unmatched_village"] += 1
+                if len(report["villages_unmatched_sample"]) < 200:
+                    report["villages_unmatched_sample"].append(f"{s['npsn']} {s['desa']} / {kec_label.get(kec)} / {kab_label.get(kab)}")
+            s["kecamatan"] = kec_label.get(kec, "")
+            s["kabupaten"] = kab_label.get(kab, "")
+            s["provinsi"] = prov_label
+            s["kode_desa"] = vc
+            s["kode_kecamatan"] = kc
+            s["kode_kabupaten"] = kab_code.get(kab)
+            s["kode_provinsi"] = wprov
+            s["kode_kecamatan_dapodik"] = kec
+            items.append(s)
+            levels_seen[s["bentuk_pendidikan"]] = levels_seen.get(s["bentuk_pendidikan"], 0) + 1
+        items.sort(key=lambda x: (x["kode_kecamatan_dapodik"], x["desa"], x["nama"], x["npsn"]))
+        key = norm_keep(prov_label)
+        fname = PROVINCE_FIX.get(key, slug(prov_label)) + ".json.gz"
+        data = json.dumps(items, ensure_ascii=False, indent=0).encode()
+        with open(os.path.join(out, fname), "wb") as fh:
+            with gzip.GzipFile(fileobj=fh, mode="wb", mtime=0, filename="") as gz:
+                gz.write(data)
+        counts = {}
+        for s in items:
+            counts[s["bentuk_pendidikan"]] = counts.get(s["bentuk_pendidikan"], 0) + 1
+        manifest_files.append({"file": fname, "province": re.sub(r"^Prov\.\s+", "", prov_label),
+                               "kode_provinsi": wprov, "kode_dapodik": prov, "schools": len(items),
+                               "levels": dict(sorted(counts.items())),
+                               "with_village_code": sum(1 for s in items if s["kode_desa"])})
+        total += len(items)
+    json.dump({"files": manifest_files, "total": total, "levels": dict(sorted(levels_seen.items())), "report": report},
+              sys.stdout, ensure_ascii=False, indent=1)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) >= 3 and sys.argv[1] == "fetch":
+        fetch(sys.argv[2], sys.argv[3:])
+    elif len(sys.argv) == 6 and sys.argv[1] == "build":
+        build(*sys.argv[2:])
+    else:
+        sys.exit(__doc__)

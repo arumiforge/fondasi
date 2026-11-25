@@ -19,9 +19,9 @@ environment cannot reach: [../docs/data-requests.md](../docs/data-requests.md).
 | `referensi-dapodik` | Religion, occupation, income, education, transport, residence, special needs, levels/grades — with official codes | — | planned (R-07) | Dapodik reference tables (browser) |
 | `mapel` | Kurikulum Merdeka subjects per level/phase | — | planned (R-08) | Kemendikdasmen regulation on curriculum structure (browser) |
 | `perguruan-tinggi` | Higher-education institutions: code, name, type, status, province | — | planned (R-09) | PDDikti (browser) |
-| `atletik-nomor` | Events: code, discipline, track/field, result unit, wind rule, implements per age group | — | planned (R-10) | World Athletics rules, PASI |
-| `atletik-kelompok-umur` | School age groups (SD/SMP/SMA, U-14…U-20) and age reference date rules | — | planned (R-10) | PASI, Kemenpora/Puspresnas (O2SN, POPNAS) |
-| `atletik-hasil` | Result format and rounding, DNS/DNF/DQ/NM, ranking ties, combined-events points tables | — | planned (R-10) | World Athletics Competition Rules, scoring tables |
+| `atletik-nomor` | 40 events: code, label, result unit, wind; hurdles, steeplechase, implements per category, combined events | 2026-03-20 | ready for WA; U14/U16 and school events pending (R-10b) | World Athletics rules (F-027) |
+| `atletik-kelompok-umur` | U18, U20, Senior, Master with reference-date rules | 2026-03-20 | partial: school/PASI groups pending (R-10b) | World Athletics rules; PASI, Puspresnas (browser) |
+| `atletik-hasil` | Result codes, rounding (time, distance, wind), ties, combined-events formula + parameters (checked) | 2026-03-20 | ready | World Athletics rules, scoring tables (F-027) |
 | `atletik-rekor` | National/regional/championship records per event and age group | — | planned (R-11) | PASI and championship organisers (manual) |
 
 SPMB's form lists (occupation, income) stay in SPMB until `referensi-dapodik` has verified codes.

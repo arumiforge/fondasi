@@ -23,7 +23,7 @@ browser session only **collects raw files**; a cloud session converts and checks
 | R-07 | `referensi-dapodik` | Official code tables: agama, pekerjaan, penghasilan, jenjang pendidikan, alat transportasi, jenis tinggal, kebutuhan khusus, bentuk pendidikan, tingkat pendidikan | Dapodik user manuals (PDF), `dapo`/`referensi` pages, the Dapodik import templates (XLSX) | open — browser |
 | R-08 | `mapel` | Regulation on the curriculum structure (Kurikulum Merdeka / its successor) with subject lists per level and phase | `kurikulum.kemendikdasmen.go.id` (blocked), `jdih.kemendikdasmen.go.id` | open — browser |
 | R-09 | `perguruan-tinggi` | List of higher-education institutions: code, name, type, status, province | `pddikti.kemdiktisaintek.go.id` (blocked from the cloud) — its download/search pages | open — browser |
-| R-10 | `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` | World Athletics Competition and Technical Rules (current edition, PDF), scoring tables for combined events; PASI rules for age groups; O2SN/POPNAS technical handbooks (juknis) for athletics | `worldathletics.org` (reachable), PASI site, Puspresnas/Kemenpora pages | open |
+| R-10 | `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` | World Athletics Competition and Technical Rules (current edition, PDF), scoring tables for combined events; PASI rules for age groups; O2SN/POPNAS technical handbooks (juknis) for athletics | `worldathletics.org` (reachable), PASI site, Puspresnas/Kemenpora pages | **World Athletics part done 2026-11-26**; PASI/O2SN/POPNAS part → R-10b |
 | R-11 | `atletik-rekor` | Current national records (senior, U-20, U-18) and the championships the user runs | PASI announcements; organisers' result books | open — needs the user's list of championships |
 
 When a brief is delivered, the converting session updates its status here and the set in `data/README.md`.
@@ -52,4 +52,16 @@ Starter prompt for a Claude in Chrome session (the user runs it and uploads the 
 
 The cloud session then transcribes the lampiran into `data/kaldik-madrasah-jateng/` in the same shape as
 `kaldik-jateng` (events per level RA/MI/MTs/MA/MAK, `estimate`, `ref`, `skb` check against `libur-nasional`).
+
+## Brief R-10b
+
+Starter prompt for a Claude in Chrome session (public pages only, at most one page every 2 seconds, files unchanged
+in `R-10b-atletik/` with `SOURCE.txt`: page URL, file URL, title and date as printed, download time, size, SHA-256):
+
+> 1. PASI (`pasi.or.id` or its official social links): the current rules or circular on age groups (U14, U16, U18,
+>    U20) for Kejurnas/Kejurda, with implement weights, hurdle heights and events per group.
+> 2. Puspresnas (`pusatprestasinasional.kemendikdasmen.go.id` or the ministry's site): the latest O2SN technical
+>    handbooks (juknis) for athletics at SD, SMP and SMA level: events, age limits and reference dates, implements.
+> 3. Kemenpora / Dispora Jawa Tengah: the latest POPNAS and POPDA Jawa Tengah technical handbooks for athletics.
+> 4. Zip the folder and give it to the user.
 

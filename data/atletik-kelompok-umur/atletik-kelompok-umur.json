@@ -1,0 +1,56 @@
+{
+ "name": "Kelompok umur atletik",
+ "reference_rules": {
+  "dec31": "Umur dihitung pada 31 Desember tahun lomba (World Athletics, PASI).",
+  "birthday_reached": "Sudah berulang tahun ke-N pada hari lomba (Master).",
+  "championship": "Tanggal acuan ditetapkan juknis kejuaraan (O2SN, POPDA/POPNAS, kejuaraan panitia)."
+ },
+ "groups": [
+  {
+   "code": "U18",
+   "label": "U18",
+   "label_en": "Under-18 (U18)",
+   "min_age": 16,
+   "max_age": 17,
+   "reference": "dec31",
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Age Categories (PDF p. 44)"
+  },
+  {
+   "code": "U20",
+   "label": "U20",
+   "label_en": "Under-20 (U20)",
+   "min_age": 18,
+   "max_age": 19,
+   "reference": "dec31",
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Age Categories (PDF p. 44)"
+  },
+  {
+   "code": "SENIOR",
+   "label": "Senior",
+   "label_en": "Senior",
+   "min_age": null,
+   "max_age": null,
+   "reference": null,
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Age Categories (PDF p. 44)",
+   "note": "No age range in the rules: open to every athlete allowed by the competition's minimum age."
+  },
+  {
+   "code": "MASTER",
+   "label": "Master",
+   "label_en": "Master",
+   "min_age": 35,
+   "max_age": null,
+   "reference": "birthday_reached",
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Age Categories (PDF p. 44)",
+   "note": "Masters' five-year groups follow the World Athletics/WMA Handbook (not part of this set)."
+  }
+ ],
+ "pending": [
+  "PASI U14 and U16 (and their implements and hurdle heights): brief R-10b.",
+  "O2SN SD/SMP/SMA, POPDA/POPNAS groups and their reference dates: brief R-10b."
+ ],
+ "notes": [
+  "Each championship stores its own reference rule (user decision 2026-11-26): an app keeps `reference` per championship, using these groups as defaults.",
+  "Eligibility and minimum ages for participation follow each competition's technical regulations."
+ ]
+}
