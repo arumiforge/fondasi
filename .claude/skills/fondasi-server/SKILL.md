@@ -6,7 +6,7 @@ description: Prepare, check and change any Arumi Studios VPS and the Docker apps
 # Server work
 
 1. **Ask for the state first.** Get the output of `sudo bash /opt/apps/_fondasi/server/check.sh` (or
-   `spmb check`, or `bash check.sh` uploaded to a new server). Its State/Next/Needs attention block replaces
+   `bash check.sh` uploaded to a new server; an app may wrap it, e.g. SPMB's `spmb check`). Its State/Next/Needs attention block replaces
    re-explaining the server. Which server? `docs/servers.md`.
 2. Keep Fondasi app-neutral (F-015): app-specific checks go into the app's `check-app` adapter
    (`server/templates/check-app`), never into `server/check.sh`.
