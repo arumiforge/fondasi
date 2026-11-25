@@ -5,48 +5,54 @@ No secrets, emails or personal data.
 
 ## Current phase
 
-**Foundation round 1** (F-001…F-013): server rules and scripts moved from SPMB (D-112) and made app-neutral,
-app contract, several-servers rules, settings/storage/Turnstile standards, data framework (`fondasi-sync`,
-`data-check`), first sets (`wilayah`, `sekolah` SD/MI, `tahun-ajaran`), shared skills, cloud environment, data
-request briefs, conventions (Indonesian URLs, no AI attribution), UI rules against generic AI design, Codex
-visual-asset workflow and templates.
+**Foundation, data round.** Rules and standards are in place (F-001…F-025, merged through PR #4): server flow and
+app contract, settings/storage/Turnstile, conventions (Indonesian for everything users see), web baseline, UI and
+feedback, Codex visual assets, agent workflow, assets, AI assistant, printing/QR/visitors, guides, decoration without
+limits, detailed student data, calendar layers, adoption procedure for any repo. Data sets ready: `wilayah`,
+`sekolah` (SD/MI only), `tahun-ajaran`, `skema-siswa`, `kaldik-jateng` (2026/2027). The round now fills the planned
+data sets.
+
+Environment: Claude cloud environment **Fondasi** (only `arumiforge/fondasi`, setup `.claude/cloud/setup.sh`, no
+PHP/MySQL). The user prefers unrestricted network for it (may switch it to Full in Settings); until then the hosts in
+`docs/cloud-environment.md` are allowed. Sources blocked from the cloud go through Claude in Chrome briefs
+(`docs/data-requests.md`); the user runs those and uploads the zip.
+
+**Standing permission (user, 2026-11-25):** sessions in this repository may merge their own PRs into `main` once CI is
+green and there is no conflict, then report (F-026). The GitHub merge API sometimes answers 500/502 for this repository:
+retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Active work
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `pw/peaceful-tesla-bjooc9` | session server-flow | Foundation round 1 | PR open |
+| (next session's branch) | session data-round | Data sets in this order: R-01, R-04 + R-06, R-03, R-10 | to start |
 
-## Next steps
+## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
-0. SPMB: switch the parent income list to `skema-siswa`'s `[penghasilan]` (F-024) with a migration that maps
-   existing answers ("Tidak berpenghasilan" and "Kurang dari Rp500.000" → the combined first option; "Rp5.000.000 –
-   Rp20.000.000" needs a choice: ask the school or keep the old text for old records).
-0. SPMB: add `deploy/server/check-app` (its environments, image, Super Admin, backups, off-site — the logic now only in
-   SPMB's own `deploy/server/check.sh`) and let `spmb init` link it to `/opt/apps/spmb/check-app`; other apps
-   (milklife…) start from `server/templates/check-app`.
-1. User: rename the repository to `fondasi` (GitHub → Settings → Repository name; old URLs redirect). Then in
-   SPMB: paste the pointer block (`docs/app-pointer.md`) into `CLAUDE.md`, and later switch SPMB's
-   `deploy/server/check.sh`/`setup.sh` to Fondasi's copies (or keep both in step until then).
-2. On `spmb-prod`: deploy key for Fondasi, clone to `/opt/apps/_fondasi`, run its `check.sh`; add hostnames as
-   the third column of `/opt/apps/PORTS` and record `milklife-staging`'s port; fill the `docs/servers.md` row.
-3. Data, cloud session (hosts reachable): R-01 schools of every level from Dapodik/referensi (start with
-   Jawa Tengah; new schema with region codes linking to `wilayah`), R-03 postal codes, R-04 SKB holidays,
-   R-06 madrasah calendar Jateng, R-10 athletics rules from World Athletics.
-4. Data, browser sessions (Claude in Chrome): R-02 EMIS madrasah, R-05 Kaldik Jateng, R-07 Dapodik code
-   tables, R-08 curriculum subjects, R-09 PDDikti; R-11 needs the user's list of championships.
-5. Every app repo: copy `templates/repo/` (AGENTS.md, hook, commit policy) and, for visuals, `templates/ai/`;
-   SPMB already has its own `ai/` (the model for the templates).
-6. SPMB later: import `wilayah`/`sekolah` through `fondasi-sync` instead of its own copies; Turnstile and S3
-   storage following `docs/settings.md` / `docs/storage.md` (not started).
+1. **R-01 `sekolah` all levels**: SMP, MTs (where Dapodik lists them), SMA, MA, SMK, SLB from `dapo.kemendikdasmen.go.id` /
+   `referensi.data.kemendikdasmen.go.id`, start with Jawa Tengah, then all provinces; new schema with the village/district
+   region codes of `wilayah`, NPSN, name, level, public/private, address; keep the SD/MI part; converter in
+   `tools/converters/`, polite rate (≥ 1 s between requests), version = source date. Madrasah gaps → R-02 (browser).
+2. **R-04 `libur-nasional`**: SKB 3 Menteri on national holidays and cuti bersama 2026 and 2027 from `kemenkopmk.go.id`
+   (raw PDFs to `sources/libur-nasional/`); then reconcile the `estimate` events and the notes in `kaldik-jateng`.
+   **R-06 `kaldik-madrasah-jateng`**: Kanwil Kemenag Jawa Tengah madrasah calendar 2026/2027 (`jateng.kemenag.go.id`).
+3. **R-03 `kodepos`**: postal code per village code (cahyadsn wilayah postal list; check its licence first, ask the user
+   if it is not MIT/BSD/Apache/ISC/CC-BY/public government data).
+4. **R-10 athletics**: `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` from World Athletics rules (and PASI /
+   O2SN technical handbooks via a browser brief where blocked). Ask the user which championships and age groups matter
+   before R-11 records.
+5. When the user uploads **R-12** (national education calendar + SKB) or R-02/R-07/R-08/R-09 zips: verify SHA-256,
+   keep raw files in `sources/<set>/`, build the set.
+6. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data via
+   `fondasi-sync`.
 
 ## Blockers / waiting on
 
-- Repository rename to `fondasi` (user).
-- Hosts blocked from cloud sessions: `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`,
-  `disdikbud.jatengprov.go.id`, `kurikulum.kemendikdasmen.go.id` → browser briefs.
-- Not yet rehearsed on a VM: `setup.sh` on a server already running containers (logic unit-tested in SPMB D-112).
+- Hosts blocked from cloud sessions: `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
+  (and `disdikbud.jatengprov.go.id`, replaced by `pdk.jatengprov.go.id`) → browser briefs.
+- The Claude GitHub App may need access to the renamed repository for PR notifications (GitHub → Apps → Claude).
 
 ## Session log (newest first, keep the last 10)
 
-- 2026-11-25 · session server-flow · `pw/peaceful-tesla-bjooc9` — repository created; interview (name, pinned data copies, all school levels, calendars, athletics, storage, env vs panel, more shared data, several VPS); round 1 built. Next: rename, server checkout, data R-01/R-03/R-04.
+- 2026-11-25 · session data-round prep · `pw/peaceful-tesla-bjooc9` — PR #4 merged (skema-siswa corrections F-024, kaldik-jateng, calendar layers F-025); environment Fondasi created; handoff for the data round. Next: R-01.
+- 2026-11-25 · session server-flow · `pw/peaceful-tesla-bjooc9` — repository created and filled: F-001…F-023 (PRs #1–#3), interview rounds with the user, first data sets. Next: data round.
