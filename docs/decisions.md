@@ -103,3 +103,7 @@ Decision: In `skema-siswa`, NISN is 10 digits (`max_len=10`) and the student's N
 ## F-025 — Calendars: national first, Jawa Tengah as the only province for now (2026-11-25)
 Status: accepted (user, 2026-11-25: "kalender nasional yang mengcover nasional secara umum; untuk spesifik per provinsi cukup Jateng dulu")
 Decision: Calendar data has three layers: national (SKB 3 Menteri holidays and cuti bersama, `libur-nasional`; the national education calendar when published, `kalender-nasional`), province (only Jawa Tengah for now, `kaldik-jateng`, plus the Kanwil Kemenag Jateng madrasah calendar) and, on demand, kabupaten/kota calendars for SD/SMP (the provincial regulation covers SMA, SMK and SLB). Apps combine them: national holidays win over provincial estimates; a school can still add its own days. Raw source documents are kept in `sources/<set>/` with their SOURCE.txt when their licence allows.
+
+## F-026 — Sessions in Fondasi may merge their own PRs when CI is green (2026-11-25)
+Status: accepted (user, 2026-11-25: "boleh sesi baru me-merge PR-nya sendiri setelah CI hijau")
+Decision: In `arumiforge/fondasi` only, a session may merge its own PR into `main` when CI is green on the current head and there is no conflict, then report it to the user. It never merges other people's PRs. App repositories keep "agents never merge unless the user asks" unless they record the same decision. Work for the next rounds runs in the dedicated cloud environment "Fondasi".
