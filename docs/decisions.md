@@ -111,3 +111,7 @@ Decision: In `arumiforge/fondasi` only, a session may merge its own PR into `mai
 ## F-027 — World Athletics documents: facts with references, raw PDFs kept privately (2026-11-26)
 Status: accepted (user, 2026-11-26: "Fakta + PDF di sources/")
 Decision: The athletics sets use World Athletics' Competition & Technical Rules and the Scoring Tables for Combined Events although their licence is not on the list of F-003 (copyright World Athletics). The sets hold facts (weights, heights, rounding, codes, formula parameters) with rule or page references, not rule texts; the raw PDFs are kept in `sources/atletik/` because the repository is private. Athletics championships covered: O2SN, POPDA/POPNAS, PASI Kejurnas/Kejurda and championships run by the user; each championship keeps its own age reference date; combined-events scoring is included.
+
+## F-028 — `sekolah`: which forms and regions are kept (2026-11-26)
+Status: accepted (user, 2026-11-26: "Masukkan semua", "PKBM dan SKB saja", Luar Negeri "Tidak")
+Decision: The `sekolah` set keeps every form that referensi.data.kemendikdasmen.go.id lists under Dikdas, Dikmen and PAUD, including SPK (cooperation schools, e.g. "SPK SMP") and Pendidikan Diniyah Formal ("PDF Wustha", "PDF Ulya"); apps filter by `bentuk_pendidikan`. From Dikmas (non-formal) only PKBM and SKB are kept; courses (LKP/"Kursus") are left out. Schools abroad (the source's "Luar Negeri" group, Sekolah Indonesia Luar Negeri) are left out because they have no Kemendagri region code.

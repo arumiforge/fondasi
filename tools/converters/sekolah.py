@@ -3,13 +3,14 @@
 
 Two steps, so the slow crawl and the conversion are separate and repeatable:
 
-  python3 -I tools/converters/sekolah.py fetch RAW_DIR [PROVINCE_CODE ...]
-      Saves the public list pages unchanged: per province, the Dikdas list (SD, MI, SMP, MTs…) and the
-      Dikmen list (SMA, MA, SMK, SLB…) of every district (kecamatan). Polite: one request per second,
-      resumable (pages already saved are skipped). PROVINCE_CODE is the 6-digit Dapodik code, e.g. 030000
-      for Jawa Tengah; without codes, every province is fetched.
+  python3 -I tools/converters/sekolah.py fetch [--groups=dikdas,dikmen] RAW_DIR [PROVINCE_CODE ...]
+      Saves the public list pages unchanged: per province and group, the list of every district
+      (kecamatan). Groups: dikdas (SD, MI, SMP, MTs…), dikmen (SMA, MA, SMK, SLB…), paud (TK, KB, RA, TPA,
+      SPS…), dikmas (PKBM, SKB, courses…). Polite: one request per second, resumable (pages already saved
+      are skipped; a page without the school table is never saved). PROVINCE_CODE is the 6-digit Dapodik
+      code, e.g. 030000 for Jawa Tengah; without codes, every province is fetched.
 
-  python3 -I tools/converters/sekolah.py build RAW_DIR OUT_DIR WILAYAH_JSON_GZ VERSION
+  python3 -I tools/converters/sekolah.py build [--groups=dikdas,dikmen] RAW_DIR OUT_DIR WILAYAH_JSON_GZ VERSION
       Parses the saved pages (untrusted input: parsed as text, never executed), links each school to the
       Kemendagri region codes of the `wilayah` set by matching names (regency → district → village), and
       writes one gzipped JSON file per province plus manifest.json and a match report.
@@ -29,7 +30,18 @@ import urllib.request
 
 BASE = "https://referensi.data.kemendikdasmen.go.id"
 UA = "fondasi-data-converter (public reference data; 1 request/s)"
+# group → (jalur filter, suffix after the region code in URLs; PAUD pads the code with two spaces)
+GROUP_URL = {"dikdas": ("jf", ""), "dikmen": ("jf", ""), "paud": ("all", "%20%20"), "dikmas": ("jn", "")}
 GROUPS = ("dikdas", "dikmen")
+# F-028: every form listed in the formal groups is kept (SPK, Pendidikan Diniyah Formal included); from Dikmas only
+# the equivalency providers; schools abroad ("Luar Negeri", 350000) are left out.
+KEEP_FORMS = {"dikmas": {"PKBM", "SKB"}}
+EXCLUDED_PROVINCES = {"350000"}
+
+
+def url(group, code, level):
+    jalur, pad = GROUP_URL[group]
+    return f"{BASE}/satpen/{group}/{code}{pad}/{level}?jalur={jalur}&status=all"
 
 
 def get(url):
@@ -46,7 +58,7 @@ def get(url):
 
 
 def child_links(page, group, level, parent_prefix):
-    codes = re.findall(rf'href="/satpen/{group}/(\d{{6}})/{level}\?', page)
+    codes = re.findall(rf'href="/satpen/{group}/(\d{{6}})(?:%20)*/{level}\?', page)
     seen = []
     for c in codes:
         if c.startswith(parent_prefix) and c not in seen:
@@ -54,33 +66,41 @@ def child_links(page, group, level, parent_prefix):
     return seen
 
 
-def fetch(raw, provinces):
+def fetch(raw, provinces, groups=GROUPS):
     os.makedirs(raw, exist_ok=True)
 
-    def cached(path, url):
+    def cached(path, url, marker):
+        """Fetch once; a page must be complete and carry `marker` (list header) to be saved."""
         if os.path.exists(path):
             return open(path, encoding="utf-8").read()
-        time.sleep(1)
-        page = get(url)
+        for attempt in range(3):
+            time.sleep(1 if attempt == 0 else 15)
+            page = get(url)
+            if "</html>" in page and marker in page:
+                break
+        else:
+            if "</html>" not in page:
+                raise RuntimeError(f"incomplete page: {url}")
+            print(f"  warning: no list header ({marker}) in {url}; saved as is", file=sys.stderr)
         tmp = path + ".tmp"
         with open(tmp, "w", encoding="utf-8") as f:
             f.write(page)
         os.replace(tmp, path)
         return page
 
-    if not provinces:
-        top = cached(os.path.join(raw, "dikdas-000000.html"), f"{BASE}/satpen/dikdas/000000/0")
-        provinces = child_links(top, "dikdas", 1, "")
+    # the national page is always kept: build reads the province names from it
+    top = cached(os.path.join(raw, "dikdas-000000.html"), f"{BASE}/satpen/dikdas/000000/0", "Nama Wilayah")
+    provinces = provinces or child_links(top, "dikdas", 1, "")
     for prov in provinces:
-        for group in GROUPS:
+        for group in groups:
             d = os.path.join(raw, prov, group)
             os.makedirs(d, exist_ok=True)
-            p1 = cached(os.path.join(d, f"{prov}.html"), f"{BASE}/satpen/{group}/{prov}/1?jalur=jf&status=all")
+            p1 = cached(os.path.join(d, f"{prov}.html"), url(group, prov, 1), "Nama Wilayah")
             for kab in child_links(p1, group, 2, prov[:2]):
-                p2 = cached(os.path.join(d, f"{kab}.html"), f"{BASE}/satpen/{group}/{kab}/2?jalur=jf&status=all")
+                p2 = cached(os.path.join(d, f"{kab}.html"), url(group, kab, 2), "Nama Wilayah")
                 for kec in child_links(p2, group, 3, kab[:4]):
-                    cached(os.path.join(d, f"{kec}.html"), f"{BASE}/satpen/{group}/{kec}/3?jalur=jf&status=all")
-            print(f"fetched {prov} {group}", file=sys.stderr)
+                    cached(os.path.join(d, f"{kec}.html"), url(group, kec, 3), ">NPSN<")
+            print(f"fetched {prov} {group}", file=sys.stderr, flush=True)
 
 
 # ---------------------------------------------------------------- build
@@ -101,7 +121,7 @@ def rows(page):
 def region_names(page, group, level, prefix):
     """Map child code → name from a list page (the name is the link text)."""
     names = {}
-    for code, label in re.findall(rf'href="/satpen/{group}/(\d{{6}})/{level}\?[^"]*"[^>]*>(.*?)</a>', page, re.S):
+    for code, label in re.findall(rf'href="/satpen/{group}/(\d{{6}})(?:%20)*/{level}\?[^"]*"[^>]*>(.*?)</a>', page, re.S):
         if code.startswith(prefix):
             names[code] = text(label)
     return names
@@ -152,7 +172,7 @@ def norm_keep(name):
 PROVINCE_FIX = {"d.k.i. jakarta": "dki-jakarta", "d.i. yogyakarta": "di-yogyakarta"}
 
 
-def build(raw, out, wilayah_path, version):
+def build(raw, out, wilayah_path, version, groups=GROUPS):
     names, by_parent = load_wilayah(wilayah_path)
     top_path = os.path.join(raw, "dikdas-000000.html")
     prov_names = {}
@@ -162,11 +182,11 @@ def build(raw, out, wilayah_path, version):
     manifest_files, report = [], {"unmatched_regency": [], "unmatched_district": [], "unmatched_village": 0, "villages_unmatched_sample": []}
     total = 0
     levels_seen = {}
-    for prov in sorted(p for p in os.listdir(raw) if re.fullmatch(r"\d{6}", p)):
+    for prov in sorted(p for p in os.listdir(raw) if re.fullmatch(r"\d{6}", p) and p not in EXCLUDED_PROVINCES):
         schools = {}
         prov_label = None
         kab_label, kec_label = {}, {}
-        for group in GROUPS:
+        for group in groups:
             d = os.path.join(raw, prov, group)
             if not os.path.isdir(d):
                 continue
@@ -184,6 +204,8 @@ def build(raw, out, wilayah_path, version):
                     if len(cells) < 7 or not re.fullmatch(r"[0-9A-Z]{8}", cells[1]):
                         continue
                     npsn, nama, bentuk, status, alamat, desa = cells[1:7]
+                    if group in KEEP_FORMS and bentuk not in KEEP_FORMS[group]:
+                        continue
                     schools[npsn] = {"npsn": npsn, "nama": nama, "bentuk_pendidikan": bentuk,
                                      "status_sekolah": status.upper(), "alamat": alamat, "desa": desa,
                                      "_kec": code}
@@ -243,9 +265,15 @@ def build(raw, out, wilayah_path, version):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 3 and sys.argv[1] == "fetch":
-        fetch(sys.argv[2], sys.argv[3:])
-    elif len(sys.argv) == 6 and sys.argv[1] == "build":
-        build(*sys.argv[2:])
+    args = sys.argv[1:]
+    groups = GROUPS
+    if len(args) > 1 and args[1].startswith("--groups="):
+        groups = tuple(g for g in args.pop(1).split("=", 1)[1].split(",") if g)
+        if not groups or any(g not in GROUP_URL for g in groups):
+            sys.exit(f"unknown group; choose from {', '.join(GROUP_URL)}")
+    if len(args) >= 2 and args[0] == "fetch":
+        fetch(args[1], args[2:], groups)
+    elif len(args) == 5 and args[0] == "build":
+        build(*args[1:], groups=groups)
     else:
         sys.exit(__doc__)

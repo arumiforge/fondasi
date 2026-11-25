@@ -25,8 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `data/atletik` | session data-round | R-10 World Athletics part (3 sets), F-027, brief R-10b, R-01 converter | PR open — merge when CI is green |
-| (next session) | — | R-01 crawl: rerun `tools/converters/sekolah.py fetch` (see Next steps 1) | to restart |
+| `nty/amazing-knuth-svvihr` | session data-round 2 | R-01 crawl (Dikdas+Dikmen, then PAUD+Dikmas), F-028, build `sekolah` | crawl running (started 2026-11-26 00:15 WIB) |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
