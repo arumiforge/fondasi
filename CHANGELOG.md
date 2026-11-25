@@ -4,6 +4,10 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 
 ## [Unreleased]
 
+### Added
+- Data set `kaldik-jateng` (2026/2027 in full, 2025/2026 key dates) from the R-05 browser collection, raw PDFs in
+  `sources/kaldik-jateng/`; calendar layers (F-025); briefs R-12 (national calendar) and R-13 (kabupaten/kota).
+
 ### Changed
 - `skema-siswa`: NISN 10 digits, student NIK required, NIK of the mother and KK number 16 digits; its income list is the shared one (F-024).
 
