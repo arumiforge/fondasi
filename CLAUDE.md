@@ -12,8 +12,12 @@ Shared foundation for every **Arumi Studios** application (education, athletics,
 | Web app baseline: security, uploads, personal data, audit log, Indonesian identity fields, performance, monitoring, staging, tests, public pages | — | `docs/web-baseline.md` |
 | UI/UX rules against generic AI-made design; feedback (toast, undo, form errors, dialogs, banners) | — | `docs/ui.md`, `docs/feedback.md` |
 | Visual assets made by Codex from briefs in each app's `ai/` | `templates/ai/` | `docs/visual-assets.md` |
+| How agents work in every repo: progress, decisions, tasks, context, handoff, parallel sessions | `templates/repo/.claude/skills/app-session/` | `docs/agent-workflow.md` |
+| Front-end assets: minified served copies, originals kept, versioned URLs | — | `docs/assets.md` |
+| AI help assistant: OpenAI-compatible providers, round robin, Gemini, limits | — | `docs/ai-assistant.md` |
+| In-app guide pages (GitHub Docs style) | — | `docs/guides.md` |
 | Adopting Fondasi in another repository: audit, interview, base setup | `templates/repo/` | `docs/adopting.md` |
-| Agent skills shared by every repo (`fondasi-adopt`, `fondasi-session`, `-server`, `-data`, `-web`, `-ui`, `-feedback`, `-visual`, `bahasa-indonesia-plain`) | `.claude/skills/` | below |
+| Agent skills shared by every repo (`fondasi-adopt`, `fondasi-session`, `-server`, `-data`, `-web`, `-ui`, `-feedback`, `-visual`, `-ai`, `-guides`, `bahasa-indonesia-plain`) | `.claude/skills/` | below |
 
 Start every session with the `fondasi-session` skill and read `docs/progress.md`; update it before
 you finish. Decisions live in `docs/decisions.md` (IDs `F-001`…, separate from each app's own `D-…`).

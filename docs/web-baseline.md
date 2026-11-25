@@ -105,8 +105,32 @@ Related: [conventions.md](conventions.md) (language, URLs, exports), [ui.md](ui.
   **404/500** pages with a way back, guides per role (`/panduan`).
 - Sharing: `<title>`, meta description, Open Graph and Twitter tags with a share image (1200×630) from white-label
   settings, favicon and app icons (`manifest.webmanifest`), canonical URLs, `lang="id"`.
-- Printing: cards, receipts, attendance sheets and certificates print cleanly on A4 and F4 (`@page` sizes), black
-  and white readable; QR codes carry a random token, never NIK/NISN.
+- Printing: see section 11.
 - Unreliable connections: long forms keep a draft in the browser (no sensitive fields such as passwords or NIK in
   plain storage unless the user is told), uploads can resume or retry, a clear message when offline
   ("Koneksi terputus. Data Anda masih tersimpan di perangkat ini.").
+
+## 11. Printing and QR codes (F-020)
+
+- **Paper**: Indonesian offices print on **A4** (210 × 297 mm) and **F4/Folio** (215 × 330 mm). Every printable document
+  (cards, receipts, attendance sheets, letters, certificates, reports) offers both, A4 by default (a setting per app or
+  per document); PDFs are generated at the exact size, not scaled.
+- Margins ≥ 15 mm (20 mm on the binding side for letters), fonts embedded, readable in black and white, no content
+  cut at page breaks (tables repeat their header row), page numbers `Halaman 1 dari 3`, identity (name, logo) from
+  white-label settings; HTML print views use `@page { size: A4 }` / `size: 215mm 330mm` and hide navigation.
+- **QR codes**: each one is **unique** — it carries a random, unguessable token (≥ 128 bits) that the app resolves on
+  the server, never NIK, NISN, names or sequential IDs; tokens can be revoked or replaced.
+- **Logo in the centre** when the app or client has a logo: error correction level **H** (30%), logo ≤ 20% of the QR
+  width on a white padded background, the quiet zone (4 modules) kept, dark modules on white; without a logo, level M
+  is enough. Printed size ≥ 2 × 2 cm. Every new design is test-scanned with at least two phones (Android and iOS
+  camera apps) before release.
+
+## 12. Visitor statistics without personal data (F-020)
+
+- Public apps count page views and unique visitors per day from a one-way hash of IP + browser with a **salt that
+  changes every day**; no IP address, browser string, cookie ID or other personal data is stored (proven in SPMB D-106).
+- Bots, staff pages and signed-in staff are not counted; the same page in different languages counts as one page.
+- Admins see a summary (today, this month, total), a daily chart and the most opened pages; the public footer may show
+  "Pengunjung hari ini / bulan ini / total" (a setting, default on).
+- No third-party analytics scripts by default (privacy, CSP, speed); if a client needs one, record it as a decision
+  and mention it in the privacy page.

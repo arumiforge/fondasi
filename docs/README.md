@@ -4,6 +4,10 @@
 | --- | --- |
 | [progress.md](progress.md) | **Read first.** Current state, active work, next steps, blockers |
 | [adopting.md](adopting.md) | **Start here in another repository**: starter prompt, audit areas, report format, base setup |
+| [agent-workflow.md](agent-workflow.md) | How Claude/Codex sessions work in every repo: memory files, start/end, tasks, decisions, context, parallel sessions |
+| [assets.md](assets.md) | Minify served copies only, keep originals, version every asset against stale caches |
+| [ai-assistant.md](ai-assistant.md) | AI help assistant: order of answers, OpenAI-compatible providers, round robin, Gemini, limits, privacy |
+| [guides.md](guides.md) | In-app guide pages in the GitHub Docs "Get started" pattern |
 | [decisions.md](decisions.md) | Decision log (`F-…`) |
 | [conventions.md](conventions.md) | Language, Indonesian URLs, commits and PRs without AI attribution, agent files |
 | [web-baseline.md](web-baseline.md) | Baseline for every web app: security, uploads, personal data, audit log, Indonesian identity fields, performance, monitoring, staging, tests, public pages |
