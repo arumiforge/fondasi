@@ -5,10 +5,11 @@ No secrets, emails or personal data.
 
 ## Current phase
 
-**Foundation round 1** (F-001…F-008): server rules and scripts moved from SPMB (D-112) and made app-neutral,
+**Foundation round 1** (F-001…F-011): server rules and scripts moved from SPMB (D-112) and made app-neutral,
 app contract, several-servers rules, settings/storage/Turnstile standards, data framework (`fondasi-sync`,
 `data-check`), first sets (`wilayah`, `sekolah` SD/MI, `tahun-ajaran`), shared skills, cloud environment, data
-request briefs.
+request briefs, conventions (Indonesian URLs, no AI attribution), UI rules against generic AI design, Codex
+visual-asset workflow and templates.
 
 ## Active work
 
@@ -28,7 +29,9 @@ request briefs.
    R-06 madrasah calendar Jateng, R-10 athletics rules from World Athletics.
 4. Data, browser sessions (Claude in Chrome): R-02 EMIS madrasah, R-05 Kaldik Jateng, R-07 Dapodik code
    tables, R-08 curriculum subjects, R-09 PDDikti; R-11 needs the user's list of championships.
-5. SPMB later: import `wilayah`/`sekolah` through `fondasi-sync` instead of its own copies; Turnstile and S3
+5. Every app repo: copy `templates/repo/` (AGENTS.md, hook, commit policy) and, for visuals, `templates/ai/`;
+   SPMB already has its own `ai/` (the model for the templates).
+6. SPMB later: import `wilayah`/`sekolah` through `fondasi-sync` instead of its own copies; Turnstile and S3
    storage following `docs/settings.md` / `docs/storage.md` (not started).
 
 ## Blockers / waiting on

@@ -4,6 +4,9 @@
 | --- | --- |
 | [progress.md](progress.md) | **Read first.** Current state, active work, next steps, blockers |
 | [decisions.md](decisions.md) | Decision log (`F-…`) |
+| [conventions.md](conventions.md) | Language, Indonesian URLs, commits and PRs without AI attribution, agent files |
+| [ui.md](ui.md) | UI/UX rules against generic AI-made design |
+| [visual-assets.md](visual-assets.md) | Codex makes visual assets from briefs in each app's `ai/` |
 | [server-playbook.md](server-playbook.md) | One flow for every VPS: check → setup → tunnel → apps; fresh vs busy servers |
 | [servers.md](servers.md) | Several VPS: inventory (no secrets), labels, admin hostnames, moving an app |
 | [app-contract.md](app-contract.md) | Rules every app on a VPS follows (any stack) |

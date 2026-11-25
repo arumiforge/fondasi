@@ -34,3 +34,15 @@ Decision: Fondasi provides: regions (with postal codes), schools of every level 
 ## F-008 — Several VPS: labels, one tunnel each, an inventory without secrets (2026-11-25)
 Status: accepted (user, 2026-11-25: "kemungkinan punya VPS yang berbeda")
 Decision: Each VPS has a short label (`SERVER_NAME` in `setup.sh`, recorded in `/opt/apps/.server-setup` and shown by `check.sh`), its own Cloudflare Tunnel, admin hostnames `konsol-<label>.` / `ssh-<label>.` on the admin domain (existing servers keep theirs), its own deploy keys and off-site backup prefix. `docs/servers.md` lists servers and their apps without IPs, ports or secrets, and describes moving an app between servers (backup, set up, restore, move the tunnel route).
+
+## F-009 — Conventions for every repository (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: Docs, code, commits and briefs in English; UI text and URL slugs in plain Indonesian (also behind translation prefixes); no personal data in URLs. Arumi Studios is the only author and contributor of every commit: no Claude, Codex or other AI attribution anywhere (commits, PRs, comments, files), enforced by the commit-msg hook and the commit-policy workflow in `templates/repo/`, which now also reject Codex/ChatGPT/Copilot attribution and any `Co-authored-by`. Agents open PRs and never merge unless the user asks. Details: `docs/conventions.md`.
+
+## F-010 — UI and UX rules against generic AI-made design (2026-11-25)
+Status: accepted (user, 2026-11-25: "aturan UI/UX umum menghindari desain generik AI slop")
+Decision: SPMB's visual rules (D-070) become the base for every app, extended with a "never" list (gradient blobs, glassmorphism, default hero + three cards landing, vague marketing copy, emoji icons, lorem ipsum) and "always" rules (task first at 360 px, all screen states, labelled forms, AA accessibility, Indonesian formats, white label). `docs/ui.md`, skill `fondasi-ui`.
+
+## F-011 — Codex makes visual assets in every app from briefs in the repository (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: The SPMB workflow (D-073, D-075) applies to every app: Claude writes briefs in the app's `ai/` folder, the user starts Codex with the starter prompt, Codex delivers one batch per PR into `ai/generated/` as Arumi Studios without attribution and never merges, Claude reviews and installs. Each app has its own `ai/style-guide.md` for identity and respect rules; templates in `templates/repo/AGENTS.md` and `templates/ai/`. `docs/visual-assets.md`, skill `fondasi-visual`.

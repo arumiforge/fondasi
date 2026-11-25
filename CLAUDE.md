@@ -8,7 +8,10 @@ Shared foundation for every **Arumi Studios** application (education, athletics,
 | Server: preparing a VPS, checking it, the contract every app on it follows | `server/` | `docs/server-playbook.md`, `docs/app-contract.md` |
 | Standards: settings (env vs panel), file storage (local, S3/R2), Turnstile, secrets | — | `docs/settings.md`, `docs/storage.md` |
 | Public reference data: regions, schools, calendars, Dapodik references, athletics… | `data/` | `docs/data.md`, `data/README.md` |
-| Agent skills shared by every repo (Indonesian writing, server, data) | `.claude/skills/` | below |
+| Conventions for every repo: language, Indonesian URLs, commits without AI attribution | `templates/repo/` | `docs/conventions.md` |
+| UI/UX rules against generic AI-made design | — | `docs/ui.md` |
+| Visual assets made by Codex from briefs in each app's `ai/` | `templates/ai/` | `docs/visual-assets.md` |
+| Agent skills shared by every repo (`fondasi-session`, `-server`, `-data`, `-ui`, `-visual`, `bahasa-indonesia-plain`) | `.claude/skills/` | below |
 
 Start every session with the `fondasi-session` skill and read `docs/progress.md`; update it before
 you finish. Decisions live in `docs/decisions.md` (IDs `F-001`…, separate from each app's own `D-…`).
@@ -42,6 +45,8 @@ Apps never import code from here at runtime. They follow its rules and copy what
   commits, PR bodies or comments. Enforced by `.githooks/commit-msg` (`git config core.hooksPath .githooks`)
   and `.github/workflows/commit-policy.yml`.
 - Conventional Commits: `feat(data): …`, `feat(server): …`, `docs: …`, `fix: …`, `chore: …`.
+- PR tools that append an AI footer automatically: remove it from the PR body right after creating the PR.
+- Codex (and any other agent) follows `AGENTS.md`.
 
 ## Data rules (strict)
 
