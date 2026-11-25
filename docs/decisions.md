@@ -1,0 +1,36 @@
+# Decisions (Fondasi)
+
+IDs `F-001`… are Fondasi's own; apps keep their own logs (SPMB: `D-…`). Newest last.
+
+## F-001 — One shared repository for rules, data and skills (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Context: Arumi Studios builds several apps with different stacks (SPMB in CodeIgniter, others) that share one VPS, Cloudflare, school and region data and the same Indonesian writing rules. Repositories share nothing, so every repo and every Claude session re-derived them.
+Decision: `arumiforge/fondasi` (created as `server`, renamed by the user) holds the server rules and scripts, the app contract, standards for settings and storage, public reference data and shared agent skills. App repos point to it from their `CLAUDE.md`; it is not a runtime dependency.
+
+## F-002 — One server flow (carried over from SPMB D-112) (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: `server/check.sh` (read-only, states S0…S9, next command) is the first command on any server; `server/setup.sh` prepares fresh servers and servers already in use without breaking them (keeps Docker packages, merges `daemon.json`, no Docker restart while containers run, `ALLOW_PORTS`/`FIREWALL`). Every app follows `docs/app-contract.md`. On the VPS the checkout lives at `/opt/apps/_fondasi`.
+
+## F-003 — Apps copy pinned data versions (2026-11-25)
+Status: accepted (user, 2026-11-25: "salin versi tertentu")
+Decision: Data sets are versioned files in `data/<set>/` with `manifest.json` and `SHA256SUMS`. Apps copy one version with `tools/fondasi-sync` into `data/fondasi/<set>/` and record it in `fondasi.lock`; they import it into their own database their own way. No submodule, no runtime dependency. A central data API on the VPS may come later on top of the same files.
+
+## F-004 — One Cloudflare Tunnel per VPS; routes in the dashboard (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: Each VPS runs one remotely managed tunnel (`cloudflared` on the host). A new app = a new *Public Hostname* in the Cloudflare dashboard → `http://127.0.0.1:<port>`, recorded as the third column of `/opt/apps/PORTS`. A separate tunnel only when an app belongs to another client or Cloudflare account, or must be revocable on its own (its own systemd unit, token kept on the server).
+
+## F-005 — Settings: environment wins over the panel (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: Integrations (S3/R2 storage, Turnstile, mail, AI providers…) read standard environment variables (`docs/settings.md`). When a variable is set, the app's panel shows the value as "Diatur oleh server" and cannot change it; when it is empty, the panel's value is used, secrets stored encrypted. Developers can lock a setting; schools can still manage their own.
+
+## F-006 — Files: VPS disk by default, S3-compatible optional; public-sector personal data stays in Indonesia (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: Uploaded files live on the VPS disk outside the web root by default (in the app's backed-up volume). Any S3-compatible provider may be used per app (Cloudflare R2, AWS S3, Wasabi, Backblaze B2, IDCloudHost, Biznet Gio…) through the standard `STORAGE_*` variables. For clients that are public institutions (sekolah negeri, dinas, government bodies), personal data stays on storage located in Indonesia (PP 71/2019 for public electronic system operators); check each client with a lawyer. Server backups (restic to R2, SPMB D-079) are a separate bucket and key from app files.
+
+## F-007 — Shared data scope (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: Fondasi provides: regions (with postal codes), schools of every level (SD, MI, SMP, MTs, SMA, MA, SMK, SLB) from Dapodik and EMIS, education calendars (national holidays and cuti bersama per SKB 3 Menteri; Kaldik Jawa Tengah from Disdikbud; madrasah calendars from Kanwil Kemenag Jawa Tengah; academic-year rules), Dapodik reference lists (religion, occupation, income, education, transport, residence, special needs, levels and grades), Kurikulum Merdeka subjects, higher-education institutions (PDDikti), and athletics references (events, school age groups, result format and rounding, records). The catalogue in `data/README.md` tracks each set's status.
+
+## F-008 — Several VPS: labels, one tunnel each, an inventory without secrets (2026-11-25)
+Status: accepted (user, 2026-11-25: "kemungkinan punya VPS yang berbeda")
+Decision: Each VPS has a short label (`SERVER_NAME` in `setup.sh`, recorded in `/opt/apps/.server-setup` and shown by `check.sh`), its own Cloudflare Tunnel, admin hostnames `konsol-<label>.` / `ssh-<label>.` on the admin domain (existing servers keep theirs), its own deploy keys and off-site backup prefix. `docs/servers.md` lists servers and their apps without IPs, ports or secrets, and describes moving an app between servers (backup, set up, restore, move the tunnel route).
