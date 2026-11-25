@@ -167,7 +167,33 @@ def match(by_parent, parent, name, kota=None):
             return hits[0][0]
         if hits:
             return None
+    # one letter added, dropped or changed (Pucakwangi/Puncakwangi, Babad/Babat), names of 6+ letters only
+    if len(key) >= 6:
+        hits = [c for c in cands if one_edit(loose(norm(c[1])), loose(key))]
+        if len(hits) == 1:
+            LOOSE_MATCHES.append(f"{name} = {hits[0][1]} ({hits[0][0]})")
+            return hits[0][0]
+        if hits:
+            return None
+    # "Kec. Kota Blora" is the district "Blora" in Kemendagri's list
+    if key.startswith("kota") and len(key) > 4:
+        hits = [c for c in cands if norm(c[1]) == key[4:]]
+        if len(hits) == 1:
+            LOOSE_MATCHES.append(f"{name} = {hits[0][1]} ({hits[0][0]})")
+            return hits[0][0]
     return None
+
+
+def one_edit(a, b):
+    """True when a and b differ by exactly one inserted, deleted or replaced letter."""
+    if a == b or abs(len(a) - len(b)) > 1:
+        return False
+    if len(a) > len(b):
+        a, b = b, a
+    i = 0
+    while i < len(a) and a[i] == b[i]:
+        i += 1
+    return a[i + (len(a) == len(b)):] == b[i + 1:]
 
 
 LOOSE_MATCHES = []
