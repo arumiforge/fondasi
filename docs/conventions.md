@@ -14,6 +14,26 @@ Apply to every Arumi Studios repository, app or not. An app may add rules, never
 
 Users are non-technical (school staff, students, parents, coaches, athletes): no jargon outside super-admin screens.
 
+**Rule of thumb: whatever a user can see, read, download or receive is Indonesian**, even when the code behind it
+is English. That covers page text, buttons, validation and error messages, empty states, emails (subject too),
+WhatsApp/notification templates, PDFs, file names of downloads, export headers and sheet names, import templates,
+audit-log descriptions shown to admins, status and enum labels (`Diterima`, not `accepted`), and HTTP error pages.
+
+## Exports and imports (Excel, CSV, PDF)
+
+| Rule | Example |
+| --- | --- |
+| Column headers in friendly Indonesian, sentence case, never the variable name | `Nama lengkap`, `Tanggal lahir`, `Sekolah asal` — not `full_name`, `birth_date` |
+| Values as users read them: labels, not codes or booleans | `Laki-laki`, `Ya`/`Tidak`, `Diterima` — not `L`, `1`, `accepted`; empty cells stay empty (never `null`) |
+| File and sheet names in Indonesian with the date | `daftar-pendaftar-2026-11-25.xlsx`, sheet `Pendaftar` |
+| Real types in XLSX: dates as date cells shown `25/11/2026`, money and counts as numbers (`Rp#,##0`) | Sorting and sums work in Excel |
+| Identifiers as **text** so leading zeros survive | NIK, NISN, NPSN, phone numbers, postal codes |
+| Header row frozen, filter on, sensible column widths; an info sheet `Keterangan` with export time (WIB), the filters used and who exported | Readable without explanation |
+| XLSX first. CSV only on request: UTF-8 with BOM, `;` separator (Indonesian Excel), same headers | Opens correctly in Excel with Indonesian settings |
+| Import templates use the same Indonesian headers; the importer accepts them (and the old ones) and reports errors per row in plain Indonesian | `Baris 12: tanggal lahir belum diisi` |
+| PDFs: A4, Indonesian, school/app identity from settings, page numbers `Halaman 1 dari 3` | Printable as is |
+| Exports with personal data need a permission, are written to the audit log, and are never cached in a public place | UU PDP |
+
 ## URLs
 
 - Indonesian, lowercase, words joined by hyphens: `/daftar`, `/cek-status`, `/admin/sekolah-asal`, `/jadwal-tes`.

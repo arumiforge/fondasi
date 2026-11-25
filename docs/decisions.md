@@ -46,3 +46,7 @@ Decision: SPMB's visual rules (D-070) become the base for every app, extended wi
 ## F-011 — Codex makes visual assets in every app from briefs in the repository (2026-11-25)
 Status: accepted (user, 2026-11-25)
 Decision: The SPMB workflow (D-073, D-075) applies to every app: Claude writes briefs in the app's `ai/` folder, the user starts Codex with the starter prompt, Codex delivers one batch per PR into `ai/generated/` as Arumi Studios without attribution and never merges, Claude reviews and installs. Each app has its own `ai/style-guide.md` for identity and respect rules; templates in `templates/repo/AGENTS.md` and `templates/ai/`. `docs/visual-assets.md`, skill `fondasi-visual`.
+
+## F-012 — Everything users see is Indonesian, including exports (2026-11-25)
+Status: accepted (user, 2026-11-25: "ekspor Excel, kolom tetap pakai Indonesia ramah meski variabel dan doc bahasa Inggris")
+Decision: Code, variables and docs stay English, but every surface a user sees, downloads or receives is plain Indonesian: page text, messages, emails, notifications, PDFs, download file names, Excel/CSV headers and sheet names, import templates, status labels. Exports follow the table in `docs/conventions.md` (labels not codes, identifiers as text, real date/number cells, `Keterangan` sheet, XLSX first, CSV with BOM and `;`).
