@@ -8,6 +8,7 @@ environment cannot reach: [../docs/data-requests.md](../docs/data-requests.md).
 | --- | --- | --- | --- | --- |
 | `wilayah` | 38 provinces, 514 regencies/cities, 7,285 districts, 83,762 villages: `[code, name]` | 2026-02-13 | ready | Kepmendagri 300.2.2-2138/2025 via cahyadsn/wilayah (MIT) |
 | `sekolah` | Schools per province: NPSN, name, level, public/private, village…province | 2026-11-18 | **partial**: SD + MI (177,422) | Dapodik, EMIS (compiled) |
+| `skema-siswa` | Student data schema for SMP/MTs: 61 fields in 5 groups, types, validation, conditions, edit units, 17 option lists | 2026-11-25 | ready | Arumi Studios ([school-data.md](../docs/school-data.md)) |
 | `tahun-ajaran` | Year format, semesters, grades per level, curriculum phases | 2026-11-25 | ready | rules |
 | `sekolah` (all levels) | + SMP, MTs, SMA, MA, SMK, SLB; region codes linking to `wilayah`; address | — | planned (R-01, R-02) | Dapodik (reachable here), EMIS (browser) |
 | `kodepos` | Postal code per village code | — | planned (R-03) | cahyadsn wilayah postal list (check licence) |

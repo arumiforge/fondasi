@@ -15,7 +15,8 @@ Shared foundation for every **Arumi Studios** application (education, athletics,
 | How agents work in every repo: progress, decisions, tasks, context, handoff, parallel sessions | `templates/repo/.claude/skills/app-session/` | `docs/agent-workflow.md` |
 | Front-end assets: minified served copies, originals kept, versioned URLs | — | `docs/assets.md` |
 | AI help assistant: OpenAI-compatible providers, round robin, Gemini, limits | — | `docs/ai-assistant.md` |
-| In-app guide pages (GitHub Docs style) | — | `docs/guides.md` |
+| In-app guide pages (GitHub Docs style, richly decorated by Codex) | — | `docs/guides.md` |
+| Detailed student data in internal school apps; student data schema | `data/skema-siswa/` | `docs/school-data.md` |
 | Adopting Fondasi in another repository: audit, interview, base setup | `templates/repo/` | `docs/adopting.md` |
 | Agent skills shared by every repo (`fondasi-adopt`, `fondasi-session`, `-server`, `-data`, `-web`, `-ui`, `-feedback`, `-visual`, `-ai`, `-guides`, `bahasa-indonesia-plain`) | `.claude/skills/` | below |
 

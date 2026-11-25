@@ -5,7 +5,7 @@ description: Baseline rules for every Arumi Studios web app, any stack — secur
 
 # Web baseline
 
-Read `docs/web-baseline.md` in Fondasi (sections 1–12, incl. printing on A4/F4, QR codes, visitor statistics) and `docs/assets.md` (minified served copies, versioned assets) and apply the sections the change touches; with `docs/conventions.md`
+Read `docs/web-baseline.md` in Fondasi (sections 1–12, incl. rich pages that work before decoration loads with skeletons, printing on A4/F4, unique QR designs, visitor statistics; internal school apps with detailed student data: `docs/school-data.md`) and `docs/assets.md` (minified served copies, versioned assets) and apply the sections the change touches; with `docs/conventions.md`
 (Indonesian for everything users see, exports) and `docs/ui.md` (design). New app: walk all ten sections and record in
 the app's decisions which ones are done, planned or not applicable (with the reason). PR review: name the sections
 checked in the PR body.

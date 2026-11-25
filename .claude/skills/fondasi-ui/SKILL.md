@@ -8,4 +8,5 @@ description: Build or review any page or component in any Arumi Studios app so i
 Read `docs/ui.md` in Fondasi and apply it, then the app's own UI skill (SPMB: `spmb-ui`). Text: `bahasa-indonesia-plain`.
 Messages, confirmations and errors: `docs/feedback.md` (`fondasi-feedback`).
 URLs: Indonesian slugs (`docs/conventions.md`). Visual assets: Codex briefs (`fondasi-visual`), never stock-looking
-filler. Before the PR: screenshots at 360 and 1280 px, keyboard walk of the main task, the "Never" table checked.
+filler. Decoration has no limit (F-022): ask Codex for it freely, but the page must work before it loads and show skeletons,
+not blank areas. Before the PR: screenshots at 360 and 1280 px, keyboard walk of the main task, the "Never" table checked.

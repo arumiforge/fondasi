@@ -5,6 +5,9 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Decoration without limits made by Codex, pages usable before decoration loads, skeleton loading, unique QR designs
+  (F-022); detailed student data in internal school apps (`docs/school-data.md`) and data set `skema-siswa` with its
+  converter (F-023).
 - Agent workflow for every repository (F-017) with the `app-session` skill template; assets: minify served copies,
   keep originals, version every asset (F-018); AI assistant rules incl. round robin and Gemini (F-019, skill
   `fondasi-ai`); printing on A4/F4, unique QR codes with a centred logo, visitor statistics (F-020, web baseline

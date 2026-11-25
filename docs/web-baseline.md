@@ -35,7 +35,8 @@ Related: [conventions.md](conventions.md) (language, URLs, exports), [ui.md](ui.
 ## 3. Personal data (UU PDP)
 
 - **Purpose and consent**: say why each item is collected; an explicit consent tick where the law needs it; collect
-  only what the purpose needs.
+  what the agreed purpose needs. Public apps keep it short; **internal school apps** may hold detailed records
+  (health, family, aid, special needs) under a school–parent agreement — rules in [school-data.md](school-data.md).
 - **Masking**: NIK, KK and phone numbers are masked in lists and exports that do not need them
   (`3319**********0001`, `0812-****-7890`); full values only on detail pages for permitted roles.
 - **Retention**: each app documents how long personal data is kept and deletes or anonymises it afterwards (a
@@ -66,12 +67,21 @@ Related: [conventions.md](conventions.md) (language, URLs, exports), [ui.md](ui.
 | Time | Stored with an explicit zone (UTC or a timezone-aware column); shown in the app's zone with its label (`07.30 WIB`, `WITA`, `WIT`) from settings |
 | Deadlines | Opening and closing times (registration, uploads, results) are enforced on the server, not only hidden in the UI |
 
-## 6. Performance on low-end phones
+## 6. Performance: rich pages that work at once (F-022)
 
-- Target on a mid/low Android over 4G: Largest Contentful Paint < 2.5 s, interaction delay < 200 ms, no layout shift
-  (CLS < 0.1) on the main public pages.
-- Images WebP/AVIF with width/height set and `loading="lazy"` below the fold; CSS/JS/SVG minified; long cache for
-  versioned assets; HTML compressed by the web server/Cloudflare.
+- Pages may be **heavy with decoration** (Codex illustrations, patterns, animation): most users have fast connections.
+  What must never wait for decoration is the page itself: text, navigation, forms and buttons work as soon as the HTML
+  and the core CSS/JS arrive.
+- **Load order**: core content and functionality first; decorative images, animations, three.js/canvas scenes, video
+  and background patterns after (`loading="lazy"`, `decoding="async"`, deferred scripts, `fetchpriority="low"`,
+  started after first paint or when visible). A decoration that fails to load leaves the page intact.
+- **Never blank**: every area that waits for data or a heavy asset shows a **skeleton** of its final shape (lists,
+  cards, charts, tables, hero art) instead of an empty space or a lone spinner; skeletons reserve the exact size, so
+  nothing jumps (CLS < 0.1); a shimmer is allowed, off under `prefers-reduced-motion`.
+- Targets on the main public pages over 4G: content readable (LCP of the main text/heading) < 2.5 s and interactive
+  < 200 ms delay, regardless of how much decoration follows.
+- Images WebP/AVIF with width/height set; CSS/JS/SVG minified and versioned ([assets.md](assets.md)); HTML compressed
+  by the web server/Cloudflare.
 - Lists paginated or virtualised; no N+1 queries (eager loading, indexes on filter columns); heavy work (imports,
   PDF batches, emails) in a queue or command, with progress shown.
 - Check with Lighthouse (mobile) and on a real low-end phone before launch.
@@ -118,12 +128,16 @@ Related: [conventions.md](conventions.md) (language, URLs, exports), [ui.md](ui.
 - Margins ≥ 15 mm (20 mm on the binding side for letters), fonts embedded, readable in black and white, no content
   cut at page breaks (tables repeat their header row), page numbers `Halaman 1 dari 3`, identity (name, logo) from
   white-label settings; HTML print views use `@page { size: A4 }` / `size: 215mm 330mm` and hide navigation.
-- **QR codes**: each one is **unique** — it carries a random, unguessable token (≥ 128 bits) that the app resolves on
-  the server, never NIK, NISN, names or sequential IDs; tokens can be revoked or replaced.
-- **Logo in the centre** when the app or client has a logo: error correction level **H** (30%), logo ≤ 20% of the QR
-  width on a white padded background, the quiet zone (4 modules) kept, dark modules on white; without a logo, level M
-  is enough. Printed size ≥ 2 × 2 cm. Every new design is test-scanned with at least two phones (Android and iOS
-  camera apps) before release.
+- **QR design is unique per app** (F-022): never the default black-square QR. Each app has its own QR style, designed
+  through a Codex brief: module shape (rounded, dots), finder-eye shape, brand colours from settings (dark on light, AA
+  contrast), the app's or client's **logo in the centre** when there is one, and optionally a frame with a short
+  Indonesian label ("Pindai untuk cek kartu"). Rendered by a styling library or the app's own renderer from that
+  design, the same on screen and in PDFs.
+- Scannability comes first: error correction level **H** with a logo (logo ≤ 20% of the width on a padded background),
+  quiet zone of 4 modules, no gradients or low contrast inside the modules, printed size ≥ 2 × 2 cm; every design is
+  test-scanned with at least two phones (Android and iOS camera apps), on screen and printed in black and white.
+- Content stays safe: a random, unguessable token (≥ 128 bits) resolved on the server — never NIK, NISN, names or
+  sequential IDs; tokens can be revoked or replaced.
 
 ## 12. Visitor statistics without personal data (F-020)
 

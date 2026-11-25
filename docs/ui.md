@@ -17,7 +17,7 @@ AI-generated template. These rules apply to every stack; apps add their own comp
 | Vague marketing copy ("Solusi digital terdepan", "Tingkatkan efisiensi Anda", "Seamless") | Concrete words about the task: "Daftar dalam 10 menit", "Cek status pendaftaran" |
 | Lorem ipsum, fake numbers, placeholder avatars in production | Real content, or an honest empty state |
 | Everything centred, everything in cards, every section the same rhythm | Left-aligned reading, cards only for groups of related data, varied section layouts |
-| Decorative animation that delays the content | Motion only for feedback and orientation; off under `prefers-reduced-motion` |
+| Decoration that delays or blocks the content | Decoration loads after the content, never in its way; off under `prefers-reduced-motion` ([web-baseline.md](web-baseline.md) §6) |
 
 ## Always
 
@@ -39,8 +39,11 @@ AI-generated template. These rules apply to every stack; apps add their own comp
 - **White label**: names, logos, colours, texts from settings, never hard-coded; brand colour must keep AA contrast
   (pick text colour from its luminance).
 - **Navigation**: friendly breadcrumbs on every admin page; the current place is always clear.
-- **Rich is allowed**: illustrations, patterns and animation from Codex (in the app's identity) are welcome when
-  they work on phones, do not shift the layout and respect reduced motion.
+- **Decoration without limits** (F-022): illustrations, paintings, patterns, dividers, special buttons, loaders,
+  animation and 3D are welcome in any amount, on public pages, dashboards and guides alike — all made by Codex in the
+  app's identity ([visual-assets.md](visual-assets.md)). The "Never" table is about generic looks, not about how much
+  decoration a page has. Conditions: the page works before decoration loads, skeletons instead of blank areas, no
+  layout shift, works on phones, motion off under `prefers-reduced-motion`.
 
 ## Review checklist (before a PR with UI)
 

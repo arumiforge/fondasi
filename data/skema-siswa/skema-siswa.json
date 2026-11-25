@@ -1,0 +1,855 @@
+{
+ "name": "Data siswa SMP (schema and option lists)",
+ "groups": [
+  {
+   "key": "identitas",
+   "label": "Identitas Diri",
+   "fields": [
+    {
+     "no": 1,
+     "key": "no",
+     "label": "No Urut",
+     "type": "integer",
+     "format": "digit"
+    },
+    {
+     "no": 2,
+     "key": "nama",
+     "label": "Nama Siswa",
+     "type": "text",
+     "required": true,
+     "max_len": "150",
+     "format": "kapital"
+    },
+    {
+     "no": 3,
+     "key": "nisn",
+     "label": "NISN",
+     "type": "text",
+     "max_len": "20",
+     "format": "nisn"
+    },
+    {
+     "no": 4,
+     "key": "nipd_dapodik",
+     "label": "NIPD Dapodik",
+     "type": "text",
+     "max_len": "30",
+     "format": "digit"
+    },
+    {
+     "no": 5,
+     "key": "nipd_rapor",
+     "label": "NIPD Rapor",
+     "type": "text",
+     "max_len": "30",
+     "format": "digit"
+    },
+    {
+     "no": 6,
+     "key": "rombel_id",
+     "label": "Kelas",
+     "type": "class"
+    },
+    {
+     "no": 7,
+     "key": "status_siswa",
+     "label": "Status Siswa",
+     "type": "select",
+     "options": "status_siswa"
+    },
+    {
+     "no": 8,
+     "key": "jk",
+     "label": "Jenis Kelamin",
+     "type": "select",
+     "required": true,
+     "options": "jk"
+    },
+    {
+     "no": 9,
+     "key": "tempat_lahir",
+     "label": "Tempat Lahir",
+     "type": "text",
+     "max_len": "100",
+     "format": "proper"
+    },
+    {
+     "no": 10,
+     "key": "tanggal_lahir",
+     "label": "Tanggal Lahir",
+     "type": "date",
+     "required": true,
+     "format": "tanggal",
+     "range": "[-20 tahun, -9 tahun]"
+    },
+    {
+     "no": 11,
+     "key": "nik",
+     "label": "NIK Siswa",
+     "type": "text",
+     "max_len": "30",
+     "format": "nik"
+    },
+    {
+     "no": 12,
+     "key": "agama",
+     "label": "Agama",
+     "type": "select",
+     "required": true,
+     "options": "agama",
+     "other_allowed": true
+    },
+    {
+     "no": 13,
+     "key": "anak_ke",
+     "label": "Anak ke-",
+     "type": "integer",
+     "required": true,
+     "range": "[1, 10]"
+    },
+    {
+     "no": 14,
+     "key": "jml_saudara",
+     "label": "Jumlah Saudara Kandung",
+     "type": "integer",
+     "range": "[0, 10]"
+    },
+    {
+     "no": 15,
+     "key": "tinggi_badan",
+     "label": "Tinggi Badan (cm)",
+     "type": "integer",
+     "range": "[100, 220]"
+    },
+    {
+     "no": 16,
+     "key": "berat_badan",
+     "label": "Berat Badan (kg)",
+     "type": "integer",
+     "range": "[20, 150]"
+    },
+    {
+     "no": 17,
+     "key": "sekolah_asal",
+     "label": "Sekolah Asal",
+     "type": "school",
+     "required": true,
+     "max_len": "150",
+     "format": "proper",
+     "unit": "sekolah_asal"
+    },
+    {
+     "no": 18,
+     "key": "sekolah_asal_npsn",
+     "label": "NPSN Sekolah Asal",
+     "type": "text",
+     "auto": true,
+     "max_len": "8",
+     "format": "digit",
+     "unit": "sekolah_asal"
+    }
+   ]
+  },
+  {
+   "key": "keluarga",
+   "label": "Orang Tua & Wali",
+   "fields": [
+    {
+     "no": 19,
+     "key": "nama_ayah",
+     "label": "Nama Ayah",
+     "type": "text",
+     "required": true,
+     "max_len": "150",
+     "format": "kapital",
+     "hint": "Nama ayah kandung, sesuai akta kelahiran."
+    },
+    {
+     "no": 20,
+     "key": "status_ayah",
+     "label": "Status Hidup Ayah",
+     "type": "select",
+     "required": true,
+     "options": "status_hidup"
+    },
+    {
+     "no": 21,
+     "key": "tahun_lahir_ayah",
+     "label": "Tahun Lahir Ayah",
+     "type": "integer",
+     "format": "tahun",
+     "range": "[1930, tahun_ini-10]"
+    },
+    {
+     "no": 22,
+     "key": "pendidikan_ayah",
+     "label": "Jenjang Pendidikan Ayah",
+     "type": "select",
+     "required": true,
+     "options": "pendidikan"
+    },
+    {
+     "no": 23,
+     "key": "pekerjaan_ayah",
+     "label": "Pekerjaan Ayah",
+     "type": "select",
+     "required": true,
+     "options": "pekerjaan",
+     "other_allowed": true,
+     "hide_if": "status_ayah = \"Wafat\""
+    },
+    {
+     "no": 24,
+     "key": "penghasilan_ayah",
+     "label": "Penghasilan Ayah",
+     "type": "select",
+     "options": "penghasilan",
+     "hide_if": "status_ayah = \"Wafat\""
+    },
+    {
+     "no": 25,
+     "key": "nama_ibu",
+     "label": "Nama Ibu",
+     "type": "text",
+     "required": true,
+     "max_len": "150",
+     "format": "kapital"
+    },
+    {
+     "no": 26,
+     "key": "nik_ibu",
+     "label": "NIK Ibu",
+     "type": "text",
+     "required": true,
+     "max_len": "30",
+     "format": "nik"
+    },
+    {
+     "no": 27,
+     "key": "status_ibu",
+     "label": "Status Hidup Ibu",
+     "type": "select",
+     "required": true,
+     "options": "status_hidup"
+    },
+    {
+     "no": 28,
+     "key": "tahun_lahir_ibu",
+     "label": "Tahun Lahir Ibu",
+     "type": "integer",
+     "format": "tahun",
+     "range": "[1930, tahun_ini-10]"
+    },
+    {
+     "no": 29,
+     "key": "pendidikan_ibu",
+     "label": "Jenjang Pendidikan Ibu",
+     "type": "select",
+     "required": true,
+     "options": "pendidikan"
+    },
+    {
+     "no": 30,
+     "key": "pekerjaan_ibu",
+     "label": "Pekerjaan Ibu",
+     "type": "select",
+     "required": true,
+     "options": "pekerjaan",
+     "other_allowed": true,
+     "hide_if": "status_ibu = \"Wafat\""
+    },
+    {
+     "no": 31,
+     "key": "penghasilan_ibu",
+     "label": "Penghasilan Ibu",
+     "type": "select",
+     "options": "penghasilan",
+     "hide_if": "status_ibu = \"Wafat\""
+    },
+    {
+     "no": 32,
+     "key": "nama_wali",
+     "label": "Nama Wali Murid",
+     "type": "text",
+     "max_len": "150",
+     "format": "kapital"
+    },
+    {
+     "no": 33,
+     "key": "wa_ortu",
+     "label": "WhatsApp Orang Tua/Wali",
+     "type": "text",
+     "required": true,
+     "max_len": "30",
+     "format": "wa"
+    }
+   ]
+  },
+  {
+   "key": "alamat",
+   "label": "Alamat & Tempat Tinggal",
+   "fields": [
+    {
+     "no": 34,
+     "key": "alamat_jalan",
+     "label": "Alamat (Jalan/Gang/No. Rumah)",
+     "type": "text",
+     "required": true,
+     "max_len": "150",
+     "format": "proper"
+    },
+    {
+     "no": 35,
+     "key": "dusun",
+     "label": "Dusun",
+     "type": "text",
+     "max_len": "100",
+     "format": "proper"
+    },
+    {
+     "no": 36,
+     "key": "rt",
+     "label": "RT",
+     "type": "integer",
+     "required": true,
+     "range": "[1, 20]"
+    },
+    {
+     "no": 37,
+     "key": "rw",
+     "label": "RW",
+     "type": "integer",
+     "required": true,
+     "range": "[1, 20]"
+    },
+    {
+     "no": 38,
+     "key": "provinsi",
+     "label": "Provinsi",
+     "type": "region",
+     "required": true,
+     "format": "proper",
+     "unit": "wilayah"
+    },
+    {
+     "no": 39,
+     "key": "kabupaten",
+     "label": "Kabupaten/Kota",
+     "type": "region",
+     "required": true,
+     "format": "proper",
+     "unit": "wilayah"
+    },
+    {
+     "no": 40,
+     "key": "kecamatan",
+     "label": "Kecamatan",
+     "type": "region",
+     "required": true,
+     "format": "proper",
+     "unit": "wilayah"
+    },
+    {
+     "no": 41,
+     "key": "desa",
+     "label": "Desa",
+     "type": "region",
+     "required": true,
+     "format": "proper",
+     "unit": "wilayah"
+    },
+    {
+     "no": 42,
+     "key": "kode_pos",
+     "label": "Kode Pos",
+     "type": "region",
+     "required": true,
+     "format": "kode_pos",
+     "unit": "wilayah"
+    },
+    {
+     "no": 43,
+     "key": "kode_wilayah",
+     "label": "Kode Wilayah",
+     "type": "text",
+     "auto": true,
+     "max_len": "13",
+     "unit": "wilayah"
+    },
+    {
+     "no": 44,
+     "key": "transportasi",
+     "label": "Transportasi ke Sekolah",
+     "type": "select",
+     "required": true,
+     "options": "transportasi",
+     "other_allowed": true
+    },
+    {
+     "no": 45,
+     "key": "tempat_tinggal",
+     "label": "Tempat Tinggal",
+     "type": "select",
+     "required": true,
+     "options": "tempat_tinggal",
+     "other_allowed": true
+    }
+   ]
+  },
+  {
+   "key": "minat",
+   "label": "Minat, Prestasi & Kesehatan",
+   "fields": [
+    {
+     "no": 46,
+     "key": "ekskul",
+     "label": "Ekstrakurikuler",
+     "type": "list",
+     "required": true,
+     "format": "proper",
+     "options": "ekskul",
+     "min_items": "1",
+     "max_items": "15"
+    },
+    {
+     "no": 47,
+     "key": "prestasi",
+     "label": "Prestasi/Kejuaraan",
+     "type": "table",
+     "max_items": "10",
+     "columns": [
+      {
+       "key": "nama",
+       "label": "Nama Kejuaraan",
+       "type": "text",
+       "max_len": "150",
+       "format": "proper"
+      },
+      {
+       "key": "peringkat",
+       "label": "Peringkat",
+       "type": "text",
+       "max_len": "50"
+      },
+      {
+       "key": "tingkat",
+       "label": "Tingkat",
+       "type": "select",
+       "options": "tingkat_prestasi"
+      },
+      {
+       "key": "tahun",
+       "label": "Tahun",
+       "type": "integer",
+       "range": "[2015, tahun_ini]"
+      }
+     ]
+    },
+    {
+     "no": 48,
+     "key": "hobi",
+     "label": "Hobi",
+     "type": "text",
+     "max_len": "100",
+     "format": "proper"
+    },
+    {
+     "no": 49,
+     "key": "cita_cita",
+     "label": "Cita-cita",
+     "type": "text",
+     "max_len": "100",
+     "format": "proper"
+    },
+    {
+     "no": 50,
+     "key": "golongan_darah",
+     "label": "Golongan Darah",
+     "type": "select",
+     "options": "golongan_darah"
+    },
+    {
+     "no": 51,
+     "key": "riwayat_penyakit",
+     "label": "Riwayat Penyakit",
+     "type": "multiselect",
+     "options": "riwayat_penyakit",
+     "other_allowed": true,
+     "exclusive": "Tidak Ada / Sehat"
+    },
+    {
+     "no": 52,
+     "key": "riwayat_cedera",
+     "label": "Riwayat Cedera/Fisik",
+     "type": "multiselect",
+     "options": "riwayat_cedera",
+     "exclusive": "Tidak Ada"
+    },
+    {
+     "no": 53,
+     "key": "gangguan_indra",
+     "label": "Gangguan Indra",
+     "type": "multiselect",
+     "options": "gangguan_indra",
+     "exclusive": "Normal"
+    },
+    {
+     "no": 54,
+     "key": "abk",
+     "label": "Kategori ABK",
+     "type": "select",
+     "options": "abk"
+    }
+   ]
+  },
+  {
+   "key": "dokumen",
+   "label": "Bantuan & Dokumen",
+   "fields": [
+    {
+     "no": 55,
+     "key": "penerima_kip",
+     "label": "Penerima KIP",
+     "type": "select",
+     "options": "ya_tidak"
+    },
+    {
+     "no": 56,
+     "key": "nomor_kip",
+     "label": "Nomor KIP",
+     "type": "text",
+     "max_len": "50",
+     "hide_if": "penerima_kip != \"Ya\"",
+     "required_if": "penerima_kip = \"Ya\""
+    },
+    {
+     "no": 57,
+     "key": "nama_kip",
+     "label": "Nama di KIP",
+     "type": "text",
+     "max_len": "150",
+     "format": "kapital",
+     "hide_if": "penerima_kip != \"Ya\"",
+     "required_if": "penerima_kip = \"Ya\""
+    },
+    {
+     "no": 58,
+     "key": "penerima_kps",
+     "label": "Penerima KPS",
+     "type": "select",
+     "options": "ya_tidak"
+    },
+    {
+     "no": 59,
+     "key": "no_kps",
+     "label": "Nomor KPS",
+     "type": "text",
+     "max_len": "50",
+     "hide_if": "penerima_kps != \"Ya\"",
+     "required_if": "penerima_kps = \"Ya\""
+    },
+    {
+     "no": 60,
+     "key": "no_akta_lahir",
+     "label": "No. Registrasi Akta Lahir",
+     "type": "text",
+     "max_len": "60"
+    },
+    {
+     "no": 61,
+     "key": "no_kk",
+     "label": "Nomor KK",
+     "type": "text",
+     "max_len": "30",
+     "format": "kk"
+    }
+   ]
+  }
+ ],
+ "options": {
+  "jk": {
+   "used_by": [
+    "jk"
+   ],
+   "editable": false,
+   "values": [
+    "Laki-laki",
+    "Perempuan"
+   ]
+  },
+  "agama": {
+   "used_by": [
+    "agama"
+   ],
+   "editable": false,
+   "values": [
+    "Islam",
+    "Kristen",
+    "Katolik",
+    "Hindu",
+    "Buddha",
+    "Khonghucu",
+    "Kepercayaan terhadap Tuhan YME"
+   ]
+  },
+  "status_hidup": {
+   "used_by": [
+    "status_ayah",
+    "status_ibu"
+   ],
+   "editable": false,
+   "values": [
+    "Hidup",
+    "Wafat"
+   ]
+  },
+  "pendidikan": {
+   "used_by": [
+    "pendidikan_ayah",
+    "pendidikan_ibu"
+   ],
+   "editable": false,
+   "values": [
+    "Tidak Sekolah / Putus Sekolah",
+    "SD / MI / Sederajat",
+    "SMP / MTs / Sederajat",
+    "SMA / MA / SMK / Sederajat",
+    "Diploma (D1 / D2 / D3)",
+    "Sarjana (S1 / D4)",
+    "Pascasarjana (S2 / S3 / Prof)",
+    "Pendidikan Pesantren / Non Formal"
+   ]
+  },
+  "pekerjaan": {
+   "used_by": [
+    "pekerjaan_ayah",
+    "pekerjaan_ibu"
+   ],
+   "editable": false,
+   "values": [
+    "Pegawai Negeri Sipil (PNS) / ASN",
+    "TNI / Polri",
+    "PNS/TNI/Polri",
+    "Karyawan Swasta",
+    "Karyawan BUMN / BUMD",
+    "Wiraswasta / Pedagang",
+    "Petani / Peternak / Nelayan",
+    "Buruh (Tani/Pabrik/Bangunan)",
+    "Guru / Dosen",
+    "Dokter / Tenaga Medis",
+    "Tokoh Agama (Kyai/Ustadz)",
+    "Pensiunan",
+    "Ibu Rumah Tangga (IRT)",
+    "Tidak Bekerja / PHK / Mencari Kerja"
+   ]
+  },
+  "penghasilan": {
+   "used_by": [
+    "penghasilan_ayah",
+    "penghasilan_ibu"
+   ],
+   "editable": false,
+   "values": [
+    "Kurang dari Rp500.000 atau Tidak Berpenghasilan",
+    "Rp500.000 – Rp999.999",
+    "Rp1.000.000 – Rp1.999.999",
+    "Rp2.000.000 – Rp4.999.999",
+    "Rp5.000.000 – Rp7.999.999",
+    "Rp8.000.000 – Rp10.000.000",
+    "Lebih dari Rp10.000.000"
+   ]
+  },
+  "status_siswa": {
+   "used_by": [
+    "status_siswa"
+   ],
+   "editable": false,
+   "values": [
+    "Siswa Baru (Lulusan SD/MI)",
+    "Siswa Lanjutan (Naik Kelas / Lanjut Semester)",
+    "Siswa Pindahan (Mutasi dari SMP lain)"
+   ]
+  },
+  "transportasi": {
+   "used_by": [
+    "transportasi"
+   ],
+   "editable": false,
+   "values": [
+    "Sepeda Motor",
+    "Angkutan Umum",
+    "Ojek / Ojek Online",
+    "Jalan Kaki",
+    "Sepeda Listrik / Sepeda Ontel",
+    "Nebeng Teman",
+    "Antar Jemput Ortu / Wali"
+   ]
+  },
+  "tempat_tinggal": {
+   "used_by": [
+    "tempat_tinggal"
+   ],
+   "editable": false,
+   "values": [
+    "Bersama Orang Tua",
+    "Bersama Wali (Kakek/Nenek/Saudara)",
+    "Kost",
+    "Asrama",
+    "Pesantren",
+    "Tinggal Sendiri",
+    "Panti Asuhan"
+   ]
+  },
+  "golongan_darah": {
+   "used_by": [
+    "golongan_darah"
+   ],
+   "editable": false,
+   "values": [
+    "A+",
+    "A-",
+    "B+",
+    "B-",
+    "AB+",
+    "AB-",
+    "O+",
+    "O-",
+    "Belum Tahu"
+   ]
+  },
+  "riwayat_penyakit": {
+   "used_by": [
+    "riwayat_penyakit"
+   ],
+   "editable": false,
+   "values": [
+    "Tidak Ada / Sehat",
+    "Asma / Sesak Napas",
+    "Alergi Berat (Makanan/Obat/Debu)",
+    "Maag Kronis / GERD",
+    "Anemia / Kurang Darah",
+    "Epilepsi / Sakit Kejang",
+    "Migrain / Vertigo / Sering Sakit Kepala Berat",
+    "Diabetes Melitus Juvenile (Kencing manis usia muda)",
+    "Kelainan Jantung Bawaan",
+    "TBC (Tuberkulosis) / Flek Paru",
+    "Hepatitis"
+   ]
+  },
+  "riwayat_cedera": {
+   "used_by": [
+    "riwayat_cedera"
+   ],
+   "editable": false,
+   "values": [
+    "Tidak Ada",
+    "Pernah Patah Tulang (Tangan/Kaki)",
+    "Cedera Sendi / Dislokasi (Bahu/Lutut)",
+    "Cedera Otot / Saraf Kronis",
+    "Pernah Mengalami Cedera Kepala / Gegar Otak",
+    "Pernah Menjalani Operasi Besar (Kurang dari 1 tahun terakhir)"
+   ]
+  },
+  "gangguan_indra": {
+   "used_by": [
+    "gangguan_indra"
+   ],
+   "editable": false,
+   "values": [
+    "Normal",
+    "Gangguan Penglihatan (Rabun Jauh/Minus Tinggi)",
+    "Gangguan Penglihatan (Silinder/Astigmatisme)",
+    "Buta Warna (Parsial/Total)",
+    "Gangguan Pendengaran"
+   ]
+  },
+  "abk": {
+   "used_by": [
+    "abk"
+   ],
+   "editable": false,
+   "values": [
+    "Tidak Ada / Reguler",
+    "Tunanetra (Gangguan Penglihatan/Kebutaan)",
+    "Tunarungu (Gangguan Pendengaran)",
+    "Tunawicara (Gangguan Bicara & Komunikasi)",
+    "Tunagrahita (Hambatan Intelektual/Kognitif)",
+    "Tunadaksa (Hambatan Fisik/Motorik/Anggota Tubuh)",
+    "Tunalaras (Hambatan Emosi, Perilaku, & Sosial)",
+    "Autisme / ASD (Autism Spectrum Disorder)",
+    "ADHD / ADD (Gangguan Pemusatan Perhatian & Hiperaktivitas)",
+    "Kesulitan Belajar Spesifik (Disleksia, Disgrafia, Diskalkulia)",
+    "Lamban Belajar (Slow Learner)",
+    "Cerdas Istimewa / Bakat Istimewa (Gifted/Talented)"
+   ]
+  },
+  "ya_tidak": {
+   "used_by": [
+    "penerima_kip",
+    "penerima_kps"
+   ],
+   "editable": false,
+   "values": [
+    "Ya",
+    "Tidak"
+   ]
+  },
+  "tingkat_prestasi": {
+   "used_by": [
+    "prestasi.tingkat"
+   ],
+   "editable": false,
+   "values": [
+    "Sekolah",
+    "Kecamatan",
+    "Kabupaten",
+    "Provinsi",
+    "Nasional",
+    "Internasional"
+   ]
+  },
+  "ekskul": {
+   "used_by": [
+    "ekskul"
+   ],
+   "editable": true,
+   "values": [
+    "Pramuka",
+    "Palang Merah Remaja (PMR)",
+    "Paskibra",
+    "Baca Tulis Al-Qur'an (BTQ)",
+    "Rebana/Hadroh",
+    "Seni Tari",
+    "Seni Musik",
+    "Paduan Suara",
+    "Drumband",
+    "Teater",
+    "Kaligrafi",
+    "Futsal",
+    "Sepak Bola",
+    "Bola Voli",
+    "Bola Basket",
+    "Bulu Tangkis",
+    "Tenis Meja",
+    "Pencak Silat",
+    "Karate",
+    "Atletik",
+    "Karya Ilmiah Remaja (KIR)",
+    "English Club",
+    "Komputer",
+    "Jurnalistik"
+   ]
+  }
+ },
+ "notes": [
+  "Region block (unit=wilayah): provinsi, kabupaten, kecamatan, desa, kode_pos picked together; kode_wilayah = official village code (auto).",
+  "School block (unit=sekolah_asal): sekolah_asal = school name; sekolah_asal_npsn = its 8-digit NPSN (auto). Reference list covers SD, MI, SDLB.",
+  "Format codes: kapital=UPPERCASE, proper=Proper Case, digit=digits only, nik/kk=16 digits, nisn=10 digits, wa=WhatsApp phone number, kode_pos=5 digits, tahun=4-digit year, tanggal=date.",
+  "tanggal_lahir range is relative: age between 9 and 20 years. 'tahun_ini' = current year.",
+  "Option \"PNS/TNI/Polri\" is a combined legacy value (from Dapodik exports); keep it alongside the split options.",
+  "Option \"Ibu Rumah Tangga (IRT)\" is only offered for: pekerjaan_ibu.",
+  "Option hint \"Sepeda Motor\": Dikendarai sendiri. Kalau dibonceng orang tua/wali, pilih Antar Jemput Ortu / Wali.",
+  "Option hint \"Anemia / Kurang Darah\": Sangat umum pada remaja putri."
+ ]
+}
