@@ -3,6 +3,7 @@
 | Document | Purpose |
 | --- | --- |
 | [progress.md](progress.md) | **Read first.** Current state, active work, next steps, blockers |
+| [adopting.md](adopting.md) | **Start here in another repository**: starter prompt, audit areas, report format, base setup |
 | [decisions.md](decisions.md) | Decision log (`F-…`) |
 | [conventions.md](conventions.md) | Language, Indonesian URLs, commits and PRs without AI attribution, agent files |
 | [web-baseline.md](web-baseline.md) | Baseline for every web app: security, uploads, personal data, audit log, Indonesian identity fields, performance, monitoring, staging, tests, public pages |

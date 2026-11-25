@@ -1,5 +1,8 @@
 # Pointer block for app repositories
 
+New or existing repository: follow [adopting.md](adopting.md) (skill `fondasi-adopt`); it adds this block as part of
+the base. `templates/repo/CLAUDE.md` already contains it.
+
 Paste this block into every app's `CLAUDE.md` (adapt the first line). It is how a Claude session in that app
 finds the shared rules without the user explaining them again.
 
