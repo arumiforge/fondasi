@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+# Copy a Fondasi data set into an app repository at a pinned version (F-003). Stack-agnostic:
+# bash, git, coreutils. Run it from the app repository's root (or pass --to).
+#
+#   fondasi-sync <set> [<ref>]      copy data/<set> as it is at <ref> (tag, branch or commit; default:
+#                                   the Fondasi checkout's current commit) into data/fondasi/<set>/
+#   fondasi-sync skill <name> [<ref>]   copy the agent skill .claude/skills/<name> into the app's
+#                                   .claude/skills/<name>/ (e.g. bahasa-indonesia-plain); recorded as skill:<name>
+#   fondasi-sync --check            verify every copied set against fondasi.lock and its SHA256SUMS
+#   fondasi-sync --list             data sets and versions available in the Fondasi checkout
+#
+# Where Fondasi is: $FONDASI_DIR, else ../fondasi, ../server, /home/user/fondasi, /home/user/server,
+# /opt/apps/_fondasi (first that is a git checkout of Fondasi).
+# Output in the app: data/fondasi/<set>/ (files + manifest.json + SHA256SUMS) and fondasi.lock, one line per
+# set: "<set> <version> <fondasi commit>". Commit both; the app imports the files its own way.
+set -euo pipefail
+
+die() { printf 'fondasi-sync: %s\n' "$*" >&2; exit 1; }
+
+TO="$(pwd)"
+args=()
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --to) TO="$2"; shift 2 ;;
+        -h|--help) sed -n '2,15p' "$0"; exit 0 ;;
+        *) args+=("$1"); shift ;;
+    esac
+done
+set -- "${args[@]+"${args[@]}"}"
+
+find_fondasi() {
+    local d
+    for d in "${FONDASI_DIR:-}" "$TO/../fondasi" "$TO/../server" /home/user/fondasi /home/user/server /opt/apps/_fondasi; do
+        [ -n "$d" ] && [ -f "$d/tools/fondasi-sync" ] && git -C "$d" rev-parse --git-dir >/dev/null 2>&1 \
+            && { (cd "$d" && pwd); return 0; }
+    done
+    return 1
+}
+
+LOCK="$TO/fondasi.lock"
+DEST_ROOT="$TO/data/fondasi"
+
+check() {
+    [ -f "$LOCK" ] || die "no fondasi.lock in $TO"
+    local fail=0 set_name version commit
+    while read -r set_name version commit; do
+        case "$set_name" in ''|'#'*) continue ;; skill:*) echo "ok    $set_name (fondasi ${commit:0:12})"; continue ;; esac
+        local dir="$DEST_ROOT/$set_name"
+        if [ ! -f "$dir/SHA256SUMS" ]; then echo "ERROR $set_name: $dir/SHA256SUMS missing"; fail=1; continue; fi
+        if (cd "$dir" && sha256sum --quiet -c SHA256SUMS); then
+            echo "ok    $set_name $version (fondasi ${commit:0:12})"
+        else
+            echo "ERROR $set_name: files were changed after the sync; run fondasi-sync $set_name again"; fail=1
+        fi
+    done < "$LOCK"
+    return "$fail"
+}
+
+manifest_version() { grep -m1 -oE '"version"[[:space:]]*:[[:space:]]*"[^"]+"' | sed -E 's/.*"([^"]+)"$/\1/'; }
+
+case "${1:-}" in
+    '') sed -n '2,15p' "$0"; exit 1 ;;
+    --check) check; exit $? ;;
+esac
+
+FONDASI="$(find_fondasi)" || die "Fondasi checkout not found: set FONDASI_DIR (cloud sessions: add_repo arumiforge/fondasi)."
+
+if [ "$1" = --list ]; then
+    for m in "$FONDASI"/data/*/manifest.json; do
+        printf '%-24s %s\n' "$(basename "$(dirname "$m")")" "$(manifest_version < "$m")"
+    done
+    exit 0
+fi
+
+record_lock() {
+    local key="$1" version="$2" commit="$3" tmpl
+    tmpl="$(mktemp)"
+    touch "$LOCK"
+    grep -q '^# ' "$LOCK" || printf '# Fondasi data sets and skills copied into this app: <set> <version> <fondasi commit>. Update with tools/fondasi-sync.\n' > "$LOCK"
+    grep -v "^$key " "$LOCK" > "$tmpl" || true
+    printf '%s %s %s\n' "$key" "$version" "$commit" >> "$tmpl"
+    { grep '^#' "$tmpl"; grep -v '^#' "$tmpl" | LC_ALL=C sort; } > "$LOCK"
+    rm -f "$tmpl"
+}
+
+if [ "$1" = skill ]; then
+    name="${2:-}"; ref="${3:-HEAD}"
+    [[ "$name" =~ ^[a-z0-9-]+$ ]] || die "give a skill name, e.g. fondasi-sync skill bahasa-indonesia-plain"
+    commit="$(git -C "$FONDASI" rev-parse --verify --quiet "${ref}^{commit}")" || die "unknown ref '$ref' in $FONDASI"
+    git -C "$FONDASI" cat-file -e "$commit:.claude/skills/$name/SKILL.md" 2>/dev/null || die "skill '$name' not found at ${commit:0:12}"
+    rm -rf "${TO:?}/.claude/skills/$name"
+    mkdir -p "$TO/.claude/skills"
+    git -C "$FONDASI" archive --format=tar "$commit" ".claude/skills/$name" | tar -x -C "$TO"
+    record_lock "skill:$name" "$(git -C "$FONDASI" log -1 --format=%cs "$commit")" "$commit"
+    echo "Copied skill $name (fondasi ${commit:0:12}) into .claude/skills/$name; fondasi.lock updated. Do not edit it in the app: change it in Fondasi and sync again."
+    exit 0
+fi
+
+set_name="$1"; ref="${2:-HEAD}"
+[[ "$set_name" =~ ^[a-z0-9-]+$ ]] || die "invalid set name '$set_name'"
+commit="$(git -C "$FONDASI" rev-parse --verify --quiet "${ref}^{commit}")" || die "unknown ref '$ref' in $FONDASI"
+git -C "$FONDASI" cat-file -e "$commit:data/$set_name/manifest.json" 2>/dev/null \
+    || die "data set '$set_name' does not exist at ${commit:0:12} (fondasi-sync --list)"
+
+tmp="$(mktemp -d)"
+trap 'rm -rf "$tmp"' EXIT
+git -C "$FONDASI" archive --format=tar "$commit" "data/$set_name" | tar -x -C "$tmp"
+src="$tmp/data/$set_name"
+(cd "$src" && sha256sum --quiet -c SHA256SUMS) || die "SHA256SUMS of '$set_name' does not match at ${commit:0:12}"
+version="$(manifest_version < "$src/manifest.json")"
+
+mkdir -p "$DEST_ROOT"
+rm -rf "${DEST_ROOT:?}/$set_name"
+cp -R "$src" "$DEST_ROOT/$set_name"
+
+record_lock "$set_name" "$version" "$commit"
+
+echo "Copied $set_name $version (fondasi ${commit:0:12}) into ${DEST_ROOT#"$TO"/}/$set_name; fondasi.lock updated."
+echo "Next: import it in the app (its own importer), run the app's tests, commit data/fondasi/$set_name and fondasi.lock."

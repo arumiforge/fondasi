@@ -1,0 +1,8 @@
+{
+  "version": "2026-11-25",
+  "description": "Academic-year rules shared by every app: year format, semesters, grades per level, curriculum phases.",
+  "status": "complete (rules only; dates come from the kalender sets)",
+  "source": "Indonesian school practice (Permendikbudristek on the Kurikulum Merdeka structure for phases); written by Arumi Studios",
+  "licence": "Arumi Studios",
+  "files": ["rules.json"]
+}
