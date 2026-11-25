@@ -33,6 +33,7 @@ skills (`fondasi-*`, `bahasa-indonesia-plain`) are available in that session.
    - `CLAUDE.md` from `templates/repo/CLAUDE.md` (keep what the repo already had, add the Fondasi block, language,
      commit rules; leave app-specific sections as placeholders to fill with the user);
    - `AGENTS.md`, `.githooks/commit-msg`, `.github/workflows/commit-policy.yml` from `templates/repo/`;
+   - `.claude/skills/<app>-session/` from `templates/repo/.claude/skills/app-session/` (F-017), adapted;
    - `docs/progress.md` and `docs/decisions.md` (D-001 "Adopt Fondasi at <commit>") from `templates/repo/docs/`;
    - `ai/` from `templates/ai/` only when the app needs visual assets;
    - on the server, a `PORTS` line with the hostname and, when useful, a `check-app` adapter.
@@ -53,6 +54,13 @@ identity) into another app — only Fondasi's rules.
 | Settings and storage | `settings.md`, `storage.md` | env names, env wins over panel, where files and personal data live |
 | Server | `app-contract.md`, `server-playbook.md` | folder, port on 127.0.0.1, compose rules, backups, deploy flow, tunnel route |
 | Shared data | `data.md` | regions/schools/calendars kept by hand that should come from `fondasi-sync` |
+| Agent workflow | `agent-workflow.md` | `CLAUDE.md`, `AGENTS.md`, `progress.md`, `decisions.md`, an `<app>-session` skill |
+| Assets | `assets.md` | minified served copies, originals kept, versioned URLs, self-hosted libraries |
+| AI assistant (if any) | `ai-assistant.md` | answer order, provider rotation and failover, limits, masking |
+| Guides | `guides.md` | per-role guide pages, article anatomy, updated with features |
+| Detailed student data (internal school apps) | `school-data.md` | agreement, permissions per field group, sensitive groups, retention |
+| Decoration and loading | `ui.md`, `web-baseline.md` §6 | page usable before decoration, skeletons, Codex-made art |
+| Printing, QR, visitors | `web-baseline.md` §11–12 | A4/F4, unique QR tokens, logo with level H, daily-salted visitor hash |
 | Visual assets | `visual-assets.md` | `ai/` briefs, Codex workflow, style guide |
 
 ## Report format (`docs/fondasi-audit.md` in the app)

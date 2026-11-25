@@ -1,6 +1,8 @@
 # Visual assets made by Codex (F-011)
 
-Illustrations, patterns, dividers, special buttons, loaders and other visuals of every app are made by **Codex**,
+There is **no limit on decoration** in Fondasi (F-022): every app may be as rich as its identity wants, because all of
+it is made and maintained by Codex. Illustrations, paintings, patterns, dividers, special buttons, loaders, skeleton
+art, QR designs, animations and 3D scenes of every app are made by **Codex**,
 which has access to each app repository and works only from the briefs in that repository. Claude writes the
 briefs, reviews the delivery and installs it. Proven in SPMB (D-073, D-075).
 

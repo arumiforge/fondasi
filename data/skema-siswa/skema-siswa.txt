@@ -1,0 +1,273 @@
+STUDENT DATA SCHEMA - FIELDS AND OPTION LISTS (junior high school, Indonesia)
+
+HOW TO READ
+- Field line: NN. key | label | type | attributes
+- key: suggested column/property name (snake_case). label: text shown to users (Indonesian).
+- Types: text, integer, date (YYYY-MM-DD), select (one option), multiselect (several options),
+  list (list of strings picked from an option list), table (repeating rows with sub-columns),
+  region (cascading picker: province > regency/city > district > village > postal code),
+  school (pick origin elementary school from a reference list, by name or NPSN), class (pick from the school's class list).
+- required: must be filled. range=[min, max]. max_len: max characters. min_items/max_items: for list/table.
+- options=KEY: values come from [KEY] in OPTION LISTS. Store the exact option text.
+- other_allowed: add an "Lainnya" (Other) choice that opens a text input; store the typed text, never "Lainnya".
+- exclusive="X": in a multiselect, option X cannot be combined with any other option.
+- hide_if(cond): hide the field (and clear it) when cond is true. required_if(cond): required when cond is true.
+- auto: not a visible input; filled by the picker of the field with the same unit.
+- unit=NAME: fields with the same unit are edited/approved together as one block.
+
+SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
+
+=== GROUP: identitas - Identitas Diri (18 fields) ===
+01. no | No Urut | integer | format=digit
+02. nama | Nama Siswa | text | required; max_len=150; format=kapital
+03. nisn | NISN | text | max_len=20; format=nisn
+04. nipd_dapodik | NIPD Dapodik | text | max_len=30; format=digit
+05. nipd_rapor | NIPD Rapor | text | max_len=30; format=digit
+06. rombel_id | Kelas | class | 
+07. status_siswa | Status Siswa | select | options=status_siswa
+08. jk | Jenis Kelamin | select | required; options=jk
+09. tempat_lahir | Tempat Lahir | text | max_len=100; format=proper
+10. tanggal_lahir | Tanggal Lahir | date | required; format=tanggal; range=[-20 tahun, -9 tahun]
+11. nik | NIK Siswa | text | max_len=30; format=nik
+12. agama | Agama | select | required; options=agama; other_allowed
+13. anak_ke | Anak ke- | integer | required; range=[1, 10]
+14. jml_saudara | Jumlah Saudara Kandung | integer | range=[0, 10]
+15. tinggi_badan | Tinggi Badan (cm) | integer | range=[100, 220]
+16. berat_badan | Berat Badan (kg) | integer | range=[20, 150]
+17. sekolah_asal | Sekolah Asal | school | required; max_len=150; format=proper; unit=sekolah_asal
+18. sekolah_asal_npsn | NPSN Sekolah Asal | text | auto; max_len=8; format=digit; unit=sekolah_asal
+
+=== GROUP: keluarga - Orang Tua & Wali (15 fields) ===
+19. nama_ayah | Nama Ayah | text | required; max_len=150; format=kapital
+    hint: Nama ayah kandung, sesuai akta kelahiran.
+20. status_ayah | Status Hidup Ayah | select | required; options=status_hidup
+21. tahun_lahir_ayah | Tahun Lahir Ayah | integer | format=tahun; range=[1930, tahun_ini-10]
+22. pendidikan_ayah | Jenjang Pendidikan Ayah | select | required; options=pendidikan
+23. pekerjaan_ayah | Pekerjaan Ayah | select | required; options=pekerjaan; other_allowed; hide_if(status_ayah = "Wafat")
+24. penghasilan_ayah | Penghasilan Ayah | select | options=penghasilan; hide_if(status_ayah = "Wafat")
+25. nama_ibu | Nama Ibu | text | required; max_len=150; format=kapital
+26. nik_ibu | NIK Ibu | text | required; max_len=30; format=nik
+27. status_ibu | Status Hidup Ibu | select | required; options=status_hidup
+28. tahun_lahir_ibu | Tahun Lahir Ibu | integer | format=tahun; range=[1930, tahun_ini-10]
+29. pendidikan_ibu | Jenjang Pendidikan Ibu | select | required; options=pendidikan
+30. pekerjaan_ibu | Pekerjaan Ibu | select | required; options=pekerjaan; other_allowed; hide_if(status_ibu = "Wafat")
+31. penghasilan_ibu | Penghasilan Ibu | select | options=penghasilan; hide_if(status_ibu = "Wafat")
+32. nama_wali | Nama Wali Murid | text | max_len=150; format=kapital
+33. wa_ortu | WhatsApp Orang Tua/Wali | text | required; max_len=30; format=wa
+
+=== GROUP: alamat - Alamat & Tempat Tinggal (12 fields) ===
+34. alamat_jalan | Alamat (Jalan/Gang/No. Rumah) | text | required; max_len=150; format=proper
+35. dusun | Dusun | text | max_len=100; format=proper
+36. rt | RT | integer | required; range=[1, 20]
+37. rw | RW | integer | required; range=[1, 20]
+38. provinsi | Provinsi | region | required; format=proper; unit=wilayah
+39. kabupaten | Kabupaten/Kota | region | required; format=proper; unit=wilayah
+40. kecamatan | Kecamatan | region | required; format=proper; unit=wilayah
+41. desa | Desa | region | required; format=proper; unit=wilayah
+42. kode_pos | Kode Pos | region | required; format=kode_pos; unit=wilayah
+43. kode_wilayah | Kode Wilayah | text | auto; max_len=13; unit=wilayah
+44. transportasi | Transportasi ke Sekolah | select | required; options=transportasi; other_allowed
+45. tempat_tinggal | Tempat Tinggal | select | required; options=tempat_tinggal; other_allowed
+
+=== GROUP: minat - Minat, Prestasi & Kesehatan (9 fields) ===
+46. ekskul | Ekstrakurikuler | list | required; format=proper; options=ekskul; min_items=1; max_items=15
+47. prestasi | Prestasi/Kejuaraan | table | max_items=10
+    sub-column: nama | Nama Kejuaraan | text | max_len=150; format=proper
+    sub-column: peringkat | Peringkat | text | max_len=50
+    sub-column: tingkat | Tingkat | select | options=tingkat_prestasi
+    sub-column: tahun | Tahun | integer | range=[2015, tahun_ini]
+48. hobi | Hobi | text | max_len=100; format=proper
+49. cita_cita | Cita-cita | text | max_len=100; format=proper
+50. golongan_darah | Golongan Darah | select | options=golongan_darah
+51. riwayat_penyakit | Riwayat Penyakit | multiselect | options=riwayat_penyakit; other_allowed; exclusive="Tidak Ada / Sehat"
+52. riwayat_cedera | Riwayat Cedera/Fisik | multiselect | options=riwayat_cedera; exclusive="Tidak Ada"
+53. gangguan_indra | Gangguan Indra | multiselect | options=gangguan_indra; exclusive="Normal"
+54. abk | Kategori ABK | select | options=abk
+
+=== GROUP: dokumen - Bantuan & Dokumen (7 fields) ===
+55. penerima_kip | Penerima KIP | select | options=ya_tidak
+56. nomor_kip | Nomor KIP | text | max_len=50; hide_if(penerima_kip != "Ya"); required_if(penerima_kip = "Ya")
+57. nama_kip | Nama di KIP | text | max_len=150; format=kapital; hide_if(penerima_kip != "Ya"); required_if(penerima_kip = "Ya")
+58. penerima_kps | Penerima KPS | select | options=ya_tidak
+59. no_kps | Nomor KPS | text | max_len=50; hide_if(penerima_kps != "Ya"); required_if(penerima_kps = "Ya")
+60. no_akta_lahir | No. Registrasi Akta Lahir | text | max_len=60
+61. no_kk | Nomor KK | text | max_len=30; format=kk
+
+=== NOTES ===
+- Region block (unit=wilayah): provinsi, kabupaten, kecamatan, desa, kode_pos picked together; kode_wilayah = official village code (auto).
+- School block (unit=sekolah_asal): sekolah_asal = school name; sekolah_asal_npsn = its 8-digit NPSN (auto). Reference list covers SD, MI, SDLB.
+- Format codes: kapital=UPPERCASE, proper=Proper Case, digit=digits only, nik/kk=16 digits, nisn=10 digits,
+  wa=WhatsApp phone number, kode_pos=5 digits, tahun=4-digit year, tanggal=date.
+- tanggal_lahir range is relative: age between 9 and 20 years. 'tahun_ini' = current year.
+- Option "PNS/TNI/Polri" is a combined legacy value (from Dapodik exports); keep it alongside the split options.
+- Option "Ibu Rumah Tangga (IRT)" is only offered for: pekerjaan_ibu.
+- Option hint "Sepeda Motor": Dikendarai sendiri. Kalau dibonceng orang tua/wali, pilih Antar Jemput Ortu / Wali.
+- Option hint "Anemia / Kurang Darah": Sangat umum pada remaja putri.
+
+=== OPTION LISTS ===
+[jk] (2 options; used by: jk)
+  1. Laki-laki
+  2. Perempuan
+
+[agama] (7 options; used by: agama)
+  1. Islam
+  2. Kristen
+  3. Katolik
+  4. Hindu
+  5. Buddha
+  6. Khonghucu
+  7. Kepercayaan terhadap Tuhan YME
+
+[status_hidup] (2 options; used by: status_ayah, status_ibu)
+  1. Hidup
+  2. Wafat
+
+[pendidikan] (8 options; used by: pendidikan_ayah, pendidikan_ibu)
+  1. Tidak Sekolah / Putus Sekolah
+  2. SD / MI / Sederajat
+  3. SMP / MTs / Sederajat
+  4. SMA / MA / SMK / Sederajat
+  5. Diploma (D1 / D2 / D3)
+  6. Sarjana (S1 / D4)
+  7. Pascasarjana (S2 / S3 / Prof)
+  8. Pendidikan Pesantren / Non Formal
+
+[pekerjaan] (14 options; used by: pekerjaan_ayah, pekerjaan_ibu)
+  1. Pegawai Negeri Sipil (PNS) / ASN
+  2. TNI / Polri
+  3. PNS/TNI/Polri
+  4. Karyawan Swasta
+  5. Karyawan BUMN / BUMD
+  6. Wiraswasta / Pedagang
+  7. Petani / Peternak / Nelayan
+  8. Buruh (Tani/Pabrik/Bangunan)
+  9. Guru / Dosen
+  10. Dokter / Tenaga Medis
+  11. Tokoh Agama (Kyai/Ustadz)
+  12. Pensiunan
+  13. Ibu Rumah Tangga (IRT)
+  14. Tidak Bekerja / PHK / Mencari Kerja
+
+[penghasilan] (7 options; used by: penghasilan_ayah, penghasilan_ibu)
+  1. Kurang dari Rp500.000 atau Tidak Berpenghasilan
+  2. Rp500.000 – Rp999.999
+  3. Rp1.000.000 – Rp1.999.999
+  4. Rp2.000.000 – Rp4.999.999
+  5. Rp5.000.000 – Rp7.999.999
+  6. Rp8.000.000 – Rp10.000.000
+  7. Lebih dari Rp10.000.000
+
+[status_siswa] (3 options; used by: status_siswa)
+  1. Siswa Baru (Lulusan SD/MI)
+  2. Siswa Lanjutan (Naik Kelas / Lanjut Semester)
+  3. Siswa Pindahan (Mutasi dari SMP lain)
+
+[transportasi] (7 options; used by: transportasi)
+  1. Sepeda Motor
+  2. Angkutan Umum
+  3. Ojek / Ojek Online
+  4. Jalan Kaki
+  5. Sepeda Listrik / Sepeda Ontel
+  6. Nebeng Teman
+  7. Antar Jemput Ortu / Wali
+
+[tempat_tinggal] (7 options; used by: tempat_tinggal)
+  1. Bersama Orang Tua
+  2. Bersama Wali (Kakek/Nenek/Saudara)
+  3. Kost
+  4. Asrama
+  5. Pesantren
+  6. Tinggal Sendiri
+  7. Panti Asuhan
+
+[golongan_darah] (9 options; used by: golongan_darah)
+  1. A+
+  2. A-
+  3. B+
+  4. B-
+  5. AB+
+  6. AB-
+  7. O+
+  8. O-
+  9. Belum Tahu
+
+[riwayat_penyakit] (11 options; used by: riwayat_penyakit)
+  1. Tidak Ada / Sehat
+  2. Asma / Sesak Napas
+  3. Alergi Berat (Makanan/Obat/Debu)
+  4. Maag Kronis / GERD
+  5. Anemia / Kurang Darah
+  6. Epilepsi / Sakit Kejang
+  7. Migrain / Vertigo / Sering Sakit Kepala Berat
+  8. Diabetes Melitus Juvenile (Kencing manis usia muda)
+  9. Kelainan Jantung Bawaan
+  10. TBC (Tuberkulosis) / Flek Paru
+  11. Hepatitis
+
+[riwayat_cedera] (6 options; used by: riwayat_cedera)
+  1. Tidak Ada
+  2. Pernah Patah Tulang (Tangan/Kaki)
+  3. Cedera Sendi / Dislokasi (Bahu/Lutut)
+  4. Cedera Otot / Saraf Kronis
+  5. Pernah Mengalami Cedera Kepala / Gegar Otak
+  6. Pernah Menjalani Operasi Besar (Kurang dari 1 tahun terakhir)
+
+[gangguan_indra] (5 options; used by: gangguan_indra)
+  1. Normal
+  2. Gangguan Penglihatan (Rabun Jauh/Minus Tinggi)
+  3. Gangguan Penglihatan (Silinder/Astigmatisme)
+  4. Buta Warna (Parsial/Total)
+  5. Gangguan Pendengaran
+
+[abk] (12 options; used by: abk)
+  1. Tidak Ada / Reguler
+  2. Tunanetra (Gangguan Penglihatan/Kebutaan)
+  3. Tunarungu (Gangguan Pendengaran)
+  4. Tunawicara (Gangguan Bicara & Komunikasi)
+  5. Tunagrahita (Hambatan Intelektual/Kognitif)
+  6. Tunadaksa (Hambatan Fisik/Motorik/Anggota Tubuh)
+  7. Tunalaras (Hambatan Emosi, Perilaku, & Sosial)
+  8. Autisme / ASD (Autism Spectrum Disorder)
+  9. ADHD / ADD (Gangguan Pemusatan Perhatian & Hiperaktivitas)
+  10. Kesulitan Belajar Spesifik (Disleksia, Disgrafia, Diskalkulia)
+  11. Lamban Belajar (Slow Learner)
+  12. Cerdas Istimewa / Bakat Istimewa (Gifted/Talented)
+
+[ya_tidak] (2 options; used by: penerima_kip, penerima_kps)
+  1. Ya
+  2. Tidak
+
+[tingkat_prestasi] (6 options; used by: prestasi.tingkat)
+  1. Sekolah
+  2. Kecamatan
+  3. Kabupaten
+  4. Provinsi
+  5. Nasional
+  6. Internasional
+
+[ekskul] (24 options; used by: ekskul) - editable reference list
+  1. Pramuka
+  2. Palang Merah Remaja (PMR)
+  3. Paskibra
+  4. Baca Tulis Al-Qur'an (BTQ)
+  5. Rebana/Hadroh
+  6. Seni Tari
+  7. Seni Musik
+  8. Paduan Suara
+  9. Drumband
+  10. Teater
+  11. Kaligrafi
+  12. Futsal
+  13. Sepak Bola
+  14. Bola Voli
+  15. Bola Basket
+  16. Bulu Tangkis
+  17. Tenis Meja
+  18. Pencak Silat
+  19. Karate
+  20. Atletik
+  21. Karya Ilmiah Remaja (KIR)
+  22. English Club
+  23. Komputer
+  24. Jurnalistik
+

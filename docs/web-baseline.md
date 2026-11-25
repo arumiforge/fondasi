@@ -35,7 +35,8 @@ Related: [conventions.md](conventions.md) (language, URLs, exports), [ui.md](ui.
 ## 3. Personal data (UU PDP)
 
 - **Purpose and consent**: say why each item is collected; an explicit consent tick where the law needs it; collect
-  only what the purpose needs.
+  what the agreed purpose needs. Public apps keep it short; **internal school apps** may hold detailed records
+  (health, family, aid, special needs) under a school–parent agreement — rules in [school-data.md](school-data.md).
 - **Masking**: NIK, KK and phone numbers are masked in lists and exports that do not need them
   (`3319**********0001`, `0812-****-7890`); full values only on detail pages for permitted roles.
 - **Retention**: each app documents how long personal data is kept and deletes or anonymises it afterwards (a
@@ -66,12 +67,21 @@ Related: [conventions.md](conventions.md) (language, URLs, exports), [ui.md](ui.
 | Time | Stored with an explicit zone (UTC or a timezone-aware column); shown in the app's zone with its label (`07.30 WIB`, `WITA`, `WIT`) from settings |
 | Deadlines | Opening and closing times (registration, uploads, results) are enforced on the server, not only hidden in the UI |
 
-## 6. Performance on low-end phones
+## 6. Performance: rich pages that work at once (F-022)
 
-- Target on a mid/low Android over 4G: Largest Contentful Paint < 2.5 s, interaction delay < 200 ms, no layout shift
-  (CLS < 0.1) on the main public pages.
-- Images WebP/AVIF with width/height set and `loading="lazy"` below the fold; CSS/JS/SVG minified; long cache for
-  versioned assets; HTML compressed by the web server/Cloudflare.
+- Pages may be **heavy with decoration** (Codex illustrations, patterns, animation): most users have fast connections.
+  What must never wait for decoration is the page itself: text, navigation, forms and buttons work as soon as the HTML
+  and the core CSS/JS arrive.
+- **Load order**: core content and functionality first; decorative images, animations, three.js/canvas scenes, video
+  and background patterns after (`loading="lazy"`, `decoding="async"`, deferred scripts, `fetchpriority="low"`,
+  started after first paint or when visible). A decoration that fails to load leaves the page intact.
+- **Never blank**: every area that waits for data or a heavy asset shows a **skeleton** of its final shape (lists,
+  cards, charts, tables, hero art) instead of an empty space or a lone spinner; skeletons reserve the exact size, so
+  nothing jumps (CLS < 0.1); a shimmer is allowed, off under `prefers-reduced-motion`.
+- Targets on the main public pages over 4G: content readable (LCP of the main text/heading) < 2.5 s and interactive
+  < 200 ms delay, regardless of how much decoration follows.
+- Images WebP/AVIF with width/height set; CSS/JS/SVG minified and versioned ([assets.md](assets.md)); HTML compressed
+  by the web server/Cloudflare.
 - Lists paginated or virtualised; no N+1 queries (eager loading, indexes on filter columns); heavy work (imports,
   PDF batches, emails) in a queue or command, with progress shown.
 - Check with Lighthouse (mobile) and on a real low-end phone before launch.
@@ -105,8 +115,36 @@ Related: [conventions.md](conventions.md) (language, URLs, exports), [ui.md](ui.
   **404/500** pages with a way back, guides per role (`/panduan`).
 - Sharing: `<title>`, meta description, Open Graph and Twitter tags with a share image (1200×630) from white-label
   settings, favicon and app icons (`manifest.webmanifest`), canonical URLs, `lang="id"`.
-- Printing: cards, receipts, attendance sheets and certificates print cleanly on A4 and F4 (`@page` sizes), black
-  and white readable; QR codes carry a random token, never NIK/NISN.
+- Printing: see section 11.
 - Unreliable connections: long forms keep a draft in the browser (no sensitive fields such as passwords or NIK in
   plain storage unless the user is told), uploads can resume or retry, a clear message when offline
   ("Koneksi terputus. Data Anda masih tersimpan di perangkat ini.").
+
+## 11. Printing and QR codes (F-020)
+
+- **Paper**: Indonesian offices print on **A4** (210 × 297 mm) and **F4/Folio** (215 × 330 mm). Every printable document
+  (cards, receipts, attendance sheets, letters, certificates, reports) offers both, A4 by default (a setting per app or
+  per document); PDFs are generated at the exact size, not scaled.
+- Margins ≥ 15 mm (20 mm on the binding side for letters), fonts embedded, readable in black and white, no content
+  cut at page breaks (tables repeat their header row), page numbers `Halaman 1 dari 3`, identity (name, logo) from
+  white-label settings; HTML print views use `@page { size: A4 }` / `size: 215mm 330mm` and hide navigation.
+- **QR design is unique per app** (F-022): never the default black-square QR. Each app has its own QR style, designed
+  through a Codex brief: module shape (rounded, dots), finder-eye shape, brand colours from settings (dark on light, AA
+  contrast), the app's or client's **logo in the centre** when there is one, and optionally a frame with a short
+  Indonesian label ("Pindai untuk cek kartu"). Rendered by a styling library or the app's own renderer from that
+  design, the same on screen and in PDFs.
+- Scannability comes first: error correction level **H** with a logo (logo ≤ 20% of the width on a padded background),
+  quiet zone of 4 modules, no gradients or low contrast inside the modules, printed size ≥ 2 × 2 cm; every design is
+  test-scanned with at least two phones (Android and iOS camera apps), on screen and printed in black and white.
+- Content stays safe: a random, unguessable token (≥ 128 bits) resolved on the server — never NIK, NISN, names or
+  sequential IDs; tokens can be revoked or replaced.
+
+## 12. Visitor statistics without personal data (F-020)
+
+- Public apps count page views and unique visitors per day from a one-way hash of IP + browser with a **salt that
+  changes every day**; no IP address, browser string, cookie ID or other personal data is stored (proven in SPMB D-106).
+- Bots, staff pages and signed-in staff are not counted; the same page in different languages counts as one page.
+- Admins see a summary (today, this month, total), a daily chart and the most opened pages; the public footer may show
+  "Pengunjung hari ini / bulan ini / total" (a setting, default on).
+- No third-party analytics scripts by default (privacy, CSP, speed); if a client needs one, record it as a decision
+  and mention it in the privacy page.

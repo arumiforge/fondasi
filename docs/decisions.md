@@ -67,3 +67,31 @@ Decision: Nothing in Fondasi depends on one app. Rules, scripts and templates ar
 ## F-016 — Fondasi is the base; each repository adopts it and decides its details (2026-11-25)
 Status: accepted (user, 2026-11-25: "Claude yang bekerja untuk tiap repo punya dasar dulu, arah selanjutnya user dan Claude yang menentukan")
 Decision: Any repository (new or existing, any stack) adopts Fondasi through `docs/adopting.md` and the `fondasi-adopt` skill: read, audit against Fondasi (report `docs/fondasi-audit.md` in the app), interview the user, set up the base from `templates/repo/` (CLAUDE.md skeleton with placeholders, AGENTS.md, hooks, CI, progress, decisions with D-001 "Adopt Fondasi"), then plan the fixes with the user. Fondasi stays general; app-specific details are decided in the app repository and recorded there.
+
+## F-017 — One way of working for agents in every repository (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: `docs/agent-workflow.md` is the shared way Claude sessions (and Codex) work in any repository: the repository is the memory (`CLAUDE.md`, `AGENTS.md`, `docs/progress.md`, `docs/decisions.md`, interview rounds, `CHANGELOG.md`), the same session start and end, task lists for multi-step work, decisions recorded when made, context kept lean, small pushed steps, coordinator/worker protocol for large rounds, browser sessions for blocked sources. Each repository plants it as its own `<app>-session` skill from `templates/repo/.claude/skills/app-session/`.
+
+## F-018 — Minify only served copies, keep originals, version every asset (2026-11-25)
+Status: accepted (user, 2026-11-25; from SPMB D-086, D-094)
+Decision: Build tools (any stack) minify CSS, JS, SVG and HTML responses into the served copies only; originals stay readable in the repository and are never overwritten. External libraries are installed, pinned, bundled and self-hosted (no runtime CDN). Every served asset URL carries a content version (hashed file name or `?v=`) so changes are never stuck in caches; versioned assets are cached for a year as immutable, HTML is not cached long. Details: `docs/assets.md`.
+
+## F-019 — AI help assistant: OpenAI-compatible providers, round robin, Gemini settings, limits (2026-11-25)
+Status: accepted (user, 2026-11-25; from SPMB D-110)
+Decision: Apps with an AI assistant follow `docs/ai-assistant.md`: quick choices and the app's own Q&A first, AI last on the app's content only, handover to people; a list of OpenAI-compatible providers (encrypted keys, env wins over panel) used round robin with failover and resting on 429/5xx/auth errors/timeouts/empty replies; Gemini through its OpenAI-compatible endpoint with its own settings (base URL, minimal fields, thinking budget or `reasoning_effort`, empty replies treated as failures, paid tier for anything beyond public Q&A); limits per visitor and per site per day, question and answer length, short memory, topic restriction; personal data masked before matching, sending or storing.
+
+## F-020 — Printing on A4 and F4; unique QR codes with a centred logo; visitor statistics without personal data (2026-11-25)
+Status: accepted (user, 2026-11-25)
+Decision: Printable documents offer A4 and F4 (215 × 330 mm), A4 by default, generated at exact size. QR codes are unique random tokens resolved on the server; with the app's logo in the centre they use error correction H, logo ≤ 20% of the width with padding, quiet zone kept, tested with two phones. Visitor statistics use a daily-salted hash only (SPMB D-106). Sections 11 and 12 of `docs/web-baseline.md`.
+
+## F-021 — Guide pages in the style of GitHub Docs "Get started" (2026-11-25)
+Status: accepted (user, 2026-11-25: "halaman panduan adaptasi dari docs.github.com/en/get-started, UI/UX sangat elegan")
+Decision: In-app guides per role follow `docs/guides.md`: a calm landing page (one-sentence lead, "Mulai dari sini", all articles grouped by path with one-line descriptions, search), articles with breadcrumbs, task title, one-sentence lead, "Dalam artikel ini", one idea per section, numbered procedures, three callout kinds, related links, previous/next, "Apakah halaman ini membantu?", last updated; sidebar tree on desktop, collapsible on phones; restraint over decoration; guides change in the same PR as the feature.
+
+## F-022 — Decoration without limits, made by Codex; pages work before decoration loads; skeletons; unique QR designs (2026-11-25)
+Status: accepted (user, 2026-11-25; refines F-010, F-013 §6, F-020, F-021)
+Decision: Fondasi sets no limit on decoration: illustrations, paintings, patterns, dividers, special buttons, loaders, animation and 3D are welcome everywhere, guides included, all made by Codex in the app's identity. Heavy pages are fine (most users have fast connections), but the page is fully usable before decoration loads: core content first, decoration deferred and lazy, a failed decoration leaves the page intact, skeletons of the final shape instead of blank areas, no layout shift, reduced motion respected. The "Never" list of `ui.md` targets generic looks, not quantity. "Unique QR" means a unique design per app (module and eye shapes, brand colours, centred logo, optional frame) designed through a Codex brief, with scannability rules (level H, quiet zone, contrast, two-phone test); the content stays a random server-side token.
+
+## F-023 — Detailed student data in internal school apps; shared student schema (2026-11-25)
+Status: accepted (user, 2026-11-25: "data yang sangat detail biasanya untuk aplikasi internal sekolah yang sudah ada persetujuan")
+Decision: Public apps keep data short; internal school apps may hold detailed records under a written school–parent agreement, following `docs/school-data.md`: agreement versions and acceptance stored, purpose shown per group, permissions per field group (need to know), masking, audit of views and changes of sensitive groups, export permissions, encryption at rest where possible, nothing sensitive in notifications/URLs/logs/AI/staging, retention and parents' requests. The reference schema is the data set `skema-siswa` (61 fields, 17 option lists, from the user's file), adapted per app and later mapped to Dapodik codes.

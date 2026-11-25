@@ -2,7 +2,8 @@
 
 <One or two sentences: what the app does, for whom, first client.> Built by **Arumi Studios**.
 
-Start every session by reading `docs/progress.md` (state, active work, next steps) and update it before you finish.
+Start every session with the `<app>-session` skill (Fondasi `docs/agent-workflow.md`): read `docs/progress.md`
+(state, active work, next steps) and update it before you finish.
 Decisions: `docs/decisions.md` (`D-…`). Never implement against a recorded decision — ask, or record a new one.
 
 ## Fondasi (shared rules, data and skills)
