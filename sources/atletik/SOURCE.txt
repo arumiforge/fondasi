@@ -1,0 +1,23 @@
+R-10 atletik — World Athletics rules and combined-events scoring tables
+Downloaded: 2026-11-26 (UTC) by a cloud session from worldathletics.org, public pages, files kept byte-for-byte.
+Copyright World Athletics. Kept here by the user's decision F-027 (private repository, reference only);
+the data sets hold facts with references, not the rule texts.
+
+1) WA-C1.1-C2.1-Competition-and-Technical-Rules-2026.pdf
+   Document : Book C – C1.1 Competition Rules & C2.1 Technical Rules (English); latest amendment in the
+              tables effective 20 March 2026; PDF created 2026-07-17
+   Page     : https://worldathletics.org/about-iaaf/documents/book-of-rules
+   File URL : https://worldathletics.org/download/download?filename=0ed43077-8e08-492b-a4b3-267f27c18d0b.pdf&urlslug=C1.1%20%26%20C2.1%20-%20Competition%20Rules%20%26%20Technical%20Rules
+   Size     : 3365278 bytes, 169 pages
+   SHA-256  : 7c8b51769805dc960619ff3a6652aaf599413c4dea09025c27c15dc94654ea9c
+   Note     : rule numbers are not in the text layer; the data cites rule numbers named in the text, else
+              the section heading and PDF page.
+
+2) IAAF-Scoring-Tables-for-Combined-Events-2016.pdf
+   Document : IAAF Scoring Tables for Combined Events, reprinted edition June 2016 (formulae on pages 22–23)
+   Page     : https://worldathletics.org/about-iaaf/documents/technical-information (Scoring Tables)
+   File URL : https://worldathletics.org/download/download?filename=c651eeb3-0f9d-47c0-9314-a3bd001e0960.pdf&urlslug=IAAF%20Scoring%20Tables%20for%20Combined%20Events
+   Size     : 2399563 bytes, 184 pages
+   SHA-256  : 79b0b151fee3929200d8f98154f52e90cfaa0c158376d8287f923372f0e028fb
+
+Not available from the cloud: PASI rules for U14/U16, O2SN and POPDA/POPNAS technical handbooks (brief R-10b).

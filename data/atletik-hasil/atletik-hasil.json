@@ -1,0 +1,398 @@
+{
+ "name": "Format dan aturan hasil atletik",
+ "abbreviations": {
+  "ref": "WA C1.1/C2.1 (2026), Competition Rule 25.4 (PDF p. 23)",
+  "notes": [
+   "An athlete who did not start any trial or race is DNS; one who took trials keeps those results (Competition Rules, PDF p. 20).",
+   "Leaving the course or a technical infringement in a race is generally shown as DNF rather than DQ (Competition Rules guidance, PDF p. 20)."
+  ],
+  "codes": [
+   {
+    "code": "DNS",
+    "label": "Tidak start",
+    "label_en": "Did not start"
+   },
+   {
+    "code": "DNF",
+    "label": "Tidak finis",
+    "label_en": "Did not finish (Running or Race Walking or Combined Events)"
+   },
+   {
+    "code": "NM",
+    "label": "Tidak ada lompatan/lemparan sah",
+    "label_en": "No valid trial recorded"
+   },
+   {
+    "code": "DQ",
+    "label": "Diskualifikasi (diikuti nomor aturan)",
+    "label_en": "Disqualified (followed by the applicable Rule number)"
+   },
+   {
+    "code": "O",
+    "label": "Berhasil (lompat tinggi, galah)",
+    "label_en": "Valid trial in High Jump and Pole Vault"
+   },
+   {
+    "code": "X",
+    "label": "Gagal",
+    "label_en": "Failed trial"
+   },
+   {
+    "code": "–",
+    "label": "Melewatkan (pass)",
+    "label_en": "Passed trial"
+   },
+   {
+    "code": "r",
+    "label": "Mundur dari lomba (nomor lapangan)",
+    "label_en": "Retired from competition (Field Events)"
+   },
+   {
+    "code": "Q",
+    "label": "Lolos karena urutan (lintasan) / karena limit (lapangan)",
+    "label_en": "Qualified by place in Track Events / by standard in Field Events"
+   },
+   {
+    "code": "q",
+    "label": "Lolos karena waktu (lintasan) / karena prestasi (lapangan)",
+    "label_en": "Qualified by time in Track Events / by performance in Field Events"
+   },
+   {
+    "code": "qR",
+    "label": "Diloloskan wasit",
+    "label_en": "Advanced to next round by Referee"
+   },
+   {
+    "code": "qJ",
+    "label": "Diloloskan juri banding",
+    "label_en": "Advanced to next round by Jury of Appeal"
+   },
+   {
+    "code": "qD",
+    "label": "Diloloskan lewat undian",
+    "label_en": "Advanced to next round by draw"
+   },
+   {
+    "code": ">",
+    "label": "Lutut tertekuk (jalan cepat)",
+    "label_en": "Bent knee (Race Walking Events)"
+   },
+   {
+    "code": "~",
+    "label": "Kehilangan kontak (jalan cepat)",
+    "label_en": "Loss of contact (Race Walking Events)"
+   },
+   {
+    "code": "YC",
+    "label": "Kartu kuning (diikuti nomor aturan)",
+    "label_en": "Yellow Card (followed by the applicable Rule number)"
+   },
+   {
+    "code": "YRC",
+    "label": "Kartu kuning kedua (diikuti nomor aturan)",
+    "label_en": "Second Yellow Card (followed by the applicable Rule number)"
+   }
+  ]
+ },
+ "rounding": {
+  "fully_automatic": {
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Fully Automatic Timing and Photo Finish System (PDF p. 75)",
+   "track_up_to_10000m": "next longer 0.01 s unless exact (26:17.533 → 26:17.54)",
+   "track_over_10000m": "next longer 0.1 s unless the time ends in two zeroes (59:26.322 → 59:26.4)",
+   "outside_stadium": "next longer whole second unless the time ends in three zeroes (2:09:44.322 → 2:09:45)",
+   "road_mile": "next longer 0.01 s",
+   "decimals": {
+    "track_up_to_10000m": 2,
+    "track_over_10000m": 1,
+    "outside_stadium": 0
+   }
+  },
+  "hand": {
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Hand Timing (PDF p. 73)",
+   "track": "next longer 0.1 s unless exact (10.11 → 10.2)",
+   "outside_stadium": "next longer whole second unless exact (2:09:44.3 → 2:09:45)",
+   "road_mile": "next longer 0.1 s",
+   "decimals": {
+    "track": 1,
+    "outside_stadium": 0
+   }
+  },
+  "transponder": {
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Transponder Timing (PDF p. 75–76)",
+   "all": "next longer whole second unless the time ends in zero (2:09:44.3 → 2:09:45)"
+  },
+  "distance": {
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Distance Measurement (jumps PDF p. 116, throws PDF p. 127)",
+   "rule": "record to the nearest 0.01 m below the distance measured if it is not a whole centimetre",
+   "decimals": 2,
+   "direction": "down"
+  },
+  "wind": {
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, wind gauge reading (PDF p. 71)",
+   "rule": "metres per second rounded to the next higher tenth in the positive direction unless the second decimal is zero (+2.03 → +2.1; −2.03 → −2.0)",
+   "decimals": 1,
+   "record_limit_mps": 2.0,
+   "record_limit_ref": "WA C1.1/C2.1 (2026), Competition Rules, World Records (PDF p. 32): a performance with a wind average above 2 m/s in the direction of running is not ratified",
+   "combined_events_limit": {
+    "single_event_mps": 4.0,
+    "average_mps": 2.0,
+    "ref": "WA C1.1/C2.1 (2026), Technical Rules (PDF p. 59)"
+   }
+  }
+ },
+ "ties": {
+  "track": {
+   "ref": "WA C1.1/C2.1 (2026), Technical Rules, Ties (PDF p. 83)",
+   "rules": [
+    "If the judges cannot separate athletes for a place, it is a tie and stays a tie.",
+    "Tie for a ranking position or the last qualifying place by time: compare the actual times to 0.001 s; if still equal, the tie stays and lots decide (ranking) or tied athletes advance if lanes allow, otherwise lots.",
+    "Tie for the last qualifying place by place: tied athletes advance if lanes or positions allow, otherwise lots; this reduces the number qualifying on time."
+   ]
+  },
+  "field_horizontal_and_throws": {
+   "ref": "WA C1.1/C2.1 (2026), Technical Rule 25.22 (PDF p. 99)",
+   "rule": "Equal best performances: the second best decides, then the third and so on; still equal → tie."
+  },
+  "vertical_jumps": {
+   "ref": "WA C1.1/C2.1 (2026), Technical Rule 26.8 (PDF p. 102–103)",
+   "rules": [
+    "26.8.1 fewest jumps at the height last cleared;",
+    "26.8.2 then fewest failures in the whole competition up to and including that height;",
+    "26.8.3 then the same place, unless it is first place;",
+    "26.8.4 for first place, a jump-off (Rule 26.9) unless the competition decided otherwise in advance; not in Combined Events."
+   ]
+  }
+ },
+ "combined_events_scoring": {
+  "ref": "IAAF Scoring Tables for Combined Events (2016), Formulae (pages 22–23)",
+  "formula": {
+   "track": "P = a × (b − T)^c, T in seconds (e.g. 10.43)",
+   "jumps": "P = a × (M − b)^c, M in centimetres (e.g. 808)",
+   "throws": "P = a × (D − b)^c, D in metres (e.g. 16.69)",
+   "rounding": "round P down to a whole number"
+  },
+  "manual_time": {
+   "rule": "Hand times in events up to 400 m: add 0.24 s (below 400 m) or 0.14 s (400 m) to the time, or subtract it from b; no adjustment above 400 m.",
+   "add_seconds": {
+    "below_400m": 0.24,
+    "400m": 0.14
+   }
+  },
+  "parameters": {
+   "M": {
+    "100m": [
+     "track",
+     25.4347,
+     18.0,
+     1.81
+    ],
+    "200m": [
+     "track",
+     5.8425,
+     38.0,
+     1.81
+    ],
+    "400m": [
+     "track",
+     1.53775,
+     82.0,
+     1.81
+    ],
+    "1500m": [
+     "track",
+     0.03768,
+     480.0,
+     1.85
+    ],
+    "110mH": [
+     "track",
+     5.74352,
+     28.5,
+     1.92
+    ],
+    "HJ": [
+     "jumps",
+     0.8465,
+     75.0,
+     1.42
+    ],
+    "PV": [
+     "jumps",
+     0.2797,
+     100.0,
+     1.35
+    ],
+    "LJ": [
+     "jumps",
+     0.14354,
+     220.0,
+     1.4
+    ],
+    "SP": [
+     "throws",
+     51.39,
+     1.5,
+     1.05
+    ],
+    "DT": [
+     "throws",
+     12.91,
+     4.0,
+     1.1
+    ],
+    "JT": [
+     "throws",
+     10.14,
+     7.0,
+     1.08
+    ],
+    "60m_indoor": [
+     "track",
+     58.015,
+     11.5,
+     1.81
+    ],
+    "1000m_indoor": [
+     "track",
+     0.08713,
+     305.5,
+     1.85
+    ],
+    "60mH_indoor": [
+     "track",
+     20.5173,
+     15.5,
+     1.92
+    ]
+   },
+   "W": {
+    "200m": [
+     "track",
+     4.99087,
+     42.5,
+     1.81
+    ],
+    "800m": [
+     "track",
+     0.11193,
+     254.0,
+     1.88
+    ],
+    "100mH": [
+     "track",
+     9.23076,
+     26.7,
+     1.835
+    ],
+    "HJ": [
+     "jumps",
+     1.84523,
+     75.0,
+     1.348
+    ],
+    "LJ": [
+     "jumps",
+     0.188807,
+     210.0,
+     1.41
+    ],
+    "SP": [
+     "throws",
+     56.0211,
+     1.5,
+     1.05
+    ],
+    "JT": [
+     "throws",
+     15.9803,
+     3.8,
+     1.04
+    ],
+    "100m_decathlon": [
+     "track",
+     17.857,
+     21.0,
+     1.81
+    ],
+    "400m_decathlon": [
+     "track",
+     1.34285,
+     91.7,
+     1.81
+    ],
+    "1500m_decathlon": [
+     "track",
+     0.02883,
+     535,
+     1.88
+    ],
+    "PV_decathlon": [
+     "jumps",
+     0.44125,
+     100,
+     1.35
+    ],
+    "DT_decathlon": [
+     "throws",
+     12.3311,
+     3.0,
+     1.1
+    ],
+    "60mH_indoor": [
+     "track",
+     20.0479,
+     17.0,
+     1.835
+    ]
+   }
+  },
+  "notes": [
+   "The pentathlon (men) uses the men's parameters of its events.",
+   "Compute with exact decimals (performance as recorded after rounding), then round down; floating-point results such as 998.9999999 must be treated with a tiny tolerance or decimal arithmetic."
+  ],
+  "checks": [
+   {
+    "sex": "M",
+    "event": "100m",
+    "performance": 10.4,
+    "points": 999,
+    "where": "worked example, p. 23"
+   },
+   {
+    "sex": "M",
+    "event": "100m",
+    "performance": 10.64,
+    "points": 942,
+    "where": "worked example (10.4 hand + 0.24), p. 23"
+   },
+   {
+    "sex": "M",
+    "event": "SP",
+    "performance": 7.72,
+    "points": 350,
+    "where": "men's shot put table"
+   },
+   {
+    "sex": "M",
+    "event": "SP",
+    "performance": 4.28,
+    "points": 150,
+    "where": "men's shot put table"
+   },
+   {
+    "sex": "W",
+    "event": "JT",
+    "performance": 57.18,
+    "points": 1000,
+    "where": "women's javelin table"
+   },
+   {
+    "sex": "W",
+    "event": "JT",
+    "performance": 46.87,
+    "points": 800,
+    "where": "women's javelin table"
+   }
+  ]
+ }
+}
