@@ -2,7 +2,7 @@
 
 Every app has in-app guides per role (`/panduan` for the public, `/admin/panduan` for staff), modelled on the
 structure of GitHub Docs' "Get started" (docs.github.com/en/get-started): a calm landing page, articles grouped by
-path, one idea per section, short copy, little decoration. Adapt the pattern, never its content or branding. Text in
+path, one idea per section, short copy. Adapt the pattern, never its content or branding. Text in
 plain Indonesian (`bahasa-indonesia-plain`); design per [ui.md](ui.md). Elegant means a clear structure **richly decorated**: Codex-made art is an important part of
 guides (F-022) — the structure below stays calm and readable, the decoration makes it inviting.
 
