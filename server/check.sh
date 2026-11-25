@@ -5,25 +5,22 @@
 #
 #   sudo bash check.sh                       # before setup.sh: upload this file next to it
 #   sudo bash /opt/apps/_fondasi/server/check.sh   # once Fondasi is cloned on the server
-#   spmb check                               # same checks, from an SPMB checkout
 #   sudo DOMAIN=example.sch.id bash check.sh # fills the domain into the printed commands
 #
-# Apps are read from /opt/apps/PORTS ("<port> <app>-<env> [public hostname]"). The SPMB section runs
-# only when /opt/apps/spmb exists.
+# Apps are read from /opt/apps/PORTS ("<port> <app>-<env> [public hostname]"). An app can add its own
+# read-only checks as /opt/apps/<app>/check-app (docs/app-contract.md, "App check adapter").
 #
 # Variables (optional): DOMAIN (production domain, for the printed commands),
-# SPMB_ROOT (default /opt/apps), OFFLINE=1 (skip the network checks: repository, public URLs).
+# APPS_ROOT (default /opt/apps; SPMB_ROOT still accepted), OFFLINE=1 (skip the network checks: repository, public URLs).
 #
 # Output: one line per check ([ok] fine, [--] not done yet, [!!] needs attention), then the
 # state of the server (S0…S9) and the next command(s). Exit code 0, or 1 when a blocker was found.
 set -uo pipefail
 
-SPMB_ROOT="${SPMB_ROOT:-/opt/apps}"
-APP_DIR="$SPMB_ROOT/spmb"
-SRC="${SPMB_SRC:-$APP_DIR/src}"
+APPS_ROOT="${APPS_ROOT:-${SPMB_ROOT:-/opt/apps}}"
 DOMAIN="${DOMAIN:-}"
 OFFLINE="${OFFLINE:-0}"
-MARKER="$SPMB_ROOT/.server-setup"
+MARKER="$APPS_ROOT/.server-setup"
 
 ok()   { printf '  [ok] %s\n' "$*"; }
 todo() { printf '  [--] %s\n' "$*"; }
@@ -71,23 +68,6 @@ docker_public_ports() {
     done | sort -u
 }
 
-stack_env_var() { sed -n "s/^$2=//p" "$APP_DIR/$1/stack.env" 2>/dev/null | tail -n 1; }
-
-compose_running() {
-    docker ps -q --filter "label=com.docker.compose.project=$1" --filter status=running 2>/dev/null | wc -l
-}
-
-# Number of Super Admin accounts in <env>'s database; "?" when it cannot be read.
-superadmins() {
-    local id
-    id="$(docker ps -q --filter "label=com.docker.compose.project=spmb-$1" \
-        --filter label=com.docker.compose.service=db 2>/dev/null | head -n 1)"
-    [ -n "$id" ] || { echo '?'; return; }
-    # shellcheck disable=SC2016
-    docker exec "$id" sh -c 'mysql -uroot -p"$MYSQL_ROOT_PASSWORD" -N -B -e "SELECT COUNT(*) FROM spmb.auth_groups_users WHERE \`group\` = '"'"'superadmin'"'"'" 2>/dev/null' \
-        2>/dev/null | tr -dc '0-9' || true
-}
-
 http_code() {
     curl -s -o /dev/null -w '%{http_code}' --max-time 10 "$@" 2>/dev/null || true
 }
@@ -115,7 +95,7 @@ if [ "${mem_total:-0}" -lt 1800 ]; then
 else
     ok "RAM ${mem_total} MB (${mem_avail} MB free), swap ${swap_total} MB"
 fi
-disk_dir="$SPMB_ROOT"; [ -d "$disk_dir" ] || disk_dir=/
+disk_dir="$APPS_ROOT"; [ -d "$disk_dir" ] || disk_dir=/
 disk_free_gb="$(df -Pk "$disk_dir" | awk 'NR == 2 {printf "%d", $4 / 1048576}')"
 if [ "${disk_free_gb:-0}" -lt 8 ]; then
     bad "Disk: only ${disk_free_gb} GB free on $disk_dir (images, database and backups need room)."
@@ -139,7 +119,7 @@ case "$DOCKER_SRC" in
     none)
         todo "Docker is not installed (setup.sh installs it)." ;;
     snap)
-        bad "Docker comes from snap. SPMB needs Docker from apt: see docs/server-playbook.md, 'Docker from snap'."
+        bad "Docker comes from snap. the apps need Docker from apt: see docs/server-playbook.md, 'Docker from snap'."
         BLOCKER=1 ;;
     *)
         case "$DOCKER_SRC" in
@@ -161,7 +141,7 @@ case "$DOCKER_SRC" in
         if docker buildx version >/dev/null 2>&1; then
             ok "Buildx (BuildKit) available"
         else
-            todo "Buildx missing (setup.sh installs it; 'spmb deploy' builds with BuildKit)."
+            todo "Buildx missing (setup.sh installs it; app deploys build with BuildKit)."
         fi
         if [ -f /etc/docker/daemon.json ] && have jq; then
             if ! jq -e . /etc/docker/daemon.json >/dev/null 2>&1; then
@@ -192,7 +172,7 @@ if [ -f "$MARKER" ]; then
     SETUP_DONE=1
     ok "setup.sh has run ($(sed -n 's/^last_run=//p' "$MARKER")); server name: $(sed -n 's/^server=//p' "$MARKER" | grep . || hostname -s)"
     [ -n "$DOMAIN" ] || DOMAIN="$(sed -n 's/^domain=//p' "$MARKER")"
-elif [ -f /etc/apt/apt.conf.d/52spmb-unattended-upgrades ]; then
+elif [ -f /etc/apt/apt.conf.d/52spmb-unattended-upgrades ]; then   # file name kept from the first servers
     SETUP_DONE=1
     ok "setup.sh has run (an earlier version; running it again adds the marker file)"
 else
@@ -252,12 +232,16 @@ else
 fi
 
 # ------------------------------------------------------------------------------------------
-head_ "Apps on this server ($SPMB_ROOT/PORTS)"
-if [ -f "$SPMB_ROOT/PORTS" ]; then
+APPS_COUNT=0
+APPS_BAD=0
+head_ "Apps on this server ($APPS_ROOT/PORTS)"
+if [ -f "$APPS_ROOT/PORTS" ]; then
     while read -r port name host _; do
         case "$port" in ''|'#'*) continue ;; esac
+        APPS_COUNT=$((APPS_COUNT + 1))
         if [ "$(http_code "http://127.0.0.1:$port/")" = 000 ]; then
             bad "$port $name — nothing answers on 127.0.0.1:$port"
+            APPS_BAD=$((APPS_BAD + 1))
             continue
         fi
         if [ -z "${host:-}" ]; then
@@ -268,106 +252,57 @@ if [ -f "$SPMB_ROOT/PORTS" ]; then
             pub="$(http_code "https://$host/")"
             case "$pub" in
                 2??|3??|401|403) ok "$port $name — answers, https://$host/ gives $pub" ;;
-                *) bad "$port $name answers locally but https://$host/ gives ${pub:-nothing}: check the tunnel route $host -> http://127.0.0.1:$port" ;;
+                *) bad "$port $name answers locally but https://$host/ gives ${pub:-nothing}: check the tunnel route $host -> http://127.0.0.1:$port"
+                   APPS_BAD=$((APPS_BAD + 1)) ;;
             esac
         fi
-    done < "$SPMB_ROOT/PORTS"
+    done < "$APPS_ROOT/PORTS"
 else
-    todo "No port list yet (setup.sh creates $SPMB_ROOT/PORTS)."
+    todo "No port list yet (setup.sh creates $APPS_ROOT/PORTS)."
 fi
 # Ports published by containers but missing from the list: the next app could pick the same port.
 if [ "$DOCKER_UP" = 1 ]; then
     while IFS='|' read -r project name ports; do
         tr ',' '\n' <<< "$ports" | sed 's/^ *//' | grep -- '->' | while read -r p; do
             hostport="${p%%->*}"; port="${hostport##*:}"
-            awk -v p="$port" '$1 == p {found = 1} END {exit !found}' "$SPMB_ROOT/PORTS" 2>/dev/null && continue
+            awk -v p="$port" '$1 == p {found = 1} END {exit !found}' "$APPS_ROOT/PORTS" 2>/dev/null && continue
             printf '%s %s\n' "$port" "${project:-$name}"
         done
     done < <(docker ps --format '{{.Label "com.docker.compose.project"}}|{{.Names}}|{{.Ports}}' 2>/dev/null) \
         | sort -u -k1,1n | while read -r port owner; do
             printf '  [!!] Port %s (%s) is used but not in %s: echo "%s %s" >> %s\n' \
-                "$port" "$owner" "$SPMB_ROOT/PORTS" "$port" "$owner" "$SPMB_ROOT/PORTS"
+                "$port" "$owner" "$APPS_ROOT/PORTS" "$port" "$owner" "$APPS_ROOT/PORTS"
         done
     unlisted_count="$(docker ps --format '{{.Ports}}' 2>/dev/null | tr ',' '\n' | grep -- '->' | sed 's/->.*//; s/.*://' | sort -u \
-        | while read -r port; do awk -v p="$port" '$1 == p {f = 1} END {exit !f}' "$SPMB_ROOT/PORTS" 2>/dev/null || echo "$port"; done | wc -l)"
-    [ "$unlisted_count" -eq 0 ] || WARNINGS+=("$unlisted_count published port(s) are not in $SPMB_ROOT/PORTS (lines above): add them so no two apps take the same port.")
+        | while read -r port; do awk -v p="$port" '$1 == p {f = 1} END {exit !f}' "$APPS_ROOT/PORTS" 2>/dev/null || echo "$port"; done | wc -l)"
+    [ "$unlisted_count" -eq 0 ] || WARNINGS+=("$unlisted_count published port(s) are not in $APPS_ROOT/PORTS (lines above): add them so no two apps take the same port.")
 fi
 
 # ------------------------------------------------------------------------------------------
-HAS_SPMB=0
-[ -d "$APP_DIR" ] && HAS_SPMB=1
-SRC_OK=0
-declare -A INIT=() TAG=() RUNNING=() HEALTH=() ADMINS=() ENVDOMAIN=() PORT=()
-if [ "$HAS_SPMB" = 1 ]; then
-head_ "SPMB"
-if [ -d "$SRC/.git" ] || [ -f "$SRC/.git" ]; then
-    SRC_OK=1
-    ok "Checkout $SRC ($(git -C "$SRC" log -1 --format='%h %cs' 2>/dev/null))"
-    if [ "$OFFLINE" != 1 ]; then
-        if timeout 25 git -C "$SRC" ls-remote -q origin HEAD >/dev/null 2>&1; then
-            ok "The server can read the repository (git fetch works)"
-        else
-            bad "The server cannot read the repository: check its deploy key (ssh -T git@github-spmb) and network."
-        fi
-    fi
-else
-    todo "No checkout in $SRC yet (deploy key + git clone)."
-fi
-if [ -e /usr/local/bin/spmb ]; then ok "spmb command installed"; else todo "spmb command not linked yet (spmb init does it)."; fi
-
-for env in staging production; do
-    INIT[$env]=0; TAG[$env]=""; RUNNING[$env]=0; HEALTH[$env]=""; ADMINS[$env]="?"
-    if [ ! -f "$APP_DIR/$env/stack.env" ]; then
-        todo "$env: not initialised"
-        continue
-    fi
-    INIT[$env]=1
-    ENVDOMAIN[$env]="$(stack_env_var "$env" SPMB_DOMAIN)"
-    PORT[$env]="$(stack_env_var "$env" SPMB_PORT)"
-    TAG[$env]="$(stack_env_var "$env" SPMB_TAG)"
-    if [ -z "${TAG[$env]}" ]; then
-        todo "$env (${ENVDOMAIN[$env]}, port ${PORT[$env]}): initialised, never deployed"
-        continue
-    fi
-    [ "$DOCKER_UP" = 1 ] && RUNNING[$env]="$(compose_running "spmb-$env")"
-    if [ "${RUNNING[$env]}" -lt 3 ]; then
-        bad "$env: ${RUNNING[$env]} of 3 containers running (image ${TAG[$env]}): spmb logs $env app"
-        continue
-    fi
-    HEALTH[$env]="$(http_code -H "Host: ${ENVDOMAIN[$env]}" -H 'X-Forwarded-Proto: https' "http://127.0.0.1:${PORT[$env]}/")"
-    ADMINS[$env]="$(superadmins "$env")"; ADMINS[$env]="${ADMINS[$env]:-?}"
-    if [ "${HEALTH[$env]}" = 200 ]; then
-        ok "$env runs ${TAG[$env]} on 127.0.0.1:${PORT[$env]} (HTTP 200), domain ${ENVDOMAIN[$env]}"
-    else
-        bad "$env answers HTTP ${HEALTH[$env]:-none} on 127.0.0.1:${PORT[$env]}: spmb logs $env app"
-    fi
-    case "${ADMINS[$env]}" in
-        0) todo "$env: no Super Admin yet (spmb spark $env spmb:install)" ;;
-        '?') info "$env: Super Admin count could not be read" ;;
-        *) ok "$env: Super Admin account exists" ;;
-    esac
-    if [ "$OFFLINE" != 1 ] && [ "$TUNNEL" = 1 ] && [ "${HEALTH[$env]}" = 200 ]; then
-        pub="$(http_code "https://${ENVDOMAIN[$env]}/")"
-        case "$pub" in
-            200) ok "https://${ENVDOMAIN[$env]}/ answers from the internet (200)" ;;
-            302|401|403) ok "https://${ENVDOMAIN[$env]}/ answers ($pub: behind Cloudflare Access)" ;;
-            *) bad "https://${ENVDOMAIN[$env]}/ answers ${pub:-nothing}: add the tunnel route ${ENVDOMAIN[$env]} -> http://127.0.0.1:${PORT[$env]}" ;;
+# App adapters (docs/app-contract.md, "App check adapter"): /opt/apps/<app>/check-app, provided by the app,
+# read-only. Its "[ok]/[--]/[!!]" lines are shown here; "NEXT: …" lines become next steps; exit 0 = fine.
+ADAPTER_NEXT=()
+ADAPTERS_BAD=""
+for adapter in "$APPS_ROOT"/*/check-app; do
+    [ -f "$adapter" ] || continue
+    app="$(basename "$(dirname "$adapter")")"
+    head_ "App: $app"
+    out="$(APPS_ROOT="$APPS_ROOT" OFFLINE="$OFFLINE" TUNNEL="$TUNNEL" DOCKER_UP="$DOCKER_UP" \
+        timeout 120 bash "$adapter" 2>&1)"
+    rc=$?
+    while IFS= read -r line; do
+        case "$line" in
+            'NEXT: '*) ADAPTER_NEXT+=("$app: ${line#NEXT: }") ;;
+            *'[!!] '*) printf '%s\n' "$line"; WARNINGS+=("$app: ${line#*\[!!\] }") ;;
+            *) printf '%s\n' "$line" ;;
         esac
-    fi
-    if [ -d /run/systemd/system ] && ! systemctl is-enabled --quiet "spmb-backup@$env.timer" 2>/dev/null; then
-        bad "$env: daily backup timer is off (spmb init $env ${ENVDOMAIN[$env]} turns it on again)."
-    fi
+    done <<< "$out"
+    [ "$rc" = 0 ] || ADAPTERS_BAD="${ADAPTERS_BAD:+$ADAPTERS_BAD }$app"
 done
-if [ "${INIT[production]}" = 1 ] && [ ! -f "$APP_DIR/offsite.env" ]; then
-    todo "Off-site backups not set up (spmb offsite setup, docs/deployment.md)."
-fi
-fi
 
 # ------------------------------------------------------------------------------------------
 # State: the first step that is not done yet decides what comes next.
-D="${DOMAIN:-${ENVDOMAIN[production]:-<domain>}}"
-SPMB_CMD=spmb
-[ -e /usr/local/bin/spmb ] || SPMB_CMD="bash $SRC/deploy/server/spmb"
+D="${DOMAIN:-<domain>}"
 STATE="" ; NEXT=()
 if [ "$DOCKER_SRC" = snap ]; then
     STATE="S0x  Docker from snap (blocker)"
@@ -387,45 +322,18 @@ elif [ "$TUNNEL" = 0 ]; then
     STATE="S1   Base ready, tunnel not connected"
     NEXT=("Cloudflare Zero Trust → Networks → Tunnels → Create → run: cloudflared service install <token>"
           "Routes: ssh.$D, konsol.$D (docs/server-playbook.md, steps 2–4)")
-elif [ "$HAS_SPMB" = 0 ]; then
+elif [ "$APPS_COUNT" = 0 ] && [ -z "$(ls "$APPS_ROOT"/*/check-app 2>/dev/null)" ]; then
     STATE="S2   Server ready for apps"
-    NEXT=("Add an app: docs/app-contract.md in arumiforge/fondasi (folder /opt/apps/<app>, a port line in PORTS,"
-          "127.0.0.1 only, tunnel route in the Cloudflare dashboard). SPMB: clone it to $SRC, then spmb up staging <domain>.")
-elif [ "$SRC_OK" = 0 ]; then
-    STATE="S2   Tunnel up, repository not on the server"
-    NEXT=("Deploy key + clone (docs/deployment.md, First server step 5):"
-          "ssh-keygen -t ed25519 -f /root/.ssh/spmb_deploy -N \"\" -C \"$(hostname) deploy (read-only)\""
-          "printf 'Host github-spmb\\n  HostName github.com\\n  User git\\n  IdentityFile /root/.ssh/spmb_deploy\\n  IdentitiesOnly yes\\n' >> /root/.ssh/config"
-          "cat /root/.ssh/spmb_deploy.pub   # add to GitHub → Settings → Deploy keys (read-only)"
-          "mkdir -p $APP_DIR && git clone git@github-spmb:arumiforge/spmb.git $SRC")
-elif [ "${INIT[staging]}" = 0 ] || [ -z "${TAG[staging]}" ] || [ "${RUNNING[staging]}" -lt 3 ]; then
-    if [ "${INIT[staging]}" = 0 ]; then
-        STATE="S3   Repository ready, staging not created"
-        NEXT=("$SPMB_CMD up staging staging.$D")
-    else
-        STATE="S4   Staging created but not running"
-        NEXT=("$SPMB_CMD up staging")
-    fi
-    NEXT+=("Tunnel route: staging.$D -> http://127.0.0.1:<port printed by init> (behind Access)")
-elif [ "${HEALTH[staging]}" != 200 ]; then
-    STATE="S4b  Staging runs but does not answer 200"
-    NEXT=("spmb logs staging app" "spmb up staging   (redeploys the same image)")
-elif [ "${ADMINS[staging]}" = 0 ]; then
-    STATE="S5   Staging runs, no Super Admin"
-    NEXT=("spmb spark staging spmb:install" "spmb spark staging spmb:branding clients/<school>/branding")
-elif [ "${INIT[production]}" = 0 ] || [ -z "${TAG[production]}" ] || [ "${RUNNING[production]}" -lt 3 ]; then
-    STATE="S6   Staging live, production not running"
-    if [ "${INIT[production]}" = 0 ]; then NEXT=("spmb up production $D"); else NEXT=("spmb up production"); fi
-    NEXT+=("Tunnel route: $D -> http://127.0.0.1:<port printed by init> (public)")
-elif [ "${HEALTH[production]}" != 200 ]; then
-    STATE="S6b  Production runs but does not answer 200"
-    NEXT=("spmb logs production app" "spmb rollback production   (if the last deploy caused it)")
-elif [ "${ADMINS[production]}" = 0 ]; then
-    STATE="S7   Production runs, no Super Admin"
-    NEXT=("spmb spark production spmb:install" "spmb spark production spmb:branding clients/<school>/branding")
+    NEXT=("Add an app: docs/app-contract.md (folder /opt/apps/<app>, a port line in PORTS, 127.0.0.1 only,"
+          "a tunnel route in the Cloudflare dashboard, optionally a check-app adapter); then its own setup docs.")
+elif [ "$APPS_BAD" != 0 ] || [ -n "$ADAPTERS_BAD" ]; then
+    STATE="S3   Apps need attention (${ADAPTERS_BAD:-ports that do not answer})"
+    NEXT=("${ADAPTER_NEXT[@]+"${ADAPTER_NEXT[@]}"}")
+    [ "$APPS_BAD" = 0 ] || NEXT+=("Ports in PORTS that do not answer: start the stack or remove its line (see the Apps section).")
 else
-    STATE="S9   Live: staging and production run"
-    NEXT=("Everyday: spmb deploy staging → check → spmb deploy production   (spmb help)")
+    STATE="S9   Live: every app answers"
+    NEXT=("Everyday work follows each app's own docs.")
+    NEXT+=("${ADAPTER_NEXT[@]+"${ADAPTER_NEXT[@]}"}")
 fi
 
 head_ "Result"

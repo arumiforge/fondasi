@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# App check adapter (docs/app-contract.md, "App check adapter"). Copy to /opt/apps/<app>/check-app (or link it to
+# a file in the app's repository). server/check.sh runs it read-only and shows its lines under "App: <app>".
+#
+# Contract:
+#   - read-only: never start, stop, write or migrate anything;
+#   - print lines "  [ok] …", "  [--] …" (not done yet) or "  [!!] …" (needs attention);
+#   - print "NEXT: <command or step>" for what the operator should do next (most important first);
+#   - exit 0 when the app is fine, 1 when something is pending or broken;
+#   - finish within 120 seconds; environment: APPS_ROOT, OFFLINE (1 = no network checks), TUNNEL, DOCKER_UP.
+set -uo pipefail
+APP="${APP:-example}"   # replace with the app name
+ROOT="${APPS_ROOT:-/opt/apps}/$APP"
+rc=0
+
+for env in staging production; do
+    [ -d "$ROOT/$env" ] || continue
+    running="$(docker ps -q --filter "label=com.docker.compose.project=$APP-$env" --filter status=running 2>/dev/null | wc -l)"
+    if [ "$running" -gt 0 ]; then
+        echo "  [ok] $env: $running container(s) running"
+    else
+        echo "  [!!] $env: no container running"
+        echo "NEXT: cd $ROOT/$env && docker compose -p $APP-$env --env-file stack.env up -d --wait"
+        rc=1
+    fi
+    if [ ! -d "$ROOT/$env/backups" ] || [ -z "$(find "$ROOT/$env/backups" -type f -mtime -2 2>/dev/null | head -n 1)" ]; then
+        echo "  [--] $env: no backup from the last 2 days in $ROOT/$env/backups"
+    fi
+done
+exit "$rc"

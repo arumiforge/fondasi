@@ -17,5 +17,5 @@ jobs:
         run: tools/data-check
       - name: Shell scripts
         run: |
-          bash -n server/setup.sh server/check.sh tools/fondasi-sync tools/data-check .claude/cloud/setup.sh
-          shellcheck server/setup.sh server/check.sh tools/fondasi-sync tools/data-check .claude/cloud/setup.sh
+          bash -n server/setup.sh server/check.sh server/templates/check-app tools/fondasi-sync tools/data-check .claude/cloud/setup.sh
+          shellcheck server/setup.sh server/check.sh server/templates/check-app tools/fondasi-sync tools/data-check .claude/cloud/setup.sh
