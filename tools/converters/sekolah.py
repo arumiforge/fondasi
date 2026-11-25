@@ -154,9 +154,36 @@ def match(by_parent, parent, name, kota=None):
     hits = [c for c in cands if norm(c[1]) == key]
     if len(hits) == 1:
         return hits[0][0]
-    loose = key.replace("dj", "j").replace("oe", "u").replace("tj", "c")
-    hits = [c for c in cands if norm(c[1]).replace("dj", "j").replace("oe", "u").replace("tj", "c") == loose]
-    return hits[0][0] if len(hits) == 1 else None
+    hits = [c for c in cands if loose(norm(c[1])) == loose(key)]
+    if len(hits) == 1:
+        return hits[0][0]
+    # Javanese/Sundanese spellings differ in a/e/o and doubled letters (Purwodadi/Purwadadi, Baturaden/Baturraden)
+    # and in u/o, i/y and a silent h or w (Sokogelap/Sukogelap, Madiocondro/Madyocondro, Sidoarjo/Sidoharjo);
+    # each tier is used only when it gives one candidate, and every such match is listed in the report
+    for tier in (skeleton, skeleton_wide):
+        hits = [c for c in cands if tier(norm(c[1])) == tier(key)]
+        if len(hits) == 1:
+            LOOSE_MATCHES.append(f"{name} = {hits[0][1]} ({hits[0][0]})")
+            return hits[0][0]
+        if hits:
+            return None
+    return None
+
+
+LOOSE_MATCHES = []
+
+
+def loose(key):
+    return key.replace("dj", "j").replace("oe", "u").replace("tj", "c")
+
+
+def skeleton(key):
+    return re.sub(r"(.)\1+", r"\1", re.sub(r"[eo]", "a", loose(key)))
+
+
+def skeleton_wide(key):
+    k = re.sub(r"[hw]", "", loose(key)).replace("y", "i")
+    return re.sub(r"(.)\1+", r"\1", re.sub(r"[aeou]", "a", k))
 
 
 def slug(name):
@@ -260,9 +287,50 @@ def build(raw, out, wilayah_path, version, groups=GROUPS):
                                "levels": dict(sorted(counts.items())),
                                "with_village_code": sum(1 for s in items if s["kode_desa"])})
         total += len(items)
-    json.dump({"files": manifest_files, "total": total, "levels": dict(sorted(levels_seen.items())), "report": report},
-              sys.stdout, ensure_ascii=False, indent=1)
-
+    wilayah_manifest = os.path.join(os.path.dirname(wilayah_path), "manifest.json")
+    wilayah_version = json.load(open(wilayah_manifest))["version"] if os.path.exists(wilayah_manifest) else "?"
+    manifest = {
+        "version": version,
+        "description": "Schools and other education units in Indonesia, one gzipped JSON file per province "
+                       "(public data, no personal data), linked to the Kemendagri region codes of the wilayah set.",
+        "status": "ready",
+        "groups": list(groups),
+        "levels": sorted(levels_seen),
+        "source": f"{BASE}/satpen/<group>/<district>/3 (Kemendikdasmen Dapodik reference pages; Dikdas, Dikmen, PAUD "
+                  "and Dikmas lists per district, status 'all'), crawled on the version date; the pages show no "
+                  "source date",
+        "licence": "Public government data, no personal data",
+        "procedure": "tools/converters/sekolah.py fetch (raw pages) then build; regions matched by name to "
+                     f"wilayah {wilayah_version}, never invented (F-028 for what is kept)",
+        "fields": {
+            "npsn": "NPSN as published (8 characters; non-formal units may start with a letter)",
+            "nama": "name as published",
+            "bentuk_pendidikan": "form as published: SD, MI, SMP, MTs, SMA, MA, SMK, SLB, SPK …, PDF …, TK, KB, RA, …",
+            "status_sekolah": "NEGERI | SWASTA",
+            "alamat": "street address as published",
+            "desa": "village name as published",
+            "kecamatan": "'Kec. …' as published",
+            "kabupaten": "'Kab. …' / 'Kota …' as published",
+            "provinsi": "'Prov. …' as published",
+            "kode_desa": "Kemendagri village code xx.xx.xx.xxxx (wilayah), null when the name does not match uniquely",
+            "kode_kecamatan": "Kemendagri district code xx.xx.xx, null when unmatched",
+            "kode_kabupaten": "Kemendagri regency code xx.xx, null when unmatched",
+            "kode_provinsi": "Kemendagri province code xx",
+            "kode_kecamatan_dapodik": "6-digit Dapodik district code of the source page",
+        },
+        "schools": total,
+        "with_village_code": sum(f["with_village_code"] for f in manifest_files),
+        "levels_count": dict(sorted(levels_seen.items())),
+        "matched_by_spelling_variant": len(LOOSE_MATCHES),
+        "unmatched": {"regencies": len(report["unmatched_regency"]), "districts": len(report["unmatched_district"]),
+                      "villages": report["unmatched_village"]},
+        "files": manifest_files,
+    }
+    with open(os.path.join(out, "manifest.json"), "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    report["matched_by_spelling_variant"] = LOOSE_MATCHES
+    json.dump(report, sys.stdout, ensure_ascii=False, indent=1)
 
 if __name__ == "__main__":
     args = sys.argv[1:]
