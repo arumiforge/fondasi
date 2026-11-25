@@ -7,6 +7,7 @@ Fondasi is proprietary (`LICENSE`). Data sets and tools below come from or are d
 | `data/wilayah/` | [cahyadsn/wilayah](https://github.com/cahyadsn/wilayah) `db/wilayah.sql`, codes and names per Kepmendagri No 300.2.2-2138 Tahun 2025; converted by `tools/converters/wilayah.mjs` | MIT, Copyright (c) 2025 cahya dsn (text below) |
 | `data/sekolah/` | Public school reference data (Kemendikdasmen Dapodik, Kemenag EMIS), compiled by Arumi Studios | Public government data, no personal data |
 | `data/kaldik-jateng/`, `sources/kaldik-jateng/` | Peraturan Kepala Dinas Pendidikan Provinsi Jawa Tengah on the education calendar 2025/2026 and 2026/2027, pdk.jatengprov.go.id | Public government documents |
+| `data/libur-nasional/`, `sources/libur-nasional/` | SKB 3 Menteri on national holidays and cuti bersama 2026 and 2027, published by Kemenko PMK (www.kemenkopmk.go.id) | Public government documents |
 | `server/setup.sh` installs | Docker (Docker Inc. apt repository), cloudflared (Cloudflare apt repository), Cockpit (Ubuntu) | Installed on the server from their vendors; not redistributed here |
 
 ### cahyadsn/wilayah (MIT)

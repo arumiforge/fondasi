@@ -25,7 +25,8 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| (next session's branch) | session data-round | Data sets in this order: R-01, R-04 + R-06, R-03, R-10 | to start |
+| `data/sekolah-semua-jenjang` | session data-round | R-01: Dikdas + Dikmen of every province (crawl running, ~8 h); PAUD + Dikmas in a second PR | crawling |
+| `data/libur-nasional` | session data-round | R-04 `libur-nasional` 2026, 2027; `kaldik-jateng` checked against it | PR open |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -54,5 +55,6 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-25 · session data-round · `data/libur-nasional` — PR #5 merged; R-01 interview (all provinces, replace SD/MI, madrasah from Kemendikdasmen with R-02 for NSM, add PAUD and PKBM/kesetaraan, sequential crawl in two PRs); R-04 built. Next: R-06, then R-01 when the crawl ends.
 - 2026-11-25 · session data-round prep · `pw/peaceful-tesla-bjooc9` — PR #4 merged (skema-siswa corrections F-024, kaldik-jateng, calendar layers F-025); environment Fondasi created; handoff for the data round. Next: R-01.
 - 2026-11-25 · session server-flow · `pw/peaceful-tesla-bjooc9` — repository created and filled: F-001…F-023 (PRs #1–#3), interview rounds with the user, first data sets. Next: data round.

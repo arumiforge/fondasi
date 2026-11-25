@@ -12,8 +12,8 @@ environment cannot reach: [../docs/data-requests.md](../docs/data-requests.md).
 | `tahun-ajaran` | Year format, semesters, grades per level, curriculum phases | 2026-11-25 | ready | rules |
 | `sekolah` (all levels) | + SMP, MTs, SMA, MA, SMK, SLB; region codes linking to `wilayah`; address | — | planned (R-01, R-02) | Dapodik (reachable here), EMIS (browser) |
 | `kodepos` | Postal code per village code | — | planned (R-03) | cahyadsn wilayah postal list (check licence) |
-| `libur-nasional` | National holidays and cuti bersama per year, 2026–2028 | — | planned (R-04) | SKB 3 Menteri (Kemenko PMK) |
-| `kaldik-jateng` | Education calendar of Jawa Tengah: 2026/2027 in full (events per level and 5/6 school days, rules), 2025/2026 key dates | 2026-05-29 | ready (2027/2028 not yet published) | Dinas Pendidikan Prov. Jawa Tengah |
+| `libur-nasional` | National holidays and cuti bersama, one row per day: 2026 (17 + 8 days), 2027 (18 + 8 days) | 2026-09-15 | ready (2028 when signed, ~Sept 2027) | SKB 3 Menteri (Kemenko PMK) |
+| `kaldik-jateng` | Education calendar of Jawa Tengah: 2026/2027 in full (events per level and 5/6 school days, rules), 2025/2026 key dates | 2026-09-15 | ready (2027/2028 not yet published); holidays checked against `libur-nasional` | Dinas Pendidikan Prov. Jawa Tengah |
 | `kalender-nasional` | National education calendar (Kemendikdasmen; Kemenag for madrasah) per academic year | — | planned (R-12) | Kemendikdasmen, Kemenag (browser) |
 | `kaldik-madrasah-jateng` | Madrasah calendar of Jawa Tengah per academic year (incl. Ramadan days) | — | planned (R-06) | Kanwil Kemenag Jawa Tengah |
 | `referensi-dapodik` | Religion, occupation, income, education, transport, residence, special needs, levels/grades — with official codes | — | planned (R-07) | Dapodik reference tables (browser) |
