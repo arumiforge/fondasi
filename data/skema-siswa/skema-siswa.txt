@@ -20,7 +20,7 @@ SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
 === GROUP: identitas - Identitas Diri (18 fields) ===
 01. no | No Urut | integer | format=digit
 02. nama | Nama Siswa | text | required; max_len=150; format=kapital
-03. nisn | NISN | text | max_len=20; format=nisn
+03. nisn | NISN | text | max_len=10; format=nisn
 04. nipd_dapodik | NIPD Dapodik | text | max_len=30; format=digit
 05. nipd_rapor | NIPD Rapor | text | max_len=30; format=digit
 06. rombel_id | Kelas | class | 
@@ -28,7 +28,7 @@ SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
 08. jk | Jenis Kelamin | select | required; options=jk
 09. tempat_lahir | Tempat Lahir | text | max_len=100; format=proper
 10. tanggal_lahir | Tanggal Lahir | date | required; format=tanggal; range=[-20 tahun, -9 tahun]
-11. nik | NIK Siswa | text | max_len=30; format=nik
+11. nik | NIK Siswa | text | required; max_len=16; format=nik
 12. agama | Agama | select | required; options=agama; other_allowed
 13. anak_ke | Anak ke- | integer | required; range=[1, 10]
 14. jml_saudara | Jumlah Saudara Kandung | integer | range=[0, 10]
@@ -99,6 +99,7 @@ SUMMARY: 5 groups, 61 fields (2 of them auto-filled).
 - Format codes: kapital=UPPERCASE, proper=Proper Case, digit=digits only, nik/kk=16 digits, nisn=10 digits,
   wa=WhatsApp phone number, kode_pos=5 digits, tahun=4-digit year, tanggal=date.
 - tanggal_lahir range is relative: age between 9 and 20 years. 'tahun_ini' = current year.
+- [penghasilan] is the shared income list for every app (Fondasi F-024).
 - Option "PNS/TNI/Polri" is a combined legacy value (from Dapodik exports); keep it alongside the split options.
 - Option "Ibu Rumah Tangga (IRT)" is only offered for: pekerjaan_ibu.
 - Option hint "Sepeda Motor": Dikendarai sendiri. Kalau dibonceng orang tua/wali, pilih Antar Jemput Ortu / Wali.

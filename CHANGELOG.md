@@ -4,6 +4,9 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 
 ## [Unreleased]
 
+### Changed
+- `skema-siswa`: NISN 10 digits, student NIK required (16 digits); its income list is the shared one (F-024).
+
 ### Added
 - Decoration without limits made by Codex, pages usable before decoration loads, skeleton loading, unique QR designs
   (F-022); detailed student data in internal school apps (`docs/school-data.md`) and data set `skema-siswa` with its

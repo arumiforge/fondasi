@@ -26,7 +26,7 @@
      "key": "nisn",
      "label": "NISN",
      "type": "text",
-     "max_len": "20",
+     "max_len": "10",
      "format": "nisn"
     },
     {
@@ -88,7 +88,8 @@
      "key": "nik",
      "label": "NIK Siswa",
      "type": "text",
-     "max_len": "30",
+     "required": true,
+     "max_len": "16",
      "format": "nik"
     },
     {
@@ -847,6 +848,7 @@
   "School block (unit=sekolah_asal): sekolah_asal = school name; sekolah_asal_npsn = its 8-digit NPSN (auto). Reference list covers SD, MI, SDLB.",
   "Format codes: kapital=UPPERCASE, proper=Proper Case, digit=digits only, nik/kk=16 digits, nisn=10 digits, wa=WhatsApp phone number, kode_pos=5 digits, tahun=4-digit year, tanggal=date.",
   "tanggal_lahir range is relative: age between 9 and 20 years. 'tahun_ini' = current year.",
+  "[penghasilan] is the shared income list for every app (Fondasi F-024).",
   "Option \"PNS/TNI/Polri\" is a combined legacy value (from Dapodik exports); keep it alongside the split options.",
   "Option \"Ibu Rumah Tangga (IRT)\" is only offered for: pekerjaan_ibu.",
   "Option hint \"Sepeda Motor\": Dikendarai sendiri. Kalau dibonceng orang tua/wali, pilih Antar Jemput Ortu / Wali.",
