@@ -1,0 +1,19 @@
+{
+  "academic_year": {
+    "format": "YYYY/YYYY",
+    "example": "2027/2028",
+    "starts": "July",
+    "ends": "June",
+    "note": "The first school day of the year and every holiday come from the education calendar (Kaldik) of the province (Dinas Pendidikan) or of the Kanwil Kemenag for madrasah, never from this file."
+  },
+  "semesters": [
+    { "id": "ganjil", "label": "Semester Ganjil", "months": "July–December" },
+    { "id": "genap", "label": "Semester Genap", "months": "January–June" }
+  ],
+  "grades": {
+    "SD": [1, 2, 3, 4, 5, 6], "MI": [1, 2, 3, 4, 5, 6],
+    "SMP": [7, 8, 9], "MTs": [7, 8, 9],
+    "SMA": [10, 11, 12], "MA": [10, 11, 12], "SMK": [10, 11, 12, 13]
+  },
+  "grade_note": "SMK grade 13 exists only in four-year programmes. Phases of Kurikulum Merdeka: A (1–2), B (3–4), C (5–6), D (7–9), E (10), F (11–12)."
+}

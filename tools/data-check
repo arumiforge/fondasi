@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Check every data set in data/ (F-003): manifest.json with a version, SHA256SUMS that matches the files,
+# no file left out of SHA256SUMS.
+#
+#   tools/data-check            verify (CI runs this)
+#   tools/data-check --write    regenerate SHA256SUMS of every set after a converter ran
+#
+# Needs only bash, coreutils and grep, so it runs on any developer machine and in CI.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+write=0
+[ "${1:-}" = --write ] && write=1
+fail=0
+
+for dir in data/*/; do
+    set_name="$(basename "$dir")"
+    manifest="$dir/manifest.json"
+    if [ ! -f "$manifest" ]; then
+        echo "ERROR $set_name: manifest.json missing"; fail=1; continue
+    fi
+    version="$(grep -m1 -oE '"version"[[:space:]]*:[[:space:]]*"[^"]+"' "$manifest" | sed -E 's/.*"([^"]+)"$/\1/')"
+    if ! [[ "$version" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+        echo "ERROR $set_name: manifest version '$version' is not YYYY-MM-DD"; fail=1
+    fi
+    if [ "$write" = 1 ]; then
+        sums="$(cd "$dir" && find . -type f ! -name SHA256SUMS -printf '%P\n' | LC_ALL=C sort | xargs -d '\n' sha256sum)"
+        printf '%s\n' "$sums" > "$dir/SHA256SUMS"
+        echo "wrote  $set_name/SHA256SUMS ($(wc -l < "$dir/SHA256SUMS") files, version $version)"
+        continue
+    fi
+    if [ ! -f "$dir/SHA256SUMS" ]; then
+        echo "ERROR $set_name: SHA256SUMS missing (tools/data-check --write)"; fail=1; continue
+    fi
+    if ! (cd "$dir" && sha256sum --quiet -c SHA256SUMS); then
+        echo "ERROR $set_name: files differ from SHA256SUMS"; fail=1
+    fi
+    listed="$(sed -E 's/^[0-9a-f]+[[:space:]]+\*?//' "$dir/SHA256SUMS" | LC_ALL=C sort)"
+    present="$(cd "$dir" && find . -type f ! -name SHA256SUMS -printf '%P\n' | LC_ALL=C sort)"
+    if [ "$listed" != "$present" ]; then
+        echo "ERROR $set_name: files not listed in SHA256SUMS (or listed but missing):"
+        diff <(echo "$listed") <(echo "$present") | sed 's/^/       /' || true
+        fail=1
+    fi
+    [ "$fail" = 1 ] || echo "ok     $set_name $version ($(wc -l < "$dir/SHA256SUMS") files)"
+done
+exit "$fail"

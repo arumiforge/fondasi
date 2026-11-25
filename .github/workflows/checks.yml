@@ -1,0 +1,21 @@
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Data sets (manifest, SHA256SUMS)
+        run: tools/data-check
+      - name: Shell scripts
+        run: |
+          bash -n server/setup.sh server/check.sh tools/fondasi-sync tools/data-check .claude/cloud/setup.sh
+          shellcheck server/setup.sh server/check.sh tools/fondasi-sync tools/data-check .claude/cloud/setup.sh
