@@ -5,6 +5,15 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Data set `libur-nasional` 2026-09-15 (R-04): national holidays and cuti bersama 2026 and 2027 from the SKB 3 Menteri,
+  one row per day, transcribed by `tools/converters/libur-nasional.py` with weekday checks; raw PDFs in
+  `sources/libur-nasional/`.
+
+### Changed
+- `kaldik-jateng` 2026-09-15: every holiday event checked against the SKB (`skb` field); all 2027 estimates match;
+  Maulid 2026 differs (SKB: 25 Agustus); SKB days the province did not list are named per year.
+
+### Added
 - Data set `kaldik-jateng` (2026/2027 in full, 2025/2026 key dates) from the R-05 browser collection, raw PDFs in
   `sources/kaldik-jateng/`; calendar layers (F-025); briefs R-12 (national calendar) and R-13 (kabupaten/kota).
 

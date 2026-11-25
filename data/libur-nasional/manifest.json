@@ -1,0 +1,21 @@
+{
+  "version": "2026-09-15",
+  "description": "National holidays (hari libur nasional) and cuti bersama per year, one row per day, from the SKB 3 Menteri (Menteri Agama, Menteri Ketenagakerjaan, Menteri PANRB). National layer of the calendars (F-025): it wins over provincial estimates.",
+  "status": "ready for 2026 and 2027 (the SKB 2028 is expected around September 2027)",
+  "source": "SKB Nomor 1497, 2, 5 Tahun 2025 (year 2026, signed 2025-09-19) and SKB Nomor 1205, 3, 2 Tahun 2026 (year 2027, signed 2026-09-15), published by Kemenko PMK (www.kemenkopmk.go.id); raw PDFs and SOURCE.txt in sources/libur-nasional/",
+  "licence": "Public government document",
+  "procedure": "The PDFs are scans; their Lampiran A and B were transcribed by hand into tools/converters/libur-nasional.py, which checks every printed weekday against its date and writes libur-nasional.json. Version = signing date of the newest SKB.",
+  "fields": {
+    "date": "YYYY-MM-DD",
+    "weekday": "weekday as printed in the SKB (checked)",
+    "kind": "public_holiday | cuti_bersama",
+    "label": "keterangan as printed in the SKB",
+    "ref": "Lampiran A (libur nasional) or B (cuti bersama) row number",
+    "set_by_minister_of_religion": "true for Idul Fitri and Idul Adha: the final date follows the Minister of Religious Affairs' decree (KEDUA)"
+  },
+  "counts": {
+    "2026": {"public_holiday_days": 17, "cuti_bersama_days": 8},
+    "2027": {"public_holiday_days": 18, "cuti_bersama_days": 8}
+  },
+  "files": ["libur-nasional.json"]
+}

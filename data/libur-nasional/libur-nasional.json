@@ -1,0 +1,406 @@
+{
+ "name": "Hari libur nasional dan cuti bersama",
+ "kinds": {
+  "public_holiday": "Hari libur nasional (Lampiran A)",
+  "cuti_bersama": "Cuti bersama (Lampiran B)"
+ },
+ "years": [
+  {
+   "year": 2026,
+   "decree": "Keputusan Bersama Menteri Agama, Menteri Ketenagakerjaan, dan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 1497 Tahun 2025, Nomor 2 Tahun 2025, Nomor 5 Tahun 2025 tentang Hari Libur Nasional dan Cuti Bersama Tahun 2026",
+   "signed": "2025-09-19",
+   "source_file": "sources/libur-nasional/SKB-Libur-Nasional-dan-Cuti-Bersama-Tahun-2026.pdf",
+   "public_holidays": 17,
+   "cuti_bersama": 8,
+   "days": [
+    {
+     "date": "2026-01-01",
+     "weekday": "Kamis",
+     "kind": "public_holiday",
+     "label": "Tahun Baru 2026 Masehi",
+     "ref": "Lampiran A no. 1"
+    },
+    {
+     "date": "2026-01-16",
+     "weekday": "Jumat",
+     "kind": "public_holiday",
+     "label": "Isra Mikraj Nabi Muhammad S.A.W.",
+     "ref": "Lampiran A no. 2"
+    },
+    {
+     "date": "2026-02-16",
+     "weekday": "Senin",
+     "kind": "cuti_bersama",
+     "label": "Tahun Baru Imlek 2577 Kongzili",
+     "ref": "Lampiran B no. 1"
+    },
+    {
+     "date": "2026-02-17",
+     "weekday": "Selasa",
+     "kind": "public_holiday",
+     "label": "Tahun Baru Imlek 2577 Kongzili",
+     "ref": "Lampiran A no. 3"
+    },
+    {
+     "date": "2026-03-18",
+     "weekday": "Rabu",
+     "kind": "cuti_bersama",
+     "label": "Hari Suci Nyepi (Tahun Baru Saka 1948)",
+     "ref": "Lampiran B no. 2"
+    },
+    {
+     "date": "2026-03-19",
+     "weekday": "Kamis",
+     "kind": "public_holiday",
+     "label": "Hari Suci Nyepi (Tahun Baru Saka 1948)",
+     "ref": "Lampiran A no. 4"
+    },
+    {
+     "date": "2026-03-20",
+     "weekday": "Jumat",
+     "kind": "cuti_bersama",
+     "label": "Idul Fitri 1447 Hijriah",
+     "ref": "Lampiran B no. 3",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2026-03-21",
+     "weekday": "Sabtu",
+     "kind": "public_holiday",
+     "label": "Idul Fitri 1447 Hijriah",
+     "ref": "Lampiran A no. 5",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2026-03-22",
+     "weekday": "Minggu",
+     "kind": "public_holiday",
+     "label": "Idul Fitri 1447 Hijriah",
+     "ref": "Lampiran A no. 5",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2026-03-23",
+     "weekday": "Senin",
+     "kind": "cuti_bersama",
+     "label": "Idul Fitri 1447 Hijriah",
+     "ref": "Lampiran B no. 3",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2026-03-24",
+     "weekday": "Selasa",
+     "kind": "cuti_bersama",
+     "label": "Idul Fitri 1447 Hijriah",
+     "ref": "Lampiran B no. 3",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2026-04-03",
+     "weekday": "Jumat",
+     "kind": "public_holiday",
+     "label": "Wafat Yesus Kristus",
+     "ref": "Lampiran A no. 6"
+    },
+    {
+     "date": "2026-04-05",
+     "weekday": "Minggu",
+     "kind": "public_holiday",
+     "label": "Kebangkitan Yesus Kristus (Paskah)",
+     "ref": "Lampiran A no. 7"
+    },
+    {
+     "date": "2026-05-01",
+     "weekday": "Jumat",
+     "kind": "public_holiday",
+     "label": "Hari Buruh Internasional",
+     "ref": "Lampiran A no. 8"
+    },
+    {
+     "date": "2026-05-14",
+     "weekday": "Kamis",
+     "kind": "public_holiday",
+     "label": "Kenaikan Yesus Kristus",
+     "ref": "Lampiran A no. 9"
+    },
+    {
+     "date": "2026-05-15",
+     "weekday": "Jumat",
+     "kind": "cuti_bersama",
+     "label": "Kenaikan Yesus Kristus",
+     "ref": "Lampiran B no. 4"
+    },
+    {
+     "date": "2026-05-27",
+     "weekday": "Rabu",
+     "kind": "public_holiday",
+     "label": "Idul Adha 1447 Hijriah",
+     "ref": "Lampiran A no. 10",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2026-05-28",
+     "weekday": "Kamis",
+     "kind": "cuti_bersama",
+     "label": "Idul Adha 1447 Hijriah",
+     "ref": "Lampiran B no. 5",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2026-05-31",
+     "weekday": "Minggu",
+     "kind": "public_holiday",
+     "label": "Hari Raya Waisak 2570 BE",
+     "ref": "Lampiran A no. 11"
+    },
+    {
+     "date": "2026-06-01",
+     "weekday": "Senin",
+     "kind": "public_holiday",
+     "label": "Hari Lahir Pancasila",
+     "ref": "Lampiran A no. 12"
+    },
+    {
+     "date": "2026-06-16",
+     "weekday": "Selasa",
+     "kind": "public_holiday",
+     "label": "1 Muharam Tahun Baru Islam 1448 Hijriah",
+     "ref": "Lampiran A no. 13"
+    },
+    {
+     "date": "2026-08-17",
+     "weekday": "Senin",
+     "kind": "public_holiday",
+     "label": "Proklamasi Kemerdekaan",
+     "ref": "Lampiran A no. 14"
+    },
+    {
+     "date": "2026-08-25",
+     "weekday": "Selasa",
+     "kind": "public_holiday",
+     "label": "Maulid Nabi Muhammad S.A.W.",
+     "ref": "Lampiran A no. 15"
+    },
+    {
+     "date": "2026-12-24",
+     "weekday": "Kamis",
+     "kind": "cuti_bersama",
+     "label": "Kelahiran Yesus Kristus",
+     "ref": "Lampiran B no. 6"
+    },
+    {
+     "date": "2026-12-25",
+     "weekday": "Jumat",
+     "kind": "public_holiday",
+     "label": "Kelahiran Yesus Kristus",
+     "ref": "Lampiran A no. 16"
+    }
+   ]
+  },
+  {
+   "year": 2027,
+   "decree": "Keputusan Bersama Menteri Agama, Menteri Ketenagakerjaan, dan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 1205 Tahun 2026, Nomor 3 Tahun 2026, Nomor 2 Tahun 2026 tentang Hari Libur Nasional dan Cuti Bersama Tahun 2027",
+   "signed": "2026-09-15",
+   "source_file": "sources/libur-nasional/SKB-Libur-Nasional-dan-Cuti-Bersama-Tahun-2027.pdf",
+   "public_holidays": 18,
+   "cuti_bersama": 8,
+   "days": [
+    {
+     "date": "2027-01-01",
+     "weekday": "Jumat",
+     "kind": "public_holiday",
+     "label": "Tahun Baru 2027 Masehi",
+     "ref": "Lampiran A no. 1"
+    },
+    {
+     "date": "2027-01-05",
+     "weekday": "Selasa",
+     "kind": "public_holiday",
+     "label": "Isra Mikraj Nabi Muhammad S.A.W. 1448 Hijriah",
+     "ref": "Lampiran A no. 2"
+    },
+    {
+     "date": "2027-02-05",
+     "weekday": "Jumat",
+     "kind": "cuti_bersama",
+     "label": "Tahun Baru Imlek 2578 Kongzili",
+     "ref": "Lampiran B no. 1"
+    },
+    {
+     "date": "2027-02-06",
+     "weekday": "Sabtu",
+     "kind": "public_holiday",
+     "label": "Tahun Baru Imlek 2578 Kongzili",
+     "ref": "Lampiran A no. 3"
+    },
+    {
+     "date": "2027-03-08",
+     "weekday": "Senin",
+     "kind": "public_holiday",
+     "label": "Hari Suci Nyepi (Tahun Baru Saka 1949)",
+     "ref": "Lampiran A no. 4"
+    },
+    {
+     "date": "2027-03-09",
+     "weekday": "Selasa",
+     "kind": "cuti_bersama",
+     "label": "Idul Fitri 1448 Hijriah",
+     "ref": "Lampiran B no. 2",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2027-03-10",
+     "weekday": "Rabu",
+     "kind": "public_holiday",
+     "label": "Idul Fitri 1448 Hijriah",
+     "ref": "Lampiran A no. 5",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2027-03-11",
+     "weekday": "Kamis",
+     "kind": "public_holiday",
+     "label": "Idul Fitri 1448 Hijriah",
+     "ref": "Lampiran A no. 5",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2027-03-12",
+     "weekday": "Jumat",
+     "kind": "cuti_bersama",
+     "label": "Idul Fitri 1448 Hijriah",
+     "ref": "Lampiran B no. 2",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2027-03-15",
+     "weekday": "Senin",
+     "kind": "cuti_bersama",
+     "label": "Idul Fitri 1448 Hijriah",
+     "ref": "Lampiran B no. 2",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2027-03-25",
+     "weekday": "Kamis",
+     "kind": "cuti_bersama",
+     "label": "Wafat Yesus Kristus",
+     "ref": "Lampiran B no. 3"
+    },
+    {
+     "date": "2027-03-26",
+     "weekday": "Jumat",
+     "kind": "public_holiday",
+     "label": "Wafat Yesus Kristus",
+     "ref": "Lampiran A no. 6"
+    },
+    {
+     "date": "2027-03-28",
+     "weekday": "Minggu",
+     "kind": "public_holiday",
+     "label": "Kebangkitan Yesus Kristus (Paskah)",
+     "ref": "Lampiran A no. 7"
+    },
+    {
+     "date": "2027-05-01",
+     "weekday": "Sabtu",
+     "kind": "public_holiday",
+     "label": "Hari Buruh Internasional",
+     "ref": "Lampiran A no. 8"
+    },
+    {
+     "date": "2027-05-06",
+     "weekday": "Kamis",
+     "kind": "public_holiday",
+     "label": "Kenaikan Yesus Kristus",
+     "ref": "Lampiran A no. 9"
+    },
+    {
+     "date": "2027-05-17",
+     "weekday": "Senin",
+     "kind": "public_holiday",
+     "label": "Idul Adha 1448 Hijriah",
+     "ref": "Lampiran A no. 10",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2027-05-18",
+     "weekday": "Selasa",
+     "kind": "cuti_bersama",
+     "label": "Idul Adha 1448 Hijriah",
+     "ref": "Lampiran B no. 4",
+     "set_by_minister_of_religion": true
+    },
+    {
+     "date": "2027-05-19",
+     "weekday": "Rabu",
+     "kind": "cuti_bersama",
+     "label": "Hari Raya Waisak 2571 BE",
+     "ref": "Lampiran B no. 5"
+    },
+    {
+     "date": "2027-05-20",
+     "weekday": "Kamis",
+     "kind": "public_holiday",
+     "label": "Hari Raya Waisak 2571 BE",
+     "ref": "Lampiran A no. 11"
+    },
+    {
+     "date": "2027-06-01",
+     "weekday": "Selasa",
+     "kind": "public_holiday",
+     "label": "Hari Lahir Pancasila",
+     "ref": "Lampiran A no. 12"
+    },
+    {
+     "date": "2027-06-06",
+     "weekday": "Minggu",
+     "kind": "public_holiday",
+     "label": "1 Muharam Tahun Baru Islam 1449 Hijriah",
+     "ref": "Lampiran A no. 13"
+    },
+    {
+     "date": "2027-08-15",
+     "weekday": "Minggu",
+     "kind": "public_holiday",
+     "label": "Maulid Nabi Muhammad S.A.W.",
+     "ref": "Lampiran A no. 14"
+    },
+    {
+     "date": "2027-08-17",
+     "weekday": "Selasa",
+     "kind": "public_holiday",
+     "label": "Proklamasi Kemerdekaan",
+     "ref": "Lampiran A no. 15"
+    },
+    {
+     "date": "2027-12-24",
+     "weekday": "Jumat",
+     "kind": "cuti_bersama",
+     "label": "Kelahiran Yesus Kristus",
+     "ref": "Lampiran B no. 6"
+    },
+    {
+     "date": "2027-12-25",
+     "weekday": "Sabtu",
+     "kind": "public_holiday",
+     "label": "Kelahiran Yesus Kristus",
+     "ref": "Lampiran A no. 16"
+    },
+    {
+     "date": "2027-12-26",
+     "weekday": "Minggu",
+     "kind": "public_holiday",
+     "label": "Isra Mikraj Nabi Muhammad S.A.W. 1449 Hijriah",
+     "ref": "Lampiran A no. 17"
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "One row per day; a range in the source (e.g. '21-22 Maret') becomes one row per day.",
+  "KEDUA of each decree: 1 Ramadan, Idul Fitri and Idul Adha are fixed by a decree of the Minister of Religious Affairs (sidang isbat); rows marked set_by_minister_of_religion may move by a day. Idul Fitri 1447 H was fixed on 21 Maret 2026, as in the SKB.",
+  "Cuti bersama reduces annual leave (KEEMPAT); for ASN it follows a Keputusan Presiden, for private employers it is set by each employer (KELIMA, KEENAM). Schools follow their own calendar authority (kaldik-jateng, kalender-nasional), which usually adopts these days.",
+  "Weekend days are listed when the source lists them (e.g. Paskah on a Sunday)."
+ ]
+}

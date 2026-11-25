@@ -1,0 +1,23 @@
+R-04 libur-nasional — SKB 3 Menteri on national holidays and cuti bersama
+Downloaded: 2026-11-25 (UTC) by a cloud session, public pages only, files kept byte-for-byte.
+Index page: https://www.kemenkopmk.go.id/surat-keputusan-bersama-menteri-agama-menteri-ketenagakerjaan-dan-menteri-pan-rb-tentang-hari-libur
+Both PDFs are scans without a text layer; the tables were transcribed by hand in tools/converters/libur-nasional.py.
+
+1) SKB-Libur-Nasional-dan-Cuti-Bersama-Tahun-2026.pdf
+   Decree   : SKB Menteri Agama, Menteri Ketenagakerjaan, Menteri PANRB Nomor 1497, 2, 5 Tahun 2025
+              tentang Hari Libur Nasional dan Cuti Bersama Tahun 2026; signed in Jakarta, 19 September 2025
+   File URL : https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf
+   Size     : 1056688 bytes, 4 pages
+   SHA-256  : fead795bdcd98c384db2761a46d19ba643a80d8779fbb0040a938ba57896bd24
+
+2) SKB-Libur-Nasional-dan-Cuti-Bersama-Tahun-2027.pdf
+   Decree   : SKB Menteri Agama, Menteri Ketenagakerjaan, Menteri PANRB Nomor 1205, 3, 2 Tahun 2026
+              tentang Hari Libur Nasional dan Cuti Bersama Tahun 2027; signed in Jakarta, 15 September 2026
+   File URL : https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf
+   Size     : 812654 bytes, 5 pages
+   SHA-256  : dc43367115b4a5485bae697143bd0c93abbba3b8dd951195f734c9777cede66e
+
+2028: not yet signed on 2026-11-25 (the SKB is usually signed in September of the year before).
+
+Personal data: the PDFs carry the signing ministers' names and signatures (public officials, kept in the raw
+files); nothing personal is in the data set.
