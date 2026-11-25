@@ -223,7 +223,7 @@
      "label": "NIK Ibu",
      "type": "text",
      "required": true,
-     "max_len": "30",
+     "max_len": "16",
      "format": "nik"
     },
     {
@@ -562,7 +562,7 @@
      "key": "no_kk",
      "label": "Nomor KK",
      "type": "text",
-     "max_len": "30",
+     "max_len": "16",
      "format": "kk"
     }
    ]
