@@ -15,4 +15,6 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 - Conventions (F-009), UI/UX rules against generic AI-made design (F-010), Codex visual-asset workflow (F-011);
   templates for every repository (`AGENTS.md`, commit hook and CI that also reject Codex/ChatGPT attribution) and the
   `ai/` brief kit; skills `fondasi-ui`, `fondasi-visual`.
+- Everything users see is Indonesian, export/import rules (F-012); web app baseline (F-013, `docs/web-baseline.md`,
+  skill `fondasi-web`).
 - Cloud environment for any Claude account (`.claude/cloud/setup.sh`, variables, hosts).

@@ -5,7 +5,7 @@ No secrets, emails or personal data.
 
 ## Current phase
 
-**Foundation round 1** (F-001…F-011): server rules and scripts moved from SPMB (D-112) and made app-neutral,
+**Foundation round 1** (F-001…F-013): server rules and scripts moved from SPMB (D-112) and made app-neutral,
 app contract, several-servers rules, settings/storage/Turnstile standards, data framework (`fondasi-sync`,
 `data-check`), first sets (`wilayah`, `sekolah` SD/MI, `tahun-ajaran`), shared skills, cloud environment, data
 request briefs, conventions (Indonesian URLs, no AI attribution), UI rules against generic AI design, Codex
