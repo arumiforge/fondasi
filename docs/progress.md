@@ -26,7 +26,8 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
 | `data/sekolah-semua-jenjang` | session data-round | R-01: Dikdas + Dikmen of every province (crawl running, ~8 h); PAUD + Dikmas in a second PR | crawling |
-| `data/libur-nasional` | session data-round | R-04 `libur-nasional` 2026, 2027; `kaldik-jateng` checked against it; R-06 brief (browser) | PR #6 |
+| `data/libur-nasional` | session data-round | R-04 `libur-nasional` 2026, 2027; `kaldik-jateng` checked against it; R-06 brief (browser) | PR #6 merged |
+| `data/kodepos` | session data-round | R-03 `kodepos` | PR #7 |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 

@@ -5,6 +5,8 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Data set `kodepos` 2025-06-30 (R-03): postal code of all 83,762 villages keyed by the `wilayah` codes, from
+  cahyadsn/wilayah_kodepos (MIT), converter `tools/converters/kodepos.py` with checks against `wilayah`.
 - Data set `libur-nasional` 2026-09-15 (R-04): national holidays and cuti bersama 2026 and 2027 from the SKB 3 Menteri,
   one row per day, transcribed by `tools/converters/libur-nasional.py` with weekday checks; raw PDFs in
   `sources/libur-nasional/`.

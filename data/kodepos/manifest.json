@@ -1,0 +1,20 @@
+{
+  "version": "2025-06-30",
+  "description": "Postal code (kode pos) of every village (desa/kelurahan) in Indonesia, keyed by the Kemendagri region code of the wilayah set: [code, postal code].",
+  "status": "ready",
+  "source": "https://github.com/cahyadsn/wilayah_kodepos (db/wilayah_kodepos.sql, data last edited 2025-06-30, commit ba84971 of 2026-07-17), region codes per Kepmendagri No 300.2.2-2138 Tahun 2025 (same as wilayah 2026-02-13)",
+  "licence": "MIT, (c) 2024 Cahya DSN (LICENSE.txt)",
+  "procedure": "tools/converters/kodepos.py reads the SQL dump with a strict pattern and checks every code against data/wilayah; the result equals the upstream json/wilayah_kodepos.json.",
+  "fields": {
+    "code": "village code xx.xx.xx.xxxx (links to wilayah)",
+    "postal_code": "5-digit kode pos as text (keep leading zeros if any)"
+  },
+  "villages": 83762,
+  "postal_codes": 10632,
+  "without_postal_code": 0,
+  "files": ["kodepos.json.gz", "LICENSE.txt"],
+  "notes": [
+    "One postal code per village; a postal code usually covers several villages.",
+    "Use it to suggest or check a postal code after the user picks a village; let users correct it, since Pos Indonesia can differ for single streets."
+  ]
+}
