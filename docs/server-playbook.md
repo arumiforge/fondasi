@@ -15,8 +15,8 @@ sudo bash /opt/apps/_fondasi/server/check.sh      # once Fondasi is cloned on th
 `check.sh` changes nothing. It reads the host (OS, RAM, disk, pending reboot), Docker (source, engine,
 Compose, Buildx, `daemon.json`, containers, ports published publicly or missing from `/opt/apps/PORTS`),
 what `setup.sh` did (marker `/opt/apps/.server-setup`), firewall and SSH, the tunnel and Cockpit, every app
-in `/opt/apps/PORTS` (local answer and, with a hostname column, the public URL) and, where present, SPMB's
-environments. It ends with **State**, **Next** and **Needs attention**: paste that block into a chat and the
+in `/opt/apps/PORTS` (local answer and, with a hostname column, the public URL) and each app's own
+`check-app` adapter. It ends with **State**, **Next** and **Needs attention**: paste that block into a chat and the
 agent knows where the server is.
 
 ## States
@@ -27,8 +27,9 @@ agent knows where the server is.
 | S0b | Already in use: Docker and/or other public services | the same, with `ALLOW_PORTS="<ports check.sh lists>"` for services that must stay reachable |
 | S0x | Docker from snap (blocker) | "Docker from snap" below |
 | S1 | Set up, tunnel not connected | Cloudflare: create the tunnel, `cloudflared service install <token>` (steps 2–4) |
-| S2 | Tunnel up: ready for apps | each app per [app-contract.md](app-contract.md); SPMB continues with its own states S2…S9 |
-| S9 | (SPMB) staging and production live | everyday deploys per the app's docs |
+| S2 | Tunnel up, no app yet | each app per [app-contract.md](app-contract.md), then the app's own setup docs |
+| S3 | An app needs attention: a port in `PORTS` does not answer, its hostname fails through the tunnel, or its `check-app` adapter reports a problem | the `Next` lines (they come from the adapters) |
+| S9 | Every app answers | everyday work per each app's docs |
 
 ## First server, step by step
 

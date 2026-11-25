@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Preparation of an Ubuntu Server 24.04 for Docker app stacks (Fondasi F-002; SPMB D-066, D-112).
+# Preparation of an Ubuntu Server 24.04 for Docker app stacks, any app (Fondasi F-002, F-015).
+# Config file names containing "spmb" are kept from the first servers so re-runs update them in place.
 # Run as root. Safe to run again (idempotent). arumiforge/fondasi docs/server-playbook.md.
 #
 #   sudo DOMAIN=example.sch.id ADMIN_USER=arumi bash setup.sh
@@ -420,7 +421,7 @@ Done. Next steps (docs/deployment.md, "First server"):
  2. Public hostnames of the tunnel (use 127.0.0.1, not localhost):
       ssh.$D       → ssh://127.0.0.1:$SSH_PORT_FIRST
       ${CONSOLE_HOST:-konsol.$D}  → http://127.0.0.1:9090
-    and, after 'spmb init', the app hostnames → http://127.0.0.1:<port from $APPS_DIR/PORTS>.
+    and each app's hostnames → http://127.0.0.1:<port from $APPS_DIR/PORTS>.
     Put ssh.$D and ${CONSOLE_HOST:-konsol.$D} (and staging) behind a Cloudflare Access application.
  3. From your PC, test SSH through the tunnel (Bitvise: cloudflared access tcp --hostname ssh.$D
     --url 127.0.0.1:2222, then connect Bitvise to 127.0.0.1:2222) and Cockpit at https://${CONSOLE_HOST:-konsol.$D}.
@@ -433,8 +434,7 @@ fi
 cat <<NEXT
  4. Clone Fondasi (its own read-only deploy key, alias github-fondasi) to $APPS_DIR/_fondasi.
  5. Each app: docs/app-contract.md (folder $APPS_DIR/<app>, a line in $APPS_DIR/PORTS, 127.0.0.1 only,
-    a tunnel route in the Cloudflare dashboard). SPMB: clone to $APPS_DIR/spmb/src, then
-    bash $APPS_DIR/spmb/src/deploy/server/spmb up staging staging.$D
+    a tunnel route in the Cloudflare dashboard), then the app's own setup docs.
  Lost? Run 'bash check.sh': it shows where this server is and the next command.
 NEXT
 if [ "${#NOTES[@]}" -gt 0 ]; then

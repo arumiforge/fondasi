@@ -5,6 +5,17 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Adopting Fondasi in any repository (F-016): `docs/adopting.md` (starter prompt, audit areas, report format, base
+  setup), skill `fondasi-adopt`, templates `templates/repo/CLAUDE.md`, `docs/progress.md`, `docs/decisions.md`.
+
+### Changed
+- `server/check.sh` is app-neutral (F-015): no SPMB section; apps plug in with `/opt/apps/<app>/check-app`
+  (template `server/templates/check-app`); states S2 (ready), S3 (an app needs attention), S9 (every app answers);
+  `APPS_ROOT` (old `SPMB_ROOT` still accepted).
+
+### Added
+- Feedback standard (F-014): `docs/feedback.md` (tiers 0–5, placement on desktop and phone, copy, accessibility, audit
+  checklist) and skill `fondasi-feedback` (apply, audit, PRD).
 - Server: `setup.sh` and `check.sh` from SPMB (D-112), app-neutral (apps read from `/opt/apps/PORTS` with an
   optional hostname column, SPMB section only where SPMB exists, `SERVER_NAME` label); compose template.
 - Rules: server playbook, app contract, several servers (F-008), settings and Turnstile (F-005), storage (F-006).

@@ -45,6 +45,15 @@ With them, a new app never re-decides the server, and `check.sh` can watch every
 - Staging first; production runs the image that ran on staging.
 - Keep the previous image for a one-command rollback; migrations are not rolled back — restore the backup.
 
+## App check adapter (optional, recommended)
+
+`server/check.sh` checks every app the same way (local port, public hostname). An app adds its own read-only checks
+— containers per environment, recent backups, migrations pending, first admin created — as
+`/opt/apps/<app>/check-app`, a copy of or link to a script in the app's repository, starting from
+[`server/templates/check-app`](../server/templates/check-app). Contract: read-only, prints `[ok]`/`[--]`/`[!!]`
+lines and `NEXT: …` steps, exits 0 when fine, finishes within 120 s. `check.sh` shows it under "App: <app>",
+collects its next steps and reports state S3 while any adapter exits non-zero.
+
 ## Adding an app, step by step
 
 ```bash

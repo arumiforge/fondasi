@@ -3,10 +3,12 @@
 | Document | Purpose |
 | --- | --- |
 | [progress.md](progress.md) | **Read first.** Current state, active work, next steps, blockers |
+| [adopting.md](adopting.md) | **Start here in another repository**: starter prompt, audit areas, report format, base setup |
 | [decisions.md](decisions.md) | Decision log (`F-…`) |
 | [conventions.md](conventions.md) | Language, Indonesian URLs, commits and PRs without AI attribution, agent files |
 | [web-baseline.md](web-baseline.md) | Baseline for every web app: security, uploads, personal data, audit log, Indonesian identity fields, performance, monitoring, staging, tests, public pages |
 | [ui.md](ui.md) | UI/UX rules against generic AI-made design |
+| [feedback.md](feedback.md) | Toasts, undo, form errors, dialogs, banners: tiers, placement on desktop and phone, copy, audit checklist |
 | [visual-assets.md](visual-assets.md) | Codex makes visual assets from briefs in each app's `ai/` |
 | [server-playbook.md](server-playbook.md) | One flow for every VPS: check → setup → tunnel → apps; fresh vs busy servers |
 | [servers.md](servers.md) | Several VPS: inventory (no secrets), labels, admin hostnames, moving an app |

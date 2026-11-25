@@ -10,9 +10,10 @@ Shared foundation for every **Arumi Studios** application (education, athletics,
 | Public reference data: regions, schools, calendars, Dapodik references, athletics… | `data/` | `docs/data.md`, `data/README.md` |
 | Conventions for every repo: language, Indonesian URLs, commits without AI attribution | `templates/repo/` | `docs/conventions.md` |
 | Web app baseline: security, uploads, personal data, audit log, Indonesian identity fields, performance, monitoring, staging, tests, public pages | — | `docs/web-baseline.md` |
-| UI/UX rules against generic AI-made design | — | `docs/ui.md` |
+| UI/UX rules against generic AI-made design; feedback (toast, undo, form errors, dialogs, banners) | — | `docs/ui.md`, `docs/feedback.md` |
 | Visual assets made by Codex from briefs in each app's `ai/` | `templates/ai/` | `docs/visual-assets.md` |
-| Agent skills shared by every repo (`fondasi-session`, `-server`, `-data`, `-web`, `-ui`, `-visual`, `bahasa-indonesia-plain`) | `.claude/skills/` | below |
+| Adopting Fondasi in another repository: audit, interview, base setup | `templates/repo/` | `docs/adopting.md` |
+| Agent skills shared by every repo (`fondasi-adopt`, `fondasi-session`, `-server`, `-data`, `-web`, `-ui`, `-feedback`, `-visual`, `bahasa-indonesia-plain`) | `.claude/skills/` | below |
 
 Start every session with the `fondasi-session` skill and read `docs/progress.md`; update it before
 you finish. Decisions live in `docs/decisions.md` (IDs `F-001`…, separate from each app's own `D-…`).

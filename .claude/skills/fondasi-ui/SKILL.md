@@ -6,5 +6,6 @@ description: Build or review any page or component in any Arumi Studios app so i
 # UI work
 
 Read `docs/ui.md` in Fondasi and apply it, then the app's own UI skill (SPMB: `spmb-ui`). Text: `bahasa-indonesia-plain`.
+Messages, confirmations and errors: `docs/feedback.md` (`fondasi-feedback`).
 URLs: Indonesian slugs (`docs/conventions.md`). Visual assets: Codex briefs (`fondasi-visual`), never stock-looking
 filler. Before the PR: screenshots at 360 and 1280 px, keyboard walk of the main task, the "Never" table checked.

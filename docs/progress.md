@@ -19,6 +19,9 @@ visual-asset workflow and templates.
 
 ## Next steps
 
+0. SPMB: add `deploy/server/check-app` (its environments, image, Super Admin, backups, off-site — the logic now only in
+   SPMB's own `deploy/server/check.sh`) and let `spmb init` link it to `/opt/apps/spmb/check-app`; other apps
+   (milklife…) start from `server/templates/check-app`.
 1. User: rename the repository to `fondasi` (GitHub → Settings → Repository name; old URLs redirect). Then in
    SPMB: paste the pointer block (`docs/app-pointer.md`) into `CLAUDE.md`, and later switch SPMB's
    `deploy/server/check.sh`/`setup.sh` to Fondasi's copies (or keep both in step until then).

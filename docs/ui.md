@@ -26,6 +26,9 @@ AI-generated template. These rules apply to every stack; apps add their own comp
   ("Kirim pendaftaran", not "Submit"); error messages say what to do next.
 - **Every screen handles**: loading (no layout shift), empty (what it means + the next step), error (plain words + retry),
   success (what happened, what is next), no permission.
+- **Feedback by consequence** ([feedback.md](feedback.md)): toast only for light results, undo toast for reversible
+  changes, inline errors + summary for forms, a dialog only for irreversible actions, banners for page-wide states,
+  a result page (not a modal) at the end of a long flow.
 - **Forms**: a visible label for every field (never placeholder-only), hints under the field, errors next to it, the
   first error focused, long forms split into steps with a summary before sending.
 - **Responsive**: 360 px → 1920 px; admin dashboards full width; tables become cards or scroll inside their own box
