@@ -5,6 +5,8 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Feedback standard (F-014): `docs/feedback.md` (tiers 0–5, placement on desktop and phone, copy, accessibility, audit
+  checklist) and skill `fondasi-feedback` (apply, audit, PRD).
 - Server: `setup.sh` and `check.sh` from SPMB (D-112), app-neutral (apps read from `/opt/apps/PORTS` with an
   optional hostname column, SPMB section only where SPMB exists, `SERVER_NAME` label); compose template.
 - Rules: server playbook, app contract, several servers (F-008), settings and Turnstile (F-005), storage (F-006).
