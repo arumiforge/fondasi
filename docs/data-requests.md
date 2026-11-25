@@ -19,7 +19,7 @@ browser session only **collects raw files**; a cloud session converts and checks
 | R-05 | `kaldik-jateng` | Kalender Pendidikan Jawa Tengah 2025/2026, 2026/2027 (and 2027/2028 when out): PDF/image + the SK | `disdikbud.jatengprov.go.id` (blocked from the cloud) | **done 2026-11-25** (2025/2026, 2026/2027; the site moved to pdk.jatengprov.go.id) |
 | R-12 | `kalender-nasional` | The national education calendar for 2026/2027 (and 2027/2028 when out) if Kemendikdasmen publishes one — regulation/circular + its attachment; the Kemenag madrasah calendar guideline for the same years(the SKB 2026 and 2027 are done in R-04) | `kemendikdasmen.go.id`, `jdih.kemendikdasmen.go.id`, `kemenag.go.id`, `kemenkopmk.go.id` | open — browser |
 | R-13 | `kaldik-kabupaten` (on demand) | A kabupaten/kota calendar for SD/SMP when an app needs it, starting with the first client's district (Kabupaten Kudus) | the Dinas Pendidikan of that kabupaten/kota | optional |
-| R-06 | `kaldik-madrasah-jateng` | Kalender Pendidikan Madrasah Jawa Tengah for the same years + the SK | `jateng.kemenag.go.id` (reachable), Kanwil announcements | open |
+| R-06 | `kaldik-madrasah-jateng` | Kalender Pendidikan RA dan Madrasah Jawa Tengah 2026/2027 (Keputusan Kakanwil Kemenag Jateng Nomor 1681 Tahun 2026) and 2025/2026, with the Ditjen Pendis national guideline they follow | `jateng.kemenag.go.id` (times out from the cloud since 2026-11-25), `kemenag.go.id` (refused) | open — browser, [brief below](#brief-r-06) |
 | R-07 | `referensi-dapodik` | Official code tables: agama, pekerjaan, penghasilan, jenjang pendidikan, alat transportasi, jenis tinggal, kebutuhan khusus, bentuk pendidikan, tingkat pendidikan | Dapodik user manuals (PDF), `dapo`/`referensi` pages, the Dapodik import templates (XLSX) | open — browser |
 | R-08 | `mapel` | Regulation on the curriculum structure (Kurikulum Merdeka / its successor) with subject lists per level and phase | `kurikulum.kemendikdasmen.go.id` (blocked), `jdih.kemendikdasmen.go.id` | open — browser |
 | R-09 | `perguruan-tinggi` | List of higher-education institutions: code, name, type, status, province | `pddikti.kemdiktisaintek.go.id` (blocked from the cloud) — its download/search pages | open — browser |
@@ -27,3 +27,29 @@ browser session only **collects raw files**; a cloud session converts and checks
 | R-11 | `atletik-rekor` | Current national records (senior, U-20, U-18) and the championships the user runs | PASI announcements; organisers' result books | open — needs the user's list of championships |
 
 When a brief is delivered, the converting session updates its status here and the set in `data/README.md`.
+
+## Brief R-06
+
+Starter prompt for a Claude in Chrome session (the user runs it and uploads the zip to a cloud session):
+
+> Collect the official education calendar of RA and madrasah in Jawa Tengah. Public pages only, no sign-in, at most
+> one page every 2 seconds. Save every file unchanged in a folder `R-06-kaldik-madrasah-jateng/`.
+>
+> 1. On `jateng.kemenag.go.id` (search "kalender pendidikan" or "kaldik"), find the Keputusan Kepala Kantor Wilayah
+>    Kementerian Agama Provinsi Jawa Tengah **Nomor 1681 Tahun 2026** tentang Pedoman Kalender Pendidikan Madrasah
+>    Tahun Ajaran 2026/2027, with its lampiran (calendar per month, list of activities). Download the PDF (and the
+>    Excel attachment if the Kanwil publishes one).
+> 2. Do the same for 2025/2026 if it is still published.
+> 3. On `kemenag.go.id` or `pendis.kemenag.go.id`, find the national guideline these follow: Keputusan Direktur
+>    Jenderal Pendidikan Islam on the Kalender Pendidikan Madrasah Tahun Ajaran 2026/2027 (news sites cite Nomor 4860
+>    Tahun 2026; check the number on the document). Download the PDF.
+> 4. Only if the Kanwil site has no copy: a copy published by a Kemenag kabupaten/kota office (`*.kemenag.go.id`) is
+>    fine. Do **not** use blogs or teacher sites (ayomadrasah, websiteedukasi, …) as the source; note their URLs only
+>    if they point to the official file.
+> 5. Write `SOURCE.txt`: for each file the page URL, file URL, decree number and signing date as printed, download
+>    time (UTC), size and SHA-256. Note anything missing or inconsistent.
+> 6. Zip the folder and give it to the user.
+
+The cloud session then transcribes the lampiran into `data/kaldik-madrasah-jateng/` in the same shape as
+`kaldik-jateng` (events per level RA/MI/MTs/MA/MAK, `estimate`, `ref`, `skb` check against `libur-nasional`).
+

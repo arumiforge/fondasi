@@ -26,7 +26,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
 | `data/sekolah-semua-jenjang` | session data-round | R-01: Dikdas + Dikmen of every province (crawl running, ~8 h); PAUD + Dikmas in a second PR | crawling |
-| `data/libur-nasional` | session data-round | R-04 `libur-nasional` 2026, 2027; `kaldik-jateng` checked against it | PR open |
+| `data/libur-nasional` | session data-round | R-04 `libur-nasional` 2026, 2027; `kaldik-jateng` checked against it; R-06 brief (browser) | PR #6 |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -49,12 +49,12 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Blockers / waiting on
 
-- Hosts blocked from cloud sessions: `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
+- Hosts blocked from cloud sessions: `jateng.kemenag.go.id` (times out since 2026-11-25; R-06 brief), `kemenag.go.id` (refused), `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
   (and `disdikbud.jatengprov.go.id`, replaced by `pdk.jatengprov.go.id`) → browser briefs.
 - The Claude GitHub App may need access to the renamed repository for PR notifications (GitHub → Apps → Claude).
 
 ## Session log (newest first, keep the last 10)
 
-- 2026-11-25 · session data-round · `data/libur-nasional` — PR #5 merged; R-01 interview (all provinces, replace SD/MI, madrasah from Kemendikdasmen with R-02 for NSM, add PAUD and PKBM/kesetaraan, sequential crawl in two PRs); R-04 built. Next: R-06, then R-01 when the crawl ends.
+- 2026-11-25 · session data-round · `data/libur-nasional` — PR #5 merged; R-01 interview (all provinces, replace SD/MI, madrasah from Kemendikdasmen with R-02 for NSM, add PAUD and PKBM/kesetaraan, sequential crawl in two PRs); R-04 built; R-06 moved to a browser brief (Kanwil site times out). Next: R-03 while the R-01 crawl runs.
 - 2026-11-25 · session data-round prep · `pw/peaceful-tesla-bjooc9` — PR #4 merged (skema-siswa corrections F-024, kaldik-jateng, calendar layers F-025); environment Fondasi created; handoff for the data round. Next: R-01.
 - 2026-11-25 · session server-flow · `pw/peaceful-tesla-bjooc9` — repository created and filled: F-001…F-023 (PRs #1–#3), interview rounds with the user, first data sets. Next: data round.
