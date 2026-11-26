@@ -38,18 +38,24 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    need the user's list of championships.
 4. When the user uploads R-12 or R-02/R-07/R-08/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
-5. `wilayah` upstream (cahyadsn) now follows Kepmendagri 300.2.2-2430/2025: refresh `wilayah` and `kodepos` together.
+5. `wilayah` / `kodepos` refresh — **checked 2026-11-26, nothing new yet**: the cahyadsn README says Kepmendagri
+   300.2.2-2430/2025, but `db/wilayah.sql` (commit c2eff08) still says 2138/2025, last edit 2026-02-13, and converts to
+   exactly `data/wilayah` 2026-02-13 (no code added, removed or renamed); only `db/wilayah_pulau.sql` (islands) follows
+   2430. `wilayah_kodepos` is still at commit ba84971. Refresh both when the header of `db/wilayah.sql` names 2430, or
+   from the official 2430/2025 attachment if the user fetches it (jdih.kemendagri.go.id is not reachable from the
+   cloud).
 6. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
    via `fondasi-sync`.
 
 ## Blockers / waiting on
 
-- Hosts blocked from cloud sessions: `jateng.kemenag.go.id` (times out since 2026-11-25; R-06 brief), `kemenag.go.id` (refused), `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
+- Hosts blocked from cloud sessions: `jateng.kemenag.go.id` (times out since 2026-11-25; R-06 brief), `kemenag.go.id` (refused), `jdih.kemendagri.go.id` (no answer, 2026-11-26), `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
   (and `disdikbud.jatengprov.go.id`, replaced by `pdk.jatengprov.go.id`) → browser briefs.
 - The Claude GitHub App may need access to the renamed repository for PR notifications (GitHub → Apps → Claude).
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — `wilayah`/`kodepos` refresh checked: upstream data unchanged (README ahead of `wilayah.sql`), nothing to rebuild. Next: R-06/R-10b zips, official 2430/2025 attachment if wanted.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #9 merged (Dikdas+Dikmen); F-029 (parallel crawl, 20 workers on referensi.data); PAUD+PKBM/SKB crawled in 25 min, `sekolah` 539,580 units (98.0 % with village code), PR #10 merged. Next: R-06/R-10b zips from the user, `wilayah` refresh.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #8 was already merged; R-01 crawler extended (PAUD, Dikmas, page checks), F-028 (forms kept, PKBM/SKB only, no schools abroad), full Dikdas+Dikmen crawl (15,633 pages), `sekolah` 2026-11-26 built (283,421 schools, 97.8 % with village code), PR 1 opened. Next: PAUD+PKBM/SKB (part 2).
 - 2026-11-26 · session data-round · `data/atletik` — PRs #5, #6 (libur-nasional, kaldik-jateng check), #7 (kodepos) merged; R-06 and R-10b briefs; R-10 World Athletics sets (F-027); R-01 crawler written, crawl not finished. Next: R-01 crawl.
