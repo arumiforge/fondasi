@@ -81,15 +81,26 @@ def read_section(path):
     return out
 
 
-def table(rows, path):
-    hdr = [h.lower() for h in cells(rows[0])]
-    recs = []
-    for r in rows[1:]:
+def tables(rows, path):
+    """Rows -> tables; a row whose first cell is "Elemen" starts a new table. An empty first cell repeats the cell
+    above (merged cells in the source)."""
+    out = []
+    for r in rows:
         c = cells(r)
+        if c[0].lower() == "elemen":
+            out.append(([h.lower() for h in c], []))
+            continue
+        if not out:
+            sys.exit(f"{path}: table row before a header row: {r[:80]}")
+        hdr, recs = out[-1]
         if len(c) != len(hdr):
             sys.exit(f"{path}: table row has {len(c)} cells, header {len(hdr)}: {r[:80]}")
+        if not c[0]:
+            if not recs:
+                sys.exit(f"{path}: first row of a table has an empty first cell")
+            c[0] = recs[-1][hdr[0]]
         recs.append(dict(zip(hdr, c)))
-    return hdr, recs
+    return out
 
 
 def parse(path):
@@ -135,16 +146,19 @@ def parse(path):
             rows[part if part in rows else "C"].append(text)
         else:
             buf[part].append(text)
-    if rows["C"]:
-        hdr, recs = table(rows["C"], path)
+    for hdr, recs in tables(rows["C"], path):
         for r in recs:
-            e = {"name": r.get("elemen", ""), "description": r.get("deskripsi", "")}
-            if "subelemen" in r or "sub-elemen" in r:
-                e["sub_element"] = r.get("subelemen", r.get("sub-elemen"))
-            elements.append(e)
+            e = next((x for x in elements if x["name"] == r["elemen"]), None)
+            if e is None:
+                e = {"name": r["elemen"], "description": None}
+                elements.append(e)
+            if "deskripsi" in r:
+                e["description"] = r["deskripsi"]
+            if r.get("subelemen"):
+                e.setdefault("sub_elements", []).append(r["subelemen"])
     for ph in phases:
         if "_rows" in ph:  # CP printed as a table: Elemen | (Subelemen |) Capaian Pembelajaran
-            hdr, recs = table(ph.pop("_rows"), path)
+            recs = [r for _, rs in tables(ph.pop("_rows"), path) for r in rs]
             for r in recs:
                 o = {"element": r.get("elemen", ""), "text": r.get("capaian pembelajaran", ""), "page": ph["page"]}
                 if r.get("subelemen"):
@@ -156,9 +170,21 @@ def parse(path):
         if not ph["outcomes"]:
             sys.exit(f"{path}: Fase {ph['phase']} has no outcomes")
     pages = sorted({p for p, _, _ in items})
-    names = {e["name"] for e in elements} | {e.get("sub_element") for e in elements}
-    notes = sorted({o["element"] for ph in phases for o in ph["outcomes"]
-                    if names and o["element"] not in names and o.get("sub_element") not in names})
+    # CP tables print some names differently from the element table ("Nilai- nilai", "Terhadap"); when the letters
+    # are the same, the element table's spelling is used and the printed one is listed in source_notes
+    canon = {norm_key(e["name"]): e["name"] for e in elements}
+    canon.update({norm_key(x): x for e in elements for x in e.get("sub_elements", [])})
+    notes = set()
+    for ph in phases:
+        for o in ph["outcomes"]:
+            for k in ("element", "sub_element"):
+                v = o.get(k)
+                if v and canon and v not in canon.values():
+                    if norm_key(v) in canon:
+                        notes.add(f"CP heading '{v}' is printed '{canon[norm_key(v)]}' in the element table")
+                        o[k] = canon[norm_key(v)]
+                    else:
+                        notes.add(f"CP heading '{v}' is not printed with this name in the element table")
     sub = {
         "key": key_of(printed), "title": nice_title(printed), "title_printed": printed, "number": number,
         "pages": [pages[0], pages[-1]],
@@ -166,11 +192,15 @@ def parse(path):
         "elements": elements, "phases": phases,
     }
     if notes:
-        sub["source_notes"] = [f"CP heading '{n}' is not printed with this name in the element table" for n in notes]
+        sub["source_notes"] = sorted(notes)
     for k in ("rasional", "tujuan", "karakteristik"):
         if not sub[k]:
             sys.exit(f"{path}: {k} is empty")
     return sub
+
+
+def norm_key(s):
+    return re.sub(r"[^a-z0-9]+", "", s.lower())
 
 
 def key_of(title):
@@ -223,7 +253,7 @@ def check_sinaubareng(subjects, path):
             continue
         for sph in rel["phases"]:
             ph = next(p for p in sub["phases"] if p["phase"] == sph["phase"])
-            if sph.get("summary") and norm(sph["summary"]) != norm(ph["intro"]):
+            if sph.get("summary") and norm(sph["summary"]) != norm(ph["intro"].split("\n")[0]):
                 diffs += 1
                 print(f"  {rel['key']} {sph['phase']} intro:\n    ours: {ph['intro']}\n    sb:   {sph['summary']}")
             ours = [(o["element"], o.get("sub_element"), o["text"]) for o in ph["outcomes"]]
