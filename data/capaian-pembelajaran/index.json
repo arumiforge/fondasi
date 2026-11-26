@@ -1,0 +1,4921 @@
+{
+ "name": "Capaian Pembelajaran",
+ "files": [
+  "paud.json.gz",
+  "umum.json.gz",
+  "smk.json.gz",
+  "kesetaraan.json.gz",
+  "pendidikan-khusus.json.gz",
+  "madrasah.json.gz"
+ ],
+ "pending": "Pendidikan Agama dan Budi Pekerti (Kepka BKPDM 020/2026)",
+ "totals": {
+  "subjects": 293,
+  "phases": 549,
+  "outcomes": 2432
+ },
+ "phases": {
+  "Fondasi": {
+   "grades": [],
+   "note": "PAUD, RA and TKLB"
+  },
+  "A": {
+   "grades": [
+    1,
+    2
+   ]
+  },
+  "B": {
+   "grades": [
+    3,
+    4
+   ]
+  },
+  "C": {
+   "grades": [
+    5,
+    6
+   ]
+  },
+  "D": {
+   "grades": [
+    7,
+    8,
+    9
+   ]
+  },
+  "E": {
+   "grades": [
+    10
+   ]
+  },
+  "F": {
+   "grades": [
+    11,
+    12
+   ]
+  }
+ },
+ "phase_note": "Grades per phase as the decrees print them for most subjects. SLB phases also name a mental age (see each phase's applies_to). Use these grades rather than the printed applies_to text, which varies and has misprints (see errata).",
+ "subjects": [
+  {
+   "file": "paud.json.gz",
+   "key": "fase_fondasi",
+   "title": "Fase Fondasi",
+   "number": "I",
+   "phases": [
+    "Fondasi"
+   ],
+   "levels": [
+    "PAUD"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran I (number I, PDF p. 7–22)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "pendidikan_pancasila",
+   "title": "Pendidikan Pancasila",
+   "number": "II",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number II, PDF p. 76–88)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_indonesia",
+   "title": "Bahasa Indonesia",
+   "number": "III.1",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number III.1, PDF p. 88–100)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_indonesia_tingkat_lanjut",
+   "title": "Bahasa Indonesia Tingkat Lanjut",
+   "number": "III.2",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number III.2, PDF p. 100–106)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "matematika",
+   "title": "Matematika",
+   "number": "IV.1",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number IV.1, PDF p. 106–120)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "matematika_tingkat_lanjut",
+   "title": "Matematika Tingkat Lanjut",
+   "number": "IV.2",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number IV.2, PDF p. 120–126)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_inggris",
+   "title": "Bahasa Inggris",
+   "number": "V.1",
+   "phases": [
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number V.1, PDF p. 126–139)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_inggris_tingkat_lanjut",
+   "title": "Bahasa Inggris Tingkat Lanjut",
+   "number": "V.2",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number V.2, PDF p. 139–146)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "ilmu_pengetahuan_alam_dan_sosial",
+   "title": "Ilmu Pengetahuan Alam dan Sosial (IPAS)",
+   "number": "VI",
+   "phases": [
+    "B",
+    "C"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number VI, PDF p. 146–153)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "ilmu_pengetahuan_alam",
+   "title": "Ilmu Pengetahuan Alam (IPA)",
+   "number": "VII",
+   "phases": [
+    "D",
+    "E"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number VII, PDF p. 153–160)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "fisika",
+   "title": "Fisika",
+   "number": "VIII",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number VIII, PDF p. 160–166)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "kimia",
+   "title": "Kimia",
+   "number": "IX",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number IX, PDF p. 166–172)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "biologi",
+   "title": "Biologi",
+   "number": "X",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number X, PDF p. 172–177)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "informatika",
+   "title": "Informatika",
+   "number": "XI",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XI, PDF p. 177–186)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "ilmu_pengetahuan_sosial",
+   "title": "Ilmu Pengetahuan Sosial",
+   "number": "XII",
+   "phases": [
+    "D",
+    "E"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XII, PDF p. 186–195)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "sejarah",
+   "title": "Sejarah",
+   "number": "XIII.1",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XIII.1, PDF p. 195–200)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "sejarah_tingkat_lanjut",
+   "title": "Sejarah Tingkat Lanjut",
+   "number": "XIII.2",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XIII.2, PDF p. 201–207)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "geografi",
+   "title": "Geografi",
+   "number": "XIV",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XIV, PDF p. 207–214)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "ekonomi",
+   "title": "Ekonomi",
+   "number": "XV",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XV, PDF p. 214–220)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "sosiologi",
+   "title": "Sosiologi",
+   "number": "XVI",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XVI, PDF p. 220–227)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "antropologi",
+   "title": "Antropologi",
+   "number": "XVII",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XVII, PDF p. 227–234)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "seni_musik",
+   "title": "Seni Musik",
+   "number": "XVIII.1",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XVIII.1, PDF p. 234–243)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "seni_rupa",
+   "title": "Seni Rupa",
+   "number": "XVIII.2",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XVIII.2, PDF p. 243–250)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "seni_tari",
+   "title": "Seni Tari",
+   "number": "XVIII.3",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XVIII.3, PDF p. 250–260)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "seni_teater",
+   "title": "Seni Teater",
+   "number": "XVIII.4",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XVIII.4, PDF p. 260–268)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "prakarya_budi_daya",
+   "title": "Prakarya Budi Daya",
+   "number": "XIX.1",
+   "phases": [
+    "D",
+    "E"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XIX.1, PDF p. 268–273)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "prakarya_kerajinan",
+   "title": "Prakarya Kerajinan",
+   "number": "XIX.2",
+   "phases": [
+    "D",
+    "E"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XIX.2, PDF p. 273–278)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "prakarya_pengolahan",
+   "title": "Prakarya Pengolahan",
+   "number": "XIX.3",
+   "phases": [
+    "D",
+    "E"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XIX.3, PDF p. 278–282)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "prakarya_rekayasa",
+   "title": "Prakarya Rekayasa",
+   "number": "XIX.4",
+   "phases": [
+    "D",
+    "E"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XIX.4, PDF p. 282–287)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "prakarya_dan_kewirausahaan_budi_daya",
+   "title": "Prakarya dan Kewirausahaan Budi Daya",
+   "number": "XX.1",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XX.1, PDF p. 287–290)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "prakarya_dan_kewirausahaan_kerajinan",
+   "title": "Prakarya dan Kewirausahaan Kerajinan",
+   "number": "XX.2",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XX.2, PDF p. 290–295)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "prakarya_dan_kewirausahaan_pengolahan",
+   "title": "Prakarya dan Kewirausahaan Pengolahan",
+   "number": "XX.3",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XX.3, PDF p. 295–298)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "prakarya_dan_kewirausahaan_rekayasa",
+   "title": "Prakarya dan Kewirausahaan Rekayasa",
+   "number": "XX.4",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XX.4, PDF p. 298–302)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "pendidikan_jasmani_olahraga_dan_kesehatan",
+   "title": "Pendidikan Jasmani, Olahraga, dan Kesehatan",
+   "number": "XXI",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXI, PDF p. 302–316)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_arab",
+   "title": "Bahasa Arab",
+   "number": "XXII",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXII, PDF p. 316–319)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_jepang",
+   "title": "Bahasa Jepang",
+   "number": "XXIII",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXIII, PDF p. 319–322)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_jerman",
+   "title": "Bahasa Jerman",
+   "number": "XXIV",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXIV, PDF p. 322–327)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_korea",
+   "title": "Bahasa Korea",
+   "number": "XXV",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXV, PDF p. 327–330)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_mandarin",
+   "title": "Bahasa Mandarin",
+   "number": "XXVI",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXVI, PDF p. 330–334)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "bahasa_prancis",
+   "title": "Bahasa Prancis",
+   "number": "XXVII",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXVII, PDF p. 334–338)"
+  },
+  {
+   "file": "umum.json.gz",
+   "key": "koding_dan_kecerdasan_artifisial",
+   "title": "Koding dan Kecerdasan Artifisial",
+   "number": "XXVIII",
+   "phases": [
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXVIII, PDF p. 338–347)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "sejarah_smk_mak",
+   "title": "Sejarah SMK/MAK",
+   "number": "II",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number II, PDF p. 348–353)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "projek_ilmu_pengetahuan_alam_dan_sosial",
+   "title": "Projek Ilmu Pengetahuan Alam dan Sosial",
+   "number": "III",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number III, PDF p. 354–359)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "koding_dan_kecerdasan_artifisial",
+   "title": "Koding dan Kecerdasan Artifisial",
+   "number": "IV",
+   "phases": [
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number IV, PDF p. 359–365)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_perawatan_gedung",
+   "title": "Dasar-Dasar Teknik Perawatan Gedung",
+   "number": "V.1",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.1, PDF p. 365–370)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_konstruksi_dan_perawatan_bangunan_sipil",
+   "title": "Dasar-Dasar Konstruksi dan Perawatan Bangunan Sipil",
+   "number": "V.2",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.2, PDF p. 370–374)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_konstruksi_dan_perumahan",
+   "title": "Dasar-Dasar Teknik Konstruksi dan Perumahan",
+   "number": "V.3",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.3, PDF p. 374–378)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_desain_pemodelan_dan_informasi_bangunan",
+   "title": "Dasar-Dasar Desain Pemodelan dan Informasi Bangunan",
+   "number": "V.4",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.4, PDF p. 379–383)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_furnitur",
+   "title": "Dasar-Dasar Teknik Furnitur",
+   "number": "V.5",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.5, PDF p. 383–388)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_mesin",
+   "title": "Dasar-Dasar Teknik Mesin",
+   "number": "V.6",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.6, PDF p. 388–392)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_otomotif",
+   "title": "Dasar-Dasar Teknik Otomotif",
+   "number": "V.7",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.7, PDF p. 392–397)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_pengelasan_dan_fabrikasi_logam",
+   "title": "Dasar-Dasar Teknik Pengelasan dan Fabrikasi Logam",
+   "number": "V.8",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.8, PDF p. 397–402)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_logistik",
+   "title": "Dasar-Dasar Teknik Logistik",
+   "number": "V.9",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.9, PDF p. 402–406)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_elektronika",
+   "title": "Dasar-Dasar Teknik Elektronika",
+   "number": "V.10",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.10, PDF p. 407–414)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_pesawat_udara",
+   "title": "Dasar-Dasar Teknik Pesawat Udara",
+   "number": "V.11",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.11, PDF p. 414–420)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_konstruksi_kapal",
+   "title": "Dasar-Dasar Teknik Konstruksi Kapal",
+   "number": "V.12",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.12, PDF p. 420–423)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_kimia_analisis",
+   "title": "Dasar-Dasar Kimia Analisis",
+   "number": "V.13",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.13, PDF p. 423–426)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_kimia_industri",
+   "title": "Dasar-Dasar Teknik Kimia Industri",
+   "number": "V.14",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.14, PDF p. 426–430)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_tekstil",
+   "title": "Dasar-Dasar Teknik Tekstil",
+   "number": "V.15",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.15, PDF p. 431–433)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_ketenagalistrikan",
+   "title": "Dasar-Dasar Teknik Ketenagalistrikan",
+   "number": "V.16",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.16, PDF p. 433–437)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_energi_terbarukan",
+   "title": "Dasar-Dasar Teknik Energi Terbarukan",
+   "number": "V.17",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.17, PDF p. 437–441)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_geospasial",
+   "title": "Dasar-Dasar Teknik Geospasial",
+   "number": "V.18",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.18, PDF p. 441–444)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_geologi_pertambangan",
+   "title": "Dasar-Dasar Teknik Geologi Pertambangan",
+   "number": "V.19",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.19, PDF p. 444–449)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_perminyakan",
+   "title": "Dasar-Dasar Teknik Perminyakan",
+   "number": "V.20",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.20, PDF p. 449–453)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_pengembangan_perangkat_lunak_dan_gim",
+   "title": "Dasar-Dasar Pengembangan Perangkat Lunak dan Gim",
+   "number": "V.21",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.21, PDF p. 453–458)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_jaringan_komputer_dan_telekomunikasi",
+   "title": "Dasar-Dasar Teknik Jaringan Komputer dan Telekomunikasi",
+   "number": "V.22",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.22, PDF p. 458–462)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_layanan_kesehatan",
+   "title": "Dasar-Dasar Layanan Kesehatan",
+   "number": "V.23",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.23, PDF p. 462–467)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknik_laboratorium_medik",
+   "title": "Dasar-Dasar Teknik Laboratorium Medik",
+   "number": "V.24",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.24, PDF p. 468–471)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknologi_farmasi",
+   "title": "Dasar-Dasar Teknologi Farmasi",
+   "number": "V.25",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.25, PDF p. 471–474)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_pekerjaan_sosial",
+   "title": "Dasar-Dasar Pekerjaan Sosial",
+   "number": "V.26",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.26, PDF p. 475–478)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_agribisnis_tanaman",
+   "title": "Dasar-Dasar Agribisnis Tanaman",
+   "number": "V.27",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.27, PDF p. 478–482)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_agribisnis_ternak",
+   "title": "Dasar-Dasar Agribisnis Ternak",
+   "number": "V.28",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.28, PDF p. 482–485)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_agribisnis_perikanan",
+   "title": "Dasar-Dasar Agribisnis Perikanan",
+   "number": "V.29",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.29, PDF p. 485–492)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_usaha_pertanian_terpadu",
+   "title": "Dasar-Dasar Usaha Pertanian Terpadu",
+   "number": "V.30",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.30, PDF p. 492–497)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_agriteknologi_pengolahan_hasil_pertanian",
+   "title": "Dasar-Dasar Agriteknologi Pengolahan Hasil Pertanian",
+   "number": "V.31",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.31, PDF p. 497–503)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_kehutanan",
+   "title": "Dasar-Dasar Kehutanan",
+   "number": "V.32",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.32, PDF p. 503–509)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknika_kapal_penangkap_ikan",
+   "title": "Dasar-Dasar Teknika Kapal Penangkap Ikan",
+   "number": "V.33",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.33, PDF p. 509–514)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_nautika_kapal_penangkap_ikan",
+   "title": "Dasar-Dasar Nautika Kapal Penangkap Ikan",
+   "number": "V.34",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.34, PDF p. 514–518)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_teknika_kapal_niaga",
+   "title": "Dasar-Dasar Teknika Kapal Niaga",
+   "number": "V.35",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.35, PDF p. 519–523)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_nautika_kapal_niaga",
+   "title": "Dasar-Dasar Nautika Kapal Niaga",
+   "number": "V.36",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.36, PDF p. 523–528)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_pemasaran",
+   "title": "Dasar-Dasar Pemasaran",
+   "number": "V.37",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.37, PDF p. 528–533)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_manajemen_perkantoran_dan_layanan_bisnis",
+   "title": "Dasar-Dasar Manajemen Perkantoran dan Layanan Bisnis",
+   "number": "V.38",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.38, PDF p. 533–536)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_akuntansi_dan_keuangan_lembaga",
+   "title": "Dasar-Dasar Akuntansi dan Keuangan Lembaga",
+   "number": "V.39",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.39, PDF p. 536–540)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_usaha_layanan_wisata",
+   "title": "Dasar-Dasar Usaha Layanan Wisata",
+   "number": "V.40",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.40, PDF p. 540–544)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_perhotelan",
+   "title": "Dasar-Dasar Perhotelan",
+   "number": "V.41",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.41, PDF p. 544–546)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_kuliner",
+   "title": "Dasar-Dasar Kuliner",
+   "number": "V.42",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.42, PDF p. 546–550)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_kecantikan_dan_spa",
+   "title": "Dasar-Dasar Kecantikan dan Spa",
+   "number": "V.43",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.43, PDF p. 550–553)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_seni_rupa",
+   "title": "Dasar-Dasar Seni Rupa",
+   "number": "V.44",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.44, PDF p. 553–558)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_desain_komunikasi_visual",
+   "title": "Dasar-Dasar Desain Komunikasi Visual",
+   "number": "V.45",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.45, PDF p. 558–562)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_desain_dan_produksi_kriya",
+   "title": "Dasar-Dasar Desain dan Produksi Kriya",
+   "number": "V.46",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.46, PDF p. 562–566)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_seni_pertunjukan",
+   "title": "Dasar-Dasar Seni Pertunjukan",
+   "number": "V.47",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.47, PDF p. 566–570)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_broadcasting_dan_perfilman",
+   "title": "Dasar-Dasar Broadcasting dan Perfilman",
+   "number": "V.48",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.48, PDF p. 570–574)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_animasi",
+   "title": "Dasar-Dasar Animasi",
+   "number": "V.49",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.49, PDF p. 574–582)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "dasar_dasar_busana",
+   "title": "Dasar-Dasar Busana",
+   "number": "V.50",
+   "phases": [
+    "E"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number V.50, PDF p. 582–587)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_perawatan_gedung",
+   "title": "Teknik Perawatan Gedung",
+   "number": "VI.1",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.1, PDF p. 587–591)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "konstruksi_jalan_irigasi_dan_jembatan",
+   "title": "Konstruksi Jalan, Irigasi, dan Jembatan",
+   "number": "VI.2",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.2, PDF p. 591–596)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "konstruksi_jalan_dan_jembatan",
+   "title": "Konstruksi Jalan dan Jembatan",
+   "number": "VI.3",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.3, PDF p. 596–601)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_konstruksi_dan_perumahan",
+   "title": "Teknik Konstruksi dan Perumahan",
+   "number": "VI.4",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.4, PDF p. 601–604)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "konstruksi_gedung_dan_sanitasi",
+   "title": "Konstruksi Gedung dan Sanitasi",
+   "number": "VI.5",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.5, PDF p. 604–607)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "desain_pemodelan_dan_informasi_bangunan",
+   "title": "Desain Pemodelan dan Informasi Bangunan",
+   "number": "VI.6",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.6, PDF p. 607–611)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "desain_interior_dan_teknik_furnitur",
+   "title": "Desain Interior dan Teknik Furnitur",
+   "number": "VI.7",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.7, PDF p. 611–616)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "desain_dan_teknik_furnitur",
+   "title": "Desain dan Teknik Furnitur",
+   "number": "VI.8",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.8, PDF p. 616–619)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pemesinan",
+   "title": "Teknik Pemesinan",
+   "number": "VI.9",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.9, PDF p. 619–623)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_mekanik_industri",
+   "title": "Teknik Mekanik Industri",
+   "number": "VI.10",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.10, PDF p. 623–627)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pengecoran_logam",
+   "title": "Teknik Pengecoran Logam",
+   "number": "VI.11",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.11, PDF p. 628–631)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "desain_gambar_mesin",
+   "title": "Desain Gambar Mesin",
+   "number": "VI.12",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.12, PDF p. 631–635)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pemesinan_pesawat_udara",
+   "title": "Teknik Pemesinan Pesawat Udara",
+   "number": "VI.13",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.13, PDF p. 635–640)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_konstruksi_rangka_pesawat_udara",
+   "title": "Teknik Konstruksi Rangka Pesawat Udara",
+   "number": "VI.14",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.14, PDF p. 640–643)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pemesinan_kapal",
+   "title": "Teknik Pemesinan Kapal",
+   "number": "VI.15",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.15, PDF p. 643–647)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_kendaraan_ringan",
+   "title": "Teknik Kendaraan Ringan",
+   "number": "VI.16",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.16, PDF p. 647–652)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_sepeda_motor",
+   "title": "Teknik Sepeda Motor",
+   "number": "VI.17",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.17, PDF p. 652–656)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_alat_berat",
+   "title": "Teknik Alat Berat",
+   "number": "VI.18",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.18, PDF p. 656–660)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_ototronik",
+   "title": "Teknik Ototronik",
+   "number": "VI.19",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.19, PDF p. 660–665)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_bodi_kendaraan_ringan",
+   "title": "Teknik Bodi Kendaraan Ringan",
+   "number": "VI.20",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.20, PDF p. 665–668)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pengelasan",
+   "title": "Teknik Pengelasan",
+   "number": "VI.21",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.21, PDF p. 669–673)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pengelasan_kapal",
+   "title": "Teknik Pengelasan Kapal",
+   "number": "VI.22",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.22, PDF p. 673–677)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_konstruksi_badan_pesawat_udara",
+   "title": "Teknik Konstruksi Badan Pesawat Udara (Aircraft Sheet Metal Forming)",
+   "number": "VI.23",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.23, PDF p. 677–683)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_fabrikasi_logam_dan_manufaktur",
+   "title": "Teknik Fabrikasi Logam dan Manufaktur",
+   "number": "VI.24",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.24, PDF p. 683–689)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pengendalian_produksi",
+   "title": "Teknik Pengendalian Produksi",
+   "number": "VI.25",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.25, PDF p. 689–693)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_logistik",
+   "title": "Teknik Logistik",
+   "number": "VI.26",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.26, PDF p. 693–696)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_audio_video",
+   "title": "Teknik Audio Video",
+   "number": "VI.27",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.27, PDF p. 696–700)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_mekatronika",
+   "title": "Teknik Mekatronika",
+   "number": "VI.28",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.28, PDF p. 701–705)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_elektronika_industri",
+   "title": "Teknik Elektronika Industri",
+   "number": "VI.29",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.29, PDF p. 705–708)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_otomasi_industri",
+   "title": "Teknik Otomasi Industri",
+   "number": "VI.30",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.30, PDF p. 708–711)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_elektronika_komunikasi",
+   "title": "Teknik Elektronika Komunikasi",
+   "number": "VI.31",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.31, PDF p. 711–717)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_instrumentasi_medik",
+   "title": "Teknik Instrumentasi Medik",
+   "number": "VI.32",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.32, PDF p. 717–723)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_elektronika_pesawat_udara",
+   "title": "Teknik Elektronika Pesawat Udara",
+   "number": "VI.33",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.33, PDF p. 723–727)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "instrumentasi_dan_otomatisasi_proses",
+   "title": "Instrumentasi dan Otomatisasi Proses",
+   "number": "VI.34",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.34, PDF p. 727–732)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "airframe_powerplant",
+   "title": "Airframe Powerplant",
+   "number": "VI.35",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.35, PDF p. 732–740)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "electrical_avionic",
+   "title": "Electrical Avionic",
+   "number": "VI.36",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.36, PDF p. 740–745)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "desain_rancang_bangun_kapal",
+   "title": "Desain Rancang Bangun Kapal",
+   "number": "VI.37",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.37, PDF p. 745–748)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "konstruksi_kapal_baja",
+   "title": "Konstruksi Kapal Baja",
+   "number": "VI.38",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.38, PDF p. 749–754)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "konstruksi_kapal_non_baja",
+   "title": "Konstruksi Kapal Non Baja",
+   "number": "VI.39",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.39, PDF p. 754–757)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "interior_kapal",
+   "title": "Interior Kapal",
+   "number": "VI.40",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.40, PDF p. 757–763)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kimia_analisis",
+   "title": "Kimia Analisis",
+   "number": "VI.41",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.41, PDF p. 763–766)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "analisis_pengujian_laboratorium",
+   "title": "Analisis Pengujian Laboratorium",
+   "number": "VI.42",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.42, PDF p. 766–770)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_kimia_industri",
+   "title": "Teknik Kimia Industri",
+   "number": "VI.43",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.43, PDF p. 770–775)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kimia_tekstil",
+   "title": "Kimia Tekstil",
+   "number": "VI.44",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.44, PDF p. 775–779)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pembuatan_serat_filamen",
+   "title": "Teknik Pembuatan Serat Filamen",
+   "number": "VI.45",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.45, PDF p. 779–783)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pembuatan_benang_stapel",
+   "title": "Teknik Pembuatan Benang Stapel",
+   "number": "VI.46",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.46, PDF p. 783–787)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pembuatan_kain",
+   "title": "Teknik Pembuatan Kain",
+   "number": "VI.47",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.47, PDF p. 787–790)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_penyempurnaan_tekstil",
+   "title": "Teknik Penyempurnaan Tekstil",
+   "number": "VI.48",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.48, PDF p. 791–794)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_instalasi_tenaga_listrik",
+   "title": "Teknik Instalasi Tenaga Listrik",
+   "number": "VI.49",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.49, PDF p. 795–799)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pembangkit_tenaga_listrik",
+   "title": "Teknik Pembangkit Tenaga Listrik",
+   "number": "VI.50",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.50, PDF p. 800–804)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_jaringan_tenaga_listrik",
+   "title": "Teknik Jaringan Tenaga Listrik",
+   "number": "VI.51",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.51, PDF p. 804–809)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pemanasan_tata_udara_dan_pendinginan",
+   "title": "Teknik Pemanasan, Tata Udara, dan Pendinginan",
+   "number": "VI.52",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.52, PDF p. 809–813)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_kelistrikan_pesawat_udara",
+   "title": "Teknik Kelistrikan Pesawat Udara",
+   "number": "VI.53",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.53, PDF p. 813–817)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_kelistrikan_kapal",
+   "title": "Teknik Kelistrikan Kapal",
+   "number": "VI.54",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.54, PDF p. 817–822)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_energi_surya_hidro_dan_angin",
+   "title": "Teknik Energi Surya Hidro dan Angin",
+   "number": "VI.55",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.55, PDF p. 822–825)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_energi_biomassa",
+   "title": "Teknik Energi Biomassa",
+   "number": "VI.56",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.56, PDF p. 825–829)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_geomatika",
+   "title": "Teknik Geomatika",
+   "number": "VI.57",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.57, PDF p. 829–833)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "informasi_geospasial",
+   "title": "Informasi Geospasial",
+   "number": "VI.58",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.58, PDF p. 833–837)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "geologi_pertambangan",
+   "title": "Geologi Pertambangan",
+   "number": "VI.59",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.59, PDF p. 837–842)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_produksi_minyak_dan_gas",
+   "title": "Teknik Produksi Minyak dan Gas",
+   "number": "VI.60",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.60, PDF p. 842–846)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pemboran_minyak_dan_gas",
+   "title": "Teknik Pemboran Minyak dan Gas",
+   "number": "VI.61",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.61, PDF p. 846–850)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_pengolahan_minyak_gas_dan_petrokimia",
+   "title": "Teknik Pengolahan Minyak, Gas, dan Petrokimia",
+   "number": "VI.62",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.62, PDF p. 850–855)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "rekayasa_perangkat_lunak",
+   "title": "Rekayasa Perangkat Lunak",
+   "number": "VI.63",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.63, PDF p. 855–858)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "pengembangan_gim",
+   "title": "Pengembangan Gim",
+   "number": "VI.64",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.64, PDF p. 859–863)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "sistem_informasi_jaringan_dan_aplikasi",
+   "title": "Sistem Informasi, Jaringan, dan Aplikasi",
+   "number": "VI.65",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.65, PDF p. 863–869)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_komputer_dan_jaringan",
+   "title": "Teknik Komputer dan Jaringan",
+   "number": "VI.66",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.66, PDF p. 869–875)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_jaringan_akses_telekomunikasi",
+   "title": "Teknik Jaringan Akses Telekomunikasi",
+   "number": "VI.67",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.67, PDF p. 875–879)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_transmisi_telekomunikasi",
+   "title": "Teknik Transmisi Telekomunikasi",
+   "number": "VI.68",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.68, PDF p. 879–882)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "layanan_penunjang_keperawatan_dan_caregiving",
+   "title": "Layanan Penunjang Keperawatan dan Caregiving",
+   "number": "VI.69",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.69, PDF p. 882–887)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "layanan_penunjang_dental_care",
+   "title": "Layanan Penunjang Dental Care",
+   "number": "VI.70",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.70, PDF p. 887–891)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "layanan_penunjang_laboratorium_medik",
+   "title": "Layanan Penunjang Laboratorium Medik",
+   "number": "VI.71",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.71, PDF p. 891–895)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "layanan_penunjang_kefarmasian_klinis_dan_komunitas",
+   "title": "Layanan Penunjang Kefarmasian Klinis dan Komunitas",
+   "number": "VI.72",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.72, PDF p. 895–898)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "farmasi_industri",
+   "title": "Farmasi Industri",
+   "number": "VI.73",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.73, PDF p. 898–901)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "pekerjaan_sosial",
+   "title": "Pekerjaan Sosial",
+   "number": "VI.74",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.74, PDF p. 901–908)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_tanaman_perkebunan",
+   "title": "Agribisnis Tanaman Perkebunan",
+   "number": "VI.75",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.75, PDF p. 908–914)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_tanaman_pangan_dan_hortikultura",
+   "title": "Agribisnis Tanaman Pangan dan Hortikultura",
+   "number": "VI.76",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.76, PDF p. 914–919)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_perbenihan_tanaman",
+   "title": "Agribisnis Perbenihan Tanaman",
+   "number": "VI.77",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.77, PDF p. 919–923)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_lanskap_dan_pertamanan",
+   "title": "Agribisnis Lanskap dan Pertamanan",
+   "number": "VI.78",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.78, PDF p. 923–927)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_ternak_ruminansia",
+   "title": "Agribisnis Ternak Ruminansia",
+   "number": "VI.79",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.79, PDF p. 927–932)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_ternak_unggas",
+   "title": "Agribisnis Ternak Unggas",
+   "number": "VI.80",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.80, PDF p. 932–936)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kesehatan_hewan",
+   "title": "Kesehatan Hewan",
+   "number": "VI.81",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.81, PDF p. 936–940)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_ikan_hias",
+   "title": "Agribisnis Ikan Hias",
+   "number": "VI.82",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.82, PDF p. 940–945)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_perikanan_payau_dan_laut",
+   "title": "Agribisnis Perikanan Payau dan Laut",
+   "number": "VI.83",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.83, PDF p. 945–954)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_perikanan_air_tawar",
+   "title": "Agribisnis Perikanan Air Tawar",
+   "number": "VI.84",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.84, PDF p. 954–961)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_rumput_laut",
+   "title": "Agribisnis Rumput Laut",
+   "number": "VI.85",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.85, PDF p. 961–969)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "usaha_pertanian_terpadu",
+   "title": "Usaha Pertanian Terpadu",
+   "number": "VI.86",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.86, PDF p. 969–974)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "mekanisasi_pertanian",
+   "title": "Mekanisasi Pertanian",
+   "number": "VI.87",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.87, PDF p. 974–978)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_pengolahan_hasil_pertanian",
+   "title": "Agribisnis Pengolahan Hasil Pertanian",
+   "number": "VI.88",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.88, PDF p. 978–982)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "agribisnis_pengolahan_hasil_perikanan",
+   "title": "Agribisnis Pengolahan Hasil Perikanan",
+   "number": "VI.89",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.89, PDF p. 982–987)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "pengawasan_mutu_hasil_pertanian",
+   "title": "Pengawasan Mutu Hasil Pertanian",
+   "number": "VI.90",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.90, PDF p. 987–992)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kehutanan",
+   "title": "Kehutanan",
+   "number": "VI.91",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.91, PDF p. 992–998)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknika_kapal_penangkap_ikan",
+   "title": "Teknika Kapal Penangkap Ikan",
+   "number": "VI.92",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.92, PDF p. 998–1003)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "nautika_kapal_penangkap_ikan",
+   "title": "Nautika Kapal Penangkap Ikan",
+   "number": "VI.93",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.93, PDF p. 1003–1009)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknika_kapal_niaga",
+   "title": "Teknika Kapal Niaga",
+   "number": "VI.94",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.94, PDF p. 1009–1016)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "nautika_kapal_niaga",
+   "title": "Nautika Kapal Niaga",
+   "number": "VI.95",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.95, PDF p. 1016–1024)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "bisnis_digital",
+   "title": "Bisnis Digital",
+   "number": "VI.96",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.96, PDF p. 1024–1028)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "bisnis_ritel",
+   "title": "Bisnis Ritel",
+   "number": "VI.97",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.97, PDF p. 1028–1033)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "manajemen_perkantoran",
+   "title": "Manajemen Perkantoran",
+   "number": "VI.98",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.98, PDF p. 1033–1037)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "manajemen_logistik",
+   "title": "Manajemen Logistik",
+   "number": "VI.99",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.99, PDF p. 1037–1043)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "layanan_perbankan",
+   "title": "Layanan Perbankan",
+   "number": "VI.100",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.100, PDF p. 1043–1048)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "layanan_perbankan_syariah",
+   "title": "Layanan Perbankan Syariah",
+   "number": "VI.101",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.101, PDF p. 1049–1054)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "akuntansi",
+   "title": "Akuntansi",
+   "number": "VI.102",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.102, PDF p. 1054–1059)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "usaha_layanan_wisata",
+   "title": "Usaha Layanan Wisata",
+   "number": "VI.103",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.103, PDF p. 1059–1064)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "ekowisata",
+   "title": "Ekowisata",
+   "number": "VI.104",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.104, PDF p. 1064–1070)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "perhotelan",
+   "title": "Perhotelan",
+   "number": "VI.105",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.105, PDF p. 1070–1072)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kuliner",
+   "title": "Kuliner",
+   "number": "VI.106",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.106, PDF p. 1073–1078)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "tata_kecantikan_kulit_dan_rambut",
+   "title": "Tata Kecantikan Kulit dan Rambut",
+   "number": "VI.107",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.107, PDF p. 1078–1086)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "spa_dan_beauty_therapy",
+   "title": "Spa dan Beauty Therapy",
+   "number": "VI.108",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.108, PDF p. 1086–1090)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "seni_lukis",
+   "title": "Seni Lukis",
+   "number": "VI.109",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.109, PDF p. 1091–1096)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "seni_patung",
+   "title": "Seni Patung",
+   "number": "VI.110",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.110, PDF p. 1096–1101)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "desain_komunikasi_visual",
+   "title": "Desain Komunikasi Visual",
+   "number": "VI.111",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.111, PDF p. 1101–1107)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "teknik_grafika",
+   "title": "Teknik Grafika",
+   "number": "VI.112",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.112, PDF p. 1107–1112)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kriya_kreatif_batik_dan_tekstil",
+   "title": "Kriya Kreatif Batik dan Tekstil",
+   "number": "VI.113",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.113, PDF p. 1112–1119)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kriya_kreatif_kulit_dan_imitasi",
+   "title": "Kriya Kreatif Kulit dan Imitasi",
+   "number": "VI.114",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.114, PDF p. 1119–1123)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kriya_keramik",
+   "title": "Kriya Keramik",
+   "number": "VI.115",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.115, PDF p. 1123–1128)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kriya_kreatif_logam_dan_perhiasan",
+   "title": "Kriya Kreatif Logam dan Perhiasan",
+   "number": "VI.116",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.116, PDF p. 1128–1133)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kriya_kreatif_kayu_dan_rotan",
+   "title": "Kriya Kreatif Kayu dan Rotan",
+   "number": "VI.117",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.117, PDF p. 1133–1137)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "seni_musik",
+   "title": "Seni Musik",
+   "number": "VI.118",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.118, PDF p. 1137–1141)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "seni_tari",
+   "title": "Seni Tari",
+   "number": "VI.119",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.119, PDF p. 1142–1145)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "seni_karawitan",
+   "title": "Seni Karawitan",
+   "number": "VI.120",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.120, PDF p. 1146–1150)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "seni_pedalangan",
+   "title": "Seni Pedalangan",
+   "number": "VI.121",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.121, PDF p. 1150–1154)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "seni_teater",
+   "title": "Seni Teater",
+   "number": "VI.122",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.122, PDF p. 1154–1156)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "tata_artistik_teater",
+   "title": "Tata Artistik Teater",
+   "number": "VI.123",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.123, PDF p. 1157–1160)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "produksi_dan_siaran_program_radio",
+   "title": "Produksi dan Siaran Program Radio",
+   "number": "VI.124",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.124, PDF p. 1160–1165)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "produksi_dan_siaran_program_televisi",
+   "title": "Produksi dan Siaran Program Televisi",
+   "number": "VI.125",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.125, PDF p. 1165–1170)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "produksi_film",
+   "title": "Produksi Film",
+   "number": "VI.126",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.126, PDF p. 1170–1174)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "animasi",
+   "title": "Animasi",
+   "number": "VI.127",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.127, PDF p. 1174–1178)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "desain_dan_produksi_busana",
+   "title": "Desain dan Produksi Busana",
+   "number": "VI.128",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VI.128, PDF p. 1178–1182)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "kreativitas_inovasi_dan_kewirausahaan",
+   "title": "Kreativitas, Inovasi, dan Kewirausahaan",
+   "number": "VII",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number VII, PDF p. 1183–1186)"
+  },
+  {
+   "file": "smk.json.gz",
+   "key": "praktik_kerja_lapangan",
+   "title": "Praktik Kerja Lapangan",
+   "number": "IX",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran III (number IX, PDF p. 1187–1190)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_pemberdayaan",
+   "title": "Muatan Pemberdayaan",
+   "number": "I",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number I, PDF p. 1191–1203)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_robotika",
+   "title": "Muatan Keterampilan Robotika",
+   "number": "II",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number II, PDF p. 1203–1211)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_pengelolaan_sampah",
+   "title": "Muatan Keterampilan Pengelolaan Sampah",
+   "number": "III",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number III, PDF p. 1211–1219)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_pertanian_terpadu",
+   "title": "Muatan Keterampilan Pertanian Terpadu",
+   "number": "IV",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number IV, PDF p. 1219–1229)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_barista",
+   "title": "Muatan Keterampilan Barista",
+   "number": "V",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number V, PDF p. 1229–1237)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_perikanan_tangkap",
+   "title": "Muatan Keterampilan Perikanan Tangkap",
+   "number": "VI",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number VI, PDF p. 1237–1246)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_tata_boga",
+   "title": "Muatan Keterampilan Tata Boga",
+   "number": "VII",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number VII, PDF p. 1246–1254)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_tata_busana",
+   "title": "Muatan Keterampilan Tata Busana",
+   "number": "VIII",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number VIII, PDF p. 1254–1262)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_komputer_aplikasi_perkantoran",
+   "title": "Muatan Keterampilan Komputer Aplikasi Perkantoran",
+   "number": "IX",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number IX, PDF p. 1262–1270)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_kreator_konten",
+   "title": "Muatan Keterampilan Kreator Konten",
+   "number": "X",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number X, PDF p. 1270–1279)"
+  },
+  {
+   "file": "kesetaraan.json.gz",
+   "key": "muatan_keterampilan_koding_dan_kecerdasan_artifisial",
+   "title": "Muatan Keterampilan Koding dan Kecerdasan Artifisial",
+   "number": "XI",
+   "phases": [
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran IV (number XI, PDF p. 1279–1287)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_pendidikan_pancasila",
+   "title": "Pendidikan Khusus Pendidikan Pancasila",
+   "number": "II",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number II, PDF p. 1333–1343)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_bahasa_indonesia",
+   "title": "Pendidikan Khusus Bahasa Indonesia",
+   "number": "III",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number III, PDF p. 1344–1354)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_matematika",
+   "title": "Pendidikan Khusus Matematika",
+   "number": "IV",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number IV, PDF p. 1354–1364)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_bahasa_inggris",
+   "title": "Pendidikan Khusus Bahasa Inggris",
+   "number": "V",
+   "phases": [
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number V, PDF p. 1364–1373)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_ilmu_pengetahuan_alam_dan_sosial",
+   "title": "Pendidikan Khusus Ilmu Pengetahuan Alam dan Sosial",
+   "number": "VI",
+   "phases": [
+    "B",
+    "C"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number VI, PDF p. 1373–1379)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_ilmu_pengetahuan_alam",
+   "title": "Pendidikan Khusus Ilmu Pengetahuan Alam",
+   "number": "VII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number VII, PDF p. 1379–1389)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_ilmu_pengetahuan_sosial",
+   "title": "Pendidikan Khusus Ilmu Pengetahuan Sosial",
+   "number": "VIII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number VIII, PDF p. 1389–1399)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_seni_musik",
+   "title": "Pendidikan Khusus Seni Musik",
+   "number": "IX.1",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number IX.1, PDF p. 1399–1410)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_seni_rupa",
+   "title": "Pendidikan Khusus Seni Rupa",
+   "number": "IX.2",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number IX.2, PDF p. 1410–1421)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_seni_tari",
+   "title": "Pendidikan Khusus Seni Tari",
+   "number": "IX.3",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number IX.3, PDF p. 1421–1430)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_seni_teater",
+   "title": "Pendidikan Khusus Seni Teater",
+   "number": "IX.4",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number IX.4, PDF p. 1430–1438)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_pendidikan_jasmani_olahraga_dan_kesehatan",
+   "title": "Pendidikan Khusus Pendidikan Jasmani, Olahraga, dan Kesehatan",
+   "number": "X",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number X, PDF p. 1439–1451)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_perbengkelan_sepeda_motor",
+   "title": "Pendidikan Khusus Keterampilan Perbengkelan Sepeda Motor",
+   "number": "XI",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XI, PDF p. 1451–1455)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_seni_membatik",
+   "title": "Pendidikan Khusus Keterampilan Seni Membatik",
+   "number": "XII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XII, PDF p. 1455–1463)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_tata_gerha",
+   "title": "Pendidikan Khusus Keterampilan Tata Gerha",
+   "number": "XIII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XIII, PDF p. 1463–1469)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_pijat",
+   "title": "Pendidikan Khusus Keterampilan Pijat (Massage)",
+   "number": "XIV",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XIV, PDF p. 1469–1477)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_budi_daya_peternakan_unggas",
+   "title": "Pendidikan Khusus Keterampilan Budi Daya Peternakan Unggas",
+   "number": "XV",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XV, PDF p. 1477–1486)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_cetak_sablon",
+   "title": "Pendidikan Khusus Keterampilan Cetak Sablon",
+   "number": "XVI",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XVI, PDF p. 1486–1492)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_budi_daya_perikanan",
+   "title": "Pendidikan Khusus Keterampilan Budi Daya Perikanan",
+   "number": "XVII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XVII, PDF p. 1493–1497)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_fotografi",
+   "title": "Pendidikan Khusus Keterampilan Fotografi",
+   "number": "XVIII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XVIII, PDF p. 1498–1503)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_teknologi_informasi_dan_komunikasi",
+   "title": "Pendidikan Khusus Keterampilan Teknologi Informasi dan Komunikasi",
+   "number": "XIX",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XIX, PDF p. 1503–1510)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_tata_busana",
+   "title": "Pendidikan Khusus Keterampilan Tata Busana",
+   "number": "XX",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XX, PDF p. 1510–1517)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_tata_boga",
+   "title": "Pendidikan Khusus Keterampilan Tata Boga",
+   "number": "XXI",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXI, PDF p. 1518–1523)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_budi_daya_tanaman_hortikultura",
+   "title": "Pendidikan Khusus Keterampilan Budi Daya Tanaman Hortikultura",
+   "number": "XXII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXII, PDF p. 1523–1531)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_tata_kecantikan",
+   "title": "Pendidikan Khusus Keterampilan Tata Kecantikan",
+   "number": "XXIII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXIII, PDF p. 1531–1538)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_suvenir",
+   "title": "Pendidikan Khusus Keterampilan Suvenir",
+   "number": "XXIV",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXIV, PDF p. 1538–1547)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_elektronika_alat_rumah_tangga",
+   "title": "Pendidikan Khusus Keterampilan Elektronika Alat Rumah Tangga",
+   "number": "XXV",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXV, PDF p. 1548–1553)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_seni_tari",
+   "title": "Pendidikan Khusus Keterampilan Seni Tari",
+   "number": "XXVI",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXVI, PDF p. 1554–1561)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_desain_grafis",
+   "title": "Pendidikan Khusus Keterampilan Desain Grafis",
+   "number": "XXVII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXVII, PDF p. 1562–1570)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_penyiaran_radio",
+   "title": "Pendidikan Khusus Keterampilan Penyiaran Radio",
+   "number": "XXVIII",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXVIII, PDF p. 1570–1575)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_seni_lukis",
+   "title": "Pendidikan Khusus Keterampilan Seni Lukis",
+   "number": "XXIX",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXIX, PDF p. 1575–1583)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_seni_musik",
+   "title": "Pendidikan Khusus Keterampilan Seni Musik",
+   "number": "XXX",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXX, PDF p. 1583–1591)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "pendidikan_khusus_keterampilan_koding_dan_kecerdasan_artifisial",
+   "title": "Pendidikan Khusus Keterampilan Koding dan Kecerdasan Artifisial",
+   "number": "XXXI",
+   "phases": [
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXI, PDF p. 1592–1598)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "fase_fondasi_program_kebutuhan_khusus_pengembangan_orientasi_mobilitas_sosial_dan_komunikasi_untuk_murid_dengan_hambatan_penglihatan_tunanetra",
+   "title": "Fase Fondasi Program Kebutuhan Khusus: Pengembangan Orientasi, Mobilitas, Sosial, dan Komunikasi (POMSK) untuk Murid dengan Hambatan Penglihatan/Tunanetra",
+   "number": "XXXII.1",
+   "phases": [
+    "Fondasi"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXII.1, PDF p. 1599–1602)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "fase_fondasi_program_kebutuhan_khusus_pengembangan_komunikasi_persepsi_bunyi_dan_irama",
+   "title": "Fase Fondasi Program Kebutuhan Khusus Pengembangan Komunikasi, Persepsi Bunyi, dan Irama (PKPBI)",
+   "number": "XXXII.2",
+   "phases": [
+    "Fondasi"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXII.2, PDF p. 1602–1606)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "fase_fondasi_program_kebutuhan_khusus_pengembangan_diri_untuk_murid_berkebutuhan_khusus_hambatan_intelektual_tunagrahita",
+   "title": "Fase Fondasi Program Kebutuhan Khusus Pengembangan Diri untuk Murid Berkebutuhan Khusus Hambatan Intelektual/Tunagrahita",
+   "number": "XXXII.3",
+   "phases": [
+    "Fondasi"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXII.3, PDF p. 1606–1609)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "fase_fondasi_program_kebutuhan_khusus_pengembangan_diri_dan_gerak_untuk_murid_berkebutuhan_khusus_dengan_hambatan_fisik_tunadaksa",
+   "title": "Fase Fondasi Program Kebutuhan Khusus Pengembangan Diri dan Gerak untuk Murid Berkebutuhan Khusus dengan Hambatan Fisik/Tunadaksa",
+   "number": "XXXII.4",
+   "phases": [
+    "Fondasi"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXII.4, PDF p. 1609–1612)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "fase_fondasi_program_kebutuhan_khusus_pengembangan_interaksi_sosial_komunikasi_dan_perilaku_murid_berkebutuhan_khusus_dengan_autisme",
+   "title": "Fase Fondasi Program Kebutuhan Khusus Pengembangan Interaksi Sosial, Komunikasi, dan Perilaku Murid Berkebutuhan Khusus dengan Autisme",
+   "number": "XXXII.5",
+   "phases": [
+    "Fondasi"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXII.5, PDF p. 1613–1616)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "program_kebutuhan_khusus_pengembangan_orientasi_mobilitas_sosial_dan_komunikasi_untuk_murid_dengan_hambatan_penglihatan_tunanetra",
+   "title": "Program Kebutuhan Khusus Pengembangan Orientasi, Mobilitas, Sosial dan Komunikasi (POMSK) untuk Murid dengan Hambatan Penglihatan/Tunanetra",
+   "number": "XXXIII.1",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXIII.1, PDF p. 1616–1631)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "program_kebutuhan_khusus_pengembangan_komunikasi_persepsi_bunyi_dan_irama",
+   "title": "Program Kebutuhan Khusus Pengembangan Komunikasi, Persepsi Bunyi, dan Irama (PKPBI)",
+   "number": "XXXIII.2",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXIII.2, PDF p. 1631–1650)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "program_kebutuhan_khusus_pengembangan_diri_untuk_murid_berkebutuhan_khusus_hambatan_intelektual_tunagrahita",
+   "title": "Program Kebutuhan Khusus Pengembangan Diri untuk Murid Berkebutuhan Khusus Hambatan Intelektual/Tunagrahita",
+   "number": "XXXIII.3",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXIII.3, PDF p. 1650–1664)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "program_kebutuhan_khusus_pengembangan_diri_dan_gerak_untuk_murid_berkebutuhan_khusus_dengan_hambatan_fisik_tunadaksa",
+   "title": "Program Kebutuhan Khusus Pengembangan Diri dan Gerak untuk Murid Berkebutuhan Khusus dengan Hambatan Fisik/Tunadaksa",
+   "number": "XXXIII.4",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXIII.4, PDF p. 1664–1678)"
+  },
+  {
+   "file": "pendidikan-khusus.json.gz",
+   "key": "program_kebutuhan_khusus_pengembangan_interaksi_sosial_komunikasi_dan_perilaku_peserta_didik_berkebutuhan_khusus_dengan_autisme",
+   "title": "Program Kebutuhan Khusus Pengembangan Interaksi Sosial, Komunikasi, dan Perilaku Peserta Didik Berkebutuhan Khusus dengan Autisme",
+   "number": "XXXIII.5",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "TKLB",
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXIII.5, PDF p. 1679–1691)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "raudlatul_athfal",
+   "title": "Raudlatul Athfal (RA)",
+   "number": "I",
+   "phases": [
+    "Fondasi"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number I, PDF p. 6–9)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "al_qur_an_hadis_mi_mts_ma_mak",
+   "title": "Al-Qur’an Hadis MI, MTs, MA/MAK",
+   "number": "II",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number II, PDF p. 10–19)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "al_qur_an_hadis",
+   "title": "Al-Qur’an Hadis (Tafsir)",
+   "number": "3.1",
+   "phases": [
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 3.1, PDF p. 20–25)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "al_qur_an_hadis_2",
+   "title": "Al-Qur’an Hadis (Hadis)",
+   "number": "3.2",
+   "phases": [
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 3.2, PDF p. 26–30)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "ilmu_tafsir_mapk",
+   "title": "Ilmu Tafsir MAPK",
+   "number": "3.3",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 3.3, PDF p. 31–35)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "al_qur_an_hadis_3",
+   "title": "Al-Qur’an Hadis (Ilmu Hadis)",
+   "number": "3.4",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 3.4, PDF p. 35–38)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "akidah_akhlak_mi_mts_ma_mak",
+   "title": "Akidah Akhlak MI, MTs, MA/MAK",
+   "number": "IV",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number IV, PDF p. 39–55)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "ilmu_kalam",
+   "title": "Ilmu Kalam",
+   "number": "5.1",
+   "phases": [
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 5.1, PDF p. 55–61)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "akhlak_tasawuf",
+   "title": "Akhlak Tasawuf",
+   "number": "5.2",
+   "phases": [
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 5.2, PDF p. 61–67)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "fikih_mi_mts_ma_mak",
+   "title": "Fikih MI, MTs, MA/MAK",
+   "number": "VI",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number VI, PDF p. 67–77)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "fikih",
+   "title": "Fikih",
+   "number": "7.1",
+   "phases": [
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 7.1, PDF p. 77–81)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "ushul_fikih",
+   "title": "Ushul Fikih",
+   "number": "7.2",
+   "phases": [
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 7.2, PDF p. 81–86)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "sejarah_kebudayaan_islam_mi_mts_ma_mak_mapk",
+   "title": "Sejarah Kebudayaan Islam MI, MTs, MA/MAK/MAPK",
+   "number": "VIII",
+   "phases": [
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number VIII, PDF p. 86–96)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "bahasa_arab_mi_mts_ma_mak",
+   "title": "Bahasa Arab MI, MTs, MA/MAK",
+   "number": "IX",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number IX, PDF p. 96–104)"
+  },
+  {
+   "file": "madrasah.json.gz",
+   "key": "bahasa_arab_madrasah_aliyah_program_keagamaan",
+   "title": "Bahasa Arab Madrasah Aliyah Program Keagamaan (MAPK)",
+   "number": "9.1",
+   "phases": [
+    "E",
+    "F"
+   ],
+   "levels": [
+    "RA",
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 9.1, PDF p. 104–107)"
+  }
+ ]
+}

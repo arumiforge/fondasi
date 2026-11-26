@@ -5,6 +5,12 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Data set `capaian-pembelajaran` 2025-11-28 (R-15, F-030, F-032): learning outcomes for 293 subjects (549 phases,
+  2,432 outcomes) from Kepka BSKAP 046/H/KR/2025 Lampiran I–V (PAUD, general subjects, SMK, kesetaraan, special
+  education) and SK Dirjen Pendis 9941/2025 (madrasah), with rasional, tujuan, karakteristik, element tables and
+  source pages; 9 errata (F-031) and per-subject `source_notes`. Religion CP (Kepka BKPDM 020/2026) follows in a
+  second, checked step. Converter `tools/converters/capaian-pembelajaran.py` is reproducible and stops on structure
+  problems.
 - Data set `mapel` 2025-09-22 (R-08): subjects and JP per year for every level and grade, from Permendikdasmen
   13/2025 Lampiran II (Tabel 1–29: SD, SMP, SMA, SMK 3/4-year, SDLB, SMPLB, SMALB, Paket A/B/C) and KMA 1503/2025
   (25 madrasah tables: MI, MTs, MA, MAK, MILB, MTsLB, MALB, read from page images), with electives, phases,
