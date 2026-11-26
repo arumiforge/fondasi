@@ -5,6 +5,12 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `capaian-pembelajaran` 2026-06-11 (R-15, F-032): Pendidikan Agama dan Budi Pekerti for the six religions, phases
+  A–F (Kepka BKPDM 020/2026 Lampiran I, 6 subjects, 192 outcomes) in `agama.json.gz`. 020 is a scan: checked
+  transcription in `sources/capaian-pembelajaran/transkripsi-020/` (OCR draft, every line read against the page
+  images), converter `tools/converters/capaian-pembelajaran-agama.py` with an OCR diff and a comparison with
+  sinaubareng's SD transcription (96 of 96 identical); 7 printing errors listed as errata. `index.json` is now built
+  from the files present.
 - Data set `capaian-pembelajaran` 2025-11-28 (R-15, F-030, F-032): learning outcomes for 293 subjects (549 phases,
   2,432 outcomes) from Kepka BSKAP 046/H/KR/2025 Lampiran I–V (PAUD, general subjects, SMK, kesetaraan, special
   education) and SK Dirjen Pendis 9941/2025 (madrasah), with rasional, tujuan, karakteristik, element tables and

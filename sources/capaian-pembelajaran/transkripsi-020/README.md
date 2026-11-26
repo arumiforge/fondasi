@@ -18,4 +18,5 @@ One file per section (`1.1-islam.txt` … `2.6-khonghucu.txt`). Format:
   `|+ `. A header row repeated at the top of a page is left out. An empty first cell repeats the cell above
   (merged cells). `<br>` is a line break inside a cell.
 - Text as printed, including capitals, punctuation and printing errors (those are listed in the data set's errata).
-  Italics are not kept. Apostrophes and ‘ain as printed in the typeface: ’ and ‘.
+  Italics are not kept. Apostrophes and ‘ain as printed in the typeface: ’ and ‘. Pinyin as printed: the scan marks
+  the third tone with a breve (Kŏngzĭ, Wŭjīng); a missing space before Chinese characters is kept (bādé八德).

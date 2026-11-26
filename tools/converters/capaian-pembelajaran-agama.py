@@ -29,6 +29,30 @@ PARTS = {
     "2": ("pendidikan-khusus-agama", f"{REF}, Lampiran II", ["SDLB", "SMPLB", "SMALB"]),
 }
 RELIGIONS = ["islam", "kristen", "katolik", "hindu", "buddha", "khonghucu"]
+# Printing errors seen while transcribing (F-031): kept as printed; each must occur in the transcription.
+# (section number, printed text, page, reason)
+ERRATA = [
+    ("1.3", "Educationis Art.) 3)", 18, "stray closing parenthesis after 'Art.' (Gravissimum Educationis Art. 3)"),
+    ("1.3", "sakramen inisiasi yaitu aptis,", 24, "'aptis' for 'baptis' (Fase D, Gereja)"),
+    ("1.4", "dalam Rāmāyaṇa dan Mahabhrata", 30, "'Mahabhrata' for 'Mahābhārata' (Fase E, Acara); Fase A prints "
+     "'Mahābhārata'"),
+    ("1.5", "alam semesta dan aam kehidupan", 38, "'aam' for 'alam' (Fase F, Etika)"),
+    ("1.6", "antarumat beragama”", 39, "closing quotation mark without an opening one (Tujuan 1)"),
+    ("1.6", "keteladanan Nabi Kŏngzĭ (孔).", 41, "one character (孔) instead of 孔子 (Fase A, Kitab Suci); "
+     "sinaubareng records the same and its owner confirmed it as printed"),
+    ("1.6", "Menganalisis siifat-sifat", 43, "'siifat-sifat' for 'sifat-sifat' (Fase D, Keimanan)"),
+]
+PHASE_GRADES = {"A": [1, 2], "B": [3, 4], "C": [5, 6], "D": [7, 8, 9], "E": [10], "F": [11, 12]}
+ROMAN_N = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10, "XI": 11,
+           "XII": 12}
+
+
+def printed_grades(applies_to):
+    m = re.search(r"[Kk]elas\s+(.*)$", applies_to or "")
+    if not m:
+        return None
+    nums = re.findall(r"\b(XII|XI|IX|X|VIII|VII|VI|IV|V|III|II|I|1[0-2]|[1-9])\b", m.group(1))
+    return sorted({ROMAN_N.get(n) or int(n) for n in nums}) or None
 SMALL = {"dan", "atau", "serta", "untuk", "dengan", "di", "ke", "dari", "pada", "yang", "bagi", "dalam"}
 
 
@@ -187,7 +211,8 @@ def parse(path):
                     else:
                         notes.add(f"CP heading '{v}' is not printed with this name in the element table")
     sub = {
-        "key": key_of(printed), "title": nice_title(printed), "title_printed": printed, "number": number,
+        "key": key_of(printed), "title": nice_title(re.sub(r"^CAPAIAN PEMBELAJARAN\s+", "", printed)),
+        "title_printed": printed, "number": number,
         "pages": [pages[0], pages[-1]],
         "rasional": "\n".join(buf["A"]), "tujuan": "\n".join(buf["B"]), "karakteristik": "\n".join(buf["C"]),
         "elements": elements, "phases": phases,
@@ -283,7 +308,9 @@ def build(src, out, ocr=None, sb=None):
     tdir = os.path.join(src, "transkripsi-020")
     files = sorted(f for f in os.listdir(tdir) if re.match(r"^\d\.\d-[a-z]+\.txt$", f))
     by_part = {}
+    texts = {}
     for f in files:
+        texts[f[:3]] = open(os.path.join(tdir, f), encoding="utf-8").read()
         sub = parse(os.path.join(tdir, f))
         fname, source, levels = PARTS[sub["number"][0]]
         sub["source"] = f"{source} (number {sub['number']}, PDF p. {sub['pages'][0]}–{sub['pages'][1]})"
@@ -295,15 +322,37 @@ def build(src, out, ocr=None, sb=None):
     if sb:
         check_sinaubareng(by_part.get("agama", []), sb)
     os.makedirs(os.path.join(out, "capaian-pembelajaran"), exist_ok=True)
+    for num, printed, page, why in ERRATA:
+        if printed not in texts.get(num, ""):
+            sys.exit(f"erratum not found in the transcription of {num}: {printed!r}")
     for fname, subjects in by_part.items():
         data = {"file": fname, "source": PARTS[subjects[0]["number"][0]][1] + " (scan; checked transcription in "
                 "sources/capaian-pembelajaran/transkripsi-020/)", "subjects": subjects}
+        errata = [{"subject": next(s["key"] for s in subjects if s["number"] == num), "printed": printed,
+                   "page": page, "reason": why} for num, printed, page, why in ERRATA
+                  if any(s["number"] == num for s in subjects)]
+        for sub in subjects:
+            for ph in sub["phases"]:
+                g = printed_grades(ph["applies_to"])
+                if g and g != PHASE_GRADES[ph["phase"]]:
+                    errata.append({"subject": sub["key"], "field": f"Fase {ph['phase']} applies_to",
+                                   "printed": ph["applies_to"], "page": ph["page"],
+                                   "reason": f"names grades {g}; Fase {ph['phase']} is grades "
+                                             f"{PHASE_GRADES[ph['phase']]}. Kept as printed"})
+        if errata:
+            data["errata"] = errata
         raw = json.dumps(data, ensure_ascii=False, indent=1).encode("utf-8") + b"\n"
+        if re.search(rb"\bNIP\b|\b\d{18}\b", raw):
+            sys.exit(f"{fname}: looks like a NIP (personal data) in the output")
         with open(os.path.join(out, "capaian-pembelajaran", fname + ".json.gz"), "wb") as f:
             with gzip.GzipFile(filename="", mode="wb", fileobj=f, mtime=0) as g:
                 g.write(raw)
         n = sum(len(p["outcomes"]) for s in subjects for p in s["phases"])
-        print(f"{fname}: {len(subjects)} subjects, {n} outcomes")
+        print(f"{fname}: {len(subjects)} subjects, {n} outcomes, {len(errata)} errata")
+    # the set's index.json covers every file present
+    import subprocess
+    subprocess.run([sys.executable, "-I", os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                         "capaian-pembelajaran.py"), "--index", out], check=True)
     return by_part
 
 

@@ -14,6 +14,7 @@ Checks: every phase has outcomes, outcome element names match the element table 
 in `source_notes`), the appendix signature block is cut off and no NIP-like number reaches the output. Text is kept as printed (line breaks joined; list items keep their own line).
 
   python3 -I tools/converters/capaian-pembelajaran.py sources/capaian-pembelajaran data
+  python3 -I tools/converters/capaian-pembelajaran.py --index data   # index.json only (after the religion files)
   python3 -I tools/converters/capaian-pembelajaran.py <pdf> <out> <first> <last> <tag>   # one part, for checking
 """
 import json
@@ -608,6 +609,9 @@ PARTS = [
 # Religion CP of 046 (Lampiran II I.1–I.6 and Lampiran V I.1–I.6) was replaced by Kepka BKPDM 020/2026 (scanned);
 # it is left out until 020 is transcribed and checked (user decision 2026-11-26).
 RELIGION_PENDING = ("PENDIDIKAN AGAMA ", "PENDIDIKAN KHUSUS PENDIDIKAN AGAMA ")
+RELIGION_FILES = {"umum": "agama.json.gz", "pendidikan-khusus": "pendidikan-khusus-agama.json.gz"}
+# every file of the set in index order: 046/9941 appendices, then the religion files from 020
+SET_FILES = ["paud", "umum", "agama", "smk", "kesetaraan", "pendidikan-khusus", "pendidikan-khusus-agama", "madrasah"]
 HARD = ("part ", " empty", "no phases")
 
 
@@ -694,7 +698,7 @@ def build(src, out):
     import pdfplumber
     logging.getLogger("pdfminer").setLevel(logging.ERROR)
     opened = {}
-    index, totals, hard = [], {"subjects": 0, "phases": 0, "outcomes": 0}, []
+    hard = []
     os.makedirs(os.path.join(out, "capaian-pembelajaran"), exist_ok=True)
     for fname, pdfname, first, last, source, levels, title in PARTS:
         path = os.path.join(src, pdfname)
@@ -723,36 +727,53 @@ def build(src, out):
         data = {"file": fname, "source": source, "subjects": subjects}
         if errata:
             data["errata"] = errata
-        if fname in ("umum", "pendidikan-khusus"):
-            data["pending"] = ("Pendidikan Agama dan Budi Pekerti (six religions): replaced by Kepka BKPDM 020/2026; "
-                               "added when its scanned text has been transcribed and checked.")
+        if fname in RELIGION_FILES:
+            data["religion"] = (f"Pendidikan Agama dan Budi Pekerti (six religions) of this appendix was replaced by "
+                                f"Kepka BKPDM 020/2026; it is in {RELIGION_FILES[fname]} (scan, checked transcription, "
+                                f"tools/converters/capaian-pembelajaran-agama.py).")
         raw = json.dumps(data, ensure_ascii=False, indent=1).encode("utf-8") + b"\n"
         if re.search(rb"\bNIP\b|\b\d{18}\b", raw):
             sys.exit(f"{fname}: looks like a NIP (personal data) in the output")
         with open(os.path.join(out, "capaian-pembelajaran", fname + ".json.gz"), "wb") as f:
             with gzip.GzipFile(filename="", mode="wb", fileobj=f, mtime=0) as g:
                 g.write(raw)
-        for sub in subjects:
+        print(f"{fname}: {len(subjects)} subjects")
+    if hard:
+        sys.exit("structure problems:\n  " + "\n  ".join(hard))
+    return write_index(out)
+
+
+def write_index(out):
+    """index.json from the files present (046/9941 appendices and the 020 religion files), in SET_FILES order."""
+    import gzip
+    d = os.path.join(out, "capaian-pembelajaran")
+    index, files, totals = [], [], {"subjects": 0, "phases": 0, "outcomes": 0}
+    for fname in SET_FILES:
+        path = os.path.join(d, fname + ".json.gz")
+        if not os.path.exists(path):
+            continue
+        files.append(fname + ".json.gz")
+        for sub in json.load(gzip.open(path))["subjects"]:
             index.append({"file": fname + ".json.gz", "key": sub["key"], "title": sub["title"],
                           "number": sub["number"], "phases": [p["phase"] for p in sub["phases"]],
                           "levels": sub["levels"], "source": sub["source"]})
             totals["subjects"] += 1
             totals["phases"] += len(sub["phases"])
             totals["outcomes"] += sum(len(p["outcomes"]) for p in sub["phases"])
-        print(f"{fname}: {len(subjects)} subjects")
-    if hard:
-        sys.exit("structure problems:\n  " + "\n  ".join(hard))
-    with open(os.path.join(out, "capaian-pembelajaran", "index.json"), "w", encoding="utf-8") as f:
-        json.dump({"name": "Capaian Pembelajaran", "files": [p[0] + ".json.gz" for p in PARTS],
-                   "pending": "Pendidikan Agama dan Budi Pekerti (Kepka BKPDM 020/2026)", "totals": totals,
-                   "phases": {**{"Fondasi": {"grades": [], "note": "PAUD, RA and TKLB"}},
-                              **{k: {"grades": v} for k, v in PHASE_GRADES.items()}},
-                   "phase_note": ("Grades per phase as the decrees print them for most subjects. SLB phases also "
-                                  "name a mental age (see each phase's applies_to). Use these grades rather than "
-                                  "the printed applies_to text, which varies and has misprints (see errata)."),
-                   "subjects": index}, f, ensure_ascii=False, indent=1)
+    missing = [f + ".json.gz" for f in SET_FILES if f + ".json.gz" not in files]
+    with open(os.path.join(d, "index.json"), "w", encoding="utf-8") as f:
+        doc = {"name": "Capaian Pembelajaran", "files": files, "totals": totals,
+               "phases": {**{"Fondasi": {"grades": [], "note": "PAUD, RA and TKLB"}},
+                          **{k: {"grades": v} for k, v in PHASE_GRADES.items()}},
+               "phase_note": ("Grades per phase as the decrees print them for most subjects. SLB phases also "
+                              "name a mental age (see each phase's applies_to). Use these grades rather than "
+                              "the printed applies_to text, which varies and has misprints (see errata)."),
+               "subjects": index}
+        if missing:
+            doc["pending"] = missing
+        json.dump(doc, f, ensure_ascii=False, indent=1)
         f.write("\n")
-    print(f"ok: {totals}")
+    print(f"index: {totals}" + (f", pending {missing}" if missing else ""))
     return totals
 
 
@@ -779,6 +800,8 @@ def main(pdf, out, first=23, last=347, tag="II"):
 if __name__ == "__main__":
     if len(sys.argv) == 6:
         main(sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), sys.argv[5])
+    elif len(sys.argv) == 3 and sys.argv[1] == "--index":
+        write_index(sys.argv[2])
     elif len(sys.argv) == 3 and os.path.isdir(sys.argv[1]):
         build(sys.argv[1], sys.argv[2])
     else:
