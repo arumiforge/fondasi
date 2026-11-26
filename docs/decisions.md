@@ -115,3 +115,7 @@ Decision: The athletics sets use World Athletics' Competition & Technical Rules 
 ## F-028 — `sekolah`: which forms and regions are kept (2026-11-26)
 Status: accepted (user, 2026-11-26: "Masukkan semua", "PKBM dan SKB saja", Luar Negeri "Tidak")
 Decision: The `sekolah` set keeps every form that referensi.data.kemendikdasmen.go.id lists under Dikdas, Dikmen and PAUD, including SPK (cooperation schools, e.g. "SPK SMP") and Pendidikan Diniyah Formal ("PDF Wustha", "PDF Ulya"); apps filter by `bentuk_pendidikan`. From Dikmas (non-formal) only PKBM and SKB are kept; courses (LKP/"Kursus") are left out. Schools abroad (the source's "Luar Negeri" group, Sekolah Indonesia Luar Negeri) are left out because they have no Kemendagri region code.
+
+## F-029 — Crawls of government reference sites: up to three workers (2026-11-26)
+Status: accepted (user, 2026-11-26: "3 proses")
+Decision: A crawl of a public government reference site (R-01 and later sets) may run up to three workers at once, each waiting at least one second between its requests and each fetching a different set of provinces, so no page is fetched twice. Before, crawls were strictly sequential (user, 2026-11-25). Pages that the parent page shows to hold none of the kept forms are not fetched (Dikmas districts without PKBM or SKB). A crawl slows down or stops when the site answers with errors or rate limits.

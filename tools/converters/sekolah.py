@@ -66,6 +66,18 @@ def child_links(page, group, level, parent_prefix):
     return seen
 
 
+def child_counts(page, group, level, prefix):
+    """Child code → {form: count} from the summary table of a regency page (headers such as 'PKBM ↕')."""
+    heads = [re.sub(r"[^\w ]", "", text(h)).strip() for h in re.findall(r"<th[^>]*>(.*?)</th>", page, re.S)]
+    out = {}
+    for r in re.findall(r"<tr[^>]*>(.*?)</tr>", page, re.S):
+        m = re.search(rf'href="/satpen/{group}/(\d{{6}})(?:%20)*/{level}\?', r)
+        cells = [text(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", r, re.S)]
+        if m and m.group(1).startswith(prefix) and len(cells) == len(heads):
+            out[m.group(1)] = {h: int(c) for h, c in zip(heads, cells) if c.isdigit()}
+    return out
+
+
 def fetch(raw, provinces, groups=GROUPS):
     os.makedirs(raw, exist_ok=True)
 
@@ -98,7 +110,11 @@ def fetch(raw, provinces, groups=GROUPS):
             p1 = cached(os.path.join(d, f"{prov}.html"), url(group, prov, 1), "Nama Wilayah")
             for kab in child_links(p1, group, 2, prov[:2]):
                 p2 = cached(os.path.join(d, f"{kab}.html"), url(group, kab, 2), "Nama Wilayah")
+                counts = child_counts(p2, group, 3, kab[:4]) if group in KEEP_FORMS else {}
                 for kec in child_links(p2, group, 3, kab[:4]):
+                    # the regency page counts each form per district: skip districts with none of the kept forms
+                    if kec in counts and not any(counts[kec].get(f, 0) for f in KEEP_FORMS[group]):
+                        continue
                     cached(os.path.join(d, f"{kec}.html"), url(group, kec, 3), ">NPSN<")
             print(f"fetched {prov} {group}", file=sys.stderr, flush=True)
 
