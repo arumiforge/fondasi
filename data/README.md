@@ -15,7 +15,7 @@ environment cannot reach: [../docs/data-requests.md](../docs/data-requests.md).
 | `libur-nasional` | National holidays and cuti bersama, one row per day: 2026 (17 + 8 days), 2027 (18 + 8 days) | 2026-09-15 | ready (2028 when signed, ~Sept 2027) | SKB 3 Menteri (Kemenko PMK) |
 | `kaldik-jateng` | Education calendar of Jawa Tengah: 2026/2027 in full (events per level and 5/6 school days, rules), 2025/2026 key dates | 2026-09-15 | ready (2027/2028 not yet published); holidays checked against `libur-nasional` | Dinas Pendidikan Prov. Jawa Tengah |
 | `kalender-nasional` | National education calendar (Kemendikdasmen; Kemenag for madrasah) per academic year | — | planned (R-12) | Kemendikdasmen, Kemenag (browser) |
-| `kaldik-madrasah-jateng` | Madrasah calendar of Jawa Tengah per academic year (incl. Ramadan days) | — | planned (R-06) | Kanwil Kemenag Jawa Tengah |
+| `kaldik-madrasah-jateng` | Madrasah calendar of Jawa Tengah (RA, MI, MTs, MA, MAK): 2026/2027 in full, 45 events, rules, HK/HL/HE per month | 2026-06-29 | ready for 2026/2027; holidays checked against `libur-nasional` | Keputusan Kakanwil Kemenag Jateng 1681/2026 |
 | `referensi-dapodik` | Religion, occupation, income, education, transport, residence, special needs, levels/grades — with official codes | — | planned (R-07) | Dapodik reference tables (browser) |
 | `mapel` | Kurikulum Merdeka subjects per level/phase | — | planned (R-08) | Kemendikdasmen regulation on curriculum structure (browser) |
 | `perguruan-tinggi` | Higher-education institutions: code, name, type, status, province | — | planned (R-09) | PDDikti (browser) |

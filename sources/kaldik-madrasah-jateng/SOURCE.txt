@@ -1,0 +1,16 @@
+R-06 kaldik-madrasah-jateng — Kalender pendidikan madrasah Jawa Tengah 2026/2027
+Received: 2026-11-26 (UTC), uploaded by the user as a zip (jateng.kemenag.go.id times out from the cloud); kept
+byte-for-byte.
+
+1) 20260701-JTG-Kaldik-Madrasah-2026-2027.pdf (uploaded as "20260701 - JTG_Kaldik Madrasah_2026-2027.pdf")
+   Content  : Kanwil Kemenag Jawa Tengah cover letter B-1740/Kw.11.2/PP.00/07/2026 of 1 Juli 2026 (signed
+              electronically, BSrE) with Keputusan Kepala Kantor Wilayah Kementerian Agama Provinsi Jawa Tengah
+              Nomor 1681 Tahun 2026 tentang Pedoman Penyusunan Kalender Pendidikan Madrasah Tahun Ajaran
+              2026/2027 (ditetapkan di Semarang, 29 Juni 2026, SALINAN) and its Lampiran (calendar per month)
+   Size     : 9858571 bytes, 11 pages, scanned (no text layer)
+   SHA-256  : c9df2154d960eeb07cd6794fad9a861258684b229e658475f5e17445621b1c97
+
+Not used as a source: "Kaldik Madrasah Jateng 2026-2027.xlsx" in the same zip (SHA-256 3e1e3a45…) is a
+spreadsheet from www.ayomadrasah.id with leftover 2025 rows and wrong dates; a Scribd link to a "Kaldik Madrasah
+2026-2027 Pendis" spreadsheet is a third-party upload. The national guideline (Keputusan Dirjen Pendis Nomor
+4860 Tahun 2026) was not delivered.

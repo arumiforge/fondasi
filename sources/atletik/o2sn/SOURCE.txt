@@ -1,0 +1,10 @@
+R-10b (part) — Panduan O2SN 2026, uploaded by the user on 2026-11-26 (UTC); kept byte-for-byte. Not yet
+converted: the next session extracts the athletics rules (events, age limits and reference dates, implements).
+
+Panduan-O2SN-SD-2026.pdf   (uploaded as "1_Panduan_O2SN_SD_2026_rilis.pdf")    69 pages
+  SHA-256 8e63be08f51671d7a2d398e136c4b4c26847191f0cacaf3de28b50d022f6e5cc
+Panduan-O2SN-SMP-2026.pdf  (uploaded as "1._Panduan_O2SN_SMP_2026_rilis.pdf")  65 pages
+  SHA-256 431d94db8c872a036d4f9b78af7b2efd28a4927c095f7874e19bb90e9c167ab4
+Panduan-O2SN-SMA-2026.pdf  (uploaded as "1_Panduan_O2SN_SMA_2026_Rilis.pdf")   70 pages
+  SHA-256 3e114dd9aeafd4a3f79631ec82a96b94dc12c66d679aa21445372041f77e10b7
+Publisher, page URL and date as printed: to be read from the PDFs by the converting session.

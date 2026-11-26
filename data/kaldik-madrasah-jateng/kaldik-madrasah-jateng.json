@@ -1,0 +1,814 @@
+{
+ "name": "Kalender pendidikan madrasah Provinsi Jawa Tengah",
+ "province_code": "33",
+ "kinds": [
+  "first_day",
+  "orientation",
+  "teacher_training",
+  "ceremony",
+  "public_holiday",
+  "cuti_bersama",
+  "ramadan",
+  "eid_break",
+  "national_test",
+  "summative",
+  "school_exam",
+  "report",
+  "semester_break",
+  "next_year"
+ ],
+ "years": [
+  {
+   "academic_year": "2026/2027",
+   "regulation": "Keputusan Kepala Kantor Wilayah Kementerian Agama Provinsi Jawa Tengah Nomor 1681 Tahun 2026 tentang Pedoman Penyusunan Kalender Pendidikan Madrasah Tahun Ajaran 2026/2027 (ditetapkan di Semarang, 29 Juni 2026)",
+   "based_on": "Keputusan Direktur Jenderal Pendidikan Islam Nomor 4860 Tahun 2026 tentang Pedoman Kalender Pendidikan Madrasah Tahun Ajaran 2026/2027",
+   "applies_to": "RA, MI, MTs, MA and MAK in Jawa Tengah (Pasal 1 angka 2); kabupaten/kota offices may add details (Pasal 23)",
+   "source_file": "sources/kaldik-madrasah-jateng/20260701-JTG-Kaldik-Madrasah-2026-2027.pdf",
+   "school_week": "six days: Saturdays are school days in the printed HE counts",
+   "rules": {
+    "first_day": "2026-07-13",
+    "orientation": [
+     "2026-07-13",
+     "2026-07-18"
+    ],
+    "class_plans_due": "2026-07-11 (Pasal 2)",
+    "min_effective_weeks": 36,
+    "min_effective_weeks_final_grades_even_semester": 14,
+    "lessons_start": "07.00 WIB unless the kabupaten/kota office sets another time (Pasal 7)",
+    "lesson_minutes": {
+     "RA": 30,
+     "MI": 35,
+     "MTs": 40,
+     "MA/MAK": 45
+    },
+    "ramadan_lesson_minutes": {
+     "RA": "set by the madrasah",
+     "MI": 30,
+     "MTs": 30,
+     "MA/MAK": 35
+    },
+    "summative_semester_1": [
+     "2026-11-23",
+     "2026-12-05"
+    ],
+    "summative_year_end": [
+     "2027-05-24",
+     "2027-06-05"
+    ],
+    "reports": [
+     "2026-12-19",
+     "2027-06-19"
+    ],
+    "school_exam": "dates follow the Direktur Jenderal Pendidikan Islam (Pasal 13 ayat (1))",
+    "tka_an": "Keputusan Mendikdasmen Nomor 56 Tahun 2026; for MTs and MI in 2027 the dates follow Kemendikdasmen (Lampiran Maret–April, marked without dates)",
+    "holidays_2027": "public holidays, cuti bersama and Ramadan days in 2027 follow the government's decision (Pasal 22)"
+   },
+   "month_counts": {
+    "2026-07": {
+     "hk": 31,
+     "hl": 14,
+     "he": 17
+    },
+    "2026-08": {
+     "hk": 31,
+     "hl": 7,
+     "he": 24
+    },
+    "2026-09": {
+     "hk": 30,
+     "hl": 4,
+     "he": 26
+    },
+    "2026-10": {
+     "hk": 31,
+     "hl": 4,
+     "he": 27
+    },
+    "2026-11": {
+     "hk": 30,
+     "hl": 5,
+     "he": 25
+    },
+    "2026-12": {
+     "hk": 31,
+     "hl": 15,
+     "he": 16
+    },
+    "2027-01": {
+     "hk": 31,
+     "hl": 8,
+     "he": 23
+    },
+    "2027-02": {
+     "hk": 28,
+     "hl": 8,
+     "he": 20
+    },
+    "2027-03": {
+     "hk": 31,
+     "hl": 14,
+     "he": 17
+    },
+    "2027-04": {
+     "hk": 30,
+     "hl": 4,
+     "he": 26
+    },
+    "2027-05": {
+     "hk": 31,
+     "hl": 9,
+     "he": 22
+    },
+    "2027-06": {
+     "hk": 30,
+     "hl": 15,
+     "he": 15
+    }
+   },
+   "semester_counts": {
+    "gasal": {
+     "hk": 184,
+     "hl": 49,
+     "he": 135
+    },
+    "genap": {
+     "hk": 181,
+     "hl": 58,
+     "he": 123
+    }
+   },
+   "skb_days_not_in_this_calendar": [
+    "2027-02-05 Jumat cuti bersama: Tahun Baru Imlek 2578 Kongzili",
+    "2027-03-25 Kamis cuti bersama: Wafat Yesus Kristus",
+    "2027-05-18 Selasa cuti bersama: Idul Adha 1448 Hijriah",
+    "2027-05-19 Rabu cuti bersama: Hari Raya Waisak 2571 BE"
+   ],
+   "events": [
+    {
+     "start": "2026-07-13",
+     "end": "2026-07-13",
+     "kind": "first_day",
+     "label": "Awal masuk tahun ajaran 2026/2027",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 4; Lampiran Juli"
+    },
+    {
+     "start": "2026-07-13",
+     "end": "2026-07-18",
+     "kind": "orientation",
+     "label": "Pengenalan lingkungan madrasah",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 5 ayat (2); Lampiran Juli",
+     "note": "MI also runs the PAUD/RA-to-MI transition programme in the first two weeks (Pasal 5 ayat (3))"
+    },
+    {
+     "start": "2026-07-20",
+     "end": "2026-08-17",
+     "kind": "teacher_training",
+     "label": "Sulingjar untuk kepala dan guru (RA, MI, MTs, MA, MAK)",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran Juli–Agustus",
+     "note": "for heads and teachers; school days for pupils"
+    },
+    {
+     "start": "2026-08-17",
+     "end": "2026-08-17",
+     "kind": "public_holiday",
+     "label": "Proklamasi Kemerdekaan",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) a; Pasal 21 ayat (1) a",
+     "ceremony": true,
+     "skb": "matches SKB 2026 Lampiran A no. 14"
+    },
+    {
+     "start": "2026-08-25",
+     "end": "2026-08-25",
+     "kind": "public_holiday",
+     "label": "Maulid Nabi Muhammad S.A.W.",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (1) b",
+     "skb": "matches SKB 2026 Lampiran A no. 15"
+    },
+    {
+     "start": "2026-09-21",
+     "end": "2026-09-27",
+     "kind": "national_test",
+     "label": "Simulasi TKA dan AN jenjang MA/MAK",
+     "levels": [
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran September"
+    },
+    {
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "kind": "ceremony",
+     "label": "Hari Kesaktian Pancasila",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) b"
+    },
+    {
+     "start": "2026-10-05",
+     "end": "2026-10-18",
+     "kind": "national_test",
+     "label": "Gladi bersih TKA dan AN jenjang MA/MAK",
+     "levels": [
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran Oktober"
+    },
+    {
+     "start": "2026-10-22",
+     "end": "2026-10-22",
+     "kind": "ceremony",
+     "label": "Hari Santri",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) c"
+    },
+    {
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "kind": "national_test",
+     "label": "Pelaksanaan utama TKA dan AN jenjang MA/MAK",
+     "levels": [
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran Oktober"
+    },
+    {
+     "start": "2026-10-28",
+     "end": "2026-10-28",
+     "kind": "ceremony",
+     "label": "Hari Sumpah Pemuda",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) d"
+    },
+    {
+     "start": "2026-11-02",
+     "end": "2026-11-05",
+     "kind": "national_test",
+     "label": "Pelaksanaan utama TKA dan AN jenjang MA/MAK",
+     "levels": [
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran November"
+    },
+    {
+     "start": "2026-11-10",
+     "end": "2026-11-10",
+     "kind": "ceremony",
+     "label": "Hari Pahlawan",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) e"
+    },
+    {
+     "start": "2026-11-16",
+     "end": "2026-11-29",
+     "kind": "national_test",
+     "label": "Susulan TKA dan AN jenjang MA/MAK",
+     "levels": [
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran November"
+    },
+    {
+     "start": "2026-11-23",
+     "end": "2026-12-05",
+     "kind": "summative",
+     "label": "Asesmen sumatif akhir semester (ASAS) gasal",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 12 ayat (1); Lampiran November–Desember"
+    },
+    {
+     "start": "2026-12-19",
+     "end": "2026-12-19",
+     "kind": "report",
+     "label": "Penyerahan rapor murid semester gasal",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 14 ayat (1)"
+    },
+    {
+     "start": "2026-12-21",
+     "end": "2027-01-02",
+     "kind": "semester_break",
+     "label": "Libur semester gasal",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 19 ayat (1); Lampiran Desember"
+    },
+    {
+     "start": "2026-12-24",
+     "end": "2026-12-24",
+     "kind": "cuti_bersama",
+     "label": "Cuti bersama Kelahiran Yesus Kristus",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (1) c",
+     "skb": "matches SKB 2026 Lampiran B no. 6"
+    },
+    {
+     "start": "2026-12-25",
+     "end": "2026-12-25",
+     "kind": "public_holiday",
+     "label": "Kelahiran Yesus Kristus",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (1) d",
+     "skb": "matches SKB 2026 Lampiran A no. 16"
+    },
+    {
+     "start": "2027-01-01",
+     "end": "2027-01-01",
+     "kind": "public_holiday",
+     "label": "Tahun Baru 2027 Masehi",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) a",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 1"
+    },
+    {
+     "start": "2027-01-03",
+     "end": "2027-01-03",
+     "kind": "ceremony",
+     "label": "Hari Amal Bakti (HAB) Kementerian Agama",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 16"
+    },
+    {
+     "start": "2027-01-04",
+     "end": "2027-01-04",
+     "kind": "first_day",
+     "label": "Awal masuk semester genap",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran Januari"
+    },
+    {
+     "start": "2027-01-05",
+     "end": "2027-01-05",
+     "kind": "public_holiday",
+     "label": "Isra Mikraj Nabi Muhammad S.A.W.",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) b",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 2"
+    },
+    {
+     "start": "2027-02-06",
+     "end": "2027-02-06",
+     "kind": "public_holiday",
+     "label": "Tahun Baru Imlek 2578 Kongzili",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) c",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 3"
+    },
+    {
+     "start": "2027-02-08",
+     "end": "2027-02-10",
+     "kind": "ramadan",
+     "label": "Libur awal Ramadan 1448 H",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 20 ayat (1); Lampiran Februari",
+     "estimate": true,
+     "note": "one day before Ramadan and its first two days (1–2 Ramadan 1448 H)"
+    },
+    {
+     "start": "2027-03-05",
+     "end": "2027-03-09",
+     "kind": "ramadan",
+     "label": "Libur akhir bulan Ramadan 1448 H",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 20 ayat (2); Lampiran Maret",
+     "estimate": true,
+     "skb": "partly in the SKB: 2027-03-08 SKB 2027 Lampiran A no. 4; 2027-03-09 SKB 2027 Lampiran B no. 2; not in the SKB: 2027-03-05, 2027-03-06, 2027-03-07"
+    },
+    {
+     "start": "2027-03-08",
+     "end": "2027-03-08",
+     "kind": "public_holiday",
+     "label": "Hari Suci Nyepi (Tahun Baru Saka 1949)",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) d",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 4"
+    },
+    {
+     "start": "2027-03-10",
+     "end": "2027-03-11",
+     "kind": "public_holiday",
+     "label": "Hari Raya Idul Fitri 1448 H",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) e",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 5; SKB 2027 Lampiran A no. 5"
+    },
+    {
+     "start": "2027-03-12",
+     "end": "2027-03-15",
+     "kind": "eid_break",
+     "label": "Libur dalam rangka Hari Raya Idul Fitri 1448 H",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 20 ayat (3); Lampiran Maret",
+     "estimate": true,
+     "note": "Pasal 20 ayat (3) gives 10–15 Maret 2027 including the two days of Idul Fitri",
+     "skb": "partly in the SKB: 2027-03-12 SKB 2027 Lampiran B no. 2; 2027-03-15 SKB 2027 Lampiran B no. 2; not in the SKB: 2027-03-13, 2027-03-14"
+    },
+    {
+     "start": "2027-03-26",
+     "end": "2027-03-26",
+     "kind": "public_holiday",
+     "label": "Wafat Yesus Kristus",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) f",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 6"
+    },
+    {
+     "start": "2027-03-28",
+     "end": "2027-03-28",
+     "kind": "public_holiday",
+     "label": "Kebangkitan Yesus Kristus (Paskah)",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) g",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 7"
+    },
+    {
+     "start": "2027-03-29",
+     "end": "2027-05-15",
+     "kind": "school_exam",
+     "label": "Rentang waktu ujian madrasah (UM) tahun ajaran 2026/2027",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran Maret–Mei; Pasal 13 ayat (1)",
+     "estimate": true,
+     "note": "the final UM dates follow the Direktur Jenderal Pendidikan Islam (Pasal 13 ayat (1))"
+    },
+    {
+     "start": "2027-04-21",
+     "end": "2027-04-21",
+     "kind": "ceremony",
+     "label": "Hari Kartini",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) f"
+    },
+    {
+     "start": "2027-05-01",
+     "end": "2027-05-01",
+     "kind": "public_holiday",
+     "label": "Hari Buruh Internasional",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) h",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 8"
+    },
+    {
+     "start": "2027-05-02",
+     "end": "2027-05-02",
+     "kind": "ceremony",
+     "label": "Hari Pendidikan Nasional",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) g"
+    },
+    {
+     "start": "2027-05-06",
+     "end": "2027-05-06",
+     "kind": "public_holiday",
+     "label": "Kenaikan Yesus Kristus",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) i",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 9"
+    },
+    {
+     "start": "2027-05-17",
+     "end": "2027-05-17",
+     "kind": "public_holiday",
+     "label": "Hari Raya Idul Adha 1448 H",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) j",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 10"
+    },
+    {
+     "start": "2027-05-20",
+     "end": "2027-05-20",
+     "kind": "ceremony",
+     "label": "Hari Kebangkitan Nasional",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) h"
+    },
+    {
+     "start": "2027-05-20",
+     "end": "2027-05-20",
+     "kind": "public_holiday",
+     "label": "Hari Raya Waisak 2571 BE",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) k",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 11"
+    },
+    {
+     "start": "2027-05-24",
+     "end": "2027-06-05",
+     "kind": "summative",
+     "label": "Asesmen sumatif akhir tahun ajaran",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 12 ayat (2); Lampiran Mei–Juni"
+    },
+    {
+     "start": "2027-06-01",
+     "end": "2027-06-01",
+     "kind": "public_holiday",
+     "label": "Hari Lahir Pancasila",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 15 ayat (2) i; Pasal 21 ayat (2) l",
+     "estimate": true,
+     "ceremony": true,
+     "skb": "matches SKB 2027 Lampiran A no. 12"
+    },
+    {
+     "start": "2027-06-06",
+     "end": "2027-06-06",
+     "kind": "public_holiday",
+     "label": "1 Muharam Tahun Baru Islam 1449 H",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 21 ayat (2) m",
+     "estimate": true,
+     "skb": "matches SKB 2027 Lampiran A no. 13"
+    },
+    {
+     "start": "2027-06-19",
+     "end": "2027-06-19",
+     "kind": "report",
+     "label": "Penyerahan rapor murid semester genap",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 14 ayat (2)"
+    },
+    {
+     "start": "2027-06-21",
+     "end": "2027-07-10",
+     "kind": "semester_break",
+     "label": "Libur akhir tahun ajaran",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Pasal 19 ayat (2); Lampiran Juni"
+    },
+    {
+     "start": "2027-07-12",
+     "end": "2027-07-12",
+     "kind": "next_year",
+     "label": "Awal tahun ajaran 2027/2028",
+     "levels": [
+      "RA",
+      "MI",
+      "MTs",
+      "MA",
+      "MAK"
+     ],
+     "ref": "Lampiran Juni",
+     "estimate": true
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Transcribed from the official decree (PDF with the Kanwil cover letter B-1740/Kw.11.2/PP.00/07/2026); the spreadsheet that came with it (ayomadrasah.id) is not a source: it has leftover 2025 rows and wrong dates (e.g. Hari Pahlawan on 10 Oktober).",
+  "HL per month is recomputed from Sundays, holiday events and the report-card Saturdays (19 Desember 2026, 19 Juni 2027), which the Lampiran counts as days off; all twelve months match the printed HK/HL/HE.",
+  "Dates marked estimate follow the decree's estimate; the national SKB (data set libur-nasional) wins where it differs (F-025)."
+ ]
+}

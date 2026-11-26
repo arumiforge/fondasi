@@ -8,6 +8,8 @@ Fondasi is proprietary (`LICENSE`). Data sets and tools below come from or are d
 | `data/sekolah/` | Public district lists of referensi.data.kemendikdasmen.go.id (Kemendikdasmen Dapodik reference data), crawled and converted by `tools/converters/sekolah.py` | Public government data, no personal data |
 | `data/kaldik-jateng/`, `sources/kaldik-jateng/` | Peraturan Kepala Dinas Pendidikan Provinsi Jawa Tengah on the education calendar 2025/2026 and 2026/2027, pdk.jatengprov.go.id | Public government documents |
 | `data/libur-nasional/`, `sources/libur-nasional/` | SKB 3 Menteri on national holidays and cuti bersama 2026 and 2027, published by Kemenko PMK (www.kemenkopmk.go.id) | Public government documents |
+| `data/kaldik-madrasah-jateng/`, `sources/kaldik-madrasah-jateng/` | Keputusan Kepala Kantor Wilayah Kementerian Agama Provinsi Jawa Tengah Nomor 1681 Tahun 2026 (copy received from the user) | Public government document |
+| `sources/atletik/o2sn/` | Panduan O2SN 2026 SD, SMP, SMA (copies received from the user; not converted yet) | Public government documents |
 | `sources/wilayah/` | Keputusan Menteri Dalam Negeri Nomor 300.2.2-2430 Tahun 2025 (copy received from the user), used to check `data/wilayah` | Public government document |
 | `data/kodepos/` | [cahyadsn/wilayah_kodepos](https://github.com/cahyadsn/wilayah_kodepos) `db/wilayah_kodepos.sql`; converted by `tools/converters/kodepos.py` | MIT, Copyright (c) 2024 Cahya DSN (`data/kodepos/LICENSE.txt`) |
 | `data/atletik-*/`, `sources/atletik/` | World Athletics Book C C1.1/C2.1 Competition & Technical Rules (2026), IAAF Scoring Tables for Combined Events (2016), worldathletics.org | Copyright World Athletics; facts with references and private raw copies by decision F-027 |
