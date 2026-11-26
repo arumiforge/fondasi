@@ -41,6 +41,7 @@ ERRATA = [
     ("1.6", "keteladanan Nabi Kŏngzĭ (孔).", 41, "one character (孔) instead of 孔子 (Fase A, Kitab Suci); "
      "sinaubareng records the same and its owner confirmed it as printed"),
     ("1.6", "Menganalisis siifat-sifat", 43, "'siifat-sifat' for 'sifat-sifat' (Fase D, Keimanan)"),
+    ("2.1", "mencintai pada Al Qur’an", 46, "'Al Qur’an' without the hyphen (Tujuan 2); printed 'Al-Qur’an' elsewhere"),
 ]
 PHASE_GRADES = {"A": [1, 2], "B": [3, 4], "C": [5, 6], "D": [7, 8, 9], "E": [10], "F": [11, 12]}
 ROMAN_N = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10, "XI": 11,

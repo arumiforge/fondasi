@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/serene-hamilton-q7whfv` | session data-round 4 | R-15 religion CP 020 Lampiran I built, PR open; Lampiran II next | waiting for CI / merge |
+| `nty/cp-agama-pendidikan-khusus` | session data-round 5 | R-15 religion CP 020 Lampiran II (special education, 2.1–2.6) | in progress |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
