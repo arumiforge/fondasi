@@ -203,6 +203,8 @@ def parse(path):
 
 
 def norm_key(s):
+    import unicodedata
+    s = "".join(c for c in unicodedata.normalize("NFKD", s) if not unicodedata.combining(c))
     return re.sub(r"[^a-z0-9]+", "", s.lower())
 
 
@@ -249,6 +251,9 @@ def check_sinaubareng(subjects, path):
     d = json.load(open(path, encoding="utf-8"))
     norm = lambda t: (t or "").replace("’", "'").replace("‘", "'").replace("ŏ", "ǒ").replace("ĭ", "ǐ") \
         .replace("ŭ", "ǔ").replace("ă", "ǎ").replace("ĕ", "ě")  # noqa: E731  (sinaubareng stores carons)
+    _norm = norm
+    # the scan sometimes prints no space before Chinese characters ("bādé八德"); sinaubareng adds one
+    norm = lambda t: re.sub(r"\s+(?=[\u4e00-\u9fff])", "", _norm(t))  # noqa: E731
     diffs, compared = 0, 0
     for rel in d["religions"]:
         sub = next((s for s in subjects if s["number"] == rel["decree_section"]), None)
