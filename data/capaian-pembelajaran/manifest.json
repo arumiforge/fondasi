@@ -1,19 +1,19 @@
 {
   "version": "2026-06-11",
-  "description": "Capaian Pembelajaran (learning outcomes) per subject and phase for every level: PAUD (Fase Fondasi), the general subjects of SD/MI, SMP/MTs, SMA/MA, SMK/MAK and Paket A/B/C, the SMK programme subjects, the kesetaraan muatan, special education (SDLB/SMPLB/SMALB and the Program Kebutuhan Khusus, incl. Fase Fondasi for TKLB), and the madrasah subjects (RA, Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab, MAPK), and Pendidikan Agama dan Budi Pekerti for the six religions (SD to SMA/SMK, Kepka BKPDM 020/2026). Per subject: Rasional, Tujuan, Karakteristik, the element table (with sub-elements where printed) and the CP per phase and element, with source pages. One gzip JSON file per appendix (agama.json.gz for the religion CP) plus index.json (subjects, phases, grades per phase).",
-  "status": "ready except the special-education religion CP (Kepka BKPDM 020/2026 Lampiran II, pendidikan-khusus-agama.json.gz), which follows in the next step (F-032)",
-  "source": "Kepka BSKAP 046/H/KR/2025 Lampiran I–V (2025-07-16), SK Dirjen Pendis 9941/2025 (2025-11-28) and Kepka BKPDM 020/2026 Lampiran I (2026-06-11). Raw PDFs and SOURCE.txt in sources/capaian-pembelajaran/; the checked transcription of the scanned 020 in sources/capaian-pembelajaran/transkripsi-020/",
+  "description": "Capaian Pembelajaran (learning outcomes) per subject and phase for every level: PAUD (Fase Fondasi), the general subjects of SD/MI, SMP/MTs, SMA/MA, SMK/MAK and Paket A/B/C, the SMK programme subjects, the kesetaraan muatan, special education (SDLB/SMPLB/SMALB and the Program Kebutuhan Khusus, incl. Fase Fondasi for TKLB), and the madrasah subjects (RA, Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab, MAPK), and Pendidikan Agama dan Budi Pekerti for the six religions (SD to SMA/SMK and special education SDLB/SMPLB/SMALB, Kepka BKPDM 020/2026). Per subject: Rasional, Tujuan, Karakteristik, the element table (with sub-elements where printed) and the CP per phase and element, with source pages. One gzip JSON file per appendix (agama.json.gz and pendidikan-khusus-agama.json.gz for the religion CP) plus index.json (subjects, phases, grades per phase).",
+  "status": "ready",
+  "source": "Kepka BSKAP 046/H/KR/2025 Lampiran I–V (2025-07-16), SK Dirjen Pendis 9941/2025 (2025-11-28) and Kepka BKPDM 020/2026 Lampiran I and II (2026-06-11). Raw PDFs and SOURCE.txt in sources/capaian-pembelajaran/; the checked transcription of the scanned 020 in sources/capaian-pembelajaran/transkripsi-020/",
   "licence": "Public government documents",
-  "procedure": "python3 -I tools/converters/capaian-pembelajaran.py sources/capaian-pembelajaran data (about 2 minutes; pdftotext and pdfplumber). Text is extracted from the PDFs' text layer, not retyped: prose and CP from pdftotext -layout, element tables with pdfplumber. The converter stops on any structure problem (missing part, empty phase, unreadable heading), cuts off the signature block and refuses NIP-like numbers. Checked after the build: 2,426 of 2,426 non-empty outcome texts and 2,167 of 2,181 element-description sentences occur verbatim (letters and digits) in the PDF text of their pages; the rest are table cells split by a page break and match on inspection. Differences between element-table names and CP headings are source facts, kept per subject in source_notes. Printed errors the document resolves itself are listed in each file's errata (F-031). Religion CP (F-032): 020 is a scan; tesseract gave a draft, every line was read against the page images (diacritics, pinyin and Chinese characters on 300-dpi crops) into transkripsi-020/, and python3 -I tools/converters/capaian-pembelajaran-agama.py sources/capaian-pembelajaran data builds agama.json.gz from it and rewrites index.json. Checks while transcribing: a word-level diff against the OCR draft per page (only OCR noise left) and all 96 SD outcomes (phases A–C) identical to sinaubareng's independent word-by-word transcription. The religion CP of 046 (Lampiran II I.1–I.6, Lampiran V I.1–I.6) is left out because 020 replaced it. Version = date of the newest source (Kepka BKPDM 020/2026).",
+  "procedure": "python3 -I tools/converters/capaian-pembelajaran.py sources/capaian-pembelajaran data (about 2 minutes; pdftotext and pdfplumber). Text is extracted from the PDFs' text layer, not retyped: prose and CP from pdftotext -layout, element tables with pdfplumber. The converter stops on any structure problem (missing part, empty phase, unreadable heading), cuts off the signature block and refuses NIP-like numbers. Checked after the build: 2,426 of 2,426 non-empty outcome texts and 2,167 of 2,181 element-description sentences occur verbatim (letters and digits) in the PDF text of their pages; the rest are table cells split by a page break and match on inspection. Differences between element-table names and CP headings are source facts, kept per subject in source_notes. Printed errors the document resolves itself are listed in each file's errata (F-031). Religion CP (F-032): 020 is a scan; tesseract gave a draft, every line was read against the page images (diacritics, pinyin and Chinese characters on 300-dpi crops) into transkripsi-020/, and python3 -I tools/converters/capaian-pembelajaran-agama.py sources/capaian-pembelajaran data builds agama.json.gz (Lampiran I) and pendidikan-khusus-agama.json.gz (Lampiran II) from it and rewrites index.json. Checks while transcribing: a word-level diff against the OCR draft per page (only OCR noise, page headers and table-cell order left) and, for Lampiran I, all 96 SD outcomes (phases A–C) identical to sinaubareng's independent word-by-word transcription. Lampiran II has no second transcription, so every line with diacritics, pinyin or Chinese characters was read on zoomed crops. The religion CP of 046 (Lampiran II I.1–I.6, Lampiran V I.1–I.6) is left out because 020 replaced it. Version = date of the newest source (Kepka BKPDM 020/2026).",
   "counts": {
-    "files": 7,
-    "subjects": 299,
-    "phases": 585,
-    "outcomes": 2624,
-    "outcomes_without_cp": 9,
-    "elements": 1408,
-    "subjects_with_source_notes": 66,
-    "errata": 16
+    "files": 8,
+    "subjects": 305,
+    "phases": 621,
+    "outcomes": 2816,
+    "outcomes_without_cp": 20,
+    "elements": 1434,
+    "subjects_with_source_notes": 70,
+    "errata": 18
   },
   "files": [
     "index.json",
@@ -23,6 +23,7 @@
     "smk.json.gz",
     "kesetaraan.json.gz",
     "pendidikan-khusus.json.gz",
+    "pendidikan-khusus-agama.json.gz",
     "madrasah.json.gz"
   ],
   "format": {

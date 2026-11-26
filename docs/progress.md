@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/cp-agama-pendidikan-khusus` | session data-round 5 | R-15 religion CP 020 Lampiran II (special education, 2.1–2.6) | in progress |
+| `nty/cp-agama-pendidikan-khusus` | session data-round 5 | R-15 religion CP 020 Lampiran II built, PR open | waiting for CI / merge |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -44,14 +44,9 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    **R-15 `capaian-pembelajaran`** (2026-06-11; F-030, F-032): 046 + 9941 (PR #20) and the religion CP of 020
    Lampiran I (`agama.json.gz`, 192 outcomes) are in. Rebuild: `python3 -I tools/converters/capaian-pembelajaran.py
    sources/capaian-pembelajaran data` (≈ 2 min) then `python3 -I tools/converters/capaian-pembelajaran-agama.py
-   sources/capaian-pembelajaran data` (seconds; rewrites index.json). **Next task: 020 Lampiran II** (special-education
-   religion CP, PDF p. 45–79, six sections 2.1–2.6) → files `sources/capaian-pembelajaran/transkripsi-020/2.N-*.txt`,
-   same format and procedure as Lampiran I (README there): OCR draft (`pdftoppm -r 300 -gray`, tesseract `ind`
-   `--psm 4`, OMP_THREAD_LIMIT=1, 4 in parallel; `apt-get install tesseract-ocr tesseract-ocr-ind`), then every line
-   read against the page image, diacritics on 300-dpi crops; run the converter with `--ocr <dir>` after each section.
-   There is no second transcription for Lampiran II, so zoom on every line with diacritics. The converter already
-   maps file prefix 2 to `pendidikan-khusus-agama.json.gz` (levels SDLB/SMPLB/SMALB); the index lists it as pending
-   until it exists. Add new printing errors to `ERRATA` in the converter.
+   sources/capaian-pembelajaran data` (seconds; rewrites index.json). **R-15 is complete**: 020 Lampiran II (special-education religion CP, `pendidikan-khusus-agama.json.gz`, 192
+   outcomes) is in too; transcription `transkripsi-020/2.1-*.txt` … `2.6-*.txt`. New printing errors go to `ERRATA` in
+   `capaian-pembelajaran-agama.py`.
    Then **R-16 `kerangka-tka`**, then **R-17** coordinates for `sekolah` (crawl of NPSN pages, 20 workers, F-029).
 5. When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
@@ -70,6 +65,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 5 · `nty/cp-agama-pendidikan-khusus` — 020 Lampiran II transcribed from page images (2.1–2.6, 192 outcomes, every pinyin/diacritic line on zoomed crops, OCR diff clean), `pendidikan-khusus-agama.json.gz` built, `capaian-pembelajaran` complete (305 subjects, 2,816 outcomes). Next: R-16 `kerangka-tka`.
 - 2026-11-26 · session data-round 4 · `nty/serene-hamilton-q7whfv` — PR #20 merged (046 + 9941). Religion CP of 020 Lampiran I transcribed from page images (6 religions, 192 outcomes; SD A–C identical to sinaubareng), `agama.json.gz` built, version 2026-06-11. Next: 020 Lampiran II.
 - 2026-11-26 · session data-round 4 · `nty/serene-hamilton-q7whfv` — R-15 finished without religion: last SLB section fixed, converter hardened (signature block with NIP cut, PAUD scope tables, SK 9941 merged-cell tables, ligatures, title case, F-031 errata), every outcome checked verbatim against the PDF text; `capaian-pembelajaran` 2025-11-28 built. Next: religion CP (020/2026).
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — R-15 started: generic CP parser for 046 (all appendices) and SK 9941 written and run (≈ 2,900 outcomes); F-032 (religion from 020 in a checked second step, full content). Handed over before the first data build (one SLB section left). Next: finish R-15.
@@ -79,4 +75,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-14 brief written; the user uploaded Kepmendagri 2430/2025: it changes islands only, `wilayah` already matches; decree kept in `sources/wilayah/`. Next: R-06/R-10b zips, R-11 list.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — `wilayah`/`kodepos` refresh checked: upstream data unchanged (README ahead of `wilayah.sql`), nothing to rebuild. Next: R-06/R-10b zips, official 2430/2025 attachment if wanted.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #9 merged (Dikdas+Dikmen); F-029 (parallel crawl, 20 workers on referensi.data); PAUD+PKBM/SKB crawled in 25 min, `sekolah` 539,580 units (98.0 % with village code), PR #10 merged. Next: R-06/R-10b zips from the user, `wilayah` refresh.
-- 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #8 was already merged; R-01 crawler extended (PAUD, Dikmas, page checks), F-028 (forms kept, PKBM/SKB only, no schools abroad), full Dikdas+Dikmen crawl (15,633 pages), `sekolah` 2026-11-26 built (283,421 schools, 97.8 % with village code), PR 1 opened. Next: PAUD+PKBM/SKB (part 2).

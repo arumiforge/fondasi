@@ -5,6 +5,13 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `capaian-pembelajaran` 2026-06-11 (R-15, F-032): special-education religion CP for the six religions, phases A–F
+  for SDLB/SMPLB/SMALB (Kepka BKPDM 020/2026 Lampiran II, 6 subjects, 192 outcomes, 11 printed "–" without CP) in
+  `pendidikan-khusus-agama.json.gz`; transcription `transkripsi-020/2.1-islam.txt` … `2.6-khonghucu.txt` read line by
+  line against the page images (diacritics, pinyin and Chinese characters on zoomed crops). Two more printing
+  errors in errata. Converter: a table cell continued with `<br>` after a page break keeps its line break, phase
+  headings may end with a full stop, grades in a phase heading are read case-insensitively, a subject's page range
+  counts every page marker. The set is now complete (305 subjects, 2,816 outcomes).
 - `capaian-pembelajaran` 2026-06-11 (R-15, F-032): Pendidikan Agama dan Budi Pekerti for the six religions, phases
   A–F (Kepka BKPDM 020/2026 Lampiran I, 6 subjects, 192 outcomes) in `agama.json.gz`. 020 is a scan: checked
   transcription in `sources/capaian-pembelajaran/transkripsi-020/` (OCR draft, every line read against the page
