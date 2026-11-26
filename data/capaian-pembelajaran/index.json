@@ -3,16 +3,16 @@
  "files": [
   "paud.json.gz",
   "umum.json.gz",
+  "agama.json.gz",
   "smk.json.gz",
   "kesetaraan.json.gz",
   "pendidikan-khusus.json.gz",
   "madrasah.json.gz"
  ],
- "pending": "Pendidikan Agama dan Budi Pekerti (Kepka BKPDM 020/2026)",
  "totals": {
-  "subjects": 293,
-  "phases": 549,
-  "outcomes": 2432
+  "subjects": 299,
+  "phases": 585,
+  "outcomes": 2624
  },
  "phases": {
   "Fondasi": {
@@ -1046,6 +1046,174 @@
     "Paket C"
    ],
    "source": "Kepka BSKAP 046/H/KR/2025, Lampiran II (number XXVIII, PDF p. 338–347)"
+  },
+  {
+   "file": "agama.json.gz",
+   "key": "pendidikan_agama_islam_dan_budi_pekerti",
+   "title": "Pendidikan Agama Islam dan Budi Pekerti",
+   "number": "1.1",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran I (number 1.1, PDF p. 4–9)"
+  },
+  {
+   "file": "agama.json.gz",
+   "key": "pendidikan_agama_kristen_dan_budi_pekerti",
+   "title": "Pendidikan Agama Kristen dan Budi Pekerti",
+   "number": "1.2",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran I (number 1.2, PDF p. 9–18)"
+  },
+  {
+   "file": "agama.json.gz",
+   "key": "pendidikan_agama_katolik_dan_budi_pekerti",
+   "title": "Pendidikan Agama Katolik dan Budi Pekerti",
+   "number": "1.3",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran I (number 1.3, PDF p. 18–25)"
+  },
+  {
+   "file": "agama.json.gz",
+   "key": "pendidikan_agama_hindu_dan_budi_pekerti",
+   "title": "Pendidikan Agama Hindu dan Budi Pekerti",
+   "number": "1.4",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran I (number 1.4, PDF p. 25–30)"
+  },
+  {
+   "file": "agama.json.gz",
+   "key": "pendidikan_agama_buddha_dan_budi_pekerti",
+   "title": "Pendidikan Agama Buddha dan Budi Pekerti",
+   "number": "1.5",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran I (number 1.5, PDF p. 30–38)"
+  },
+  {
+   "file": "agama.json.gz",
+   "key": "pendidikan_agama_khonghucu_dan_budi_pekerti",
+   "title": "Pendidikan Agama Khonghucu dan Budi Pekerti",
+   "number": "1.6",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "Paket A",
+    "Paket B",
+    "Paket C"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran I (number 1.6, PDF p. 38–44)"
   },
   {
    "file": "smk.json.gz",
@@ -4917,5 +5085,8 @@
    ],
    "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 9.1, PDF p. 104–107)"
   }
+ ],
+ "pending": [
+  "pendidikan-khusus-agama.json.gz"
  ]
 }

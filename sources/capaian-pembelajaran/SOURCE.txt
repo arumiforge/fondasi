@@ -1,4 +1,4 @@
-R-15 `capaian-pembelajaran` — learning outcomes (CP); built into data/capaian-pembelajaran (046 and 9941; 020 pending). Copied byte-for-byte on 2026-11-26 from
+R-15 `capaian-pembelajaran` — learning outcomes (CP); built into data/capaian-pembelajaran (046, 9941, and 020 via the checked transcription in transkripsi-020/; 020 Lampiran II pending). Copied byte-for-byte on 2026-11-26 from
 arumiforge/sinaubareng (commit 6238a6b, docs/sources/); provenance as recorded there. Public government documents.
 
 Kepka_BSKAP_No_046_H_KR_2025_Capaian_Pembelajaran.pdf  1,691 pages

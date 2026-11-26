@@ -8,7 +8,7 @@ checked for what belongs in Fondasi as shared public reference data (F-003). Out
 | What | sinaubareng | Fondasi | Status |
 | --- | --- | --- | --- |
 | Curriculum structure regulations (Permendikbudristek 12/2024, Permendikdasmen 13/2025, KMA 1503/2025) | `docs/sources/`; SD/MI JP tables structured in `docs/data/regulations/curriculum-structure-permendikdasmen-13-2025.json`, MI tables in `docs/data/curriculum/mi-allocation-kma-1503-2025.json` | `sources/mapel/` → set `mapel` (R-08), all levels | sources copied; set to build |
-| Capaian Pembelajaran (Kepka BSKAP 046/H/KR/2025, Kepka BKPDM 020/2026, SK Dirjen Pendis 9941/2025) | `docs/sources/`; SD religion CP and MI Kemenag CP structured in `docs/data/curriculum/cp-*.json` | `sources/capaian-pembelajaran/` → set `capaian-pembelajaran` (R-15) | built 2025-11-28 without religion; religion (020/2026) next |
+| Capaian Pembelajaran (Kepka BSKAP 046/H/KR/2025, Kepka BKPDM 020/2026, SK Dirjen Pendis 9941/2025) | `docs/sources/`; SD religion CP and MI Kemenag CP structured in `docs/data/curriculum/cp-*.json` | `sources/capaian-pembelajaran/` → set `capaian-pembelajaran` (R-15) | built 2026-06-11 with religion (020 Lampiran I; SD phases A–C match sinaubareng's 96 outcomes); special-education religion next |
 | TKA framework (Perka BSKAP 047/H/AN/2025, Kepmendikdasmen 56/2026) | `docs/sources/`; SD part in `docs/data/tka/kerangka-tka-sd.json` | `sources/kerangka-tka/` → set `kerangka-tka` (R-16) | sources copied; set to build |
 | School coordinates | `docs/data/schools/{pati,kudus,jepara}.json` (latitude/longitude from referensi.data NPSN pages, `scripts/school-directory/fetch.cjs`) | `sekolah`, new fields for every unit (R-17) | planned (crawl under F-029) |
 

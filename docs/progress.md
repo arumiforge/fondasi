@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/serene-hamilton-q7whfv` | session data-round 4 | R-15 `capaian-pembelajaran` built (without religion), PR open | waiting for CI / merge |
+| `nty/serene-hamilton-q7whfv` | session data-round 4 | R-15 religion CP 020 Lampiran I built, PR open; Lampiran II next | waiting for CI / merge |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -41,14 +41,17 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    user's list of championships.
 4. **R-08 done** (`mapel` 2025-09-22, all levels incl. madrasah; F-031 errata). Open in it: KMA Tabel 18 (MILB V)
    totals count 36 kokurikuler JP more than its rows (`unresolved`); check again when Kemenag publishes a corrected KMA.
-   **R-15 `capaian-pembelajaran` built** (2025-11-28, without religion; F-030, F-032): 293 subjects, 2,432
-   outcomes, 9 errata. Rebuild: `python3 -I tools/converters/capaian-pembelajaran.py sources/capaian-pembelajaran
-   data` (≈ 2 min, reproducible byte for byte). `source_notes` per subject are element-name differences printed in
-   the source, not parser errors. **Next task: the religion PR** (F-032):
-   - Kepka BKPDM 020/2026 is a scan; OCR (tesseract `ind`, 300 dpi,
-     OMP_THREAD_LIMIT=1, 4 in parallel, ≈ 1 min for 79 pages; `apt-get install tesseract-ocr tesseract-ocr-ind`)
-     is a draft only. SD phases A–C: use sinaubareng `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`
-     (checked word by word); D–F and Lampiran II (special education) must be read from page images.
+   **R-15 `capaian-pembelajaran`** (2026-06-11; F-030, F-032): 046 + 9941 (PR #20) and the religion CP of 020
+   Lampiran I (`agama.json.gz`, 192 outcomes) are in. Rebuild: `python3 -I tools/converters/capaian-pembelajaran.py
+   sources/capaian-pembelajaran data` (≈ 2 min) then `python3 -I tools/converters/capaian-pembelajaran-agama.py
+   sources/capaian-pembelajaran data` (seconds; rewrites index.json). **Next task: 020 Lampiran II** (special-education
+   religion CP, PDF p. 45–79, six sections 2.1–2.6) → files `sources/capaian-pembelajaran/transkripsi-020/2.N-*.txt`,
+   same format and procedure as Lampiran I (README there): OCR draft (`pdftoppm -r 300 -gray`, tesseract `ind`
+   `--psm 4`, OMP_THREAD_LIMIT=1, 4 in parallel; `apt-get install tesseract-ocr tesseract-ocr-ind`), then every line
+   read against the page image, diacritics on 300-dpi crops; run the converter with `--ocr <dir>` after each section.
+   There is no second transcription for Lampiran II, so zoom on every line with diacritics. The converter already
+   maps file prefix 2 to `pendidikan-khusus-agama.json.gz` (levels SDLB/SMPLB/SMALB); the index lists it as pending
+   until it exists. Add new printing errors to `ERRATA` in the converter.
    Then **R-16 `kerangka-tka`**, then **R-17** coordinates for `sekolah` (crawl of NPSN pages, 20 workers, F-029).
 5. When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
@@ -67,6 +70,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 4 · `nty/serene-hamilton-q7whfv` — PR #20 merged (046 + 9941). Religion CP of 020 Lampiran I transcribed from page images (6 religions, 192 outcomes; SD A–C identical to sinaubareng), `agama.json.gz` built, version 2026-06-11. Next: 020 Lampiran II.
 - 2026-11-26 · session data-round 4 · `nty/serene-hamilton-q7whfv` — R-15 finished without religion: last SLB section fixed, converter hardened (signature block with NIP cut, PAUD scope tables, SK 9941 merged-cell tables, ligatures, title case, F-031 errata), every outcome checked verbatim against the PDF text; `capaian-pembelajaran` 2025-11-28 built. Next: religion CP (020/2026).
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — R-15 started: generic CP parser for 046 (all appendices) and SK 9941 written and run (≈ 2,900 outcomes); F-032 (religion from 020 in a checked second step, full content). Handed over before the first data build (one SLB section left). Next: finish R-15.
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PRs #16 (O2SN) and #17 (sinaubareng audit) merged; R-08 `mapel` built for all levels (54 tables, 144 totals checked, 7 errata, F-031; user: Bahasa Inggris SD/MI compulsory from 2027/2028 = Pasal 33). Next: R-15.
@@ -76,4 +80,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — `wilayah`/`kodepos` refresh checked: upstream data unchanged (README ahead of `wilayah.sql`), nothing to rebuild. Next: R-06/R-10b zips, official 2430/2025 attachment if wanted.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #9 merged (Dikdas+Dikmen); F-029 (parallel crawl, 20 workers on referensi.data); PAUD+PKBM/SKB crawled in 25 min, `sekolah` 539,580 units (98.0 % with village code), PR #10 merged. Next: R-06/R-10b zips from the user, `wilayah` refresh.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #8 was already merged; R-01 crawler extended (PAUD, Dikmas, page checks), F-028 (forms kept, PKBM/SKB only, no schools abroad), full Dikdas+Dikmen crawl (15,633 pages), `sekolah` 2026-11-26 built (283,421 schools, 97.8 % with village code), PR 1 opened. Next: PAUD+PKBM/SKB (part 2).
-- 2026-11-26 · session data-round · `data/atletik` — PRs #5, #6 (libur-nasional, kaldik-jateng check), #7 (kodepos) merged; R-06 and R-10b briefs; R-10 World Athletics sets (F-027); R-01 crawler written, crawl not finished. Next: R-01 crawl.
