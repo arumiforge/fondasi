@@ -16,6 +16,6 @@ One file per section (`1.1-islam.txt` … `2.6-khonghucu.txt`). Format:
 - `+ ` at the start of a line: the paragraph continues from before the page break.
 - Tables: one row per line, `| cell | cell |`, the header row first; a row continued on the next page starts with
   `|+ `. A header row repeated at the top of a page is left out. An empty first cell repeats the cell above
-  (merged cells).
+  (merged cells). `<br>` is a line break inside a cell.
 - Text as printed, including capitals, punctuation and printing errors (those are listed in the data set's errata).
   Italics are not kept. Apostrophes and ‘ain as printed in the typeface: ’ and ‘.

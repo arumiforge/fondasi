@@ -41,7 +41,8 @@ def nice_title(printed):
 
 
 def cells(line):
-    return [c.strip() for c in line.strip().strip("|").split("|")]
+    """Cells of a table row; <br> is a line break inside a cell."""
+    return [re.sub(r"\s*<br>\s*", "\n", c.strip()) for c in line.strip().strip("|").split("|")]
 
 
 def read_section(path):
@@ -118,7 +119,7 @@ def parse(path):
                 sys.exit(f"{path}: unexpected part heading '{text}'")
             continue
         if kind == "h3":
-            m = re.match(r"^(\d+)\. Fase ([A-F])\s*\((.*)\)$", text)
+            m = re.match(r"^(\d+)\. Fase ([A-F])(?:\s*\((.*)\))?$", text)
             if not m:
                 sys.exit(f"{path}: bad phase heading '{text}'")
             ph = {"phase": m.group(2), "applies_to": m.group(3), "page": page, "intro": "", "outcomes": []}
@@ -191,6 +192,8 @@ def parse(path):
         "rasional": "\n".join(buf["A"]), "tujuan": "\n".join(buf["B"]), "karakteristik": "\n".join(buf["C"]),
         "elements": elements, "phases": phases,
     }
+    if buf["D"]:
+        sub["cp_intro"] = "\n".join(buf["D"])
     if notes:
         sub["source_notes"] = sorted(notes)
     for k in ("rasional", "tujuan", "karakteristik"):
