@@ -8,7 +8,8 @@ Two steps, so the slow crawl and the conversion are separate and repeatable:
       (kecamatan). Groups: dikdas (SD, MI, SMP, MTs…), dikmen (SMA, MA, SMK, SLB…), paud (TK, KB, RA, TPA,
       SPS…), dikmas (PKBM, SKB, courses…). Polite: one request per second, resumable (pages already saved
       are skipped; a page without the school table is never saved). PROVINCE_CODE is the 6-digit Dapodik
-      code, e.g. 030000 for Jawa Tengah; without codes, every province is fetched.
+      code, e.g. 030000 for Jawa Tengah, or a regency code (030100) to fetch one regency; without codes, every
+      province is fetched.
 
   python3 -I tools/converters/sekolah.py build [--groups=dikdas,dikmen] RAW_DIR OUT_DIR WILAYAH_JSON_GZ VERSION
       Parses the saved pages (untrusted input: parsed as text, never executed), links each school to the
@@ -50,11 +51,12 @@ def get(url):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 return r.read().decode("utf-8", "replace")
-        except Exception as e:  # network hiccups: back off and retry
+        except Exception as e:  # network hiccups: back off and retry; a busy or rate-limiting site gets a long pause
             if attempt == 4:
                 raise
-            time.sleep(5 * (attempt + 1))
-            print(f"  retry {url}: {e}", file=sys.stderr)
+            busy = getattr(e, "code", None) in (429, 502, 503, 504)
+            time.sleep((60 if busy else 5) * (attempt + 1))
+            print(f"  retry {url}: {e}", file=sys.stderr, flush=True)
 
 
 def child_links(page, group, level, parent_prefix):
@@ -64,6 +66,18 @@ def child_links(page, group, level, parent_prefix):
         if c.startswith(parent_prefix) and c not in seen:
             seen.append(c)
     return seen
+
+
+def child_counts(page, group, level, prefix):
+    """Child code → {form: count} from the summary table of a regency page (headers such as 'PKBM ↕')."""
+    heads = [re.sub(r"[^\w ]", "", text(h)).strip() for h in re.findall(r"<th[^>]*>(.*?)</th>", page, re.S)]
+    out = {}
+    for r in re.findall(r"<tr[^>]*>(.*?)</tr>", page, re.S):
+        m = re.search(rf'href="/satpen/{group}/(\d{{6}})(?:%20)*/{level}\?', r)
+        cells = [text(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", r, re.S)]
+        if m and m.group(1).startswith(prefix) and len(cells) == len(heads):
+            out[m.group(1)] = {h: int(c) for h, c in zip(heads, cells) if c.isdigit()}
+    return out
 
 
 def fetch(raw, provinces, groups=GROUPS):
@@ -82,7 +96,7 @@ def fetch(raw, provinces, groups=GROUPS):
             if "</html>" not in page:
                 raise RuntimeError(f"incomplete page: {url}")
             print(f"  warning: no list header ({marker}) in {url}; saved as is", file=sys.stderr)
-        tmp = path + ".tmp"
+        tmp = f"{path}.{os.getpid()}.tmp"  # one name per worker: workers may save the same province page
         with open(tmp, "w", encoding="utf-8") as f:
             f.write(page)
         os.replace(tmp, path)
@@ -91,16 +105,23 @@ def fetch(raw, provinces, groups=GROUPS):
     # the national page is always kept: build reads the province names from it
     top = cached(os.path.join(raw, "dikdas-000000.html"), f"{BASE}/satpen/dikdas/000000/0", "Nama Wilayah")
     provinces = provinces or child_links(top, "dikdas", 1, "")
-    for prov in provinces:
+    for code in provinces:
+        prov = code[:2] + "0000"
         for group in groups:
             d = os.path.join(raw, prov, group)
             os.makedirs(d, exist_ok=True)
             p1 = cached(os.path.join(d, f"{prov}.html"), url(group, prov, 1), "Nama Wilayah")
-            for kab in child_links(p1, group, 2, prov[:2]):
+            # a regency code (e.g. 030100) fetches only that regency, so several workers can share a province
+            kabs = [k for k in child_links(p1, group, 2, prov[:2]) if code == prov or k == code]
+            for kab in kabs:
                 p2 = cached(os.path.join(d, f"{kab}.html"), url(group, kab, 2), "Nama Wilayah")
+                counts = child_counts(p2, group, 3, kab[:4]) if group in KEEP_FORMS else {}
                 for kec in child_links(p2, group, 3, kab[:4]):
+                    # the regency page counts each form per district: skip districts with none of the kept forms
+                    if kec in counts and not any(counts[kec].get(f, 0) for f in KEEP_FORMS[group]):
+                        continue
                     cached(os.path.join(d, f"{kec}.html"), url(group, kec, 3), ">NPSN<")
-            print(f"fetched {prov} {group}", file=sys.stderr, flush=True)
+            print(f"fetched {code} {group}", file=sys.stderr, flush=True)
 
 
 # ---------------------------------------------------------------- build
@@ -393,7 +414,7 @@ def build(raw, out, wilayah_path, version, groups=GROUPS):
             "nama": "name as published",
             "bentuk_pendidikan": "form as published: SD, MI, SMP, MTs, SMA, MA, SMK, SLB, SPK …, PDF …, TK, KB, RA, …",
             "status_sekolah": "NEGERI | SWASTA",
-            "alamat": "street address as published",
+            "alamat": "street address as published (empty for a few units)",
             "desa": "village name as published",
             "kecamatan": "'Kec. …' as published",
             "kabupaten": "'Kab. …' / 'Kota …' as published",
