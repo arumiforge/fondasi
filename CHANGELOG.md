@@ -5,6 +5,12 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Data set `mapel` 2025-09-22 (R-08): subjects and JP per year for every level and grade, from Permendikdasmen
+  13/2025 Lampiran II (Tabel 1–29: SD, SMP, SMA, SMK 3/4-year, SDLB, SMPLB, SMALB, Paket A/B/C) and KMA 1503/2025
+  (25 madrasah tables: MI, MTs, MA, MAK, MILB, MTsLB, MALB, read from page images), with electives, phases,
+  footnotes, implementation rules and errata. Converter `tools/converters/mapel.py` checks all 144 printed totals.
+- Decision F-031: printed errors in official tables (store the value the totals require, keep the printed one,
+  list it in `errata`); Bahasa Inggris transition (Pasal 33) for SD/MI only.
 - Audit of the data in the app repository sinaubareng (`docs/sinaubareng-audit.md`) and decision F-030: curriculum
   regulations copied to `sources/mapel/`, `sources/capaian-pembelajaran/`, `sources/kerangka-tka/`; sets `mapel`
   (all levels), `capaian-pembelajaran`, `kerangka-tka` and school coordinates planned (R-08, R-15, R-16, R-17).

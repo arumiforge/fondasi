@@ -1,0 +1,18 @@
+{
+  "version": "2025-09-22",
+  "description": "Subjects and time allocation (JP per year: intrakurikuler, kokurikuler, total) per level and grade for every school level: SD, SMP, SMA, SMK (3- and 4-year), SDLB, SMPLB, SMALB and Paket A/B/C (SKK per phase) from Permendikdasmen 13/2025, and the madrasah tables MI, MTs, MA, MAK, MILB, MTsLB, MALB from KMA 1503/2025; PAUD/RA minutes, phases, footnotes, electives, implementation rules and errata.",
+  "status": "ready (51 JP tables + 3 SKK tables; 144 printed totals checked; 7 errata, 1 unresolved)",
+  "source": "Permendikdasmen 13/2025 Lampiran II (in force 2025-07-15), Permendikbudristek 12/2024 Pasal 33, KMA 1503/2025 Lampiran II BAB III (2025-09-22). Raw PDFs and SOURCE.txt in sources/mapel/",
+  "licence": "Public government documents",
+  "procedure": "Transcribed by hand into tools/converters/mapel.py (Permendikdasmen from its text layer with merged cells checked on page images; the scanned KMA cell by cell from page images, OCR only as a draft). The script checks every row and every printed total row, refuses printed values without an erratum, then writes mapel.json. SD/MI, SDLB/MILB and MI tables match sinaubareng's independently checked data (145 rows) apart from the recorded errata. Version = date of the newest source (KMA 1503/2025).",
+  "counts": {
+    "tables_jp": 51,
+    "tables_skk": 3,
+    "subjects": 53,
+    "printed_totals_checked": 144,
+    "errata": 7
+  },
+  "files": [
+    "mapel.json"
+  ]
+}

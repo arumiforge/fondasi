@@ -1,0 +1,9115 @@
+{
+ "name": "Mata pelajaran dan alokasi waktu",
+ "sources": {
+  "P13": "Permendikdasmen 13/2025 (in force 2025-07-15), Lampiran II Struktur Kurikulum; PDF pages",
+  "P12": "Permendikbudristek 12/2024, articles not amended by 13/2025 (Pasal 33)",
+  "KMA": "Keputusan Menteri Agama 1503/2025 (2025-09-22), Lampiran II BAB III; printed page = PDF page"
+ },
+ "phases": {
+  "Fondasi": "PAUD",
+  "A": [
+   1,
+   2
+  ],
+  "B": [
+   3,
+   4
+  ],
+  "C": [
+   5,
+   6
+  ],
+  "D": [
+   7,
+   8,
+   9
+  ],
+  "E": [
+   10
+  ],
+  "F": [
+   11,
+   12
+  ]
+ },
+ "phases_ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 27–29 column headings (PDF p. 66–69); SMK grade XIII belongs to Fase F",
+ "subjects": [
+  {
+   "key": "pendidikan_agama",
+   "label": "Pendidikan Agama dan Budi Pekerti",
+   "variants": [
+    "Pendidikan Agama Islam dan Budi Pekerti",
+    "Pendidikan Agama Kristen dan Budi Pekerti",
+    "Pendidikan Agama Katolik dan Budi Pekerti",
+    "Pendidikan Agama Buddha dan Budi Pekerti",
+    "Pendidikan Agama Hindu dan Budi Pekerti",
+    "Pendidikan Agama Khonghucu dan Budi Pekerti"
+   ],
+   "note": "One row with a merged cell in every table; each student takes the variant of their religion (footnote a)."
+  },
+  {
+   "key": "pendidikan_pancasila",
+   "label": "Pendidikan Pancasila"
+  },
+  {
+   "key": "bahasa_indonesia",
+   "label": "Bahasa Indonesia"
+  },
+  {
+   "key": "matematika",
+   "label": "Matematika"
+  },
+  {
+   "key": "ipas",
+   "label": "Ilmu Pengetahuan Alam dan Sosial"
+  },
+  {
+   "key": "ipa",
+   "label": "Ilmu Pengetahuan Alam"
+  },
+  {
+   "key": "ips",
+   "label": "Ilmu Pengetahuan Sosial"
+  },
+  {
+   "key": "bahasa_inggris",
+   "label": "Bahasa Inggris"
+  },
+  {
+   "key": "pjok",
+   "label": "Pendidikan Jasmani Olahraga dan Kesehatan",
+   "aliases": [
+    "Pendidikan Jasmani, Olahraga, dan Kesehatan",
+    "PJOK"
+   ]
+  },
+  {
+   "key": "seni_budaya",
+   "label": "Seni dan Budaya",
+   "options": [
+    "Seni Musik",
+    "Seni Rupa",
+    "Seni Teater",
+    "Seni Tari"
+   ],
+   "note": "The school offers at least one; each student chooses one."
+  },
+  {
+   "key": "seni_budaya_prakarya",
+   "label": "Seni, Budaya, dan Prakarya",
+   "options": [
+    "Seni Musik",
+    "Seni Rupa",
+    "Seni Teater",
+    "Seni Tari",
+    "Prakarya Budi Daya",
+    "Prakarya Kerajinan",
+    "Prakarya Rekayasa",
+    "Prakarya Pengolahan"
+   ],
+   "note": "The school offers at least one; each student chooses one."
+  },
+  {
+   "key": "informatika",
+   "label": "Informatika"
+  },
+  {
+   "key": "sejarah",
+   "label": "Sejarah"
+  },
+  {
+   "key": "koding_ka",
+   "label": "Koding dan Kecerdasan Artifisial"
+  },
+  {
+   "key": "muatan_lokal",
+   "label": "Muatan Lokal"
+  },
+  {
+   "key": "matematika_lanjut",
+   "label": "Matematika Tingkat Lanjut"
+  },
+  {
+   "key": "fisika",
+   "label": "Fisika"
+  },
+  {
+   "key": "kimia",
+   "label": "Kimia"
+  },
+  {
+   "key": "biologi",
+   "label": "Biologi"
+  },
+  {
+   "key": "geografi",
+   "label": "Geografi"
+  },
+  {
+   "key": "sejarah_lanjut",
+   "label": "Sejarah Tingkat Lanjut"
+  },
+  {
+   "key": "sosiologi",
+   "label": "Sosiologi"
+  },
+  {
+   "key": "ekonomi",
+   "label": "Ekonomi"
+  },
+  {
+   "key": "bahasa_indonesia_lanjut",
+   "label": "Bahasa Indonesia Tingkat Lanjut"
+  },
+  {
+   "key": "bahasa_inggris_lanjut",
+   "label": "Bahasa Inggris Tingkat Lanjut"
+  },
+  {
+   "key": "bahasa_arab",
+   "label": "Bahasa Arab"
+  },
+  {
+   "key": "bahasa_jepang",
+   "label": "Bahasa Jepang"
+  },
+  {
+   "key": "bahasa_jerman",
+   "label": "Bahasa Jerman"
+  },
+  {
+   "key": "bahasa_korea",
+   "label": "Bahasa Korea"
+  },
+  {
+   "key": "bahasa_mandarin",
+   "label": "Bahasa Mandarin"
+  },
+  {
+   "key": "bahasa_prancis",
+   "label": "Bahasa Prancis"
+  },
+  {
+   "key": "antropologi",
+   "label": "Antropologi"
+  },
+  {
+   "key": "prakarya_kewirausahaan",
+   "label": "Prakarya dan Kewirausahaan",
+   "options": [
+    "budi daya",
+    "kerajinan",
+    "rekayasa",
+    "pengolahan"
+   ]
+  },
+  {
+   "key": "mapel_lainnya",
+   "label": "Mata pelajaran lainnya yang dikembangkan sesuai dengan sumber daya yang tersedia"
+  },
+  {
+   "key": "projek_ipas",
+   "label": "Projek Ilmu Pengetahuan Alam dan Sosial",
+   "note": "The share of science and social science follows the needs of the Program Keahlian."
+  },
+  {
+   "key": "dasar_program_keahlian",
+   "label": "Dasar-Dasar Program Keahlian",
+   "note": "The subject name follows the name of the Program Keahlian."
+  },
+  {
+   "key": "konsentrasi_keahlian",
+   "label": "Konsentrasi Keahlian",
+   "note": "The subject name follows the name of the Konsentrasi Keahlian."
+  },
+  {
+   "key": "kik",
+   "label": "Kreativitas, Inovasi, dan Kewirausahaan"
+  },
+  {
+   "key": "pkl",
+   "label": "Praktik Kerja Lapangan"
+  },
+  {
+   "key": "mapel_pilihan_smk",
+   "label": "Mata Pelajaran Pilihan",
+   "note": "The subject the student chooses (to start a business, work in the field or continue studying)."
+  },
+  {
+   "key": "program_kebutuhan_khusus",
+   "label": "Program Kebutuhan Khusus",
+   "options": [
+    "Pengembangan orientasi, mobilitas, sosial, dan komunikasi (penyandang disabilitas netra)",
+    "Pengembangan komunikasi, persepsi bunyi, dan irama (penyandang disabilitas rungu)",
+    "Pengembangan diri (penyandang disabilitas intelektual)",
+    "Pengembangan diri dan pengembangan gerak (penyandang disabilitas fisik)",
+    "Pengembangan komunikasi, interaksi sosial, dan perilaku (penyandang disabilitas mental)"
+   ],
+   "note": "Chosen according to the student's disability."
+  },
+  {
+   "key": "kelompok_keterampilan",
+   "label": "Kelompok Keterampilan",
+   "options": [
+    "Tata Busana",
+    "Tata Boga",
+    "Tata Kecantikan",
+    "Tata Gerha",
+    "Teknologi Informasi Komunikasi",
+    "Perbengkelan Sepeda Motor",
+    "Cetak Saring/Sablon",
+    "Seni Membatik",
+    "Suvenir",
+    "Budidaya Tanaman Hortikultura",
+    "Pijat/Akupresur",
+    "Teknik Penyiaran Radio",
+    "Seni Musik",
+    "Fotografi",
+    "Desain Grafis",
+    "Seni Tari",
+    "Seni Lukis",
+    "Elektronika Alat Rumah Tangga",
+    "Budidaya Perikanan",
+    "Budidaya Peternakan",
+    "Koding dan Kecerdasan Artifisial"
+   ],
+   "note": "Schools may develop other skills (explanation 4, PDF p. 65)."
+  },
+  {
+   "key": "quran_hadis",
+   "label": "Al-Qur'an Hadis",
+   "note": "MA Program Keagamaan: taught as Tafsir and Hadis (KMA 1503/2025, MA rule 13, p. 42)."
+  },
+  {
+   "key": "akidah_akhlak",
+   "label": "Akidah Akhlak",
+   "note": "MA Program Keagamaan: taught as Ilmu Kalam and Akhlak Tasawuf (MA rule 13, p. 42)."
+  },
+  {
+   "key": "fikih",
+   "label": "Fikih"
+  },
+  {
+   "key": "ski",
+   "label": "Sejarah Kebudayaan Islam"
+  },
+  {
+   "key": "penguatan_program",
+   "label": "Penguatan Program",
+   "note": "For MA with an SK of the Direktorat Jenderal Pendidikan Islam (MA Program Keagamaan, MA Akademik, MA Plus Keterampilan)."
+  },
+  {
+   "key": "ilmu_tafsir",
+   "label": "Ilmu Tafsir"
+  },
+  {
+   "key": "ilmu_hadis",
+   "label": "Ilmu Hadis"
+  },
+  {
+   "key": "ushul_fikih",
+   "label": "Ushul Fikih"
+  },
+  {
+   "key": "bahasa_arab_lanjut",
+   "label": "Bahasa Arab Tingkat Lanjut"
+  },
+  {
+   "key": "mapel_lainnya_ma",
+   "label": "Mata pelajaran lainnya yang dikembangkan sesuai dengan penguatan program"
+  },
+  {
+   "key": "pemberdayaan_keterampilan",
+   "label": "Muatan Pemberdayaan dan Keterampilan",
+   "options": [
+    "Pemberdayaan",
+    "Keterampilan"
+   ],
+   "note": "Carried out as kokurikuler."
+  }
+ ],
+ "tables": [
+  {
+   "table": 1,
+   "levels": [
+    "SD",
+    "MI"
+   ],
+   "grades": [
+    1
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    15,
+    16
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 252,
+     "kokurikuler": 36,
+     "total": 288
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      864,
+      216,
+      1080
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      936,
+      216,
+      1152
+     ],
+     "note": "Tabel 2–3 call this row 'Wajib + Muatan Lokal'."
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T1",
+   "source": "P13",
+   "phase": [
+    "A"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 1 (PDF p. 15–16)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 2,
+   "levels": [
+    "SD",
+    "MI"
+   ],
+   "grades": [
+    2
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    16,
+    17
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 288,
+     "kokurikuler": 36,
+     "total": 324
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      936,
+      216,
+      1152
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1008,
+      216,
+      1224
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T2",
+   "source": "P13",
+   "phase": [
+    "A"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 2 (PDF p. 16–17)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 3,
+   "levels": [
+    "SD",
+    "MI"
+   ],
+   "grades": [
+    3,
+    4
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    17,
+    18
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 36,
+     "total": 252
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72,
+     "transition": "Until 2026/2027 an elective that schools offer when ready; compulsory from 2027/2028 (Permendikbudristek 12/2024 Pasal 33 huruf a, not amended by Permendikdasmen 13/2025).",
+     "compulsory_from": "2027/2028"
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1116,
+      252,
+      1368
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1188,
+      252,
+      1440
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T3",
+   "source": "P13",
+   "phase": [
+    "B"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 3 (PDF p. 17–18)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 4,
+   "levels": [
+    "SD",
+    "MI"
+   ],
+   "grades": [
+    5
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    18,
+    20
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 36,
+     "total": 252
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72,
+     "transition": "Until 2026/2027 an elective that schools offer when ready; compulsory from 2027/2028 (Permendikbudristek 12/2024 Pasal 33 huruf a, not amended by Permendikdasmen 13/2025).",
+     "compulsory_from": "2027/2028"
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1116,
+      252,
+      1368
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan/Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1188,
+      252,
+      1440
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1260,
+      252,
+      1512
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Dialokasikan 2 (dua) JP per minggu atau 72 JP per tahun sebagai mata pelajaran pilihan.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T4",
+   "source": "P13",
+   "phase": [
+    "C"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 4 (PDF p. 18–20)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 5,
+   "levels": [
+    "SD",
+    "MI"
+   ],
+   "grades": [
+    6
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 35,
+   "pages": [
+    20,
+    21
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 128,
+     "kokurikuler": 32,
+     "total": 160
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 192,
+     "kokurikuler": 32,
+     "total": 224
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 160,
+     "kokurikuler": 32,
+     "total": 192
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 160,
+     "kokurikuler": 32,
+     "total": 192
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64,
+     "transition": "Until 2026/2027 an elective that schools offer when ready; compulsory from 2027/2028 (Permendikbudristek 12/2024 Pasal 33 huruf a, not amended by Permendikdasmen 13/2025).",
+     "compulsory_from": "2027/2028"
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      992,
+      224,
+      1216
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan/Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1056,
+      224,
+      1280
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1120,
+      224,
+      1344
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Dialokasikan 2 (dua) JP per minggu atau 64 JP per tahun sebagai mata pelajaran pilihan.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 64 JP per tahun."
+   },
+   "id": "P13-T5",
+   "source": "P13",
+   "phase": [
+    "C"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 5 (PDF p. 20–21)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 6,
+   "levels": [
+    "SMP",
+    "MTs"
+   ],
+   "grades": [
+    7,
+    8
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 40,
+   "pages": [
+    22,
+    23
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "informatika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "seni_budaya_prakarya",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1044,
+      360,
+      1404
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan/Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1116,
+      360,
+      1476
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1188,
+      360,
+      1548
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni atau prakarya (seni musik, seni rupa, seni teater, seni tari, prakarya budi daya, prakarya kerajinan, prakarya rekayasa, dan/atau prakarya pengolahan). Peserta Didik memilih 1 (satu) jenis seni atau prakarya.",
+    "c": "Dialokasikan 2 (dua) JP per minggu atau 72 JP per tahun sebagai mata pelajaran pilihan.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T6",
+   "source": "P13",
+   "phase": [
+    "D"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 6 (PDF p. 22–23)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 7,
+   "levels": [
+    "SMP",
+    "MTs"
+   ],
+   "grades": [
+    9
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 40,
+   "pages": [
+    23,
+    25
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 160,
+     "kokurikuler": 32,
+     "total": 192
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 128,
+     "kokurikuler": 32,
+     "total": 160
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 128,
+     "kokurikuler": 32,
+     "total": 160
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "informatika",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "seni_budaya_prakarya",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      928,
+      320,
+      1248
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan/Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      992,
+      320,
+      1312
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1056,
+      320,
+      1376
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni atau prakarya (seni musik, seni rupa, seni teater, seni tari, prakarya budi daya, prakarya kerajinan, prakarya rekayasa, dan/atau prakarya pengolahan). Peserta Didik memilih 1 (satu) jenis seni atau prakarya.",
+    "c": "Dialokasikan 2 (dua) JP per minggu atau 64 JP per tahun sebagai mata pelajaran pilihan.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 64 JP per tahun."
+   },
+   "id": "P13-T7",
+   "source": "P13",
+   "phase": [
+    "D"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 7 (PDF p. 23–25)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 8,
+   "levels": [
+    "SMA",
+    "MA"
+   ],
+   "grades": [
+    10
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    26,
+    27
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 108,
+     "total": 324,
+     "components": [
+      "Fisika",
+      "Kimia",
+      "Biologi"
+     ]
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 288,
+     "kokurikuler": 144,
+     "total": 432,
+     "components": [
+      "Sosiologi",
+      "Ekonomi",
+      "Sejarah",
+      "Geografi"
+     ]
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "informatika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya_prakarya",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1188,
+      396,
+      1584
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan/Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1260,
+      396,
+      1656
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1332,
+      396,
+      1728
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni atau prakarya (seni musik, seni rupa, seni teater, seni tari, prakarya budi daya, prakarya kerajinan, prakarya rekayasa, dan/atau prakarya pengolahan). Peserta Didik memilih 1 (satu) jenis seni atau prakarya.",
+    "c": "Dialokasikan 2 (dua) JP per minggu atau 72 JP per tahun sebagai mata pelajaran pilihan.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "note": "IPA and IPS in grade X are not split into separate subjects; the school organises their content (integrated, in alternating blocks, or in parallel with separate JP) (PDF p. 27–28).",
+   "id": "P13-T8",
+   "source": "P13",
+   "phase": [
+    "E"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 8 (PDF p. 26–27)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 9,
+   "levels": [
+    "SMA",
+    "MA"
+   ],
+   "grades": [
+    11
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    28,
+    30
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "sejarah",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pilihan_sma",
+     "group": "pilihan",
+     "intrakurikuler": [
+      720,
+      900
+     ],
+     "kokurikuler": 0,
+     "total": [
+      720,
+      900
+     ],
+     "options": [
+      "matematika_lanjut",
+      "fisika",
+      "kimia",
+      "biologi",
+      "geografi",
+      "sejarah_lanjut",
+      "sosiologi",
+      "ekonomi",
+      "bahasa_indonesia_lanjut",
+      "bahasa_inggris_lanjut",
+      "bahasa_arab",
+      "bahasa_jepang",
+      "bahasa_jerman",
+      "bahasa_korea",
+      "bahasa_mandarin",
+      "bahasa_prancis",
+      "antropologi",
+      "informatika",
+      "koding_ka",
+      "prakarya_kewirausahaan",
+      "mapel_lainnya"
+     ],
+     "choose": [
+      4,
+      5
+     ],
+     "jp_each": 180,
+     "jp_each_exceptions": {
+      "prakarya_kewirausahaan": 72
+     }
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      684,
+      144,
+      828
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan",
+     "sum": [
+      "wajib",
+      "pilihan"
+     ],
+     "jp": [
+      [
+       1404,
+       1584
+      ],
+      144,
+      [
+       1548,
+       1728
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1476,
+       1656
+      ],
+      144,
+      [
+       1620,
+       1800
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Alokasi masing-masing mata pelajaran pilihan yaitu 5 (lima) JP per minggu atau 180 JP per tahun.",
+    "d": "Alokasi mata pelajaran Prakarya dan Kewirausahaan yaitu 2 (dua) JP per minggu atau 72 JP per tahun.",
+    "e": "Peserta didik memilih 4 (empat) sampai 5 (lima) mata pelajaran atau setara dengan 20 sampai 25 JP per minggu sesuai dengan kebutuhan Peserta Didik dan sumber daya yang tersedia di Satuan Pendidikan.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "note": "Every school opens all compulsory subjects and at least 7 electives; each student takes 4–5 electives and may change them until grade XI semester 2. Schools designated for sport or arts may open Olahraga or Seni (PDF p. 28, 32–33).",
+   "id": "P13-T9",
+   "source": "P13",
+   "phase": [
+    "F"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 9 (PDF p. 28–30)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 10,
+   "levels": [
+    "SMA",
+    "MA"
+   ],
+   "grades": [
+    12
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 45,
+   "pages": [
+    30,
+    32
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 0,
+     "total": 96
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "sejarah",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pilihan_sma",
+     "group": "pilihan",
+     "intrakurikuler": [
+      640,
+      800
+     ],
+     "kokurikuler": 0,
+     "total": [
+      640,
+      800
+     ],
+     "options": [
+      "matematika_lanjut",
+      "fisika",
+      "kimia",
+      "biologi",
+      "geografi",
+      "sejarah_lanjut",
+      "sosiologi",
+      "ekonomi",
+      "bahasa_indonesia_lanjut",
+      "bahasa_inggris_lanjut",
+      "bahasa_arab",
+      "bahasa_jepang",
+      "bahasa_jerman",
+      "bahasa_korea",
+      "bahasa_mandarin",
+      "bahasa_prancis",
+      "antropologi",
+      "informatika",
+      "koding_ka",
+      "prakarya_kewirausahaan",
+      "mapel_lainnya"
+     ],
+     "choose": [
+      4,
+      5
+     ],
+     "jp_each": 160,
+     "jp_each_exceptions": {
+      "prakarya_kewirausahaan": 64
+     }
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Jumlah JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      608,
+      128,
+      736
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan",
+     "sum": [
+      "wajib",
+      "pilihan"
+     ],
+     "jp": [
+      [
+       1248,
+       1408
+      ],
+      128,
+      [
+       1376,
+       1536
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1312,
+       1472
+      ],
+      128,
+      [
+       1440,
+       1600
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Alokasi masing-masing mata pelajaran pilihan yaitu 5 (lima) JP per minggu atau 160 JP per tahun.",
+    "d": "Alokasi mata pelajaran Prakarya dan Kewirausahaan yaitu 2 (dua) JP per minggu atau 64 JP per tahun.",
+    "e": "Peserta didik memilih 4 (empat) sampai 5 (lima) mata pelajaran atau setara dengan 20 sampai 25 JP per minggu.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 64 JP per tahun."
+   },
+   "id": "P13-T10",
+   "source": "P13",
+   "phase": [
+    "F"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 10 (PDF p. 30–32)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 11,
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "grades": [
+    10
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    33,
+    35
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "umum",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "umum",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pjok",
+     "group": "umum",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "sejarah",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "informatika",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "projek_ipas",
+     "group": "kejuruan",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "dasar_program_keahlian",
+     "group": "kejuruan",
+     "intrakurikuler": 432,
+     "kokurikuler": 0,
+     "total": 432
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Umum",
+     "sum": [
+      "umum"
+     ],
+     "jp": [
+      540,
+      36,
+      576
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Kejuruan",
+     "sum": [
+      "kejuruan"
+     ],
+     "jp": [
+      936,
+      144,
+      1080
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan",
+     "sum": [
+      "umum",
+      "kejuruan"
+     ],
+     "jp": [
+      1476,
+      180,
+      1656
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Pilihan",
+     "sum": [
+      "pilihan"
+     ],
+     "jp": [
+      72,
+      0,
+      72
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan + Mata Pelajaran Pilihan/ Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1548,
+      180,
+      1728
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1620,
+      180,
+      1800
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Proporsi JP antara aspek Ilmu Pengetahuan Alam dan aspek Ilmu Pengetahuan Sosial disesuaikan dengan kebutuhan Program Keahlian.",
+    "d": "Nama mata pelajaran menyesuaikan nama Program Keahlian.",
+    "e": "Dialokasikan 2 (dua) JP per minggu atau 72 JP per tahun sebagai mata pelajaran pilihan.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T11",
+   "source": "P13",
+   "phase": [
+    "E"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 11 (PDF p. 33–35)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 12,
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "grades": [
+    11
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    35,
+    36
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "umum",
+     "intrakurikuler": 90,
+     "kokurikuler": 18,
+     "total": 108
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "umum",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "umum",
+     "intrakurikuler": 90,
+     "kokurikuler": 18,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "umum",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "sejarah",
+     "group": "umum",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "kejuruan",
+     "intrakurikuler": 90,
+     "kokurikuler": 18,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "konsentrasi_keahlian",
+     "group": "kejuruan",
+     "intrakurikuler": 648,
+     "kokurikuler": 0,
+     "total": 648
+    },
+    {
+     "subject": "kik",
+     "group": "kejuruan",
+     "intrakurikuler": 180,
+     "kokurikuler": 0,
+     "total": 180
+    },
+    {
+     "subject": "mapel_pilihan_smk",
+     "group": "kejuruan",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Umum",
+     "sum": [
+      "umum"
+     ],
+     "jp": [
+      342,
+      90,
+      432
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Kejuruan",
+     "sum": [
+      "kejuruan"
+     ],
+     "jp": [
+      1170,
+      54,
+      1224
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan",
+     "sum": [
+      "umum",
+      "kejuruan"
+     ],
+     "jp": [
+      1512,
+      144,
+      1656
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan + Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1584,
+      144,
+      1728
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Nama mata pelajaran sesuai dengan nama Konsentrasi Keahlian.",
+    "c": "Nama mata pelajaran merupakan mata pelajaran yang dipilih oleh Peserta Didik.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "note": "The 'Mata Pelajaran Pilihan' row sits inside the Kejuruan group and its total.",
+   "id": "P13-T12",
+   "source": "P13",
+   "phase": [
+    "F"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 12 (PDF p. 35–36)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 13,
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "grades": [
+    12
+   ],
+   "programme_years": 3,
+   "weeks_per_year": 32,
+   "jp_minutes": 45,
+   "pages": [
+    36,
+    37
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "umum",
+     "intrakurikuler": 32,
+     "kokurikuler": 16,
+     "total": 48
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "umum",
+     "intrakurikuler": 32,
+     "kokurikuler": 0,
+     "total": 32
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "umum",
+     "intrakurikuler": 32,
+     "kokurikuler": 16,
+     "total": 48
+    },
+    {
+     "subject": "matematika",
+     "group": "kejuruan",
+     "intrakurikuler": 48,
+     "kokurikuler": 0,
+     "total": 48
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "kejuruan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "konsentrasi_keahlian",
+     "group": "kejuruan",
+     "intrakurikuler": 352,
+     "kokurikuler": 0,
+     "total": 352
+    },
+    {
+     "subject": "kik",
+     "group": "kejuruan",
+     "intrakurikuler": 80,
+     "kokurikuler": 0,
+     "total": 80
+    },
+    {
+     "subject": "pkl",
+     "group": "kejuruan",
+     "intrakurikuler": 736,
+     "kokurikuler": 0,
+     "total": 736
+    },
+    {
+     "subject": "mapel_pilihan_smk",
+     "group": "kejuruan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 32,
+     "kokurikuler": 0,
+     "total": 32
+    }
+   ],
+   "totals": [
+    {
+     "label": "Jumlah JP Mata Pelajaran Umum",
+     "sum": [
+      "umum"
+     ],
+     "jp": [
+      96,
+      32,
+      128
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Kejuruan",
+     "sum": [
+      "kejuruan"
+     ],
+     "jp": [
+      1344,
+      0,
+      1344
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan",
+     "sum": [
+      "umum",
+      "kejuruan"
+     ],
+     "jp": [
+      1440,
+      32,
+      1472
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan + Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1472,
+      32,
+      1504
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Nama mata pelajaran sesuai dengan konsentrasi keahlian.",
+    "c": "Mata pelajaran Praktik Kerja Lapangan (PKL) dilaksanakan paling sedikit selama 1 semester atau 16 (enam belas) minggu efektif.",
+    "d": "Nama mata pelajaran merupakan mata pelajaran yang dipilih oleh Peserta Didik.",
+    "e": "Paling banyak 2 (dua) JP per minggu atau 32 (tiga puluh dua) JP per tahun."
+   },
+   "note": "Grade XII of the 3-year programme has no PJOK, Sejarah or Seni dan Budaya rows (as printed). The Mata Pelajaran Pilihan row prints only two cells (64, 64); the Kejuruan total confirms 64 intrakurikuler.",
+   "id": "P13-T13",
+   "source": "P13",
+   "phase": [
+    "F"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 13 (PDF p. 36–37)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 14,
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "grades": [
+    12
+   ],
+   "programme_years": 4,
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    37,
+    39
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "umum",
+     "intrakurikuler": 90,
+     "kokurikuler": 18,
+     "total": 108
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "umum",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "umum",
+     "intrakurikuler": 90,
+     "kokurikuler": 18,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "umum",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "sejarah",
+     "group": "umum",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "kejuruan",
+     "intrakurikuler": 90,
+     "kokurikuler": 18,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "konsentrasi_keahlian",
+     "group": "kejuruan",
+     "intrakurikuler": 648,
+     "kokurikuler": 0,
+     "total": 648
+    },
+    {
+     "subject": "kik",
+     "group": "kejuruan",
+     "intrakurikuler": 180,
+     "kokurikuler": 0,
+     "total": 180
+    },
+    {
+     "subject": "mapel_pilihan_smk",
+     "group": "kejuruan",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Umum",
+     "sum": [
+      "umum"
+     ],
+     "jp": [
+      342,
+      90,
+      432
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Kejuruan",
+     "sum": [
+      "kejuruan"
+     ],
+     "jp": [
+      1170,
+      54,
+      1224
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan",
+     "sum": [
+      "umum",
+      "kejuruan"
+     ],
+     "jp": [
+      1512,
+      144,
+      1656
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan + Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1584,
+      144,
+      1728
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Nama mata pelajaran sesuai dengan nama konsentrasi keahlian.",
+    "c": "Nama mata pelajaran merupakan mata pelajaran yang dipilih oleh Peserta Didik.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T14",
+   "source": "P13",
+   "phase": [
+    "F"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 14 (PDF p. 37–39)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 15,
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "grades": [
+    13
+   ],
+   "programme_years": 4,
+   "weeks_per_year": 32,
+   "jp_minutes": 45,
+   "pages": [
+    39
+   ],
+   "rows": [
+    {
+     "subject": "matematika",
+     "group": "kejuruan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "kejuruan",
+     "intrakurikuler": 192,
+     "kokurikuler": 0,
+     "total": 192
+    },
+    {
+     "subject": "pkl",
+     "group": "kejuruan",
+     "intrakurikuler": 1216,
+     "kokurikuler": 0,
+     "total": 1216
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Umum",
+     "sum": [
+      "umum"
+     ],
+     "jp": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Kejuruan",
+     "sum": [
+      "kejuruan"
+     ],
+     "jp": [
+      1472,
+      0,
+      1472
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan",
+     "sum": [
+      "umum",
+      "kejuruan"
+     ],
+     "jp": [
+      1472,
+      0,
+      1472
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Mata pelajaran Praktik Kerja Lapangan dilaksanakan paling sedikit selama 10 (sepuluh) bulan atau 26 (dua puluh enam) minggu efektif."
+   },
+   "note": "No general subjects in grade XIII (printed '-').",
+   "id": "P13-T15",
+   "source": "P13",
+   "phase": [
+    "F"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 15 (PDF p. 39)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 16,
+   "levels": [
+    "SDLB",
+    "MILB"
+   ],
+   "grades": [
+    1
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 30,
+   "pages": [
+    40,
+    42
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 252,
+     "kokurikuler": 108,
+     "total": 360
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 0,
+     "total": 216
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      900,
+      180,
+      1080
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      972,
+      180,
+      1152
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T16",
+   "source": "P13",
+   "phase": [
+    "A"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 16 (PDF p. 40–42)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 17,
+   "levels": [
+    "SDLB",
+    "MILB"
+   ],
+   "grades": [
+    2
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 30,
+   "pages": [
+    42,
+    43
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 252,
+     "kokurikuler": 108,
+     "total": 360
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 0,
+     "total": 216
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      936,
+      216,
+      1152
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1008,
+      216,
+      1224
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T17",
+   "source": "P13",
+   "phase": [
+    "A"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 17 (PDF p. 42–43)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 18,
+   "levels": [
+    "SDLB",
+    "MILB"
+   ],
+   "grades": [
+    3,
+    4
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 30,
+   "pages": [
+    44,
+    45
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 360,
+     "kokurikuler": 144,
+     "total": 504
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 0,
+     "total": 216
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1116,
+      252,
+      1368
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1188,
+      252,
+      1440
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T18",
+   "source": "P13",
+   "phase": [
+    "B"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 18 (PDF p. 44–45)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 19,
+   "levels": [
+    "SDLB",
+    "MILB"
+   ],
+   "grades": [
+    5
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 30,
+   "pages": [
+    45,
+    47
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 360,
+     "kokurikuler": 144,
+     "total": 504
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1116,
+      252,
+      1368
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1188,
+      252,
+      1440
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T19",
+   "source": "P13",
+   "phase": [
+    "C"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 19 (PDF p. 45–47)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 20,
+   "levels": [
+    "SDLB",
+    "MILB"
+   ],
+   "grades": [
+    6
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 30,
+   "pages": [
+    47,
+    49
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64,
+     "printed_intrakurikuler": 54
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64,
+     "printed_intrakurikuler": 54
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64,
+     "printed_intrakurikuler": 54
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 320,
+     "kokurikuler": 128,
+     "total": 448
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 128,
+     "kokurikuler": 0,
+     "total": 128
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      992,
+      224,
+      1216
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1056,
+      224,
+      1280
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "d": "Paling banyak 2 (dua) JP per minggu atau 64 JP per tahun."
+   },
+   "id": "P13-T20",
+   "source": "P13",
+   "phase": [
+    "C"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 20 (PDF p. 47–49)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 21,
+   "levels": [
+    "SMPLB",
+    "MTsLB"
+   ],
+   "grades": [
+    7
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    49,
+    51
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 468,
+     "kokurikuler": 144,
+     "total": 612
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1062,
+      306,
+      1368
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1134,
+      306,
+      1440
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Pembelajaran tidak penuh 36 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 27 minggu untuk the general subjects (each listed in the footnote as printed).",
+    "c": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "d": "Peserta Didik memilih minimal 2 (dua) keterampilan.",
+    "e": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T21",
+   "source": "P13",
+   "phase": [
+    "D"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 21 (PDF p. 49–51)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 22,
+   "levels": [
+    "SMPLB",
+    "MTsLB"
+   ],
+   "grades": [
+    8
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    51,
+    54
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 468,
+     "kokurikuler": 144,
+     "total": 612
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1062,
+      306,
+      1368
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1134,
+      306,
+      1440
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Pembelajaran tidak penuh 36 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 27 minggu untuk the general subjects (each listed in the footnote as printed).",
+    "c": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "d": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "e": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T22",
+   "source": "P13",
+   "phase": [
+    "D"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 22 (PDF p. 51–54)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 23,
+   "levels": [
+    "SMPLB",
+    "MTsLB"
+   ],
+   "grades": [
+    9
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 35,
+   "pages": [
+    54,
+    56
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 416,
+     "kokurikuler": 128,
+     "total": 544
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 0,
+     "total": 96
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      944,
+      272,
+      1216
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1008,
+      272,
+      1280
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Pembelajaran tidak penuh 32 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 24 minggu untuk the general subjects (each listed in the footnote as printed).",
+    "c": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "d": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "e": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 64 JP per tahun."
+   },
+   "id": "P13-T23",
+   "source": "P13",
+   "phase": [
+    "D"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 23 (PDF p. 54–56)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 24,
+   "levels": [
+    "SMALB",
+    "MALB"
+   ],
+   "grades": [
+    10
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 40,
+   "pages": [
+    57,
+    59
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 648,
+     "kokurikuler": 216,
+     "total": 864
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1206,
+      378,
+      1584
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1278,
+      378,
+      1656
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Pembelajaran tidak penuh 36 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 27 minggu untuk the general subjects (each listed in the footnote as printed).",
+    "c": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "d": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "e": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T24",
+   "source": "P13",
+   "phase": [
+    "E"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 24 (PDF p. 57–59)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 25,
+   "levels": [
+    "SMALB",
+    "MALB"
+   ],
+   "grades": [
+    11
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 40,
+   "pages": [
+    59,
+    61
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 720,
+     "kokurikuler": 216,
+     "total": 936
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1278,
+      378,
+      1656
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1350,
+      378,
+      1728
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Pembelajaran tidak penuh 36 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 27 minggu untuk the general subjects (each listed in the footnote as printed).",
+    "c": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "d": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "e": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun."
+   },
+   "id": "P13-T25",
+   "source": "P13",
+   "phase": [
+    "F"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 25 (PDF p. 59–61)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 26,
+   "levels": [
+    "SMALB",
+    "MALB"
+   ],
+   "grades": [
+    12
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 40,
+   "pages": [
+    62,
+    64
+   ],
+   "rows": [
+    {
+     "subject": "pendidikan_agama",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 640,
+     "kokurikuler": 192,
+     "total": 832
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1136,
+      336,
+      1472
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1200,
+      336,
+      1536
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+    "b": "Pembelajaran tidak penuh 32 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 24 minggu untuk the general subjects (each listed in the footnote as printed).",
+    "c": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+    "d": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "e": "Dipilih sesuai jenis hambatan Peserta Didik.",
+    "f": "Paling banyak 2 (dua) JP per minggu atau 64 JP per tahun."
+   },
+   "id": "P13-T26",
+   "source": "P13",
+   "phase": [
+    "F"
+   ],
+   "ref": "Permendikdasmen 13/2025, Lampiran II, Tabel 26 (PDF p. 62–64)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 1,
+   "levels": [
+    "MI"
+   ],
+   "grades": [
+    1
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    28
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 252,
+     "kokurikuler": 36,
+     "total": 288
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1044,
+      108,
+      1152
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1116,
+       1260
+      ],
+      108,
+      [
+       1224,
+       1368
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Paling sedikit 72 JP per tahun dan paling banyak 216 sebagai mata pelajaran pilihan."
+   },
+   "id": "KMA-T1",
+   "source": "KMA",
+   "phase": [
+    "A"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 1 (p. 28)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 2,
+   "levels": [
+    "MI"
+   ],
+   "grades": [
+    2
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    28,
+    29
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 288,
+     "kokurikuler": 36,
+     "total": 324
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 0,
+     "total": 180
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1116,
+      108,
+      1224
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1188,
+       1332
+      ],
+      108,
+      [
+       1296,
+       1440
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Paling sedikit 72 JP per tahun dan paling banyak 216."
+   },
+   "id": "KMA-T2",
+   "source": "KMA",
+   "phase": [
+    "A"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 2 (p. 28–29)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 3,
+   "levels": [
+    "MI"
+   ],
+   "grades": [
+    3,
+    4
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    29
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 36,
+     "total": 252
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 0,
+     "total": 180
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72,
+     "transition": "Until 2026/2027 an elective that schools offer when ready; compulsory from 2027/2028 (Permendikbudristek 12/2024 Pasal 33 huruf a, not amended by Permendikdasmen 13/2025).",
+     "compulsory_from": "2027/2028"
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1368,
+      108,
+      1476
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1440,
+       1584
+      ],
+      108,
+      [
+       1548,
+       1692
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Paling sedikit 72 JP per tahun dan paling banyak 216."
+   },
+   "id": "KMA-T3",
+   "source": "KMA",
+   "phase": [
+    "B"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 3 (p. 29)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 4,
+   "levels": [
+    "MI"
+   ],
+   "grades": [
+    5
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    30
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 36,
+     "total": 252
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 0,
+     "total": 180
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 0,
+     "total": 180
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72,
+     "transition": "Until 2026/2027 an elective that schools offer when ready; compulsory from 2027/2028 (Permendikbudristek 12/2024 Pasal 33 huruf a, not amended by Permendikdasmen 13/2025).",
+     "compulsory_from": "2027/2028"
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1368,
+      108,
+      1476
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1440,
+       1584
+      ],
+      108,
+      [
+       1548,
+       1692
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1512,
+       1656
+      ],
+      108,
+      [
+       1620,
+       1764
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun sebagai mata pelajaran pilihan.",
+    "c": "Paling sedikit 72 JP per tahun dan paling banyak 216."
+   },
+   "id": "KMA-T4",
+   "source": "KMA",
+   "phase": [
+    "C"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 4 (p. 30)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 5,
+   "levels": [
+    "MI"
+   ],
+   "grades": [
+    6
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 35,
+   "pages": [
+    30,
+    31
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 128,
+     "kokurikuler": 0,
+     "total": 128
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 192,
+     "kokurikuler": 32,
+     "total": 224
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 160,
+     "kokurikuler": 0,
+     "total": 160
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 160,
+     "kokurikuler": 0,
+     "total": 160
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 0,
+     "total": 96
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64,
+     "transition": "Until 2026/2027 an elective that schools offer when ready; compulsory from 2027/2028 (Permendikbudristek 12/2024 Pasal 33 huruf a, not amended by Permendikdasmen 13/2025).",
+     "compulsory_from": "2027/2028"
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      64,
+      192
+     ],
+     "kokurikuler": 0,
+     "total": [
+      64,
+      192
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1216,
+      96,
+      1312
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1280,
+       1408
+      ],
+      96,
+      [
+       1376,
+       1504
+      ]
+     ],
+     "note": "Labelled with 'Pilihan', but the figures are Wajib + Muatan Lokal; the next row includes the elective."
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1344,
+       1472
+      ],
+      96,
+      [
+       1440,
+       1568
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Paling banyak 2 (dua) JP per minggu atau 64 JP per tahun sebagai mata pelajaran pilihan.",
+    "c": "Paling sedikit 64 JP per tahun dan paling banyak 192."
+   },
+   "id": "KMA-T5",
+   "source": "KMA",
+   "phase": [
+    "C"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 5 (p. 30–31)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 6,
+   "levels": [
+    "MTs"
+   ],
+   "grades": [
+    7
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 40,
+   "pages": [
+    32,
+    33
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "informatika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya_prakarya",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1368,
+      144,
+      1512
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1440,
+       1584
+      ],
+      144,
+      [
+       1584,
+       1728
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1512,
+       1656
+      ],
+      144,
+      [
+       1656,
+       1800
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni atau prakarya (seni musik, seni rupa, seni teater, seni tari, dan/atau prakarya). Peserta Didik memilih 1 (satu) jenis seni atau prakarya.",
+    "b": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun mata pelajaran pilihan.",
+    "c": "Paling sedikit 72 JP per tahun dan paling banyak 216."
+   },
+   "id": "KMA-T6",
+   "source": "KMA",
+   "phase": [
+    "D"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 6 (p. 32–33)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 7,
+   "levels": [
+    "MTs"
+   ],
+   "grades": [
+    8
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 40,
+   "pages": [
+    33,
+    34
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 180,
+     "kokurikuler": 0,
+     "total": 180
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 36,
+     "total": 180
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "informatika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya_prakarya",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1368,
+      144,
+      1512
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1440,
+       1584
+      ],
+      144,
+      [
+       1584,
+       1728
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan/Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1512,
+       1656
+      ],
+      144,
+      [
+       1656,
+       1800
+      ]
+     ],
+     "note": "Labelled 'Pilihan/Muatan Lokal', but the figures include both."
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni atau prakarya (seni musik, seni rupa, seni teater, seni tari, dan/atau prakarya). Peserta Didik memilih 1 (satu) jenis seni atau prakarya.",
+    "b": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun mata pelajaran pilihan.",
+    "c": "Paling sedikit 72 JP per tahun dan paling banyak 216."
+   },
+   "id": "KMA-T7",
+   "source": "KMA",
+   "phase": [
+    "D"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 7 (p. 33–34)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 8,
+   "levels": [
+    "MTs"
+   ],
+   "grades": [
+    9
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 40,
+   "pages": [
+    34,
+    35
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96,
+     "printed_total": 64
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 0,
+     "total": 96
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 160,
+     "kokurikuler": 0,
+     "total": 160
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 128,
+     "kokurikuler": 0,
+     "total": 128
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 128,
+     "kokurikuler": 0,
+     "total": 128
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "informatika",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "seni_budaya_prakarya",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      64,
+      192
+     ],
+     "kokurikuler": 0,
+     "total": [
+      64,
+      192
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1216,
+      128,
+      1344
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1280,
+       1408
+      ],
+      128,
+      [
+       1408,
+       1536
+      ]
+     ],
+     "printed_jp": [
+      [
+       1280,
+       1408
+      ],
+      128,
+      [
+       1408,
+       1538
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1344,
+       1472
+      ],
+      128,
+      [
+       1472,
+       1600
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni atau prakarya (seni musik, seni rupa, seni teater, seni tari, dan/atau prakarya). Peserta Didik memilih 1 (satu) jenis seni atau prakarya.",
+    "b": "Dialokasikan 2 (dua) JP per minggu atau 64 JP per tahun mata pelajaran pilihan.",
+    "c": "Paling sedikit 64 JP per tahun dan paling banyak 192."
+   },
+   "id": "KMA-T8",
+   "source": "KMA",
+   "phase": [
+    "D"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 8 (p. 34–35)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 9,
+   "levels": [
+    "MA"
+   ],
+   "grades": [
+    10
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    36,
+    37
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 0,
+     "total": 216,
+     "components": [
+      "Fisika",
+      "Kimia",
+      "Biologi"
+     ]
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 288,
+     "kokurikuler": 0,
+     "total": 288,
+     "components": [
+      "Sosiologi",
+      "Ekonomi",
+      "Sejarah",
+      "Geografi"
+     ]
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "informatika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya_prakarya",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "penguatan_program",
+     "group": "pilihan",
+     "intrakurikuler": 216,
+     "kokurikuler": 0,
+     "total": 216
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1548,
+      108,
+      1656
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1620,
+       1764
+      ],
+      108,
+      [
+       1728,
+       1872
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Koding dan Kecerdasan Artifisial + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "koding_ka",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1692,
+       1836
+      ],
+      108,
+      [
+       1800,
+       1944
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Penguatan Program + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "penguatan_program",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1836,
+       1980
+      ],
+      108,
+      [
+       1944,
+       2088
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1908,
+       2052
+      ],
+      108,
+      [
+       2016,
+       2160
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni atau prakarya (seni musik, seni rupa, seni teater, seni tari, dan/atau prakarya). Peserta Didik memilih 1 (satu) jenis seni atau prakarya.",
+    "b": "Dialokasikan 72 JP per tahun sebagai mata pelajaran pilihan.",
+    "c": "Madrasah yang memilih penguatan program adalah Madrasah yang memiliki SK Direktorat Jenderal Pendidikan Islam, yaitu MA Program Keagamaan, MA Akademik, dan MA Plus Keterampilan.",
+    "d": "Paling sedikit 72 JP per tahun dan paling banyak 216."
+   },
+   "note": "IPA and IPS in grade X are not split into separate subjects (p. 37–38).",
+   "id": "KMA-T9",
+   "source": "KMA",
+   "phase": [
+    "E"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 9 (p. 36–37)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 10,
+   "levels": [
+    "MA"
+   ],
+   "grades": [
+    11
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    38,
+    39
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "sejarah",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pilihan_ma",
+     "group": "pilihan",
+     "intrakurikuler": [
+      720,
+      900
+     ],
+     "kokurikuler": 0,
+     "total": [
+      720,
+      900
+     ],
+     "options": [
+      "ilmu_tafsir",
+      "ilmu_hadis",
+      "ushul_fikih",
+      "matematika_lanjut",
+      "fisika",
+      "kimia",
+      "biologi",
+      "geografi",
+      "sejarah_lanjut",
+      "sosiologi",
+      "ekonomi",
+      "bahasa_indonesia_lanjut",
+      "bahasa_inggris_lanjut",
+      "bahasa_arab_lanjut",
+      "bahasa_jepang",
+      "bahasa_jerman",
+      "bahasa_korea",
+      "bahasa_mandarin",
+      "bahasa_prancis",
+      "antropologi",
+      "informatika",
+      "koding_ka",
+      "prakarya_kewirausahaan",
+      "mapel_lainnya_ma"
+     ],
+     "choose": [
+      4,
+      5
+     ],
+     "jp_each": 180,
+     "jp_each_exceptions": {
+      "ilmu_tafsir": 144,
+      "ilmu_hadis": 144,
+      "ushul_fikih": 144,
+      "prakarya_kewirausahaan": 72,
+      "mapel_lainnya_ma": 180
+     }
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Umum",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      972,
+      108,
+      1080
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + pilihan",
+     "sum": [
+      "wajib",
+      "pilihan"
+     ],
+     "jp": [
+      [
+       1692,
+       1872
+      ],
+      108,
+      [
+       1800,
+       1980
+      ]
+     ],
+     "printed_jp": [
+      [
+       1692,
+       1871
+      ],
+      108,
+      [
+       1800,
+       1980
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1764,
+       2088
+      ],
+      108,
+      [
+       1872,
+       2196
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Alokasi masing-masing mata pelajaran pilihan yaitu 4 (empat) JP per minggu atau 144 JP per tahun.",
+    "c": "Alokasi masing-masing mata pelajaran pilihan yaitu 5 (lima) JP per minggu atau 180 JP per tahun.",
+    "d": "Alokasi mata pelajaran pilihan yaitu 2 (dua) JP per minggu atau 72 JP per tahun.",
+    "e": "Alokasi mata pelajaran pilihan yaitu 6 (enam) JP per minggu atau 180 JP per tahun, bagi Madrasah yang memiliki SK Direktorat Jenderal Pendidikan Islam (MA Program Keagamaan, MA Akademik, MA Plus Keterampilan).",
+    "f": "Paling sedikit 72 JP per tahun dan paling banyak 216 sebagai mata pelajaran pilihan."
+   },
+   "note": "Footnote e prints 6 JP per week with 180 JP per year (6 × 36 = 216), as printed. Every MA opens all general subjects and at least 7 electives; each student chooses 4–5 and may change them until grade XI semester 2 (p. 38, 41).",
+   "id": "KMA-T10",
+   "source": "KMA",
+   "phase": [
+    "F"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 10 (p. 38–39)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 11,
+   "levels": [
+    "MA"
+   ],
+   "grades": [
+    12
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 45,
+   "pages": [
+    39,
+    41
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 0,
+     "total": 96
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 0,
+     "total": 96
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "sejarah",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pilihan_ma",
+     "group": "pilihan",
+     "intrakurikuler": [
+      640,
+      800
+     ],
+     "kokurikuler": 0,
+     "total": [
+      640,
+      800
+     ],
+     "options": [
+      "ilmu_tafsir",
+      "ilmu_hadis",
+      "ushul_fikih",
+      "matematika_lanjut",
+      "fisika",
+      "kimia",
+      "biologi",
+      "geografi",
+      "sejarah_lanjut",
+      "sosiologi",
+      "ekonomi",
+      "bahasa_indonesia_lanjut",
+      "bahasa_inggris_lanjut",
+      "bahasa_arab_lanjut",
+      "bahasa_jepang",
+      "bahasa_jerman",
+      "bahasa_korea",
+      "bahasa_mandarin",
+      "bahasa_prancis",
+      "antropologi",
+      "informatika",
+      "koding_ka",
+      "prakarya_kewirausahaan",
+      "mapel_lainnya_ma"
+     ],
+     "choose": [
+      4,
+      5
+     ],
+     "jp_each": 160,
+     "jp_each_exceptions": {
+      "ilmu_tafsir": 128,
+      "ilmu_hadis": 128,
+      "ushul_fikih": 128,
+      "prakarya_kewirausahaan": 64,
+      "mapel_lainnya_ma": 192
+     }
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      64,
+      192
+     ],
+     "kokurikuler": 0,
+     "total": [
+      64,
+      192
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Umum",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      864,
+      96,
+      960
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + pilihan",
+     "sum": [
+      "wajib",
+      "pilihan"
+     ],
+     "jp": [
+      [
+       1504,
+       1664
+      ],
+      96,
+      [
+       1600,
+       1760
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1568,
+       1856
+      ],
+      96,
+      [
+       1664,
+       1952
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "4 (empat) JP per minggu atau 128 JP per tahun.",
+    "c": "5 (lima) JP per minggu atau 160 JP per tahun.",
+    "d": "2 (dua) JP per minggu atau 64 JP per tahun.",
+    "e": "6 (enam) JP per minggu atau 192 JP per tahun untuk Madrasah yang memiliki SK Direktorat Jenderal Pendidikan Islam.",
+    "f": "Paling sedikit 64 JP per tahun dan paling banyak 192."
+   },
+   "id": "KMA-T11",
+   "source": "KMA",
+   "phase": [
+    "F"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 11 (p. 39–41)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 12,
+   "levels": [
+    "MAK"
+   ],
+   "grades": [
+    10
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    42,
+    43
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "umum",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "umum",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "pjok",
+     "group": "umum",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "sejarah",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "informatika",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "projek_ipas",
+     "group": "kejuruan",
+     "intrakurikuler": 180,
+     "kokurikuler": 36,
+     "total": 216
+    },
+    {
+     "subject": "dasar_program_keahlian",
+     "group": "kejuruan",
+     "intrakurikuler": 432,
+     "kokurikuler": 0,
+     "total": 432
+    },
+    {
+     "subject": "koding_ka",
+     "group": "pilihan",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Umum (A)",
+     "sum": [
+      "umum"
+     ],
+     "jp": [
+      864,
+      36,
+      900
+     ]
+    },
+    {
+     "label": "Jumlah JP Kelompok Mata Pelajaran Kejuruan (B)",
+     "sum": [
+      "kejuruan"
+     ],
+     "jp": [
+      936,
+      144,
+      1080
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan",
+     "sum": [
+      "umum",
+      "kejuruan"
+     ],
+     "jp": [
+      1800,
+      180,
+      1980
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Kejuruan + Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1872,
+       2016
+      ],
+      180,
+      [
+       2052,
+       2196
+      ]
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan + Mata Pelajaran Pilihan + Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "pilihan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1944,
+       2088
+      ],
+      180,
+      [
+       2124,
+       2268
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Proporsi JP antara aspek IPA dan aspek IPS disesuaikan dengan kebutuhan Program Keahlian.",
+    "c": "Nama mata pelajaran menyesuaikan nama program keahlian.",
+    "d": "Dialokasikan 2 (dua) JP per minggu atau 72 JP per tahun sebagai mata pelajaran pilihan.",
+    "e": "Paling sedikit 72 JP per tahun dan paling banyak 216 sebagai mata pelajaran pilihan."
+   },
+   "id": "KMA-T12",
+   "source": "KMA",
+   "phase": [
+    "E"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 12 (p. 42–43)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 13,
+   "levels": [
+    "MAK"
+   ],
+   "grades": [
+    11
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    44
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "ski",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "sejarah",
+     "group": "umum",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "kejuruan",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "konsentrasi_keahlian",
+     "group": "kejuruan",
+     "intrakurikuler": 648,
+     "kokurikuler": 0,
+     "total": 648
+    },
+    {
+     "subject": "kik",
+     "group": "kejuruan",
+     "intrakurikuler": 180,
+     "kokurikuler": 0,
+     "total": 180
+    },
+    {
+     "subject": "mapel_pilihan_smk",
+     "group": "kejuruan",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      72,
+      216
+     ],
+     "kokurikuler": 0,
+     "total": [
+      72,
+      216
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Jumlah JP Mata Pelajaran Umum",
+     "sum": [
+      "umum"
+     ],
+     "jp": [
+      648,
+      72,
+      720
+     ]
+    },
+    {
+     "label": "Jumlah JP Mata Pelajaran Kejuruan",
+     "sum": [
+      "kejuruan"
+     ],
+     "jp": [
+      1188,
+      36,
+      1224
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan",
+     "sum": [
+      "umum",
+      "kejuruan"
+     ],
+     "jp": [
+      1836,
+      108,
+      1944
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan + Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1908,
+       2052
+      ],
+      108,
+      [
+       2016,
+       2160
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Nama mata pelajaran sesuai dengan nama Konsentrasi Keahlian.",
+    "b": "Nama mata pelajaran merupakan mata pelajaran yang dipilih oleh Peserta Didik.",
+    "c": "Paling sedikit 72 JP per tahun dan paling banyak 216."
+   },
+   "id": "KMA-T13",
+   "source": "KMA",
+   "phase": [
+    "F"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 13 (p. 44)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 14,
+   "levels": [
+    "MAK"
+   ],
+   "grades": [
+    12
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 45,
+   "pages": [
+    44,
+    45
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "umum",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "umum",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "fikih",
+     "group": "umum",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "ski",
+     "group": "umum",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "umum",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "umum",
+     "intrakurikuler": 32,
+     "kokurikuler": 0,
+     "total": 32
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "umum",
+     "intrakurikuler": 32,
+     "kokurikuler": 32,
+     "total": 64
+    },
+    {
+     "subject": "matematika",
+     "group": "kejuruan",
+     "intrakurikuler": 48,
+     "kokurikuler": 0,
+     "total": 48
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "kejuruan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "konsentrasi_keahlian",
+     "group": "kejuruan",
+     "intrakurikuler": 352,
+     "kokurikuler": 0,
+     "total": 352
+    },
+    {
+     "subject": "kik",
+     "group": "kejuruan",
+     "intrakurikuler": 80,
+     "kokurikuler": 0,
+     "total": 80
+    },
+    {
+     "subject": "pkl",
+     "group": "kejuruan",
+     "intrakurikuler": 736,
+     "kokurikuler": 0,
+     "total": 736
+    },
+    {
+     "subject": "mapel_pilihan_smk",
+     "group": "kejuruan",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": [
+      64,
+      192
+     ],
+     "kokurikuler": 0,
+     "total": [
+      64,
+      192
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "label": "Jumlah JP Mata Pelajaran Umum",
+     "sum": [
+      "umum"
+     ],
+     "jp": [
+      384,
+      32,
+      416
+     ]
+    },
+    {
+     "label": "Jumlah JP Mata Pelajaran Kejuruan",
+     "sum": [
+      "kejuruan"
+     ],
+     "jp": [
+      1344,
+      0,
+      1344
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan",
+     "sum": [
+      "umum",
+      "kejuruan"
+     ],
+     "jp": [
+      1728,
+      32,
+      1760
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Umum + Mata Pelajaran Kejuruan + Muatan Lokal",
+     "sum": [
+      "umum",
+      "kejuruan",
+      "muatan_lokal"
+     ],
+     "jp": [
+      [
+       1792,
+       1920
+      ],
+      32,
+      [
+       1824,
+       1952
+      ]
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Nama mata pelajaran sesuai dengan nama Konsentrasi Keahlian.",
+    "b": "Mata Pelajaran Praktik Kerja Lapangan (PKL) dilaksanakan sekurang-kurangnya 1 semester atau 16 (enam belas) minggu efektif.",
+    "c": "Nama mata pelajaran merupakan mata pelajaran yang dipilih oleh Peserta Didik.",
+    "d": "Paling sedikit 64 JP per tahun dan paling banyak 192."
+   },
+   "note": "The heading prints '1 tahun = 36 minggu', but the allocations follow 32 weeks like the other grade XII tables (as printed).",
+   "id": "KMA-T14",
+   "source": "KMA",
+   "phase": [
+    "F"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 14 (p. 44–45)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 15,
+   "levels": [
+    "MILB"
+   ],
+   "grades": [
+    1
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 30,
+   "pages": [
+    47
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 252,
+     "kokurikuler": 36,
+     "total": 288
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 0,
+     "total": 216
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1080,
+      108,
+      1188
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1152,
+      108,
+      1260
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "note": "MILB tables print all five Program Kebutuhan Khusus options as 'Pengembangan orientasi, mobilitas, sosial dan komunikasi (Penyandang disabilitas netra/rungu/intelektual/fisik/mental)' (as printed); MTsLB and MALB print the same five options as Permendikdasmen 13/2025.",
+   "id": "KMA-T15",
+   "source": "KMA",
+   "phase": [
+    "A"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 15 (p. 47)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 16,
+   "levels": [
+    "MILB"
+   ],
+   "grades": [
+    2
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 30,
+   "pages": [
+    48
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 36,
+     "total": 144
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 252,
+     "kokurikuler": 36,
+     "total": 288
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 0,
+     "total": 216
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1116,
+      108,
+      1224
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1188,
+      108,
+      1296
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "note": "MILB tables print all five Program Kebutuhan Khusus options as 'Pengembangan orientasi, mobilitas, sosial dan komunikasi (Penyandang disabilitas netra/rungu/intelektual/fisik/mental)' (as printed); MTsLB and MALB print the same five options as Permendikdasmen 13/2025.",
+   "id": "KMA-T16",
+   "source": "KMA",
+   "phase": [
+    "A"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 16 (p. 48)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 17,
+   "levels": [
+    "MILB"
+   ],
+   "grades": [
+    3,
+    4
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 30,
+   "pages": [
+    49
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 360,
+     "kokurikuler": 36,
+     "total": 396
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 216,
+     "kokurikuler": 0,
+     "total": 216
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1368,
+      108,
+      1476
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1440,
+      108,
+      1548
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "note": "MILB tables print all five Program Kebutuhan Khusus options as 'Pengembangan orientasi, mobilitas, sosial dan komunikasi (Penyandang disabilitas netra/rungu/intelektual/fisik/mental)' (as printed); MTsLB and MALB print the same five options as Permendikdasmen 13/2025.",
+   "id": "KMA-T17",
+   "source": "KMA",
+   "phase": [
+    "B"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 17 (p. 49)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 18,
+   "levels": [
+    "MILB"
+   ],
+   "grades": [
+    5
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 30,
+   "pages": [
+    50,
+    51
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 36,
+     "total": 108
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 360,
+     "kokurikuler": 36,
+     "total": 396
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 144,
+     "kokurikuler": 0,
+     "total": 144
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1368,
+      108,
+      1476
+     ],
+     "unresolved": true
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1440,
+      108,
+      1548
+     ],
+     "unresolved": true
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "note": "MILB tables print all five Program Kebutuhan Khusus options as 'Pengembangan orientasi, mobilitas, sosial dan komunikasi (Penyandang disabilitas netra/rungu/intelektual/fisik/mental)' (as printed); MTsLB and MALB print the same five options as Permendikdasmen 13/2025.",
+   "id": "KMA-T18",
+   "source": "KMA",
+   "phase": [
+    "C"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 18 (p. 50–51)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 19,
+   "levels": [
+    "MILB"
+   ],
+   "grades": [
+    6
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 33,
+   "pages": [
+    51,
+    52
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 32,
+     "total": 96
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 32,
+     "total": 128
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 0,
+     "total": 96
+    },
+    {
+     "subject": "ipas",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 320,
+     "kokurikuler": 32,
+     "total": 352
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 128,
+     "kokurikuler": 0,
+     "total": 128
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1216,
+      96,
+      1312
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Pilihan + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1280,
+      96,
+      1376
+     ],
+     "note": "Labelled with 'Pilihan'; the table has no elective."
+    }
+   ],
+   "footnotes": {
+    "a": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "b": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "note": "MILB tables print all five Program Kebutuhan Khusus options as 'Pengembangan orientasi, mobilitas, sosial dan komunikasi (Penyandang disabilitas netra/rungu/intelektual/fisik/mental)' (as printed); MTsLB and MALB print the same five options as Permendikdasmen 13/2025. The heading prints '1 JP = 33 menit' (every other MILB table: 30 minutes); stored as printed.",
+   "id": "KMA-T19",
+   "source": "KMA",
+   "phase": [
+    "C"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 19 (p. 51–52)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 20,
+   "levels": [
+    "MTsLB"
+   ],
+   "grades": [
+    7
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    52,
+    54
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 468,
+     "kokurikuler": 36,
+     "total": 504
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1278,
+      270,
+      1548
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1350,
+      270,
+      1620
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Pembelajaran tidak penuh 36 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 27 minggu.",
+    "b": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "c": "Peserta Didik memilih minimal 2 (dua) keterampilan.",
+    "d": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "id": "KMA-T20",
+   "source": "KMA",
+   "phase": [
+    "D"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 20 (p. 52–54)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 21,
+   "levels": [
+    "MTsLB"
+   ],
+   "grades": [
+    8
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 35,
+   "pages": [
+    54,
+    56
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 468,
+     "kokurikuler": 36,
+     "total": 504
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 108,
+     "kokurikuler": 0,
+     "total": 108
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1278,
+      270,
+      1548
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1350,
+      270,
+      1620
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Pembelajaran tidak penuh 36 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 27 minggu.",
+    "b": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "c": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "d": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "id": "KMA-T21",
+   "source": "KMA",
+   "phase": [
+    "D"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 21 (p. 54–56)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 22,
+   "levels": [
+    "MTsLB"
+   ],
+   "grades": [
+    9
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 35,
+   "pages": [
+    56,
+    58
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 416,
+     "kokurikuler": 32,
+     "total": 448,
+     "printed_total": 504
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 96,
+     "kokurikuler": 0,
+     "total": 96,
+     "printed_total": 108
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1136,
+      240,
+      1376
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1200,
+      240,
+      1440
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Pembelajaran tidak penuh 32 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 24 minggu.",
+    "b": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "c": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "d": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "id": "KMA-T22",
+   "source": "KMA",
+   "phase": [
+    "D"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 22 (p. 56–58)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 23,
+   "levels": [
+    "MALB"
+   ],
+   "grades": [
+    10
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 40,
+   "pages": [
+    58,
+    60
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 648,
+     "kokurikuler": 36,
+     "total": 684
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1422,
+      270,
+      1692
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1494,
+      270,
+      1764
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Pembelajaran tidak penuh 32 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 24 minggu.",
+    "b": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "c": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "d": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "note": "Footnote a prints 32/24 weeks although the table assumes 36 weeks (as printed).",
+   "id": "KMA-T23",
+   "source": "KMA",
+   "phase": [
+    "E"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 23 (p. 58–60)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 24,
+   "levels": [
+    "MALB"
+   ],
+   "grades": [
+    11
+   ],
+   "weeks_per_year": 36,
+   "jp_minutes": 40,
+   "pages": [
+    60,
+    61
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 54,
+     "kokurikuler": 18,
+     "total": 72
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 720,
+     "kokurikuler": 36,
+     "total": 756
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 72,
+     "kokurikuler": 0,
+     "total": 72
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1494,
+      270,
+      1764
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1566,
+      270,
+      1836
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Pembelajaran tidak penuh 32 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 24 minggu.",
+    "b": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "c": "Peserta Didik memilih 1 (satu) keterampilan.",
+    "d": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "note": "Footnote a prints 32/24 weeks although the table assumes 36 weeks (as printed). The decree numbers both the grade XI and the grade XII MALB table 'Tabel 24'.",
+   "id": "KMA-T24a",
+   "source": "KMA",
+   "phase": [
+    "F"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 24 (p. 60–61)",
+   "unit": "JP per tahun"
+  },
+  {
+   "table": 24,
+   "levels": [
+    "MALB"
+   ],
+   "grades": [
+    12
+   ],
+   "weeks_per_year": 32,
+   "jp_minutes": 40,
+   "pages": [
+    62,
+    63
+   ],
+   "rows": [
+    {
+     "subject": "quran_hadis",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "akidah_akhlak",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "fikih",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ski",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_arab",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "pendidikan_pancasila",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_indonesia",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "matematika",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ipa",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "ips",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "bahasa_inggris",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "pjok",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "seni_budaya",
+     "group": "wajib",
+     "intrakurikuler": 48,
+     "kokurikuler": 16,
+     "total": 64
+    },
+    {
+     "subject": "kelompok_keterampilan",
+     "group": "wajib",
+     "intrakurikuler": 640,
+     "kokurikuler": 32,
+     "total": 672
+    },
+    {
+     "subject": "program_kebutuhan_khusus",
+     "group": "wajib",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64,
+     "printed_total": 72
+    },
+    {
+     "subject": "muatan_lokal",
+     "group": "muatan_lokal",
+     "intrakurikuler": 64,
+     "kokurikuler": 0,
+     "total": 64
+    }
+   ],
+   "totals": [
+    {
+     "label": "Total JP Mata Pelajaran Wajib",
+     "sum": [
+      "wajib"
+     ],
+     "jp": [
+      1328,
+      240,
+      1568
+     ]
+    },
+    {
+     "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+     "sum": [
+      "wajib",
+      "muatan_lokal"
+     ],
+     "jp": [
+      1392,
+      240,
+      1632
+     ]
+    }
+   ],
+   "footnotes": {
+    "a": "Pembelajaran tidak penuh 32 minggu untuk memenuhi alokasi Kokurikuler, Intrakurikuler dialokasikan 24 minggu.",
+    "b": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni.",
+    "c": "Peserta Didik memilih 1(satu) keterampilan.",
+    "d": "Dipilih sesuai jenis hambatan Peserta Didik."
+   },
+   "note": "The decree numbers both the grade XI and the grade XII MALB table 'Tabel 24'.",
+   "id": "KMA-T24b",
+   "source": "KMA",
+   "phase": [
+    "F"
+   ],
+   "ref": "KMA 1503/2025, Lampiran II BAB III, Tabel 24 (p. 62–63)",
+   "unit": "JP per tahun"
+  }
+ ],
+ "kesetaraan": {
+  "unit": "SKK",
+  "rule": "1 SKK = 1 jam tatap muka, or 2 jam tutorial, or 3 jam mandiri, or a proportional mix; 1 jam = 35 minutes (Paket A), 40 (Paket B), 45 (Paket C); muatan lokal at most 2 SKK per phase (PDF p. 66–67).",
+  "programmes": [
+   {
+    "programme": "Paket A",
+    "levels": [
+     "Paket A"
+    ],
+    "table": 27,
+    "pages": [
+     66,
+     67
+    ],
+    "jp_minutes": 35,
+    "phases": {
+     "A": [
+      1,
+      2
+     ],
+     "B": [
+      3,
+      4
+     ],
+     "C": [
+      5,
+      6
+     ]
+    },
+    "wajib": [
+     "pendidikan_agama",
+     "pendidikan_pancasila",
+     "bahasa_indonesia",
+     "matematika",
+     "pjok",
+     "seni_budaya",
+     "ipas",
+     "bahasa_inggris"
+    ],
+    "not_in_phase": {
+     "A": [
+      "ipas",
+      "bahasa_inggris"
+     ]
+    },
+    "skk": {
+     "wajib": {
+      "A": 48,
+      "B": 62,
+      "C": 62,
+      "total": 172
+     },
+     "pemberdayaan_keterampilan": {
+      "A": 14,
+      "B": 14,
+      "C": 14,
+      "total": 42
+     },
+     "muatan_lokal": {
+      "A": 2,
+      "B": 2,
+      "C": 2,
+      "total": 6
+     }
+    },
+    "totals": [
+     {
+      "label": "Total SKK Mata Pelajaran Wajib + Muatan Pemberdayaan dan Keterampilan",
+      "sum": [
+       "wajib",
+       "pemberdayaan_keterampilan"
+      ],
+      "skk": {
+       "A": 62,
+       "B": 76,
+       "C": 76,
+       "total": 214
+      }
+     },
+     {
+      "label": "Total SKK Kelompok Mata Pelajaran Wajib + Muatan Pemberdayaan dan Keterampilan + Muatan Lokal",
+      "sum": [
+       "wajib",
+       "pemberdayaan_keterampilan",
+       "muatan_lokal"
+      ],
+      "skk": {
+       "A": 64,
+       "B": 78,
+       "C": 78,
+       "total": 220
+      }
+     }
+    ]
+   },
+   {
+    "programme": "Paket B",
+    "levels": [
+     "Paket B"
+    ],
+    "table": 28,
+    "pages": [
+     68
+    ],
+    "jp_minutes": 40,
+    "phases": {
+     "D": [
+      7,
+      8,
+      9
+     ]
+    },
+    "wajib": [
+     "pendidikan_agama",
+     "pendidikan_pancasila",
+     "bahasa_indonesia",
+     "matematika",
+     "ipa",
+     "ips",
+     "bahasa_inggris",
+     "pjok",
+     "seni_budaya"
+    ],
+    "skk": {
+     "wajib": {
+      "D": 84,
+      "total": 84
+     },
+     "pemberdayaan_keterampilan": {
+      "D": 29,
+      "total": 29
+     },
+     "muatan_lokal": {
+      "D": 2,
+      "total": 2
+     }
+    },
+    "totals": [
+     {
+      "label": "Total SKK Mata Pelajaran dan/atau Muatan Wajib + Muatan Pemberdayaan dan Keterampilan",
+      "sum": [
+       "wajib",
+       "pemberdayaan_keterampilan"
+      ],
+      "skk": {
+       "D": 113,
+       "total": 113
+      }
+     },
+     {
+      "label": "Total SKK Mata Pelajaran dan/atau Muatan Wajib + Muatan Pemberdayaan dan Keterampilan + Muatan Lokal",
+      "sum": [
+       "wajib",
+       "pemberdayaan_keterampilan",
+       "muatan_lokal"
+      ],
+      "skk": {
+       "D": 115,
+       "total": 115
+      }
+     }
+    ]
+   },
+   {
+    "programme": "Paket C",
+    "levels": [
+     "Paket C"
+    ],
+    "table": 29,
+    "pages": [
+     69,
+     70
+    ],
+    "jp_minutes": 45,
+    "phases": {
+     "E": [
+      10
+     ],
+     "F": [
+      11,
+      12
+     ]
+    },
+    "wajib": [
+     "pendidikan_agama",
+     "pendidikan_pancasila",
+     "bahasa_indonesia",
+     "matematika",
+     "bahasa_inggris",
+     "ipa",
+     "ips",
+     "sejarah",
+     "pjok",
+     "seni_budaya"
+    ],
+    "only_in_phase": {
+     "ipa": "E",
+     "ips": "E",
+     "sejarah": "F"
+    },
+    "components": {
+     "ipa": [
+      "Fisika",
+      "Biologi",
+      "Kimia"
+     ],
+     "ips": [
+      "Sejarah",
+      "Ekonomi",
+      "Geografi",
+      "Sosiologi"
+     ]
+    },
+    "pilihan": [
+     "antropologi",
+     "bahasa_arab",
+     "bahasa_indonesia_lanjut",
+     "bahasa_inggris_lanjut",
+     "bahasa_jepang",
+     "bahasa_jerman",
+     "bahasa_korea",
+     "bahasa_mandarin",
+     "bahasa_prancis",
+     "biologi",
+     "ekonomi",
+     "fisika",
+     "geografi",
+     "informatika",
+     "kimia",
+     "matematika_lanjut",
+     "sejarah_lanjut",
+     "sosiologi"
+    ],
+    "skk": {
+     "wajib": {
+      "E": 32,
+      "F": 32,
+      "total": 64
+     },
+     "pilihan": {
+      "E": 0,
+      "F": 40,
+      "total": 40
+     },
+     "pemberdayaan_keterampilan": {
+      "E": 12,
+      "F": 12,
+      "total": 24
+     },
+     "muatan_lokal": {
+      "E": 2,
+      "F": 2,
+      "total": 4
+     }
+    },
+    "totals": [
+     {
+      "label": "Total SKK Mata Pelajaran Wajib + Mata Pelajaran Pilihan",
+      "sum": [
+       "wajib",
+       "pilihan"
+      ],
+      "skk": {
+       "E": 32,
+       "F": 72,
+       "total": 104
+      }
+     },
+     {
+      "label": "Total SKK Kelompok Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Pemberdayaan dan Keterampilan",
+      "sum": [
+       "wajib",
+       "pilihan",
+       "pemberdayaan_keterampilan"
+      ],
+      "skk": {
+       "E": 44,
+       "F": 84,
+       "total": 128
+      }
+     },
+     {
+      "label": "Total SKK Kelompok Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Pemberdayaan dan Keterampilan + Muatan Lokal",
+      "sum": [
+       "wajib",
+       "pilihan",
+       "pemberdayaan_keterampilan",
+       "muatan_lokal"
+      ],
+      "skk": {
+       "E": 46,
+       "F": 86,
+       "total": 132
+      }
+     }
+    ],
+    "note": "Elective rules follow SMA/MA (explanation 4, PDF p. 71)."
+   }
+  ]
+ },
+ "paud": {
+  "levels": [
+   "TK",
+   "RA",
+   "TKLB",
+   "BA",
+   "KB",
+   "TPA",
+   "SPS"
+  ],
+  "levels_note": "taman kanak-kanak, raudhatul athfal, taman kanak-kanak luar biasa, bustanul athfal, kelompok bermain, taman penitipan anak, atau bentuk lain yang sederajat (as printed)",
+  "phase": "Fondasi",
+  "elements": [
+   "nilai agama dan budi pekerti",
+   "jati diri",
+   "dasar-dasar literasi, matematika, sains, teknologi, rekayasa, dan seni"
+  ],
+  "minutes_per_week_min": {
+   "4-6": 900,
+   "3-4": 360
+  },
+  "tklb": "Time allocation is flexible; Program Kebutuhan Khusus from Fase Fondasi based on assessment.",
+  "ref": "Permendikdasmen 13/2025, Lampiran II A (PDF p. 14–15)"
+ },
+ "ra": {
+  "levels": [
+   "RA"
+  ],
+  "ref": "KMA 1503/2025, Lampiran II BAB III A (p. 27)",
+  "minutes_per_week_min": {
+   "4-6": 900
+  },
+  "note": "Structure set by the head of the RA; intrakurikuler by meaningful play towards CP Fase Fondasi and Panca Cinta; kokurikuler towards the graduate profile and Panca Cinta (STPPA); RA luar biasa: early intervention, Program Kebutuhan Khusus from Fase Fondasi."
+ },
+ "rules": [
+  {
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK"
+   ],
+   "text": "Muatan Lokal covers local potential (seni budaya, prakarya, PJOK, bahasa, teknologi) and may be integrated into other subjects, into kokurikuler, or taught as a separate subject.",
+   "ref": "Permendikdasmen 13/2025, Lampiran II B–E explanations (PDF p. 21, 25, 33, 40)",
+   "source": "P13"
+  },
+  {
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK"
+   ],
+   "text": "Inclusive schools add the subject Program Kebutuhan Khusus according to the students' needs.",
+   "ref": "Permendikdasmen 13/2025, Lampiran II B–E explanations",
+   "source": "P13"
+  },
+  {
+   "levels": [
+    "SD",
+    "MI",
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK"
+   ],
+   "text": "Koding dan Kecerdasan Artifisial is an elective the school may offer according to its resources; schools start offering it gradually from 2025/2026 (Permendikdasmen 13/2025 Pasal 32A).",
+   "ref": "Permendikdasmen 13/2025, Lampiran II explanations; Permendikdasmen 13/2025 Pasal 32A (PDF p. 5)",
+   "source": "P13"
+  },
+  {
+   "levels": [
+    "SD",
+    "MI"
+   ],
+   "text": "Until 2026/2027 an elective that schools offer when ready; compulsory from 2027/2028 (Permendikbudristek 12/2024 Pasal 33 huruf a, not amended by Permendikdasmen 13/2025).",
+   "ref": "Permendikbudristek 12/2024 Pasal 33 (PDF p. 11)",
+   "source": "P13"
+  },
+  {
+   "levels": [
+    "SMP",
+    "MTs",
+    "SMA",
+    "MA"
+   ],
+   "text": "Special sport or arts classes or schools may use the kokurikuler time to strengthen sport or arts.",
+   "ref": "Permendikdasmen 13/2025, Lampiran II C–D explanations (PDF p. 25, 33)",
+   "source": "P13"
+  },
+  {
+   "levels": [
+    "SMK",
+    "MAK"
+   ],
+   "text": "PKL is taught in blocks of 46 JP per week; Matematika, Bahasa Inggris, Informatika and Koding dan Kecerdasan Artifisial follow the context of the programme.",
+   "ref": "Permendikdasmen 13/2025, Lampiran II E explanations (PDF p. 39)",
+   "source": "P13"
+  },
+  {
+   "levels": [
+    "SDLB",
+    "MILB",
+    "SMPLB",
+    "MTsLB",
+    "SMALB",
+    "MALB"
+   ],
+   "text": "Bahasa Inggris in SMPLB and SMALB is compulsory for students without intellectual disability and optional for students with intellectual disability; time allocation is flexible; the phase follows a diagnostic assessment; SMALB grade XI does PKL for the skill subject for at least one month.",
+   "ref": "Permendikdasmen 13/2025, Lampiran II H explanations (PDF p. 64–65)",
+   "source": "P13"
+  },
+  {
+   "levels": [
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "text": "The structure is set by the head of the madrasah with at least these allocations; the madrasah may add at most 6 JP per week based on its analysis of learning outcomes and available time.",
+   "ref": "KMA 1503/2025, Lampiran II BAB III (p. 28, 32, 36, 42, 46)",
+   "source": "KMA"
+  },
+  {
+   "levels": [
+    "MI",
+    "MTs",
+    "MA",
+    "MAK",
+    "MILB",
+    "MTsLB",
+    "MALB"
+   ],
+   "text": "Muatan lokal follows the madrasah's character and local potential: keagamaan, seni budaya, prakarya, PJOK, bahasa, teknologi and/or riset (LB: without keagamaan and riset).",
+   "ref": "KMA 1503/2025, Lampiran II BAB III (p. 31, 35, 41, 46, 64)",
+   "source": "KMA"
+  },
+  {
+   "levels": [
+    "MTs",
+    "MA"
+   ],
+   "text": "A madrasah with a special programme may use the muatan lokal (MTs) or penguatan program (MA) time for religious, sport or arts strengthening; MA: grades X–XI 72–216 JP, grade XII 64–192 JP.",
+   "ref": "KMA 1503/2025, Lampiran II BAB III (p. 36, 42)",
+   "source": "KMA"
+  },
+  {
+   "levels": [
+    "MI",
+    "MTs",
+    "MA",
+    "MAK"
+   ],
+   "text": "Kokurikuler team: subject teachers whose kokurikuler time is moved may be facilitators (1 JP per class); the coordinator's load equals 2 teaching hours per class per year, at most 3 classes.",
+   "ref": "KMA 1503/2025, Lampiran II BAB III (p. 32, 36, 42, 46)",
+   "source": "KMA"
+  },
+  {
+   "levels": [
+    "MI"
+   ],
+   "text": "Until 2026/2027 an elective that schools offer when ready; compulsory from 2027/2028 (Permendikbudristek 12/2024 Pasal 33 huruf a, not amended by Permendikdasmen 13/2025).",
+   "ref": "Permendikbudristek 12/2024 Pasal 33 (PDF p. 11)",
+   "source": "KMA"
+  }
+ ],
+ "errata": [
+  {
+   "source": "P13",
+   "table": 20,
+   "where": [
+    "pendidikan_pancasila",
+    "ipas",
+    "pjok"
+   ],
+   "pages": [
+    47,
+    48
+   ],
+   "printed": {
+    "intrakurikuler": 54
+   },
+   "stored": {
+    "intrakurikuler": 64
+   },
+   "reason": "Each row prints intrakurikuler 54, kokurikuler '-' and total 64; only 64 makes 'Total JP Mata Pelajaran Wajib' (992 intrakurikuler, 1.216) add up."
+  },
+  {
+   "source": "KMA",
+   "table": 8,
+   "where": [
+    "akidah_akhlak"
+   ],
+   "pages": [
+    34
+   ],
+   "printed": {
+    "total": 64
+   },
+   "stored": {
+    "total": 96
+   },
+   "reason": "Prints 64 + 32 = 64; the table total 1.344 needs 96."
+  },
+  {
+   "source": "KMA",
+   "table": 8,
+   "where": [
+    "Total JP Mata Pelajaran Wajib + Muatan Lokal"
+   ],
+   "pages": [
+    35
+   ],
+   "printed": {
+    "total": [
+     1408,
+     1538
+    ]
+   },
+   "stored": {
+    "total": [
+     1408,
+     1536
+    ]
+   },
+   "reason": "1.344 + 192 = 1.536."
+  },
+  {
+   "source": "KMA",
+   "table": 10,
+   "where": [
+    "Total JP Mata Pelajaran Umum + pilihan"
+   ],
+   "pages": [
+    39
+   ],
+   "printed": {
+    "intrakurikuler": [
+     1692,
+     1871
+    ]
+   },
+   "stored": {
+    "intrakurikuler": [
+     1692,
+     1872
+    ]
+   },
+   "reason": "972 + 900 = 1.872; the total column (1.980) agrees."
+  },
+  {
+   "source": "KMA",
+   "table": 18,
+   "where": [
+    "Total JP Mata Pelajaran Wajib",
+    "Total JP Mata Pelajaran Wajib + Muatan Lokal"
+   ],
+   "pages": [
+    50
+   ],
+   "unresolved": true,
+   "printed": {
+    "kokurikuler": 108,
+    "total": [
+     1476,
+     1548
+    ]
+   },
+   "rows_give": {
+    "kokurikuler": 72,
+    "total": [
+     1440,
+     1512
+    ]
+   },
+   "reason": "The rows print kokurikuler only for Akidah Akhlak (36) and Seni dan Budaya (36); the totals count 108. The table does not show which row lacks 36 JP; rows and totals are stored as printed."
+  },
+  {
+   "source": "KMA",
+   "table": 22,
+   "where": [
+    "kelompok_keterampilan",
+    "program_kebutuhan_khusus"
+   ],
+   "pages": [
+    56,
+    57
+   ],
+   "printed": {
+    "total": [
+     504,
+     108
+    ]
+   },
+   "stored": {
+    "total": [
+     448,
+     96
+    ]
+   },
+   "reason": "416 + 32 = 448 and 96 + 0 = 96; the table total 1.376 (1.136 + 240) agrees with the stored values."
+  },
+  {
+   "source": "KMA",
+   "table": "24b",
+   "where": [
+    "program_kebutuhan_khusus"
+   ],
+   "pages": [
+    63
+   ],
+   "printed": {
+    "total": 72
+   },
+   "stored": {
+    "total": 64
+   },
+   "reason": "64 + 0 = 64; the table total 1.568 (1.328 + 240) agrees."
+  }
+ ],
+ "notes": [
+  "Pick the table by `levels` (SD, MI, SMP, MTs, SMA, MA, SMK, MAK, SDLB, MILB, SMPLB, MTsLB, SMALB, MALB) and grade. Madrasah use the KMA tables (source KMA); MI/MTs/MA/MAK also appear in the Permendikdasmen tables, which the KMA adapts for madrasah.",
+  "A row's `group`: wajib, pilihan, muatan_lokal; SMK/MAK: umum, kejuruan, pilihan, muatan_lokal. Printed '-' is 0; ranges are [min, max]. Elective blocks (pilihan_sma, pilihan_ma) list `options`, `choose` and the JP per elective.",
+  "Weekly JP = JP per tahun / weeks_per_year; the decrees print yearly figures only. Kokurikuler is an annual allocation, so a weekly kokurikuler figure is only an equivalent.",
+  "`errata` lists printed cells that contradict the table's own totals; rows keep the printed value in `printed_*` and totals in `printed_jp`."
+ ]
+}
