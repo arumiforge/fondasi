@@ -42,8 +42,8 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    300.2.2-2430/2025, but `db/wilayah.sql` (commit c2eff08) still says 2138/2025, last edit 2026-02-13, and converts to
    exactly `data/wilayah` 2026-02-13 (no code added, removed or renamed); only `db/wilayah_pulau.sql` (islands) follows
    2430. `wilayah_kodepos` is still at commit ba84971. Refresh both when the header of `db/wilayah.sql` names 2430, or
-   from the official 2430/2025 attachment if the user fetches it (jdih.kemendagri.go.id is not reachable from the
-   cloud).
+   from the official 2430/2025 attachment: **brief R-14** (user decision 2026-11-26) waits for the user's zip;
+   jdih.kemendagri.go.id is not reachable from the cloud.
 6. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
    via `fondasi-sync`.
 
