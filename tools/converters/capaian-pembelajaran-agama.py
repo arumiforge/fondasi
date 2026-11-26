@@ -96,7 +96,9 @@ def read_section(path):
                 prev, more = cells(t), cells("| " + line[3:])
                 if len(prev) != len(more):
                     sys.exit(f"{path}:{n}: continued row has {len(more)} cells, row has {len(prev)}")
-                out[-1] = (p, k, "| " + " | ".join(" ".join(x for x in (a, b) if x) for a, b in zip(prev, more)) + " |")
+                # a cell continued with "<br>" starts a new line in the cell (two statements in one cell)
+                out[-1] = (p, k, "| " + " | ".join(re.sub(r" *\n *", "<br>", " ".join(x for x in (a, b) if x))
+                                                     for a, b in zip(prev, more)) + " |")
             elif line.startswith("|"):
                 out.append((page, "row", line))
             elif line.startswith("#"):
@@ -261,7 +263,7 @@ def check_ocr(path, ocr_dir):
         f = os.path.join(ocr_dir, f"p-{page:02d}.txt")
         if not os.path.exists(f):
             continue
-        a = words(" ".join(texts))
+        a = words(" ".join(texts).replace("<br>", " "))
         b = words(open(f, encoding="utf-8").read())
         sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
         for op, i1, i2, j1, j2 in sm.get_opcodes():
