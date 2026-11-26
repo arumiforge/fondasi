@@ -25,18 +25,14 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/amazing-knuth-svvihr` | session data-round 2 | R-01 part 2 `sekolah` PAUD + PKBM/SKB, F-029 | crawl running in 20 workers (F-029) |
+| `nty/amazing-knuth-svvihr` | session data-round 2 | R-01 part 2 `sekolah` PAUD + PKBM/SKB, F-029 | PR 2 open — merge when CI is green |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
-1. **R-01 part 2 `sekolah` PAUD + PKBM/SKB** (second PR; part 1 Dikdas+Dikmen 2026-11-26 is done). The crawler
-   runs `fetch --groups=paud,dikmas <raw> <province codes>` in up to twenty workers with separate regency lists (F-029;
-   resumable, 1 request/s each, ≈ 500 pages/min together; Dikmas districts without PKBM/SKB are skipped). **Cloud containers are suspended a few minutes after the session goes idle** and the detached
-   crawl dies with them: keep a Monitor on the crawl log (30 min, re-arm on expiry) and relaunch the crawl after
-   every restart. Then `build --groups=dikdas,dikmen,paud,dikmas <raw> data/sekolah data/wilayah/wilayah.json.gz
-   <crawl date>` (F-028 keeps only PKBM and SKB from Dikmas), compare with part 1, check the match report and
-   sample the spelling-variant matches, update manifest, catalogue, R-01 status. The raw pages live only in the
-   container's scratchpad; a new container means a new crawl.
+1. **R-01 is done** (`sekolah` 2026-11-26, all levels). To refresh it later: `fetch --groups=dikdas,dikmen,paud,dikmas
+   <raw> <regency codes>` in up to twenty workers (F-029; split the 514 regencies by size, ≈ 500 pages/min, ≈ 1 h for
+   all 31,000 pages), then `build --groups=dikdas,dikmen,paud,dikmas`. Cloud containers are suspended a few minutes
+   after the session goes idle: keep a Monitor on the worker logs and relaunch after a restart.
 2. **R-06** waits for the user's zip from brief R-06 (Kanwil site times out from the cloud).
 3. **R-10b** waits for the user's zip (PASI U14/U16, O2SN, POPDA/POPNAS); then extend `atletik-*`. **R-11** records
    need the user's list of championships.
@@ -54,6 +50,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #9 merged (Dikdas+Dikmen); F-029 (parallel crawl, 20 workers on referensi.data); PAUD+PKBM/SKB crawled in 25 min, `sekolah` 539,580 units (98.0 % with village code), PR 2 opened. Next: R-06/R-10b zips from the user, `wilayah` refresh.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #8 was already merged; R-01 crawler extended (PAUD, Dikmas, page checks), F-028 (forms kept, PKBM/SKB only, no schools abroad), full Dikdas+Dikmen crawl (15,633 pages), `sekolah` 2026-11-26 built (283,421 schools, 97.8 % with village code), PR 1 opened. Next: PAUD+PKBM/SKB (part 2).
 - 2026-11-26 · session data-round · `data/atletik` — PRs #5, #6 (libur-nasional, kaldik-jateng check), #7 (kodepos) merged; R-06 and R-10b briefs; R-10 World Athletics sets (F-027); R-01 crawler written, crawl not finished. Next: R-01 crawl.
 - 2026-11-25 · session data-round · `data/libur-nasional` — PR #5 merged; R-01 interview (all provinces, replace SD/MI, madrasah from Kemendikdasmen with R-02 for NSM, add PAUD and PKBM/kesetaraan, sequential crawl in two PRs); R-04 built; R-06 moved to a browser brief (Kanwil site times out). Next: R-03 while the R-01 crawl runs.

@@ -96,7 +96,7 @@ def fetch(raw, provinces, groups=GROUPS):
             if "</html>" not in page:
                 raise RuntimeError(f"incomplete page: {url}")
             print(f"  warning: no list header ({marker}) in {url}; saved as is", file=sys.stderr)
-        tmp = path + ".tmp"
+        tmp = f"{path}.{os.getpid()}.tmp"  # one name per worker: workers may save the same province page
         with open(tmp, "w", encoding="utf-8") as f:
             f.write(page)
         os.replace(tmp, path)
@@ -414,7 +414,7 @@ def build(raw, out, wilayah_path, version, groups=GROUPS):
             "nama": "name as published",
             "bentuk_pendidikan": "form as published: SD, MI, SMP, MTs, SMA, MA, SMK, SLB, SPK …, PDF …, TK, KB, RA, …",
             "status_sekolah": "NEGERI | SWASTA",
-            "alamat": "street address as published",
+            "alamat": "street address as published (empty for a few units)",
             "desa": "village name as published",
             "kecamatan": "'Kec. …' as published",
             "kabupaten": "'Kab. …' / 'Kota …' as published",

@@ -18,6 +18,9 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
   Christian schools) replaces the SD/MI-only version 2026-11-18. New fields `alamat`, `kode_desa`, `kode_kecamatan`,
   `kode_kabupaten`, `kode_provinsi` (Kemendagri codes of `wilayah`, 97.8 % matched to the village, never invented) and
   `kode_kecamatan_dapodik`. 2,483 SD/MI of the old version are gone because the source marks them merged or closed.
+- `sekolah` 2026-11-26 (R-01 part 2, same crawl date): adds every active PAUD unit (TK, KB, RA, TPA, SPS, PAUDQ, SPK
+  TK/KB, Buddhist, Hindu and Christian PAUD) and PKBM and SKB: 539,580 units, 98.0 % with village code. The crawler
+  takes regency codes, skips Dikmas districts without PKBM or SKB and runs in parallel workers (F-029).
 
 ### Added
 - Data set `kodepos` 2025-06-30 (R-03): postal code of all 83,762 villages keyed by the `wilayah` codes, from
