@@ -146,7 +146,7 @@ def parse(path):
                 sys.exit(f"{path}: unexpected part heading '{text}'")
             continue
         if kind == "h3":
-            m = re.match(r"^(\d+)\. Fase ([A-F])(?:\s*\((.*)\))?$", text)
+            m = re.match(r"^(\d+)\. Fase ([A-F])(?:\s*\((.*)\))?\.?$", text)  # 2.3 prints "(…)."
             if not m:
                 sys.exit(f"{path}: bad phase heading '{text}'")
             ph = {"phase": m.group(2), "applies_to": m.group(3), "page": page, "intro": "", "outcomes": []}
