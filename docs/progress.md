@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/amazing-knuth-svvihr` | session data-round 2 | R-06 `kaldik-madrasah-jateng` (PR open, merge when CI is green); O2SN guides stored | handed over (session too long) |
+| `nty/eager-tesla-92hwl9` | session data-round 3 | R-10b O2SN part (PR 1); sinaubareng data audit, sources and plan (PR 2) | in progress |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -33,14 +33,12 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    <raw> <regency codes>` in up to twenty workers (F-029; split the 514 regencies by size, ≈ 500 pages/min, ≈ 1 h for
    all 31,000 pages), then `build --groups=dikdas,dikmen,paud,dikmas`. Cloud containers are suspended a few minutes
    after the session goes idle: keep a Monitor on the worker logs and relaunch after a restart.
-2. **R-06 done** (`kaldik-madrasah-jateng` 2026-06-29). If the PR of this session is still open: check CI and merge
-   (F-026). Still missing: the national guideline Keputusan Dirjen Pendis 4860/2026 (optional; the Kanwil decree
+2. **R-06 done** (`kaldik-madrasah-jateng` 2026-06-29, PR #15 merged). Still missing: the national guideline Keputusan Dirjen Pendis 4860/2026 (optional; the Kanwil decree
    follows it). The 4 SKB 2027 cuti bersama days not in the decree are listed in `skb_days_not_in_this_calendar`.
-3. **R-10b, O2SN part — next task**: the O2SN 2026 guides (SD, SMP, SMA) are in `sources/atletik/o2sn/` (text
-   PDFs, SHA-256 in SOURCE.txt). Read the athletics chapters (events per level, age limits and reference dates,
-   implements, heights, hurdles) and extend `atletik-nomor`, `atletik-kelompok-umur` (school groups) with refs to
-   the guide pages, like the World Athletics part (F-027). PASI U14/U16 and POPDA/POPNAS are still missing. **R-11** records
-   need the user's list of championships.
+3. **R-10b, O2SN part done** (atletik sets 2026-11-26): eligibility groups, events, implements, Kids' Athletics
+   courses, qualifying marks and scoring (all 17,595 rows of the linked tables checked). Still missing: PASI U14/U16
+   and POPDA/POPNAS (brief R-10b items 1 and 3); O2SN 2027 when Puspresnas publishes it. **R-11** records need the
+   user's list of championships.
 4. When the user uploads R-12 or R-02/R-07/R-08/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
 5. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
@@ -58,6 +56,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PR #15 found merged; R-10b O2SN part built (guides + the two scoring tables fetched from the guides' links, every row matches WA formulas; women's 60 m parameters derived). sinaubareng audited (user: mapel all levels, CP all subjects, TKA, coordinates later; repo to be made private by the user).
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-06 built from the uploaded Kanwil decree 1681/2026 (45 events, HK/HL/HE of all 12 months match); O2SN 2026 guides stored for R-10b. Next: merge the R-06 PR, then O2SN.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-14 brief written; the user uploaded Kepmendagri 2430/2025: it changes islands only, `wilayah` already matches; decree kept in `sources/wilayah/`. Next: R-06/R-10b zips, R-11 list.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — `wilayah`/`kodepos` refresh checked: upstream data unchanged (README ahead of `wilayah.sql`), nothing to rebuild. Next: R-06/R-10b zips, official 2430/2025 attachment if wanted.

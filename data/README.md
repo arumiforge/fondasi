@@ -19,9 +19,9 @@ environment cannot reach: [../docs/data-requests.md](../docs/data-requests.md).
 | `referensi-dapodik` | Religion, occupation, income, education, transport, residence, special needs, levels/grades — with official codes | — | planned (R-07) | Dapodik reference tables (browser) |
 | `mapel` | Kurikulum Merdeka subjects per level/phase | — | planned (R-08) | Kemendikdasmen regulation on curriculum structure (browser) |
 | `perguruan-tinggi` | Higher-education institutions: code, name, type, status, province | — | planned (R-09) | PDDikti (browser) |
-| `atletik-nomor` | 40 events: code, label, result unit, wind; hurdles, steeplechase, implements per category, combined events | 2026-03-20 | ready for WA; U14/U16 and school events pending (R-10b) | World Athletics rules (F-027) |
-| `atletik-kelompok-umur` | U18, U20, Senior, Master with reference-date rules | 2026-03-20 | partial: school/PASI groups pending (R-10b) | World Athletics rules; PASI, Puspresnas (browser) |
-| `atletik-hasil` | Result codes, rounding (time, distance, wind), ties, combined-events formula + parameters (checked) | 2026-03-20 | ready | World Athletics rules, scoring tables (F-027) |
+| `atletik-nomor` | 44 events: code, label, result unit, wind; hurdles, steeplechase, implements per category, combined events; O2SN 2026 per level (events, implements, trials, Kids' Athletics courses, qualifying marks) | 2026-11-26 | ready for WA and O2SN 2026; PASI U14/U16, POPDA/POPNAS pending (R-10b) | World Athletics rules; Puspresnas O2SN guides (F-027) |
+| `atletik-kelompok-umur` | U18, U20, Senior, Master with reference-date rules; O2SN 2026 SD/SMP/SMA (birth date limit, grades) | 2026-11-26 | partial: PASI U14/U16, POPDA/POPNAS pending (R-10b) | World Athletics rules; Puspresnas O2SN guides |
+| `atletik-hasil` | Result codes, rounding (time, distance, wind), ties, combined-events formula + parameters (checked); O2SN Trilomba/Pancalomba scoring (17,595 table rows checked) | 2026-11-26 | ready | World Athletics rules, scoring tables; O2SN scoring tables (F-027) |
 | `atletik-rekor` | National/regional/championship records per event and age group | — | planned (R-11) | PASI and championship organisers (manual) |
 
 SPMB's form lists (occupation, income) stay in SPMB until `referensi-dapodik` has verified codes.

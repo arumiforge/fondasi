@@ -514,6 +514,58 @@
     "M",
     "W"
    ]
+  },
+  {
+   "code": "Tri",
+   "label": "Trilomba",
+   "label_en": "Triathlon (school)",
+   "kind": "combined",
+   "group": "combined",
+   "result": "points",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "championship": "O2SN SMP"
+  },
+  {
+   "code": "PenO2SN",
+   "label": "Pancalomba (O2SN SMA/SMK)",
+   "label_en": "Pentathlon (school)",
+   "kind": "combined",
+   "group": "combined",
+   "result": "points",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "championship": "O2SN SMA"
+  },
+  {
+   "code": "KA_KANGA",
+   "label": "Gawang & Sprint (Kanga Escape)",
+   "label_en": "Kanga Escape",
+   "kind": "kids",
+   "group": "kids_athletics",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "team_size": 2
+  },
+  {
+   "code": "KA_F1",
+   "label": "Formula 1",
+   "label_en": "Formula 1",
+   "kind": "kids",
+   "group": "kids_athletics",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "team_size": 2
   }
  ],
  "hurdles": {
@@ -723,6 +775,195 @@
    "Without fully automatic timing, each athlete is timed by three timekeepers."
   ]
  },
+ "championships": {
+  "O2SN_2026": {
+   "name": "Olimpiade Olahraga Siswa Nasional (O2SN) 2026",
+   "organiser": "Pusat Prestasi Nasional (Puspresnas), Sekretariat Jenderal, Kementerian Pendidikan Dasar dan Menengah",
+   "rules_basis": "PASI rules adapted from World Athletics; the SD and SMA guides name WA edition 2026, the SMP guide edition 2025 (as printed)",
+   "levels": {
+    "SD": {
+     "age_group": "O2SN_SD",
+     "sport_label": "Kids' Athletics",
+     "events": {
+      "M": [
+       "KA_KANGA",
+       "KA_F1"
+      ],
+      "W": [
+       "KA_KANGA",
+       "KA_F1"
+      ]
+     },
+     "entries": "1 putra and 1 putri per contingent; each athlete takes part in both events",
+     "events_ref": "Pedoman O2SN SD/MI/Sederajat 2026, Lampiran A.1.c and A.2.a.6–7 (PDF p. 26)",
+     "teams_note": "A team has 2 athletes (PDF p. 27); the guide does not say whether a team is the contingent's putra and putri together.",
+     "surface": "synthetic track only, no earth or gravel (PDF p. 27)",
+     "ranking": "by time per event; place points from the number of teams down to 1 (38, 37, 36 … with 38 teams); highest total wins (PDF p. 27, 29)",
+     "ties": "equal totals for a position are a tie (\"hasil sama\", PDF p. 29)",
+     "footwear": "barefoot, shoes or spikes allowed (PDF p. 27)",
+     "events_detail": {
+      "KA_KANGA": {
+       "description": "Shuttle relay over hurdles out and flat sprint back; the first runner hands a relay ring to the second behind the flag; time from start until the second runner finishes",
+       "lanes_per_team": 2,
+       "distance_m": 40,
+       "hurdles": 4,
+       "hurdle_height_m": 0.5,
+       "hurdle_spacing_m": 6.0,
+       "start_to_first_hurdle_m": 11.0,
+       "last_hurdle_to_flag_m": 11.0,
+       "equipment": [
+        "1 stopwatch",
+        "1 event card",
+        "4 hurdles",
+        "2 flag posts",
+        "1 relay ring"
+       ],
+       "ref": "Pedoman O2SN SD/MI/Sederajat 2026, Lampiran A.2.d.1 (PDF p. 27–28)",
+       "figure_note": "The 11 m distances are read from the figure on PDF p. 28 (11 + 6 + 6 + 6 + 11 = 40 m); the text gives 40 m, 4 hurdles, 50 cm, 6 m apart."
+      },
+      "KA_F1": {
+       "description": "Relay round a course of about 80 m with sprint, hurdles and slalom; each runner starts with a forward or sideways roll on a mat; 1–2 teams per start",
+       "course_m": 80,
+       "hurdles": 9,
+       "hurdle_height_m": null,
+       "slalom_poles": 10,
+       "slalom_spacing_m": 1.0,
+       "mats": 3,
+       "cones": 30,
+       "ref": "Pedoman O2SN SD/MI/Sederajat 2026, Lampiran A.2.d.2 (PDF p. 28–29)",
+       "note": "Hurdle height is not stated for Formula 1."
+      }
+     }
+    },
+    "SMP": {
+     "age_group": "O2SN_SMP",
+     "sport_label": "Atletik",
+     "combined": "Tri",
+     "events": {
+      "M": [
+       "60m",
+       "LJ",
+       "SP"
+      ],
+      "W": [
+       "60m",
+       "LJ",
+       "SP"
+      ]
+     },
+     "entries": "1 putra and 1 putri per contingent; each athlete takes part in all three events",
+     "events_ref": "Panduan O2SN SMP/MTs/Sederajat 2026, Lampiran A.1.c and A.2.a.6–7 (PDF p. 28)",
+     "trials": {
+      "LJ": 3,
+      "SP": 3
+     },
+     "trials_ref": "Panduan O2SN SMP/MTs/Sederajat 2026, Lampiran A.2.d.2 (PDF p. 30)",
+     "implements_kg": {
+      "SP": {
+       "M": 4.0,
+       "W": 3.0
+      }
+     },
+     "implements_ref": "Panduan O2SN SMP/MTs/Sederajat 2026, Lampiran A.2.c.3 (PDF p. 29)",
+     "timing": "fully automatic timing/photo finish, backed up by digital hand stopwatches (PDF p. 29)",
+     "ranking": "highest total of the three events' points (Trilomba table); equal totals are a tie (PDF p. 31–32)",
+     "qualifying": {
+      "M": {
+       "60m": 8.51,
+       "LJ": 4.6,
+       "SP": 7.37
+      },
+      "W": {
+       "60m": 10.14,
+       "LJ": 3.68,
+       "SP": 5.91
+      },
+      "units": {
+       "60m": "s",
+       "LJ": "m",
+       "SP": "m"
+      },
+      "ref": "Panduan O2SN SMP/MTs/Sederajat 2026, Lampiran A.2.a.10 (PDF p. 29, table image)"
+     }
+    },
+    "SMA": {
+     "age_group": "O2SN_SMA",
+     "sport_label": "Atletik",
+     "combined": "PenO2SN",
+     "events": {
+      "M": [
+       "100m",
+       "LJ",
+       "SP",
+       "JT",
+       "400m"
+      ],
+      "W": [
+       "100m",
+       "LJ",
+       "SP",
+       "JT",
+       "400m"
+      ]
+     },
+     "events_order_note": "Listed in this order in the guide; the competition order is not stated.",
+     "entries": "1 putra and 1 putri per contingent; each athlete takes part in all five events",
+     "events_ref": "Panduan O2SN SMA/MA/SMK/MAK/Sederajat 2026, Lampiran A.1.c and A.2.a.6–7 (PDF p. 30)",
+     "trials": {
+      "LJ": 3,
+      "SP": 3,
+      "JT": 3
+     },
+     "trials_ref": "Panduan O2SN SMA/MA/SMK/MAK/Sederajat 2026, Lampiran A.4.b (PDF p. 32)",
+     "implements_kg": {
+      "SP": {
+       "M": 5.0,
+       "W": 3.0
+      },
+      "JT": {
+       "M": 0.7,
+       "W": 0.5
+      }
+     },
+     "implements_ref": "Panduan O2SN SMA/MA/SMK/MAK/Sederajat 2026, Lampiran A.3.c (PDF p. 32)",
+     "timing": "fully automatic timing/photo finish, backed up by digital hand stopwatches (PDF p. 32)",
+     "ranking": "highest total of the five events' points (Pancalomba table); equal totals are a tie (PDF p. 34)",
+     "qualifying": {
+      "M": {
+       "100m": 13.31,
+       "LJ": 4.59,
+       "SP": 7.77,
+       "JT": 26.75,
+       "400m": 64.86
+      },
+      "W": {
+       "100m": 17.34,
+       "LJ": 3.36,
+       "SP": 6.0,
+       "JT": 13.78,
+       "400m": 94.37
+      },
+      "units": {
+       "100m": "s",
+       "400m": "s",
+       "LJ": "m",
+       "SP": "m",
+       "JT": "m"
+      },
+      "ref": "Panduan O2SN SMA/MA/SMK/MAK/Sederajat 2026, Lampiran A.2.a.10 (PDF p. 31, table image)",
+      "note": "Athletes who do not meet the QET may not enter the national round."
+     }
+    }
+   },
+   "common": [
+    "Eligibility (birth date, grades) is in atletik-kelompok-umur (O2SN_SD, O2SN_SMP, O2SN_SMA).",
+    "Not a past national champion of a PB PASI event (all levels) nor an international champion of a World Athletics event (SMP, SMA); details and other conditions in each guide's Bab III and Lampiran A.2.a.",
+    "Lanes and order by draw (WA rule cited as 'Pasal 141'); protests within 30 minutes of the official result; appeal in writing with a deposit of Rp1.000.000 within 30 minutes.",
+    "Roll call (SMP, SMA): track events first call 30 min and last call 20 min before the start, entry to the arena 15 min before; jumps and throws 60 / 40 / 30 min.",
+    "Medals for places 1–3 of the combined result (SD: Kids' Athletics total); certificates for places 1–3 per event and 4–8 overall."
+   ]
+  }
+ },
  "refs": {
   "track": "WA C1.1/C2.1 (2026), Technical Rules: Hurdle Races (PDF p. 83), Steeplechase (PDF p. 86–87), Relays",
   "walk": "WA C1.1/C2.1 (2026), Technical Rules, Race Walking standard distances",
@@ -731,6 +972,7 @@
  },
  "notes": [
   "sexes: M putra, W putri, X campuran. Events without wind_seconds have no wind reading.",
-  "School events outside World Athletics (e.g. 80 m, lempar bola kasti, lompat jauh tanpa awalan) and U14/U16 specifications follow the championships' technical handbooks: brief R-10b."
+  "O2SN 2026 (SD Kids' Athletics, SMP Trilomba, SMA/SMK Pancalomba) is under `championships`, with implements, trials and qualifying marks per level; its scoring is in atletik-hasil.",
+  "PASI U14/U16 and POPDA/POPNAS specifications follow their technical handbooks: brief R-10b."
  ]
 }

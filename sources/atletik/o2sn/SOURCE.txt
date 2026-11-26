@@ -1,10 +1,31 @@
-R-10b (part) — Panduan O2SN 2026, uploaded by the user on 2026-11-26 (UTC); kept byte-for-byte. Not yet
-converted: the next session extracts the athletics rules (events, age limits and reference dates, implements).
+R-10b (part) — O2SN 2026 guides and the scoring tables they link to. Kept byte-for-byte; converted by
+tools/converters/atletik.py (atletik-nomor, atletik-kelompok-umur, atletik-hasil 2026-11-26).
+
+Guides, uploaded by the user on 2026-11-26 (UTC). Publisher: Pusat Prestasi Nasional (Puspresnas), Sekretariat
+Jenderal, Kementerian Pendidikan Dasar dan Menengah; foreword dated Jakarta, 16 Maret 2026; © 2026 Kemendikdasmen.
 
 Panduan-O2SN-SD-2026.pdf   (uploaded as "1_Panduan_O2SN_SD_2026_rilis.pdf")    69 pages
   SHA-256 8e63be08f51671d7a2d398e136c4b4c26847191f0cacaf3de28b50d022f6e5cc
+  Title "Pedoman O2SN Jenjang SD/MI/Sederajat Tahun 2026"; athletics = Kids' Athletics, Lampiran A (PDF p. 26–33).
+  The page footer reads "Panduan O2SN SD/MI/Sederajat 2025" on some pages (as printed).
 Panduan-O2SN-SMP-2026.pdf  (uploaded as "1._Panduan_O2SN_SMP_2026_rilis.pdf")  65 pages
   SHA-256 431d94db8c872a036d4f9b78af7b2efd28a4927c095f7874e19bb90e9c167ab4
+  Athletics = Trilomba, Lampiran A (PDF p. 28–33); qualifying marks are an image on PDF p. 29.
 Panduan-O2SN-SMA-2026.pdf  (uploaded as "1_Panduan_O2SN_SMA_2026_Rilis.pdf")   70 pages
   SHA-256 3e114dd9aeafd4a3f79631ec82a96b94dc12c66d679aa21445372041f77e10b7
-Publisher, page URL and date as printed: to be read from the PDFs by the converting session.
+  Athletics = Pancalomba, Lampiran A (PDF p. 30–36); qualifying marks are an image on PDF p. 31.
+
+Scoring tables, fetched on 2026-11-26 from the links printed in the guides (ringkas.kemendikdasmen.go.id short
+links that redirect to public Google Drive files):
+
+Scoring-Table-Trilomba-O2SN-SMP.pdf
+  Link http://ringkas.kemendikdasmen.go.id/scoringtableatletikSMP (SMP guide PDF p. 29)
+  Served as "SCORING TABLE TRI LOMBA O2SN SMP _OK.pdf", 29 pages, Word 2019, created 2023-03-01
+  SHA-256 a271046b9272a4dddd50085ba074dfce607c43d633e1bedb03e92a392717f9a6
+  Footer "Scoring Table Licenced by IAAF & PASI Modification".
+Scoring-Table-Pancalomba-O2SN-SMA-SMK.pdf
+  Link http://ringkas.kemendikdasmen.go.id/scoringtableatletikdikmen (SMA guide PDF p. 32)
+  Served as "SCORING TABLE PANCA LOMBA O2SN SMA & SMK _OK.pdf", 55 pages, Word 2013, created 2024-05-07
+  SHA-256 a5a88800f86889a1d968f204b84239c7df83357d41daa7c01af8555833345495
+  Cover "World Athletics Scoring Tables for Combined Events, Pancalomba O2SN Jenjang SMA & SMK, edition 2001
+  (reprint 2016)".

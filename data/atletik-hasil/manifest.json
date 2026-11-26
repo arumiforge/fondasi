@@ -1,10 +1,10 @@
 {
-  "version": "2026-03-20",
-  "description": "Athletics results: result codes (DNS, DNF, NM, DQ…), rounding of times, distances and wind, tie rules, combined-events scoring formula and parameters with checks against the printed tables.",
-  "status": "ready for World Athletics rules; PASI U14/U16 and school championships (O2SN, POPDA/POPNAS) pending brief R-10b",
-  "source": "World Athletics Book C C1.1/C2.1 Competition & Technical Rules (amendments effective up to 2026-03-20, PDF 2026-07-17); IAAF Scoring Tables for Combined Events (2016). Raw PDFs and SOURCE.txt in sources/atletik/",
-  "licence": "Copyright World Athletics; facts with references used under decision F-027",
-  "procedure": "Transcribed by hand into tools/converters/atletik.py, which checks the scoring parameters against printed table rows and the tables for completeness, then writes the three sets.",
+  "version": "2026-11-26",
+  "description": "Athletics results: result codes (DNS, DNF, NM, DQ…), rounding of times, distances and wind, tie rules, combined-events scoring formula and parameters with checks against the printed tables, and the O2SN 2026 Trilomba/Pancalomba scoring (parameters per event, cap, every table row checked).",
+  "status": "ready for World Athletics rules and O2SN 2026; PASI U14/U16 and POPDA/POPNAS pending brief R-10b",
+  "source": "World Athletics Book C C1.1/C2.1 Competition & Technical Rules (amendments effective up to 2026-03-20, PDF 2026-07-17); IAAF Scoring Tables for Combined Events (2016); Puspresnas O2SN 2026 guides SD/MI, SMP/MTs, SMA/MA/SMK/MAK (March 2026) and the O2SN scoring tables they link to (Trilomba SMP, Pancalomba SMA/SMK; fetched 2026-11-26). Raw PDFs and SOURCE.txt in sources/atletik/ and sources/atletik/o2sn/",
+  "licence": "Copyright World Athletics (rules, tables) and Kemendikdasmen (O2SN guides); facts with references used under decision F-027",
+  "procedure": "Transcribed by hand into tools/converters/atletik.py, which checks the scoring parameters against printed table rows (with --tables: every row of the two O2SN tables, 17,595 rows) and the tables for completeness, then writes the three sets. Version 2026-11-26 is the date the O2SN scoring tables were fetched, the newest source.",
   "files": [
     "atletik-hasil.json"
   ]
