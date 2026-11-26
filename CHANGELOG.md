@@ -33,9 +33,6 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
   `sources/libur-nasional/`.
 
 ### Changed
-- `wilayah` checked against Kepmendagri 300.2.2-2430/2025 (R-14): it changes only island data of Aceh and Sumatera
-  Utara; region codes, names and counts already match, so the data stays 2026-02-13. The decree is kept in
-  `sources/wilayah/`.
 - `kaldik-jateng` 2026-09-15: every holiday event checked against the SKB (`skb` field); all 2027 estimates match;
   Maulid 2026 differs (SKB: 25 Agustus); SKB days the province did not list are named per year.
 
@@ -44,9 +41,6 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
   `sources/kaldik-jateng/`; calendar layers (F-025); briefs R-12 (national calendar) and R-13 (kabupaten/kota).
 
 ### Changed
-- `wilayah` checked against Kepmendagri 300.2.2-2430/2025 (R-14): it changes only island data of Aceh and Sumatera
-  Utara; region codes, names and counts already match, so the data stays 2026-02-13. The decree is kept in
-  `sources/wilayah/`.
 - `skema-siswa`: NISN 10 digits, student NIK required, NIK of the mother and KK number 16 digits; its income list is the shared one (F-024).
 
 ### Added
@@ -61,9 +55,6 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
   setup), skill `fondasi-adopt`, templates `templates/repo/CLAUDE.md`, `docs/progress.md`, `docs/decisions.md`.
 
 ### Changed
-- `wilayah` checked against Kepmendagri 300.2.2-2430/2025 (R-14): it changes only island data of Aceh and Sumatera
-  Utara; region codes, names and counts already match, so the data stays 2026-02-13. The decree is kept in
-  `sources/wilayah/`.
 - `server/check.sh` is app-neutral (F-015): no SPMB section; apps plug in with `/opt/apps/<app>/check-app`
   (template `server/templates/check-app`); states S2 (ready), S3 (an app needs attention), S9 (every app answers);
   `APPS_ROOT` (old `SPMB_ROOT` still accepted).
