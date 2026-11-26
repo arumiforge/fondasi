@@ -10,8 +10,8 @@ Sources (sources/capaian-pembelajaran/, SOURCE.txt):
 Every section of 046 follows the same pattern, which the parser requires (and reports when a section does not):
   "CAPAIAN PEMBELAJARAN <SUBJECT>", A. Rasional, B. Tujuan, C. Karakteristik (prose + table Elemen | Deskripsi),
   D. Capaian Pembelajaran: "n. Fase X (Umumnya untuk ...)", "Pada akhir Fase X, ...", "n.m. <Element>" + text.
-Checks: every phase has outcomes, outcome element names match the element table, phases appear in order, no text
-is left over. Text is kept as printed (line breaks joined; list items keep their own line).
+Checks: every phase has outcomes, outcome element names match the element table (differences are kept per subject
+in `source_notes`), the appendix signature block is cut off and no NIP-like number reaches the output. Text is kept as printed (line breaks joined; list items keep their own line).
 
   python3 -I tools/converters/capaian-pembelajaran.py sources/capaian-pembelajaran data
   python3 -I tools/converters/capaian-pembelajaran.py <pdf> <out> <first> <last> <tag>   # one part, for checking
@@ -40,27 +40,44 @@ def pdf_pages(path):
 BIDI = re.compile("[\u200e\u200f\u202a-\u202e\u2066-\u2069]")
 
 
+LIGATURES = {"\uf001": "fi", "\uf002": "fl", "\ufb01": "fi", "\ufb02": "fl"}
+
+
+def unligature(s):
+    for k, v in LIGATURES.items():
+        s = s.replace(k, v)
+    return s
+
+
 def norm_space(s):
-    return re.sub(r"[ \t]+", " ", BIDI.sub("", s).replace(ZW, " ")).strip()
+    return re.sub(r"[ \t]+", " ", unligature(BIDI.sub("", s)).replace(ZW, " ")).strip()
+
+
+def is_label(line):
+    """A short label line such as "Tajwid" or "• Mengamati" that the text under it follows."""
+    bare = re.sub(r"^[•●]\s*", "", line)
+    return len(line) <= 40 and len(bare.split()) <= 5 and bare[:1].isupper() and not re.search(r"[.,;:)]$", line)
 
 
 def join_lines(lines):
     """Join wrapped lines. A new line starts before a list item (1., a., ●, -), after a line ending with ':', and
-    after a short label line ("Tajwid") that precedes its text."""
+    around a short label line ("Tajwid") that precedes its text."""
+    lines = [x for x in (norm_space(r) for r in lines) if x]
     out, prev = "", ""
-    for raw in lines:
-        line = norm_space(raw)
-        if not line:
-            continue
+    for i, line in enumerate(lines):
+        nxt = lines[i + 1] if i + 1 < len(lines) else ""
         if not out:
             out = line
-        elif re.match(r"^(\d+(\.\d+)*\.|[a-z]\.|[a-z]\)|\d+\)|●|•|-|–)\s", line) or out.endswith(":"):
+        elif out.endswith(("•", "●")):
+            out += " " + line  # bullet printed alone on its line, its label on the next
+        elif re.match(r"^((\d+(\.\d+)*\.|[a-z]\.|[a-z]\)|\d+\)|●|•|-|–)\s|[•●]$)", line) or out.endswith(":"):
             out += "\n" + line
         elif out.endswith("-") and not out.endswith(" -"):
             out += line
-        elif line[:1].isupper() and len(prev) <= 40 and not re.search(r"[.,;:)]$", prev) \
-                and len(prev.split()) <= 5 and prev[:1].isupper():
+        elif line[:1].isupper() and is_label(prev):
             out += "\n" + line
+        elif is_label(line) and re.search(r"[.;]$", prev) and nxt[:1].isupper():
+            out += "\n" + line  # a label after a finished sentence ("... benar. Al-Qur'an")
         else:
             out += " " + line
         prev = line
@@ -69,6 +86,47 @@ def join_lines(lines):
 
 def norm_key(s):
     return re.sub(r"[^a-z0-9]+", "", s.lower().replace("’", "'"))
+
+
+SMALL = {"dan", "atau", "serta", "untuk", "dengan", "di", "ke", "dari", "pada", "yang", "bagi", "dalam", "of", "and",
+         "for"}
+ACRONYMS = {"MTS": "MTs", "KKA": "KKA", "IPAS": "IPAS", "IPA": "IPA", "IPS": "IPS", "PJOK": "PJOK", "RA": "RA",
+            "MI": "MI", "MA": "MA", "MAK": "MAK", "MAPK": "MAPK", "SMK": "SMK", "PAUD": "PAUD", "TKLB": "TKLB",
+            "PKPBI": "PKPBI", "POMSK": "POMSK", "TIK": "TIK", "K3": "K3", "K3LH": "K3LH", "TV": "TV", "DKV": "DKV"}
+
+
+def nice_title(printed):
+    """Title case for a heading printed in capitals: Indonesian small words in lower case, acronyms kept
+    ("ILMU PENGETAHUAN ALAM DAN SOSIAL (IPAS)" → "Ilmu Pengetahuan Alam dan Sosial (IPAS)")."""
+    def word(w, first):
+        core = w.strip("(),.:;/")
+        if core.upper() in ACRONYMS:
+            return w.replace(core, ACRONYMS[core.upper()])
+        if not first and core.lower() in SMALL:
+            return w.lower()
+        parts = re.split(r"([-/])", w.lower())
+        parts = [re.sub(r"^(\(?)(\w)", lambda m: m.group(1) + m.group(2).upper(), x) for x in parts]
+        return re.sub(r"(['’])([A-Z])", lambda m: m.group(1) + m.group(2).lower(), "".join(parts))
+
+    words = printed.split()
+    out = []
+    for i, w in enumerate(words):
+        if "/" in w and not w.startswith("("):
+            out.append("/".join(word(x, i == 0) for x in w.split("/")))
+        else:
+            out.append(word(w, i == 0))
+    return " ".join(out)
+
+
+def printed_twice(title):
+    m = re.match(r"^(.+?) CAPAIAN PEMBELAJARAN (.+)$", title)
+    return m.group(1) if m and norm_key(m.group(1)) == norm_key(m.group(2)) else None
+
+
+def clean_heading(title):
+    """Drop a heading printed twice ("X CAPAIAN PEMBELAJARAN X") and a leading "MATA PELAJARAN"."""
+    title = printed_twice(title) or title
+    return re.sub(r"^MATA PELAJARAN\s+", "", title)
 
 
 def key_of(title):
@@ -83,6 +141,10 @@ def key_of(title):
 HEAD = re.compile(r"^(?:(" + ROMAN + r"(?:\.\d+)?|\d+(?:\.\s?\d+)+)\.?\s*)?CAPAIAN PEMBELAJARAN\s+(.*)$")
 
 
+SIGNATURE = re.compile(r"^\s*(KEPALA BADAN|DIREKTUR JENDERAL PENDIDIKAN ISLAM|DIREKTUR JENDERAL|TTD\.?|"
+                       r"Salinan sesuai dengan aslinya)\b.*$")
+
+
 def sections(pages, first, last):
     """Yield (title, number, start_page, lines[(page, text)]) for each subject section between PDF pages."""
     lines = []
@@ -90,6 +152,11 @@ def sections(pages, first, last):
         for ln in pages[pno - 1].split("\n"):
             if ln.strip() and not re.match(r"^\s*-\s*\d+\s*-\s*$", ln) and "jdih.kemendikdasmen" not in ln:
                 lines.append((pno, ln))
+    # the signature block that closes an appendix (official's name, NIP) is not part of any subject
+    for k, (_, ln) in enumerate(lines):
+        if SIGNATURE.match(ln):
+            lines = lines[:k]
+            break
     heads = []
     i = 0
     while i < len(lines):
@@ -145,7 +212,46 @@ PDF = None  # pdfplumber document, opened in main()
 
 
 def _clean_cell(c):
-    return join_lines((c or "").split("\n"))
+    """A table cell: wrapped lines joined with spaces; only list items keep their own line."""
+    out, prev = "", ""
+    for line in (norm_space(x) for x in (c or "").split("\n")):
+        if not line or PAGENO.match(line):
+            continue
+        if not out:
+            out = line
+        elif out.endswith(("•", "●")):
+            out += " " + line  # bullet printed alone on its line, its label on the next
+        elif re.match(r"^((\d+(\.\d+)*\.|[a-z]\.|[a-z]\)|\d+\)|●|•|–)\s|[•●]$)", line):
+            out += "\n" + line
+        elif re.match(r"^[•●] ", out.split("\n")[-1]) and is_label(out.split("\n")[-1]) and line[:1].isupper():
+            out += "\n" + line  # "• Tajwid" is a label; its description starts on the next line
+        elif out.endswith("-") and not out.endswith(" -"):
+            out += line
+        else:
+            out += " " + line
+    return out
+
+
+PAGENO = re.compile(r"^\s*-\s*\d+\s*-\s*$")
+
+
+def mend_words(text, vocab):
+    """Rejoin a word that a narrow table cell broke without a hyphen ("Mempresent asikan") when the joined word
+    occurs in the section's own text and the first part does not."""
+    words = text.split(" ")
+    out, i = [], 0
+    while i < len(words):
+        a = words[i]
+        if i + 1 < len(words):
+            b = words[i + 1]
+            ka, kb = a.lower().strip("(-"), re.sub(r"[^a-z]", "", b.lower())
+            if len(ka) >= 4 and ka.isalpha() and b[:1].islower() and ka not in vocab and (ka + kb) in vocab:
+                out.append(a + b)
+                i += 2
+                continue
+        out.append(a)
+        i += 1
+    return " ".join(out)
 
 
 def element_table(sec, c_pages):
@@ -160,13 +266,16 @@ def element_table(sec, c_pages):
             x, y = (obj.get("x0", 0) + obj.get("x1", 0)) / 2, (obj.get("top", 0) + obj.get("bottom", 0)) / 2
             return not any(b[0] <= x <= b[2] and b[1] <= y <= b[3] for b in boxes)
 
-        prose_parts.append(page.filter(outside).extract_text() or "")
+        prose_parts.append("\n".join(x for x in (page.filter(outside).extract_text() or "").split("\n")
+                                     if not PAGENO.match(x)))
         for t in tables:
-            rows = t.extract()
+            # merged cells come back as None (SK 9941 tables); drop them
+            rows = [[c for c in r if c is not None] for r in t.extract()]
             if not rows or not rows[0]:
                 continue
-            if (rows[0][0] or "").strip().lower().startswith("elemen"):
-                hdr = [_clean_cell(c).lower() for c in rows[0]]
+            first = next((c for c in rows[0] if c and c.strip()), "")
+            if first.strip().lower().startswith("elemen"):
+                hdr = [_clean_cell(c).lower() for c in rows[0] if c and c.strip()]
                 header = hdr
                 rows = rows[1:]
             elif header and len(rows[0]) == len(header) and pno > c_pages[0] and t.bbox[1] < 120:
@@ -175,6 +284,8 @@ def element_table(sec, c_pages):
                 continue
             for ri, r in enumerate(rows):
                 cells = [_clean_cell(c) for c in r]
+                if len(cells) != len(hdr):
+                    cells = [c for c in cells if c]
                 if len(cells) != len(hdr):
                     continue
                 rec = dict(zip(hdr, cells))
@@ -195,6 +306,10 @@ def element_table(sec, c_pages):
                             else (d + " " + desc).strip()
                     elements[-1]["_page"] = pno
                     continue
+                if name and name[:1].islower() and not desc and elements:
+                    # a name cell that the table splits over two rows ("Analisis Data" / "dan Peluang")
+                    elements[-1]["name"] += " " + name
+                    continue
                 if name or (sub and not desc.startswith(tuple("abcdefghijklmnopqrstuvwxyz"))) or not elements:
                     e = {"name": name or (elements[-1]["name"] if elements else ""), "description": desc, "_page": pno}
                     if sub is not None:
@@ -210,10 +325,13 @@ def element_table(sec, c_pages):
     m1 = re.search(r"C\.\s*Karakteristik\s*\n", text)
     m2 = re.search(r"\nD\.\s*Capaian Pembelajaran\s*\n", text)
     body = text[m1.end() if m1 else 0: m2.start() if m2 else len(text)]
+    vocab = set(re.findall(r"[a-z]+", " ".join(norm_space(t) for _, t in sec["lines"]).lower()))
     for e in elements:
         e.pop("_page", None)
-        e["name"] = norm_space(e["name"])
-        e["description"] = norm_space(e["description"])
+        e["name"] = mend_words(norm_space(e["name"].replace("\n", " ")), vocab)
+        if e.get("sub_element") is not None:
+            e["sub_element"] = mend_words(norm_space(e["sub_element"].replace("\n", " ")), vocab)
+        e["description"] = "\n".join(mend_words(norm_space(x), vocab) for x in e["description"].split("\n"))
     return join_lines(body.split("\n")), elements
 
 
@@ -310,9 +428,10 @@ def outcomes(lines, names):
             item = group = None
             i += 1
             continue
-        mi = re.match(r"^(?:Pada akhir [Ff]ase|Rumusan Capaian Pembelajaran Fase) ([A-F]|Fondasi)\b", s)
+        # "Pada akhir fase fondasi" is printed in lower case in 046 Lampiran V XXXII.4
+        mi = re.match(r"^(?:Pada akhir [Ff]ase|Rumusan Capaian Pembelajaran Fase) ([A-F]|[Ff]ondasi)\b", s)
         if mi and cur is None:
-            cur = {"phase": mi.group(1), "applies_to": None, "page": pno, "numbered": False, "num": None, "intro": "",
+            cur = {"phase": mi.group(1).capitalize(), "applies_to": None, "page": pno, "numbered": False, "num": None, "intro": "",
                    "outcomes": []}
             phases.append(cur)
         if cur is not None:
@@ -387,6 +506,36 @@ def cp_table(pages):
     return out
 
 
+def lingkup_tables(a_pages):
+    """PAUD (046 Lampiran I) prints, inside A. Rasional, one table per element: Lingkup Capaian Pembelajaran |
+    Deskripsi. Returns the rasional prose outside those tables and the rows grouped per table, or (None, [])."""
+    groups, prose = [], []
+    for pno in a_pages:
+        page = PDF.pages[pno - 1]
+        tables = [t for t in page.find_tables() if (t.extract()[0][0] or "").strip().lower().startswith("lingkup")]
+        boxes = [t.bbox for t in tables]
+
+        def outside(obj, boxes=boxes):
+            x, y = (obj.get("x0", 0) + obj.get("x1", 0)) / 2, (obj.get("top", 0) + obj.get("bottom", 0)) / 2
+            return not any(b[0] <= x <= b[2] and b[1] <= y <= b[3] for b in boxes)
+
+        prose += [x for x in (page.filter(outside).extract_text() or "").split("\n")
+                  if not PAGENO.match(x) and "jdih.kemendikdasmen" not in x]
+        for t in tables:
+            rows = [[_clean_cell(c) for c in r] for r in t.extract()[1:]]
+            if rows and not rows[0][0] and groups:
+                groups[-1][-1][1] += " " + rows[0][1]  # a description continued from the previous page
+                rows = rows[1:]
+            else:
+                groups.append([])
+            groups[-1] += [[r[0], r[1]] for r in rows if len(r) == 2]
+    if not groups:
+        return None, []
+    text = "\n".join(prose)
+    m1, m2 = re.search(r"A\.\s*Rasional\s*\n", text), re.search(r"\nB\.\s*Tujuan\s*\n", text)
+    return join_lines(text[m1.end() if m1 else 0: m2.start() if m2 else len(text)].split("\n")), groups
+
+
 def parse_section(sec, issues):
     parts = split_parts(sec)
     for k in "ABCD":
@@ -395,6 +544,9 @@ def parse_section(sec, issues):
             parts.setdefault(k, [])
     c_pages = sorted({p for p, _ in parts["C"]} | ({parts["D"][0][0]} if parts["D"] else set()))
     karakteristik, elements = element_table(sec, c_pages)
+    rasional, lingkup = None, []
+    if any("Lingkup Capaian" in t for _, t in parts["A"]):
+        rasional, lingkup = lingkup_tables(sorted({p for p, _ in parts["A"]} | ({parts["B"][0][0]} if parts["B"] else set())))
     names = {norm_key(e["name"]) for e in elements} | {norm_key(e.get("sub_element", "")) for e in elements}
     names.discard("")
     phases = outcomes(parts["D"], names)
@@ -405,6 +557,14 @@ def parse_section(sec, issues):
             ph = phases[0]["phase"] if phases else ("Fondasi" if "fondasi" in intro.lower() else None)
             phases = [{"phase": ph, "applies_to": None, "page": parts["D"][0][0], "intro": intro.split(" No ")[0],
                        "outcomes": tab}]
+    if lingkup:
+        # one table per element, in the order of the CP; the element names come from the CP headings
+        cp_names = [o["element"] for o in phases[0]["outcomes"]] if phases else []
+        if len(cp_names) != len(lingkup):
+            issues.append(f"{sec['title']}: part {len(lingkup)} lingkup tables for {len(cp_names)} elements")
+        else:
+            elements = [{"name": n, "sub_element": sub, "description": desc}
+                        for n, rows in zip(cp_names, lingkup) for sub, desc in rows]
     for ph in phases:
         if not ph["outcomes"] and not ph["intro"]:
             issues.append(f"{sec['title']}: Fase {ph['phase']} empty")
@@ -421,9 +581,10 @@ def parse_section(sec, issues):
                               f"{sorted(names)}")
     pages = sorted({p for p, _ in sec["lines"]})
     return {
-        "key": key_of(sec["title"]), "title": sec["title"].title(), "title_printed": sec["title"],
-        "number": sec["number"], "pages": [sec["page"], pages[-1] if pages else sec["page"]],
-        "rasional": join_lines([l for _, l in parts["A"]]),
+        "key": key_of(clean_heading(sec["title"])), "title": nice_title(clean_heading(sec["title"])),
+        "title_printed": sec["title"],
+        "number": re.sub(r"\.\s+", ".", sec["number"]) if sec["number"] else None, "pages": [sec["page"], pages[-1] if pages else sec["page"]],
+        "rasional": rasional if rasional is not None else join_lines([l for _, l in parts["A"]]),
         "tujuan": join_lines([l for _, l in parts["B"]]),
         "karakteristik": karakteristik, "elements": elements, "phases": phases,
     }
@@ -450,11 +611,67 @@ RELIGION_PENDING = ("PENDIDIKAN AGAMA ", "PENDIDIKAN KHUSUS PENDIDIKAN AGAMA ")
 HARD = ("part ", " empty", "no phases")
 
 
-def finish_subject(sub, source, levels, issues):
-    notes = []
+# Grades of each phase as 046 prints them for most subjects ("Umumnya untuk Kelas ..."); SLB adds mental age.
+PHASE_GRADES = {"A": [1, 2], "B": [3, 4], "C": [5, 6], "D": [7, 8, 9], "E": [10], "F": [11, 12]}
+ROMAN_N = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10, "XI": 11,
+           "XII": 12}
+# Printed errors that the document itself resolves (F-031): (file, printed number) -> (number, reason)
+NUMBER_FIXES = {("pendidikan-khusus", "XXII.3"): ("XXXII.3", "the neighbouring sections are XXXII.2 and XXXII.4")}
+# (file, number, printed text, text used, reason); applied to element names and outcome headings of that subject
+TEXT_FIXES = [("smk", "V.43", "dan fiSiologi", "dan Fisiologi",
+               "the element table prints the ligature glyph and a capital S ('ﬁSiologi'); its CP heading has "
+               "'Anatomi dan Fisiologi Kecantikan'")]
+
+
+def printed_grades(applies_to):
+    m = re.search(r"[Kk]elas\s+(.*)$", applies_to or "")
+    if not m:
+        return None
+    nums = re.findall(r"\b(XII|XI|IX|X|VIII|VII|VI|IV|V|III|II|I|1[0-2]|[1-9])\b", m.group(1))
+    return sorted({ROMAN_N.get(n) or int(n) for n in nums}) or None
+
+
+def finish_subject(sub, source, levels, issues, fname, errata):
+    if (fname, sub["number"]) in NUMBER_FIXES:
+        num, why = NUMBER_FIXES[(fname, sub["number"])]
+        errata.append({"subject": sub["key"], "field": "number", "printed": sub["number"], "used": num,
+                       "page": sub["pages"][0], "reason": why})
+        sub["number_printed"], sub["number"] = sub["number"], num
+    for f, num, old, new, why in TEXT_FIXES:
+        if f == fname and sub["number"] == num:
+            hit = False
+            for e in sub["elements"]:
+                if old in e["name"]:
+                    e["name"], hit = e["name"].replace(old, new), True
+            for ph in sub["phases"]:
+                for o in ph["outcomes"]:
+                    if old in o["element"]:
+                        o["element"], hit = o["element"].replace(old, new), True
+            if not hit:
+                sys.exit(f"text fix not applied: {f} {num} {old!r}")
+            errata.append({"subject": sub["key"], "field": "element name", "printed": old, "used": new,
+                           "page": sub["pages"][0], "reason": why})
+    unmatched = {}
     for x in issues:
-        notes.append(x.split(": ", 1)[1] if ": " in x else x)
+        m = re.search(r"Fase (\S+) element '(.*)' not in table", x)
+        if m:
+            unmatched.setdefault(m.group(2), []).append(m.group(1))
+    notes = [f"CP heading '{el}' (Fase {', '.join(ph)}) is not printed with this name in the element table"
+             for el, ph in unmatched.items()]
     for ph in sub["phases"]:
+        if ph.get("applies_to"):
+            ph["applies_to"] = re.sub(r"[).]+$", "", ph["applies_to"]).strip()
+            printed = printed_grades(ph["applies_to"])
+            if ph["phase"] in PHASE_GRADES and printed and printed != PHASE_GRADES[ph["phase"]]:
+                errata.append({"subject": sub["key"], "field": f"Fase {ph['phase']} applies_to",
+                               "printed": ph["applies_to"], "page": ph["page"],
+                               "reason": f"names grades {printed}; Fase {ph['phase']} is grades "
+                                         f"{PHASE_GRADES[ph['phase']]} everywhere else in the decree. Kept as "
+                                         "printed; use the phase, not this text, for grades"})
+            if re.search(r"\b(\w+) \1\b", ph["applies_to"]):
+                errata.append({"subject": sub["key"], "field": f"Fase {ph['phase']} applies_to",
+                               "printed": ph["applies_to"], "page": ph["page"],
+                               "reason": "a word is printed twice; kept as printed"})
         for o in ph["outcomes"]:
             t = (o["text"] or "").strip()
             if t in ("", "-", "–"):
@@ -463,8 +680,10 @@ def finish_subject(sub, source, levels, issues):
     sub["source"] = f"{source} ({'number ' + sub['number'] + ', ' if sub['number'] else ''}PDF p. "\
                     f"{sub['pages'][0]}–{sub['pages'][1]})"
     sub["levels"] = levels
+    if printed_twice(sub["title_printed"]):
+        notes.append("the heading is printed twice in the source")
     if notes:
-        sub["source_notes"] = sorted(set(n for n in notes if not any(h in n for h in HARD)))
+        sub["source_notes"] = notes
     return sub
 
 
@@ -483,7 +702,7 @@ def build(src, out):
             opened[path] = (pdfplumber.open(path), pdf_pages(path))
         PDF, pages = opened[path]
         ZWMODE = sum(p.count(ZW) for p in pages) > 100
-        subjects, keys = [], set()
+        subjects, keys, errata = [], set(), []
         for sec in sections(pages, first, last):
             if fname in ("umum", "pendidikan-khusus") and sec["title"].startswith(RELIGION_PENDING):
                 continue
@@ -500,12 +719,16 @@ def build(src, out):
                 sub["key"] = f"{k}_{n}"
                 n += 1
             keys.add(sub["key"])
-            subjects.append(finish_subject(sub, source, levels, issues))
+            subjects.append(finish_subject(sub, source, levels, issues, fname, errata))
         data = {"file": fname, "source": source, "subjects": subjects}
+        if errata:
+            data["errata"] = errata
         if fname in ("umum", "pendidikan-khusus"):
             data["pending"] = ("Pendidikan Agama dan Budi Pekerti (six religions): replaced by Kepka BKPDM 020/2026; "
                                "added when its scanned text has been transcribed and checked.")
         raw = json.dumps(data, ensure_ascii=False, indent=1).encode("utf-8") + b"\n"
+        if re.search(rb"\bNIP\b|\b\d{18}\b", raw):
+            sys.exit(f"{fname}: looks like a NIP (personal data) in the output")
         with open(os.path.join(out, "capaian-pembelajaran", fname + ".json.gz"), "wb") as f:
             with gzip.GzipFile(filename="", mode="wb", fileobj=f, mtime=0) as g:
                 g.write(raw)
@@ -522,6 +745,11 @@ def build(src, out):
     with open(os.path.join(out, "capaian-pembelajaran", "index.json"), "w", encoding="utf-8") as f:
         json.dump({"name": "Capaian Pembelajaran", "files": [p[0] + ".json.gz" for p in PARTS],
                    "pending": "Pendidikan Agama dan Budi Pekerti (Kepka BKPDM 020/2026)", "totals": totals,
+                   "phases": {**{"Fondasi": {"grades": [], "note": "PAUD, RA and TKLB"}},
+                              **{k: {"grades": v} for k, v in PHASE_GRADES.items()}},
+                   "phase_note": ("Grades per phase as the decrees print them for most subjects. SLB phases also "
+                                  "name a mental age (see each phase's applies_to). Use these grades rather than "
+                                  "the printed applies_to text, which varies and has misprints (see errata)."),
                    "subjects": index}, f, ensure_ascii=False, indent=1)
         f.write("\n")
     print(f"ok: {totals}")
