@@ -5,6 +5,13 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Data set `kerangka-tka` 2026-03-06 (R-16, F-030): TKA framework for SD/MI and SMP/MTs from Perka BSKAP
+  047/H/AN/2025 (Bahasa Indonesia: text types and characteristics, reading aspects, 3 competencies with 21
+  subcompetencies; Matematika: elements, abilities, 3 cognitive levels with 23 thinking processes, 14 content rows
+  with 47 scope items), item types and forms, and from Kepmendikdasmen 56/2026 the test subjects per level (20
+  SMA/SMK electives), the schedule with minutes and session times, score ranges, categories and the istimewa
+  thresholds. Converter `tools/converters/kerangka-tka.py` checks every text unit and table cell against the PDFs;
+  3 printing errors in errata.
 - `capaian-pembelajaran` 2026-06-11 (R-15, F-032): special-education religion CP for the six religions, phases A–F
   for SDLB/SMPLB/SMALB (Kepka BKPDM 020/2026 Lampiran II, 6 subjects, 192 outcomes, 11 printed "–" without CP) in
   `pendidikan-khusus-agama.json.gz`; transcription `transkripsi-020/2.1-islam.txt` … `2.6-khonghucu.txt` read line by

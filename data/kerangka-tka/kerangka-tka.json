@@ -1,0 +1,1181 @@
+{
+ "source": {
+  "framework": "Perka BSKAP 047/H/AN/2025, Lampiran (PDF p. 7–25)",
+  "administration": "Kepmendikdasmen 56/2026, Lampiran (BAB IV, PDF p. 31–32; BAB VIII, p. 47–48; BAB X, p. 52–53)"
+ },
+ "item_types": [
+  {
+   "key": "tunggal",
+   "label": "Soal tunggal",
+   "description": "Soal tunggal merupakan soal yang berdiri sendiri, tidak terkait dengan soal-soal lain."
+  },
+  {
+   "key": "grup",
+   "label": "Soal grup",
+   "description": "Soal grup adalah sekumpulan soal yang mengacu pada sebuah stimulus yang sama."
+  }
+ ],
+ "item_forms_intro": "Semua bentuk soal menyajikan beberapa pilihan jawaban atau respons untuk sebuah pokok soal.",
+ "item_forms": [
+  {
+   "key": "pg",
+   "label": "pilihan ganda sederhana",
+   "description": "Pada soal pilihan ganda sederhana, hanya terdapat satu pilihan jawaban yang benar. Peserta diminta memilih satu jawaban dari pilihan yang tersedia."
+  },
+  {
+   "key": "pgk_mcma",
+   "label": "pilihan ganda kompleks (PGK) model multiple choice multiple answers (MCMA)",
+   "description": "Pada soal pilihan ganda kompleks MCMA, terdapat kemungkinan lebih dari satu pilihan jawaban benar. Peserta diminta memilih lebih dari satu pilihan yang dianggap benar."
+  },
+  {
+   "key": "pgk_kategori",
+   "label": "pilihan ganda kompleks (PGK) model kategori",
+   "description": "Pada soal pilihan ganda kompleks kategori, terdapat beberapa pernyataan yang semuanya perlu direspon, misalnya dengan pilihan “benar” atau “salah” dan “sesuai” atau “tidak sesuai”. Peserta diminta untuk memberi respon untuk masing-masing pernyataan tersebut."
+  }
+ ],
+ "levels": [
+  {
+   "level": "SD/MI/sederajat",
+   "grades": [
+    6
+   ],
+   "subjects": [
+    "bahasa Indonesia",
+    "matematika"
+   ],
+   "framework": true
+  },
+  {
+   "level": "SMP/MTs/sederajat",
+   "grades": [
+    9
+   ],
+   "subjects": [
+    "bahasa Indonesia",
+    "matematika"
+   ],
+   "framework": true
+  },
+  {
+   "level": "SMA/MA/sederajat",
+   "grades": [
+    12
+   ],
+   "subjects": [
+    "bahasa Indonesia",
+    "matematika",
+    "bahasa Inggris"
+   ],
+   "electives": {
+    "choose": 2,
+    "options": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19
+    ]
+   },
+   "framework": false
+  },
+  {
+   "level": "SMK/MAK",
+   "grades": [
+    12,
+    13
+   ],
+   "subjects": [
+    "bahasa Indonesia",
+    "matematika",
+    "bahasa Inggris"
+   ],
+   "electives": {
+    "choose": 2,
+    "options": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "note": "Mata pelajaran pilihan Teori Kompetensi Kejuruan pada angka (20) untuk jenjang SMK/MAK sesuai program keahlian pada masing-masing peserta."
+   },
+   "framework": false
+  }
+ ],
+ "levels_note": "Kelas 13 is SMK program 4 (empat) tahun. Kerangka asesmen in this set covers SD/MI/sederajat and SMP/MTs/sederajat only (Perka BSKAP 047/H/AN/2025).",
+ "electives": [
+  {
+   "no": 1,
+   "label": "Matematika lanjutan"
+  },
+  {
+   "no": 2,
+   "label": "Bahasa Indonesia lanjutan"
+  },
+  {
+   "no": 3,
+   "label": "Bahasa Inggris lanjutan"
+  },
+  {
+   "no": 4,
+   "label": "Fisika"
+  },
+  {
+   "no": 5,
+   "label": "Kimia"
+  },
+  {
+   "no": 6,
+   "label": "Biologi"
+  },
+  {
+   "no": 7,
+   "label": "Ekonomi"
+  },
+  {
+   "no": 8,
+   "label": "Sosiologi"
+  },
+  {
+   "no": 9,
+   "label": "Geografi"
+  },
+  {
+   "no": 10,
+   "label": "Sejarah"
+  },
+  {
+   "no": 11,
+   "label": "Antropologi"
+  },
+  {
+   "no": 12,
+   "label": "PPKn/Pendidikan Pancasila"
+  },
+  {
+   "no": 13,
+   "label": "Bahasa Arab"
+  },
+  {
+   "no": 14,
+   "label": "Bahasa Jerman"
+  },
+  {
+   "no": 15,
+   "label": "Bahasa Prancis"
+  },
+  {
+   "no": 16,
+   "label": "Bahasa Jepang"
+  },
+  {
+   "no": 17,
+   "label": "Bahasa Korea"
+  },
+  {
+   "no": 18,
+   "label": "Bahasa Mandarin"
+  },
+  {
+   "no": 19,
+   "label": "Produk/Projek Kreatif dan Kewirausahaan"
+  },
+  {
+   "no": 20,
+   "label": "Teori Kompetensi Kejuruan (Program Keahlian)"
+  }
+ ],
+ "frameworks": [
+  {
+   "level": "SD/MI/sederajat",
+   "subject": "Bahasa Indonesia",
+   "pages": [
+    8,
+    10
+   ],
+   "intro": "TKA Bahasa Indonesia SD/MI/sederajat difokuskan pada salah satu keterampilan berbahasa, yakni membaca. Membaca dipilih sebagai fokus karena merupakan keterampilan yang menjadi fondasi untuk terus belajar dan bekerja pada era teknologi yang berubah dan berkembang sangat cepat.",
+   "muatan": {
+    "intro": "Keterampilan membaca diujikan pada dua jenis teks, yaitu teks informasi dan teks fiksi.",
+    "text_types": [
+     {
+      "label": "Teks informasi",
+      "description": "Teks informasi merupakan teks yang berisi fakta sederhana dari berbagai bidang atau topik serta berskala lokal dan nasional."
+     },
+     {
+      "label": "Teks fiksi",
+      "description": "Teks fiksi merupakan cerita rekaan yang dapat berupa fantasi atau faktual (sejarah/biografi) dengan latar cerita konkret, tokoh berkarakter datar, konflik tunggal dengan penyelesaian tertutup, alur maju, dan sudut pandang orang pertama."
+     }
+    ],
+    "text_characteristics": [
+     {
+      "label": "Karakteristik kosakata",
+      "description": "kata dasar, kata berimbuhan, kata konkret, dominan makna denotatif, makna konotatif konteks terbatas."
+     },
+     {
+      "label": "Karakteristik kalimat",
+      "description": "jumlah kata 3–7 per kalimat, pola kalimat dasar SPOK, struktur bahasa tulis bercampur bahasa lisan terbatas."
+     },
+     {
+      "label": "Karakteristik wacana",
+      "description": "kohesi pengacuan/referensi, konjungsi antarparagraf penambahan/penjelasan; panjang teks 150–200 kata (kecuali teks puisi)."
+     }
+    ]
+   },
+   "kompetensi": {
+    "aspects": [
+     "mengidentifikasi informasi tersurat dalam teks;",
+     "menyusun ulang, mengelompokkan, membuat ikhtisar, dan menyajikan kembali informasi tersurat dalam teks;",
+     "mengidentifikasi dan menyimpulkan informasi tersirat dalam teks;",
+     "menilai gagasan, fakta, atau opini dalam teks; dan",
+     "menanggapi isi teks, merefleksi diri dengan tokoh atau kejadian, dan menanggapi bahasa penulis dalam teks."
+    ],
+    "competencies": [
+     {
+      "no": 1,
+      "name": "Pemahaman Tekstual",
+      "description": "pemahaman tekstual, yaitu kemampuan untuk memahami informasi yang dikemukakan secara eksplisit, mengelompokkan, menyusun ulang, dan menyajikan kembali informasi secara eksplisit dari teks;",
+      "subcompetencies": [
+       "Mengidentifikasi penggunaan kosakata umum dan khusus dalam berbagai bidang.",
+       "Mengidentifikasi objek berdasarkan kosakata yang digunakan dalam teks fiksi atau nonfiksi.",
+       "Menyusun kembali informasi dari teks dalam bentuk ikhtisar/bagan.",
+       "Mengidentifikasi informasi tersurat dalam teks."
+      ]
+     },
+     {
+      "no": 2,
+      "name": "Pemahaman Inferensial",
+      "description": "pemahaman inferensial, yaitu kemampuan untuk menarik kesimpulan berdasarkan informasi yang tersirat dalam teks; dan",
+      "subcompetencies": [
+       "Menyimpulkan ide pokok, gagasan pendukung, amanat, tokoh, peristiwa, dan/atau nilai-nilai dalam teks.",
+       "Menyimpulkan perubahan sederhana pada objek, karakter, dan/atau latar dalam teks fiksi atau nonfiksi.",
+       "Menjelaskan makna ungkapan yang digunakan dalam teks."
+      ]
+     },
+     {
+      "no": 3,
+      "name": "Evaluasi dan Apresiasi",
+      "description": "evaluasi dan apresiasi, yaitu kemampuan untuk membuat penilaian terhadap ide, menanggapi teks secara emosional dan estetis dengan mempertimbangkan dampaknya terhadap perasaan, imajinasi, serta penggunaan bahasa oleh penulis.",
+      "subcompetencies": [
+       "Menilai relevansi peristiwa dalam teks dengan kehidupan sehari-hari berdasarkan pengalaman atau pengetahuan pribadi.",
+       "Menilai kesesuaian antarunsur dan/atau antarinformasi dalam teks.",
+       "Menyimpulkan respons emosional terhadap unsur teks fiksi."
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "level": "SD/MI/sederajat",
+   "subject": "Matematika",
+   "pages": [
+    10,
+    15
+   ],
+   "intro": "TKA Matematika SD/MI/sederajat mengukur kemampuan murid dalam memahami fakta, konsep, prinsip, dan prosedur matematika, serta kemampuan mereka dalam menerapkan pengetahuan matematika untuk menyelesaikan masalah (problem solving).",
+   "muatan": {
+    "intro": "Muatan TKA Matematika SD/MI/sederajat merujuk pada elemen kurikulum atau materi matematika yang dipelajari murid yang ada pada Kurikulum 2013 dan Kurikulum Merdeka. Elemen ini meliputi:",
+    "elements": [
+     "bilangan,",
+     "geometri dan pengukuran, dan",
+     "data."
+    ],
+    "notes": [
+     "Pengetahuan matematika diukur melalui permasalahan dalam konteks matematika dan permasalahan dalam konteks keseharian yang dapat meliputi kejadian atau situasi di lingkup personal, keluarga, atau lingkungan sekitar."
+    ]
+   },
+   "kompetensi": {
+    "intro": "Tes Kemampuan Akademik (TKA) Matematika SD/MI/sederajat mengukur kemampuan matematis sebagai berikut:",
+    "abilities": [
+     "pengetahuan matematika,",
+     "representasi matematis,",
+     "penalaran,",
+     "pemecahan masalah matematis, dan",
+     "koneksi matematis."
+    ],
+    "cognitive_intro": "Kemampuan matematis diukur pada tiga level kognitif, yaitu Pengetahuan dan Pemahaman (Knowing and Understanding), Aplikasi (Applying), dan Penalaran (Reasoning). Kemampuan matematis dalam setiap cakupan sub-elemen memungkinkan diukur dalam satu atau beberapa level kognitif. Setiap level kognitif mencakup beberapa proses berpikir. Berikut deskripsi proses berpikir untuk setiap level kognitif.",
+    "cognitive_levels": [
+     {
+      "level": 1,
+      "name": "Pengetahuan dan Pemahaman",
+      "name_en": "Knowing and Understanding",
+      "processes": [
+       {
+        "name": "Menghitung",
+        "description": "Melakukan perhitungan berdasarkan prosedur yang mencakup operasi hitung aritmatika (+, -, ×, ÷, atau kombinasinya)."
+       },
+       {
+        "name": "Memahami informasi",
+        "description": "Memahami informasi dari grafik fungsi, tabel, diagram, infografis, atau bentuk visual lainnya."
+       },
+       {
+        "name": "Mengelompokkan",
+        "description": "Mengelompokkan objek berdasarkan fakta, konsep, dan prinsip matematika dalam cakupan sub-elemen."
+       },
+       {
+        "name": "Mengidentifikasi",
+        "description": "Melakukan identifikasi terhadap objek menggunakan konsep, fakta, dan prinsip matematika dalam cakupan sub-elemen."
+       }
+      ]
+     },
+     {
+      "level": 2,
+      "name": "Aplikasi",
+      "name_en": "Applying",
+      "processes": [
+       {
+        "name": "Memodelkan",
+        "description": "Memodelkan permasalahan kontekstual terkait cakupan sub-elemen ke dalam kalimat matematika."
+       },
+       {
+        "name": "Mengaplikasikan",
+        "description": "Mengaplikasikan rumus matematika untuk menyelesaikan permasalahan yang melibatkan konsep dan prosedur matematis yang familiar dan rutin."
+       },
+       {
+        "name": "Menginterpretasikan",
+        "description": "Menjelaskan makna dari berbagai situasi, kejadian, pernyataan, representasi, atau masalah matematika."
+       }
+      ]
+     },
+     {
+      "level": 3,
+      "name": "Penalaran",
+      "name_en": "Reasoning",
+      "processes": [
+       {
+        "name": "Menganalisis",
+        "description": "Menentukan, menjelaskan, dan menggunakan hubungan beberapa konsep, fakta, prinsip, atau prosedur matematika dalam cakupan sub-elemen."
+       },
+       {
+        "name": "Memecahkan masalah",
+        "description": "Mengaitkan beberapa konsep, fakta, prinsip, prosedur, dan representasi matematika dalam cakupan sub-elemen, untuk menyelesaikan permasalahan dalam situasi baru atau konteks yang tidak rutin."
+       },
+       {
+        "name": "Mengevaluasi",
+        "description": "Mengevaluasi alternatif strategi dan solusi dari suatu pemecahan masalah."
+       },
+       {
+        "name": "Menyimpulkan",
+        "description": "Menarik kesimpulan yang valid dari informasi, data, atau bukti yang diberikan menggunakan konsep, fakta, prinsip, dan prosedur matematika dalam cakupan sub-elemen."
+       }
+      ]
+     }
+    ],
+    "content_intro": "Muatan dan kompetensi yang diukur dalam TKA Matematika SD/MI/sederajat dirangkum dalam tabel berikut:",
+    "content": [
+     {
+      "no": 1,
+      "element": "Bilangan",
+      "sub_element": "Bilangan Rasional",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Pecahan senilai menggunakan gambar dan simbol matematika;",
+       "Perbandingan dan pengurutan bilangan pecahan;",
+       "Relasi berbagai bentuk pecahan (pecahan sederhana, desimal, persen);",
+       "Operasi penjumlahan, pengurangan, perkalian, dan pembagian bilangan cacah;",
+       "Operasi penjumlahan dan pengurangan bilangan pecahan, serta operasi perkalian dan pembagian bilangan pecahan dengan bilangan asli;",
+       "Kelipatan, faktor, KPK, dan FPB bilangan asli."
+      ]
+     },
+     {
+      "no": 2,
+      "element": "Geometri dan Pengukuran",
+      "sub_element": "Objek Geometri",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Bentuk bangun datar;",
+       "Konstruksi bangun ruang dan visualisasi spasial (bagian depan, atas, dan samping)."
+      ],
+      "note": "Bangun datar mencakup segitiga, segiempat, dan segi banyak\nBangun ruang mencakup kubus, balok, dan gabungannya"
+     },
+     {
+      "no": 2,
+      "element": "Geometri dan Pengukuran",
+      "sub_element": "Pengukuran",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Panjang benda menggunakan satuan baku;",
+       "Hubungan antar-satuan baku panjang (mm, dm, cm, m, dam, hm, km);",
+       "Volume benda menggunakan satuan baku;",
+       "Hubungan antar-satuan baku volume (ml, dl, cl, l, dal, hl, kl);",
+       "Berat benda menggunakan satuan baku;",
+       "Hubungan antar-satuan baku berat (mg, dg, cg, g, dag, hg, kg);",
+       "Waktu;",
+       "Hubungan antar-satuan waktu (detik, menit, jam, hari, pekan, bulan, tahun);",
+       "Laju perubahan (kecepatan);",
+       "Keliling dan luas bangun datar (segitiga, segiempat, dan segi banyak);",
+       "Volume bangun ruang (kubus, balok, dan gabungannya);",
+       "Besar sudut;",
+       "Penaksiran ukuran."
+      ]
+     },
+     {
+      "no": 3,
+      "element": "Data",
+      "sub_element": "Penyajian dan Penggunaan Data",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Penyajian data (gambar, piktogram, diagram batang, dan tabel frekuensi);",
+       "Pengambilan informasi dan penggunaan data."
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "level": "SMP/MTs/sederajat",
+   "subject": "Bahasa Indonesia",
+   "pages": [
+    15,
+    17
+   ],
+   "intro": "Sebagaimana TKA Bahasa Indonesia SD/MI/sederajat, TKA Bahasa Indonesia SMP/MTs/sederajat juga difokuskan pada keterampilan membaca.",
+   "muatan": {
+    "intro": "Keterampilan membaca diujikan pada dua jenis teks, yaitu teks informasi dan teks fiksi.",
+    "text_types": [
+     {
+      "label": "Teks informasi",
+      "description": "Teks informasi merupakan teks yang berisi fakta, konsep, atau prosedur dari berbagai bidang atau topik yang berskala lokal, nasional, atau global. Teks informasi dapat berupa teks tunggal maupun teks jamak."
+     },
+     {
+      "label": "Teks fiksi",
+      "description": "Teks fiksi merupakan cerita rekaan yang dapat bersifat faktual (sejarah/biografi) atau realisme dengan latar cerita konkret atau abstrak, tokoh berkarakter bulat, konflik tunggal atau jamak dengan penyelesaian tertutup, alur campuran, dan sudut pandang orang ketiga."
+     }
+    ],
+    "text_characteristics": [
+     {
+      "label": "Karakteristik kosakata",
+      "description": "kata umum, kata berimbuhan/konfiks, kata abstrak, makna denotatif, istilah teknis, makna konotatif konteks tertentu."
+     },
+     {
+      "label": "Karakteristik kalimat",
+      "description": "jumlah kata per kalimat 5–9 kata, kalimat tunggal berbagai pola, kalimat majemuk setara."
+     },
+     {
+      "label": "Karakteristik wacana",
+      "description": "kohesi penyulihan/substitusi, konjungsi antarparagraf perbandingan dan penekanan/intensifikasi, penggunaan tanda baca untuk mendukung deskripsi; panjang teks 200–250 kata (kecuali teks puisi)."
+     }
+    ]
+   },
+   "kompetensi": {
+    "aspects": [
+     "mengidentifikasi informasi tersurat dalam teks;",
+     "menyusun ulang, mengelompokkan, membuat ikhtisar, dan menyajikan kembali informasi tersurat dalam teks;",
+     "mengidentifikasi dan menyimpulkan informasi tersirat dalam teks;",
+     "menilai gagasan, fakta, atau opini dalam teks; dan",
+     "menanggapi isi teks, merefleksi diri dengan tokoh atau kejadian, dan menanggapi bahasa penulis dalam teks."
+    ],
+    "competencies": [
+     {
+      "no": 1,
+      "name": "Pemahaman Tekstual",
+      "description": "pemahaman tekstual, yaitu kemampuan untuk memahami informasi yang dikemukakan secara eksplisit, mengelompokkan, menyusun ulang, dan menyajikan kembali informasi secara eksplisit dari teks;",
+      "subcompetencies": [
+       "Mengidentifikasi penggunaan istilah dalam berbagai bidang.",
+       "Mengidentifikasi objek dan/atau latar berdasarkan kosakata yang digunakan dalam teks fiksi atau nonfiksi.",
+       "Mengidentifikasi informasi penting yang tersurat dalam teks.",
+       "Menyusun kerangka atau bagan berdasarkan bagian-bagian penting dalam teks."
+      ]
+     },
+     {
+      "no": 2,
+      "name": "Pemahaman Inferensial",
+      "description": "pemahaman inferensial, yaitu kemampuan untuk menarik kesimpulan berdasarkan informasi yang tersirat dalam teks; dan",
+      "subcompetencies": [
+       "Menyimpulkan ide pokok, gagasan pendukung, tokoh, peristiwa, latar, dan/atau nilai-nilai dalam dan/atau antarteks.",
+       "Menjelaskan kelogisan hubungan antarperistiwa, antargagasan, dan/atau antarinformasi dalam dan/atau antarteks.",
+       "Memprediksi peristiwa dalam teks.",
+       "Menjelaskan bahasa kias dan citraan yang digunakan dalam teks fiksi."
+      ]
+     },
+     {
+      "no": 3,
+      "name": "Evaluasi dan Apresiasi",
+      "description": "evaluasi dan apresiasi, yaitu kemampuan untuk membuat penilaian terhadap ide, menanggapi teks secara emosional dan estetis dengan mempertimbangkan dampaknya terhadap perasaan, imajinasi, serta penggunaan bahasa oleh penulis.",
+      "subcompetencies": [
+       "Menilai relevansi peristiwa dalam teks dengan kehidupan sehari-hari.",
+       "Menilai kesesuaian dan/atau keakuratan unsur, kebahasaan, atau isi berdasarkan perbandingan informasi dalam dan/atau antarteks.",
+       "Menyimpulkan respons emosional terhadap unsur teks fiksi."
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "level": "SMP/MTs/sederajat",
+   "subject": "Matematika",
+   "pages": [
+    18,
+    25
+   ],
+   "intro": "Sebagaimana TKA Matematika SD/MI/sederajat, TKA Matematika SMP/MTs/sederajat juga mengukur kemampuan murid dalam memahami fakta, konsep, prinsip, dan prosedur matematika, serta kemampuan mereka dalam menerapkan pengetahuan matematika untuk menyelesaikan masalah (problem solving).",
+   "muatan": {
+    "intro": "Muatan TKA Matematika SMP/MTs/sederajat merujuk pada elemen kurikulum atau materi matematika yang dipelajari murid yang ada pada Kurikulum 2013 dan Kurikulum Merdeka. Elemen ini meliputi:",
+    "elements": [
+     "bilangan,",
+     "aljabar,",
+     "geometri dan pengukuran, serta",
+     "data dan peluang."
+    ],
+    "notes": [
+     "Penggunaan logika matematika diintegrasikan langsung dengan elemen matematika yang tertera dalam kurikulum.",
+     "Pengetahuan matematika diukur melalui permasalahan dalam konteks matematika dan permasalahan dalam konteks keseharian yang dapat meliputi kejadian atau situasi di lingkup personal, keluarga, atau lingkungan sekitar yang bersifat lokal."
+    ]
+   },
+   "kompetensi": {
+    "intro": "Tes Kemampuan Akademik (TKA) Matematika SMP/MTs/sederajat mengukur kemampuan matematis sebagai berikut:",
+    "abilities": [
+     "pengetahuan matematika,",
+     "representasi matematis,",
+     "penalaran dan penggunaan logika matematis,",
+     "pemecahan masalah matematis, dan",
+     "koneksi matematis."
+    ],
+    "cognitive_intro": "Kemampuan matematis diukur pada tiga level kognitif, yaitu Pengetahuan dan Pemahaman (Knowing and Understanding), Aplikasi (Applying), dan Penalaran (Reasoning). Kemampuan matematis dalam setiap cakupan sub-elemen memungkinkan diukur dalam satu atau beberapa level kognitif. Setiap level kognitif mencakup beberapa proses berpikir. Berikut deskripsi proses berpikir untuk setiap level kognitif.",
+    "cognitive_levels": [
+     {
+      "level": 1,
+      "name": "Pengetahuan dan Pemahaman",
+      "name_en": "Knowing and Understanding",
+      "processes": [
+       {
+        "name": "Menghitung",
+        "description": "Melakukan perhitungan berdasarkan prosedur yang mencakup operasi hitung aritmatika (+, -, ×, ÷, atau kombinasinya), operasi aljabar, atau operasi matematika lainnya."
+       },
+       {
+        "name": "Memahami informasi",
+        "description": "Memahami informasi dari grafik fungsi, tabel, diagram, infografis, atau bentuk visual lainnya."
+       },
+       {
+        "name": "Mengelompokkan",
+        "description": "Mengelompokkan objek berdasarkan fakta, konsep, dan prinsip matematika dalam cakupan sub-elemen."
+       },
+       {
+        "name": "Mengidentifikasi",
+        "description": "Melakukan identifikasi terhadap objek menggunakan konsep, fakta, dan prinsip matematika dalam cakupan sub-elemen."
+       }
+      ]
+     },
+     {
+      "level": 2,
+      "name": "Aplikasi",
+      "name_en": "Applying",
+      "processes": [
+       {
+        "name": "Memodelkan",
+        "description": "Memodelkan permasalahan kontekstual terkait cakupan sub-elemen ke dalam kalimat matematika."
+       },
+       {
+        "name": "Mengaplikasikan",
+        "description": "Mengaplikasikan strategi dan operasi matematika (berupa operasi hitung, operasi aljabar, atau bentuk operasi lainnya) untuk menyelesaikan permasalahan yang melibatkan konsep dan prosedur matematis yang familiar dan rutin."
+       },
+       {
+        "name": "Menginterpretasikan",
+        "description": "Memahami dan menjelaskan makna dari berbagai situasi, kejadian, pernyataan, representasi, atau masalah matematika."
+       }
+      ]
+     },
+     {
+      "level": 3,
+      "name": "Penalaran",
+      "name_en": "Reasoning",
+      "processes": [
+       {
+        "name": "Menganalisis",
+        "description": "Menentukan, menjelaskan, dan menggunakan hubungan beberapa konsep, fakta, prinsip, atau prosedur matematika dalam cakupan sub-elemen."
+       },
+       {
+        "name": "Memecahkan masalah",
+        "description": "Mengaitkan beberapa konsep, fakta, prinsip, prosedur, dan representasi matematika dalam cakupan sub-elemen, untuk menyelesaikan permasalahan dalam situasi baru atau konteks yang tidak rutin."
+       },
+       {
+        "name": "Mengevaluasi",
+        "description": "Mengevaluasi alternatif strategi dan solusi dari suatu pemecahan masalah."
+       },
+       {
+        "name": "Menyimpulkan",
+        "description": "Menarik kesimpulan yang valid dari informasi, data, atau bukti yang diberikan menggunakan konsep, fakta, prinsip, dan prosedur matematika dalam cakupan sub-elemen."
+       },
+       {
+        "name": "Melakukan generalisasi",
+        "description": "Menyusun pernyataan matematis yang menggambarkan hubungan yang lebih umum terkait konsep, fakta, prinsip, dan prosedur dalam cakupan sub-elemen"
+       }
+      ]
+     }
+    ],
+    "content_intro": "Muatan dan kompetensi yang diukur dalam TKA Matematika SMP/MTs/sederajat dirangkum dalam tabel berikut:",
+    "content": [
+     {
+      "no": 1,
+      "element": "Bilangan",
+      "sub_element": "Bilangan Real",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Perbandingan dan sifat-sifat bilangan;",
+       "Operasi aritmetika pada bilangan;",
+       "Estimasi/perkiraan hasil perhitungan;",
+       "Faktorisasi prima bilangan asli;",
+       "Rasio (skala, proporsi, dan laju perubahan);",
+       "Perbandingan senilai dan berbalik nilai."
+      ],
+      "note": "Bilangan mencakup bilangan bulat, bilangan rasional dan irasional, bilangan berpangkat bulat, bilangan akar, dan bilangan dalam notasi ilmiah"
+     },
+     {
+      "no": 2,
+      "element": "Aljabar",
+      "sub_element": "Persamaan dan Pertidaksamaan Linier",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Persamaan linear satu variabel;",
+       "Pertidaksamaan linear satu variabel;",
+       "Sistem persamaan linear dua variabel."
+      ]
+     },
+     {
+      "no": 2,
+      "element": "Aljabar",
+      "sub_element": "Bentuk Aljabar",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Bentuk aljabar dan sifat-sifat operasinya (komutatif, asosiatif, dan distributif)."
+      ]
+     },
+     {
+      "no": 2,
+      "element": "Aljabar",
+      "sub_element": "Fungsi",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Relasi dan fungsi (domain, kodomain, range), serta penyajiannya."
+      ]
+     },
+     {
+      "no": 2,
+      "element": "Aljabar",
+      "sub_element": "Barisan dan Deret",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Barisan berhingga bilangan;",
+       "Deret berhingga bilangan."
+      ]
+     },
+     {
+      "no": 3,
+      "element": "Geometri dan Pengukuran",
+      "sub_element": "Objek Geometri",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Hubungan antar-sudut yang terbentuk oleh dua garis yang berpotongan, dan oleh dua garis sejajar yang dipotong suatu garis transversal (termasuk penentuan besar sudut dalam segitiga);",
+       "Teorema Pythagoras.",
+       "Kekongruenan dan kesebangunan bangun datar;",
+       "Jaring-jaring bangun ruang (prisma, tabung, limas dan kerucut)."
+      ]
+     },
+     {
+      "no": 3,
+      "element": "Geometri dan Pengukuran",
+      "sub_element": "Transformasi Geometri",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Transformasi tunggal (refleksi, translasi, rotasi, dan dilatasi) terhadap titik, garis, dan bangun datar pada bidang."
+      ]
+     },
+     {
+      "no": 3,
+      "element": "Geometri dan Pengukuran",
+      "sub_element": "Pengukuran",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Keliling dan luas bangun datar (daerah segi banyak dan daerah lingkaran, serta daerah gabungannya);",
+       "Volume bangun ruang (prisma, limas, dan bola)."
+      ]
+     },
+     {
+      "no": 4,
+      "element": "Data dan Peluang",
+      "sub_element": "Data",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Perumusan pertanyaan untuk mendapatkan data, serta penyajian, dan peginterpretasian data;",
+       "Penentuan dan penaksiran rerata (mean), median, modus, dan jangkauan (range) dari data;",
+       "Perbandingan ukuran pemusatan dan ukuran penyebaran beberapa kelompok data."
+      ],
+      "note": "Penyajian data meliputi: diagram batang, diagram garis, diagram lingkaran, dan tabel"
+     },
+     {
+      "no": 4,
+      "element": "Data dan Peluang",
+      "sub_element": "Peluang",
+      "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut:",
+      "scope": [
+       "Peluang dan frekuensi relatif dari kejadian tunggal."
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "schedule": [
+  {
+   "levels": [
+    "SD/MI/sederajat"
+   ],
+   "days": [
+    {
+     "day": 1,
+     "label": "I",
+     "tests": [
+      {
+       "name": "Latihan",
+       "minutes": 10
+      },
+      {
+       "name": "Matematika dan Numerasi",
+       "minutes": 75
+      },
+      {
+       "name": "Survei Karakter",
+       "minutes": 20
+      }
+     ],
+     "sessions": [
+      {
+       "session": 1,
+       "wib": "07.00-08.45",
+       "wita": "08.00-09.45",
+       "wit": "09.00-10.45"
+      },
+      {
+       "session": 2,
+       "wib": "09.15-11.00",
+       "wita": "10.15-12.00",
+       "wit": "11.15-13.00"
+      },
+      {
+       "session": 3,
+       "wib": "11.30-13.15",
+       "wita": "12.30-14.15",
+       "wit": "13.30-15.15"
+      },
+      {
+       "session": 4,
+       "wib": "13.45-15.30",
+       "wita": "14.45-16.30",
+       "wit": "15.45-17.30"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "label": "II",
+     "tests": [
+      {
+       "name": "Latihan",
+       "minutes": 10
+      },
+      {
+       "name": "Bahasa Indonesia dan Literasi Membaca",
+       "minutes": 75
+      },
+      {
+       "name": "Survei Lingkungan Belajar",
+       "minutes": 20
+      }
+     ],
+     "sessions": [
+      {
+       "session": 1,
+       "wib": "07.00-08.45",
+       "wita": "08.00-09.45",
+       "wit": "09.00-10.45"
+      },
+      {
+       "session": 2,
+       "wib": "09.15-11.00",
+       "wita": "10.15-12.00",
+       "wit": "11.15-13.00"
+      },
+      {
+       "session": 3,
+       "wib": "11.30-13.15",
+       "wita": "12.30-14.15",
+       "wit": "13.30-15.15"
+      },
+      {
+       "session": 4,
+       "wib": "13.45-15.30",
+       "wita": "14.45-16.30",
+       "wit": "15.45-17.30"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "levels": [
+    "SMP/MTs/sederajat"
+   ],
+   "days": [
+    {
+     "day": 1,
+     "label": "I",
+     "tests": [
+      {
+       "name": "Latihan",
+       "minutes": 10
+      },
+      {
+       "name": "Matematika dan Numerasi",
+       "minutes": 75
+      },
+      {
+       "name": "Survei Karakter",
+       "minutes": 20
+      }
+     ],
+     "sessions": [
+      {
+       "session": 1,
+       "wib": "07.00-08.45",
+       "wita": "08.00-09.45",
+       "wit": "09.00-10.45"
+      },
+      {
+       "session": 2,
+       "wib": "09.15-11.00",
+       "wita": "10.15-12.00",
+       "wit": "11.15-13.00"
+      },
+      {
+       "session": 3,
+       "wib": "11.30-13.15",
+       "wita": "12.30-14.15",
+       "wit": "13.30-15.15"
+      },
+      {
+       "session": 4,
+       "wib": "13.45-15.30",
+       "wita": "14.45-16.30",
+       "wit": "15.45-17.30"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "label": "II",
+     "tests": [
+      {
+       "name": "Latihan",
+       "minutes": 10
+      },
+      {
+       "name": "Bahasa Indonesia dan Literasi",
+       "minutes": 75
+      },
+      {
+       "name": "Survei Lingkungan Belajar",
+       "minutes": 20
+      }
+     ],
+     "sessions": [
+      {
+       "session": 1,
+       "wib": "07.00-08.45",
+       "wita": "08.00-09.45",
+       "wit": "09.00-10.45"
+      },
+      {
+       "session": 2,
+       "wib": "09.15-11.00",
+       "wita": "10.15-12.00",
+       "wit": "11.15-13.00"
+      },
+      {
+       "session": 3,
+       "wib": "11.30-13.15",
+       "wita": "12.30-14.15",
+       "wit": "13.30-15.15"
+      },
+      {
+       "session": 4,
+       "wib": "13.45-15.30",
+       "wita": "14.45-16.30",
+       "wit": "15.45-17.30"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "levels": [
+    "SMA/MA/sederajat",
+    "SMK/MAK"
+   ],
+   "days": [
+    {
+     "day": 1,
+     "label": "I",
+     "tests": [
+      {
+       "name": "Latihan",
+       "minutes": 10
+      },
+      {
+       "name": "Bahasa Indonesia dan Literasi Membaca",
+       "minutes": 60
+      },
+      {
+       "name": "Survei Karakter",
+       "minutes": 20
+      }
+     ],
+     "sessions": [
+      {
+       "session": 1,
+       "wib": "07.00-08.30",
+       "wita": "08.00-09.30",
+       "wit": "09.00-10.30"
+      },
+      {
+       "session": 2,
+       "wib": "09.00-10.30",
+       "wita": "10.00-11.30",
+       "wit": "11.00-12.30"
+      },
+      {
+       "session": 3,
+       "wib": "11.00-12.30",
+       "wita": "12.00-13.30",
+       "wit": "13.00-14.30"
+      },
+      {
+       "session": 4,
+       "wib": "13.00-14.30",
+       "wita": "14.00-15.30",
+       "wit": "15.00-16.30"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "label": "II",
+     "tests": [
+      {
+       "name": "Latihan",
+       "minutes": 10
+      },
+      {
+       "name": "Bahasa Inggris",
+       "minutes": 50
+      },
+      {
+       "name": "Survei Lingkungan Belajar",
+       "minutes": 20
+      }
+     ],
+     "sessions": [
+      {
+       "session": 1,
+       "wib": "07.00-08.20",
+       "wita": "08.00-09.20",
+       "wit": "09.00-10.20"
+      },
+      {
+       "session": 2,
+       "wib": "09.00-10.20",
+       "wita": "10.00-11.20",
+       "wit": "11.00-12.20"
+      },
+      {
+       "session": 3,
+       "wib": "11.00-12.20",
+       "wita": "12.00-13.20",
+       "wit": "13.00-14.20"
+      },
+      {
+       "session": 4,
+       "wib": "13.00-14.20",
+       "wita": "14.00-15.20",
+       "wit": "15.00-16.20"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "label": "III",
+     "tests": [
+      {
+       "name": "Latihan",
+       "minutes": 10
+      },
+      {
+       "name": "Matematika dan Numerasi",
+       "minutes": 70
+      }
+     ],
+     "sessions": [
+      {
+       "session": 1,
+       "wib": "07.00-08.20",
+       "wita": "08.00-09.20",
+       "wit": "09.00-10.20"
+      },
+      {
+       "session": 2,
+       "wib": "09.00-10.20",
+       "wita": "10.00-11.20",
+       "wit": "11.00-12.20"
+      },
+      {
+       "session": 3,
+       "wib": "11.00-12.20",
+       "wita": "12.00-13.20",
+       "wit": "13.00-14.20"
+      },
+      {
+       "session": 4,
+       "wib": "13.00-14.20",
+       "wita": "14.00-15.20",
+       "wit": "15.00-16.20"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "label": "IV",
+     "tests": [
+      {
+       "name": "Latihan",
+       "minutes": 10
+      },
+      {
+       "name": "Mata Pelajaran Pilihan Pertama",
+       "minutes": 50
+      },
+      {
+       "name": "Mata Pelajaran Pilihan Kedua",
+       "minutes": 50
+      }
+     ],
+     "sessions": [
+      {
+       "session": 1,
+       "wib": "07.00-08.50",
+       "wita": "08.00-09.50",
+       "wit": "09.00-10.50"
+      },
+      {
+       "session": 2,
+       "wib": "09.30-11.20",
+       "wita": "10.30-12.20",
+       "wit": "11.30-13.20"
+      },
+      {
+       "session": 3,
+       "wib": "12.00-13.50",
+       "wita": "13.00-14.50",
+       "wit": "13.00-15.50"
+      },
+      {
+       "session": 4,
+       "wib": "14.30-16.20",
+       "wita": "15.30-17.20",
+       "wit": "16.30-18.20"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "schedule_notes": [
+  "TKA dan AN dilaksanakan selama 4 (empat) hari untuk SMA/MA/sederajat dan SMK/MAK; dan 2 (dua) hari untuk jenjang SD/MI/sederajat dan SMP/MTs/sederajat;",
+  "Survei Lingkungan Belajar untuk pendidik dan kepala satuan pendidikan dilaksanakan selama 4 (empat) minggu;",
+  "Penggabungan soal numerasi AN juga dilakukan pada mata uji Matematika pada jenjang SD/MI/sederajat dan SMP/MTs/sederajat dan Matematika Wajib pada jenjang SMA/MA/sederajat dan SMK/MAK."
+ ],
+ "scoring": {
+  "ranges": [
+   {
+    "levels": [
+     "SD/MI/sederajat",
+     "SMP/MTs/sederajat"
+    ],
+    "min": 0,
+    "max": 100,
+    "decimals": 2,
+    "istimewa_from": 95.0
+   },
+   {
+    "levels": [
+     "SMA/MA/sederajat",
+     "SMK/MAK"
+    ],
+    "min": 200,
+    "max": 800,
+    "decimals": 2,
+    "istimewa_from": 725.0
+   }
+  ],
+  "categories": [
+   "Baik",
+   "Memadai",
+   "Kurang"
+  ],
+  "texts": [
+   "Hasil TKA untuk jenjang SD/MI/sederajat dan SMP/MTs/sederajat dilaporkan dalam rentang nilai 0 (nol) sampai dengan 100 (seratus) dengan pembulatan 2 (dua) angka di belakang koma.",
+   "Hasil TKA untuk jenjang SMA/MA/sederajat dan SMK/MAK dilaporkan dalam rentang nilai 200 (dua ratus) sampai dengan 800 (delapan ratus) dengan pembulatan 2 (dua) angka di belakang koma.",
+   "Kategori capaian hasil TKA merupakan pengelompokan nilai yang dicapai dalam setiap mata pelajaran.",
+   "Predikat istimewa diperuntukkan peserta jenjang SD/MI/sederajat dan SMP/MTs/sederajat yang mendapatkan nilai 95,00 atau lebih di masing-masing mata uji.",
+   "Predikat istimewa diperuntukkan peserta jenjang SMA/MA/sederajat dan SMK/MAK yang mendapatkan nilai 725,00 atau lebih di masing-masing mata uji."
+  ],
+  "note": "Kepmendikdasmen 56/2026 names the categories without cut scores."
+ },
+ "errata": [
+  {
+   "source": "Perka BSKAP 047/H/AN/2025, Lampiran",
+   "page": 24,
+   "printed": "peginterpretasian",
+   "reason": "'peginterpretasian' for 'penginterpretasian' (SMP, Data dan Peluang)"
+  },
+  {
+   "source": "Perka BSKAP 047/H/AN/2025, Lampiran",
+   "page": 21,
+   "printed": "Persamaan dan Pertidaksamaan Linier",
+   "reason": "'Linier' in the sub-element name; its items print 'linear' (SMP, Aljabar)"
+  },
+  {
+   "source": "Kepmendikdasmen 56/2026, Lampiran",
+   "page": 48,
+   "printed": "13.00-15.50",
+   "reason": "SMA/SMK day IV session 3 WIT printed '13.00 - 15.50'; WIB 12.00–13.50 and WITA 13.00–14.50 give WIT 14.00–15.50"
+  }
+ ]
+}
