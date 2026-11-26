@@ -13,6 +13,9 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 - Decision F-028: which forms and regions `sekolah` keeps.
 
 ### Changed
+- `wilayah` checked against Kepmendagri 300.2.2-2430/2025 (R-14): it changes only island data of Aceh and Sumatera
+  Utara; region codes, names and counts already match, so the data stays 2026-02-13. The decree is kept in
+  `sources/wilayah/`.
 - `sekolah` 2026-11-26 (R-01 part 1): every active school of Dikdas and Dikmen in all 38 provinces (283,421: SD, MI,
   SMP, MTs, SMA, MA, SMK, SLB, SPK, Pendidikan Diniyah Formal, Satuan Pendidikan Muadalah, Buddhist, Hindu and
   Christian schools) replaces the SD/MI-only version 2026-11-18. New fields `alamat`, `kode_desa`, `kode_kecamatan`,
