@@ -11,6 +11,11 @@ the worked example and table rows printed in the scoring tables, and the hurdle 
 completeness. Then it writes the three sets:
 
   python3 -I tools/converters/atletik.py data
+  python3 -I tools/converters/atletik.py data --tables sources/atletik/o2sn   # also check every O2SN table row
+
+O2SN 2026 (R-10b part): eligibility, events, implements, Kids' Athletics courses and qualifying marks are transcribed
+from the three Puspresnas guides with PDF page references; the SMP and SMA/SMK scoring tables the guides link to are
+checked row by row with --tables (needs pdftotext; not run in CI).
 
 Indonesian labels (`label`) are the usual PASI terms; they are to be checked against PASI and the school
 championships' technical handbooks (brief R-10b). `label_en` is the World Athletics name as printed.
@@ -22,6 +27,14 @@ import sys
 
 RULES = "WA C1.1/C2.1 (2026)"
 TABLES = "IAAF Scoring Tables for Combined Events (2016)"
+# O2SN 2026 guides (Puspresnas, Kemendikdasmen, March 2026) and the scoring tables they link to (sources/atletik/o2sn/)
+O2SN = {
+    "SD": "Pedoman O2SN SD/MI/Sederajat 2026",
+    "SMP": "Panduan O2SN SMP/MTs/Sederajat 2026",
+    "SMA": "Panduan O2SN SMA/MA/SMK/MAK/Sederajat 2026",
+    "SMP_TABLE": "Scoring Table Trilomba O2SN SMP (\"Licenced by IAAF & PASI Modification\")",
+    "SMA_TABLE": "Scoring Tables Pancalomba O2SN SMA & SMK (WA tables, edition 2001, reprint 2016)",
+}
 CATEGORIES = ["U18_W", "U20_W", "SENIOR_W", "U18_M", "U20_M", "SENIOR_M"]
 
 # ------------------------------------------------------------------ age groups
@@ -32,6 +45,7 @@ AGE_GROUPS = {
         "dec31": "Umur dihitung pada 31 Desember tahun lomba (World Athletics, PASI).",
         "birthday_reached": "Sudah berulang tahun ke-N pada hari lomba (Master).",
         "championship": "Tanggal acuan ditetapkan juknis kejuaraan (O2SN, POPDA/POPNAS, kejuaraan panitia).",
+        "born_on_or_after": "Lahir pada tanggal batas atau sesudahnya (O2SN: `born_on_or_after`), ditambah syarat kelas.",
     },
     "groups": [
         {"code": "U18", "label": "U18", "label_en": "Under-18 (U18)", "min_age": 16, "max_age": 17,
@@ -44,10 +58,28 @@ AGE_GROUPS = {
         {"code": "MASTER", "label": "Master", "label_en": "Master", "min_age": 35, "max_age": None,
          "reference": "birthday_reached", "ref": f"{RULES}, Technical Rules, Age Categories (PDF p. 44)",
          "note": "Masters' five-year groups follow the World Athletics/WMA Handbook (not part of this set)."},
+        # O2SN 2026 (Puspresnas): eligibility by birth date and grade, the same for every sport of the level.
+        {"code": "O2SN_SD", "label": "O2SN SD/MI", "label_en": "O2SN primary (SD/MI) 2026", "min_age": None,
+         "max_age": None, "reference": "born_on_or_after", "championship": "O2SN", "year": 2026,
+         "born_on_or_after": "2014-01-01", "grades": [3, 4, 5], "school_year": "2026/2027",
+         "levels": ["SD", "MI", "sederajat"],
+         "ref": f"{O2SN['SD']}, Bab III B.1.d (PDF p. 18, printed p. 16)",
+         "note": "The SD guide names school year 2026/2027 for the grades; the SMP and SMA guides name 2025/2026. "
+                 "Stored as printed."},
+        {"code": "O2SN_SMP", "label": "O2SN SMP/MTs", "label_en": "O2SN lower secondary (SMP/MTs) 2026",
+         "min_age": None, "max_age": None, "reference": "born_on_or_after", "championship": "O2SN", "year": 2026,
+         "born_on_or_after": "2011-01-01", "grades": [7, 8], "school_year": "2025/2026",
+         "levels": ["SMP", "MTs", "sederajat"],
+         "ref": f"{O2SN['SMP']}, Bab III B.1.d (PDF p. 20, printed p. 18)"},
+        {"code": "O2SN_SMA", "label": "O2SN SMA/MA/SMK/MAK", "label_en": "O2SN upper secondary (SMA/MA/SMK/MAK) 2026",
+         "min_age": None, "max_age": None, "reference": "born_on_or_after", "championship": "O2SN", "year": 2026,
+         "born_on_or_after": "2008-01-01", "grades": [10, 11], "school_year": "2025/2026",
+         "levels": ["SMA", "MA", "SMK", "MAK", "sederajat"],
+         "ref": f"{O2SN['SMA']}, Bab III B.1.d (PDF p. 21, printed p. 17)"},
     ],
     "pending": [
         "PASI U14 and U16 (and their implements and hurdle heights): brief R-10b.",
-        "O2SN SD/SMP/SMA, POPDA/POPNAS groups and their reference dates: brief R-10b.",
+        "POPDA/POPNAS groups and their reference dates: brief R-10b.",
     ],
     "notes": [
         "Each championship stores its own reference rule (user decision 2026-11-26): an app keeps "
@@ -58,7 +90,7 @@ AGE_GROUPS = {
 
 # ------------------------------------------------------------------ events
 # code, label (Indonesian), label_en (as printed), kind, group, result, extra
-# kind: track | field | road | walk | relay | combined; result: time | distance | height | points
+# kind: track | field | road | walk | relay | combined | kids; result: time | distance | height | points
 
 EVENTS = [
     ("60m", "Lari 60 m", "60m", "track", "sprint", "time", {"wind_seconds": 5, "lanes": True}),
@@ -106,6 +138,13 @@ EVENTS = [
     ("Pen", "Pancalomba", "Pentathlon", "combined", "combined", "points", {"sexes": ["M"]}),
     ("Hep", "Saptalomba", "Heptathlon", "combined", "combined", "points", {"sexes": ["W"]}),
     ("Dec", "Dasalomba", "Decathlon", "combined", "combined", "points", {}),
+    ("Tri", "Trilomba", "Triathlon (school)", "combined", "combined", "points", {"championship": "O2SN SMP"}),
+    ("PenO2SN", "Pancalomba (O2SN SMA/SMK)", "Pentathlon (school)", "combined", "combined", "points",
+     {"championship": "O2SN SMA"}),
+    # Kids' Athletics team events of O2SN SD (labels as printed in the guide)
+    ("KA_KANGA", "Gawang & Sprint (Kanga Escape)", "Kanga Escape", "kids", "kids_athletics", "time",
+     {"team_size": 2}),
+    ("KA_F1", "Formula 1", "Formula 1", "kids", "kids_athletics", "time", {"team_size": 2}),
 ]
 
 EVENT_REFS = {
@@ -171,6 +210,111 @@ COMBINED = {
         "Vertical jumps: uniform bar raises of 3 cm (High Jump) and 10 cm (Pole Vault).",
         "Without fully automatic timing, each athlete is timed by three timekeepers.",
     ],
+}
+
+# ------------------------------------------------------------------ O2SN 2026 (school championship)
+# Facts as printed in the three guides; PDF page numbers (printed numbers differ, given where useful).
+
+CHAMPIONSHIPS = {
+    "O2SN_2026": {
+        "name": "Olimpiade Olahraga Siswa Nasional (O2SN) 2026",
+        "organiser": "Pusat Prestasi Nasional (Puspresnas), Sekretariat Jenderal, Kementerian Pendidikan Dasar dan "
+                     "Menengah",
+        "rules_basis": "PASI rules adapted from World Athletics; the SD and SMA guides name WA edition 2026, the SMP "
+                       "guide edition 2025 (as printed)",
+        "levels": {
+            "SD": {
+                "age_group": "O2SN_SD",
+                "sport_label": "Kids' Athletics",
+                "events": {"M": ["KA_KANGA", "KA_F1"], "W": ["KA_KANGA", "KA_F1"]},
+                "entries": "1 putra and 1 putri per contingent; each athlete takes part in both events",
+                "events_ref": f"{O2SN['SD']}, Lampiran A.1.c and A.2.a.6–7 (PDF p. 26)",
+                "teams_note": "A team has 2 athletes (PDF p. 27); the guide does not say whether a team is the "
+                              "contingent's putra and putri together.",
+                "surface": "synthetic track only, no earth or gravel (PDF p. 27)",
+                "ranking": "by time per event; place points from the number of teams down to 1 (38, 37, 36 … with "
+                           "38 teams); highest total wins (PDF p. 27, 29)",
+                "ties": "equal totals for a position are a tie (\"hasil sama\", PDF p. 29)",
+                "footwear": "barefoot, shoes or spikes allowed (PDF p. 27)",
+                "events_detail": {
+                    "KA_KANGA": {
+                        "description": "Shuttle relay over hurdles out and flat sprint back; the first runner hands "
+                                       "a relay ring to the second behind the flag; time from start until the second "
+                                       "runner finishes",
+                        "lanes_per_team": 2, "distance_m": 40, "hurdles": 4, "hurdle_height_m": 0.50,
+                        "hurdle_spacing_m": 6.0, "start_to_first_hurdle_m": 11.0, "last_hurdle_to_flag_m": 11.0,
+                        "equipment": ["1 stopwatch", "1 event card", "4 hurdles", "2 flag posts", "1 relay ring"],
+                        "ref": f"{O2SN['SD']}, Lampiran A.2.d.1 (PDF p. 27–28)",
+                        "figure_note": "The 11 m distances are read from the figure on PDF p. 28 (11 + 6 + 6 + 6 + "
+                                       "11 = 40 m); the text gives 40 m, 4 hurdles, 50 cm, 6 m apart.",
+                    },
+                    "KA_F1": {
+                        "description": "Relay round a course of about 80 m with sprint, hurdles and slalom; each "
+                                       "runner starts with a forward or sideways roll on a mat; 1–2 teams per start",
+                        "course_m": 80, "hurdles": 9, "hurdle_height_m": None, "slalom_poles": 10,
+                        "slalom_spacing_m": 1.0, "mats": 3, "cones": 30,
+                        "ref": f"{O2SN['SD']}, Lampiran A.2.d.2 (PDF p. 28–29)",
+                        "note": "Hurdle height is not stated for Formula 1.",
+                    },
+                },
+            },
+            "SMP": {
+                "age_group": "O2SN_SMP",
+                "sport_label": "Atletik",
+                "combined": "Tri",
+                "events": {"M": ["60m", "LJ", "SP"], "W": ["60m", "LJ", "SP"]},
+                "entries": "1 putra and 1 putri per contingent; each athlete takes part in all three events",
+                "events_ref": f"{O2SN['SMP']}, Lampiran A.1.c and A.2.a.6–7 (PDF p. 28)",
+                "trials": {"LJ": 3, "SP": 3},
+                "trials_ref": f"{O2SN['SMP']}, Lampiran A.2.d.2 (PDF p. 30)",
+                "implements_kg": {"SP": {"M": 4.0, "W": 3.0}},
+                "implements_ref": f"{O2SN['SMP']}, Lampiran A.2.c.3 (PDF p. 29)",
+                "timing": "fully automatic timing/photo finish, backed up by digital hand stopwatches (PDF p. 29)",
+                "ranking": "highest total of the three events' points (Trilomba table); equal totals are a tie "
+                           "(PDF p. 31–32)",
+                "qualifying": {  # QET for the national round, from the province (table image, PDF p. 29)
+                    "M": {"60m": 8.51, "LJ": 4.60, "SP": 7.37},
+                    "W": {"60m": 10.14, "LJ": 3.68, "SP": 5.91},
+                    "units": {"60m": "s", "LJ": "m", "SP": "m"},
+                    "ref": f"{O2SN['SMP']}, Lampiran A.2.a.10 (PDF p. 29, table image)",
+                },
+            },
+            "SMA": {
+                "age_group": "O2SN_SMA",
+                "sport_label": "Atletik",
+                "combined": "PenO2SN",
+                "events": {"M": ["100m", "LJ", "SP", "JT", "400m"], "W": ["100m", "LJ", "SP", "JT", "400m"]},
+                "events_order_note": "Listed in this order in the guide; the competition order is not stated.",
+                "entries": "1 putra and 1 putri per contingent; each athlete takes part in all five events",
+                "events_ref": f"{O2SN['SMA']}, Lampiran A.1.c and A.2.a.6–7 (PDF p. 30)",
+                "trials": {"LJ": 3, "SP": 3, "JT": 3},
+                "trials_ref": f"{O2SN['SMA']}, Lampiran A.4.b (PDF p. 32)",
+                "implements_kg": {"SP": {"M": 5.0, "W": 3.0}, "JT": {"M": 0.700, "W": 0.500}},
+                "implements_ref": f"{O2SN['SMA']}, Lampiran A.3.c (PDF p. 32)",
+                "timing": "fully automatic timing/photo finish, backed up by digital hand stopwatches (PDF p. 32)",
+                "ranking": "highest total of the five events' points (Pancalomba table); equal totals are a tie "
+                           "(PDF p. 34)",
+                "qualifying": {  # QET for the national round (table image, PDF p. 31)
+                    "M": {"100m": 13.31, "LJ": 4.59, "SP": 7.77, "JT": 26.75, "400m": 64.86},
+                    "W": {"100m": 17.34, "LJ": 3.36, "SP": 6.00, "JT": 13.78, "400m": 94.37},
+                    "units": {"100m": "s", "400m": "s", "LJ": "m", "SP": "m", "JT": "m"},
+                    "ref": f"{O2SN['SMA']}, Lampiran A.2.a.10 (PDF p. 31, table image)",
+                    "note": "Athletes who do not meet the QET may not enter the national round.",
+                },
+            },
+        },
+        "common": [
+            "Eligibility (birth date, grades) is in atletik-kelompok-umur (O2SN_SD, O2SN_SMP, O2SN_SMA).",
+            "Not a past national champion of a PB PASI event (all levels) nor an international champion of a World "
+            "Athletics event (SMP, SMA); details and other conditions in each guide's Bab III and Lampiran A.2.a.",
+            "Lanes and order by draw (WA rule cited as 'Pasal 141'); protests within 30 minutes of the official "
+            "result; appeal in writing with a deposit of Rp1.000.000 within 30 minutes.",
+            "Roll call (SMP, SMA): track events first call 30 min and last call 20 min before the start, entry to "
+            "the arena 15 min before; jumps and throws 60 / 40 / 30 min.",
+            "Medals for places 1–3 of the combined result (SD: Kids' Athletics total); certificates for places 1–3 "
+            "per event and 4–8 overall.",
+        ],
+    },
 }
 
 # ------------------------------------------------------------------ results
@@ -316,6 +460,7 @@ SCORING = {
             "PV_decathlon":    ["jumps", 0.44125, 100, 1.35],
             "DT_decathlon":    ["throws", 12.3311, 3.00, 1.10],
             "60mH_indoor":     ["track", 20.0479, 17.00, 1.835],
+            "60m_o2sn_smp":    ["track", 46.0849, 13.00, 1.81],
         },
     },
     "notes": [
@@ -323,6 +468,40 @@ SCORING = {
         "Compute with exact decimals (performance as recorded after rounding), then round down; floating-point "
         "results such as 998.9999999 must be treated with a tiny tolerance or decimal arithmetic.",
     ],
+}
+
+# O2SN scoring tables (sources/atletik/o2sn/). Each event: the parameter set used (sex, key in SCORING) and the
+# table's printed range. `--tables` checks every printed row against these (see verify_tables).
+O2SN_SCORING = {
+    "SMP": {
+        "ref": f"{O2SN['SMP_TABLE']}, linked from {O2SN['SMP']} Lampiran A.2.c.6 (PDF p. 29)",
+        "max_points": 1500,
+        "events": {
+            "M": {"60m": "60m_indoor", "LJ": "LJ", "SP": "SP"},
+            "W": {"60m": "60m_o2sn_smp", "LJ": "LJ", "SP": "SP"},
+        },
+        "notes": [
+            "Points are capped at 1500 (the formula gives 1503 for 5.46 s men's 60 m and 1501 for a 7.94 m women's "
+            "long jump; the table prints 1500).",
+            "Men's shot put (4 kg) and both long jumps use the World Athletics parameters unchanged.",
+            "Women's 60 m has no World Athletics parameters; a = 46.0849, b = 13.00, c = 1.81 reproduce all 628 "
+            "printed rows below the cap (derived from the table, not printed in it).",
+        ],
+    },
+    "SMA": {
+        "ref": f"{O2SN['SMA_TABLE']}, linked from {O2SN['SMA']} Lampiran A.3.f (PDF p. 32)",
+        "max_points": None,
+        "events": {
+            "M": {"100m": "100m", "400m": "400m", "LJ": "LJ", "SP": "SP", "JT": "JT"},
+            "W": {"100m": "100m_decathlon", "400m": "400m_decathlon", "LJ": "LJ", "SP": "SP", "JT": "JT"},
+        },
+        "hand_timing": "separate 1/10 s tables for 100 m and 400 m (\"alternatif pada seleksi daerah\") equal the "
+                       "World Athletics hand-time rule: +0.24 s (100 m), +0.14 s (400 m)",
+        "notes": [
+            "The guide calls the table 'modified', but every printed row equals the World Athletics formula; the "
+            "women's 100 m and 400 m use the women's decathlon parameters.",
+        ],
+    },
 }
 
 # Rows printed in the scoring tables and the worked example, used to check the parameters.
@@ -333,6 +512,19 @@ CHECKS = [
     ("M", "SP", 4.28, 150, "men's shot put table"),
     ("W", "JT", 57.18, 1000, "women's javelin table"),
     ("W", "JT", 46.87, 800, "women's javelin table"),
+    # O2SN tables (sources/atletik/o2sn/): Trilomba SMP and Pancalomba SMA/SMK
+    ("M", "60m_indoor", 6.83, 944, "O2SN SMP table, putra 60 m"),
+    ("M", "LJ", 5.41, 463, "O2SN SMP table, putra lompat jauh"),
+    ("M", "SP", 14.35, 750, "O2SN SMP table, putra tolak peluru (4 kg)"),
+    ("W", "60m_o2sn_smp", 8.56, 684, "O2SN SMP table, putri 60 m"),
+    ("W", "60m_o2sn_smp", 7.16, 1123, "O2SN SMP table, putri 60 m"),
+    ("W", "LJ", 3.87, 279, "O2SN SMP table, putri lompat jauh"),
+    ("M", "100m", 12.73, 515, "O2SN SMA table, laki-laki 100 m"),
+    ("M", "400m", 52.00, 725, "O2SN SMA table, laki-laki 400 m"),
+    ("M", "JT", 68.04, 860, "O2SN SMA table, lempar lembing laki-laki"),
+    ("W", "100m_decathlon", 15.63, 374, "O2SN SMA table, perempuan 100 m"),
+    ("W", "400m_decathlon", 59.37, 725, "O2SN SMA table, perempuan 400 m"),
+    ("W", "LJ", 6.11, 883, "O2SN SMA table, perempuan lompat jauh"),
 ]
 
 
@@ -344,9 +536,15 @@ def points(sex, event, perf):
     return math.floor(a * x ** c + 1e-9)
 
 
+def printed_points(sex, event, perf, add=0.0):
+    """Points for a performance as printed in a table: jumps in metres (converted to cm), times in seconds."""
+    kind = SCORING["parameters"][sex][event][0]
+    return points(sex, event, round(perf * 100) if kind == "jumps" else perf + add)
+
+
 def check():
     for sex, event, perf, expected, where in CHECKS:
-        got = points(sex, event, perf)
+        got = printed_points(sex, event, perf)
         if got != expected:
             sys.exit(f"scoring check failed: {sex} {event} {perf} → {got}, table says {expected} ({where})")
     for race, heights in HURDLES["height_m"].items():
@@ -365,6 +563,86 @@ def check():
             for ev in day:
                 if ev not in codes:
                     sys.exit(f"combined event part {ev} is not an event code")
+    groups = {g["code"] for g in AGE_GROUPS["groups"]}
+    for champ in CHAMPIONSHIPS.values():
+        for level, spec in champ["levels"].items():
+            if spec["age_group"] not in groups:
+                sys.exit(f"{level}: unknown age group {spec['age_group']}")
+            for sex, evs in spec["events"].items():
+                for ev in evs + [spec.get("combined")] * bool(spec.get("combined")):
+                    if ev not in codes:
+                        sys.exit(f"{level} {sex}: {ev} is not an event code")
+            for sex, q in spec.get("qualifying", {}).items():
+                if sex in ("M", "W") and sorted(q) != sorted(spec["events"][sex]):
+                    sys.exit(f"{level} {sex}: qualifying marks do not cover the events")
+    for level, sc in O2SN_SCORING.items():
+        spec = CHAMPIONSHIPS["O2SN_2026"]["levels"][level]
+        for sex, evs in sc["events"].items():
+            if sorted(evs) != sorted(spec["events"][sex]):
+                sys.exit(f"O2SN {level} {sex}: scoring events differ from the events")
+            for key in evs.values():
+                if key not in SCORING["parameters"][sex]:
+                    sys.exit(f"O2SN {level} {sex}: no parameters {key}")
+
+
+TABLE_SECTIONS = {  # printed heading → (level, sex, event, hand-time seconds added)
+    "SMP": {"Putra 60 Meter": ("M", "60m", 0), "Putra Lompat Jauh": ("M", "LJ", 0),
+            "Putra Tolak Peluru": ("M", "SP", 0), "Putri 60 Meter": ("W", "60m", 0),
+            "Putri Lompat Jauh": ("W", "LJ", 0), "Putri Tolak Peluru": ("W", "SP", 0)},
+    "SMA": {"Laki-laki 100 Meter": ("M", "100m", 0), "Laki-laki 100 Meter - 1/10 sec": ("M", "100m", 0.24),
+            "Laki-laki 400 Meter": ("M", "400m", 0), "Laki-laki 400 Meter - 1/10 sec": ("M", "400m", 0.14),
+            "Laki-laki Lompat Jauh": ("M", "LJ", 0), "Laki-laki Tolak Peluru": ("M", "SP", 0),
+            "Lempar Lembing Laki-laki": ("M", "JT", 0),
+            "Perempuan 100 Meter": ("W", "100m", 0), "Perempuan 100 Meter - 1/10 sec": ("W", "100m", 0.24),
+            "Perempuan 400 Meter": ("W", "400m", 0), "Perempuan 400 Meter - 1/10 sec": ("W", "400m", 0.14),
+            "Perempuan Tolak Peluru": ("W", "SP", 0), "Perempuan Lompat Jauh": ("W", "LJ", 0),
+            "Perempuan Lempar Lembing": ("W", "JT", 0)},
+}
+TABLE_FILES = {"SMP": "Scoring-Table-Trilomba-O2SN-SMP.pdf", "SMA": "Scoring-Table-Pancalomba-O2SN-SMA-SMK.pdf"}
+TABLE_ROWS = {"SMP": 5493, "SMA": 12102}  # rows printed (and checked) per table
+
+
+def parse_table_text(text):
+    """Rows per heading from `pdftotext -layout` output; numbers only, strict patterns."""
+    import re
+    out, cur = {}, None
+    head = re.compile(r"^(Putra|Putri|Laki-laki|Perempuan|Lempar Lembing Laki-laki)\s*(.*?)(\s+Multi-Event Table)?$")
+    for line in text.split("\n"):
+        h = re.sub(r"\s+", " ", line).strip()
+        m = head.match(h)
+        if m and not re.search(r"\d+[.,]\d+\s+\d", h):
+            cur = h.replace(" Multi-Event Table", "")
+            out.setdefault(cur, [])
+            continue
+        if cur is not None:
+            out[cur] += [(float(a), int(b)) for a, b in re.findall(r"(\d+\.\d+)\s+(\d{1,4})(?=\s|\||$)", line)]
+    return out
+
+
+def verify_tables(src):
+    """Check every printed row of the O2SN scoring tables (needs pdftotext); not run in CI."""
+    import subprocess
+    for level, fname in TABLE_FILES.items():
+        text = subprocess.run(["pdftotext", "-layout", os.path.join(src, fname), "-"], check=True,
+                              capture_output=True, text=True).stdout
+        sections = parse_table_text(text)
+        if sorted(sections) != sorted(TABLE_SECTIONS[level]):
+            sys.exit(f"{fname}: headings {sorted(sections)} differ from the expected ones")
+        cap = O2SN_SCORING[level]["max_points"]
+        total = 0
+        for heading, rows in sections.items():
+            sex, event, add = TABLE_SECTIONS[level][heading]
+            key = O2SN_SCORING[level]["events"][sex][event]
+            for perf, printed in rows:
+                got = printed_points(sex, key, perf, add)
+                if cap:
+                    got = min(got, cap)
+                if got != printed:
+                    sys.exit(f"{fname} {heading}: {perf} → {got}, table prints {printed}")
+            total += len(rows)
+        if total != TABLE_ROWS[level]:
+            sys.exit(f"{fname}: {total} rows read, expected {TABLE_ROWS[level]}")
+        print(f"ok: {fname}: all {total} rows match")
 
 
 def write(out, name, obj):
@@ -394,11 +672,13 @@ def main(out):
         "steeplechase": STEEPLECHASE,
         "implements": IMPLEMENTS,
         "combined_events": COMBINED,
+        "championships": CHAMPIONSHIPS,
         "refs": EVENT_REFS,
         "notes": [
             "sexes: M putra, W putri, X campuran. Events without wind_seconds have no wind reading.",
-            "School events outside World Athletics (e.g. 80 m, lempar bola kasti, lompat jauh tanpa awalan) and "
-            "U14/U16 specifications follow the championships' technical handbooks: brief R-10b.",
+            "O2SN 2026 (SD Kids' Athletics, SMP Trilomba, SMA/SMK Pancalomba) is under `championships`, with "
+            "implements, trials and qualifying marks per level; its scoring is in atletik-hasil.",
+            "PASI U14/U16 and POPDA/POPNAS specifications follow their technical handbooks: brief R-10b.",
         ],
     })
     write(out, "atletik-kelompok-umur", AGE_GROUPS)
@@ -410,12 +690,20 @@ def main(out):
         "ties": TIES,
         "combined_events_scoring": dict(SCORING, checks=[
             {"sex": s, "event": e, "performance": p, "points": pts, "where": w} for s, e, p, pts, w in CHECKS]),
+        "championship_scoring": {"O2SN_2026": {
+            level: dict(sc, rows_checked=TABLE_ROWS[level], table_file=f"sources/atletik/o2sn/{TABLE_FILES[level]}")
+            for level, sc in O2SN_SCORING.items()}},
     })
     print(f"ok: {len(events)} events, {len(AGE_GROUPS['groups'])} age groups, "
           f"{len(ABBREVIATIONS['codes'])} result codes, {len(CHECKS)} scoring checks passed")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    args = sys.argv[1:]
+    if len(args) == 3 and args[1] == "--tables":
+        check()
+        verify_tables(args[2])
+        args = args[:1]
+    if len(args) != 1:
         sys.exit(__doc__)
-    main(sys.argv[1])
+    main(args[0])

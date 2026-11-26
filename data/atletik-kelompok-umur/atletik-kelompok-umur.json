@@ -3,7 +3,8 @@
  "reference_rules": {
   "dec31": "Umur dihitung pada 31 Desember tahun lomba (World Athletics, PASI).",
   "birthday_reached": "Sudah berulang tahun ke-N pada hari lomba (Master).",
-  "championship": "Tanggal acuan ditetapkan juknis kejuaraan (O2SN, POPDA/POPNAS, kejuaraan panitia)."
+  "championship": "Tanggal acuan ditetapkan juknis kejuaraan (O2SN, POPDA/POPNAS, kejuaraan panitia).",
+  "born_on_or_after": "Lahir pada tanggal batas atau sesudahnya (O2SN: `born_on_or_after`), ditambah syarat kelas."
  },
  "groups": [
   {
@@ -43,11 +44,81 @@
    "reference": "birthday_reached",
    "ref": "WA C1.1/C2.1 (2026), Technical Rules, Age Categories (PDF p. 44)",
    "note": "Masters' five-year groups follow the World Athletics/WMA Handbook (not part of this set)."
+  },
+  {
+   "code": "O2SN_SD",
+   "label": "O2SN SD/MI",
+   "label_en": "O2SN primary (SD/MI) 2026",
+   "min_age": null,
+   "max_age": null,
+   "reference": "born_on_or_after",
+   "championship": "O2SN",
+   "year": 2026,
+   "born_on_or_after": "2014-01-01",
+   "grades": [
+    3,
+    4,
+    5
+   ],
+   "school_year": "2026/2027",
+   "levels": [
+    "SD",
+    "MI",
+    "sederajat"
+   ],
+   "ref": "Pedoman O2SN SD/MI/Sederajat 2026, Bab III B.1.d (PDF p. 18, printed p. 16)",
+   "note": "The SD guide names school year 2026/2027 for the grades; the SMP and SMA guides name 2025/2026. Stored as printed."
+  },
+  {
+   "code": "O2SN_SMP",
+   "label": "O2SN SMP/MTs",
+   "label_en": "O2SN lower secondary (SMP/MTs) 2026",
+   "min_age": null,
+   "max_age": null,
+   "reference": "born_on_or_after",
+   "championship": "O2SN",
+   "year": 2026,
+   "born_on_or_after": "2011-01-01",
+   "grades": [
+    7,
+    8
+   ],
+   "school_year": "2025/2026",
+   "levels": [
+    "SMP",
+    "MTs",
+    "sederajat"
+   ],
+   "ref": "Panduan O2SN SMP/MTs/Sederajat 2026, Bab III B.1.d (PDF p. 20, printed p. 18)"
+  },
+  {
+   "code": "O2SN_SMA",
+   "label": "O2SN SMA/MA/SMK/MAK",
+   "label_en": "O2SN upper secondary (SMA/MA/SMK/MAK) 2026",
+   "min_age": null,
+   "max_age": null,
+   "reference": "born_on_or_after",
+   "championship": "O2SN",
+   "year": 2026,
+   "born_on_or_after": "2008-01-01",
+   "grades": [
+    10,
+    11
+   ],
+   "school_year": "2025/2026",
+   "levels": [
+    "SMA",
+    "MA",
+    "SMK",
+    "MAK",
+    "sederajat"
+   ],
+   "ref": "Panduan O2SN SMA/MA/SMK/MAK/Sederajat 2026, Bab III B.1.d (PDF p. 21, printed p. 17)"
   }
  ],
  "pending": [
   "PASI U14 and U16 (and their implements and hurdle heights): brief R-10b.",
-  "O2SN SD/SMP/SMA, POPDA/POPNAS groups and their reference dates: brief R-10b."
+  "POPDA/POPNAS groups and their reference dates: brief R-10b."
  ],
  "notes": [
   "Each championship stores its own reference rule (user decision 2026-11-26): an app keeps `reference` per championship, using these groups as defaults.",

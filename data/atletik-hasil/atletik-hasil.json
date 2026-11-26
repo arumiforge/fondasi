@@ -343,6 +343,12 @@
      20.0479,
      17.0,
      1.835
+    ],
+    "60m_o2sn_smp": [
+     "track",
+     46.0849,
+     13.0,
+     1.81
     ]
    }
   },
@@ -392,7 +398,144 @@
     "performance": 46.87,
     "points": 800,
     "where": "women's javelin table"
+   },
+   {
+    "sex": "M",
+    "event": "60m_indoor",
+    "performance": 6.83,
+    "points": 944,
+    "where": "O2SN SMP table, putra 60 m"
+   },
+   {
+    "sex": "M",
+    "event": "LJ",
+    "performance": 5.41,
+    "points": 463,
+    "where": "O2SN SMP table, putra lompat jauh"
+   },
+   {
+    "sex": "M",
+    "event": "SP",
+    "performance": 14.35,
+    "points": 750,
+    "where": "O2SN SMP table, putra tolak peluru (4 kg)"
+   },
+   {
+    "sex": "W",
+    "event": "60m_o2sn_smp",
+    "performance": 8.56,
+    "points": 684,
+    "where": "O2SN SMP table, putri 60 m"
+   },
+   {
+    "sex": "W",
+    "event": "60m_o2sn_smp",
+    "performance": 7.16,
+    "points": 1123,
+    "where": "O2SN SMP table, putri 60 m"
+   },
+   {
+    "sex": "W",
+    "event": "LJ",
+    "performance": 3.87,
+    "points": 279,
+    "where": "O2SN SMP table, putri lompat jauh"
+   },
+   {
+    "sex": "M",
+    "event": "100m",
+    "performance": 12.73,
+    "points": 515,
+    "where": "O2SN SMA table, laki-laki 100 m"
+   },
+   {
+    "sex": "M",
+    "event": "400m",
+    "performance": 52.0,
+    "points": 725,
+    "where": "O2SN SMA table, laki-laki 400 m"
+   },
+   {
+    "sex": "M",
+    "event": "JT",
+    "performance": 68.04,
+    "points": 860,
+    "where": "O2SN SMA table, lempar lembing laki-laki"
+   },
+   {
+    "sex": "W",
+    "event": "100m_decathlon",
+    "performance": 15.63,
+    "points": 374,
+    "where": "O2SN SMA table, perempuan 100 m"
+   },
+   {
+    "sex": "W",
+    "event": "400m_decathlon",
+    "performance": 59.37,
+    "points": 725,
+    "where": "O2SN SMA table, perempuan 400 m"
+   },
+   {
+    "sex": "W",
+    "event": "LJ",
+    "performance": 6.11,
+    "points": 883,
+    "where": "O2SN SMA table, perempuan lompat jauh"
    }
   ]
+ },
+ "championship_scoring": {
+  "O2SN_2026": {
+   "SMP": {
+    "ref": "Scoring Table Trilomba O2SN SMP (\"Licenced by IAAF & PASI Modification\"), linked from Panduan O2SN SMP/MTs/Sederajat 2026 Lampiran A.2.c.6 (PDF p. 29)",
+    "max_points": 1500,
+    "events": {
+     "M": {
+      "60m": "60m_indoor",
+      "LJ": "LJ",
+      "SP": "SP"
+     },
+     "W": {
+      "60m": "60m_o2sn_smp",
+      "LJ": "LJ",
+      "SP": "SP"
+     }
+    },
+    "notes": [
+     "Points are capped at 1500 (the formula gives 1503 for 5.46 s men's 60 m and 1501 for a 7.94 m women's long jump; the table prints 1500).",
+     "Men's shot put (4 kg) and both long jumps use the World Athletics parameters unchanged.",
+     "Women's 60 m has no World Athletics parameters; a = 46.0849, b = 13.00, c = 1.81 reproduce all 628 printed rows below the cap (derived from the table, not printed in it)."
+    ],
+    "rows_checked": 5493,
+    "table_file": "sources/atletik/o2sn/Scoring-Table-Trilomba-O2SN-SMP.pdf"
+   },
+   "SMA": {
+    "ref": "Scoring Tables Pancalomba O2SN SMA & SMK (WA tables, edition 2001, reprint 2016), linked from Panduan O2SN SMA/MA/SMK/MAK/Sederajat 2026 Lampiran A.3.f (PDF p. 32)",
+    "max_points": null,
+    "events": {
+     "M": {
+      "100m": "100m",
+      "400m": "400m",
+      "LJ": "LJ",
+      "SP": "SP",
+      "JT": "JT"
+     },
+     "W": {
+      "100m": "100m_decathlon",
+      "400m": "400m_decathlon",
+      "LJ": "LJ",
+      "SP": "SP",
+      "JT": "JT"
+     }
+    },
+    "hand_timing": "separate 1/10 s tables for 100 m and 400 m (\"alternatif pada seleksi daerah\") equal the World Athletics hand-time rule: +0.24 s (100 m), +0.14 s (400 m)",
+    "notes": [
+     "The guide calls the table 'modified', but every printed row equals the World Athletics formula; the women's 100 m and 400 m use the women's decathlon parameters."
+    ],
+    "rows_checked": 12102,
+    "table_file": "sources/atletik/o2sn/Scoring-Table-Pancalomba-O2SN-SMA-SMK.pdf"
+   }
+  }
  }
 }

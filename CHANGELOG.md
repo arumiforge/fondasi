@@ -5,6 +5,11 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Athletics sets 2026-11-26 (R-10b, O2SN part): O2SN 2026 eligibility groups for SD/MI, SMP/MTs and SMA/MA/SMK/MAK
+  (birth date limit, grades), Kids' Athletics events (Kanga Escape, Formula 1) with their courses, SMP Trilomba and
+  SMA/SMK Pancalomba (events, implements, trials, qualifying marks) with PDF page references, and their scoring: the
+  linked tables are World Athletics formulas (SMP capped at 1500; the women's 60 m parameters were derived from the
+  table), all 17,595 printed rows checked with `atletik.py --tables`. Guides and tables kept in `sources/atletik/o2sn/`.
 - Athletics sets `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` 2026-03-20 (R-10) from World Athletics rules
   and the combined-events scoring tables, converter `tools/converters/atletik.py` with scoring checks (F-027).
 - `tools/converters/sekolah.py`: resumable crawler (Dikdas, Dikmen, PAUD, Dikmas) and converter for

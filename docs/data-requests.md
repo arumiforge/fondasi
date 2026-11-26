@@ -61,8 +61,8 @@ in `R-10b-atletik/` with `SOURCE.txt`: page URL, file URL, title and date as pri
 
 > 1. PASI (`pasi.or.id` or its official social links): the current rules or circular on age groups (U14, U16, U18,
 >    U20) for Kejurnas/Kejurda, with implement weights, hurdle heights and events per group.
-> 2. Puspresnas (`pusatprestasinasional.kemendikdasmen.go.id` or the ministry's site): the latest O2SN technical
->    handbooks (juknis) for athletics at SD, SMP and SMA level: events, age limits and reference dates, implements.
+> 2. ~~Puspresnas O2SN handbooks~~ — done: the 2026 guides (SD, SMP, SMA) were uploaded and converted
+>    (2026-11-26, `sources/atletik/o2sn/`). Skip this item; ask again only for the O2SN 2027 guides.
 > 3. Kemenpora / Dispora Jawa Tengah: the latest POPNAS and POPDA Jawa Tengah technical handbooks for athletics.
 > 4. Zip the folder and give it to the user.
 
