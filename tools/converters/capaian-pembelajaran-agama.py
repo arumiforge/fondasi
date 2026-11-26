@@ -41,6 +41,8 @@ ERRATA = [
     ("1.6", "keteladanan Nabi Kŏngzĭ (孔).", 41, "one character (孔) instead of 孔子 (Fase A, Kitab Suci); "
      "sinaubareng records the same and its owner confirmed it as printed"),
     ("1.6", "Menganalisis siifat-sifat", 43, "'siifat-sifat' for 'sifat-sifat' (Fase D, Keimanan)"),
+    ("2.4", "Kelas Xi, XII SMALB", 68, "'Xi' for 'XI' (Fase F heading)"),
+    ("2.1", "mencintai pada Al Qur’an", 46, "'Al Qur’an' without the hyphen (Tujuan 2); printed 'Al-Qur’an' elsewhere"),
 ]
 PHASE_GRADES = {"A": [1, 2], "B": [3, 4], "C": [5, 6], "D": [7, 8, 9], "E": [10], "F": [11, 12]}
 ROMAN_N = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10, "XI": 11,
@@ -51,8 +53,9 @@ def printed_grades(applies_to):
     m = re.search(r"[Kk]elas\s+(.*)$", applies_to or "")
     if not m:
         return None
-    nums = re.findall(r"\b(XII|XI|IX|X|VIII|VII|VI|IV|V|III|II|I|1[0-2]|[1-9])\b", m.group(1))
-    return sorted({ROMAN_N.get(n) or int(n) for n in nums}) or None
+    # case-insensitive: 2.4 prints "Kelas Xi, XII SMALB" (listed in ERRATA)
+    nums = re.findall(r"\b(XII|XI|IX|X|VIII|VII|VI|IV|V|III|II|I|1[0-2]|[1-9])\b", m.group(1), re.I)
+    return sorted({ROMAN_N.get(n.upper()) or int(n) for n in nums}) or None
 SMALL = {"dan", "atau", "serta", "untuk", "dengan", "di", "ke", "dari", "pada", "yang", "bagi", "dalam"}
 
 
@@ -95,7 +98,9 @@ def read_section(path):
                 prev, more = cells(t), cells("| " + line[3:])
                 if len(prev) != len(more):
                     sys.exit(f"{path}:{n}: continued row has {len(more)} cells, row has {len(prev)}")
-                out[-1] = (p, k, "| " + " | ".join(" ".join(x for x in (a, b) if x) for a, b in zip(prev, more)) + " |")
+                # a cell continued with "<br>" starts a new line in the cell (two statements in one cell)
+                out[-1] = (p, k, "| " + " | ".join(re.sub(r" *\n *", "<br>", " ".join(x for x in (a, b) if x))
+                                                     for a, b in zip(prev, more)) + " |")
             elif line.startswith("|"):
                 out.append((page, "row", line))
             elif line.startswith("#"):
@@ -143,7 +148,7 @@ def parse(path):
                 sys.exit(f"{path}: unexpected part heading '{text}'")
             continue
         if kind == "h3":
-            m = re.match(r"^(\d+)\. Fase ([A-F])(?:\s*\((.*)\))?$", text)
+            m = re.match(r"^(\d+)\. Fase ([A-F])(?:\s*\((.*)\))?\.?$", text)  # 2.3 prints "(…)."
             if not m:
                 sys.exit(f"{path}: bad phase heading '{text}'")
             ph = {"phase": m.group(2), "applies_to": m.group(3), "page": page, "intro": "", "outcomes": []}
@@ -194,7 +199,8 @@ def parse(path):
                 o["text"], o["no_cp"] = None, True
         if not ph["outcomes"]:
             sys.exit(f"{path}: Fase {ph['phase']} has no outcomes")
-    pages = sorted({p for p, _, _ in items})
+    # every [p. N] marker counts: a page may hold only the continuation of a table row
+    pages = sorted(int(x) for x in re.findall(r"^\[p\. (\d+)\]$", open(path, encoding="utf-8").read(), re.M))
     # CP tables print some names differently from the element table ("Nilai- nilai", "Terhadap"); when the letters
     # are the same, the element table's spelling is used and the printed one is listed in source_notes
     canon = {norm_key(e["name"]): e["name"] for e in elements}
@@ -260,7 +266,7 @@ def check_ocr(path, ocr_dir):
         f = os.path.join(ocr_dir, f"p-{page:02d}.txt")
         if not os.path.exists(f):
             continue
-        a = words(" ".join(texts))
+        a = words(" ".join(texts).replace("<br>", " "))
         b = words(open(f, encoding="utf-8").read())
         sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
         for op, i1, i2, j1, j2 in sm.get_opcodes():

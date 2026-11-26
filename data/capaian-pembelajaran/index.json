@@ -7,12 +7,13 @@
   "smk.json.gz",
   "kesetaraan.json.gz",
   "pendidikan-khusus.json.gz",
+  "pendidikan-khusus-agama.json.gz",
   "madrasah.json.gz"
  ],
  "totals": {
-  "subjects": 299,
-  "phases": 585,
-  "outcomes": 2624
+  "subjects": 305,
+  "phases": 621,
+  "outcomes": 2816
  },
  "phases": {
   "Fondasi": {
@@ -4801,6 +4802,126 @@
    "source": "Kepka BSKAP 046/H/KR/2025, Lampiran V (number XXXIII.5, PDF p. 1679–1691)"
   },
   {
+   "file": "pendidikan-khusus-agama.json.gz",
+   "key": "pendidikan_khusus_agama_islam_dan_budi_pekerti",
+   "title": "Pendidikan Khusus Agama Islam dan Budi Pekerti",
+   "number": "2.1",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran II (number 2.1, PDF p. 45–50)"
+  },
+  {
+   "file": "pendidikan-khusus-agama.json.gz",
+   "key": "pendidikan_khusus_agama_kristen_dan_budi_pekerti",
+   "title": "Pendidikan Khusus Agama Kristen dan Budi Pekerti",
+   "number": "2.2",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran II (number 2.2, PDF p. 50–59)"
+  },
+  {
+   "file": "pendidikan-khusus-agama.json.gz",
+   "key": "pendidikan_khusus_agama_katolik_dan_budi_pekerti",
+   "title": "Pendidikan Khusus Agama Katolik dan Budi Pekerti",
+   "number": "2.3",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran II (number 2.3, PDF p. 59–63)"
+  },
+  {
+   "file": "pendidikan-khusus-agama.json.gz",
+   "key": "pendidikan_khusus_agama_hindu_dan_budi_pekerti",
+   "title": "Pendidikan Khusus Agama Hindu dan Budi Pekerti",
+   "number": "2.4",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran II (number 2.4, PDF p. 63–68)"
+  },
+  {
+   "file": "pendidikan-khusus-agama.json.gz",
+   "key": "pendidikan_khusus_agama_buddha_dan_budi_pekerti",
+   "title": "Pendidikan Khusus Agama Buddha dan Budi Pekerti",
+   "number": "2.5",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran II (number 2.5, PDF p. 68–75)"
+  },
+  {
+   "file": "pendidikan-khusus-agama.json.gz",
+   "key": "pendidikan_khusus_agama_khonghucu_dan_budi_pekerti",
+   "title": "Pendidikan Khusus Agama Khonghucu dan Budi Pekerti",
+   "number": "2.6",
+   "phases": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "levels": [
+    "SDLB",
+    "SMPLB",
+    "SMALB"
+   ],
+   "source": "Kepka BKPDM 020/2026, Lampiran II (number 2.6, PDF p. 75–79)"
+  },
+  {
    "file": "madrasah.json.gz",
    "key": "raudlatul_athfal",
    "title": "Raudlatul Athfal (RA)",
@@ -5085,8 +5206,5 @@
    ],
    "source": "SK Dirjen Pendis 9941/2025, Lampiran (number 9.1, PDF p. 104–107)"
   }
- ],
- "pending": [
-  "pendidikan-khusus-agama.json.gz"
  ]
 }
