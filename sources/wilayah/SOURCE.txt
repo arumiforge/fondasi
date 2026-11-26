@@ -1,0 +1,19 @@
+R-14 wilayah — Kepmendagri 300.2.2-2430 Tahun 2025
+Received: 2026-11-26 (UTC), uploaded by the user to a cloud session (jdih.kemendagri.go.id does not answer from
+the cloud); the file is kept byte-for-byte. The decree is marked "SALINAN" and "Salinan sesuai dengan aslinya".
+
+1) Kepmendagri-300.2.2-2430-2025.pdf
+   Decree   : Keputusan Menteri Dalam Negeri Nomor 300.2.2-2430 Tahun 2025 tentang Perubahan atas Keputusan
+              Menteri Dalam Negeri Nomor 300.2.2-2138 Tahun 2025 tentang Pemberian dan Pemutakhiran Kode, Data
+              Wilayah Administrasi Pemerintahan, dan Pulau; signed in Jakarta, 23 Juni 2025
+   File URL : not given (uploaded file name "Kepmendagri_Nomor_300.2.2-2430_Tahun_2025.pdf")
+   Size     : 11026133 bytes, 23 pages (pages 1-5 decree with a text layer; the attachment is scanned)
+   SHA-256  : b5ea05544536335ee567a2a7b871a9c4325c1ba437a200d7698b6faff7a2ba1e
+
+What it changes (diktum KESATU): only the island data of Aceh and Sumatera Utara. Pulau Mangkir Gadang, Mangkir
+Ketek, Lipan and Panjang move to Kabupaten Aceh Singkil (11.10), following the agreement of 17 June 2025
+(04/MOU/2025, 100.2.3.3/5270/2025). The 2138/2025 decree stays in force where it is not changed (KEDUA a).
+
+Check against data/wilayah 2026-02-13 (2026-11-26): attachment A (page 6) totals 416 kabupaten, 98 kota,
+7,285 kecamatan, 8,496 kelurahan, 75,266 desa (14 of them desa adat, code 3xxx); Aceh 18/5/290/0/6,500 and
+Sumatera Utara 25/8/455/693/5,417. data/wilayah has exactly these counts, so no region code or name changes.

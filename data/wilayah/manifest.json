@@ -1,7 +1,7 @@
 {
   "version": "2026-02-13",
   "description": "Administrative regions of Indonesia: provinces, regencies and cities, districts, villages (public data, no personal data).",
-  "source": "https://github.com/cahyadsn/wilayah (db/wilayah.sql), Kepmendagri No 300.2.2-2138 Tahun 2025",
+  "source": "https://github.com/cahyadsn/wilayah (db/wilayah.sql), Kepmendagri No 300.2.2-2138 Tahun 2025; checked 2026-11-26 against Kepmendagri No 300.2.2-2430 Tahun 2025, which changes only island data (sources/wilayah/)",
   "licence": "MIT, (c) 2025 cahya dsn",
   "file": "wilayah.json.gz",
   "sha256": "af015d8d5da70d733a041a20e8e6c332d38fd6a241199513395cabc5cb3b1b1e",
