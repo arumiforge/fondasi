@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/eager-tesla-92hwl9` | session data-round 3 | sinaubareng data audit, sources and plan (PR 2); R-10b O2SN merged (PR #16) | PR open |
+| `nty/eager-tesla-92hwl9` | session data-round 3 | R-08 `mapel` all levels (PR #16, #17 merged before) | PR open |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -39,13 +39,13 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    courses, qualifying marks and scoring (all 17,595 rows of the linked tables checked). Still missing: PASI U14/U16
    and POPDA/POPNAS (brief R-10b items 1 and 3); O2SN 2027 when Puspresnas publishes it. **R-11** records need the
    user's list of championships.
-4. **R-08 `mapel`, all levels — next task** (F-030): sources in `sources/mapel/` (Permendikdasmen 13/2025
-   Lampiran II with 12/2024; KMA 1503/2025 for RA/MI/MTs/MA/MAK, partly scanned → read tables from page images).
-   Subjects per level/grade/phase, JP per year (intra-, kokurikuler), muatan lokal, electives; check every table
-   against its printed totals; compare SD/MI and MI with sinaubareng's checked JSON (see `docs/sinaubareng-audit.md`).
-   Then **R-15 `capaian-pembelajaran`** (Kepka 046/H/KR/2025, 1,691 pages; religion from the scanned Kepka BKPDM
-   020/2026; madrasah from SK 9941/2025) and **R-16 `kerangka-tka`**. **R-17**: coordinates for `sekolah`
-   (crawl of NPSN pages, 20 workers, F-029) after those.
+4. **R-08 done** (`mapel` 2025-09-22, all levels incl. madrasah; F-031 errata). Open in it: KMA Tabel 18 (MILB V)
+   totals count 36 kokurikuler JP more than its rows (`unresolved`); check again when Kemenag publishes a corrected
+   KMA. **Next: R-15 `capaian-pembelajaran`** (sources in `sources/capaian-pembelajaran/`: Kepka 046/H/KR/2025,
+   1,691 pages with text layer; religion from the scanned Kepka BKPDM 020/2026 — tesseract with `ind` works in the
+   cloud: `apt-get install tesseract-ocr tesseract-ocr-ind`, run with OMP_THREAD_LIMIT=1, 4 in parallel, ≈ 2 s per
+   page; madrasah from SK 9941/2025), then **R-16 `kerangka-tka`**, then **R-17** coordinates for `sekolah` (crawl
+   of NPSN pages, 20 workers, F-029).
 5. When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
 6. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
@@ -63,6 +63,8 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PRs #16 (O2SN) and #17 (sinaubareng audit) merged; R-08 `mapel` built for all levels (54 tables, 144 totals checked, 7 errata, F-031; user: Bahasa Inggris SD/MI compulsory from 2027/2028 = Pasal 33). Next: R-15.
+
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PR #15 found merged; R-10b O2SN part built (guides + the two scoring tables fetched from the guides' links, every row matches WA formulas; women's 60 m parameters derived). sinaubareng audited (user: mapel all levels, CP all subjects, TKA, coordinates later; repo to be made private by the user).
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-06 built from the uploaded Kanwil decree 1681/2026 (45 events, HK/HL/HE of all 12 months match); O2SN 2026 guides stored for R-10b. Next: merge the R-06 PR, then O2SN.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-14 brief written; the user uploaded Kepmendagri 2430/2025: it changes islands only, `wilayah` already matches; decree kept in `sources/wilayah/`. Next: R-06/R-10b zips, R-11 list.
@@ -72,4 +74,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-26 · session data-round · `data/atletik` — PRs #5, #6 (libur-nasional, kaldik-jateng check), #7 (kodepos) merged; R-06 and R-10b briefs; R-10 World Athletics sets (F-027); R-01 crawler written, crawl not finished. Next: R-01 crawl.
 - 2026-11-25 · session data-round · `data/libur-nasional` — PR #5 merged; R-01 interview (all provinces, replace SD/MI, madrasah from Kemendikdasmen with R-02 for NSM, add PAUD and PKBM/kesetaraan, sequential crawl in two PRs); R-04 built; R-06 moved to a browser brief (Kanwil site times out). Next: R-03 while the R-01 crawl runs.
 - 2026-11-25 · session data-round prep · `pw/peaceful-tesla-bjooc9` — PR #4 merged (skema-siswa corrections F-024, kaldik-jateng, calendar layers F-025); environment Fondasi created; handoff for the data round. Next: R-01.
-- 2026-11-25 · session server-flow · `pw/peaceful-tesla-bjooc9` — repository created and filled: F-001…F-023 (PRs #1–#3), interview rounds with the user, first data sets. Next: data round.
