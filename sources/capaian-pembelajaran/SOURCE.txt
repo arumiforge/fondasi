@@ -1,0 +1,19 @@
+R-15 `capaian-pembelajaran` (planned) — learning outcomes (CP). Copied byte-for-byte on 2026-11-26 from
+arumiforge/sinaubareng (commit 6238a6b, docs/sources/); provenance as recorded there. Public government documents.
+
+Kepka_BSKAP_No_046_H_KR_2025_Capaian_Pembelajaran.pdf  1,691 pages
+  SHA-256 45809d2c88a612f90ee5adbd60d71a8952527d6924c626d126ea6926ae3d3394
+  Keputusan Kepala BSKAP 046/H/KR/2025 (2025-07-16): CP for PAUD, SD/MI, SMP/MTs, SMA/MA, SMK/MAK, Paket, SLB;
+  revokes Kepka 032/H/KR/2024. SALINAN, downloaded 2026-11-11 from the PPID page of BPMP Kepulauan Bangka
+  Belitung (bpmpbabel.kemendikdasmen.go.id). Text layer present.
+Kepka_BKPDM_No_020_Tahun_2026_Perubahan_Kepka_BSKAP_046_H_KR_2025.pdf  79 pages
+  (received as "Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_
+  Kemendikdasmen_No._046_H_KR_2025.pdf")
+  SHA-256 598278746b0f62333fdcab520d5dd4c1a9650c94bd3906acff4254100976552b
+  Decree of 2026-06-11 amending 046/H/KR/2025: CP Pendidikan Agama dan Budi Pekerti for six religions
+  (Lampiran I) and special education (Lampiran II). Scanned copy without text layer (needs OCR or page images).
+SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf  107 pages
+  SHA-256 63ecce28af6c02b9fefde85f9594e7432b2575a69a263a46882ace6e87ffb757
+  SK Dirjen Pendidikan Islam 9941/2025 (2025-11-28): CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI and Bahasa
+  Arab at madrasah. Downloaded 2026-10-30 from a public mirror (no kemenag.go.id link found); PDF page 1 is the
+  Kanwil Kemenag DKI Jakarta cover letter.

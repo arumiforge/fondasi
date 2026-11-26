@@ -1,0 +1,18 @@
+R-08 `mapel` — curriculum structure regulations. Copied byte-for-byte on 2026-11-26 from the Arumi Studios app
+repository arumiforge/sinaubareng (commit 6238a6b, docs/sources/), where its sessions had collected them; provenance
+below as recorded there (docs/sources/README.md). Public government documents.
+
+Permendikbudristek_No_12_Tahun_2024_Kurikulum.pdf  71 pages
+  SHA-256 fb2f3ee0fe3af14a348c0c3c274095d6aaeab0d3896188cb0c507e8df1617c3f
+  Kurikulum pada PAUD, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah; set 2024-03-25, in force
+  2024-03-26 (BN 2024/172). Base text, born-digital, e-signed promulgated original.
+Permendikdasmen_No_13_Tahun_2025_Perubahan_Permendikbudristek_12_2024_Kurikulum.pdf  75 pages
+  SHA-256 2fab2e91fc07efd3243b83c6bec383b6997083079fcada9b13359f4aff357325
+  Amends 12/2024; issued 2025-07-11, promulgated and in force 2025-07-15 (BN 2025/503). SALINAN from
+  jdih.kemendikdasmen.go.id. Lampiran II: structure and JP tables for PAUD, SD/MI, SMP/MTs, SMA/MA, SMK/MAK,
+  SDLB…SMALB and kesetaraan (Paket A/B/C). Text layer is clean.
+KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf  72 pages
+  SHA-256 3d523b12ed975efefe3c9b90fd9a9765bc58c2d1996ae7318fbc009544d25527
+  Keputusan Menteri Agama 1503/2025 (2025-09-22) amending KMA 450/2024: curriculum framework and structure for
+  RA, MI, MTs, MA, MAK (Lampiran II). Partly scanned: tables must be read from page images. KMA 450/2024 itself is
+  not here.
