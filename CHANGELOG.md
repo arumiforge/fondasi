@@ -5,6 +5,9 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Audit of the data in the app repository sinaubareng (`docs/sinaubareng-audit.md`) and decision F-030: curriculum
+  regulations copied to `sources/mapel/`, `sources/capaian-pembelajaran/`, `sources/kerangka-tka/`; sets `mapel`
+  (all levels), `capaian-pembelajaran`, `kerangka-tka` and school coordinates planned (R-08, R-15, R-16, R-17).
 - Athletics sets 2026-11-26 (R-10b, O2SN part): O2SN 2026 eligibility groups for SD/MI, SMP/MTs and SMA/MA/SMK/MAK
   (birth date limit, grades), Kids' Athletics events (Kanga Escape, Formula 1) with their courses, SMP Trilomba and
   SMA/SMK Pancalomba (events, implements, trials, qualifying marks) with PDF page references, and their scoring: the

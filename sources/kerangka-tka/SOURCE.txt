@@ -1,0 +1,11 @@
+R-16 `kerangka-tka` (planned) — Tes Kemampuan Akademik framework. Copied byte-for-byte on 2026-11-26 from
+arumiforge/sinaubareng (commit 6238a6b, docs/sources/); provenance as recorded there. Public government documents.
+
+Perka_BSKAP_No_047_H_AN_2025_Kerangka_Asesmen_TKA_SD_MI_dan_SMP_MTs.pdf  46 pages
+  SHA-256 25f2dd0e292108893298a9684004dcaf3c003fe8ee6b2e1ecff243ceccd8d04b
+  Peraturan Kepala BSKAP 047/H/AN/2025 (2025-07-24): Kerangka Asesmen TKA for SD/MI and SMP/MTs (subjects, item
+  types, content and competencies, sample questions). Downloaded 2026-10-30 from the Pusmendik TKA download page.
+Kepmendikdasmen_No_56_Tahun_2026_Pedoman_Penyelenggaraan_TKA_dan_AN.pdf  71 pages
+  SHA-256 1d1f8d037ac849e29a320d7f247981f816387f7d92e1c4b67140ee75b9b0585a
+  Kepmendikdasmen 56/2026 (2026-03-06): running TKA with Asesmen Nasional (durations, score range 0–100,
+  categories). Downloaded from the Pusmendik TKA download page.

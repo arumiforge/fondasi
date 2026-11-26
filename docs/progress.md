@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/eager-tesla-92hwl9` | session data-round 3 | R-10b O2SN part (PR 1); sinaubareng data audit, sources and plan (PR 2) | in progress |
+| `nty/eager-tesla-92hwl9` | session data-round 3 | sinaubareng data audit, sources and plan (PR 2); R-10b O2SN merged (PR #16) | PR open |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -39,13 +39,20 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    courses, qualifying marks and scoring (all 17,595 rows of the linked tables checked). Still missing: PASI U14/U16
    and POPDA/POPNAS (brief R-10b items 1 and 3); O2SN 2027 when Puspresnas publishes it. **R-11** records need the
    user's list of championships.
-4. When the user uploads R-12 or R-02/R-07/R-08/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
+4. **R-08 `mapel`, all levels — next task** (F-030): sources in `sources/mapel/` (Permendikdasmen 13/2025
+   Lampiran II with 12/2024; KMA 1503/2025 for RA/MI/MTs/MA/MAK, partly scanned → read tables from page images).
+   Subjects per level/grade/phase, JP per year (intra-, kokurikuler), muatan lokal, electives; check every table
+   against its printed totals; compare SD/MI and MI with sinaubareng's checked JSON (see `docs/sinaubareng-audit.md`).
+   Then **R-15 `capaian-pembelajaran`** (Kepka 046/H/KR/2025, 1,691 pages; religion from the scanned Kepka BKPDM
+   020/2026; madrasah from SK 9941/2025) and **R-16 `kerangka-tka`**. **R-17**: coordinates for `sekolah`
+   (crawl of NPSN pages, 20 workers, F-029) after those.
+5. When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
-5. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
+6. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
    data (four islands move to Aceh Singkil); `data/wilayah` 2026-02-13 matches its region totals exactly, and
    `kodepos` is unaffected. Check again when Kemendagri publishes a new decree on region codes (cahyadsn usually
    follows within months; compare the header of `db/wilayah.sql`).
-6. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
+7. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
    via `fondasi-sync`.
 
 ## Blockers / waiting on
