@@ -199,7 +199,8 @@ def parse(path):
                 o["text"], o["no_cp"] = None, True
         if not ph["outcomes"]:
             sys.exit(f"{path}: Fase {ph['phase']} has no outcomes")
-    pages = sorted({p for p, _, _ in items})
+    # every [p. N] marker counts: a page may hold only the continuation of a table row
+    pages = sorted(int(x) for x in re.findall(r"^\[p\. (\d+)\]$", open(path, encoding="utf-8").read(), re.M))
     # CP tables print some names differently from the element table ("Nilai- nilai", "Terhadap"); when the letters
     # are the same, the element table's spelling is used and the printed one is listed in source_notes
     canon = {norm_key(e["name"]): e["name"] for e in elements}
