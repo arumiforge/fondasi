@@ -25,13 +25,13 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/amazing-knuth-svvihr` | session data-round 2 | R-01 part 2 `sekolah` PAUD + PKBM/SKB, F-029 | crawl running in 3 workers (F-029) |
+| `nty/amazing-knuth-svvihr` | session data-round 2 | R-01 part 2 `sekolah` PAUD + PKBM/SKB, F-029 | crawl running in 20 workers (F-029) |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
 1. **R-01 part 2 `sekolah` PAUD + PKBM/SKB** (second PR; part 1 Dikdas+Dikmen 2026-11-26 is done). The crawler
-   runs `fetch --groups=paud,dikmas <raw> <province codes>` in three workers with separate province lists (F-029;
-   resumable, 1 request/s each, ≈ 80 pages/min together; Dikmas districts without PKBM/SKB are skipped). **Cloud containers are suspended a few minutes after the session goes idle** and the detached
+   runs `fetch --groups=paud,dikmas <raw> <province codes>` in up to twenty workers with separate regency lists (F-029;
+   resumable, 1 request/s each, ≈ 500 pages/min together; Dikmas districts without PKBM/SKB are skipped). **Cloud containers are suspended a few minutes after the session goes idle** and the detached
    crawl dies with them: keep a Monitor on the crawl log (30 min, re-arm on expiry) and relaunch the crawl after
    every restart. Then `build --groups=dikdas,dikmen,paud,dikmas <raw> data/sekolah data/wilayah/wilayah.json.gz
    <crawl date>` (F-028 keeps only PKBM and SKB from Dikmas), compare with part 1, check the match report and

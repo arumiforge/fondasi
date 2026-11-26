@@ -8,7 +8,8 @@ Two steps, so the slow crawl and the conversion are separate and repeatable:
       (kecamatan). Groups: dikdas (SD, MI, SMP, MTs…), dikmen (SMA, MA, SMK, SLB…), paud (TK, KB, RA, TPA,
       SPS…), dikmas (PKBM, SKB, courses…). Polite: one request per second, resumable (pages already saved
       are skipped; a page without the school table is never saved). PROVINCE_CODE is the 6-digit Dapodik
-      code, e.g. 030000 for Jawa Tengah; without codes, every province is fetched.
+      code, e.g. 030000 for Jawa Tengah, or a regency code (030100) to fetch one regency; without codes, every
+      province is fetched.
 
   python3 -I tools/converters/sekolah.py build [--groups=dikdas,dikmen] RAW_DIR OUT_DIR WILAYAH_JSON_GZ VERSION
       Parses the saved pages (untrusted input: parsed as text, never executed), links each school to the
@@ -50,11 +51,12 @@ def get(url):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 return r.read().decode("utf-8", "replace")
-        except Exception as e:  # network hiccups: back off and retry
+        except Exception as e:  # network hiccups: back off and retry; a busy or rate-limiting site gets a long pause
             if attempt == 4:
                 raise
-            time.sleep(5 * (attempt + 1))
-            print(f"  retry {url}: {e}", file=sys.stderr)
+            busy = getattr(e, "code", None) in (429, 502, 503, 504)
+            time.sleep((60 if busy else 5) * (attempt + 1))
+            print(f"  retry {url}: {e}", file=sys.stderr, flush=True)
 
 
 def child_links(page, group, level, parent_prefix):
@@ -103,12 +105,15 @@ def fetch(raw, provinces, groups=GROUPS):
     # the national page is always kept: build reads the province names from it
     top = cached(os.path.join(raw, "dikdas-000000.html"), f"{BASE}/satpen/dikdas/000000/0", "Nama Wilayah")
     provinces = provinces or child_links(top, "dikdas", 1, "")
-    for prov in provinces:
+    for code in provinces:
+        prov = code[:2] + "0000"
         for group in groups:
             d = os.path.join(raw, prov, group)
             os.makedirs(d, exist_ok=True)
             p1 = cached(os.path.join(d, f"{prov}.html"), url(group, prov, 1), "Nama Wilayah")
-            for kab in child_links(p1, group, 2, prov[:2]):
+            # a regency code (e.g. 030100) fetches only that regency, so several workers can share a province
+            kabs = [k for k in child_links(p1, group, 2, prov[:2]) if code == prov or k == code]
+            for kab in kabs:
                 p2 = cached(os.path.join(d, f"{kab}.html"), url(group, kab, 2), "Nama Wilayah")
                 counts = child_counts(p2, group, 3, kab[:4]) if group in KEEP_FORMS else {}
                 for kec in child_links(p2, group, 3, kab[:4]):
@@ -116,7 +121,7 @@ def fetch(raw, provinces, groups=GROUPS):
                     if kec in counts and not any(counts[kec].get(f, 0) for f in KEEP_FORMS[group]):
                         continue
                     cached(os.path.join(d, f"{kec}.html"), url(group, kec, 3), ">NPSN<")
-            print(f"fetched {prov} {group}", file=sys.stderr, flush=True)
+            print(f"fetched {code} {group}", file=sys.stderr, flush=True)
 
 
 # ---------------------------------------------------------------- build
