@@ -12,6 +12,11 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
   between several candidates (R-01).
 - Decision F-028: which forms and regions `sekolah` keeps.
 
+### Added
+- Data set `kaldik-madrasah-jateng` 2026-06-29 (R-06): madrasah calendar of Jawa Tengah 2026/2027 from Keputusan
+  Kakanwil Kemenag Jateng 1681/2026, transcribed in `tools/converters/kaldik-madrasah-jateng.py`, which recomputes
+  HK/HL/HE per month (all 12 match) and checks holidays against `libur-nasional`; raw PDF in `sources/`.
+
 ### Changed
 - `wilayah` checked against Kepmendagri 300.2.2-2430/2025 (R-14): it changes only island data of Aceh and Sumatera
   Utara; region codes, names and counts already match, so the data stays 2026-02-13. The decree is kept in

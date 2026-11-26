@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| (none) | — | R-01 finished (PRs #9, #10 merged); next session picks from Next steps | — |
+| `nty/amazing-knuth-svvihr` | session data-round 2 | R-06 `kaldik-madrasah-jateng` (PR open, merge when CI is green); O2SN guides stored | handed over (session too long) |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -33,8 +33,13 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    <raw> <regency codes>` in up to twenty workers (F-029; split the 514 regencies by size, ≈ 500 pages/min, ≈ 1 h for
    all 31,000 pages), then `build --groups=dikdas,dikmen,paud,dikmas`. Cloud containers are suspended a few minutes
    after the session goes idle: keep a Monitor on the worker logs and relaunch after a restart.
-2. **R-06** waits for the user's zip from brief R-06 (Kanwil site times out from the cloud).
-3. **R-10b** waits for the user's zip (PASI U14/U16, O2SN, POPDA/POPNAS); then extend `atletik-*`. **R-11** records
+2. **R-06 done** (`kaldik-madrasah-jateng` 2026-06-29). If the PR of this session is still open: check CI and merge
+   (F-026). Still missing: the national guideline Keputusan Dirjen Pendis 4860/2026 (optional; the Kanwil decree
+   follows it). The 4 SKB 2027 cuti bersama days not in the decree are listed in `skb_days_not_in_this_calendar`.
+3. **R-10b, O2SN part — next task**: the O2SN 2026 guides (SD, SMP, SMA) are in `sources/atletik/o2sn/` (text
+   PDFs, SHA-256 in SOURCE.txt). Read the athletics chapters (events per level, age limits and reference dates,
+   implements, heights, hurdles) and extend `atletik-nomor`, `atletik-kelompok-umur` (school groups) with refs to
+   the guide pages, like the World Athletics part (F-027). PASI U14/U16 and POPDA/POPNAS are still missing. **R-11** records
    need the user's list of championships.
 4. When the user uploads R-12 or R-02/R-07/R-08/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
@@ -53,6 +58,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-06 built from the uploaded Kanwil decree 1681/2026 (45 events, HK/HL/HE of all 12 months match); O2SN 2026 guides stored for R-10b. Next: merge the R-06 PR, then O2SN.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-14 brief written; the user uploaded Kepmendagri 2430/2025: it changes islands only, `wilayah` already matches; decree kept in `sources/wilayah/`. Next: R-06/R-10b zips, R-11 list.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — `wilayah`/`kodepos` refresh checked: upstream data unchanged (README ahead of `wilayah.sql`), nothing to rebuild. Next: R-06/R-10b zips, official 2430/2025 attachment if wanted.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #9 merged (Dikdas+Dikmen); F-029 (parallel crawl, 20 workers on referensi.data); PAUD+PKBM/SKB crawled in 25 min, `sekolah` 539,580 units (98.0 % with village code), PR #10 merged. Next: R-06/R-10b zips from the user, `wilayah` refresh.

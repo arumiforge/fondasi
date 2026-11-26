@@ -1,0 +1,16 @@
+{
+  "version": "2026-06-29",
+  "description": "Education calendar of madrasah (RA, MI, MTs, MA, MAK) in Jawa Tengah: 2026/2027 in full (45 dated events from the decree and its Lampiran, with its rules and the printed HK/HL/HE per month).",
+  "status": "ready for 2026/2027",
+  "source": "Kantor Wilayah Kementerian Agama Provinsi Jawa Tengah, Keputusan Nomor 1681 Tahun 2026 (raw PDF and SOURCE.txt in sources/kaldik-madrasah-jateng/, received from the user, brief R-06)",
+  "licence": "Public government document",
+  "procedure": "Transcribed by hand into tools/converters/kaldik-madrasah-jateng.py, which recomputes HK/HL/HE per month against the Lampiran, compares every holiday with libur-nasional and writes the JSON.",
+  "source_sha256": "c9df2154d960eeb07cd6794fad9a861258684b229e658475f5e17445621b1c97",
+  "counts": {
+    "events": 45,
+    "skb_days_not_in_this_calendar": 4
+  },
+  "files": [
+    "kaldik-madrasah-jateng.json"
+  ]
+}
