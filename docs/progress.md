@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/eager-tesla-92hwl9` | session data-round 3 | R-08 `mapel` all levels (PR #16, #17 merged before) | PR open |
+| `nty/eager-tesla-92hwl9` | session data-round 3 | R-15 `capaian-pembelajaran` converter (in progress, handed over) | handed over (session too long) |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -40,12 +40,27 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    and POPDA/POPNAS (brief R-10b items 1 and 3); O2SN 2027 when Puspresnas publishes it. **R-11** records need the
    user's list of championships.
 4. **R-08 done** (`mapel` 2025-09-22, all levels incl. madrasah; F-031 errata). Open in it: KMA Tabel 18 (MILB V)
-   totals count 36 kokurikuler JP more than its rows (`unresolved`); check again when Kemenag publishes a corrected
-   KMA. **Next: R-15 `capaian-pembelajaran`** (sources in `sources/capaian-pembelajaran/`: Kepka 046/H/KR/2025,
-   1,691 pages with text layer; religion from the scanned Kepka BKPDM 020/2026 — tesseract with `ind` works in the
-   cloud: `apt-get install tesseract-ocr tesseract-ocr-ind`, run with OMP_THREAD_LIMIT=1, 4 in parallel, ≈ 2 s per
-   page; madrasah from SK 9941/2025), then **R-16 `kerangka-tka`**, then **R-17** coordinates for `sekolah` (crawl
-   of NPSN pages, 20 workers, F-029).
+   totals count 36 kokurikuler JP more than its rows (`unresolved`); check again when Kemenag publishes a corrected KMA.
+   **R-15 `capaian-pembelajaran` — in progress, next task** (F-030, F-032). State:
+   - `tools/converters/capaian-pembelajaran.py` (committed, not yet run into `data/`). Full build:
+     `python3 -I tools/converters/capaian-pembelajaran.py sources/capaian-pembelajaran data` (≈ 2 min; needs
+     pdftotext and pdfplumber, both present in the cloud image). It parses 046 Lampiran I (PAUD), II (40 subjects
+     without religion), III (183 SMK sections), IV (11 Paket), V (43 SLB without religion) and SK 9941 (15 madrasah
+     sections) into `data/capaian-pembelajaran/<file>.json.gz` + `index.json`, and stops on structure problems.
+   - Last run stopped on ONE structure problem: 046 Lampiran V, XXXII.4 "Fase Fondasi Program Kebutuhan Khusus
+     Pengembangan Diri dan Gerak … Hambatan Fisik/Tunadaksa" (PDF p. 1609–1612): no phase found (its D section
+     probably lacks "Pada akhir Fase Fondasi"; look with `pdftotext -layout -f 1609 -l 1612`). Fix, rerun, then:
+     manifest (version = newest source date of what is included: 046 is 2025-07-16, SK 9941 is 2025-11-28, so
+     2025-11-28), `tools/data-check --write`, README row, CHANGELOG, PR.
+   - Per subject the output has `source_notes`: element names that differ between the element table and the CP
+     headings in the source (e.g. "Aljabar" vs "Aljabar dan Fungsi", German "Menyimak (Hören)" vs "Menyimak"); they
+     are source facts, not parser errors. "-" in the source is stored as `text: null, no_cp: true`.
+   - Spot-check a few outcomes per file against the PDF before publishing (text is extracted, not transcribed).
+   - Then the religion PR (F-032): Kepka BKPDM 020/2026 is a scan; OCR (tesseract `ind`, 300 dpi,
+     OMP_THREAD_LIMIT=1, 4 in parallel, ≈ 1 min for 79 pages; `apt-get install tesseract-ocr tesseract-ocr-ind`)
+     is a draft only. SD phases A–C: use sinaubareng `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`
+     (checked word by word); D–F and Lampiran II (special education) must be read from page images.
+   Then **R-16 `kerangka-tka`**, then **R-17** coordinates for `sekolah` (crawl of NPSN pages, 20 workers, F-029).
 5. When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
 6. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
@@ -63,6 +78,8 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — R-15 started: generic CP parser for 046 (all appendices) and SK 9941 written and run (≈ 2,900 outcomes); F-032 (religion from 020 in a checked second step, full content). Handed over before the first data build (one SLB section left). Next: finish R-15.
+
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PRs #16 (O2SN) and #17 (sinaubareng audit) merged; R-08 `mapel` built for all levels (54 tables, 144 totals checked, 7 errata, F-031; user: Bahasa Inggris SD/MI compulsory from 2027/2028 = Pasal 33). Next: R-15.
 
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PR #15 found merged; R-10b O2SN part built (guides + the two scoring tables fetched from the guides' links, every row matches WA formulas; women's 60 m parameters derived). sinaubareng audited (user: mapel all levels, CP all subjects, TKA, coordinates later; repo to be made private by the user).
@@ -73,4 +90,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #8 was already merged; R-01 crawler extended (PAUD, Dikmas, page checks), F-028 (forms kept, PKBM/SKB only, no schools abroad), full Dikdas+Dikmen crawl (15,633 pages), `sekolah` 2026-11-26 built (283,421 schools, 97.8 % with village code), PR 1 opened. Next: PAUD+PKBM/SKB (part 2).
 - 2026-11-26 · session data-round · `data/atletik` — PRs #5, #6 (libur-nasional, kaldik-jateng check), #7 (kodepos) merged; R-06 and R-10b briefs; R-10 World Athletics sets (F-027); R-01 crawler written, crawl not finished. Next: R-01 crawl.
 - 2026-11-25 · session data-round · `data/libur-nasional` — PR #5 merged; R-01 interview (all provinces, replace SD/MI, madrasah from Kemendikdasmen with R-02 for NSM, add PAUD and PKBM/kesetaraan, sequential crawl in two PRs); R-04 built; R-06 moved to a browser brief (Kanwil site times out). Next: R-03 while the R-01 crawl runs.
-- 2026-11-25 · session data-round prep · `pw/peaceful-tesla-bjooc9` — PR #4 merged (skema-siswa corrections F-024, kaldik-jateng, calendar layers F-025); environment Fondasi created; handoff for the data round. Next: R-01.
