@@ -25,21 +25,18 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/amazing-knuth-svvihr` | session data-round 2 | R-01 crawl (Dikdas+Dikmen, then PAUD+Dikmas), F-028, build `sekolah` | crawl running (started 2026-11-26 00:15 WIB) |
+| `nty/amazing-knuth-svvihr` | session data-round 2 | R-01 part 1 `sekolah` Dikdas+Dikmen (PR 1), F-028; part 2 PAUD+PKBM/SKB crawl | PR 1 open; PAUD+Dikmas crawl running |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
-1. **R-01 `sekolah` all levels** (user decisions 2026-11-25: every province; replace the old SD/MI data; madrasah
-   from Kemendikdasmen, R-02 only adds NSM; also PAUD (TK/KB/RA/TPA/SPS) and Dikmas (PKBM/SKB) in a second PR;
-   sequential crawl, ≥ 1 s between requests). Source `referensi.data.kemendikdasmen.go.id`: per district pages
-   `/satpen/dikdas/<kec6>/3?jalur=jf&status=all` (SD, MI, SMP, MTs) and `/satpen/dikmen/...` (SMA, MA, SMK, SLB);
-   PAUD `/satpen/paud/<code>%20%20/<lvl>?jalur=all&status=all`, Dikmas `/satpen/dikmas/...?jalur=jn` (extend
-   `GROUPS` in the converter). The raw cache of the last session is lost: run in the background, resumable,
-   `python3 -I tools/converters/sekolah.py fetch <scratch>/raw 030000 <other province codes>` (Jawa Tengah first; the
-   list is on `/satpen/dikdas/000000/0`; ~14,000 pages ≈ 8 h; the worker restarts kill it — check and relaunch on
-   each wake), then `build <raw> data/sekolah data/wilayah/wilayah.json.gz <date>`; check the unmatched report
-   (region codes are matched by name, never invented), update manifest (new fields: alamat, kode_desa…), catalogue,
-   R-01 status. Version = crawl date (the pages show no source date).
+1. **R-01 part 2 `sekolah` PAUD + PKBM/SKB** (second PR; part 1 Dikdas+Dikmen 2026-11-26 is done). The crawler
+   runs `fetch --groups=paud,dikmas <raw> <province codes>` (Jawa Tengah first, resumable, 1 request/s, ~15,600
+   pages ≈ 10 h). **Cloud containers are suspended a few minutes after the session goes idle** and the detached
+   crawl dies with them: keep a Monitor on the crawl log (30 min, re-arm on expiry) and relaunch the crawl after
+   every restart. Then `build --groups=dikdas,dikmen,paud,dikmas <raw> data/sekolah data/wilayah/wilayah.json.gz
+   <crawl date>` (F-028 keeps only PKBM and SKB from Dikmas), compare with part 1, check the match report and
+   sample the spelling-variant matches, update manifest, catalogue, R-01 status. The raw pages live only in the
+   container's scratchpad; a new container means a new crawl.
 2. **R-06** waits for the user's zip from brief R-06 (Kanwil site times out from the cloud).
 3. **R-10b** waits for the user's zip (PASI U14/U16, O2SN, POPDA/POPNAS); then extend `atletik-*`. **R-11** records
    need the user's list of championships.
@@ -57,6 +54,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — PR #8 was already merged; R-01 crawler extended (PAUD, Dikmas, page checks), F-028 (forms kept, PKBM/SKB only, no schools abroad), full Dikdas+Dikmen crawl (15,633 pages), `sekolah` 2026-11-26 built (283,421 schools, 97.8 % with village code), PR 1 opened. Next: PAUD+PKBM/SKB (part 2).
 - 2026-11-26 · session data-round · `data/atletik` — PRs #5, #6 (libur-nasional, kaldik-jateng check), #7 (kodepos) merged; R-06 and R-10b briefs; R-10 World Athletics sets (F-027); R-01 crawler written, crawl not finished. Next: R-01 crawl.
 - 2026-11-25 · session data-round · `data/libur-nasional` — PR #5 merged; R-01 interview (all provinces, replace SD/MI, madrasah from Kemendikdasmen with R-02 for NSM, add PAUD and PKBM/kesetaraan, sequential crawl in two PRs); R-04 built; R-06 moved to a browser brief (Kanwil site times out). Next: R-03 while the R-01 crawl runs.
 - 2026-11-25 · session data-round prep · `pw/peaceful-tesla-bjooc9` — PR #4 merged (skema-siswa corrections F-024, kaldik-jateng, calendar layers F-025); environment Fondasi created; handoff for the data round. Next: R-01.

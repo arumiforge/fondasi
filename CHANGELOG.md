@@ -7,7 +7,17 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ### Added
 - Athletics sets `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` 2026-03-20 (R-10) from World Athletics rules
   and the combined-events scoring tables, converter `tools/converters/atletik.py` with scoring checks (F-027).
-- `tools/converters/sekolah.py` (R-01 crawler/converter for referensi.data.kemendikdasmen.go.id; data not built yet).
+- `tools/converters/sekolah.py`: resumable crawler (Dikdas, Dikmen, PAUD, Dikmas) and converter for
+  referensi.data.kemendikdasmen.go.id that matches regions to `wilayah` by name, with spelling rules that never guess
+  between several candidates (R-01).
+- Decision F-028: which forms and regions `sekolah` keeps.
+
+### Changed
+- `sekolah` 2026-11-26 (R-01 part 1): every active school of Dikdas and Dikmen in all 38 provinces (283,421: SD, MI,
+  SMP, MTs, SMA, MA, SMK, SLB, SPK, Pendidikan Diniyah Formal, Satuan Pendidikan Muadalah, Buddhist, Hindu and
+  Christian schools) replaces the SD/MI-only version 2026-11-18. New fields `alamat`, `kode_desa`, `kode_kecamatan`,
+  `kode_kabupaten`, `kode_provinsi` (Kemendagri codes of `wilayah`, 97.8 % matched to the village, never invented) and
+  `kode_kecamatan_dapodik`. 2,483 SD/MI of the old version are gone because the source marks them merged or closed.
 
 ### Added
 - Data set `kodepos` 2025-06-30 (R-03): postal code of all 83,762 villages keyed by the `wilayah` codes, from

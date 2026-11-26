@@ -127,11 +127,19 @@ def region_names(page, group, level, prefix):
     return names
 
 
+# Dapodik writes some names differently from Kemendagri; these are spellings of the same name, not guesses
+NAME_ALIAS = {"dkijakarta": "daerahkhususibukotajakarta", "diyogyakarta": "daerahistimewayogyakarta"}
+
+
 def norm(name):
-    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
-    s = re.sub(r"^(prov\.|provinsi|kab\.|kabupaten|kota adm\.|kota administrasi|kota|kec\.|kecamatan|desa|kelurahan|kel\.)\s+", "", s)
+    """Lower-case ASCII letters and digits; level words (Prov., Kab., Kec., Desa…) dropped, 'Kota' kept."""
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower().strip()
+    s = re.sub(r"^(kota adm\.|kota administrasi)\s*", "kota ", s)
+    s = re.sub(r"^(prov\.|kab\.\s*adm\.|kab\.|kec\.|kel\.)\s*", "", s)
+    s = re.sub(r"^(provinsi|kabupaten administrasi|kabupaten|kecamatan|desa|kelurahan)\s+", "", s)
+    s = re.sub(r"\bkep\.\s*", "kepulauan ", s)
     s = re.sub(r"[^a-z0-9]", "", s)
-    return s
+    return NAME_ALIAS.get(s, s)
 
 
 def load_wilayah(path):
@@ -140,13 +148,50 @@ def load_wilayah(path):
     names = {}
     for code, name in rows_:
         names[code] = name
+        NAMES[code] = name
         parent = code.rsplit(".", 1)[0] if "." in code else ""
         by_parent.setdefault(parent, []).append((code, name))
     return names, by_parent
 
 
+NUMBER = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5", "vi": "6", "vii": "7", "viii": "8", "ix": "9",
+          "x": "10", "satu": "1", "dua": "2", "tiga": "3", "empat": "4", "lima": "5"}
+ABBREV = {"sei": "sungai", "sui": "sungai", "s": "sungai", "mns": "meunasah", "kp": "kampung", "tnjng": "tanjung",
+          "kep": "kepulauan"}
+PLACE_WORD = re.compile(r"^(kampung|kampong|nagari|gampong|jorong|dusun|desa|kelurahan|kel|negeri)\.?\s+")
+
+
+def tokens(name):
+    """Words of a name in one spelling: level words dropped, numbers as digits, common abbreviations written out."""
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower().strip()
+    s = re.sub(r"^(kota adm\.|kota administrasi)\s*", "kota ", s)
+    s = re.sub(r"^(prov\.|kab\.\s*adm\.|kab\.|kec\.|kel\.)\s*", "", s)
+    s = re.sub(r"^(provinsi|kabupaten administrasi|kabupaten|kecamatan|desa|kelurahan)\s+", "", s)
+    return [NUMBER.get(t, ABBREV.get(t, t)) for t in re.findall(r"[a-z0-9]+", s)]
+
+
+def canon(name):
+    """norm() plus one spelling for numbers (II = Dua = 2) and common abbreviations (Sei = Sungai, MNS = Meunasah)."""
+    s = "".join(tokens(name))
+    return NAME_ALIAS.get(s, s)
+
+
+# words that tell two neighbouring places apart; a spelling rule never matches names that differ in them
+MARKER_WORDS = {"utara", "selatan", "barat", "timur", "tengah", "darat", "laut", "hulu", "hilir", "ilir", "ulu",
+                "mudik", "mudiak", "atas", "bawah", "lama", "baru", "kidul", "lor", "wetan", "kulon", "induk",
+                "dalam", "luar", "besar", "kecil", "raya", "pantai", "pasar", "pekan", "kota", "kampung"}
+
+
+def markers(name):
+    return sorted(t for t in tokens(name) if t in MARKER_WORDS or t.isdigit() or len(t) == 1)
+
+
 def match(by_parent, parent, name, kota=None):
-    """Unique match of `name` among the children of `parent` (exact normalised name, then loose)."""
+    """Unique match of `name` among the children of `parent`, trying stricter rules first.
+
+    Rules after the exact one are used only when they leave exactly one candidate; every such match is listed in
+    the report (`matched_by_spelling_variant`). A rule that leaves several candidates stops the search: the code
+    stays null rather than being guessed."""
     cands = by_parent.get(parent, [])
     if kota is not None and parent and len(parent) == 2:
         cands = [c for c in cands if c[1].lower().startswith("kota") == kota]
@@ -154,33 +199,46 @@ def match(by_parent, parent, name, kota=None):
     hits = [c for c in cands if norm(c[1]) == key]
     if len(hits) == 1:
         return hits[0][0]
-    hits = [c for c in cands if loose(norm(c[1])) == loose(key)]
-    if len(hits) == 1:
+    if hits:
+        return None
+    ckey = canon(name)
+
+    def found(hits):
+        LOOSE_MATCHES.append(f"{name} = {hits[0][1]} ({hits[0][0]})")
         return hits[0][0]
-    # Javanese/Sundanese spellings differ in a/e/o and doubled letters (Purwodadi/Purwadadi, Baturaden/Baturraden)
-    # and in u/o, i/y and a silent h or w (Sokogelap/Sukogelap, Madiocondro/Madyocondro, Sidoarjo/Sidoharjo);
-    # each tier is used only when it gives one candidate, and every such match is listed in the report
-    for tier in (skeleton, skeleton_wide):
-        hits = [c for c in cands if tier(norm(c[1])) == tier(key)]
+
+    # numbers and abbreviations (Lumpatan II/Lumpatan 2, Sei Rambah/Sungai Rambah); old Dutch spellings (dj, oe, tj);
+    # Javanese/Sundanese a/e/o and doubled letters (Purwodadi/Purwadadi, Baturaden/Baturraden); u/o, i/y and a silent
+    # h or w (Sokogelap/Sukogelap, Madiocondro/Madyocondro, Sidoarjo/Sidoharjo)
+    mk = markers(name)
+    for tier in (lambda k: k, loose, skeleton, skeleton_wide):
+        hits = [c for c in cands if tier(canon(c[1])) == tier(ckey) and markers(c[1]) == mk]
         if len(hits) == 1:
-            LOOSE_MATCHES.append(f"{name} = {hits[0][1]} ({hits[0][0]})")
-            return hits[0][0]
+            return found(hits)
         if hits:
             return None
     # one letter added, dropped or changed (Pucakwangi/Puncakwangi, Babad/Babat), names of 6+ letters only
-    if len(key) >= 6:
-        hits = [c for c in cands if one_edit(loose(norm(c[1])), loose(key))]
+    if len(ckey) >= 6:
+        hits = [c for c in cands if one_edit(loose(canon(c[1])), loose(ckey)) and markers(c[1]) == mk]
         if len(hits) == 1:
-            LOOSE_MATCHES.append(f"{name} = {hits[0][1]} ({hits[0][0]})")
-            return hits[0][0]
+            return found(hits)
         if hits:
             return None
-    # "Kec. Kota Blora" is the district "Blora" in Kemendagri's list
-    if key.startswith("kota") and len(key) > 4:
-        hits = [c for c in cands if norm(c[1]) == key[4:]]
+    # the same name with or without a word around it: "Kec. Kota Blora" is "Blora", "Kisaran Barat" is
+    # "Kota Kisaran Barat", "Batu Nadua" in Kota Padangsidimpuan is "Padangsidimpuan Batunadua",
+    # "Kampung Tengah" / "Nagari Ganggo Hilia" are "Tengah" / "Ganggo Hilia"
+    keys = ["kota" + ckey]
+    if ckey.startswith("kota") and len(ckey) > 4:
+        keys.append(ckey[4:])
+    if parent in NAMES:
+        keys.append(re.sub(r"^kota", "", canon(NAMES[parent])) + ckey)
+    bare = PLACE_WORD.sub("", unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower().strip())
+    if canon(bare) != ckey:
+        keys.append(canon(bare))
+    for k in keys:
+        hits = [c for c in cands if canon(c[1]) == k]
         if len(hits) == 1:
-            LOOSE_MATCHES.append(f"{name} = {hits[0][1]} ({hits[0][0]})")
-            return hits[0][0]
+            return found(hits)
     return None
 
 
@@ -197,6 +255,7 @@ def one_edit(a, b):
 
 
 LOOSE_MATCHES = []
+NAMES = {}
 
 
 def loose(key):
@@ -329,7 +388,8 @@ def build(raw, out, wilayah_path, version, groups=GROUPS):
         "procedure": "tools/converters/sekolah.py fetch (raw pages) then build; regions matched by name to "
                      f"wilayah {wilayah_version}, never invented (F-028 for what is kept)",
         "fields": {
-            "npsn": "NPSN as published (8 characters; non-formal units may start with a letter)",
+            "npsn": "NPSN as published: 8 characters (non-formal units may start with a letter); 'NP…' numbers are "
+                    "temporary numbers, not NPSNs",
             "nama": "name as published",
             "bentuk_pendidikan": "form as published: SD, MI, SMP, MTs, SMA, MA, SMK, SLB, SPK …, PDF …, TK, KB, RA, …",
             "status_sekolah": "NEGERI | SWASTA",
@@ -351,6 +411,16 @@ def build(raw, out, wilayah_path, version, groups=GROUPS):
         "unmatched": {"regencies": len(report["unmatched_regency"]), "districts": len(report["unmatched_district"]),
                       "villages": report["unmatched_village"]},
         "files": manifest_files,
+        "notes": [
+            "Only active units: the district lists leave out units the source marks as merged or closed "
+            "(their detail pages say e.g. 'STATUS SATUAN PENDIDIKAN: MERGER').",
+            "Madrasah (MI, MTs, MA) come from the same Kemendikdasmen lists; their NSM follows from Kemenag (R-02).",
+            "Kept forms and regions: decision F-028. Region codes are matched by name to wilayah; spelling variants "
+            "are accepted only when one candidate remains and numbers and words such as Utara/Barat/Lama agree "
+            "(count in matched_by_spelling_variant, full list printed by the build); otherwise the code is null.",
+            "Village codes point to the village of the school's Dapodik district; where Dapodik and Kemendagri place "
+            "a village in different districts the code stays null.",
+        ],
     }
     with open(os.path.join(out, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
