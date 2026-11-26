@@ -41,6 +41,7 @@ ERRATA = [
     ("1.6", "keteladanan Nabi Kŏngzĭ (孔).", 41, "one character (孔) instead of 孔子 (Fase A, Kitab Suci); "
      "sinaubareng records the same and its owner confirmed it as printed"),
     ("1.6", "Menganalisis siifat-sifat", 43, "'siifat-sifat' for 'sifat-sifat' (Fase D, Keimanan)"),
+    ("2.4", "Kelas Xi, XII SMALB", 68, "'Xi' for 'XI' (Fase F heading)"),
     ("2.1", "mencintai pada Al Qur’an", 46, "'Al Qur’an' without the hyphen (Tujuan 2); printed 'Al-Qur’an' elsewhere"),
 ]
 PHASE_GRADES = {"A": [1, 2], "B": [3, 4], "C": [5, 6], "D": [7, 8, 9], "E": [10], "F": [11, 12]}
@@ -52,8 +53,9 @@ def printed_grades(applies_to):
     m = re.search(r"[Kk]elas\s+(.*)$", applies_to or "")
     if not m:
         return None
-    nums = re.findall(r"\b(XII|XI|IX|X|VIII|VII|VI|IV|V|III|II|I|1[0-2]|[1-9])\b", m.group(1))
-    return sorted({ROMAN_N.get(n) or int(n) for n in nums}) or None
+    # case-insensitive: 2.4 prints "Kelas Xi, XII SMALB" (listed in ERRATA)
+    nums = re.findall(r"\b(XII|XI|IX|X|VIII|VII|VI|IV|V|III|II|I|1[0-2]|[1-9])\b", m.group(1), re.I)
+    return sorted({ROMAN_N.get(n.upper()) or int(n) for n in nums}) or None
 SMALL = {"dan", "atau", "serta", "untuk", "dengan", "di", "ke", "dari", "pada", "yang", "bagi", "dalam"}
 
 
