@@ -3,13 +3,14 @@
 
 Two steps, so the slow crawl and the conversion are separate and repeatable:
 
-  python3 -I tools/converters/sekolah.py fetch RAW_DIR [PROVINCE_CODE ...]
-      Saves the public list pages unchanged: per province, the Dikdas list (SD, MI, SMP, MTs…) and the
-      Dikmen list (SMA, MA, SMK, SLB…) of every district (kecamatan). Polite: one request per second,
-      resumable (pages already saved are skipped). PROVINCE_CODE is the 6-digit Dapodik code, e.g. 030000
-      for Jawa Tengah; without codes, every province is fetched.
+  python3 -I tools/converters/sekolah.py fetch [--groups=dikdas,dikmen] RAW_DIR [PROVINCE_CODE ...]
+      Saves the public list pages unchanged: per province and group, the list of every district
+      (kecamatan). Groups: dikdas (SD, MI, SMP, MTs…), dikmen (SMA, MA, SMK, SLB…), paud (TK, KB, RA, TPA,
+      SPS…), dikmas (PKBM, SKB, courses…). Polite: one request per second, resumable (pages already saved
+      are skipped; a page without the school table is never saved). PROVINCE_CODE is the 6-digit Dapodik
+      code, e.g. 030000 for Jawa Tengah; without codes, every province is fetched.
 
-  python3 -I tools/converters/sekolah.py build RAW_DIR OUT_DIR WILAYAH_JSON_GZ VERSION
+  python3 -I tools/converters/sekolah.py build [--groups=dikdas,dikmen] RAW_DIR OUT_DIR WILAYAH_JSON_GZ VERSION
       Parses the saved pages (untrusted input: parsed as text, never executed), links each school to the
       Kemendagri region codes of the `wilayah` set by matching names (regency → district → village), and
       writes one gzipped JSON file per province plus manifest.json and a match report.
@@ -29,7 +30,18 @@ import urllib.request
 
 BASE = "https://referensi.data.kemendikdasmen.go.id"
 UA = "fondasi-data-converter (public reference data; 1 request/s)"
+# group → (jalur filter, suffix after the region code in URLs; PAUD pads the code with two spaces)
+GROUP_URL = {"dikdas": ("jf", ""), "dikmen": ("jf", ""), "paud": ("all", "%20%20"), "dikmas": ("jn", "")}
 GROUPS = ("dikdas", "dikmen")
+# F-028: every form listed in the formal groups is kept (SPK, Pendidikan Diniyah Formal included); from Dikmas only
+# the equivalency providers; schools abroad ("Luar Negeri", 350000) are left out.
+KEEP_FORMS = {"dikmas": {"PKBM", "SKB"}}
+EXCLUDED_PROVINCES = {"350000"}
+
+
+def url(group, code, level):
+    jalur, pad = GROUP_URL[group]
+    return f"{BASE}/satpen/{group}/{code}{pad}/{level}?jalur={jalur}&status=all"
 
 
 def get(url):
@@ -46,7 +58,7 @@ def get(url):
 
 
 def child_links(page, group, level, parent_prefix):
-    codes = re.findall(rf'href="/satpen/{group}/(\d{{6}})/{level}\?', page)
+    codes = re.findall(rf'href="/satpen/{group}/(\d{{6}})(?:%20)*/{level}\?', page)
     seen = []
     for c in codes:
         if c.startswith(parent_prefix) and c not in seen:
@@ -54,33 +66,41 @@ def child_links(page, group, level, parent_prefix):
     return seen
 
 
-def fetch(raw, provinces):
+def fetch(raw, provinces, groups=GROUPS):
     os.makedirs(raw, exist_ok=True)
 
-    def cached(path, url):
+    def cached(path, url, marker):
+        """Fetch once; a page must be complete and carry `marker` (list header) to be saved."""
         if os.path.exists(path):
             return open(path, encoding="utf-8").read()
-        time.sleep(1)
-        page = get(url)
+        for attempt in range(3):
+            time.sleep(1 if attempt == 0 else 15)
+            page = get(url)
+            if "</html>" in page and marker in page:
+                break
+        else:
+            if "</html>" not in page:
+                raise RuntimeError(f"incomplete page: {url}")
+            print(f"  warning: no list header ({marker}) in {url}; saved as is", file=sys.stderr)
         tmp = path + ".tmp"
         with open(tmp, "w", encoding="utf-8") as f:
             f.write(page)
         os.replace(tmp, path)
         return page
 
-    if not provinces:
-        top = cached(os.path.join(raw, "dikdas-000000.html"), f"{BASE}/satpen/dikdas/000000/0")
-        provinces = child_links(top, "dikdas", 1, "")
+    # the national page is always kept: build reads the province names from it
+    top = cached(os.path.join(raw, "dikdas-000000.html"), f"{BASE}/satpen/dikdas/000000/0", "Nama Wilayah")
+    provinces = provinces or child_links(top, "dikdas", 1, "")
     for prov in provinces:
-        for group in GROUPS:
+        for group in groups:
             d = os.path.join(raw, prov, group)
             os.makedirs(d, exist_ok=True)
-            p1 = cached(os.path.join(d, f"{prov}.html"), f"{BASE}/satpen/{group}/{prov}/1?jalur=jf&status=all")
+            p1 = cached(os.path.join(d, f"{prov}.html"), url(group, prov, 1), "Nama Wilayah")
             for kab in child_links(p1, group, 2, prov[:2]):
-                p2 = cached(os.path.join(d, f"{kab}.html"), f"{BASE}/satpen/{group}/{kab}/2?jalur=jf&status=all")
+                p2 = cached(os.path.join(d, f"{kab}.html"), url(group, kab, 2), "Nama Wilayah")
                 for kec in child_links(p2, group, 3, kab[:4]):
-                    cached(os.path.join(d, f"{kec}.html"), f"{BASE}/satpen/{group}/{kec}/3?jalur=jf&status=all")
-            print(f"fetched {prov} {group}", file=sys.stderr)
+                    cached(os.path.join(d, f"{kec}.html"), url(group, kec, 3), ">NPSN<")
+            print(f"fetched {prov} {group}", file=sys.stderr, flush=True)
 
 
 # ---------------------------------------------------------------- build
@@ -101,17 +121,25 @@ def rows(page):
 def region_names(page, group, level, prefix):
     """Map child code → name from a list page (the name is the link text)."""
     names = {}
-    for code, label in re.findall(rf'href="/satpen/{group}/(\d{{6}})/{level}\?[^"]*"[^>]*>(.*?)</a>', page, re.S):
+    for code, label in re.findall(rf'href="/satpen/{group}/(\d{{6}})(?:%20)*/{level}\?[^"]*"[^>]*>(.*?)</a>', page, re.S):
         if code.startswith(prefix):
             names[code] = text(label)
     return names
 
 
+# Dapodik writes some names differently from Kemendagri; these are spellings of the same name, not guesses
+NAME_ALIAS = {"dkijakarta": "daerahkhususibukotajakarta", "diyogyakarta": "daerahistimewayogyakarta"}
+
+
 def norm(name):
-    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
-    s = re.sub(r"^(prov\.|provinsi|kab\.|kabupaten|kota adm\.|kota administrasi|kota|kec\.|kecamatan|desa|kelurahan|kel\.)\s+", "", s)
+    """Lower-case ASCII letters and digits; level words (Prov., Kab., Kec., Desa…) dropped, 'Kota' kept."""
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower().strip()
+    s = re.sub(r"^(kota adm\.|kota administrasi)\s*", "kota ", s)
+    s = re.sub(r"^(prov\.|kab\.\s*adm\.|kab\.|kec\.|kel\.)\s*", "", s)
+    s = re.sub(r"^(provinsi|kabupaten administrasi|kabupaten|kecamatan|desa|kelurahan)\s+", "", s)
+    s = re.sub(r"\bkep\.\s*", "kepulauan ", s)
     s = re.sub(r"[^a-z0-9]", "", s)
-    return s
+    return NAME_ALIAS.get(s, s)
 
 
 def load_wilayah(path):
@@ -120,13 +148,50 @@ def load_wilayah(path):
     names = {}
     for code, name in rows_:
         names[code] = name
+        NAMES[code] = name
         parent = code.rsplit(".", 1)[0] if "." in code else ""
         by_parent.setdefault(parent, []).append((code, name))
     return names, by_parent
 
 
+NUMBER = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5", "vi": "6", "vii": "7", "viii": "8", "ix": "9",
+          "x": "10", "satu": "1", "dua": "2", "tiga": "3", "empat": "4", "lima": "5"}
+ABBREV = {"sei": "sungai", "sui": "sungai", "s": "sungai", "mns": "meunasah", "kp": "kampung", "tnjng": "tanjung",
+          "kep": "kepulauan"}
+PLACE_WORD = re.compile(r"^(kampung|kampong|nagari|gampong|jorong|dusun|desa|kelurahan|kel|negeri)\.?\s+")
+
+
+def tokens(name):
+    """Words of a name in one spelling: level words dropped, numbers as digits, common abbreviations written out."""
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower().strip()
+    s = re.sub(r"^(kota adm\.|kota administrasi)\s*", "kota ", s)
+    s = re.sub(r"^(prov\.|kab\.\s*adm\.|kab\.|kec\.|kel\.)\s*", "", s)
+    s = re.sub(r"^(provinsi|kabupaten administrasi|kabupaten|kecamatan|desa|kelurahan)\s+", "", s)
+    return [NUMBER.get(t, ABBREV.get(t, t)) for t in re.findall(r"[a-z0-9]+", s)]
+
+
+def canon(name):
+    """norm() plus one spelling for numbers (II = Dua = 2) and common abbreviations (Sei = Sungai, MNS = Meunasah)."""
+    s = "".join(tokens(name))
+    return NAME_ALIAS.get(s, s)
+
+
+# words that tell two neighbouring places apart; a spelling rule never matches names that differ in them
+MARKER_WORDS = {"utara", "selatan", "barat", "timur", "tengah", "darat", "laut", "hulu", "hilir", "ilir", "ulu",
+                "mudik", "mudiak", "atas", "bawah", "lama", "baru", "kidul", "lor", "wetan", "kulon", "induk",
+                "dalam", "luar", "besar", "kecil", "raya", "pantai", "pasar", "pekan", "kota", "kampung"}
+
+
+def markers(name):
+    return sorted(t for t in tokens(name) if t in MARKER_WORDS or t.isdigit() or len(t) == 1)
+
+
 def match(by_parent, parent, name, kota=None):
-    """Unique match of `name` among the children of `parent` (exact normalised name, then loose)."""
+    """Unique match of `name` among the children of `parent`, trying stricter rules first.
+
+    Rules after the exact one are used only when they leave exactly one candidate; every such match is listed in
+    the report (`matched_by_spelling_variant`). A rule that leaves several candidates stops the search: the code
+    stays null rather than being guessed."""
     cands = by_parent.get(parent, [])
     if kota is not None and parent and len(parent) == 2:
         cands = [c for c in cands if c[1].lower().startswith("kota") == kota]
@@ -134,9 +199,76 @@ def match(by_parent, parent, name, kota=None):
     hits = [c for c in cands if norm(c[1]) == key]
     if len(hits) == 1:
         return hits[0][0]
-    loose = key.replace("dj", "j").replace("oe", "u").replace("tj", "c")
-    hits = [c for c in cands if norm(c[1]).replace("dj", "j").replace("oe", "u").replace("tj", "c") == loose]
-    return hits[0][0] if len(hits) == 1 else None
+    if hits:
+        return None
+    ckey = canon(name)
+
+    def found(hits):
+        LOOSE_MATCHES.append(f"{name} = {hits[0][1]} ({hits[0][0]})")
+        return hits[0][0]
+
+    # numbers and abbreviations (Lumpatan II/Lumpatan 2, Sei Rambah/Sungai Rambah); old Dutch spellings (dj, oe, tj);
+    # Javanese/Sundanese a/e/o and doubled letters (Purwodadi/Purwadadi, Baturaden/Baturraden); u/o, i/y and a silent
+    # h or w (Sokogelap/Sukogelap, Madiocondro/Madyocondro, Sidoarjo/Sidoharjo)
+    mk = markers(name)
+    for tier in (lambda k: k, loose, skeleton, skeleton_wide):
+        hits = [c for c in cands if tier(canon(c[1])) == tier(ckey) and markers(c[1]) == mk]
+        if len(hits) == 1:
+            return found(hits)
+        if hits:
+            return None
+    # one letter added, dropped or changed (Pucakwangi/Puncakwangi, Babad/Babat), names of 6+ letters only
+    if len(ckey) >= 6:
+        hits = [c for c in cands if one_edit(loose(canon(c[1])), loose(ckey)) and markers(c[1]) == mk]
+        if len(hits) == 1:
+            return found(hits)
+        if hits:
+            return None
+    # the same name with or without a word around it: "Kec. Kota Blora" is "Blora", "Kisaran Barat" is
+    # "Kota Kisaran Barat", "Batu Nadua" in Kota Padangsidimpuan is "Padangsidimpuan Batunadua",
+    # "Kampung Tengah" / "Nagari Ganggo Hilia" are "Tengah" / "Ganggo Hilia"
+    keys = ["kota" + ckey]
+    if ckey.startswith("kota") and len(ckey) > 4:
+        keys.append(ckey[4:])
+    if parent in NAMES:
+        keys.append(re.sub(r"^kota", "", canon(NAMES[parent])) + ckey)
+    bare = PLACE_WORD.sub("", unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower().strip())
+    if canon(bare) != ckey:
+        keys.append(canon(bare))
+    for k in keys:
+        hits = [c for c in cands if canon(c[1]) == k]
+        if len(hits) == 1:
+            return found(hits)
+    return None
+
+
+def one_edit(a, b):
+    """True when a and b differ by exactly one inserted, deleted or replaced letter."""
+    if a == b or abs(len(a) - len(b)) > 1:
+        return False
+    if len(a) > len(b):
+        a, b = b, a
+    i = 0
+    while i < len(a) and a[i] == b[i]:
+        i += 1
+    return a[i + (len(a) == len(b)):] == b[i + 1:]
+
+
+LOOSE_MATCHES = []
+NAMES = {}
+
+
+def loose(key):
+    return key.replace("dj", "j").replace("oe", "u").replace("tj", "c")
+
+
+def skeleton(key):
+    return re.sub(r"(.)\1+", r"\1", re.sub(r"[eo]", "a", loose(key)))
+
+
+def skeleton_wide(key):
+    k = re.sub(r"[hw]", "", loose(key)).replace("y", "i")
+    return re.sub(r"(.)\1+", r"\1", re.sub(r"[aeou]", "a", k))
 
 
 def slug(name):
@@ -152,7 +284,7 @@ def norm_keep(name):
 PROVINCE_FIX = {"d.k.i. jakarta": "dki-jakarta", "d.i. yogyakarta": "di-yogyakarta"}
 
 
-def build(raw, out, wilayah_path, version):
+def build(raw, out, wilayah_path, version, groups=GROUPS):
     names, by_parent = load_wilayah(wilayah_path)
     top_path = os.path.join(raw, "dikdas-000000.html")
     prov_names = {}
@@ -162,11 +294,11 @@ def build(raw, out, wilayah_path, version):
     manifest_files, report = [], {"unmatched_regency": [], "unmatched_district": [], "unmatched_village": 0, "villages_unmatched_sample": []}
     total = 0
     levels_seen = {}
-    for prov in sorted(p for p in os.listdir(raw) if re.fullmatch(r"\d{6}", p)):
+    for prov in sorted(p for p in os.listdir(raw) if re.fullmatch(r"\d{6}", p) and p not in EXCLUDED_PROVINCES):
         schools = {}
         prov_label = None
         kab_label, kec_label = {}, {}
-        for group in GROUPS:
+        for group in groups:
             d = os.path.join(raw, prov, group)
             if not os.path.isdir(d):
                 continue
@@ -184,6 +316,8 @@ def build(raw, out, wilayah_path, version):
                     if len(cells) < 7 or not re.fullmatch(r"[0-9A-Z]{8}", cells[1]):
                         continue
                     npsn, nama, bentuk, status, alamat, desa = cells[1:7]
+                    if group in KEEP_FORMS and bentuk not in KEEP_FORMS[group]:
+                        continue
                     schools[npsn] = {"npsn": npsn, "nama": nama, "bentuk_pendidikan": bentuk,
                                      "status_sekolah": status.upper(), "alamat": alamat, "desa": desa,
                                      "_kec": code}
@@ -238,14 +372,72 @@ def build(raw, out, wilayah_path, version):
                                "levels": dict(sorted(counts.items())),
                                "with_village_code": sum(1 for s in items if s["kode_desa"])})
         total += len(items)
-    json.dump({"files": manifest_files, "total": total, "levels": dict(sorted(levels_seen.items())), "report": report},
-              sys.stdout, ensure_ascii=False, indent=1)
-
+    wilayah_manifest = os.path.join(os.path.dirname(wilayah_path), "manifest.json")
+    wilayah_version = json.load(open(wilayah_manifest))["version"] if os.path.exists(wilayah_manifest) else "?"
+    manifest = {
+        "version": version,
+        "description": "Schools and other education units in Indonesia, one gzipped JSON file per province "
+                       "(public data, no personal data), linked to the Kemendagri region codes of the wilayah set.",
+        "status": "ready",
+        "groups": list(groups),
+        "levels": sorted(levels_seen),
+        "source": f"{BASE}/satpen/<group>/<district>/3 (Kemendikdasmen Dapodik reference pages; Dikdas, Dikmen, PAUD "
+                  "and Dikmas lists per district, status 'all'), crawled on the version date; the pages show no "
+                  "source date",
+        "licence": "Public government data, no personal data",
+        "procedure": "tools/converters/sekolah.py fetch (raw pages) then build; regions matched by name to "
+                     f"wilayah {wilayah_version}, never invented (F-028 for what is kept)",
+        "fields": {
+            "npsn": "NPSN as published: 8 characters (non-formal units may start with a letter); 'NP…' numbers are "
+                    "temporary numbers, not NPSNs",
+            "nama": "name as published",
+            "bentuk_pendidikan": "form as published: SD, MI, SMP, MTs, SMA, MA, SMK, SLB, SPK …, PDF …, TK, KB, RA, …",
+            "status_sekolah": "NEGERI | SWASTA",
+            "alamat": "street address as published",
+            "desa": "village name as published",
+            "kecamatan": "'Kec. …' as published",
+            "kabupaten": "'Kab. …' / 'Kota …' as published",
+            "provinsi": "'Prov. …' as published",
+            "kode_desa": "Kemendagri village code xx.xx.xx.xxxx (wilayah), null when the name does not match uniquely",
+            "kode_kecamatan": "Kemendagri district code xx.xx.xx, null when unmatched",
+            "kode_kabupaten": "Kemendagri regency code xx.xx, null when unmatched",
+            "kode_provinsi": "Kemendagri province code xx",
+            "kode_kecamatan_dapodik": "6-digit Dapodik district code of the source page",
+        },
+        "schools": total,
+        "with_village_code": sum(f["with_village_code"] for f in manifest_files),
+        "levels_count": dict(sorted(levels_seen.items())),
+        "matched_by_spelling_variant": len(LOOSE_MATCHES),
+        "unmatched": {"regencies": len(report["unmatched_regency"]), "districts": len(report["unmatched_district"]),
+                      "villages": report["unmatched_village"]},
+        "files": manifest_files,
+        "notes": [
+            "Only active units: the district lists leave out units the source marks as merged or closed "
+            "(their detail pages say e.g. 'STATUS SATUAN PENDIDIKAN: MERGER').",
+            "Madrasah (MI, MTs, MA) come from the same Kemendikdasmen lists; their NSM follows from Kemenag (R-02).",
+            "Kept forms and regions: decision F-028. Region codes are matched by name to wilayah; spelling variants "
+            "are accepted only when one candidate remains and numbers and words such as Utara/Barat/Lama agree "
+            "(count in matched_by_spelling_variant, full list printed by the build); otherwise the code is null.",
+            "Village codes point to the village of the school's Dapodik district; where Dapodik and Kemendagri place "
+            "a village in different districts the code stays null.",
+        ],
+    }
+    with open(os.path.join(out, "manifest.json"), "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    report["matched_by_spelling_variant"] = LOOSE_MATCHES
+    json.dump(report, sys.stdout, ensure_ascii=False, indent=1)
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 3 and sys.argv[1] == "fetch":
-        fetch(sys.argv[2], sys.argv[3:])
-    elif len(sys.argv) == 6 and sys.argv[1] == "build":
-        build(*sys.argv[2:])
+    args = sys.argv[1:]
+    groups = GROUPS
+    if len(args) > 1 and args[1].startswith("--groups="):
+        groups = tuple(g for g in args.pop(1).split("=", 1)[1].split(",") if g)
+        if not groups or any(g not in GROUP_URL for g in groups):
+            sys.exit(f"unknown group; choose from {', '.join(GROUP_URL)}")
+    if len(args) >= 2 and args[0] == "fetch":
+        fetch(args[1], args[2:], groups)
+    elif len(args) == 5 and args[0] == "build":
+        build(*args[1:], groups=groups)
     else:
         sys.exit(__doc__)
