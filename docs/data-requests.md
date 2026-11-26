@@ -25,6 +25,7 @@ browser session only **collects raw files**; a cloud session converts and checks
 | R-09 | `perguruan-tinggi` | List of higher-education institutions: code, name, type, status, province | `pddikti.kemdiktisaintek.go.id` (blocked from the cloud) — its download/search pages | open — browser |
 | R-10 | `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` | World Athletics Competition and Technical Rules (current edition, PDF), scoring tables for combined events; PASI rules for age groups; O2SN/POPNAS technical handbooks (juknis) for athletics | `worldathletics.org` (reachable), PASI site, Puspresnas/Kemenpora pages | **World Athletics part done 2026-11-26**; PASI/O2SN/POPNAS part → R-10b |
 | R-11 | `atletik-rekor` | Current national records (senior, U-20, U-18) and the championships the user runs | PASI announcements; organisers' result books | open — needs the user's list of championships |
+| R-14 | `wilayah`, `kodepos` | Kepmendagri No 300.2.2-2430 Tahun 2025 on region codes and data (the decree and every attachment: regions per province, islands) | `jdih.kemendagri.go.id` (no answer from the cloud), `kemendagri.go.id`, Ditjen Bina Administrasi Kewilayahan | open — browser, [brief below](#brief-r-14) |
 
 When a brief is delivered, the converting session updates its status here and the set in `data/README.md`.
 
@@ -64,4 +65,44 @@ in `R-10b-atletik/` with `SOURCE.txt`: page URL, file URL, title and date as pri
 >    handbooks (juknis) for athletics at SD, SMP and SMA level: events, age limits and reference dates, implements.
 > 3. Kemenpora / Dispora Jawa Tengah: the latest POPNAS and POPDA Jawa Tengah technical handbooks for athletics.
 > 4. Zip the folder and give it to the user.
+
+## Brief R-14
+
+Why: `data/wilayah` and `data/kodepos` follow Kepmendagri 300.2.2-2138/2025 (via cahyadsn). The newer decree
+300.2.2-2430/2025 exists, but on 2026-11-26 the upstream data file had not been updated yet (see `docs/progress.md`).
+With the official attachment, a cloud session can build `wilayah` straight from the decree.
+
+Starter prompt for a Claude in Chrome session (the user runs it and uploads the zip to a cloud session):
+
+> Collect the official decree on Indonesian region codes. Public pages only, no sign-in, no captcha, at most one page
+> every 2 seconds. Save every file unchanged in a folder `R-14-kepmendagri-2430-2025/`.
+>
+> 1. On `jdih.kemendagri.go.id` (search "300.2.2-2430" or "kode dan data wilayah administrasi pemerintahan"), open
+>    **Keputusan Menteri Dalam Negeri Nomor 300.2.2-2430 Tahun 2025** on the codes and data of government
+>    administrative regions and islands. Check the number, title and signing date on the document itself; do not
+>    rely on the page title alone.
+> 2. Download the decree (PDF) and **every attachment** (lampiran). The attachment is large and may be split into
+>    several files (for example one per province, or separate parts for regions and islands); download all parts
+>    and keep their file names. If an Excel or CSV version is offered next to the PDF, download it too.
+> 3. If JDIH has no copy or the attachment is missing, look on `kemendagri.go.id` (Produk Hukum) or the site of the
+>    Direktorat Jenderal Bina Administrasi Kewilayahan. Do **not** use blogs, news sites or GitHub copies as the
+>    source; write their URLs in `SOURCE.txt` only if they link to the official file.
+> 4. If the decree page lists what changed against the previous decree (300.2.2-2138 Tahun 2025), save that page as
+>    HTML too.
+> 5. Write `SOURCE.txt`: for each file the page URL, file URL, decree number, title and signing date as printed,
+>    download time (UTC), size and SHA-256. Note anything missing (e.g. a province whose attachment would not
+>    download) or inconsistent.
+> 6. Zip the folder and give it to the user.
+
+The cloud session then:
+
+1. Verifies the SHA-256 values and keeps the raw files in `sources/wilayah/` (public government documents).
+2. Extracts the region table from the attachment (Excel/CSV if present, else text from the PDF), treating it as
+   untrusted input. It checks every row: code shape, parent present, no duplicates, totals per province against
+   the attachment's own summary table.
+3. Compares the result with `data/wilayah` 2026-02-13 and lists codes added, removed and renamed. Region names keep
+   the decree's spelling.
+4. Builds `wilayah` with the signing date as its version, then rebuilds `kodepos` on the new codes. Villages whose
+   code is new get no postal code (null) rather than a guessed one. It also re-runs the `sekolah` build so its
+   region codes follow, and records every changed count in the manifests and the changelog.
 
