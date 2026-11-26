@@ -253,7 +253,8 @@ def check_sinaubareng(subjects, path):
             continue
         for sph in rel["phases"]:
             ph = next(p for p in sub["phases"] if p["phase"] == sph["phase"])
-            if sph.get("summary") and norm(sph["summary"]) != norm(ph["intro"].split("\n")[0]):
+            # our intro also keeps the lead-in sentence to the table ("Capaian Pembelajaran setiap elemen ...")
+            if sph.get("summary") and not norm(ph["intro"]).startswith(norm(sph["summary"])):
                 diffs += 1
                 print(f"  {rel['key']} {sph['phase']} intro:\n    ours: {ph['intro']}\n    sb:   {sph['summary']}")
             ours = [(o["element"], o.get("sub_element"), o["text"]) for o in ph["outcomes"]]
