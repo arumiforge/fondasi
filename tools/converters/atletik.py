@@ -373,8 +373,9 @@ CHAMPIONSHIPS = {
                 "sport_label": "Atletik",
                 "events": {"M": ["100m", "800m", "3000m", "3000mW", "4x100m", "SP", "LJ", "HJ", "JT"],
                            "W": ["100m", "800m", "3000m", "3000mW", "4x100m", "SP", "LJ", "HJ", "JT"]},
-                "implements_kg": {"SP": {"M": 5.0, "W": None}, "JT": {"M": 0.700, "W": 0.600}},
-                "implements_note": "SMA putri shot printed \"24 kg\": see errata.",
+                "implements_kg": {"SP": {"M": 5.0, "W": 24.0}, "JT": {"M": 0.700, "W": 0.600}},
+                "implements_note": "SMA putri shot kept as printed, 24 kg (user, 2026-11-27: \"ikuti juknis\"); "
+                                   "almost certainly a misprint: see errata before showing it.",
             },
         },
         "events_count": {"M": 20, "W": 20, "ref": f"{POPDA}, VI table (PDF p. 3) and VII.2 (PDF p. 5)"},
@@ -394,10 +395,11 @@ CHAMPIONSHIPS = {
         "overall_standing": "By medals (gold, silver, bronze); the winning kabupaten/kota receives a trophy "
                             "(IX–X, PDF p. 18).",
         "errata": [
-            {"field": "levels.SMA.implements_kg.SP.W", "printed": "24 kg", "value": None, "status": "unresolved",
+            {"field": "levels.SMA.implements_kg.SP.W", "printed": "24 kg", "value": 24.0, "status": "unresolved",
              "page": "PDF p. 5, VII.2 Ketentuan 7",
-             "reason": "A 24 kg shot is impossible; the juknis does not show whether 3 kg (World Athletics U18) or "
-                       "4 kg (U20, senior) is meant. Ask the organiser or the technical meeting minutes (F-031)."},
+             "decision": "kept as printed (user, 2026-11-27: \"angka berat peluru SMA putri ikuti juknis\"; F-031)",
+             "reason": "No 24 kg shot exists; the juknis does not show whether 3 kg (World Athletics U18) or 4 kg "
+                       "(U20, senior) is meant. Apps should not present 24 kg without this note."},
         ],
         "not_stated": ["the three events of Trilomba SD", "hurdles (no hurdle events)", "trials per field event",
                        "qualifying marks"],
