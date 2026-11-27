@@ -1,0 +1,91 @@
+SOURCE.txt — R-14-kepmendagri-2430-2025
+=========================================
+Collected: 2026-11-27 (UTC), in a normal web browser, public pages only
+(no sign-in, no captcha, at least 2 s between requests). Files are stored byte-for-byte as
+the server sent them. Hashes are SHA-256 of those bytes.
+
+DECREE (from the document itself, PDF pages 1, 4 and 5)
+------------------------------------------------------
+Number as printed   : KEPUTUSAN MENTERI DALAM NEGERI NOMOR 300.2.2 – 2430 TAHUN 2025
+Title as printed    : TENTANG PERUBAHAN ATAS KEPUTUSAN MENTERI DALAM NEGERI NOMOR 300.2.2-2138
+                      TAHUN 2025 TENTANG PEMBERIAN DAN PEMUTAKHIRAN KODE, DATA WILAYAH
+                      ADMINISTRASI PEMERINTAHAN, DAN PULAU
+Signing as printed  : "Ditetapkan di Jakarta pada tanggal, 23 Juni 2025"
+                      MENTERI DALAM NEGERI, ttd, MUHAMMAD TITO KARNAVIAN
+Copy type           : "SALINAN", certified "Salinan sesuai dengan aslinya, Kepala Biro Umum"
+                      (with Secretariat-General stamp)
+Entry into force    : on the date it was signed (KEDUA b)
+
+FILE 1: Kepmen_Perubahan_300.2.2-2430.pdf
+-----------------------------------------
+List page        : https://ditjenbinaadwil.kemendagri.go.id/peraturan
+Detail page      : https://ditjenbinaadwil.kemendagri.go.id/peraturan/keputusan-menteri-dalam-negeri-300.2.2-2430-2025-228
+File URL         : https://ditjenbinaadwil.kemendagri.go.id/download/file/Kepmen_Perubahan_300.2.2-2430.pdf
+Site             : Direktorat Jenderal Bina Administrasi Kewilayahan, Kemendagri (official)
+HTTP             : 200, Content-Type application/octet-stream,
+                   Content-Disposition attachment; filename "Kepmen_Perubahan_300.2.2-2430.pdf"
+Downloaded (UTC) : 2026-11-27T14:13:18.570Z
+Size             : 5517958 bytes
+SHA-256          : 3ef2790683ccddd8bde7b048c6fcef72e10b9189eaf7104c1d55188f51ebc5ab
+Contents         : 23 pages, scanned images with no text layer.
+                   Pages 1-5: the decree body. Pages 6-23: LAMPIRAN (the attachment).
+                   The attachment is inside this same PDF; there are no separate attachment files.
+PDF metadata     : Producer iLovePDF; CreationDate 2025-06-23 13:46:33 +07:00;
+                   ModDate 2025-07-02 11:12:43 UTC.
+
+FILE 2: ditjenbinaadwil_detail_kepmendagri-300.2.2-2430-2025-228.html
+--------------------------------------------------------------------
+What it is       : the raw HTML of the decree's detail page on the Bina Adwil site, kept as
+                   a record of where the PDF came from. It is NOT a list of changes (see note 3).
+Page URL         : https://ditjenbinaadwil.kemendagri.go.id/peraturan/keputusan-menteri-dalam-negeri-300.2.2-2430-2025-228
+File URL         : (same as the page URL)
+Decree / title / date: as above. The page itself shows "Nomor: 300.2.2-2430 | Tahun: 2025" and
+                   no signing date.
+Downloaded (UTC) : 2026-11-27T14:14:02.096Z
+Size             : 128850 bytes
+SHA-256          : 7ee80f98910bc34840f4cdf96811ed116d8d04902d041fda511d84b144150b85
+
+WHAT THE ATTACHMENT COVERS (KESATU, page 4)
+-------------------------------------------
+This is a partial amendment. It replaces only these parts of the attachment to
+Kepmendagri 300.2.2-2138 Tahun 2025, for Aceh and Sumatera Utara:
+ 1. Rekapitulasi Kode, Data Wilayah Administrasi Pemerintahan dan Pulau per Provinsi
+    (huruf A, No. 1 Aceh and No. 2 Sumatera Utara)
+ 2. Rekapitulasi Jumlah Pulau per Provinsi (huruf D.a, No. 1 Aceh and No. 2 Sumatera Utara)
+ 3. Rekapitulasi Jumlah Pulau per Kab/Kota (D.b.1, Provinsi Aceh, No. 6 Kabupaten Aceh Singkil)
+ 4. Rincian Kode dan Data Pulau per Kab/Kota (D.c.1, Provinsi Aceh)
+ 5. Rekapitulasi Jumlah Pulau per Kab/Kota (D.b.2, Provinsi Sumatera Utara,
+    No. 1 Kabupaten Tapanuli Tengah)
+ 6. Rincian Kode dan Data Pulau per Kab/Kota (D.c.2, Provinsi Sumatera Utara)
+According to the preamble, the reason is the agreement between Aceh and Sumatera Utara of 17 June 2025
+(No. 04/MOU/2025, No. 100.2.3.3/5270/2025). It places Pulau Mangkir Gadang, Pulau Mangkir Ketek,
+Pulau Lipan and Pulau Panjang in Kabupaten Aceh Singkil, Aceh.
+Decree 300.2.2-2138 Tahun 2025 remains in force where this decree does not change it (KEDUA a).
+So the complete national tables for all other provinces are in the 2138 attachment, which this folder does not include.
+
+NOTES: MISSING ITEMS AND INCONSISTENCIES
+----------------------------------------
+1. JDIH not reachable. jdih.kemendagri.go.id did not load in the browser on three tries
+   (about 14:05-14:12 UTC, 2026-11-27), and it was also unreachable from a second network
+   (the HTTPS tunnel failed with 502).
+   As the brief allows, the file was taken from the Ditjen Bina Adwil site instead.
+   www.kemendagri.go.id has no Produk Hukum list of its own and links only to JDIH.
+   I could not compare this file with a JDIH copy.
+2. No Excel or CSV version is offered next to the PDF on the Bina Adwil site.
+3. No page listing the changes against 300.2.2-2138 was found on the Bina Adwil site.
+   Its "Informasi Mengenai ..." notices only link back to /peraturan.
+   The changes are stated in the decree itself (KESATU, summarised above).
+4. On the Bina Adwil site, the summary field ("Tentang") on the list and detail pages reads
+   "Pemberian dan Pemutakhiran Kode, Data Wilayah Administrasi Pemerintahan, dan Pulau" and
+   leaves out "Perubahan atas Keputusan Menteri Dalam Negeri Nomor 300.2.2-2138 Tahun 2025".
+   The site's banner/notice text also describes 2430 as amending "Nomor 300.2.2-2430 2025"
+   (itself), which is a typo. The printed document is authoritative (see above).
+5. The number is printed with spaces around the dash ("300.2.2 – 2430"). Elsewhere, including the
+   attachment header and the site, it appears as "300.2.2-2430".
+6. For cross-reference only (not used as the source):
+   - peraturan.bpk.go.id/Details/322912/keputusan-mendagri-no-30022-2430-tahun-2025 (JDIH BPK,
+     government) gives the date as 23 Juni 2025 and the source as jdih.kemendagri.go.id. Its title
+     says "Nomor 200.2.2-2138", which is a typo for 300.2.2-2138.
+   - github.com/cahyadsn/wilayah_ref (third party) links to the same official file URL as above.
+   - A look-alike domain, jdih.kemendagri.co, appeared in search results. It is not the official
+     .go.id site and was not used.

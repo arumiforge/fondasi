@@ -1,0 +1,19 @@
+R-10b atletik — POPNAS (age rule only)
+Collected 2026-11-27 (UTC) by the user's Claude in Chrome run of brief R-10b and uploaded to a cloud session; kept
+byte-for-byte (file name shortened). Full report: ../R-10b-SOURCE-2026-11-27.txt.
+
+1) LKJ-Sesdep-3-2025.pdf (served as "LKJ Sesdep 3 2025_compressed.pdf")
+   Page URL : https://ppid.kemenpora.go.id/ (PPID > Informasi Berkala)
+   File URL : https://ppid.kemenpora.go.id/cdn/uploads/informasi_berkala/5/9/0/LKJ%20Sesdep%203%202025_compressed.pdf
+   Document : Laporan Kinerja Tahun 2025, Sekretariat Deputi Bidang Peningkatan Prestasi Olahraga, Kementerian
+              Pemuda dan Olahraga; Jakarta, 31 Desember 2025 (PDF created 2026-02-19)
+   Size     : 1305450 bytes, 80 pages (text layer)
+   SHA-256  : 95696c3bf3ddea31a2f1c11232c8670c8a6eba6f68263c896b93d7bd9d797ab3
+   Used     : PDF p. 40 (printed p. 31), answer to a public complaint about POPNAS 2025, quoting Peraturan Ketua
+              Umum Pengurus Pusat Badan Pembina Olahraga Pelajar Seluruh Indonesia (PP BAPOPSI) Nomor 8 Tahun 2022
+              tentang Pedoman Penyelenggaraan Pekan Olahraga Pelajar Nasional, Bab V Kepesertaan, Pasal 14 ayat
+              (1) huruf h: "Berusia maksimal 18 tahun, lahir 1 Januari dan sesudahnya sesuai tahun penyelenggaraan
+              POPNAS". The regulation itself was not found; this report is a secondary, official quotation.
+
+Not found (2026-11-27): Pedoman Umum POPNAS XVII 2025 and its athletics technical handbook on an official site
+(only a Scribd upload, not used); POPNAS 2027 guidelines; PASI rules for U14/U16 (pasi.or.id does not resolve).

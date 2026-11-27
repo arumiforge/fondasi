@@ -13,4 +13,5 @@ byte-for-byte.
 Not used as a source: "Kaldik Madrasah Jateng 2026-2027.xlsx" in the same zip (SHA-256 3e1e3a45…) is a
 spreadsheet from www.ayomadrasah.id with leftover 2025 rows and wrong dates; a Scribd link to a "Kaldik Madrasah
 2026-2027 Pendis" spreadsheet is a third-party upload. The national guideline (Keputusan Dirjen Pendis Nomor
-4860 Tahun 2026) was not delivered.
+4860 Tahun 2026) was not delivered. A second browser run (2026-11-27) found no official online copy of it nor of the
+Kanwil decree (only blogs and Google Drive copies): R-06-SEARCH-2026-11-27.txt.
