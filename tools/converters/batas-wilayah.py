@@ -15,6 +15,14 @@ Two steps:
       Reads every <regency>.json.gz in <raw_dir> and writes, per regency, desa/<regency>.geojson.gz and
       kecamatan/<regency>.geojson.gz (GeoJSON, RFC 7946, WGS 84).
 
+  python3 -I /opt/apps/_fondasi/tools/converters/batas-wilayah.py presisi <out_dir> 33.19 [33.20 ...] [--accept-new]
+      On a server (F-035): full precision is not kept in Fondasi; the server fetches it from BIG itself. Fetches
+      the regencies into <out_dir>/raw/, checks that BIG still serves exactly the content Fondasi's
+      data/batas-wilayah was built from (content_sha256 per regency in its manifest), then builds full-precision
+      GeoJSON (coordinates rounded to 6 decimals, about 0.1 m) into <out_dir>/desa/ and <out_dir>/kecamatan/
+      with manifest.json and SHA256SUMS. It refuses a regency Fondasi does not list yet, or one BIG has changed
+      since, unless --accept-new is given (then update Fondasi too).
+
 Simplification keeps neighbours together: rings are cut into arcs at the points where more than two polygons
 meet (as TopoJSON does), every shared arc is simplified once (Douglas-Peucker, tolerance in metres), and both
 neighbours use the same simplified arc, so no gaps or overlaps appear between villages. A district is the union of
@@ -26,6 +34,7 @@ ranges) and the script refuses to write when a code is not a village of the wila
 or when a simplified ring crosses itself.
 """
 import gzip
+import hashlib
 import json
 import math
 import os
@@ -47,6 +56,18 @@ REGENCY = re.compile(r"^\d{2}\.\d{2}$")
 VILLAGE = re.compile(r"^\d{2}\.\d{2}\.\d{2}\.\d{4}$")
 EARTH_RADIUS = 6371007.2  # authalic radius of WGS 84, metres
 DECIMALS = 6  # about 0.1 m
+ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
+
+
+def content_sha256(features):
+    """Checksum of what BIG served (attributes and rings of every feature, in OBJECTID order), independent of
+    when it was fetched: equal checksums mean the same edition and the same revisions."""
+    h = hashlib.sha256()
+    for f in sorted(features, key=lambda f: f["attributes"]["OBJECTID"]):
+        h.update(json.dumps([f["attributes"], f["geometry"]["rings"]], sort_keys=True,
+                            separators=(",", ":"), ensure_ascii=False).encode())
+        h.update(b"\n")
+    return h.hexdigest()
 
 
 # ---------------------------------------------------------------- fetch
@@ -69,6 +90,7 @@ def get_json(params):
 
 def fetch(raw_dir, regencies):
     os.makedirs(raw_dir, exist_ok=True)
+    hashes = {}
     for kab in regencies:
         if not REGENCY.match(kab):
             sys.exit(f"not a regency code: {kab}")
@@ -84,11 +106,14 @@ def fetch(raw_dir, regencies):
         if len(features) != expected or len({f["attributes"]["OBJECTID"] for f in features}) != expected:
             sys.exit(f"{kab}: expected {expected} features, got {len(features)} (or duplicates)")
         out = {"source": SERVICE, "where": where, "fetched": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
-               "spatialReference": first["spatialReference"], "fields": FIELDS, "features": features}
+               "spatialReference": first["spatialReference"], "fields": FIELDS,
+               "content_sha256": content_sha256(features), "features": features}
+        hashes[kab] = out["content_sha256"]
         path = os.path.join(raw_dir, f"{kab}.json.gz")
         with gzip.GzipFile(path, "wb", mtime=0) as g:
             g.write(json.dumps(out, ensure_ascii=False, separators=(",", ":")).encode())
         print(f"{kab}: {expected} polygons -> {path}")
+    return hashes
 
 
 # ---------------------------------------------------------------- geometry helpers
@@ -191,7 +216,7 @@ def self_crossing(ring):
 class Topology:
     """Cuts rings into shared arcs, simplifies each arc once, and rebuilds rings from the arcs."""
 
-    def __init__(self, rings):
+    def __init__(self, rings, extra_junctions=frozenset()):
         self.rings = rings  # list of closed rings (lists of (x, y) tuples)
         seen, junctions = {}, set()
         for ring in rings:
@@ -202,6 +227,8 @@ class Topology:
                 if p in seen and seen[p] != pair:
                     junctions.add(p)
                 seen.setdefault(p, pair)
+        junctions |= set(p for p in extra_junctions if p in seen)
+        self.junctions = junctions
         self.arcs, self.index, self.refs = [], {}, []
         for ring in rings:
             self.refs.append([self._add(arc) for arc in self._cut(ring[:-1], junctions)])
@@ -228,16 +255,85 @@ class Topology:
         self.arcs.append(arc)
         return (len(self.arcs) - 1, 1)
 
-    def simplify(self, tolerance):
-        self.simple = [self._simplify_arc(a, tolerance, False) for a in self.arcs]
+    def outline_arcs(self):
+        """Arc ids used by one ring only: the outline of the whole set (regency border, coast)."""
+        use = Counter(arc_id for refs in self.refs for arc_id, _ in refs)
+        return [arc_id for arc_id, n in use.items() if n == 1]
+
+    def outline_points(self):
+        """Points on the outline: {point: neighbour pair} for plain points, and the outline points that are
+        junctions inside the set."""
+        pairs, inner_junctions = {}, set()
+        for arc_id in self.outline_arcs():
+            arc = self.arcs[arc_id]
+            closed = arc[0] == arc[-1]
+            for i, p in enumerate(arc):
+                if p in self.junctions:
+                    inner_junctions.add(p)
+                elif 0 < i < len(arc) - 1:
+                    pairs[p] = frozenset((arc[i - 1], arc[i + 1]))
+                elif closed:
+                    pairs[p] = frozenset((arc[1], arc[-2]))
+        return pairs, inner_junctions
+
+    def key(self, arc_id):
+        """Identity of an arc that does not depend on direction or on which regency sees it."""
+        arc = self.arcs[arc_id]
+        if self._flip(arc):
+            arc = arc[::-1]
+        return hashlib.sha256(repr(arc).encode()).digest()
+
+    @staticmethod
+    def _flip(arc):
+        closed = arc[0] == arc[-1]
+        return (closed and len(arc) > 3 and arc[1] > arc[-2]) or (not closed and arc[0] > arc[-1])
+
+    def simplify(self, tolerance, forced=None):
+        """forced: {arc key: tolerance} for border arcs that a neighbouring regency needed finer; such arcs, and
+        every arc this method refines, are simplified with keep_one, so the same tolerance gives the same arc."""
+        self.refined = {}  # arc id -> tolerance used with keep_one (anything but the default)
+        if forced:
+            for arc_id in self.outline_arcs():
+                k = self.key(arc_id)
+                if k in forced:
+                    self.refined[arc_id] = forced[k]
+        self.simple = [self._simplify_arc(a, self.refined.get(i, tolerance), i in self.refined)
+                       for i, a in enumerate(self.arcs)]
+        if tolerance <= 0:
+            return
         # a ring made of one or two arcs can collapse to a line; keep one more point in each of its arcs
         for refs in self.refs:
             if len(self.ring(refs)) < 4:
                 for arc_id, _ in refs:
-                    self.simple[arc_id] = self._simplify_arc(self.arcs[arc_id], tolerance, True)
+                    self.refined.setdefault(arc_id, tolerance)
+                    self.simple[arc_id] = self._simplify_arc(self.arcs[arc_id], self.refined[arc_id], True)
+        # a ring that crosses itself after simplification: halve the tolerance of its arcs until it does not
+        # (narrow strips, rivers); below 0.5 m the arc keeps every point
+        todo = list(range(len(self.refs)))
+        while todo:
+            bad = [i for i in todo if self._bad(self.ring(self.refs[i]))]
+            for i in bad:
+                for arc_id, _ in self.refs[i]:
+                    if self.refined.get(arc_id) == 0:
+                        continue
+                    tol = self.refined.get(arc_id, tolerance) / 2
+                    tol = 0 if tol < 0.5 else tol
+                    self.refined[arc_id] = tol
+                    self.simple[arc_id] = self._simplify_arc(self.arcs[arc_id], tol, True)
+            if any(all(self.refined.get(a) == 0 for a, _ in self.refs[i]) and self._bad(self.ring(self.refs[i]))
+                   for i in bad):
+                raise ValueError("a ring crosses itself even at full precision")
+            todo = bad
+
+    @staticmethod
+    def _bad(ring):
+        return len(ring) < 4 or self_crossing(ring)
 
     @staticmethod
     def _simplify_arc(arc, tolerance, keep_one):
+        # simplify every arc in one canonical direction, so a border seen from both sides gives the same result
+        if Topology._flip(arc):
+            return list(reversed(Topology._simplify_arc(list(reversed(arc)), tolerance, keep_one)))
         if tolerance <= 0:
             out = arc
         elif arc[0] == arc[-1]:  # closed: split at the point farthest from the start
@@ -309,6 +405,7 @@ def read_raw(path, kab):
     if raw.get("spatialReference", {}).get("wkid") != 4326:
         sys.exit(f"{path}: spatial reference is not WGS 84")
     villages, undefined = defaultdict(list), 0
+    digest = content_sha256(raw["features"])
     for f in raw["features"]:
         a = f["attributes"]
         if a.get("TIPADM") == 999:
@@ -328,7 +425,7 @@ def read_raw(path, kab):
                 sys.exit(f"{path}: {code}: coordinate outside Indonesia")
             rings.append(ring)
         villages[code].append({"attrs": a, "rings": rings})
-    return villages, undefined
+    return villages, undefined, digest
 
 
 def clean_text(s):
@@ -336,7 +433,7 @@ def clean_text(s):
     return s or None
 
 
-def build(raw_dir, wilayah_path, out_dir, tolerance):
+def build(raw_dir, wilayah_path, out_dir, tolerance, server_copy=None, matches=None):
     names = dict(json.load(gzip.open(wilayah_path, "rt", encoding="utf-8")))
     files = sorted(f for f in os.listdir(raw_dir) if re.match(r"^\d{2}\.\d{2}\.json\.gz$", f))
     if not files:
@@ -346,11 +443,52 @@ def build(raw_dir, wilayah_path, out_dir, tolerance):
     summary = {"regencies": [], "villages": 0, "districts": 0, "villages_without_polygon": [],
                "undefined_areas": 0, "status": Counter()}
     worst = (0.0, None)
+    # pass 1: points where neighbouring regencies must cut their border arcs the same way
+    cross, seen = set(), {}
+    for fname in files:
+        villages, _, _ = read_raw(os.path.join(raw_dir, fname), fname[:5])
+        pairs, inner = Topology([r for c in sorted(villages) for part in villages[c] for r in part["rings"]]) \
+            .outline_points()
+        cross |= inner
+        for p, pair in pairs.items():
+            if p in seen and seen[p] != pair:
+                cross.add(p)
+            seen.setdefault(p, pair)
+    seen = None
+    # pass 2: border arcs that one regency had to keep finer are kept as fine in its neighbour too; repeat
+    # until both sides of every shared border arc are identical
+    forced = {}
+    for round_no in range(1, 9):
+        border, wanted, mismatches = {}, {}, 0
+        for fname in files:
+            villages, _, _ = read_raw(os.path.join(raw_dir, fname), fname[:5])
+            topo = Topology([r for c in sorted(villages) for part in villages[c] for r in part["rings"]], cross)
+            topo.simplify(tolerance, forced)
+            for arc_id in topo.outline_arcs():
+                k = topo.key(arc_id)
+                simple = topo.simple[arc_id][::-1] if topo._flip(topo.arcs[arc_id]) else topo.simple[arc_id]
+                v = hashlib.sha256(repr(simple).encode()).digest()
+                if arc_id in topo.refined:
+                    wanted[k] = min(wanted.get(k, tolerance), topo.refined[arc_id])
+                if k in border and border[k] != v:
+                    mismatches += 1
+                border.setdefault(k, v)
+        new = {k: min(t, forced.get(k, t)) for k, t in wanted.items()}
+        print(f"border round {round_no}: {mismatches} shared border arcs differ, {len(new)} kept finer")
+        if not mismatches and new == forced:
+            break
+        forced = new
+    else:
+        sys.exit("shared border arcs still differ after 8 rounds")
+    border_arcs = {}  # canonical original arc -> canonical simplified arc, across regencies
+    shared_border_arcs = 0
+    refined_arcs = 0
+    # pass 3: build each regency
     for fname in files:
         kab = fname[:5]
         if kab not in names:
             sys.exit(f"{kab} is not a regency of the wilayah set")
-        villages, undefined = read_raw(os.path.join(raw_dir, fname), kab)
+        villages, undefined, digest = read_raw(os.path.join(raw_dir, fname), kab)
         unknown = sorted(c for c in villages if c not in names)
         if unknown:
             sys.exit(f"{kab}: codes not in the wilayah set: {unknown[:5]}")
@@ -364,8 +502,18 @@ def build(raw_dir, wilayah_path, out_dir, tolerance):
                 for ring in part["rings"]:
                     all_rings.append(ring)
                     owner.append(code)
-        topo = Topology(all_rings)
-        topo.simplify(tolerance)
+        topo = Topology(all_rings, cross)
+        topo.simplify(tolerance, forced)
+        refined_arcs += len(topo.refined)
+        for arc_id in topo.outline_arcs():
+            simple = topo.simple[arc_id][::-1] if topo._flip(topo.arcs[arc_id]) else topo.simple[arc_id]
+            key = topo.key(arc_id)
+            value = hashlib.sha256(repr(simple).encode()).digest()
+            if key in border_arcs:
+                shared_border_arcs += 1
+                if border_arcs[key] != value:
+                    sys.exit(f"{kab}: a border arc shared with another regency was simplified differently")
+            border_arcs[key] = value
         rings_of = defaultdict(list)
         for i, code in enumerate(owner):
             rings_of[code].append(i)
@@ -375,7 +523,7 @@ def build(raw_dir, wilayah_path, out_dir, tolerance):
             full = assemble([topo.ring(topo.refs[i], False) for i in rings_of[code]])
             simple_rings = [topo.ring(topo.refs[i]) for i in rings_of[code]]
             for r in simple_rings:
-                if len(r) < 4 or self_crossing(r):
+                if len(r) < 4 or (tolerance > 0 and self_crossing(r)):
                     sys.exit(f"{code}: simplified ring is degenerate or crosses itself")
             simple = assemble(simple_rings)
             a_full = sum(polygon_area(p) for p in full)
@@ -410,7 +558,7 @@ def build(raw_dir, wilayah_path, out_dir, tolerance):
                 directed += [pts] * max(net, 0)
             rings = chain(directed)
             for r in rings:
-                if len(r) < 4 or self_crossing(r):
+                if len(r) < 4 or (tolerance > 0 and self_crossing(r)):
                     sys.exit(f"{kec}: district ring is degenerate or crosses itself")
             props = {"code": kec, "name": names[kec], "villages": len(members),
                      "area_km2": round(sum(area_full[c] for c in members) / 1e6, 4)}
@@ -426,7 +574,9 @@ def build(raw_dir, wilayah_path, out_dir, tolerance):
         summary["regencies"].append({"code": kab, "name": names[kab], "villages": len(desa_features),
                                      "districts": len(kec_features), "villages_without_polygon": missing,
                                      "districts_without_polygon": missing_kec, "undefined_areas": undefined,
-                                     "arcs": len(topo.arcs)})
+                                     "arcs": len(topo.arcs), "content_sha256": digest})
+        if matches is not None:
+            summary["regencies"][-1]["matches_fondasi"] = matches.get(kab, False)
         summary["villages"] += len(desa_features)
         summary["districts"] += len(kec_features)
         summary["villages_without_polygon"] += missing
@@ -435,18 +585,24 @@ def build(raw_dir, wilayah_path, out_dir, tolerance):
               f"{len(missing)} villages without polygon, {undefined} undefined areas, {len(topo.arcs)} arcs")
     summary["status"] = dict(sorted(summary["status"].items()))
     summary["largest_area_change"] = {"code": worst[1], "percent": round(worst[0] * 100, 3)}
+    summary["shared_regency_border_arcs"] = shared_border_arcs
+    summary["arcs_with_smaller_tolerance"] = refined_arcs
     manifest = {
         "version": VERSION,
         "description": "Boundaries of villages (desa/kelurahan) and districts (kecamatan), one GeoJSON file per "
-                       "regency and level, simplified to about " + f"{tolerance:g}" + " m with shared borders kept "
-                       "together; keyed by the Kemendagri codes of the wilayah set.",
-        "status": "partial: regencies listed in `regencies`; others are added on demand (F-035)",
+                       "regency and level, " + (f"simplified to about {tolerance:g} m with shared borders kept "
+                       "together" if tolerance > 0 else "at full precision (coordinates rounded to 6 decimals, "
+                       "about 0.1 m)") + "; keyed by the Kemendagri codes of the wilayah set.",
+        "status": server_copy or "partial: regencies listed in `regencies`; others are added on demand (F-035)",
         "source": f"Badan Informasi Geospasial, Basis Data Batas Wilayah Administrasi {EDITION} (metadata date "
-                  f"{VERSION}), layer BATAS_DESAKEL_AR of {SERVICE.rsplit('/MapServer', 1)[0]}; full-precision "
-                  "download kept in sources/batas-wilayah/",
+                  f"{VERSION}), layer BATAS_DESAKEL_AR of {SERVICE.rsplit('/MapServer', 1)[0]}; " +
+                  ("fetched by this server into raw/" if server_copy else
+                   "full-precision download kept in sources/batas-wilayah/; servers fetch full precision "
+                   "themselves with the presisi command (F-035)"),
         "licence": "Informasi Geospasial Dasar, open by law (UU 4/2011 Pasal 12 huruf e and Pasal 42); credit "
                    "\"Sumber: Badan Informasi Geospasial\" (F-035)",
-        "procedure": "tools/converters/batas-wilayah.py fetch <raw_dir> <regency...>, then build <raw_dir> "
+        "procedure": "tools/converters/batas-wilayah.py presisi <out_dir> <regency...>" if server_copy else
+                     "tools/converters/batas-wilayah.py fetch <raw_dir> <regency...>, then build <raw_dir> "
                      "data/wilayah/wilayah.json.gz data/batas-wilayah --tolerance=" + f"{tolerance:g}",
         "tolerance_m": tolerance,
         "coordinate_decimals": DECIMALS,
@@ -468,6 +624,8 @@ def build(raw_dir, wilayah_path, out_dir, tolerance):
         "districts": summary["districts"],
         "status_counts": summary["status"],
         "largest_area_change_percent": summary["largest_area_change"],
+        "shared_regency_border_arcs": shared_border_arcs,
+        "arcs_with_smaller_tolerance": refined_arcs,
         "notes": [
             "Only 'Batas Definitif' rests on a signed regulation. 'Hasil Kesepakatan' is agreed by the villages and "
             "checked by BIG; 'Batas Indikatif' is a working line. UU 4/2011 Pasal 16 ayat (2): show boundaries that "
@@ -485,6 +643,51 @@ def build(raw_dir, wilayah_path, out_dir, tolerance):
     return summary
 
 
+def presisi(out_dir, regencies, accept_new):
+    ref_path = os.path.join(ROOT, "data", "batas-wilayah", "manifest.json")
+    ref = json.load(open(ref_path, encoding="utf-8"))
+    known = {r["code"]: r.get("content_sha256") for r in ref["regencies"]}
+    hashes = fetch(os.path.join(out_dir, "raw"), regencies)
+    problems = []
+    for kab, digest in hashes.items():
+        if kab not in known:
+            problems.append(f"{kab}: Fondasi's data/batas-wilayah {ref['version']} does not list this regency yet")
+        elif digest != known[kab]:
+            problems.append(f"{kab}: BIG now serves other content than Fondasi's data/batas-wilayah {ref['version']} "
+                            f"was built from (new edition or revision)")
+        else:
+            print(f"{kab}: same content as Fondasi's data/batas-wilayah {ref['version']}")
+    if problems and not accept_new:
+        for p in problems:
+            print("REFUSED " + p, file=sys.stderr)
+            os.remove(os.path.join(out_dir, "raw", p[:5] + ".json.gz"))  # never built later by accident
+        sys.exit("Add or refresh these regencies in Fondasi first (fetch, build, PR), pull /opt/apps/_fondasi and run "
+                 "this again; or pass --accept-new to build from what BIG serves now.")
+    for p in problems:
+        print("ACCEPTED " + p, file=sys.stderr)
+    raw_dir = os.path.join(out_dir, "raw")
+    matches = {}
+    for fname in sorted(os.listdir(raw_dir)):
+        if re.match(r"^\d{2}\.\d{2}\.json\.gz$", fname):
+            raw = json.load(gzip.open(os.path.join(raw_dir, fname), "rt", encoding="utf-8"))
+            matches[fname[:5]] = known.get(fname[:5]) == content_sha256(raw["features"])
+    status = (f"server copy at full precision, checked against Fondasi data/batas-wilayah {ref['version']}" +
+              ("" if all(matches.values()) else "; regencies with matches_fondasi false were accepted with "
+               "--accept-new"))
+    build(raw_dir, os.path.join(ROOT, "data", "wilayah", "wilayah.json.gz"), out_dir, 0,
+          server_copy=status, matches=matches)
+    sums = []
+    for base, _, names in os.walk(out_dir):
+        for n in names:
+            rel = os.path.relpath(os.path.join(base, n), out_dir)
+            if rel != "SHA256SUMS":
+                with open(os.path.join(base, n), "rb") as f:
+                    sums.append(f"{hashlib.sha256(f.read()).hexdigest()}  {rel}")
+    with open(os.path.join(out_dir, "SHA256SUMS"), "w") as f:
+        f.write("\n".join(sorted(sums, key=lambda l: l.split("  ", 1)[1])) + "\n")
+    print(f"done: {out_dir}")
+
+
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     opts = dict(a[2:].split("=", 1) for a in sys.argv[1:] if a.startswith("--") and "=" in a)
@@ -492,5 +695,7 @@ if __name__ == "__main__":
         fetch(args[1], args[2:])
     elif len(args) == 4 and args[0] == "build":
         build(args[1], args[2], args[3], float(opts.get("tolerance", 11)))
+    elif len(args) >= 3 and args[0] == "presisi":
+        presisi(args[1], args[2:], "--accept-new" in sys.argv[1:])
     else:
         sys.exit(__doc__)

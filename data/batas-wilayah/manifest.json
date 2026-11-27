@@ -2,7 +2,7 @@
   "version": "2026-06-15",
   "description": "Boundaries of villages (desa/kelurahan) and districts (kecamatan), one GeoJSON file per regency and level, simplified to about 11 m with shared borders kept together; keyed by the Kemendagri codes of the wilayah set.",
   "status": "partial: regencies listed in `regencies`; others are added on demand (F-035)",
-  "source": "Badan Informasi Geospasial, Basis Data Batas Wilayah Administrasi Edisi Juni 2026 (metadata date 2026-06-15), layer BATAS_DESAKEL_AR of https://geoservices.big.go.id/rbi/rest/services/BATASWILAYAH/BATAS_DESAKEL_AR; full-precision download kept in sources/batas-wilayah/",
+  "source": "Badan Informasi Geospasial, Basis Data Batas Wilayah Administrasi Edisi Juni 2026 (metadata date 2026-06-15), layer BATAS_DESAKEL_AR of https://geoservices.big.go.id/rbi/rest/services/BATASWILAYAH/BATAS_DESAKEL_AR; full-precision download kept in sources/batas-wilayah/; servers fetch full precision themselves with the presisi command (F-035)",
   "licence": "Informasi Geospasial Dasar, open by law (UU 4/2011 Pasal 12 huruf e and Pasal 42); credit \"Sumber: Badan Informasi Geospasial\" (F-035)",
   "procedure": "tools/converters/batas-wilayah.py fetch <raw_dir> <regency...>, then build <raw_dir> data/wilayah/wilayah.json.gz data/batas-wilayah --tolerance=11",
   "tolerance_m": 11.0,
@@ -38,7 +38,8 @@
       "villages_without_polygon": [],
       "districts_without_polygon": [],
       "undefined_areas": 0,
-      "arcs": 399
+      "arcs": 399,
+      "content_sha256": "d86c97de0f4743ef16f36ee33f34b322902fa355472cb8586eacfb1247a5d356"
     }
   ],
   "villages": 132,
@@ -51,6 +52,8 @@
     "code": "33.19.02.1017",
     "percent": 1.661
   },
+  "shared_regency_border_arcs": 0,
+  "arcs_with_smaller_tolerance": 0,
   "notes": [
     "Only 'Batas Definitif' rests on a signed regulation. 'Hasil Kesepakatan' is agreed by the villages and checked by BIG; 'Batas Indikatif' is a working line. UU 4/2011 Pasal 16 ayat (2): show boundaries that are not definitive with a different line style or colour, and never present any of them as a legal boundary.",
     "Use for maps, filters and 'which village is this point in' hints; let users correct the village they chose. Credit: Sumber: Badan Informasi Geospasial.",

@@ -5,6 +5,10 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `batas-wilayah`: servers build full-precision boundaries themselves with `batas-wilayah.py presisi <out_dir>
+  <regency...>` (fetch from BIG, check against the new `content_sha256` per regency in the manifest, build at about
+  0.1 m with `SHA256SUMS`); it refuses regencies Fondasi does not list or BIG has changed unless `--accept-new`
+  (F-035, `docs/data.md`).
 - `sekolah` 2026-11-27 (R-17, F-036): `lintang`, `bujur`, `koordinat_cek`, `koordinat_perbaikan` and
   `koordinat_sama` for all 539,580 units from their detail pages (`/satpen/detail/<npsn>`). 455,250 units (84.4 %)
   have a pair: 449,014 inside their own regency (or within 5 km; at sea or on small islands the nearest regency),

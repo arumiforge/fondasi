@@ -149,8 +149,10 @@ open by law (UU 4/2011 Pasal 12 huruf e, Pasal 42), credited as "Sumber: Badan I
 cahyadsn/wilayah_boundaries (MIT) may serve as a cross-check. `data/batas-wilayah` holds GeoJSON per regency for
 desa and kecamatan, simplified to about 11 m on shared arcs so neighbours stay together; districts are the union of
 their villages. Regencies are added on demand, Kabupaten Kudus first. The full-precision download of each regency
-is kept in `sources/batas-wilayah/` while it is small; where full precision for many regencies is kept (it is about
-370 MB gzipped for Indonesia) is still open. Apps show the boundary status and never present a boundary as legal.
+is kept in `sources/batas-wilayah/` while it is small. Full precision for apps is not stored in Fondasi or in
+any bucket or drive: each server fetches it from BIG itself with `batas-wilayah.py presisi`, which refuses content
+that differs from the `content_sha256` Fondasi recorded per regency (user, 2026-11-27: "pilih A, server ambil
+langsung dari BIG"). Apps show the boundary status and never present a boundary as legal.
 
 ## F-036 — `sekolah` coordinates: nothing guessed, outliers kept and flagged, sign and swap fixed only when they fit (2026-11-27)
 Status: accepted (user, 2026-11-27: "Null + alasan", "Simpan titik + tandai", "Perbaiki bila pas")

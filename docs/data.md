@@ -36,6 +36,28 @@ imports the files with its own importer, keyed on the manifest version (re-impor
 `referensi:import --bawaan` is the model). In a Claude cloud session, attach Fondasi first
 (`add_repo arumiforge/fondasi`, cloned at `/home/user/fondasi`); `fondasi-sync` finds it there.
 
+## Full-precision boundaries on a server (`batas-wilayah`, F-035)
+
+`data/batas-wilayah` carries boundaries simplified to about 11 m, which is enough for maps and filters. Full
+precision (about 0.1 m; ≈ 0.5 MB per regency, ≈ 370 MB gzipped for Indonesia) is not stored in Fondasi or anywhere
+else: the server fetches it from BIG itself, and Fondasi only pins which content is expected.
+
+```bash
+git -C /opt/apps/_fondasi pull
+python3 -I /opt/apps/_fondasi/tools/converters/batas-wilayah.py presisi /opt/apps/<app>/<env>/data/batas-wilayah 33.19
+```
+
+- It fetches each regency from `geoservices.big.go.id` (the server must reach it; seconds per regency), compares
+  the content with `content_sha256` in Fondasi's `data/batas-wilayah/manifest.json`, then writes
+  `desa/<regency>.geojson.gz`, `kecamatan/<regency>.geojson.gz`, the raw download in `raw/`, `manifest.json`
+  (every regency with `matches_fondasi`) and `SHA256SUMS`. Same fields as the simplified set.
+- It refuses a regency Fondasi does not list yet, or one BIG has changed since Fondasi was built: add or refresh
+  that regency in Fondasi first (`fetch` + `build`, PR), pull, and run again. `--accept-new` overrides this for an
+  urgent case; the manifest then shows `matches_fondasi: false` and Fondasi must be updated afterwards.
+- Needs only `python3` (present on Ubuntu servers). Mount the folder read-only into the app container, or import it
+  with the app's importer keyed on `manifest.json` → `regencies[].content_sha256`. The folder can be rebuilt at
+  any time, so it needs no backup.
+
 ## Getting data from sources this environment cannot reach
 
 Some sources (EMIS, PDDikti, Disdikbud Jateng, the curriculum site) are blocked from cloud sessions. They are
