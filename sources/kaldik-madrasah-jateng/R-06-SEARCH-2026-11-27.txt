@@ -1,0 +1,111 @@
+R-06 — Kalender Pendidikan RA/Madrasah, Jawa Tengah
+Collected: 2026-11-27 (search ended 2026-11-27T14:22Z UTC)
+Rules applied: public pages only, no sign-in, no form submissions, >= 2 s between page requests.
+
+RESULT: NO FILES DOWNLOADED.
+None of the three decrees was found in an official, publicly reachable copy on
+jateng.kemenag.go.id, kemenag.go.id, pendis.kemenag.go.id, or any Jawa Tengah
+kabupaten/kota Kemenag site (*.kemenag.go.id). The folder therefore holds only
+this file. Details per item below.
+
+======================================================================
+1. Keputusan Kepala Kanwil Kemenag Prov. Jawa Tengah Nomor 1681 Tahun 2026
+   (Pedoman [Penyusunan] Kalender Pendidikan Madrasah TA 2026/2027) + lampiran
+----------------------------------------------------------------------
+Status      : NOT FOUND on an official site. No PDF, no Excel.
+Decree no.  : 1681 Tahun 2026, as cited by third parties; NOT verified against the
+              document.
+Signing date: unknown (not seen in any official source).
+
+Where I looked on jateng.kemenag.go.id:
+  - Site search ?s= with: "kalender pendidikan", "kaldik", "kalender", "1681",
+    "kalender pendidikan madrasah 2026/2027", "tahun ajaran 2026/2027",
+    "kalender akademik", "pedoman penyusunan kalender", "libur semester madrasah".
+    No matching post. The only kaldik hit was "Pedoman Penyusunan Kaldik 2014/2015"
+    (post dated 06 May 2017).
+  - /unduhan/ ("Produk Hukum & Dokumen") has an empty body with no download links.
+  - /category/pendidikan-madrasah/ pages 1-4 (covering Oct 2025 - Nov 2026) and
+    /category/informasi-penting/ page 1 contain no kaldik post.
+  - /ppid/ > Daftar Seluruh Informasi Publik (204 documents) has no madrasah
+    kaldik. It does list "Kalender Kerja 2025-2029" and "Kalender Kegiatan/Kerja
+    Tahun 2025", which are office work calendars and not the education calendar.
+    For checking, I opened two candidate documents:
+      * "Keputusan Kakanwil, edaran, Juknis dll (Tingkat Kanwil) 2026"
+        https://jateng.kemenag.go.id/ppid/uploads/6aaa8e7520df6_ff4467a8.pdf
+        This holds internal Nota Dinas (SiASN, WFH), not the kaldik.
+      * "Madrasah 2026"
+        https://jateng.kemenag.go.id/ppid/uploads/6aa8f4aa1b877_bd45731e.pdf
+        This is a one-page list of regulations, and the kaldik is not on it.
+    Neither is the kaldik, so neither is saved.
+    Note: the PPID list shows a "buku tamu" (name/contact) prompt before download.
+    I did not fill it in.
+  - WordPress REST API: returns 401 ("Only authenticated users"), so it was not used.
+
+Kab/kota fallback (step 4): I searched ?s=kalender+pendidikan and ?s=kaldik on
+  the 35 Jateng kab/kota sites linked from the Kanwil PPID page
+  (banjarnegara, banyumas, batang, blora, boyolali, brebes, cilacap, demak,
+  grobogan, jepara, karanganyar, kebumen, kendal, klaten, kudus, kabmagelang,
+  pati, pekalongan, pemalang, purbalingga, purworejo, rembang, kabsemarang,
+  sragen, sukoharjo, tegal, temanggung, wonogiri, wonosobo, kotamagelang,
+  kotapekalongan, salatiga, kotasemarang, surakarta, kotategal .kemenag.go.id).
+  None has a 2026/2027 or 2025/2026 kaldik post. Some sites
+  (banyumas, boyolali, demak, grobogan, kendal, kotasemarang, pati, pekalongan,
+  pemalang, rembang, sukoharjo, tegal, wonosobo) returned only a generic
+  placeholder page. kabmagelang, kabsemarang, salatiga and surakarta did not
+  respond. The only kaldik hit was banjarnegara "Kaldik Madrasah 2015 2016".
+
+Third-party pointers (NOT used as sources; none points to an official file):
+  - ayomadrasah.id/2026/07/kaldik-2026-2027-madrasah-jawa-tengah-excel-pdf.html
+    (07 Jul 2026) links to its own Google Drive folder. Its Excel was made by the
+    blog itself ("ditambahkan ... oleh Ayo Madrasah"), so it is not a Kanwil Excel.
+  - kkmimranggen.or.id/?p=616 links to Google Drive copies (PDF and xlsx).
+  Inconsistency: these pages give the title as both "Pedoman Penyusunan Kalender
+  Pendidikan Madrasah" (ayomadrasah) and "Pedoman Kalender Pendidikan Madrasah"
+  (kkmimranggen). The wording on the document itself could not be checked.
+  No evidence was found that the Kanwil published an Excel attachment.
+
+======================================================================
+2. Kanwil Jawa Tengah kaldik madrasah TA 2025/2026
+----------------------------------------------------------------------
+Status      : NOT FOUND on an official site.
+Decree no.  : tirto.id cites "Surat Keputusan Nomor 1633 Tahun 2025 tentang
+              Pedoman Penyusunan Kalender Pendidikan Madrasah TA 2025/2026".
+              This is not verified. A search for "1633" on jateng.kemenag.go.id
+              returned no relevant post.
+For reference, a Kanwil Jateng decree for 2024/2025 (Nomor 937 Tahun 2024)
+  circulates only as a Google Docs export, which is not an official host.
+
+======================================================================
+3. Keputusan Dirjen Pendidikan Islam — Pedoman Kalender Pendidikan Madrasah
+   TA 2026/2027 (cited as Nomor 4860 Tahun 2026)
+----------------------------------------------------------------------
+Status      : NOT FOUND on kemenag.go.id or pendis.kemenag.go.id.
+Decree no.  : 4860 Tahun 2026 per news and blogs. This is NOT verified on the
+              document. Search snippets of copies hosted by schools show the
+              number line as "NOMOR TAHUN 2026" (blank). This fits an e-signed
+              document whose number appears only in the signature block or
+              cover letter.
+Signing date: reported as 12 Jun 2026, signed a.n. Dirjen by Direktur KSKK Madrasah
+              Nyayu Khodijah (detik.com). The cover letter is reported as
+              B-403/Dt.I.I/PP.00/06/2026 dated 13 Jun 2026. Neither is verified
+              on an official copy.
+Where I looked:
+  - pendis.kemenag.go.id/informasi: only page 1 can be read, because the
+    pagination links are "#" and ?page=2 returns the same list. No kaldik item
+    is on page 1. The MATAMUDA juknis (2 Jul 2026) is there.
+  - pendis.kemenag.go.id/pengumuman and /ditkskkmadrasah: no kaldik item.
+  - pendis.kemenag.go.id/arsip/<slug>: I tried 5 plausible slugs, and all gave a
+    Laravel error page (record not found).
+  - The workspace shell could not reach pendis.kemenag.go.id (connection reset),
+    so I browsed it only in the browser.
+  - kemenag.go.id/search "kalender pendidikan madrasah": no 2026/2027 item.
+  - jdih.kemenag.go.id: the search form did not return results. JDIH normally
+    lists KMA/PMA, not Dirjen decrees.
+  - Web search restricted to *.kemenag.go.id found no copy of the decree.
+Third-party copies exist (school WordPress sites, Google Drive via detik.com,
+  ayomadrasah, komunitasbelajar, websiteedukasi). Per the brief, none was used.
+Minor inconsistency in secondary sources: the Maulid Nabi date is given as
+  25 Aug 2026 in one copy's snippet and 5 Sep 2026 in another blog.
+
+======================================================================
+Files in this folder: SOURCE.txt only (no PDF/XLSX). Size/SHA-256: n/a.

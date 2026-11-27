@@ -1,0 +1,26 @@
+R-10b atletik — POPDA Provinsi Jawa Tengah 2026
+Collected 2026-11-27 (UTC) by the user's Claude in Chrome run of brief R-10b (docs/data-requests.md) and uploaded to
+a cloud session; kept byte-for-byte (file names shortened). The browser session's full report, with every place it
+looked, is ../R-10b-SOURCE-2026-11-27.txt.
+
+1) JUKNIS-POPDA-Jateng-2026.pdf (served as "JUKNIS POPDA 2026-1773104955.pdf")
+   Page URL : https://dispora.jatengprov.go.id/content/ppid/432/DOWNLOAD (PPID > DOWNLOAD, "JUKNIS POPDA 2026")
+   File URL : https://dispora.jatengprov.go.id/content/files/JUKNIS%20POPDA%202026-1773104955.pdf
+   Document : cover letter of the Dinas Kepemudaan dan Olahraga Provinsi Jawa Tengah to the Bupati/Walikota,
+              Nomor 400.3.9.2/371/2026 (number handwritten), Semarang, 27 Februari 2026, Hal "Petunjuk Teknis POPDA
+              Tingkat Prov. Jateng Tahun 2026", signed by the Kepala Dinas; attachment "Petunjuk Teknis
+              Penyelenggaraan Pekan Olahraga Pelajar Daerah (POPDA) Tingkat Provinsi Jawa Tengah Tahun 2026"
+   Size     : 39480291 bytes, 20 pages, scanned images (no text layer)
+   SHA-256  : 4999b9a7c8eb44a42b579a664cac710f7a3ab8c292baff56322ae683ed4eebdd
+   Used     : PDF p. 1 (cover letter), p. 3 (IV dates, V athlete requirements), p. 3–4 (VI events per sport),
+              p. 5 (VII.2 Atletik: events, rules, implements), p. 18 (VIII registration, IX overall standing).
+              Read on the page images by the cloud session (2026-11-27); the uploader's transcription of p. 5
+              matched. Printed error: SMA putri shot "24 kg" (see errata in data/atletik-nomor).
+
+2) dispora-ppid-432-download.html (served page, saved as "PAGE_dispora.jatengprov.go.id_content_ppid_432_DOWNLOAD.html")
+   Page URL : https://dispora.jatengprov.go.id/content/ppid/432/DOWNLOAD (the list the juknis is linked from)
+   Size     : 116086 bytes
+   SHA-256  : 672a49af6ba3970360763d5ca8eb32da57ad378ef5339d65124091fa0086f293
+
+Not found (2026-11-27): a separate athletics technical handbook for POPDA Jateng 2026; the component events of
+"Trilomba SD"; the juknis of POPDA Kabupaten Kudus.

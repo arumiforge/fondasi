@@ -1,0 +1,132 @@
+R-10b-atletik — sources for athletics rules: youth age groups and student games, Indonesia
+Collected 2026-11-27 (UTC). Public pages only, no sign-in, no captcha, at least 2 s between requests.
+Every file is saved byte-for-byte as served (nothing renamed inside, nothing edited).
+The only change to a file name is the "PAGE_" / "PENDUKUNG_" prefix on two files (explained below).
+
+====================================================================
+1-pasi/   (PASI — national/regional championship age-group rules)
+====================================================================
+No file saved. No official PASI document could be reached without signing in.
+
+Where I looked:
+- pasi.or.id and www.pasi.or.id: the domain does not resolve (DNS NXDOMAIN on 2026-11-27,
+  checked via dns.google). http and https both fail. pbpasi.or.id and pasi.id also fail.
+- PASI Instagram (instagram.com/pbpasi): the public page shows only a login wall. Without
+  signing in there is no bio link and no posts. Not used.
+- PASI Facebook (facebook.com/pbpasi): redirects to facebook.com/login. Not used.
+- Pengprov PASI Jawa Tengah: no official website found (web searches for PASI Jateng / Kejurda
+  / Jateng Open 2026 found only news articles).
+- Web searches for "Technical Handbook" / "Ketentuan Teknis" / "Surat Edaran" for Kejurnas
+  Atletik U16/U18/U20 and Indonesia U18 Open 2026 (held 27-30 June 2026, Rawamangun) found
+  only news coverage, no copy of the handbook on any official site.
+Note: the user's Chrome tab (Claude in Chrome) did not load any page during this run, not
+even kemenpora.go.id, so Instagram/Facebook could not be tried through it either.
+
+====================================================================
+2-popda-jateng/   (POPDA Provinsi Jawa Tengah)
+====================================================================
+[File 1] JUKNIS POPDA 2026-1773104955.pdf
+  Page URL     : https://dispora.jatengprov.go.id/content/ppid/432/DOWNLOAD
+                 (PPID > DOWNLOAD, item 3 "JUKNIS POPDA 2026", tahun 2026)
+  File URL     : https://dispora.jatengprov.go.id/content/files/JUKNIS%20POPDA%202026-1773104955.pdf
+  Title        : Cover letter: "Petunjuk Teknis POPDA Tingkat Prov. Jateng Tahun 2026";
+                 attachment: "Petunjuk Teknis Penyelenggaraan Pekan Olahraga Pelajar Daerah
+                 (POPDA) Tingkat Provinsi Jawa Tengah Tahun 2026"
+  Number       : 400.3.9.2/371/2026 (handwritten on the cover letter)
+  Date printed : Semarang, 27 Februari 2026
+  Issuer       : Pemerintah Provinsi Jawa Tengah, Dinas Kepemudaan dan Olahraga
+                 (letter to Bupati/Walikota se-Jawa Tengah; signed by the Kepala Dinas)
+  Event        : POPDA Jateng 2026, 1-6 September 2026, Kota Semarang
+  Downloaded   : 2026-11-27T14:09:12Z
+  Size         : 39480291 bytes (20 pages, scanned images, no text layer)
+  SHA-256      : 4999b9a7c8eb44a42b579a664cac710f7a3ab8c292baff56322ae683ed4eebdd
+  Contents     : The athletics section ("2. ATLETIK") is on PDF page 5. It lists the events
+                 for SD / SMP / SMA, putra and putri (20 each, including Trilomba SD and
+                 4x100 m relays for SMP/SMA), the rule "1 atlet maks. 2 nomor", the shot put /
+                 javelin implement weights per level, and the reference to World Athletics
+                 Competition & Technical Rules 2026. Section V (page 3) gives the participant
+                 and age rules. Section IX gives the scoring for the overall standing
+                 (juara umum). Because the scan has no text layer, it needs OCR to search.
+
+[File 2] PAGE_dispora.jatengprov.go.id_content_ppid_432_DOWNLOAD.html
+  Page URL     : https://dispora.jatengprov.go.id/content/ppid/432/DOWNLOAD
+  What         : The download-list page the juknis is linked from (saved as HTML for
+                 provenance; "PAGE_" prefix added to the file name only).
+  Downloaded   : 2026-11-27T14:08:43Z
+  Size         : 116086 bytes
+  SHA-256      : 672a49af6ba3970360763d5ca8eb32da57ad378ef5339d65124091fa0086f293
+
+Also checked:
+- jdih.jatengprov.go.id: its search returned no POPDA juknis. The juknis is a Dinas letter,
+  not a legal product, so it is not in JDIH.
+- Kabupaten Kudus (disdikpora.kuduskab.go.id / kuduskab.go.id): no Kudus POPDA juknis found.
+  Not needed anyway, because the provincial juknis was found on the provincial site.
+- Not downloaded (out of scope): "DATA PEROLEHAN MEDALI POPDA JATENG 2026 PER CABOR" (.rar)
+  on the same page.
+
+====================================================================
+3-popnas/   (POPNAS XVII 2025 Jakarta; POPNAS 2027)
+====================================================================
+The POPNAS XVII 2025 Pedoman Umum and the athletics Technical Handbook were NOT found on any
+official site that could be reached.
+
+[File 3] PENDUKUNG_LKJ Sesdep 3 2025_compressed.pdf   (supporting source only, not the pedoman)
+  Page URL     : https://ppid.kemenpora.go.id/  (PPID > Informasi Berkala)
+  File URL     : https://ppid.kemenpora.go.id/cdn/uploads/informasi_berkala/5/9/0/LKJ%20Sesdep%203%202025_compressed.pdf
+  Title        : Laporan Kinerja Tahun 2025, Sekretariat Deputi Bidang Peningkatan Prestasi
+                 Olahraga
+  Number       : none printed
+  Date printed : Jakarta, 31 Desember 2025 (PDF created 2026-02-19)
+  Issuer       : Kementerian Pemuda dan Olahraga RI
+  Downloaded   : 2026-11-27T14:13:11Z
+  Size         : 1305450 bytes (80 pages)
+  SHA-256      : 95696c3bf3ddea31a2f1c11232c8670c8a6eba6f68263c896b93d7bd9d797ab3
+  Why saved    : PDF page 40 answers a public complaint about POPNAS 2025. It quotes the
+                 POPNAS age rule from "Peraturan Ketua Umum PP BAPOPSI Nomor 8 Tahun 2022
+                 tentang Pedoman Penyelenggaraan Pekan Olahraga Pelajar Nasional", BAB V
+                 Pasal 14 ayat (1) h: "Berusia maksimal 18 tahun, lahir 1 Januari dan
+                 sesudahnya sesuai tahun penyelenggaraan POPNAS". This is the only official,
+                 publicly reachable statement of the POPNAS age limit found. The "PENDUKUNG_"
+                 prefix was added to the file name only.
+
+Where I looked:
+- popnas2025.id: connection reset from my fetcher; the user's Chrome did not load it either.
+  The site appears to be offline.
+- deputi3.kemenpora.go.id: the server presents an invalid (self-signed) TLS certificate, so I
+  did not connect (TLS checks were not bypassed). Chrome did not load it either.
+- kemenpora.go.id: site search for "popnas" / "pedoman popnas" / "popnas 2027" and the
+  Pengumuman page returned only news (Pra-POPNAS, POPNAS XVI 2023) and no guideline file.
+- jdih.kemenpora.go.id: title search lists only host decisions: Kepmenpora No. 105/2025
+  (DKI Jakarta host, POPNAS XVII 2025) and No. 108/2024 (original Aceh–Sumut host). There is
+  no pedoman and no POPNAS 2027 host decision yet.
+- dispora.jakarta.go.id: the POPNAS 2025 event page (/events/5) and /informasi-publik have no
+  documents attached.
+- www.jakarta.go.id/storage/files/shares/Landing Page/Popnas Dispora/: only a transport-info
+  PDF ("Informasi Transportasi.pdf") is publicly indexed. It is not a rules document and was
+  not downloaded.
+- POPNAS 2027: no guideline published that I could find.
+
+Non-official copy (NOT downloaded, listed per instructions):
+- https://id.scribd.com/document/881889592/KETENTUAN-UMUM-POPNAS
+  "Syarat dan Ketentuan POPNAS 2025" (uploaded copy, made when the host was still Aceh–Sumut).
+  The search snippet shows "Kelahiran Maksimal 1 Januari 2008 atau sesudahnya". Scribd is
+  not an accepted source and needs a login to download, so it was not saved.
+
+====================================================================
+4-o2sn-2027/   (O2SN 2027 guides, SD / SMP / SMA)
+====================================================================
+No file saved; the folder is intentionally empty.
+- Puspresnas has moved to pusatprestasinasional.kemendikdasmen.go.id (the old
+  pusatprestasinasional.kemdikbud.go.id host did not answer). Its "Event > Olahraga" page
+  (fetched 2026-11-27T14:16:50Z) lists only the O2SN 2026 events (SD, SMP, SMA/SMK, Diksus);
+  the homepage reports O2SN 2026 as closed. No O2SN 2027 guide has been published yet.
+- A blog (komunitasbelajar.id) titles a post "Panduan Juknis O2SN SMA Tahun 2027", but its URL
+  and content are for 2026. It is a blog and not a source, so it was not used.
+
+====================================================================
+Method notes
+====================================================================
+- Fetcher: curl through the session's HTTPS proxy, with a 2-second wait before every request.
+  The full request log (UTC timestamps) was kept in the working folder and is not part of the zip.
+- Times above are the UTC time the request started.
+- SHA-256 values were computed on the files as saved here.

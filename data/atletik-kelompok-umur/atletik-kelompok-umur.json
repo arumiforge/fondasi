@@ -114,11 +114,46 @@
     "sederajat"
    ],
    "ref": "Panduan O2SN SMA/MA/SMK/MAK/Sederajat 2026, Bab III B.1.d (PDF p. 21, printed p. 17)"
+  },
+  {
+   "code": "POPDA_JATENG_2026",
+   "label": "POPDA Jawa Tengah 2026",
+   "label_en": "POPDA Central Java 2026",
+   "min_age": null,
+   "max_age": null,
+   "reference": "born_on_or_after",
+   "championship": "POPDA Jawa Tengah",
+   "year": 2026,
+   "born_on_or_after": "2008-01-01",
+   "printed": "tahun kelahiran maksimal 2008",
+   "levels": [
+    "SD",
+    "SMP",
+    "SMA"
+   ],
+   "student": "pelajar aktif saat POPDA",
+   "ref": "Juknis POPDA Tingkat Provinsi Jawa Tengah 2026 (Dispora Jateng, surat 400.3.9.2/371/2026, 27 Feb 2026), V.2 (PDF p. 3)",
+   "note": "Printed as a birth-year limit; read as born in 2008 or later, as POPNAS (at most 18) and O2SN SMA 2026 (born on or after 2008-01-01) have it. Moves between regencies count only 6 months after the Dapodik registration, except 2026 SD/SMP graduates (V.4)."
+  },
+  {
+   "code": "POPNAS",
+   "label": "POPNAS",
+   "label_en": "POPNAS (national student games)",
+   "min_age": null,
+   "max_age": 18,
+   "reference": "championship",
+   "championship": "POPNAS",
+   "year": null,
+   "printed": "Berusia maksimal 18 tahun, lahir 1 Januari dan sesudahnya sesuai tahun penyelenggaraan POPNAS",
+   "student": "pelajar aktif saat POPNAS",
+   "confidence": "secondary",
+   "ref": "Peraturan Ketua Umum PP BAPOPSI Nomor 8 Tahun 2022, Bab V Pasal 14 ayat (1) huruf h, as quoted in Kemenpora Laporan Kinerja 2025 Sesdep 3 (PDF p. 40, printed p. 31)",
+   "note": "The quoted text does not say which year's 1 January counts; check each edition's Pedoman Umum. A third-party copy of the 2025 conditions (Scribd, not used) gives born 1 January 2008 or later."
   }
  ],
  "pending": [
-  "PASI U14 and U16 (and their implements and hurdle heights): brief R-10b.",
-  "POPDA/POPNAS groups and their reference dates: brief R-10b."
+  "PASI U14 and U16 (and their implements and hurdle heights): no official PASI document reachable on 2026-11-27 (pasi.or.id does not resolve; brief R-10b).",
+  "POPNAS events, implements and the exact birth-date limit per edition: the Pedoman Umum and athletics technical handbook were not found on an official site (brief R-10b)."
  ],
  "notes": [
   "Each championship stores its own reference rule (user decision 2026-11-26): an app keeps `reference` per championship, using these groups as defaults.",

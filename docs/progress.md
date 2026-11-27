@@ -28,6 +28,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 | `nty/eloquent-davinci-myz72i` | session data-round 6 | R-18 `batas-wilayah`: PR #26 merged (Kudus); PR #28 `presisi` + cross-regency topology | PR #28 merged |
 | `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (F-036) | PR #27 merged |
 | `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-18 `batas-wilayah` for all of Jawa Tengah (Next steps 7); only `tools/converters/batas-wilayah.py`, `data/batas-wilayah/`, `sources/batas-wilayah/` | PR #30 merged; scope stays at Jawa Tengah |
+| `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-10b delivery (POPDA Jateng 2026 juknis, POPNAS age rule) into `atletik-*`; R-06/R-14 search records | PR open |
 | `pw/exciting-goldberg-mqpkx5` | akun-2 | R-18 support: `tools/checks/batas-wilayah.py` (coverage, areas, cross-regency arcs, `--big`, `--render`), docs/data.md "Using boundaries in apps", `fondasi-data` line. Does not touch the converter or `data/batas-wilayah/` | PR #29 merged |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
@@ -38,9 +39,11 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    after the session goes idle: keep a Monitor on the worker logs and relaunch after a restart.
 2. **R-06 done** (`kaldik-madrasah-jateng` 2026-06-29, PR #15 merged). Still missing: the national guideline Keputusan Dirjen Pendis 4860/2026 (optional; the Kanwil decree
    follows it). The 4 SKB 2027 cuti bersama days not in the decree are listed in `skb_days_not_in_this_calendar`.
-3. **R-10b, O2SN part done** (atletik sets 2026-11-26): eligibility groups, events, implements, Kids' Athletics
-   courses, qualifying marks and scoring (all 17,595 rows of the linked tables checked). Still missing: PASI U14/U16
-   and POPDA/POPNAS (brief R-10b items 1 and 3); O2SN 2027 when Puspresnas publishes it. **R-11** records need the
+3. **R-10b done as far as sources allow** (atletik sets 2026-11-27): O2SN 2026 (all 17,595 table rows checked) and
+   POPDA Jawa Tengah 2026 (Dispora juknis, page images; SMA putri shot printed "24 kg" kept as an unresolved erratum:
+   ask the organiser if an app needs it); POPNAS age rule as secondary. Still missing, no official copy reachable on
+   2026-11-27: PASI U14/U16 rules (pasi.or.id does not resolve) and the POPNAS XVII athletics handbook; O2SN 2027 when
+   Puspresnas publishes it (now at pusatprestasinasional.kemendikdasmen.go.id). Rerun brief R-10b items 1 and 3 later. **R-11** records need the
    user's list of championships.
 4. **R-08 done** (`mapel` 2025-09-22, all levels incl. madrasah; F-031 errata). Open in it: KMA Tabel 18 (MILB V)
    totals count 36 kokurikuler JP more than its rows (`unresolved`); check again when Kemenag publishes a corrected KMA.
@@ -94,14 +97,13 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 - Hosts blocked from cloud sessions: `jateng.kemenag.go.id` (times out since 2026-11-25; R-06 brief), `kemenag.go.id` (refused), `jdih.kemendagri.go.id` (no answer, 2026-11-26), `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
   (and `disdikbud.jatengprov.go.id`, replaced by `pdk.jatengprov.go.id`) → browser briefs.
-- R-10b (Next steps 3) needs the user's Claude in Chrome run of brief R-10b (rewritten 2026-11-27 with these findings): checked from the cloud on 2026-11-27,
-  `pasi.or.id` is unreachable (proxy 502); `dispora.jatengprov.go.id` loads but lists no POPDA juknis (pages are
-  script-filled); `popnas2025.id` is unreachable; the POPNAS XVII 2025 general guideline and the Kabupaten Semarang
-  POPDA 2026 draft appear only on Scribd (not an official source). Web search found no official PASI U14/U16 rules.
+- R-10b leftovers (PASI U14/U16, POPNAS handbook): the 2026-11-27 browser run found no official copy; see
+  `sources/atletik/R-10b-SOURCE-2026-11-27.txt` for every place searched.
 - The Claude GitHub App may need access to the renamed repository for PR notifications (GitHub → Apps → Claude).
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-27 · session data-round 7 (account A) · `nty/magical-ramanujan-54d9nu` — R-10b delivered by the user's browser run: POPDA Jateng 2026 juknis read on page images into `atletik-nomor`/`atletik-kelompok-umur` 2026-11-27 (20 events per sex, implements, entry rules, "24 kg" erratum unresolved), POPNAS age rule secondary; PASI and POPNAS handbook not found. R-06/R-14 uploads held only search records (stored).
 - 2026-11-27 · session data-round 7 (account A) · `nty/magical-ramanujan-54d9nu` — PR #31: `batas-wilayah` stays at Jawa Tengah (user). Next step R-10b checked from the cloud: official PASI/POPDA/POPNAS sources not reachable or not published there; waits for the user's browser run of brief R-10b.
 - 2026-11-27 · session data-round 7 (account A) · `nty/magical-ramanujan-54d9nu` — R-18 Jawa Tengah: 35 regencies fetched (4 workers, outside the repo), blocker solved (34 rings crossed only after rounding to 6 decimals, none in BIG; the halving refined whole rings and pass 2 ping-ponged border arcs), converter refines only crossing arcs, carries refinements between rounds, checks collapsed rings and arc-vs-arc crossings, extra decimals for arcs and junctions, parallel build; `batas-wilayah` covers 8,563 villages. Session 2 (account B) works on the checker.
 - 2026-11-27 · akun-2 · `pw/exciting-goldberg-mqpkx5` — R-18 support: `tools/checks/batas-wilayah.py` (coverage, district = union of villages, holes, cross-regency borders, `--big` district areas, `--render` SVG; parallel per regency) tested on Kudus and on Kudus+Pati+Jepara built outside the repo (simplified and full precision; BIG's own full-precision borders differ by < 0.5 m at two tri-junctions, reported as notes); docs/data.md "Using boundaries in apps"; `fondasi-data` line. For the Jateng build: run the check on the output with `--big --render`.
@@ -111,4 +113,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-atribusi` — PR #24 merged. F-034 (third-party works for education with credit); attribution added to every `kerangka-tka` stimulus. Next: R-17.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-contoh-soal` — PR #23 merged. `kerangka-tka`: 24 sample questions of 047 with 13 figures (keys recomputed, 4 errata) and the 2026 category limits marked secondary (F-033). Next: R-17.
 - 2026-11-26 · session data-round 5 · `nty/kerangka-tka` — PR #22 merged (religion CP Lampiran II, R-15 complete). R-16 `kerangka-tka` built from 047 and 56/2026 (4 frameworks, every text unit and table cell checked against the PDFs, schedule read on the page images, 3 errata). Next: R-17.
-- 2026-11-26 · session data-round 5 · `nty/cp-agama-pendidikan-khusus` — 020 Lampiran II transcribed from page images (2.1–2.6, 192 outcomes, every pinyin/diacritic line on zoomed crops, OCR diff clean), `pendidikan-khusus-agama.json.gz` built, `capaian-pembelajaran` complete (305 subjects, 2,816 outcomes). Next: R-16 `kerangka-tka`.

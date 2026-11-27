@@ -14,7 +14,9 @@ completeness. Then it writes the three sets:
   python3 -I tools/converters/atletik.py data --tables sources/atletik/o2sn   # also check every O2SN table row
 
 O2SN 2026 (R-10b part): eligibility, events, implements, Kids' Athletics courses and qualifying marks are transcribed
-from the three Puspresnas guides with PDF page references; the SMP and SMA/SMK scoring tables the guides link to are
+from the three Puspresnas guides with PDF page references; POPDA Jawa Tengah 2026 (events, implements, entry limits,
+eligibility) from the Dispora Jateng juknis page images, and the POPNAS age rule as Kemenpora quotes it
+(sources/atletik/popda-jateng/, sources/atletik/popnas/); the SMP and SMA/SMK scoring tables the guides link to are
 checked row by row with --tables (needs pdftotext; not run in CI).
 
 Indonesian labels (`label`) are the usual PASI terms; they are to be checked against PASI and the school
@@ -35,6 +37,10 @@ O2SN = {
     "SMP_TABLE": "Scoring Table Trilomba O2SN SMP (\"Licenced by IAAF & PASI Modification\")",
     "SMA_TABLE": "Scoring Tables Pancalomba O2SN SMA & SMK (WA tables, edition 2001, reprint 2016)",
 }
+# POPDA Jawa Tengah 2026 juknis (Dispora Jateng) and the POPNAS age rule as quoted by Kemenpora (sources/atletik/)
+POPDA = "Juknis POPDA Tingkat Provinsi Jawa Tengah 2026 (Dispora Jateng, surat 400.3.9.2/371/2026, 27 Feb 2026)"
+POPNAS = ("Peraturan Ketua Umum PP BAPOPSI Nomor 8 Tahun 2022, Bab V Pasal 14 ayat (1) huruf h, as quoted in Kemenpora "
+          "Laporan Kinerja 2025 Sesdep 3 (PDF p. 40, printed p. 31)")
 CATEGORIES = ["U18_W", "U20_W", "SENIOR_W", "U18_M", "U20_M", "SENIOR_M"]
 
 # ------------------------------------------------------------------ age groups
@@ -76,10 +82,29 @@ AGE_GROUPS = {
          "born_on_or_after": "2008-01-01", "grades": [10, 11], "school_year": "2025/2026",
          "levels": ["SMA", "MA", "SMK", "MAK", "sederajat"],
          "ref": f"{O2SN['SMA']}, Bab III B.1.d (PDF p. 21, printed p. 17)"},
+        # POPDA Jawa Tengah 2026: one rule for every sport and level (SD, SMP, SMA events by the athlete's school)
+        {"code": "POPDA_JATENG_2026", "label": "POPDA Jawa Tengah 2026", "label_en": "POPDA Central Java 2026",
+         "min_age": None, "max_age": None, "reference": "born_on_or_after", "championship": "POPDA Jawa Tengah",
+         "year": 2026, "born_on_or_after": "2008-01-01", "printed": "tahun kelahiran maksimal 2008",
+         "levels": ["SD", "SMP", "SMA"], "student": "pelajar aktif saat POPDA",
+         "ref": f"{POPDA}, V.2 (PDF p. 3)",
+         "note": "Printed as a birth-year limit; read as born in 2008 or later, as POPNAS (at most 18) and O2SN SMA "
+                 "2026 (born on or after 2008-01-01) have it. Moves between regencies count only 6 months after the "
+                 "Dapodik registration, except 2026 SD/SMP graduates (V.4)."},
+        # POPNAS: the age rule of the national guideline, quoted by Kemenpora; the guideline itself was not found
+        {"code": "POPNAS", "label": "POPNAS", "label_en": "POPNAS (national student games)", "min_age": None,
+         "max_age": 18, "reference": "championship", "championship": "POPNAS", "year": None,
+         "printed": "Berusia maksimal 18 tahun, lahir 1 Januari dan sesudahnya sesuai tahun penyelenggaraan POPNAS",
+         "student": "pelajar aktif saat POPNAS", "confidence": "secondary",
+         "ref": POPNAS,
+         "note": "The quoted text does not say which year's 1 January counts; check each edition's Pedoman Umum. "
+                 "A third-party copy of the 2025 conditions (Scribd, not used) gives born 1 January 2008 or later."},
     ],
     "pending": [
-        "PASI U14 and U16 (and their implements and hurdle heights): brief R-10b.",
-        "POPDA/POPNAS groups and their reference dates: brief R-10b.",
+        "PASI U14 and U16 (and their implements and hurdle heights): no official PASI document reachable on "
+        "2026-11-27 (pasi.or.id does not resolve; brief R-10b).",
+        "POPNAS events, implements and the exact birth-date limit per edition: the Pedoman Umum and athletics "
+        "technical handbook were not found on an official site (brief R-10b).",
     ],
     "notes": [
         "Each championship stores its own reference rule (user decision 2026-11-26): an app keeps "
@@ -98,7 +123,10 @@ EVENTS = [
     ("200m", "Lari 200 m", "200m", "track", "sprint", "time", {"wind_seconds": 10, "lanes": True,
                                                               "wind_note": "measured for 10 s from when the first athlete enters the straight"}),
     ("400m", "Lari 400 m", "400m", "track", "sprint", "time", {"lanes": True}),
+    ("80m", "Lari 80 m", "80m", "track", "sprint", "time", {"lanes": True, "championship": "POPDA Jawa Tengah SMP",
+                                                            "note": "Not a World Athletics standard event."}),
     ("800m", "Lari 800 m", "800m", "track", "middle", "time", {}),
+    ("1000m", "Lari 1000 m", "1000m", "track", "middle", "time", {}),
     ("1500m", "Lari 1500 m", "1500m", "track", "middle", "time", {}),
     ("3000m", "Lari 3000 m", "3000m", "track", "long", "time", {}),
     ("5000m", "Lari 5000 m", "5000m", "track", "long", "time", {}),
@@ -125,6 +153,7 @@ EVENTS = [
     ("DT", "Lempar cakram", "Discus Throw", "field", "throw", "distance", {"implement": "Discus"}),
     ("HT", "Lontar martil", "Hammer Throw", "field", "throw", "distance", {"implement": "Hammer"}),
     ("JT", "Lempar lembing", "Javelin Throw", "field", "throw", "distance", {"implement": "Javelin"}),
+    ("3000mW", "Jalan cepat 3000 m", "3000m Race Walk", "walk", "race_walk", "time", {}),
     ("5000mW", "Jalan cepat 5000 m", "5000m Race Walk", "walk", "race_walk", "time", {}),
     ("10000mW", "Jalan cepat 10.000 m", "10,000m Race Walk", "walk", "race_walk", "time", {}),
     ("10kmW", "Jalan cepat 10 km", "10km Race Walk", "walk", "race_walk", "time", {"road": True}),
@@ -141,6 +170,8 @@ EVENTS = [
     ("Tri", "Trilomba", "Triathlon (school)", "combined", "combined", "points", {"championship": "O2SN SMP"}),
     ("PenO2SN", "Pancalomba (O2SN SMA/SMK)", "Pentathlon (school)", "combined", "combined", "points",
      {"championship": "O2SN SMA"}),
+    ("TriSD", "Trilomba SD", "Triathlon (school, primary)", "combined", "combined", "points",
+     {"championship": "POPDA Jawa Tengah SD", "note": "The juknis does not name the three events."}),
     # Kids' Athletics team events of O2SN SD (labels as printed in the guide)
     ("KA_KANGA", "Gawang & Sprint (Kanga Escape)", "Kanga Escape", "kids", "kids_athletics", "time",
      {"team_size": 2}),
@@ -313,6 +344,66 @@ CHAMPIONSHIPS = {
             "the arena 15 min before; jumps and throws 60 / 40 / 30 min.",
             "Medals for places 1–3 of the combined result (SD: Kids' Athletics total); certificates for places 1–3 "
             "per event and 4–8 overall.",
+        ],
+    },
+    "POPDA_JATENG_2026": {
+        "name": "Pekan Olahraga Pelajar Daerah (POPDA) Tingkat Provinsi Jawa Tengah 2026",
+        "organiser": "Dinas Kepemudaan dan Olahraga Provinsi Jawa Tengah",
+        "dates": {"start": "2026-09-01", "end": "2026-09-06", "competition": ["2026-09-02", "2026-09-05"],
+                  "technical_meeting": "2026-09-01", "venue_city": "Kota Semarang", "ref": f"{POPDA}, IV (PDF p. 3)"},
+        "rules_basis": "World Athletics Competition and Technical Rules 2026 Edition, adapted to local conditions "
+                       "(printed \"World Atletics\")",
+        "levels": {
+            "SD": {
+                "age_group": "POPDA_JATENG_2026",
+                "sport_label": "Atletik",
+                "events": {"M": ["60m", "1000m", "LJ", "SP"], "W": ["60m", "1000m", "LJ", "SP"]},
+                "combined": "TriSD",
+                "implements_kg": {"SP": {"M": 3.0, "W": 2.0}},
+            },
+            "SMP": {
+                "age_group": "POPDA_JATENG_2026",
+                "sport_label": "Atletik",
+                "events": {"M": ["80m", "400m", "1500m", "4x100m", "SP", "LJ"],
+                           "W": ["80m", "400m", "1500m", "4x100m", "SP", "LJ"]},
+                "implements_kg": {"SP": {"M": 4.0, "W": 3.0}},
+            },
+            "SMA": {
+                "age_group": "POPDA_JATENG_2026",
+                "sport_label": "Atletik",
+                "events": {"M": ["100m", "800m", "3000m", "3000mW", "4x100m", "SP", "LJ", "HJ", "JT"],
+                           "W": ["100m", "800m", "3000m", "3000mW", "4x100m", "SP", "LJ", "HJ", "JT"]},
+                "implements_kg": {"SP": {"M": 5.0, "W": None}, "JT": {"M": 0.700, "W": 0.600}},
+                "implements_note": "SMA putri shot printed \"24 kg\": see errata.",
+            },
+        },
+        "events_count": {"M": 20, "W": 20, "ref": f"{POPDA}, VI table (PDF p. 3) and VII.2 (PDF p. 5)"},
+        "events_ref": f"{POPDA}, VII.2 Atletik, table of events (PDF p. 5)",
+        "implements_ref": f"{POPDA}, VII.2 Ketentuan 7 (PDF p. 5)",
+        "entries": [
+            "One athlete enters at most two individual events (Ketentuan 4).",
+            "Trilomba: at most 1 athlete per kabupaten/kota, who may not enter any other individual event "
+            "(Ketentuan 5).",
+            "Quota per kabupaten/kota; at most 2 athletes of the same kabupaten/kota per event (Ketentuan 6).",
+            "An athlete takes part in one sport only (V.5).",
+        ],
+        "entries_ref": f"{POPDA}, VII.2 Ketentuan 4–6 (PDF p. 5), V.5 (PDF p. 3)",
+        "registration": "SIMPORA, 1 July – 20 August 2026; offline verification 24 August 2026 (VIII, PDF p. 18)",
+        "exhibition": "An event with fewer than 5 kabupaten/kota taking part is an exhibition event: medals and "
+                      "certificates are given but do not count for the overall standing (IX, PDF p. 18).",
+        "overall_standing": "By medals (gold, silver, bronze); the winning kabupaten/kota receives a trophy "
+                            "(IX–X, PDF p. 18).",
+        "errata": [
+            {"field": "levels.SMA.implements_kg.SP.W", "printed": "24 kg", "value": None, "status": "unresolved",
+             "page": "PDF p. 5, VII.2 Ketentuan 7",
+             "reason": "A 24 kg shot is impossible; the juknis does not show whether 3 kg (World Athletics U18) or "
+                       "4 kg (U20, senior) is meant. Ask the organiser or the technical meeting minutes (F-031)."},
+        ],
+        "not_stated": ["the three events of Trilomba SD", "hurdles (no hurdle events)", "trials per field event",
+                       "qualifying marks"],
+        "common": [
+            "Eligibility is in atletik-kelompok-umur (POPDA_JATENG_2026).",
+            "The levels follow the athlete's school (SD, SMP, SMA); the juknis gives no separate age band per level.",
         ],
     },
 }
@@ -575,6 +666,11 @@ def check():
             for sex, q in spec.get("qualifying", {}).items():
                 if sex in ("M", "W") and sorted(q) != sorted(spec["events"][sex]):
                     sys.exit(f"{level} {sex}: qualifying marks do not cover the events")
+        if "events_count" in champ:  # the number of events per sex printed in the handbook
+            for sex in ("M", "W"):
+                n = sum(len(spec["events"][sex]) + bool(spec.get("combined")) for spec in champ["levels"].values())
+                if n != champ["events_count"][sex]:
+                    sys.exit(f"{champ['name']} {sex}: {n} events, the handbook counts {champ['events_count'][sex]}")
     for level, sc in O2SN_SCORING.items():
         spec = CHAMPIONSHIPS["O2SN_2026"]["levels"][level]
         for sex, evs in sc["events"].items():
@@ -678,7 +774,9 @@ def main(out):
             "sexes: M putra, W putri, X campuran. Events without wind_seconds have no wind reading.",
             "O2SN 2026 (SD Kids' Athletics, SMP Trilomba, SMA/SMK Pancalomba) is under `championships`, with "
             "implements, trials and qualifying marks per level; its scoring is in atletik-hasil.",
-            "PASI U14/U16 and POPDA/POPNAS specifications follow their technical handbooks: brief R-10b.",
+            "POPDA Jawa Tengah 2026 is under `championships` (events and implements per level, entry limits, "
+            "exhibition rule, errata); its eligibility is in atletik-kelompok-umur.",
+            "PASI U14/U16 and POPNAS events and implements: no official document reachable yet (brief R-10b).",
         ],
     })
     write(out, "atletik-kelompok-umur", AGE_GROUPS)

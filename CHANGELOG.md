@@ -5,6 +5,18 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `atletik-nomor` and `atletik-kelompok-umur` 2026-11-27 (R-10b): POPDA Tingkat Provinsi Jawa Tengah 2026 from the
+  Dispora Jateng juknis (letter 400.3.9.2/371/2026, scanned, read on the page images): 20 events per sex across SD,
+  SMP and SMA (new event codes 80m, 1000m, 3000mW, TriSD), shot and javelin weights per level, at most two
+  individual events per athlete, Trilomba and quota limits, the exhibition rule (fewer than 5 kabupaten/kota) and the
+  medal-based overall standing; eligibility born in 2008 or later ("tahun kelahiran maksimal 2008"). The SMA putri
+  shot is printed "24 kg": stored as null with an unresolved erratum (F-031). POPNAS age rule (at most 18) added as
+  secondary, quoted by Kemenpora from Peraturan Ketua Umum PP BAPOPSI 8/2022. PASI U14/U16 and the POPNAS athletics
+  handbook were not reachable on an official site (pasi.or.id does not resolve).
+- Search records of the 2026-11-27 browser runs: `sources/atletik/R-10b-SOURCE-2026-11-27.txt`,
+  `sources/kaldik-madrasah-jateng/R-06-SEARCH-2026-11-27.txt` (no official copy of the Dirjen Pendis guideline
+  4860/2026 or the Kanwil decree online) and `sources/wilayah/R-14-SOURCE-ditjenbinaadwil-2026-11-27.txt` (the
+  official file URL of Kepmendagri 300.2.2-2430/2025 on the Ditjen Bina Adwil site).
 - `batas-wilayah` 2026-06-15 now covers all of Jawa Tengah (R-18, F-035; user, 2026-11-27): 35 regencies, all 8,563
   villages of `wilayah` 33.* and all 576 districts, 6.1 MB. Borders between regencies are identical on both sides
   (1,792 shared border arcs); no two villages overlap and no ring crosses itself (0 crossings among 820,501

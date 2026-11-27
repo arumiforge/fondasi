@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="https://dispora.jatengprov.go.id/backend/Lampiran/Profil/1771575333LOGO-JATENG.png">
+    
+    
+    
+    <meta property="og:site_name" content="Dispora Jawa Tengah" />
+
+    <!-- Stylesheets
+ ============================================= -->
+    
+    <link
+        href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Playfair+Display:700,700i,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/swiper.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/one-page/css/et-line.css" type="text/css" />
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/magnific-popup.css" type="text/css" />
+
+    <!-- update 2026 stylesheet untuk home.blade -->
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/update.css" type="text/css" />
+
+
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/custom.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme Color Stylesheet -->
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/css/colors.php?color=2f69b5" type="text/css" />
+    
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/demos/interior-design/css/fonts.css" type="text/css" />
+
+    <!-- News Demo Specific Stylesheet -->
+    
+    <link rel="stylesheet" href="https://dispora.jatengprov.go.id/frontend/demos/interior-design/interior-design.css" type="text/css" />
+    <!-- / -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/css/settings.css"
+        media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/css/navigation.css">
+
+    <!-- Document Title
+ ============================================= -->
+    <title>Dispora Jawa Tengah</title>
+
+    <style>
+        /* Revolution Slider Styles */
+        .hesperiden .tp-tab {
+            border-bottom: 0;
+        }
+
+        .hesperiden .tp-tab:hover,
+        .hesperiden .tp-tab.selected {
+            background-color: #E5E5E5;
+        }
+
+        .floatingButtonWrap {
+            display: block;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 999999999;
+        }
+
+        .floatingButtonInner {
+            position: relative;
+        }
+
+        .floatingButton {
+            display: block;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            background: -webkit-linear-gradient(45deg, #8769a9, #507cb3);
+            background: -o-linear-gradient(45deg, #8769a9, #507cb3);
+            background: linear-gradient(45deg, #8769a9, #507cb3);
+            color: #fff;
+            line-height: 50px;
+            position: absolute;
+            border-radius: 50% 50%;
+            bottom: 0px;
+            right: 0px;
+            border: 5px solid #b2bedc;
+            /* opacity: 0.3; */
+            opacity: 1;
+            transition: all 0.4s;
+        }
+
+        .floatingButton .fa {
+            font-size: 15px !important;
+        }
+
+        .floatingButton.open,
+        .floatingButton:hover,
+        .floatingButton:focus,
+        .floatingButton:active {
+            opacity: 1;
+            color: #fff;
+        }
+
+
+        .floatingButton .fa {
+            transform: rotate(0deg);
+            transition: all 0.4s;
+        }
+
+        .floatingButton.open .fa {
+            transform: rotate(270deg);
+        }
+
+        .floatingMenu {
+            position: absolute;
+            bottom: 60px;
+            right: 0px;
+            /* width: 200px; */
+            display: none;
+        }
+
+        .floatingMenu li {
+            width: 100%;
+            float: right;
+            list-style: none;
+            text-align: right;
+            margin-bottom: 5px;
+        }
+
+        .floatingMenu li a {
+            padding: 8px 15px;
+            display: inline-block;
+            background: #ccd7f5;
+            color: #6077b0;
+            border-radius: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: all 0.4s;
+            /* -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.22);
+            box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.22); */
+            -webkit-box-shadow: 1px 3px 5px rgba(211, 224, 255, 0.5);
+            box-shadow: 1px 3px 5px rgba(211, 224, 255, 0.5);
+        }
+
+        .floatingMenu li a:hover {
+            margin-right: 10px;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+ ============================================= -->
+    <div id="wrapper" class="clearfix ">
+
+        <!-- Header
+  ============================================= -->
+        <header id="header" class="header-size-md bg-merah" data-sticky-shrink="false">
+
+            <style>
+    .primary-menu-with-arrows .menu-item>.menu-link {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .primary-menu-with-arrows .menu-link .h6 {
+        font-size: 14px;
+        margin: 0;
+    }
+</style>
+<div id="header-wrap">
+    <div class="container-fluid px-5">
+        <div class="header-row justify-content-between align-items-center">
+
+            <!-- Logo
+   ============================================= -->
+            <div id="logo" class="mr-auto mr-lg-0">
+                <a href="#" class="standard-logo"><img src="https://dispora.jatengprov.go.id/backend/Lampiran/Profil/DISPORA (1).png"
+                        alt="Logo" style="max-height: 50px;"></a>
+            </div><!-- #logo end -->
+
+            <div id="primary-menu-trigger">
+                <svg class="svg-trigger" viewBox="0 0 100 100">
+                    <path
+                        d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20">
+                    </path>
+                    <path d="m 30,50 h 40"></path>
+                    <path
+                        d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20">
+                    </path>
+                </svg>
+            </div>
+
+            <!-- Primary Navigation
+   ============================================= -->
+            <nav class="primary-menu with-arrows">
+
+                <ul class="menu-container menu-desktop" style="color: blue">
+                    <li class="menu-item current menu-color-home"><a class="menu-link" href="/">
+                            <div class="h6">HOME</div>
+                        </a></li>
+                    <li class="menu-item menu-color-lifestyle mega-menu mega-menu-small"><a class="menu-link"
+                            href="#">
+                            <div class="h6">PROFIL</div>
+                        </a>
+                        <div class="mega-menu-content mega-menu-style-2 border-top-0">
+                            <div class=" container">
+                                <div class=" row">
+
+                                    <ul class="sub-menu-container mega-menu-column col-lg-12">
+                                        <li class="menu-item">
+                                            <div class="tab-content" id="v-pills-tabContent">
+                                                <div class="tab-pane show active" id="v-pills-home" role="tabpanel"
+                                                    aria-labelledby="v-pills-home-tab">
+                                                    <div class="row justify-content-around posts-md">
+                                                        <div class="col-4">
+                                                            <div class="entry">
+
+                                                                <div class="entry-title title-xs nott">
+                                                                    <h3><a href="/content/visi-misi">Visi Misi</a></h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="entry">
+
+                                                                <div class="entry-title title-xs nott">
+                                                                    <h3><a href="/content/struktur-organisasi">Struktur
+                                                                            Organisasi</a></h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="entry">
+
+                                                                <div class="entry-title title-xs nott">
+                                                                    <h3><a href="/content/sdm-disporapar">SDM</a></h3>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu-item menu-color-fashion"><a class="menu-link" href="https://data.jatengprov.go.id/">
+                            <div class="h6">OPEN DATA</div>
+                        </a></li>
+                    
+                    <li class="menu-item menu-color-sports"><a class="menu-link" href="/content/events">
+                            <div class="h6">EVENTS</div>
+                        </a></li>
+                    <li class="menu-item menu-color-sports"><a class="menu-link" href="/blog/artikel">
+                            <div class="h6">ARTIKEL</div>
+                        </a></li>
+                    <li class="menu-item menu-color-sports">
+                        <a class="menu-link" href="/ppid">
+                            <div class="h6">INFORMASI PUBLIK</div>
+                        </a>
+
+                        <ul class="sub-menu-container">
+
+                            
+                                                            
+                                <li class="menu-item">
+
+                                    <a class="menu-link"
+                                        href="/content/informasipublic/1/informasi_berkala">
+                                        <div>Informasi Berkala</div>
+                                    </a>
+
+                                                                            <ul class="sub-menu-container">
+
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/5/informasi_tentang_profil_badan_publik">
+                                                        <div>INFORMASI TENTANG PROFIL BADAN PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/6/ringkasan_program_dan_kegiatan_yang_sedang_dan_telah_dijalankan">
+                                                        <div>RINGKASAN PROGRAM DAN KEGIATAN YANG SEDANG DAN TELAH DIJALANKAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/7/informasi_pengadaan_barang_dan_jasa">
+                                                        <div>INFORMASI PENGADAAN BARANG DAN JASA</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/8/laporan_kinerja">
+                                                        <div>LAPORAN KINERJA</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/9/informasi_anggaran_dan_keuangan">
+                                                        <div>INFORMASI ANGGARAN DAN KEUANGAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/10/laporan_layanan_informasi_publik">
+                                                        <div>LAPORAN LAYANAN INFORMASI PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/11/ringkasan_laporan_akses_informasi_publik">
+                                                        <div>RINGKASAN LAPORAN AKSES INFORMASI PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/12/informasi_peraturan_perundangan_dan_kerjasama">
+                                                        <div>INFORMASI PERATURAN PERUNDANGAN DAN KERJASAMA</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/13/informasi_penerimaan_pegawai">
+                                                        <div>INFORMASI PENERIMAAN PEGAWAI</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/14/data_kebudayaan,_pariwisata_dan_ekonomi_kreatif">
+                                                        <div>DATA KEBUDAYAAN, PARIWISATA DAN EKONOMI KREATIF</div>
+                                                    </a>
+
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                                                            
+                                <li class="menu-item">
+
+                                    <a class="menu-link"
+                                        href="/content/informasipublic/2/informasi_serta_merta">
+                                        <div>Informasi Serta Merta</div>
+                                    </a>
+
+                                                                            <ul class="sub-menu-container">
+
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/30/informasi_serta_merta">
+                                                        <div>INFORMASI SERTA MERTA</div>
+                                                    </a>
+
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                                                            
+                                <li class="menu-item">
+
+                                    <a class="menu-link"
+                                        href="/content/informasipublic/3/informasi_setiap_saat">
+                                        <div>Informasi Setiap Saat</div>
+                                    </a>
+
+                                                                            <ul class="sub-menu-container">
+
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/17/rencana_strategis">
+                                                        <div>RENCANA STRATEGIS</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/18/rencana_kerja">
+                                                        <div>RENCANA KERJA</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/19/daftar_informasi_publik">
+                                                        <div>DAFTAR INFORMASI PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/20/sk_ppid">
+                                                        <div>SK PPID</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/21/maklumat_pelayanan">
+                                                        <div>MAKLUMAT PELAYANAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/22/sop">
+                                                        <div>SOP</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/23/pedoman_pelayanan_publik">
+                                                        <div>PEDOMAN PELAYANAN PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/24/permohonan_informasi">
+                                                        <div>PERMOHONAN INFORMASI</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/25/permohonan_keberatan">
+                                                        <div>PERMOHONAN KEBERATAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/26/pengaduan">
+                                                        <div>PENGADUAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/27/tata_cara_permohonan_informasi">
+                                                        <div>TATA CARA PERMOHONAN INFORMASI</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/28/alur_skema_pengaduan">
+                                                        <div>ALUR SKEMA PENGADUAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/29/alur_sengketa_informasi">
+                                                        <div>ALUR SENGKETA INFORMASI</div>
+                                                    </a>
+
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                                                            
+                                <li class="menu-item">
+
+                                    <a class="menu-link"
+                                        href="/content/informasipublic/4/informasi_dikecualikan">
+                                        <div>Informasi Dikecualikan</div>
+                                    </a>
+
+                                                                            <ul class="sub-menu-container">
+
+                                                                                            <li class="menu-item">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/16/daftar_informasi_dikecualikan">
+                                                        <div>DAFTAR INFORMASI DIKECUALIKAN</div>
+                                                    </a>
+
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+
+                    </li>
+                    <li class="menu-item menu-color-sports"><a class="menu-link" href="/ppid">
+                            <div class="h6">PPID</div>
+                        </a></li>
+                    
+
+                    <li class="menu-item menu-color-sports"><a class="menu-link" href="#">
+                            <div class="h6">KUNJUNGAN TAMU</div>
+                        </a>
+                        <ul class="sub-menu-container">
+                            <li class="menu-item">
+                                <a class="menu-link" href="/content/e-tamu">
+                                    <div>Digital Press</div>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a class="menu-link" href="/content/permohonaninformasi=3">
+                                    <div>Pengaduan Layanan Masyarakat</div>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a class="menu-link" href="/content/status-permohonan">
+                                    <div>Cek Status Permohonan</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="/content/ppid/383/SOP">
+                                    <div>SOP Layanan</div>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+
+
+                    <li class="menu-item menu-color-food"><a class="menu-link"
+                            href="https://dispora.jatengprov.go.id/content/ppid/432/DOWNLOAD">
+                            <div class="h6">DOWNLOAD</div>
+                        </a></li>
+                    
+                </ul>
+
+                <!-- Mobile Menu
+          ============================================= -->
+                <ul class="menu-container mobile-primary-menu">
+                    <li class="menu-item current menu-color-home"><a class="menu-link" href="/">
+                            <div>HOME</div>
+                        </a></li>
+                    <li class="menu-item menu-color-market"><a class="menu-link" href="#">
+                            <div>PROFIL</div>
+                        </a>
+
+                        <ul class="sub-menu-container">
+                            <li class="menu-item mega-menu-title"><a class="menu-link" href="/content/visi-misi">
+                                    <div>VISI MISI</div>
+                                </a></li>
+                            <li class="menu-item mega-menu-title"><a class="menu-link"
+                                    href="/content/struktur-organisasi">
+                                    <div>STRUKTUR ORGANISASI</div>
+                                </a></li>
+                            <li class="menu-item mega-menu-title"><a class="menu-link"
+                                    href="/content/sdm-disporapar">
+                                    <div>SDM Dispora Jawa Tengah</div>
+                                </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item menu-color-travel"><a class="menu-link"
+                            href="https://data.jatengprov.go.id/">
+                            <div>OPEN DATA</div>
+                        </a></li>
+                    <li class="menu-item menu-color-lifestyle"><a class="menu-link" href="/content/events">
+                            <div>EVENT</div>
+                        </a></li>
+                    <li class="menu-item menu-color-lifestyle"><a class="menu-link" href="/blog/artikel">
+                            <div>ARTIKEL</div>
+                        </a></li>
+                    <li class="menu-item menu-color-tech"><a class="menu-link" href="#">
+                            <div>INFORMASI PUBLIK</div>
+                        </a>
+                        <ul class="sub-menu-container">
+
+                            
+                                                            
+                                <li class="menu-item  mega-menu-title">
+
+                                    <a class="menu-link" href="#">
+                                        <div>Informasi Berkala</div>
+                                    </a>
+
+                                                                            <ul class="sub-menu-container">
+
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/5/informasi_tentang_profil_badan_publik">
+                                                        <div>INFORMASI TENTANG PROFIL BADAN PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/6/ringkasan_program_dan_kegiatan_yang_sedang_dan_telah_dijalankan">
+                                                        <div>RINGKASAN PROGRAM DAN KEGIATAN YANG SEDANG DAN TELAH DIJALANKAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/7/informasi_pengadaan_barang_dan_jasa">
+                                                        <div>INFORMASI PENGADAAN BARANG DAN JASA</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/8/laporan_kinerja">
+                                                        <div>LAPORAN KINERJA</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/9/informasi_anggaran_dan_keuangan">
+                                                        <div>INFORMASI ANGGARAN DAN KEUANGAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/10/laporan_layanan_informasi_publik">
+                                                        <div>LAPORAN LAYANAN INFORMASI PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/11/ringkasan_laporan_akses_informasi_publik">
+                                                        <div>RINGKASAN LAPORAN AKSES INFORMASI PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/12/informasi_peraturan_perundangan_dan_kerjasama">
+                                                        <div>INFORMASI PERATURAN PERUNDANGAN DAN KERJASAMA</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/13/informasi_penerimaan_pegawai">
+                                                        <div>INFORMASI PENERIMAAN PEGAWAI</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/14/data_kebudayaan,_pariwisata_dan_ekonomi_kreatif">
+                                                        <div>DATA KEBUDAYAAN, PARIWISATA DAN EKONOMI KREATIF</div>
+                                                    </a>
+
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                                                            
+                                <li class="menu-item  mega-menu-title">
+
+                                    <a class="menu-link" href="#">
+                                        <div>Informasi Serta Merta</div>
+                                    </a>
+
+                                                                            <ul class="sub-menu-container">
+
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/30/informasi_serta_merta">
+                                                        <div>INFORMASI SERTA MERTA</div>
+                                                    </a>
+
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                                                            
+                                <li class="menu-item  mega-menu-title">
+
+                                    <a class="menu-link" href="#">
+                                        <div>Informasi Setiap Saat</div>
+                                    </a>
+
+                                                                            <ul class="sub-menu-container">
+
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/17/rencana_strategis">
+                                                        <div>RENCANA STRATEGIS</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/18/rencana_kerja">
+                                                        <div>RENCANA KERJA</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/19/daftar_informasi_publik">
+                                                        <div>DAFTAR INFORMASI PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/20/sk_ppid">
+                                                        <div>SK PPID</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/21/maklumat_pelayanan">
+                                                        <div>MAKLUMAT PELAYANAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/22/sop">
+                                                        <div>SOP</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/23/pedoman_pelayanan_publik">
+                                                        <div>PEDOMAN PELAYANAN PUBLIK</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/24/permohonan_informasi">
+                                                        <div>PERMOHONAN INFORMASI</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/25/permohonan_keberatan">
+                                                        <div>PERMOHONAN KEBERATAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/26/pengaduan">
+                                                        <div>PENGADUAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/27/tata_cara_permohonan_informasi">
+                                                        <div>TATA CARA PERMOHONAN INFORMASI</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/28/alur_skema_pengaduan">
+                                                        <div>ALUR SKEMA PENGADUAN</div>
+                                                    </a>
+
+                                                </li>
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/29/alur_sengketa_informasi">
+                                                        <div>ALUR SENGKETA INFORMASI</div>
+                                                    </a>
+
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                                                            
+                                <li class="menu-item  mega-menu-title">
+
+                                    <a class="menu-link" href="#">
+                                        <div>Informasi Dikecualikan</div>
+                                    </a>
+
+                                                                            <ul class="sub-menu-container">
+
+                                                                                            <li class="menu-item  mega-menu-title">
+
+                                                    <a class="menu-link"
+                                                        href="/content/informasipublic/16/daftar_informasi_dikecualikan">
+                                                        <div>DAFTAR INFORMASI DIKECUALIKAN</div>
+                                                    </a>
+
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-item menu-color-lifestyle"><a class="menu-link" href="/ppid">
+                            <div>PPID</div>
+                        </a></li>
+                    <li class="menu-item menu-color-lifestyle"><a class="menu-link" href="#">
+                            <div>KUNJUNGAN TAMU</div>
+                        </a>
+                        <ul class="sub-menu-container">
+                            <li class="menu-item">
+                                <a class="menu-link" href="/content/e-tamu">
+                                    <div>Digital Press</div>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a class="menu-link" href="/content/permohonaninformasi=3">
+                                    <div>Pengaduan Layanan Masyarakat</div>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a class="menu-link" href="/content/status-permohonan">
+                                    <div>Cek Status Permohonan</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="/content/ppid/383/SOP">
+                                    <div>SOP Layanan</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-item menu-color-tech"><a class="menu-link" href="/content/ppid/432/DOWNLOAD">
+                            <div>Download</div>
+                        </a></li>
+
+
+                </ul>
+
+            </nav><!-- #primary-menu end -->
+
+        </div>
+    </div>
+</div>
+            <div class="header-wrap-clone"></div>
+        </header>
+        <!-- #header end -->
+
+        <!-- Slider
+  ============================================= -->
+
+        <!-- Content
+  ============================================= -->
+
+            <!-- Page Title
+		============================================= -->
+		<section id="page-title" class="page-title-parallax page-title-dark" style="padding: 80px 0; background-image: url('https://dispora.jatengprov.go.id/frontend/assets/v2/images/parallax/20.jpg'); background-size: cover; background-position: center center;" data-bottom-top="background-position:0px 400px;" data-top-bottom="background-position:0px -500px;">
+
+			<div class="container clearfix">
+							
+				<h1>ppid</h1>
+				
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">ppid</li>
+				</ol>
+			</div>
+
+		</section><!-- #page-title end -->
+
+    <section id="content">
+        <div class="content-wrap">
+
+
+            <div class="container clearfix">
+
+                <div class="row clearfix">
+                    <!-- Second Posts Area
+                    ============================================= -->
+                    <div class="col-lg-8">
+
+                        <h4>DOWNLOAD</h4>
+
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Judul Dokumen</th>
+                                    <th>Tahun</th>
+                                    <th>Unduh Dokumen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                                                    <tr>
+                                        <td>1</td>
+                                        <td>DATA PEROLEHAN MEDALI POPDA JATENG 2026 PER CABOR </td>
+                                        <td>2026</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/DATA PEROLEHAN MEDALI POPDA JATENG 2026 PER CABOR-1789993414.rar" target="_blank">DATA PEROLEHAN MEDALI POPDA JATENG 2026 PER CABOR</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>2</td>
+                                        <td>PENGUMUMAN PENETAPAN NAMA ORGANISASI KEPEMUDAAN MASUK GRAND FINAL TAHUN 2026 </td>
+                                        <td>2026</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/PENGUMUMAN PENETAPAN NAMA ORGANISASI KEPEMUDAAN MASUK GRAND FINAL TAHUN 2026-1783933986.pdf" target="_blank">PENGUMUMAN PENETAPAN NAMA ORGANISASI KEPEMUDAAN MASUK GRAND FINAL TAHUN 2026</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>3</td>
+                                        <td>JUKNIS POPDA 2026 </td>
+                                        <td>2026</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/JUKNIS POPDA 2026-1773104955.pdf" target="_blank">JUKNIS POPDA 2026</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>4</td>
+                                        <td>Naskah Indeks Pembangunan Pemuda (IPP) Provinsi Jawa Tengah Tahun 2025 </td>
+                                        <td>2026</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/Naskah Indeks Pembangunan Pemuda (IPP) Provinsi Jawa Tengah Tahun 2025-1771907008.pdf" target="_blank">NASKAH INDEKS PEMBANGUNAN PEMUDA (IPP) PROVINSI JAWA TENGAH TAHUN 2025</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>5</td>
+                                        <td>RENCANA KERJA DAN AKSI REFORMASI BIROKRASI DISPORAPAR 2025 </td>
+                                        <td>2025</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/RENCANA KERJA REFORMASI BIROKRASI DISPORAPAR 2025-1754619667.pdf" target="_blank">RENCANA KERJA REFORMASI BIROKRASI DISPORAPAR 2025</a></strong></p>                                                                                            <p><strong><a href="/content/files/RENCANA AKSI REFORMASI BIROKRASI DISPORAPAR 2025-1754619667.pdf" target="_blank">RENCANA AKSI REFORMASI BIROKRASI DISPORAPAR 2025</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>6</td>
+                                        <td>NASKAH KEPEMUDAAN </td>
+                                        <td>2025</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/NASKAH PEMUDA PELOPOR JATENG + TTD-1739771945.pdf" target="_blank">NASKAH PEMUDA PELOPOR JATENG + TTD</a></strong></p>                                                                                            <p><strong><a href="/content/files/NASKAH INVENTARISASI PEMUDA WIRAUSAHA JAWA TENGAH 2024 + TTD-1739771944.pdf" target="_blank">NASKAH INVENTARISASI PEMUDA WIRAUSAHA JAWA TENGAH 2024 + TTD</a></strong></p>                                                                                            <p><strong><a href="/content/files/NASKAH INDEKS PEMBANGUNAN PEMUDA PROVINSI JAWA TENGAH 2024 + TTD-1739771945.pdf" target="_blank">NASKAH INDEKS PEMBANGUNAN PEMUDA PROVINSI JAWA TENGAH 2024 + TTD</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>7</td>
+                                        <td>SE Kesiapan DTW Menghadapi Libur Natal 2024 &amp; Tahun Baru 2025 </td>
+                                        <td>2024</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/SE Kesiapan DTW Menghadapi Libur Natal 2024 & Tahun Baru 2025-1733888183.pdf" target="_blank">SE KESIAPAN DTW MENGHADAPI LIBUR NATAL 2024 & TAHUN BARU 2025</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>8</td>
+                                        <td>SE Kesiapan Menghadapi Bencana </td>
+                                        <td>2024</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/SE Kesiapan Menghadapi Bencana-1724226001.pdf" target="_blank">SE KESIAPAN MENGHADAPI BENCANA</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>9</td>
+                                        <td>SE Waspada Penipuan ke Desa Wisata </td>
+                                        <td>2024</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/SE Waspada Penipuan ke Desa Wisata-1724223602.pdf" target="_blank">SE WASPADA PENIPUAN KE DESA WISATA</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>10</td>
+                                        <td>PENGUMUMAN PENERIMAAN ATLET PPLOP JAWA TENGAH 2024 </td>
+                                        <td>2024</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/PENGUMUMAN PENERIMAAN ATLET PPLOP JAWA TENGAH 2024-1717733590.pdf" target="_blank">PENGUMUMAN PENERIMAAN ATLET PPLOP JAWA TENGAH 2024</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>11</td>
+                                        <td>PENGUMUMAN PENERIMAAN PKKP TAHUN 2024 </td>
+                                        <td>2024</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/PENGUMUMAN PENERIMAAN PKKP TAHUN 2024-1717733481.pdf" target="_blank">PENGUMUMAN PENERIMAAN PKKP TAHUN 2024</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>12</td>
+                                        <td>Imbauan Partisipasi Pemilu 2024 </td>
+                                        <td>2024</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/Imbauan Partisipasi Pemilu 2024-1707815826.pdf" target="_blank">IMBAUAN PARTISIPASI PEMILU 2024</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>13</td>
+                                        <td>E-book Pedoman PKKP 2024 </td>
+                                        <td>2024</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/E-book Pedoman PKKP 2024-1704857352.pdf" target="_blank">E-BOOK PEDOMAN PKKP 2024</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>14</td>
+                                        <td>PENGUMUMAN PENERIMAAN PPPK 2023 </td>
+                                        <td>2023</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/PENGUMUMAN PENERIMAAN PPPK 2023-1717732700.pdf" target="_blank">PENGUMUMAN PENERIMAAN PPPK 2023</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>15</td>
+                                        <td>Surat Undangan Penganugerahan Gelar Desa Wisata 2023 </td>
+                                        <td>2023</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/Surat Undangan Penganugerahan Gelar Desa Wisata 2023-1694977465.pdf" target="_blank">SURAT UNDANGAN PENGANUGERAHAN GELAR DESA WISATA 2023</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>16</td>
+                                        <td>Seleksi Nasional Penerimaan Atlet SKO Nasional Kemenpora TA 2023 </td>
+                                        <td>2023</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/Seleksi Nasional Penerimaan Atlet SKO Nasional Kemenpora TA 2023-1686896029.pdf" target="_blank">SELEKSI NASIONAL PENERIMAAN ATLET SKO NASIONAL KEMENPORA TA 2023</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>17</td>
+                                        <td>SOSIALISASI KAMPANYE PARIWISATA KREATIF </td>
+                                        <td>2022</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/1665375650SOSIALISASI-KAMPANYE-PARIWISATA-KREATIF.pdf">SOSIALISASI KAMPANYE PARIWISATA KREATIF</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>18</td>
+                                        <td>SOP DISPORAPAR JATENG </td>
+                                        <td>2022</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/1662621700SOP-DISPORAPAR-JATENG.rar">SOP DISPORAPAR JATENG</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>19</td>
+                                        <td>Pengumuman Seleksi Administrasi SSEA YP 2022 </td>
+                                        <td>2022</td>
+                                        <td>
+                                                                                                                                                                                    <p><strong><a href="/content/files/1662078835Pengumuman-Seleksi-Administrasi-SSEA-YP-2022.pdf">Pengumuman Seleksi Administrasi SSEA YP 2022</a></strong></p>                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>20</td>
+                                        <td>Seleksi POPNAS XVI Tahun 2021 </td>
+                                        <td>2021</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/Seleksi%20POPNAS%20XVI%20Tahun%202021.pdf">Seleksi POPNAS XVI Tahun 2021</a></p>
+<p>
+	<a href="https://bit.ly/SeleksiPopnas2021">Form Pendaftaran Seleksi POPNAS XVI Tahun 2021 Provinsi Jawa Tengah</a></p>
+<p>
+	<a href="/content/files/Pemanggilan%20Seleksi%20Tahap%20I%20Atlet%20POPNAS.pdf">Pemanggilan Seleksi Tahap I Atlet POPNAS XVI Tahun 2021</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>21</td>
+                                        <td>PP Tentang Disiplin Pegawai Nomor 94 Tahun 2021 </td>
+                                        <td>2021</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/PP%20Disiplin%20Pegawai%20No.%2094%20Th.%202021.pdf">PP Tentang Disiplin Pegawai Nomor 94 Tahun 2021</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>22</td>
+                                        <td>SURAT EDARAN &amp; PANDUAN PEMILIHAN ORGANISASI KEPEMUDAAN BERPRESTASI 2020 </td>
+                                        <td>2020</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/SURAT%20EDARAN%20OK%20BERPRESTASI%20%202020.pdf">SURAT EDARAN&nbsp;ORGANISASI KEPEMUDAAN BERPRESTASI 2020</a></p>
+<p>
+	<a href="/content/files/PANDUAN%20PEMILIHAN_OK_BERPRESTASI_2020.pdf">PANDUAN PEMILIHAN ORGANISASI KEPEMUDAAN BERPRESTASI 2020</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>23</td>
+                                        <td>PEDOMAN HARI SUMPAH PEMUDA 2019 </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/Pedoman%20HSP%202019%20Baru%20ok.pdf"><strong>PEDOMAN HARI SUMPAH PEMUDA 2019</strong></a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>24</td>
+                                        <td>JUKNIS PEMUDA PELOPOR TAHUN 2019 </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/Pedoman%20Pemilihan%20Pelopor%202019.pdf">JUKNIS PEMUDA PELOPOR TAHUN 2019</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>25</td>
+                                        <td>Pemilihan Organisasi  Kepemudaan (OK) Berprestasi </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/surat%20EDARAN%20OK%20BERPRESTASI%202019.doc" target="_blank">SURAT EDARAN OK BERPRESTASI 2019</a></p>
+<p>
+	<a href="/content/files/Panduan%20PEMILIHAN_OK_BERPRESTASI_2019.doc" target="_blank">PANDUAN PEMILIHAN OK BERPRESTASI_2019</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>26</td>
+                                        <td>Seleksi Calon Peserta Program Pertukaran Pemuda Antar Negara (PPAN) Tahun 2019 </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/Surat%20PPAN.pdf">Seleksi Calon Peserta Program Pertukaran Pemuda Antar Negara (PPAN) Tahun 2019</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>27</td>
+                                        <td>PEMBINAAN PROMOSI PARIWISATA </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <h3 style="color:blue;">
+	<a href="/content/files/PEMBINAAN%20PROMOSI%20PARIWISATA.rar">PEMBINAAN PROMOSI PARIWISATA</a></h3>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>28</td>
+                                        <td>ASG (Asean Schools Games) 11th Semarang - Indonesia Tahun 2019 </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<strong><span style="font-family:tahoma,geneva,sans-serif;"><a href="/content/files/LOGO%20MASKOT%20PICTOGRAM%20ASG%202019%20(FORMAT%20PNG).rar">1. Maskot Utama - Master Logo - Pictogram Polos (.png)</a></span></strong></p>
+<p>
+	<strong><span style="font-family:tahoma,geneva,sans-serif;"><a href="/content/files/SPANDUK%20ASG%202019.rar">2. Desain Spanduk ASG 2019 (.rar)</a></span></strong></p>
+<ul>
+	<li>
+		<span style="font-size:11px;"><a href="/content/files/Desain%20Spanduk%20ASG%202019%20_%20Negara%20HD%204X1m.jpg"><strong><span style="font-family:tahoma,geneva,sans-serif;">Spanduk 1</span></strong></a></span></li>
+	<li>
+		<span style="font-size:11px;"><strong><span style="font-family:tahoma,geneva,sans-serif;"><a href="/content/files/Desain%20Spanduk%20ASG%202019%20_%20Pictogram%20Cabor%20HD%204X1m.jpg">Spanduk 2</a></span></strong></span></li>
+</ul>
+<h3 style="color:blue;">
+	<strong><span style="font-size:14px;">3. BALIHO SPANDUK ASG 2019 (.rar) &gt;&gt; klik <a href="/content/files/BALIHO%20SPANDUK%20ASG%202019.rar">download</a></span></strong></h3>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>29</td>
+                                        <td>Lomba Logo dan Kaos Oblong HUT ke-69 Provinsi Jawa Tengah </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<strong><span style="font-size:11px;"><span style="font-family:tahoma,geneva,sans-serif;"><a href="/content/files/POSTER%20LOMBA%20LOGO%20DAN%20KAOS%20OBLONG%20HUT%20JATENG%202019.jpg">1. Poster&nbsp;</a></span></span></strong></p>
+<p>
+	<strong><span style="font-size:11px;"><span style="font-family:tahoma,geneva,sans-serif;"><a href="/content/files/POSTER%20LOMBA%20LOGO%20DAN%20KAOS%20OBLONG%20HUT%20JATENG%202019%20(S%26K).jpg">2. Syarat dan Ketentuan</a></span></span></strong></p>
+<p>
+	<strong><span style="font-size:11px;"><span style="font-family:tahoma,geneva,sans-serif;"><a href="/content/files/SURAT%20PERNYATAAN%20LOMBA%20LOGO%20DAN%20KAOS%20HUT%2069%20JATENG(1).doc">3. Surat Pernyataan</a></span></span></strong></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>30</td>
+                                        <td>HUT JAWA TENGAH 69 </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/PESTA%20RAKYAT%20_%205X1m.jpg">SPANDUK HUT JATENG 69</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>31</td>
+                                        <td>SAMBUTAN DAN PEDOMAN HAORNAS 2019 </td>
+                                        <td>2019</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/SAMBUTAN%20DAN%20PEDOMAN%20HAORNAS%202019.rar">SAMBUTAN DAN PEDOMAN HAORNAS 2019</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>32</td>
+                                        <td>PERGUB JATENG NO 4 TAHUN 2018 TENTANG PELAKSANAAN PERDA NO 4 Th 2015 TENTANG PENYELENGGARAAN KEOLAHRAGAAN PROVINSI JAWA TENGAH </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/PERGUB%20TENTANG%20PETUNJUK%20PELAKSANAAN%20PERDA%20NO%204%20Th%202015_Maju%20Pergub%20BiroHukum%202%20%20tgl%2029.pdf">PERGUB JATENG NO 4 TAHUN 2018 TENTANG PELAKSANAAN PERDA NO 4 Th 2015 TENTANG PENYELENGGARAAN KEOLAHRAGAAN PROVINSI JAWA TENGAH</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>33</td>
+                                        <td>JUKLAK LOMBA OK (ORGANISASI KEPEMUDAAN) BERPRESTASI TAHUN 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/JUKLAK%20LOMBA%20OK%20(ORGANISASI%20KEPEMUDAAN)%20BERPRESTASI%20TAHUN%202018.rar">JUKLAK LOMBA OK (ORGANISASI KEPEMUDAAN) BERPRESTASI TAHUN 2018</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>34</td>
+                                        <td>MATERI RAKOR SINKRONISASI PROGRAM DAN KEGIATAN TAHUN 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<span style="font-size:12px;"><a href="/content/files/MATERI%20RAKOR%20SINKRONISASI%20PROGRAM%20DAN%20KEGIATAN%20TAHUN%202018.rar" target="_blank"><span style="font-family: arial, sans-serif;">MATERI RAKOR SINKRONISASI PROGRAM DAN KEGIATAN TAHUN 2018</span></a></span></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>35</td>
+                                        <td>Desain Sticker dan Spanduk Publikasi Asian Games 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/DESAIN%20STICKER%20%26%20SPANDUK%20ASIAN%20GAMES%202018.rar">Desain Sticker dan Spanduk Publikasi Asian Games 2018</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>36</td>
+                                        <td>Official Theme Song Asian Games 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="http://disporapar.jatengprov.go.id/content/files/OFFICIAL%20THEME%20SONG%20ASIAN%20GAMES%202018.rar" target="_blank">Official Theme Song Asian Games 2018</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>37</td>
+                                        <td>Buku HAORNAS 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/Buku%20Haornas%202018%20.pdf">Buku HAORNAS 2018</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>38</td>
+                                        <td>HARI SUMPAH PEMUDA 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <div>
+	<a href="/content/files/HSP%202018.rar" target="_blank">HARI SUMPAH PEMUDA 2018</a></div>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>39</td>
+                                        <td>Hasil Lomba OK Berprestasi Tingkat Jateng 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/Hasil%20Lomba%20OK%20Berprestasi%20Tingkat%20Jateng%202018.rar">Hasil Lomba OK Berprestasi Tingkat Jateng 2018</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>40</td>
+                                        <td>BIMTEK PERUNDANGAN - UNDANGAN 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/BIMTEK%20PERUNDANGAN%20-%20UNDANGAN%20_%20NOV%202018.rar">BIMTEK PERUNDANGAN - UNDANGAN</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>41</td>
+                                        <td>Hasil Seleksi Pelatih, Asisten Pelatih dan Pelatih Fisik Tahun 2018 </td>
+                                        <td>2018</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/Hasil%20Seleksi%20Pelatih%20_%20Asisten%20Pelatih%20dan%20Pelatih%20Fisik.rar">Hasil Seleksi Pelatih, Asisten Pelatih dan Pelatih Fisik Tahun 2018</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>42</td>
+                                        <td>FORMULIR PENDATAAN DATABASE KEPEMUDAAN &amp; OLAHRAGA </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/FORMULIR%20PENDATAAN%20DATABASE%20KEPEMUDAAN%20%26%20OLAHRAGA.rar">FORMULIR PENDATAAN DATABASE KEPEMUDAAN &amp; OLAHRAGA</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>43</td>
+                                        <td>PEMBERITAHUAN PEMENANG LOMBA SANGGAR KEBUGARAN TINGKAT JAWA TENGAH TAHUN 2017  </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/PEMENANG%20LOMBA%20SANGGAR%20KEBUGARAN%202017.jpg">PEMBERITAHUAN PEMENANG LOMBA SANGGAR KEBUGARAN TINGKAT JAWA TENGAH TAHUN 2017 </a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>44</td>
+                                        <td>Surat Edaran dan Juklak Kejuaraan Tenis Piala Gubernur 2017 </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	1.&nbsp;<a href="/content/files/Surat%20Edaran%20Kejuaraan%20Tenis%20Piala%20Gubernur%202017.pdf">Surat Edaran Kejuaraan Tenis Piala Gubernur 2017</a></p>
+<p>
+	2.<a href="/content/files/Juklak%20Tenis%20Piala%20Gubernur%202017.pdf">&nbsp;Juklak Kejuaraan Tenis Piala Gubernur 2017</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>45</td>
+                                        <td>Paparan Rakor sinkronisasi 19 - 20 Juli 2017 </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/PAPARAN_RAKOR_SINKRONISASI_19_-_20_JULI_2017.rar">PAPARAN_RAKOR_SINKRONISASI_19_-_20_JULI_2017.rar</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>46</td>
+                                        <td>LOGO, BUKU PEDOMAN DAN SAMBUTAN HAORNAS 2017 </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/LOGO%2C%20BUKU%20PEDOMAN%20DAN%20SAMBUTAN%20HAORNAS%202017.rar">LOGO, BUKU PEDOMAN DAN SAMBUTAN HAORNAS 2017</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>47</td>
+                                        <td>HAORNAS 2017 </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/HAORNAS%202017.rar">HAORNAS 2017</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>48</td>
+                                        <td>Spanduk Baliho Umbul dan Poster POPNAS XIV 2017 </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/POPNAS%20XIV%202017%20%28JPG%29.rar">Spanduk Baliho Umbul - umbul dan Poster POPNAS XIV 2017</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>49</td>
+                                        <td>EDARAN JUKLAK GERAK JALAN 28 TINGKAT JATENG 2017 </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="/content/files/EDARAN%20JUKLAK%20GERAK%20JALAN%2028%20TINGKAT%20JATENG%202017.pdf">EDARAN JUKLAK GERAK JALAN 28 TINGKAT JATENG 2017</a></p>
+                                                                                    </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>50</td>
+                                        <td>Sosialisasi Asian Games XVIII Tahun 2018 dan Promosi Pariwisata Jawa Tengah </td>
+                                        <td>2017</td>
+                                        <td>
+                                                                                                                                                                                    <p>
+	<a href="http://disporapar.jatengprov.go.id/content/files/SPANDUK5X15m.rar">DOWNLOAD SPANDUK</a></p>
+<p>
+	<a href="http://disporapar.jatengprov.go.id/content/files/BALIHO8X3m.rar">DOWNLOAD BALIHO</a></p>
+                                                                                    </td>
+                                    </tr>
+                                
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <!-- Second Sidebar
+                    ============================================= -->
+                    <div class="col-lg-4 sticky-sidebar-wrap mt-5 mt-lg-0">
+                        <div class="sticky-sidebar">
+                            <div class="widget clearfix">
+    <div class="section-title-modern mb-4">
+        <div class="title-text">
+            <h4 class="mb-1 text-uppercase font-weight-bold" style="font-size: 1.1rem; letter-spacing: 1px;">Artikel Populer</h4>
+            <div class="line-accent" style="width: 50px; background: #3f82e0;"></div>
+        </div>
+    </div>
+
+    <style>
+        .popular-news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .popular-news-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .popular-news-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .popular-news-item:hover {
+            transform: translateX(5px);
+        }
+
+        .popular-news-thumb {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .popular-news-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .popular-news-item:hover .popular-news-thumb img {
+            transform: scale(1.1);
+        }
+
+        .popular-news-info {
+            flex-grow: 1;
+        }
+
+        .popular-news-info h4 {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .popular-news-info h4 a {
+            color: #1e293b;
+            text-decoration: none !important;
+            transition: color 0.3s ease;
+        }
+
+        .popular-news-info h4 a:hover {
+            color: #3f82e0;
+        }
+
+        .popular-news-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .popular-news-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .popular-news-meta i {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+    
+    <div class="popular-news-list">
+        
+                        
+        <div class="popular-news-item">
+            <div class="popular-news-thumb">
+                <a href="https://dispora.jatengprov.go.id/post/310/Pekan-Olahraga-Provinsi-PORPROV-Jawa-Tengah-XVII-akan-dilaksanakan-pada-Tahun-2026">
+                    <img src="https://dispora.jatengprov.go.id/backend/Lampiran/Berita/thumb/WhatsApp Image 2025-05-14 at 17.19.31 (1)-1747366577.jpeg" alt="Pekan Olahraga Provinsi (PORPROV) Jawa Tengah XVII akan dilaksanakan pada Tahun 2026">
+                </a>
+            </div>
+            <div class="popular-news-info">
+                <h4>
+                    <a href="https://dispora.jatengprov.go.id/post/310/Pekan-Olahraga-Provinsi-PORPROV-Jawa-Tengah-XVII-akan-dilaksanakan-pada-Tahun-2026">
+                        Pekan Olahraga Provinsi (PORPROV) Jawa Tengah...
+                    </a>
+                </h4>
+                <div class="popular-news-meta">
+                    <span><i class="icon-calendar3"></i> 2025-05-14</span>
+                    <span><i class="icon-eye"></i> 16089</span>
+                </div>
+            </div>
+        </div>
+                        
+        <div class="popular-news-item">
+            <div class="popular-news-thumb">
+                <a href="https://dispora.jatengprov.go.id/post/224/Popda-Jateng-2022-Dimulai-Ganjar-Semoga-Atlet-Pencatat-Rekor-Dunia-Muncul-Dari-Sini">
+                    <img src="https://dispora.jatengprov.go.id/backend/Lampiran/Berita/thumb/WhatsApp Image 2022-07-13 at 8.03.17 AM-1657691658.jpeg" alt="Popda Jateng 2022 Dimulai, Ganjar : Semoga Atlet Pencatat Rekor Dunia Muncul Dari Sini">
+                </a>
+            </div>
+            <div class="popular-news-info">
+                <h4>
+                    <a href="https://dispora.jatengprov.go.id/post/224/Popda-Jateng-2022-Dimulai-Ganjar-Semoga-Atlet-Pencatat-Rekor-Dunia-Muncul-Dari-Sini">
+                        Popda Jateng 2022 Dimulai, Ganjar : Semoga At...
+                    </a>
+                </h4>
+                <div class="popular-news-meta">
+                    <span><i class="icon-calendar3"></i> 2022-07-13</span>
+                    <span><i class="icon-eye"></i> 13297</span>
+                </div>
+            </div>
+        </div>
+                        
+        <div class="popular-news-item">
+            <div class="popular-news-thumb">
+                <a href="https://dispora.jatengprov.go.id/post/231/Jambore-Pemuda-Jawa-Tengah-2022">
+                    <img src="https://dispora.jatengprov.go.id/backend/Lampiran/Berita/thumb/1 (2)-1669255336.jpeg" alt="Jambore Pemuda Jawa Tengah 2022">
+                </a>
+            </div>
+            <div class="popular-news-info">
+                <h4>
+                    <a href="https://dispora.jatengprov.go.id/post/231/Jambore-Pemuda-Jawa-Tengah-2022">
+                        Jambore Pemuda Jawa Tengah 2022
+                    </a>
+                </h4>
+                <div class="popular-news-meta">
+                    <span><i class="icon-calendar3"></i> 2022-11-21</span>
+                    <span><i class="icon-eye"></i> 8607</span>
+                </div>
+            </div>
+        </div>
+                        
+        <div class="popular-news-item">
+            <div class="popular-news-thumb">
+                <a href="https://dispora.jatengprov.go.id/post/216/Kota-Lama-menjadi-Ikon-Kota-SEMARANG">
+                    <img src="https://dispora.jatengprov.go.id/backend/Lampiran/Berita/thumb/WhatsApp%20Image%202020-01-07%20at%2012.02.08.jpeg" alt="Kota Lama menjadi Ikon Kota SEMARANG">
+                </a>
+            </div>
+            <div class="popular-news-info">
+                <h4>
+                    <a href="https://dispora.jatengprov.go.id/post/216/Kota-Lama-menjadi-Ikon-Kota-SEMARANG">
+                        Kota Lama menjadi Ikon Kota SEMARANG
+                    </a>
+                </h4>
+                <div class="popular-news-meta">
+                    <span><i class="icon-calendar3"></i> 2020-01-02</span>
+                    <span><i class="icon-eye"></i> 7575</span>
+                </div>
+            </div>
+        </div>
+                        
+        <div class="popular-news-item">
+            <div class="popular-news-thumb">
+                <a href="https://dispora.jatengprov.go.id/post/276/Duet-Pj-Gubernur-Jateng-Nana-Yon-Kalahkan-Abdel-Bedu-di-Eksibisi-Specta-Jateng-Pingpong">
+                    <img src="https://dispora.jatengprov.go.id/backend/Lampiran/Berita/thumb/WhatsApp Image 2024-05-17 at 08.31.33-1716874288.jpeg" alt="Duet Pj. Gubernur Jateng Nana - Yon Kalahkan Abdel - Bedu di Eksibisi Specta Jateng Pingpong">
+                </a>
+            </div>
+            <div class="popular-news-info">
+                <h4>
+                    <a href="https://dispora.jatengprov.go.id/post/276/Duet-Pj-Gubernur-Jateng-Nana-Yon-Kalahkan-Abdel-Bedu-di-Eksibisi-Specta-Jateng-Pingpong">
+                        Duet Pj. Gubernur Jateng Nana - Yon Kalahkan...
+                    </a>
+                </h4>
+                <div class="popular-news-meta">
+                    <span><i class="icon-calendar3"></i> 2024-05-17</span>
+                    <span><i class="icon-eye"></i> 7547</span>
+                </div>
+            </div>
+        </div>
+            </div>
+</div>                            <!-- Sidebar Video Widget -->
+    <div class="widget clearfix">
+        <div class="section-title-modern small-title mb-4">
+            <div class="title-text">
+                <h4 class="mb-2">Video Terkait</h4>
+                <div class="line-accent"></div>
+            </div>
+        </div>
+
+        <style>
+            .video-title-modern {
+                font-size: 1.1rem;
+                font-weight: 700;
+                line-height: 1.5;
+                margin-top: 15px;
+                color: #1e293b;
+            }
+            .video-title-modern a {
+                color: inherit;
+                transition: color 0.3s ease;
+            }
+            .video-title-modern a:hover {
+                color: #1c85e8;
+            }
+        </style>
+
+        <div class="owl-carousel fixed-nav carousel-widget posts-md" data-margin="0" data-nav="true" data-pagi="false"
+            data-items="1">
+                        <!-- Post Article -->
+            
+        </div>
+    </div>
+
+
+
+<!-- Commented Widgets preserved for potential future use -->
+<!--  -->
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+    </section>
+
+
+        <!-- #content end -->
+
+        <!-- Footer
+  ============================================= -->
+        <footer id="footer" class="dark" style="background-color: #2f69b5;">
+
+		<div class="container">
+
+			<!-- Footer Widgets
+			============================================= -->
+			<div class="footer-widgets-wrap row clearfix">
+
+				<div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+					<!-- Footer Widget 1
+					============================================= -->
+					<div class="widget clearfix">
+						<h4 class="mb-3 mb-sm-4">Random Article</h4>
+						<div class="posts-sm row col-mb-30" id="post-list-footer">
+																												<div class="entry col-12">
+								<div class="grid-inner row align-items-center no-gutters">
+									<div class="col-auto">
+										<div class="entry-image">
+											<a href="https://dispora.jatengprov.go.id/post/293/1-430-Peserta-Meriahkan-Specta-Jateng-Ultimate-Offroad-Challenge-2024-"><img src="https://dispora.jatengprov.go.id/backend/Lampiran/Berita/thumb/specta offroad-1727345066.jpg"  alt="Image" onerror="this.onerror=null; this.src='https://dispora.jatengprov.go.id/frontend/assets/images/no-image.png'"></a>
+										</div>
+									</div>
+									<div class="col pl-3">
+										<div class="entry-title">
+											<h4 class="font-weight-semibold"><a href="https://dispora.jatengprov.go.id/post/293/1-430-Peserta-Meriahkan-Specta-Jateng-Ultimate-Offroad-Challenge-2024-" class="text-white">1.430 Peserta Meriahkan “Specta Jateng...</a></h4>
+										</div>
+										<div class="entry-meta">
+											<ul>
+												<li><span>by</span> <a href="#">Admin Website</a></li>
+												<li><i class="icon-time"></i><a href="#">2024-08-04</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+																					<div class="entry col-12">
+								<div class="grid-inner row align-items-center no-gutters">
+									<div class="col-auto">
+										<div class="entry-image">
+											<a href="https://dispora.jatengprov.go.id/post/263/TURNAMEN-VOLI-PIALA-GUBERNUR-JATENG-2024-DITUTUP-BANK-JATENG-PUTRA-DAN-GRESIK-PETROKIMIA-PUPUK-JUARA"><img src="https://dispora.jatengprov.go.id/backend/Lampiran/Berita/thumb/voli piala gubernur 2-1711516926.jpg"  alt="Image" onerror="this.onerror=null; this.src='https://dispora.jatengprov.go.id/frontend/assets/images/no-image.png'"></a>
+										</div>
+									</div>
+									<div class="col pl-3">
+										<div class="entry-title">
+											<h4 class="font-weight-semibold"><a href="https://dispora.jatengprov.go.id/post/263/TURNAMEN-VOLI-PIALA-GUBERNUR-JATENG-2024-DITUTUP-BANK-JATENG-PUTRA-DAN-GRESIK-PETROKIMIA-PUPUK-JUARA" class="text-white">TURNAMEN VOLI PIALA GUBERNUR JATENG 2024...</a></h4>
+										</div>
+										<div class="entry-meta">
+											<ul>
+												<li><span>by</span> <a href="#">Admin Website</a></li>
+												<li><i class="icon-time"></i><a href="#">2024-02-06</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+																					<div class="entry col-12">
+								<div class="grid-inner row align-items-center no-gutters">
+									<div class="col-auto">
+										<div class="entry-image">
+											<a href="https://dispora.jatengprov.go.id/post/242/CABOR-TENIS-LAPANGAN-BEREGU-PUTRI-JATENG-SABET-MEDALI-EMAS"><img src="https://dispora.jatengprov.go.id/backend/Lampiran/Berita/thumb/Cabor Tenis Lapangan Putri Sabet Medali Emas-1691036985.jpeg"  alt="Image" onerror="this.onerror=null; this.src='https://dispora.jatengprov.go.id/frontend/assets/images/no-image.png'"></a>
+										</div>
+									</div>
+									<div class="col pl-3">
+										<div class="entry-title">
+											<h4 class="font-weight-semibold"><a href="https://dispora.jatengprov.go.id/post/242/CABOR-TENIS-LAPANGAN-BEREGU-PUTRI-JATENG-SABET-MEDALI-EMAS" class="text-white">CABOR TENIS LAPANGAN BEREGU PUTRI JATENG...</a></h4>
+										</div>
+										<div class="entry-meta">
+											<ul>
+												<li><span>by</span> <a href="#">Admin Website</a></li>
+												<li><i class="icon-time"></i><a href="#">2023-07-17</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+														
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer Widget 2
+					============================================= -->
+			
+
+		
+
+				<!-- Footer Widget 4
+				============================================= -->
+				<div class="col-lg-3 col-sm-6 mb-0">
+					<div class="widget widget_links clearfix">
+						<h4 class="mb-3 mb-sm-4">Info Mengenai Kami</h4>
+						<div style="background: url('https://dispora.jatengprov.go.id/frontend/images/hp.png') no-repeat center center; background-size: 100%;">
+							<address>
+								<strong>Alamat:</strong><br> 
+								Jl. Ki Mangunsarkoro No. 12 Semarang 50241<br>
+							</address>
+							<abbr title="Phone Number"><strong>Phone:</strong></abbr> (024) 8419957, 8419958<br>
+							<abbr title="Email Address"><strong>Email:</strong></abbr> dispora@jatengprov.go.id
+							  <!-- Histats.com  (div with counter) --><div id="histats_counter" class="mt-4"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+	_Hasync.push(['Histats.start', '1,3728684,4,1051,135,50,00001010']);
+	_Hasync.push(['Histats.fasi', '1']);
+	_Hasync.push(['Histats.track_hits', '']);
+	(function() {
+	var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+	hs.src = ('//s10.histats.com/js15_as.js');
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+	})();</script>
+	<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?3728684&101" alt="myspace tracker" border="0"></a></noscript>
+	<!-- Histats.com  END  -->
+						</div>
+					</div>
+				</div>
+		<!-- Footer Widget 3
+				============================================= -->
+				<div class="col-lg-2 col-sm-6 mb-5 mb-sm-0">
+					<div class="widget widget_links clearfix">
+						<h4 class="mb-3 mb-sm-4">Peta Google</h4>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d974.7750405857495!2d110.42966490717126!3d-6.987826696980534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708d002f457a73%3A0x54ae206c2f63c9bc!2sDISPORA%20JATENG!5e0!3m2!1sid!2sid!4v1771553275166!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+					<div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
+					<h4 class="mb-3 mb-sm-4">Jumlah Kunjungan</h4>
+					<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=65eab99db46b52ca17c8c1d591fecc7231bda7cd'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1502261/t/0"></script>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Copyrights
+		============================================= -->
+		
+
+		<div id="copyrights">
+			<div class="container">
+
+				<div class="row justify-content-between col-mb-30">
+					<div class="col-12 col-lg-auto text-center text-lg-left">
+						
+						Copyrights &copy; 2026 All Rights Reserved by Dinas Kepemudaan Olah Raga dan Pariwisata Provinsi Jawa Tengah.
+					</div>
+
+					<div class="col-12 col-lg-auto text-center text-lg-right">
+						<a href="https://www.facebook.com/profile.php?id=61587023095669" class="social-icon inline-block si-small si-borderless mb-0 si-facebook">
+							<i class="icon-facebook"></i>
+							<i class="icon-facebook"></i>
+						</a>
+
+						<a href="https://www.instagram.com/disporajateng/" class="social-icon inline-block si-small si-borderless mb-0 si-instagram">
+							<i class="icon-instagram"></i>
+							<i class="icon-instagram"></i>
+						</a>
+			
+						<a href="NULL" class="social-icon inline-block si-small si-borderless mb-0 si-twitter">
+							<i class="icon-twitter"></i>
+							<i class="icon-twitter"></i>
+						</a>
+
+						<a href="https://www.youtube.com/@DisporaJateng" class="social-icon inline-block si-small si-borderless mb-0 si-youtube">
+							<i class="icon-youtube"></i>
+							<i class="icon-youtube"></i>
+						</a>
+
+						
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</footer>
+        <!-- #footer end -->
+
+    </div><!-- #wrapper end -->
+
+    <div class="floatingButtonWrap">
+        <div class="floatingButtonInner">
+            <a href="#" class="floatingButton">
+                <i class="fa icon-sound icon-default"></i>
+            </a>
+            <ul class="floatingMenu">
+                <li>
+                    <a href="/sessionvoice?aktif=true">Aktifkan Suara</a>
+                </li>
+                <li>
+                    <a href="/sessionvoice?aktif=false">Matikan Suara</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Go To Top
+ ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- JavaScripts
+ ============================================= -->
+    <script src="https://dispora.jatengprov.go.id/frontend/js/jquery.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/js/plugins.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/js/plugins.infinitescroll.js"></script>
+
+    <!-- Footer Scripts
+ ============================================= -->
+    <script src="https://dispora.jatengprov.go.id/frontend/js/functions.js"></script>
+
+    <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js">
+    </script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="https://dispora.jatengprov.go.id/frontend/include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+
+    <!-- ADD-ONS JS FILES -->
+
+
+        <script>
+        var _userway_config = {
+            account: 'iqNafQvc6J',
+            position: 2,
+        };
+    </script>
+    <script src="https://cdn.userway.org/widget.js" data-account="iqNafQvc6J"></script>
+        
+
+    <script>
+        $(document).ready(function() {
+            $('.floatingButton').on('click',
+                function(e) {
+                    e.preventDefault();
+                    $(this).toggleClass('open');
+                    if ($(this).children('.fa').hasClass('icon-sound')) {
+                        $(this).children('.fa').removeClass('icon-sound');
+                        $(this).children('.fa').addClass('icon-line2-close');
+                    } else if ($(this).children('.fa').hasClass('icon-line2-close')) {
+                        $(this).children('.fa').removeClass('icon-line2-close');
+                        $(this).children('.fa').addClass('icon-sound');
+                    }
+                    $('.floatingMenu').stop().slideToggle();
+                }
+            );
+            $(this).on('click', function(e) {
+
+                var container = $(".floatingButton");
+                // if the target of the click isn't the container nor a descendant of the container
+                if (!container.is(e.target) && $('.floatingButtonWrap').has(e.target).length === 0) {
+                    if (container.hasClass('open')) {
+                        container.removeClass('open');
+                    }
+                    if (container.children('.fa').hasClass('icon-line2-close')) {
+                        container.children('.fa').removeClass('icon-line2-close');
+                        container.children('.fa').addClass('icon-sound');
+                    }
+                    $('.floatingMenu').hide();
+                }
+
+                // if the target of the click isn't the container and a descendant of the menu
+                if (!container.is(e.target) && ($('.floatingMenu').has(e.target).length > 0)) {
+                    $('.floatingButton').removeClass('open');
+                    $('.floatingMenu').stop().slideToggle();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

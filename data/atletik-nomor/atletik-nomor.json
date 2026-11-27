@@ -66,9 +66,36 @@
    "lanes": true
   },
   {
+   "code": "80m",
+   "label": "Lari 80 m",
+   "label_en": "80m",
+   "kind": "track",
+   "group": "sprint",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "lanes": true,
+   "championship": "POPDA Jawa Tengah SMP",
+   "note": "Not a World Athletics standard event."
+  },
+  {
    "code": "800m",
    "label": "Lari 800 m",
    "label_en": "800m",
+   "kind": "track",
+   "group": "middle",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
+   "code": "1000m",
+   "label": "Lari 1000 m",
+   "label_en": "1000m",
    "kind": "track",
    "group": "middle",
    "result": "time",
@@ -358,6 +385,18 @@
    "implement": "Javelin"
   },
   {
+   "code": "3000mW",
+   "label": "Jalan cepat 3000 m",
+   "label_en": "3000m Race Walk",
+   "kind": "walk",
+   "group": "race_walk",
+   "result": "time",
+   "sexes": [
+    "M",
+    "W"
+   ]
+  },
+  {
    "code": "5000mW",
    "label": "Jalan cepat 5000 m",
    "label_en": "5000m Race Walk",
@@ -540,6 +579,20 @@
     "W"
    ],
    "championship": "O2SN SMA"
+  },
+  {
+   "code": "TriSD",
+   "label": "Trilomba SD",
+   "label_en": "Triathlon (school, primary)",
+   "kind": "combined",
+   "group": "combined",
+   "result": "points",
+   "sexes": [
+    "M",
+    "W"
+   ],
+   "championship": "POPDA Jawa Tengah SD",
+   "note": "The juknis does not name the three events."
   },
   {
    "code": "KA_KANGA",
@@ -962,6 +1015,153 @@
     "Roll call (SMP, SMA): track events first call 30 min and last call 20 min before the start, entry to the arena 15 min before; jumps and throws 60 / 40 / 30 min.",
     "Medals for places 1–3 of the combined result (SD: Kids' Athletics total); certificates for places 1–3 per event and 4–8 overall."
    ]
+  },
+  "POPDA_JATENG_2026": {
+   "name": "Pekan Olahraga Pelajar Daerah (POPDA) Tingkat Provinsi Jawa Tengah 2026",
+   "organiser": "Dinas Kepemudaan dan Olahraga Provinsi Jawa Tengah",
+   "dates": {
+    "start": "2026-09-01",
+    "end": "2026-09-06",
+    "competition": [
+     "2026-09-02",
+     "2026-09-05"
+    ],
+    "technical_meeting": "2026-09-01",
+    "venue_city": "Kota Semarang",
+    "ref": "Juknis POPDA Tingkat Provinsi Jawa Tengah 2026 (Dispora Jateng, surat 400.3.9.2/371/2026, 27 Feb 2026), IV (PDF p. 3)"
+   },
+   "rules_basis": "World Athletics Competition and Technical Rules 2026 Edition, adapted to local conditions (printed \"World Atletics\")",
+   "levels": {
+    "SD": {
+     "age_group": "POPDA_JATENG_2026",
+     "sport_label": "Atletik",
+     "events": {
+      "M": [
+       "60m",
+       "1000m",
+       "LJ",
+       "SP"
+      ],
+      "W": [
+       "60m",
+       "1000m",
+       "LJ",
+       "SP"
+      ]
+     },
+     "combined": "TriSD",
+     "implements_kg": {
+      "SP": {
+       "M": 3.0,
+       "W": 2.0
+      }
+     }
+    },
+    "SMP": {
+     "age_group": "POPDA_JATENG_2026",
+     "sport_label": "Atletik",
+     "events": {
+      "M": [
+       "80m",
+       "400m",
+       "1500m",
+       "4x100m",
+       "SP",
+       "LJ"
+      ],
+      "W": [
+       "80m",
+       "400m",
+       "1500m",
+       "4x100m",
+       "SP",
+       "LJ"
+      ]
+     },
+     "implements_kg": {
+      "SP": {
+       "M": 4.0,
+       "W": 3.0
+      }
+     }
+    },
+    "SMA": {
+     "age_group": "POPDA_JATENG_2026",
+     "sport_label": "Atletik",
+     "events": {
+      "M": [
+       "100m",
+       "800m",
+       "3000m",
+       "3000mW",
+       "4x100m",
+       "SP",
+       "LJ",
+       "HJ",
+       "JT"
+      ],
+      "W": [
+       "100m",
+       "800m",
+       "3000m",
+       "3000mW",
+       "4x100m",
+       "SP",
+       "LJ",
+       "HJ",
+       "JT"
+      ]
+     },
+     "implements_kg": {
+      "SP": {
+       "M": 5.0,
+       "W": null
+      },
+      "JT": {
+       "M": 0.7,
+       "W": 0.6
+      }
+     },
+     "implements_note": "SMA putri shot printed \"24 kg\": see errata."
+    }
+   },
+   "events_count": {
+    "M": 20,
+    "W": 20,
+    "ref": "Juknis POPDA Tingkat Provinsi Jawa Tengah 2026 (Dispora Jateng, surat 400.3.9.2/371/2026, 27 Feb 2026), VI table (PDF p. 3) and VII.2 (PDF p. 5)"
+   },
+   "events_ref": "Juknis POPDA Tingkat Provinsi Jawa Tengah 2026 (Dispora Jateng, surat 400.3.9.2/371/2026, 27 Feb 2026), VII.2 Atletik, table of events (PDF p. 5)",
+   "implements_ref": "Juknis POPDA Tingkat Provinsi Jawa Tengah 2026 (Dispora Jateng, surat 400.3.9.2/371/2026, 27 Feb 2026), VII.2 Ketentuan 7 (PDF p. 5)",
+   "entries": [
+    "One athlete enters at most two individual events (Ketentuan 4).",
+    "Trilomba: at most 1 athlete per kabupaten/kota, who may not enter any other individual event (Ketentuan 5).",
+    "Quota per kabupaten/kota; at most 2 athletes of the same kabupaten/kota per event (Ketentuan 6).",
+    "An athlete takes part in one sport only (V.5)."
+   ],
+   "entries_ref": "Juknis POPDA Tingkat Provinsi Jawa Tengah 2026 (Dispora Jateng, surat 400.3.9.2/371/2026, 27 Feb 2026), VII.2 Ketentuan 4–6 (PDF p. 5), V.5 (PDF p. 3)",
+   "registration": "SIMPORA, 1 July – 20 August 2026; offline verification 24 August 2026 (VIII, PDF p. 18)",
+   "exhibition": "An event with fewer than 5 kabupaten/kota taking part is an exhibition event: medals and certificates are given but do not count for the overall standing (IX, PDF p. 18).",
+   "overall_standing": "By medals (gold, silver, bronze); the winning kabupaten/kota receives a trophy (IX–X, PDF p. 18).",
+   "errata": [
+    {
+     "field": "levels.SMA.implements_kg.SP.W",
+     "printed": "24 kg",
+     "value": null,
+     "status": "unresolved",
+     "page": "PDF p. 5, VII.2 Ketentuan 7",
+     "reason": "A 24 kg shot is impossible; the juknis does not show whether 3 kg (World Athletics U18) or 4 kg (U20, senior) is meant. Ask the organiser or the technical meeting minutes (F-031)."
+    }
+   ],
+   "not_stated": [
+    "the three events of Trilomba SD",
+    "hurdles (no hurdle events)",
+    "trials per field event",
+    "qualifying marks"
+   ],
+   "common": [
+    "Eligibility is in atletik-kelompok-umur (POPDA_JATENG_2026).",
+    "The levels follow the athlete's school (SD, SMP, SMA); the juknis gives no separate age band per level."
+   ]
   }
  },
  "refs": {
@@ -973,6 +1173,7 @@
  "notes": [
   "sexes: M putra, W putri, X campuran. Events without wind_seconds have no wind reading.",
   "O2SN 2026 (SD Kids' Athletics, SMP Trilomba, SMA/SMK Pancalomba) is under `championships`, with implements, trials and qualifying marks per level; its scoring is in atletik-hasil.",
-  "PASI U14/U16 and POPDA/POPNAS specifications follow their technical handbooks: brief R-10b."
+  "POPDA Jawa Tengah 2026 is under `championships` (events and implements per level, entry limits, exhibition rule, errata); its eligibility is in atletik-kelompok-umur.",
+  "PASI U14/U16 and POPNAS events and implements: no official document reachable yet (brief R-10b)."
  ]
 }

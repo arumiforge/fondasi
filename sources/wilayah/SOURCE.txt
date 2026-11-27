@@ -14,6 +14,11 @@ What it changes (diktum KESATU): only the island data of Aceh and Sumatera Utara
 Ketek, Lipan and Panjang move to Kabupaten Aceh Singkil (11.10), following the agreement of 17 June 2025
 (04/MOU/2025, 100.2.3.3/5270/2025). The 2138/2025 decree stays in force where it is not changed (KEDUA a).
 
+Official copy (2026-11-27): a browser run found the decree on the Ditjen Bina Administrasi Kewilayahan site,
+https://ditjenbinaadwil.kemendagri.go.id/download/file/Kepmen_Perubahan_300.2.2-2430.pdf (5,517,958 bytes, 23
+pages, scanned, SHA-256 3ef2790683ccddd8bde7b048c6fcef72e10b9189eaf7104c1d55188f51ebc5ab). Same decree and date as
+file 1 (a different scan); not stored. Report: R-14-SOURCE-ditjenbinaadwil-2026-11-27.txt.
+
 Check against data/wilayah 2026-02-13 (2026-11-26): attachment A (page 6) totals 416 kabupaten, 98 kota,
 7,285 kecamatan, 8,496 kelurahan, 75,266 desa (14 of them desa adat, code 3xxx); Aceh 18/5/290/0/6,500 and
 Sumatera Utara 25/8/455/693/5,417. data/wilayah has exactly these counts, so no region code or name changes.
