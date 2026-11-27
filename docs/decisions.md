@@ -149,7 +149,8 @@ open by law (UU 4/2011 Pasal 12 huruf e, Pasal 42), credited as "Sumber: Badan I
 cahyadsn/wilayah_boundaries (MIT) may serve as a cross-check. `data/batas-wilayah` holds GeoJSON per regency for
 desa and kecamatan, simplified to about 11 m on shared arcs so neighbours stay together; districts are the union of
 their villages. Regencies are added on demand, Kabupaten Kudus first, then all 35 regencies of Jawa Tengah (user,
-2026-11-27: "tambahkan juga untuk seluruh jawa tengah"). Full-precision downloads are kept outside the repository
+2026-11-27: "tambahkan juga untuk seluruh jawa tengah"); the set stops there until the user asks for more (user,
+2026-11-27: "cukup jawa tengah dulu"). Full-precision downloads are kept outside the repository
 (65 MB for Jawa Tengah); `sources/batas-wilayah/SOURCE.txt` records the fetch time and `content_sha256` of every
 regency, and only Kudus's download stays in `sources/batas-wilayah/` as a sample that rebuilds its files. Coordinates
 have 6 decimals; arcs where rounding to 6 decimals would make a ring cross itself (BIG's own rings do not) keep up to
