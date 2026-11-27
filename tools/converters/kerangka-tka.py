@@ -10,8 +10,10 @@ Sources (sources/kerangka-tka/, SOURCE.txt):
 Both PDFs have a clean text layer. The content is transcribed below as printed, with the PDF page of every part.
 Every text unit (sentence, list item, table cell) is checked against the PDF: its letters and digits must occur in
 the page text or in a table cell that pdfplumber reads on that page; every table cell of the framework tables must
-be covered by the transcription. The sample questions (part IV of 047) are left out: they are examples with
-figures, not framework data. The script stops on any mismatch, then writes data/kerangka-tka/kerangka-tka.json:
+be covered by the transcription. The sample questions of part IV are in kerangka_tka_contoh_soal.py (their text-layer
+units are checked the same way; formulas and the texts inside images were read on the page images); their figures
+are cut from 200-dpi page renders (pdftoppm, Pillow). The script stops on any mismatch, then writes
+data/kerangka-tka/kerangka-tka.json and data/kerangka-tka/contoh-soal/*.png|jpg:
 
   python3 -I tools/converters/kerangka-tka.py sources/kerangka-tka data
 """
@@ -20,6 +22,9 @@ import os
 import re
 import subprocess
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import kerangka_tka_contoh_soal as CS  # noqa: E402
 
 P047 = "Perka_BSKAP_No_047_H_AN_2025_Kerangka_Asesmen_TKA_SD_MI_dan_SMP_MTs.pdf"
 P56 = "Kepmendikdasmen_No_56_Tahun_2026_Pedoman_Penyelenggaraan_TKA_dan_AN.pdf"
@@ -438,7 +443,47 @@ SCORING = {
         "Predikat istimewa diperuntukkan peserta jenjang SMA/MA/sederajat dan SMK/MAK yang mendapatkan nilai 725,00 "
         "atau lebih di masing-masing mata uji.",
     ],
-    "note": "Kepmendikdasmen 56/2026 names the categories without cut scores.",
+    "note": "Kepmendikdasmen 56/2026 names the categories without cut scores; the limits below are secondary.",
+    # User decision 2026-11-27: store the reported 2026 limits, marked secondary, and keep the conflicting report.
+    "limits": {
+        "year": 2026,
+        "levels": ["SD/MI/sederajat", "SMP/MTs/sederajat"],
+        "confidence": "secondary",
+        "categories": [
+            {"category": "Kurang", "min": 0, "max_exclusive": 50},
+            {"category": "Memadai", "min": 50, "max_exclusive": 76.67},
+            {"category": "Baik", "min": 76.67, "max": 100},
+        ],
+        "istimewa_from": 95.00,
+        "applies_to": "every subject (Bahasa Indonesia and Matematika), SD/MI and SMP/MTs",
+        "sources": [
+            {"title": "ANTARA, 'Kemendikdasmen pastikan metode olah nilai TKA tidak rugikan murid' (2026-05-26), "
+                      "report of the Pusmendik media briefing (Kapusmendik Rahmawati)",
+             "url": "https://www.antaranews.com/berita/5583537/kemendikdasmen-pastikan-metode-olah-nilai-tka-tidak-"
+                    "rugikan-murid"},
+            {"title": "detikEdu, '8.500 murid SD-SMP dapat nilai 100 di TKA 2026' (2026-05-26), same briefing",
+             "url": "https://www.detik.com/edu/sekolah/d-8505710/8-500-murid-sd-smp-dapat-nilai-100-di-tka-2026-"
+                    "mapel-ini-simak-datanya"},
+        ],
+        "notes": [
+            "Not stated in Kepmendikdasmen 56/2026 nor in the Juknis TKA-AN 2026 (Kepka BKPDM 017/F/AN/2026). The "
+            "Kapusmendik said the limits come from standard setting with subject teachers, so they may change from "
+            "year to year.",
+            "ANTARA writes 'sama dengan atau lebih dari 50' for Memadai; detikEdu writes '>50'. 50 is placed in "
+            "Memadai here.",
+        ],
+        "conflicting_reports": [
+            {"scope": "Matematika SMP/MTs/sederajat 2026",
+             "categories": [{"category": "Kurang", "min": 0, "max_exclusive": 33.33},
+                            {"category": "Memadai", "min": 33.33, "max_exclusive": 56.67},
+                            {"category": "Baik", "min": 56.67, "max": 100}],
+             "source": {"title": "Medcom.id, '4 Kategori Nilai Matematika SMP di TKA 2026' (2026-07-24), citing an "
+                                 "Instagram post of @litbangdikbud",
+                        "url": "https://www.medcom.id/pendidikan/news-pendidikan/eN44D4WN-4-kategori-nilai-matematika-"
+                               "smp-di-tka-2026-nilaimu-masuk-kategori-apa"},
+             "note": "Contradicts the 26 May briefing reports; not resolved. Check against an official document."},
+        ],
+    },
 }
 
 # ------------------------------------------------------------------ checks against the PDFs
@@ -509,6 +554,30 @@ def check(src, out):
                     a, b = v.split("-")
                     if a not in pages56[46] + pages56[47] or b not in pages56[46] + pages56[47]:
                         bad.append(v)
+    # part IV: raw and layout text (table columns), page numbers ("- 28 -") removed so text runs across pages
+    lay = subprocess.run(["pdftotext", "-layout", pdf047, "-"], capture_output=True, text=True, check=True).stdout
+    strip = lambda t: re.sub(r"(?m)^\s*-\s*\d+\s*-\s*$", " ", t)  # noqa: E731
+    corpus_iv = norm(strip(" ".join(pages[24:46]))) + "|" + norm(strip(" ".join(lay.split("\f")[24:46])))
+    for q in CS.QUESTIONS:
+        for u in units([q["question"], q.get("statements", []), [o.get("text") for o in q.get("options", [])
+                                                                  if "figure" not in o]]):
+            if "$" in u:
+                continue  # formulas were read on the page images
+            if norm(u) and norm(u) not in corpus_iv:
+                bad.append(u)
+        for k in ("kompetensi", "subkompetensi", "elemen", "sub_elemen", "level_kognitif", "bentuk_soal"):
+            if q.get(k) and norm(q[k]) not in corpus_iv:
+                bad.append(f"{q['level']} {q['subject']} {q['no']} {k}: {q[k]}")
+        if norm(f"KUNCI JAWABAN : {q['key_printed']}") not in corpus_iv:
+            bad.append(f"key of {q['level']} {q['subject']} {q['no']}: {q['key_printed']}")
+    for st in CS.STIMULI:
+        if not st["text_from_image"]:
+            for u in units(st["text"] + [st["title"], st.get("source", "")]):
+                if norm(u) and norm(u) not in corpus_iv:
+                    bad.append(u)
+    for page, printed, why in CS.ERRATA:
+        if norm(printed) not in norm(pages[page - 1]):
+            bad.append(f"sample erratum not on p. {page}: {printed}")
     for doc, page, printed, why in ERRATA:
         if norm(printed) not in norm(json.dumps(out, ensure_ascii=False)):
             bad.append(f"erratum not in the data: {printed}")
@@ -520,6 +589,31 @@ def check(src, out):
         sys.exit(1)
 
 
+def figures(src, out_dir):
+    """Cut the figures of part IV from 200-dpi page renders."""
+    from PIL import Image
+    import tempfile
+    pdf = os.path.join(src, P047)
+    out = os.path.join(out_dir, "kerangka-tka", "contoh-soal")
+    os.makedirs(out, exist_ok=True)
+    dpi, pages = 200, {}
+    with tempfile.TemporaryDirectory() as tmp:
+        for name, (p, x0, t, x1, b) in CS.FIGURES.items():
+            if p not in pages:
+                base = os.path.join(tmp, f"p{p}")
+                subprocess.run(["pdftoppm", "-r", str(dpi), "-f", str(p), "-l", str(p), "-png", "-singlefile", pdf,
+                                base], check=True)
+                pages[p] = Image.open(base + ".png").convert("RGB")
+            k = dpi / 72
+            im = pages[p].crop((int(x0 * k) - 2, int(t * k) - 2, int(x1 * k) + 2, int(b * k) + 2))
+            path = os.path.join(out_dir, "kerangka-tka", CS.fig(name))
+            if name in CS.PHOTOS:
+                im.save(path, quality=82, optimize=True)
+            else:
+                im.save(path, optimize=True)
+    return len(CS.FIGURES)
+
+
 def main(src, out_dir):
     data = {
         "source": {"framework": f"{REF047} (PDF p. 7–25)", "administration": f"{REF56} (BAB IV, PDF p. 31–32; BAB VIII, p. 47–48; BAB X, p. 52–53)"},
@@ -529,6 +623,13 @@ def main(src, out_dir):
         "frameworks": FRAMEWORKS,
         "schedule": SCHEDULE, "schedule_notes": SCHEDULE_NOTES,
         "scoring": SCORING,
+        "sample_questions": {
+            "source": f"{REF047}, part IV Contoh Soal (PDF p. 25–46)",
+            "notes": CS.NOTES,
+            "stimuli": CS.STIMULI,
+            "questions": CS.QUESTIONS,
+            "errata": [{"page": p, "printed": t, "reason": w} for p, t, w in CS.ERRATA],
+        },
         "errata": [{"source": REF047 if d == "047" else REF56, "page": p, "printed": t, "reason": w}
                    for d, p, t, w in ERRATA],
     }
@@ -537,6 +638,7 @@ def main(src, out_dir):
     with open(os.path.join(out_dir, "kerangka-tka", "kerangka-tka.json"), "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
         f.write("\n")
+    n_fig = figures(src, out_dir)
     n_sub = sum(len(c["subcompetencies"]) for fw in FRAMEWORKS if fw["subject"] == "Bahasa Indonesia"
                 for c in fw["kompetensi"]["competencies"])
     n_scope = sum(len(c["scope"]) for fw in FRAMEWORKS if fw["subject"] == "Matematika"
@@ -544,7 +646,8 @@ def main(src, out_dir):
     n_proc = sum(len(lv["processes"]) for fw in FRAMEWORKS if fw["subject"] == "Matematika"
                  for lv in fw["kompetensi"]["cognitive_levels"])
     print(f"kerangka-tka: {len(FRAMEWORKS)} frameworks, {n_sub} subcompetencies, {n_scope} content items, "
-          f"{n_proc} thinking processes, {len(ELECTIVES)} electives, {len(ERRATA)} errata")
+          f"{n_proc} thinking processes, {len(ELECTIVES)} electives, {len(ERRATA)} errata, {len(CS.QUESTIONS)} sample questions "
+          f"({len(CS.ERRATA)} errata), {n_fig} figures")
 
 
 if __name__ == "__main__":

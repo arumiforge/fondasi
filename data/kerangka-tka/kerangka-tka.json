@@ -1156,7 +1156,1111 @@
    "Predikat istimewa diperuntukkan peserta jenjang SD/MI/sederajat dan SMP/MTs/sederajat yang mendapatkan nilai 95,00 atau lebih di masing-masing mata uji.",
    "Predikat istimewa diperuntukkan peserta jenjang SMA/MA/sederajat dan SMK/MAK yang mendapatkan nilai 725,00 atau lebih di masing-masing mata uji."
   ],
-  "note": "Kepmendikdasmen 56/2026 names the categories without cut scores."
+  "note": "Kepmendikdasmen 56/2026 names the categories without cut scores; the limits below are secondary.",
+  "limits": {
+   "year": 2026,
+   "levels": [
+    "SD/MI/sederajat",
+    "SMP/MTs/sederajat"
+   ],
+   "confidence": "secondary",
+   "categories": [
+    {
+     "category": "Kurang",
+     "min": 0,
+     "max_exclusive": 50
+    },
+    {
+     "category": "Memadai",
+     "min": 50,
+     "max_exclusive": 76.67
+    },
+    {
+     "category": "Baik",
+     "min": 76.67,
+     "max": 100
+    }
+   ],
+   "istimewa_from": 95.0,
+   "applies_to": "every subject (Bahasa Indonesia and Matematika), SD/MI and SMP/MTs",
+   "sources": [
+    {
+     "title": "ANTARA, 'Kemendikdasmen pastikan metode olah nilai TKA tidak rugikan murid' (2026-05-26), report of the Pusmendik media briefing (Kapusmendik Rahmawati)",
+     "url": "https://www.antaranews.com/berita/5583537/kemendikdasmen-pastikan-metode-olah-nilai-tka-tidak-rugikan-murid"
+    },
+    {
+     "title": "detikEdu, '8.500 murid SD-SMP dapat nilai 100 di TKA 2026' (2026-05-26), same briefing",
+     "url": "https://www.detik.com/edu/sekolah/d-8505710/8-500-murid-sd-smp-dapat-nilai-100-di-tka-2026-mapel-ini-simak-datanya"
+    }
+   ],
+   "notes": [
+    "Not stated in Kepmendikdasmen 56/2026 nor in the Juknis TKA-AN 2026 (Kepka BKPDM 017/F/AN/2026). The Kapusmendik said the limits come from standard setting with subject teachers, so they may change from year to year.",
+    "ANTARA writes 'sama dengan atau lebih dari 50' for Memadai; detikEdu writes '>50'. 50 is placed in Memadai here."
+   ],
+   "conflicting_reports": [
+    {
+     "scope": "Matematika SMP/MTs/sederajat 2026",
+     "categories": [
+      {
+       "category": "Kurang",
+       "min": 0,
+       "max_exclusive": 33.33
+      },
+      {
+       "category": "Memadai",
+       "min": 33.33,
+       "max_exclusive": 56.67
+      },
+      {
+       "category": "Baik",
+       "min": 56.67,
+       "max": 100
+      }
+     ],
+     "source": {
+      "title": "Medcom.id, '4 Kategori Nilai Matematika SMP di TKA 2026' (2026-07-24), citing an Instagram post of @litbangdikbud",
+      "url": "https://www.medcom.id/pendidikan/news-pendidikan/eN44D4WN-4-kategori-nilai-matematika-smp-di-tka-2026-nilaimu-masuk-kategori-apa"
+     },
+     "note": "Contradicts the 26 May briefing reports; not resolved. Check against an official document."
+    }
+   ]
+  }
+ },
+ "sample_questions": {
+  "source": "Perka BSKAP 047/H/AN/2025, Lampiran, part IV Contoh Soal (PDF p. 25–46)",
+  "notes": [
+   "The degree sign is printed as a superscript letter O/o (50O, 50o) on p. 44; written $^\\circ$ here.",
+   "Options and statements are printed with empty check boxes; MCMA keys are statement numbers as printed ('Pernyataan 2 dan Pernyataan 3')."
+  ],
+  "stimuli": [
+   {
+    "id": "sd-bi-a",
+    "level": "SD/MI/sederajat",
+    "subject": "Bahasa Indonesia",
+    "questions": [
+     1,
+     2,
+     3
+    ],
+    "lead": "Teks untuk soal nomor 1 s.d. 3!",
+    "page": 25,
+    "figures": [
+     "contoh-soal/sd-bi-1-teks.jpg"
+    ],
+    "title": "Danau untuk Semua",
+    "text_from_image": true,
+    "text": [
+     "Di hutan ada sebuah danau tempat semua binatang minum. Suatu pagi, air danau menjadi kotor karena Rino si badak berendam di dalamnya. Binatang-binatang lain jadi tidak bisa minum. Namun, mereka takut menegur Rino karena badannya besar dan bercula. Mereka diam seribu bahasa. Rino malah merasa bangga karena jadi pusat perhatian.",
+     "Esoknya, Rino masih berendam. Binatang-binatang makin kehausan.",
+     "“Aduh, bagaimana ini?” ujar Bani si kelinci. Hewan lain juga mulai gelisah.",
+     "Binatang-binatang hutan pun berkumpul dan bermusyawarah. Hari si harimau mengusulkan agar meminta bantuan Ucil si kancil.",
+     "“Setuju!!” semua binatang berteriak antusias.",
+     "Ucil menemui Rino.",
+     "“Selamat siang. Maaf mengganggu Tuan. Ada kabar penting,” kata Ucil dengan lembut.",
+     "Rino segera bangun. Ia merasa tersanjung dengan ucapan Ucil.",
+     "“Kabar penting? Cepat bicara!” kata Rino.",
+     "“Hamba kasihan kepada Tuan. Badan besar berendam di danau kecil. Tidak pantas, Tuan. Oh ya, ada makhluk yang menutup jalan air supaya tidak mengalir. Sayang, makhluk itu tidak kelihatan oleh mata kita, dia makhluk gaib,” lanjut Ucil.",
+     "Rino mengerutkan dahinya.",
+     "“Percayalah, Tuan,” bujuk Ucil.",
+     "Rino segera berjalan menuju pohon nangka. Ia pun mengawasi pohon itu selama setengah hari. Sementara itu, binatang yang lain bergantian datang untuk minum air danau.",
+     "Rino selesai mengawasi pohon nangka. Ia kembali menuju danau. Sementara, binatang lainnya sudah meninggalkan danau. Mereka sudah tidak haus lagi."
+    ]
+   },
+   {
+    "id": "sd-bi-b",
+    "level": "SD/MI/sederajat",
+    "subject": "Bahasa Indonesia",
+    "questions": [
+     4,
+     5,
+     6
+    ],
+    "lead": "Teks untuk soal nomor 4 s.d. 6!",
+    "page": 27,
+    "figures": [],
+    "title": "Hewan Pemakan Daun, Apa Itu?",
+    "text_from_image": false,
+    "text": [
+     "Hewan bisa dibagi menjadi tiga kelompok berdasarkan makanan mereka. Karnivora, hewan pemakan daging. Contoh hewan karnivora adalah singa. Selanjutnya herbivora, yaitu hewan pemakan tumbuhan. Sapi adalah contoh hewan herbivora. Terakhir, hewan omnivora, yaitu hewan pemakan daging dan tumbuhan, seperti beruang.",
+     "Dari kelompok herbivora, ada hewan yang hanya makan daun saja. Mereka disebut folivora. Hewan folivora hanya makan daun untuk hidup. Namun, daun itu susah untuk dicerna, apalagi kalau sudah tua. Kadang-kadang daun juga mengandung zat yang bisa berbahaya.",
+     "Agar bisa mencerna daun, tubuh hewan folivora punya cara khusus. Mereka punya usus yang panjang agar makanan bisa diproses lebih lama. Tubuh hewan folivora bekerja lebih lambat, jadi tidak terlalu banyak bergerak. Di dalam perut hewan folivora juga ada bakteri baik yang membantu mencerna daun. Beberapa hewan folivora lebih suka daun muda karena lebih lembut dan mudah dimakan.",
+     "Ada beberapa contoh hewan folivora yang hidup di alam. Misalnya, panda yang makan daun bambu. Ada juga koala yang makan daun eukaliptus. Mereka tinggal di hutan dan sangat bergantung pada daun untuk makan. Karena itu, hutan tempat mereka tinggal harus dijaga supaya mereka bisa terus hidup."
+    ],
+    "source": "Sumber: http://bobo.grid.id/read/084266052/bukan-herbivora-inilah-sebutan-untuk-hewan-pemakan-daun-tanaman?page=all (dengan penyesuaian)"
+   },
+   {
+    "id": "smp-bi-a",
+    "level": "SMP/MTs/sederajat",
+    "subject": "Bahasa Indonesia",
+    "questions": [
+     1,
+     2,
+     3
+    ],
+    "lead": "Teks untuk soal nomor 1 s.d. 3!",
+    "page": 36,
+    "figures": [
+     "contoh-soal/smp-bi-1-ulasan-1.jpg",
+     "contoh-soal/smp-bi-1-ulasan-2.png"
+    ],
+    "text_from_image": true,
+    "parts": [
+     {
+      "label": "Teks Ulasan 1",
+      "title": "Pantai Glagah",
+      "text": [
+       "Pantai Glagah di Kulon Progo adalah salah satu pantai unik di selatan Yogyakarta. Pasir hitamnya memberi kesan eksotis yang berbeda dari pantai lainnya. Ombak besar yang menerjang pemecah gelombang menciptakan suasana alam yang menakjubkan. Di sisi timur, terdapat laguna tenang yang cocok untuk wisata keluarga, terutama anak-anak.",
+       "Akses menuju pantai ini cukup mudah dari pusat Kota Yogyakarta. Fasilitasnya lengkap, seperti area parkir luas, warung makan, dan tempat duduk untuk bersantai. Ketika senja tiba, suasana menjadi lebih indah dengan langit yang memerah dan matahari terbenam perlahan di cakrawala.",
+       "Namun, pengunjung tidak disarankan berenang karena ombaknya cukup ganas. Beberapa sudut pantai juga terlihat kurang bersih. Meski begitu, Pantai Glagah tetap menjadi tempat menenangkan diri."
+      ]
+     },
+     {
+      "label": "Teks Ulasan 2",
+      "title": "Pantai Drini, Gunung Kidul",
+      "byline": "Noordin Ahya - WartaKU, Senin, 23 April 2025 11:04 WIB",
+      "text": [
+       "Pantai Drini di Gunung Kidul tuh beneran hidden gem yang wajib masuk bucket list liburan kamu! Nggak cuma karena pasir putih dan air lautnya yang bening banget, tapi juga karena pulau karang kecil yang unik. Pulau itu seperti pemisah dua dunia—satu sisi ombaknya tenang, sisi lainnya agak liar. Serasa lagi liat dua kepribadian alam yang beda tapi tetap satu kesatuan.",
+       "Yang bikin makin seru, kamu bisa jalan kaki ke pulau karangnya pas air laut surut. View dari atas cakep banget buat foto, apalagi pas golden hour. Banyak banget sudut estetis yang bisa kamu eksplor.",
+       "Fasilitas di sini juga udah lumayan oke. Ada warung makan, parkiran luas, dan tempat duduk buat santai-santai. Pantai Drini tuh ibarat tempat nongkrongnya laut dan langit—sederhana, tapi punya vibes yang nggak bisa dibeli. Sekali datang, rasanya pengen balik lagi buat nyari tenang dalam riuhnya dunia."
+      ]
+     }
+    ]
+   },
+   {
+    "id": "smp-bi-b",
+    "level": "SMP/MTs/sederajat",
+    "subject": "Bahasa Indonesia",
+    "questions": [
+     4,
+     5,
+     6
+    ],
+    "lead": "Teks untuk soal nomor 4 s.d. 6!",
+    "page": 39,
+    "figures": [
+     "contoh-soal/smp-bi-4-puisi.jpg"
+    ],
+    "title": "Perempuan-Perempuan Perkasa",
+    "text_from_image": true,
+    "poem": true,
+    "text": [
+     "Perempuan-perempuan yang membawa bakul di pagi buta,\ndari manakah mereka\nKe stasiun kereta mereka datang dari bukit-bukit desa\nsebelum peluit kereta pagi terjaga\nsebelum hari bermula dalam pesta kerja",
+     "Perempuan-perempuan yang membawa bakul dalam kereta,\nke manakah mereka\nDi atas roda-roda baja mereka berkendara\nMereka berlomba dengan surya menuju ke gerbang kota\nmerebut hidup di pasar-pasar kota",
+     "Perempuan-perempuan yang membawa bakul di pagi buta,\nsiapakah mereka\nMereka ialah ibu-ibu yang perkasa\nakar-akar yang melata dari tanah perbukitan turun ke kota\nMereka: cinta kasih yang bergerak menghidupi desa demi desa"
+    ],
+    "source": "(Puisi karya Hartojo Andangdjaja)"
+   }
+  ],
+  "questions": [
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 1,
+    "page": 26,
+    "stimulus": "sd-bi-a",
+    "kompetensi": "Pemahaman Tekstual",
+    "subkompetensi": "Mengidentifikasi informasi tersurat dalam teks",
+    "bentuk_soal": "Pilihan Ganda",
+    "jenis_soal": "Grup",
+    "question": [
+     "Siapa yang memiliki usul untuk meminta bantuan hewan yang cerdik?"
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "Bani."
+     },
+     {
+      "label": "B",
+      "text": "Ucil."
+     },
+     {
+      "label": "C",
+      "text": "Rino."
+     },
+     {
+      "label": "D",
+      "text": "Hari."
+     }
+    ],
+    "key": "D",
+    "key_printed": "D"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 2,
+    "page": 26,
+    "stimulus": "sd-bi-a",
+    "kompetensi": "Pemahaman Inferensial",
+    "subkompetensi": "Menjelaskan makna ungkapan yang digunakan dalam teks",
+    "bentuk_soal": "PGK Kategori",
+    "jenis_soal": "Grup",
+    "question": [
+     "“Mereka diam seribu bahasa.”",
+     "Apa arti “diam seribu bahasa” pada teks fabel tersebut?"
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "Para binatang di hutan tidak mampu melakukan sesuatu."
+     },
+     {
+      "label": "B",
+      "text": "Semua binatang di hutan menahan untuk tidak berkomentar."
+     },
+     {
+      "label": "C",
+      "text": "Penghuni hutan tidak mau mendengarkan pendapat orang lain."
+     },
+     {
+      "label": "D",
+      "text": "Binatang-binatang di hutan tidak mengetahui masalah yang terjadi."
+     }
+    ],
+    "key": "B",
+    "key_printed": "B"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 3,
+    "page": 27,
+    "stimulus": "sd-bi-a",
+    "kompetensi": "Evaluasi dan Apresiasi",
+    "subkompetensi": "Menilai relevansi peristiwa dalam teks dengan kehidupan sehari-hari berdasarkan pengalaman atau pengetahuan pribadi",
+    "bentuk_soal": "PGK Kategori",
+    "jenis_soal": "Grup",
+    "question": [
+     "Apa contoh peristiwa yang dapat ditemukan dalam kehidupan sehari-hari berdasarkan kejadian yang dialami Ucil pada cerita tersebut?",
+     "Tentukan Sesuai atau Tidak Sesuai untuk setiap pernyataan berikut!"
+    ],
+    "item_form": "pgk_kategori",
+    "responses": [
+     "Sesuai",
+     "Tidak Sesuai"
+    ],
+    "statements": [
+     "Tita memberi ide cemerlang yang dapat dilakukan oleh teman-teman di kelas.",
+     "Jani menghargai kepercayaan yang diberikan teman-teman sekelas kepada dirinya.",
+     "Nina bertanggung jawab dalam menjalankan tugas yang dipercayakan kepadanya."
+    ],
+    "key": [
+     "Tidak Sesuai",
+     "Sesuai",
+     "Sesuai"
+    ],
+    "key_printed": "Tidak Sesuai, Sesuai, Sesuai"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 4,
+    "page": 28,
+    "stimulus": "sd-bi-b",
+    "kompetensi": "Pemahaman Tekstual",
+    "subkompetensi": "Mengidentifikasi informasi tersurat dalam teks",
+    "bentuk_soal": "PGK MCMA",
+    "jenis_soal": "Grup",
+    "question": [
+     "Apa saja contoh hewan folivora berdasarkan informasi tersebut?",
+     "Pilihlah jawaban yang benar! Jawaban benar lebih dari satu."
+    ],
+    "item_form": "pgk_mcma",
+    "options": [
+     {
+      "no": 1,
+      "text": "Sapi."
+     },
+     {
+      "no": 2,
+      "text": "Koala."
+     },
+     {
+      "no": 3,
+      "text": "Panda."
+     }
+    ],
+    "key": [
+     2,
+     3
+    ],
+    "key_printed": "Pernyataan 2 dan Pernyataan 3"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 5,
+    "page": 28,
+    "stimulus": "sd-bi-b",
+    "kompetensi": "Pemahaman Tekstual",
+    "subkompetensi": "Menyusun kembali informasi dari teks dalam bentuk ikhtisar/bagan",
+    "bentuk_soal": "Pilihan Ganda",
+    "jenis_soal": "Grup",
+    "question": [
+     "Bagan mana yang sesuai untuk menggambarkan informasi pada teks tersebut?"
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "figure": "contoh-soal/sd-bi-5-a.png",
+      "text_from_image": "Tiga Kelompok Utama Hewan Folivora → Pengertian Hewan Folivora → Contoh Hewan Folivora → Cara Hewan Folivora Mencerna Daun"
+     },
+     {
+      "label": "B",
+      "figure": "contoh-soal/sd-bi-5-b.png",
+      "text_from_image": "Tiga Kelompok Utama Hewan Folivora → Contoh Hewan Folivora → Pengertian Hewan Folivora → Cara Hewan Folivora Mencerna Daun"
+     },
+     {
+      "label": "C",
+      "figure": "contoh-soal/sd-bi-5-c.png",
+      "text_from_image": "Tiga Kelompok Utama Hewan → Contoh Hewan Folivora → Pengertian Hewan Folivora → Cara Hewan Folivora Mencerna Daun"
+     },
+     {
+      "label": "D",
+      "figure": "contoh-soal/sd-bi-5-d.png",
+      "text_from_image": "Tiga Kelompok Utama Hewan → Pengertian Hewan Folivora → Cara Hewan Folivora Mencerna Daun → Contoh Hewan Folivora"
+     }
+    ],
+    "key": "D",
+    "key_printed": "D"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 6,
+    "page": 30,
+    "stimulus": "sd-bi-b",
+    "kompetensi": "Pemahaman Inferensial",
+    "subkompetensi": "Menyimpulkan ide pokok, gagasan pendukung, amanat, tokoh, peristiwa, dan/atau nilai-nilai dalam teks",
+    "bentuk_soal": "Pilihan Ganda",
+    "jenis_soal": "Grup",
+    "question": [
+     "Apa gagasan utama yang disampaikan pada paragraf ketiga teks tersebut?"
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "Jenis daun yang cocok untuk hewan folivora."
+     },
+     {
+      "label": "B",
+      "text": "Pembagian hewan berdasarkan makanan mereka."
+     },
+     {
+      "label": "C",
+      "text": "Cara khusus tubuh hewan folivora mencerna daun."
+     },
+     {
+      "label": "D",
+      "text": "Peranan penting hutan bagi kehidupan hewan folivora."
+     }
+    ],
+    "key": "C",
+    "key_printed": "C"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Matematika",
+    "no": 1,
+    "page": 31,
+    "elemen": "Bilangan",
+    "sub_elemen": "Bilangan Rasional",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait operasi penjumlahan dan pengurangan bilangan pecahan, serta operasi perkalian dan pembagian bilangan pecahan dengan bilangan asli",
+    "level_kognitif": "Pengetahuan dan Pemahaman",
+    "bentuk_soal": "Pilihan Ganda",
+    "question": [
+     "$120\\% - 3 + 2 \\times 0{,}75 + \\frac{2}{3} = \\ldots$"
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "$\\frac{11}{30}$"
+     },
+     {
+      "label": "B",
+      "text": "$\\frac{49}{60}$"
+     },
+     {
+      "label": "C",
+      "text": "$\\frac{31}{30}$"
+     },
+     {
+      "label": "D",
+      "text": "$\\frac{98}{60}$"
+     }
+    ],
+    "key": "A",
+    "key_printed": "A"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Matematika",
+    "no": 2,
+    "page": 31,
+    "elemen": "Bilangan",
+    "sub_elemen": "Bilangan Rasional",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait operasi penjumlahan dan pengurangan bilangan pecahan, serta operasi perkalian dan pembagian bilangan pecahan dengan bilangan asli",
+    "level_kognitif": "Aplikasi",
+    "bentuk_soal": "Pilihan Ganda",
+    "question": [
+     "Menjelang tahun ajaran baru, Toko Buku ABC memberikan diskon 10% untuk semua jenis buku. Diketahui harga buku X adalah $\\frac{1}{2}$ dari harga buku Y dan harga buku Z adalah 0,75 kali harga buku Y. Apabila harga buku Y adalah Rp24.000,00, harga buku X + Z setelah dikenakan diskon adalah …."
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "Rp18.000,00"
+     },
+     {
+      "label": "B",
+      "text": "Rp24.000,00"
+     },
+     {
+      "label": "C",
+      "text": "Rp27.000,00"
+     },
+     {
+      "label": "D",
+      "text": "Rp30.000,00"
+     }
+    ],
+    "key": "C",
+    "key_printed": "C"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Matematika",
+    "no": 3,
+    "page": 32,
+    "elemen": "Bilangan",
+    "sub_elemen": "Bilangan Rasional",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait operasi penjumlahan dan pengurangan bilangan pecahan, serta operasi perkalian dan pembagian bilangan pecahan dengan bilangan asli",
+    "level_kognitif": "Penalaran",
+    "bentuk_soal": "PGK Kategori",
+    "question": [
+     "Pak Bondan seorang penjual susu kedelai. Suatu hari, Pak Bondan memproduksi susu kedelai sebanyak 9 wadah yang masing-masing berisi $4\\frac{3}{4}$ liter susu kedelai. Seluruh hasil produksi tersebut akan dituangkan ke dalam 47 botol besar dengan isi yang sama banyak dan ke dalam 17 botol kecil dengan isi setiap botolnya adalah setengah botol besar.",
+     "Tentukan Benar atau Salah untuk setiap pernyataan berikut tentang hasil produksi susu kedelai Pak Bondan!"
+    ],
+    "item_form": "pgk_kategori",
+    "responses": [
+     "Benar",
+     "Salah"
+    ],
+    "statements": [
+     "Pada hari itu Pak Bondan memproduksi $42\\frac{3}{4}$ liter susu kedelai.",
+     "Setiap botol besar diisi susu kedelai sebanyak $\\frac{57}{74}$ liter.",
+     "Total susu kedelai yang dikemas dalam botol kecil adalah $\\frac{969}{74}$ liter."
+    ],
+    "key": [
+     "Benar",
+     "Benar",
+     "Salah"
+    ],
+    "key_printed": "Benar, Benar, Salah"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Matematika",
+    "no": 4,
+    "page": 33,
+    "elemen": "Geometri dan Pengukuran",
+    "sub_elemen": "Objek Geometri",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait konstruksi bangun ruang dan visualisasi spasial (bagian depan, atas, dan samping)",
+    "level_kognitif": "Aplikasi",
+    "bentuk_soal": "Pilihan Ganda",
+    "question": [
+     "Mae sedang bermain ular tangga dengan Doni. Bermain ular tangga membutuhkan dadu dan bidak. Diketahui bahwa jumlah titik pada setiap dua sisi berlawanan pada dadu adalah sama. Pada saat giliran Mae bermain, Mae melempar dadunya. Berikut adalah dadu hasil lemparan Mae.",
+     "Pada dadu tersebut, banyak titik yang ada di sisi bawah adalah …."
+    ],
+    "figures": [
+     "contoh-soal/sd-mtk-4-dadu.png"
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "2"
+     },
+     {
+      "label": "B",
+      "text": "3"
+     },
+     {
+      "label": "C",
+      "text": "4"
+     },
+     {
+      "label": "D",
+      "text": "5"
+     }
+    ],
+    "key": "B",
+    "key_printed": "B"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Matematika",
+    "no": 5,
+    "page": 34,
+    "elemen": "Geometri dan Pengukuran",
+    "sub_elemen": "Pengukuran",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait hubungan antar-satuan baku berat (mg, dg, cg, g, dag, hg, kg)",
+    "level_kognitif": "Aplikasi",
+    "bentuk_soal": "PGK MCMA",
+    "question": [
+     "Setiap bulan Ramadan, SD Harapan mengadakan bakti sosial. Mereka membagi sembako yang berisi 3 kg beras, dua bungkus gula pasir dengan berat masing-masing kemasan 5 hg, dan lima bungkus mi instan dengan berat per bungkus 85 g.",
+     "Seberapa berat paket sembako tersebut?",
+     "Pilihlah jawaban yang benar! Jawaban benar lebih dari satu."
+    ],
+    "item_form": "pgk_mcma",
+    "options": [
+     {
+      "no": 1,
+      "text": "Total berat semua isi paket adalah 4.425 gram."
+     },
+     {
+      "no": 2,
+      "text": "Berat mi instan dalam paket tersebut lebih dari 0,5 kilogram."
+     },
+     {
+      "no": 3,
+      "text": "Satu kemasan gula pasir lebih berat dibandingkan seluruh mi instan."
+     }
+    ],
+    "key": [
+     1,
+     3
+    ],
+    "key_printed": "Pernyataan 1 dan Pernyataan 3"
+   },
+   {
+    "level": "SD/MI/sederajat",
+    "subject": "Matematika",
+    "no": 6,
+    "page": 34,
+    "elemen": "Data",
+    "sub_elemen": "Penyajian dan Penggunaan Data",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait pengambilan informasi dan penggunaan data",
+    "level_kognitif": "Aplikasi",
+    "bentuk_soal": "PGK Kategori",
+    "question": [
+     "SD Harapan baru saja meresmikan ruang perpustakaan untuk siswa. Bu Anita sedang mendata banyak siswa yang berkunjung ke perpustakaan tersebut pada lima hari pertama sejak diresmikan. Diagram berikut menggambarkan data yang diperoleh Bu Anita.",
+     "Deskripsi apakah yang tepat tentang data pada diagram tersebut?",
+     "Tentukan Benar atau Salah untuk setiap pernyataan berikut!"
+    ],
+    "figures": [
+     "contoh-soal/sd-mtk-6-diagram.png"
+    ],
+    "item_form": "pgk_kategori",
+    "responses": [
+     "Benar",
+     "Salah"
+    ],
+    "statements": [
+     "Banyak siswa yang mengunjungi perpustakaan pada hari Senin hanya $\\frac{3}{4}$ dari pengunjung pada hari Rabu.",
+     "Total siswa pengunjung perpustakaan mulai dari hari Senin hingga hari Jumat adalah 100.",
+     "Perbedaan banyak pengunjung harian dengan hari sebelumnya tidak lebih dari 5 orang."
+    ],
+    "key": [
+     "Benar",
+     "Salah",
+     "Benar"
+    ],
+    "key_printed": "Benar, Salah, Benar"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 1,
+    "page": 37,
+    "stimulus": "smp-bi-a",
+    "kompetensi": "Pemahaman Tekstual",
+    "subkompetensi": "Mengidentifikasi objek dan/atau latar berdasarkan kosakata yang digunakan dalam teks fiksi atau nonfiksi",
+    "bentuk_soal": "Pilihan Ganda",
+    "jenis_soal": "Grup",
+    "question": [
+     "Kosakata yang menggambarkan keserasian suara deburan alam pada teks ulasan ke-1 ditunjukkan pada frasa ...."
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "alternatif wisata"
+     },
+     {
+      "label": "B",
+      "text": "kanvas alam"
+     },
+     {
+      "label": "C",
+      "text": "panggung cahaya"
+     },
+     {
+      "label": "D",
+      "text": "harmoni alam"
+     }
+    ],
+    "key": "D",
+    "key_printed": "D"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 2,
+    "page": 37,
+    "stimulus": "smp-bi-a",
+    "kompetensi": "Pemahaman Inferensial",
+    "subkompetensi": "Menjelaskan kelogisan hubungan antarperistiwa, antargagasan, dan/atau antarinformasi dalam dan/atau antarteks",
+    "bentuk_soal": "PGK MCMA",
+    "jenis_soal": "Grup",
+    "question": [
+     "Apa saja perbedaan informasi yang ada pada kedua teks tersebut?",
+     "Pilihlah jawaban yang benar! Jawaban benar lebih dari satu."
+    ],
+    "item_form": "pgk_mcma",
+    "options": [
+     {
+      "no": 1,
+      "text": "Kemudahan akses."
+     },
+     {
+      "no": 2,
+      "text": "Fasilitas yang tersedia."
+     },
+     {
+      "no": 3,
+      "text": "Tempat untuk berfoto."
+     },
+     {
+      "no": 4,
+      "text": "Keindahan saat senja."
+     }
+    ],
+    "key": [
+     1,
+     3
+    ],
+    "key_printed": "Pernyataan 1 dan Pernyataan 3"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 3,
+    "page": 38,
+    "stimulus": "smp-bi-a",
+    "kompetensi": "Evaluasi dan Apresiasi",
+    "subkompetensi": "Menilai kesesuaian dan/atau keakuratan unsur, kebahasaan, atau isi berdasarkan perbandingan informasi dalam dan/atau antarteks",
+    "bentuk_soal": "PGK MCMA",
+    "jenis_soal": "Grup",
+    "question": [
+     "Banu: Aku lebih suka membaca ulasan pada teks 2 rasanya lebih dekat denganku. Aku jadi ingin ke sana! Teks ulasan 2 sangat menarik!",
+     "Komar: Justru aku lebih suka ulasan pada teks 1 karena sangat jelas dan menarik minatku untuk mengunjungi pantai itu.",
+     "Mengapa penyataan Banu lebih tepat untuk menggambarkan keunggulan teks ulasan kedua yang tidak ada pada teks ulasan pertama?",
+     "Tentukan Benar atau Salah untuk setiap pernyataan berikut!"
+    ],
+    "item_form": "pgk_kategori",
+    "responses": [
+     "Benar",
+     "Salah"
+    ],
+    "statements": [
+     "Gaya penyajian teks menggunakan bahasa nonformal sehingga lebih santai.",
+     "Penyajian gambar pada teks yang membuat pembaca lebih tertarik membaca.",
+     "Akhir ulasan dilengkapi kalimat ajakan kepada pembaca untuk mengunjungi pantai."
+    ],
+    "key": [
+     "Benar",
+     "Salah",
+     "Salah"
+    ],
+    "key_printed": "Benar, Salah, Salah"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 4,
+    "page": 39,
+    "stimulus": "smp-bi-b",
+    "kompetensi": "Pemahaman Tekstual",
+    "subkompetensi": "Mengidentifikasi objek dan/atau latar berdasarkan kosakata yang digunakan dalam teks fiksi atau nonfiksi",
+    "bentuk_soal": "PGK MCMA",
+    "jenis_soal": "Grup",
+    "question": [
+     "Pilihan kata mana saja yang menunjukkan latar waktu pada puisi tersebut?",
+     "Pilihlah jawaban yang benar! Jawaban benar lebih dari satu."
+    ],
+    "item_form": "pgk_mcma",
+    "options": [
+     {
+      "no": 1,
+      "text": "Bukit-bukit desa."
+     },
+     {
+      "no": 2,
+      "text": "Sebelum hari bermula."
+     },
+     {
+      "no": 3,
+      "text": "Akar-akar yang melata."
+     },
+     {
+      "no": 4,
+      "text": "Berlomba dengan surya."
+     }
+    ],
+    "key": [
+     2,
+     4
+    ],
+    "key_printed": "Pernyataan 2 dan Pernyataan 4"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 5,
+    "page": 40,
+    "stimulus": "smp-bi-b",
+    "kompetensi": "Pemahaman Inferensial",
+    "subkompetensi": "Menjelaskan bahasa kias dan citraan yang digunakan dalam teks fiksi",
+    "bentuk_soal": "Pilihan Ganda",
+    "jenis_soal": "Grup",
+    "question": [
+     "Apa makna merebut hidup di pasar-pasar kota pada teks puisi tersebut?"
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "Kegigihan dan perjuangan perempuan dalam bekerja."
+     },
+     {
+      "label": "B",
+      "text": "Keuletan dan pencapaian seseorang dalam bekerja."
+     },
+     {
+      "label": "C",
+      "text": "Aktivitas dan keseharian perempuan yang bekerja di pasar."
+     },
+     {
+      "label": "D",
+      "text": "Tanggung jawab dan kewajiban perempuan pada keluarga."
+     }
+    ],
+    "key": "A",
+    "key_printed": "A"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Bahasa Indonesia",
+    "no": 6,
+    "page": 40,
+    "stimulus": "smp-bi-b",
+    "kompetensi": "Evaluasi dan Apresiasi",
+    "subkompetensi": "Menyimpulkan respons emosional terhadap unsur teks fiksi",
+    "bentuk_soal": "PGK Kategori",
+    "jenis_soal": "Grup",
+    "question": [
+     "Setelah membaca puisi tersebut, tiga murid berpendapat sebagai berikut.",
+     "Dina: Wah, ternyata banyak perempuan hebat ya. Mereka bekerja penuh semangat!",
+     "Mira: Iya, mereka rela bangun pagi-pagi untuk bekerja.",
+     "Tika: Tapi, kasihan ya mereka pasti lelah setelah seharian bekerja.",
+     "Pendapat siapa yang tepat untuk menggambarkan suasana haru yang muncul setelah membaca puisi tersebut?",
+     "Tentukan Setuju atau Tidak Setuju untuk setiap pernyataan berikut berdasarkan teks!"
+    ],
+    "item_form": "pgk_kategori",
+    "responses": [
+     "Setuju",
+     "Tidak Setuju"
+    ],
+    "statements": [
+     "Dina karena menunjukkan kekagumannya kepada para perempuan yang bekerja.",
+     "Mira karena pendapatnya juga senada dengan pendapat yang disampaikan Dina.",
+     "Tika karena pendapatnya menunjukkan rasa empati terhadap perempuan pekerja."
+    ],
+    "key": [
+     "Setuju",
+     "Setuju",
+     "Tidak Setuju"
+    ],
+    "key_printed": "Setuju, Setuju, Tidak Setuju"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Matematika",
+    "no": 1,
+    "page": 41,
+    "elemen": "Bilangan",
+    "sub_elemen": "Bilangan Real",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait faktorisasi prima bilangan asli",
+    "level_kognitif": "Penalaran",
+    "bentuk_soal": "PGK MCMA",
+    "question": [
+     "Terdapat tiga bilangan yang dinyatakan dengan $(33^2 - 3^2)$, $(8^2 + 296)$, dan $(36 \\times 35)$.",
+     "Bilangan apa saja yang merupakan faktor persekutuan ketiga bilangan tersebut?",
+     "Pilihlah jawaban yang benar! Jawaban benar lebih dari satu."
+    ],
+    "item_form": "pgk_mcma",
+    "options": [
+     {
+      "no": 1,
+      "text": "$2^3 \\times 3^3 \\times 7$"
+     },
+     {
+      "no": 2,
+      "text": "$2^2 \\times 3^2 \\times 7$"
+     },
+     {
+      "no": 3,
+      "text": "$2^2 \\times 3^2 \\times 5$"
+     },
+     {
+      "no": 4,
+      "text": "$2 \\times 3^2 \\times 5$"
+     }
+    ],
+    "key": [
+     3,
+     4
+    ],
+    "key_printed": "Pernyataan 3 dan Pernyataan 4"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Matematika",
+    "no": 2,
+    "page": 42,
+    "elemen": "Bilangan",
+    "sub_elemen": "Bilangan Real",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait perbandingan senilai dan berbalik nilai",
+    "level_kognitif": "Aplikasi",
+    "bentuk_soal": "Pilihan Ganda",
+    "question": [
+     "Harga setengah kilogram cabe rawit pada hari ini adalah Rp35.000,00. Jika hari ini Ibu membeli cabe rawit seberat $2\\frac{1}{4}$ kilogram, total harga yang harus dibayar Ibu adalah …."
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "Rp175.000,00"
+     },
+     {
+      "label": "B",
+      "text": "Rp157.500,00"
+     },
+     {
+      "label": "C",
+      "text": "Rp140.000,00"
+     },
+     {
+      "label": "D",
+      "text": "Rp87.500,00"
+     }
+    ],
+    "key": "B",
+    "key_printed": "B"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Matematika",
+    "no": 3,
+    "page": 42,
+    "elemen": "Aljabar",
+    "sub_elemen": "Persamaan dan Pertidaksamaan Linier",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait sistem persamaan linear dua variabel",
+    "level_kognitif": "Aplikasi",
+    "bentuk_soal": "PGK Kategori",
+    "question": [
+     "Misalkan a dan b merupakan dua bilangan real sehingga sistem persamaan linear (SPL)",
+     "$\\begin{cases} 2x + ay = 4, \\\\ bx - 2y = -1, \\end{cases}$",
+     "mempunyai solusi $(x, y) = (5,-2)$.",
+     "Tentukan Benar atau Salah untuk setiap pernyataan berikut terkait dengan nilai a dan b!"
+    ],
+    "item_form": "pgk_kategori",
+    "responses": [
+     "Benar",
+     "Salah"
+    ],
+    "statements": [
+     "a merupakan bilangan prima.",
+     "b merupakan bilangan ganjil.",
+     "10a + b = 31."
+    ],
+    "key": [
+     "Benar",
+     "Benar",
+     "Salah"
+    ],
+    "key_printed": "Benar, Benar, Salah"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Matematika",
+    "no": 4,
+    "page": 43,
+    "elemen": "Geometri dan Pengukuran",
+    "sub_elemen": "Objek Geometri",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait hubungan antar-sudut yang terbentuk oleh dua garis yang berpotongan, dan oleh dua garis sejajar yang dipotong suatu garis transversal (termasuk penentuan besar sudut dalam segitiga)",
+    "level_kognitif": "Aplikasi",
+    "bentuk_soal": "PGK Kategori",
+    "question": [
+     "Desain jembatan yang tepat sangat penting untuk memperkuat struktur karena menentukan kestabilan, ketahanan, dan keselamatan jembatan dalam menghadapi beban dan kondisi lingkungan. Salah satu contoh desain jembatan tampak pada gambar.",
+     "Bagian rangka jembatan tersebut dapat digambarkan dengan sketsa garis sebagai berikut:",
+     "Diketahui garis L1 sejajar dengan garis L2 dan garis L3 sejajar dengan garis L4. Jika besar sudut A adalah $50^\\circ$, tentukan Benar atau Salah untuk setiap pernyataan berikut!"
+    ],
+    "figures": [
+     "contoh-soal/smp-mtk-4-jembatan.jpg",
+     "contoh-soal/smp-mtk-4-sketsa.png"
+    ],
+    "item_form": "pgk_kategori",
+    "responses": [
+     "Benar",
+     "Salah"
+    ],
+    "statements": [
+     "Besar sudut D adalah $50^\\circ$.",
+     "Besar sudut C dapat ditentukan dengan menggunakan aturan sudut berpelurus yaitu sebesar $50^\\circ$.",
+     "Sudut B dan E sama besar yaitu $130^\\circ$."
+    ],
+    "key": [
+     "Benar",
+     "Salah",
+     "Benar"
+    ],
+    "key_printed": "Benar, Salah, Benar"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Matematika",
+    "no": 5,
+    "page": 44,
+    "elemen": "Geometri dan Pengukuran",
+    "sub_elemen": "Pengukuran",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait keliling dan luas bangun datar (daerah segi banyak dan daerah lingkaran, serta daerah gabungannya)",
+    "level_kognitif": "Penalaran",
+    "bentuk_soal": "Pilihan Ganda",
+    "question": [
+     "Pak Doni mempunyai rumah dengan tampak samping kanan sebagai berikut.",
+     "Pak Doni ingin mengecat dinding samping kanan rumah tersebut. Terdapat empat merek cat di pasaran yang dapat digunakan Pak Doni seperti ditunjukkan pada tabel berikut.",
+     {
+      "table": [
+       [
+        "Merek Cat",
+        "1 kg Dapat Mengecat",
+        "Kemasan yang Tersedia di Toko"
+       ],
+       [
+        "Momilex",
+        "7 m²",
+        "5 kg-an dan 10 kg-an"
+       ],
+       [
+        "Josun",
+        "8 m²",
+        "2 kg-an dan 10 kg-an"
+       ],
+       [
+        "Bulux",
+        "10 m²",
+        "2 kg-an dan 5 kg-an"
+       ],
+       [
+        "Noppin",
+        "9 m²",
+        "1 kg-an dan 5 kg-an"
+       ]
+      ]
+     },
+     "Pak Doni ingin membeli cat dengan merek yang sama. Supaya sisa cat yang dibeli paling sedikit, cat merek apakah yang sebaiknya dipilih?"
+    ],
+    "figures": [
+     "contoh-soal/smp-mtk-5-rumah.png"
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "Momilex."
+     },
+     {
+      "label": "B",
+      "text": "Josun."
+     },
+     {
+      "label": "C",
+      "text": "Bulux."
+     },
+     {
+      "label": "D",
+      "text": "Noppin."
+     }
+    ],
+    "key": "C",
+    "key_printed": "C"
+   },
+   {
+    "level": "SMP/MTs/sederajat",
+    "subject": "Matematika",
+    "no": 6,
+    "page": 45,
+    "elemen": "Data dan Peluang",
+    "sub_elemen": "Data",
+    "kompetensi": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait penentuan dan penaksiran rerata (mean), median, modus, dan jangkauan (range) dari data",
+    "level_kognitif": "Aplikasi",
+    "bentuk_soal": "Pilihan Ganda",
+    "question": [
+     "Berdasarkan data diketahui bahwa rata-rata berat satu butir telur kecil 45 gram, satu telur sedang 55 gram, dan satu telur besar 65 gram. Seorang karyawan toko bahan pangan, sedang mengemas setiap 10 butir telur ke dalam satu kemasan dengan ketentuan bahwa rata-rata berat per telur dalam setiap kemasan tersebut adalah 55 gram. Jika dalam satu kemasan sudah berisi 1 telur besar, 5 telur sedang, dan 2 telur kecil, maka dua telur tambahan yang harus dipilih supaya tetap memenuhi aturan pengemasan adalah …."
+    ],
+    "item_form": "pg",
+    "options": [
+     {
+      "label": "A",
+      "text": "2 telur sedang"
+     },
+     {
+      "label": "B",
+      "text": "2 telur besar"
+     },
+     {
+      "label": "C",
+      "text": "1 telur besar dan 1 telur kecil"
+     },
+     {
+      "label": "D",
+      "text": "1 telur besar dan 1 telur sedang"
+     }
+    ],
+    "key": "D",
+    "key_printed": "D"
+   }
+  ],
+  "errata": [
+   {
+    "page": 26,
+    "printed": "PGK Kategori",
+    "reason": "SD Bahasa Indonesia no. 2 is labelled 'PGK Kategori' but is built as Pilihan Ganda (A–D, one key); stored with item_form 'pg', bentuk_soal as printed"
+   },
+   {
+    "page": 38,
+    "printed": "PGK MCMA",
+    "reason": "SMP Bahasa Indonesia no. 3 is labelled 'PGK MCMA' but is built as PGK Kategori (Benar/Salah per statement); stored with item_form 'pgk_kategori', bentuk_soal as printed"
+   },
+   {
+    "page": 38,
+    "printed": "Mengapa penyataan Banu",
+    "reason": "'penyataan' for 'pernyataan' (SMP Bahasa Indonesia no. 3)"
+   },
+   {
+    "page": 37,
+    "printed": "harmoni alam",
+    "reason": "SMP Bahasa Indonesia no. 1: none of the four phrases (key D 'harmoni alam') occurs in Teks Ulasan 1 as printed on p. 36"
+   }
+  ]
  },
  "errata": [
   {
