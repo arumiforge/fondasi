@@ -1,0 +1,10 @@
+R-17 sekolah coordinates — regency boundaries used for the region check
+
+Source  : https://github.com/cahyadsn/wilayah_boundaries, commit 2c0d8c791af7ca55ee06d17b8f34813e8e6bf1b1
+          (2026-10-26), files db/kab/wilayah_boundaries_kab_<province>.sql, kept byte-for-byte
+Licence : MIT, (c) 2024-2025 cahya dsn (LICENSE in this folder)
+Content : 514 regencies and cities (Kemendagri codes xx.xx, the same codes as data/wilayah), simplified
+          multipolygons as [[lat, lng], ...] rings; the author notes that the boundaries are simplified
+Use     : tools/converters/sekolah.py coords-merge parses the SQL as text (never executed) and checks whether a
+          unit's printed Lintang/Bujur lies in its own regency. The boundaries are not published as data.
+Not used: db/prov (no polygon for province 63 Kalimantan Selatan); a province is checked through its regencies.
