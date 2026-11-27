@@ -1,0 +1,21 @@
+R-18 batas-wilayah — BIG Basis Data Batas Wilayah Administrasi Edisi Juni 2026
+Fetched by a cloud session with tools/converters/batas-wilayah.py fetch (GET requests only, 1,000 features per page).
+
+Service : https://geoservices.big.go.id/rbi/rest/services/BATASWILAYAH/BATAS_DESAKEL_AR/MapServer (layer 0,
+          "Area Batas Wilayah Administrasi Desa/Kelurahan"; service description "Geodatabase data batas wilayah
+          administrasi nasional edisi Juni 2026"; copyright text "Badan Informasi Geospasial"; WGS 84)
+Catalogue: https://data.go.id/dataset/dataset/batas_kecamatan_ar_2026 (BIG CSW record; metadata date 2026-06-15;
+          lineage, technical notes and sources of the village boundaries; same edition)
+Download page of BIG (Ina-Geoportal > Unduh Data > Data Batas Wilayah) links the full geodatabases on
+          drive.big.go.id, which resets connections from cloud sessions; the REST service carries the same edition.
+
+1) 33.19.json.gz — Kabupaten Kudus (where KDPKAB='33.19')
+   Fetched  : 2026-11-27T09:17:49Z
+   Content  : 132 polygons (123 desa, 9 kelurahan), every village of data/wilayah 33.19; full precision as served
+   SHA-256  : f4458c060cc5009002b05213b5c650e735c23746f9de14ede74f6bc4cefca791
+
+National counts on 2026-11-27 (attributes only): 84,503 polygons = 75,041 desa + 8,495 kelurahan + 967 undefined
+areas (TIPADM 999: small islands, lakes). 83,529 distinct village codes, all in data/wilayah 2026-02-13; 233
+villages of data/wilayah have no polygon yet (169 in Papua Pegunungan, new villages); 7 codes have two polygons.
+Status: 57,345 Batas Indikatif, 19,842 Hasil Kesepakatan, 6,349 Batas Definitif. The field LUASWH (alias
+"Luas Wilayah Menurut Peraturan (HA)") holds square kilometres, not hectares.

@@ -17,6 +17,7 @@ Fondasi is proprietary (`LICENSE`). Data sets and tools below come from or are d
 | `data/kodepos/` | [cahyadsn/wilayah_kodepos](https://github.com/cahyadsn/wilayah_kodepos) `db/wilayah_kodepos.sql`; converted by `tools/converters/kodepos.py` | MIT, Copyright (c) 2024 Cahya DSN (`data/kodepos/LICENSE.txt`) |
 | `data/atletik-*/`, `sources/atletik/` | World Athletics Book C C1.1/C2.1 Competition & Technical Rules (2026), IAAF Scoring Tables for Combined Events (2016), worldathletics.org | Copyright World Athletics; facts with references and private raw copies by decision F-027 |
 | `server/setup.sh` installs | Docker (Docker Inc. apt repository), cloudflared (Cloudflare apt repository), Cockpit (Ubuntu) | Installed on the server from their vendors; not redistributed here |
+| `data/batas-wilayah/`, `sources/batas-wilayah/` | Badan Informasi Geospasial, Basis Data Batas Wilayah Administrasi Edisi Juni 2026 (`geoservices.big.go.id`, layer BATAS_DESAKEL_AR); simplified by `tools/converters/batas-wilayah.py` | Informasi Geospasial Dasar, open by law (UU 4/2011 Pasal 12 huruf e, Pasal 42); credit "Sumber: Badan Informasi Geospasial" |
 
 ### cahyadsn/wilayah (MIT)
 

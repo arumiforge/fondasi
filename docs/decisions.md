@@ -139,3 +139,15 @@ Decision: `kerangka-tka` keeps the sample questions of Perka BSKAP 047/H/AN/2025
 ## F-034 — Third-party works for education, with credit (2026-11-27)
 Status: accepted (user, 2026-11-27: "teks puisi dan ulasan, juga semua hal karya pihak lain yang bisa digunakan dengan menyertakan pemilik asli bisa digunakan. dan tujuan besarnya untuk pendidikan.")
 Decision: Fondasi data may include works of third parties (poems, articles, screenshots, images) when they serve education and their owners are credited. Each such item carries an `attribution` (credit line naming the owner and where it was published or printed; owner and URL where known) and THIRD_PARTY_NOTICES.md lists it; apps that show the item show the credit with it. Where no owner is printed, the publishing document (e.g. the regulation) is credited. Licences that forbid this use, or a request by an owner, still win: such an item is removed. First applied to the sample questions of `kerangka-tka` (F-033).
+
+## F-035 — Administrative boundaries from BIG, simplified, added per regency (2026-11-27)
+Status: accepted (user, 2026-11-27: "Tingkat ketelitian: ±11 m. sementara untuk kudus dulu.")
+Decision: Village and district boundaries come from Badan Informasi Geospasial's Basis Data Batas Wilayah
+Administrasi (Edisi Juni 2026), the official source keyed by Kemendagri codes; it is Informasi Geospasial Dasar and
+open by law (UU 4/2011 Pasal 12 huruf e, Pasal 42), credited as "Sumber: Badan Informasi Geospasial". GADM
+(no redistribution), OpenStreetMap (ODbL, incomplete) and the 2020 BPS/OCHA set (BPS codes) are not used;
+cahyadsn/wilayah_boundaries (MIT) may serve as a cross-check. `data/batas-wilayah` holds GeoJSON per regency for
+desa and kecamatan, simplified to about 11 m on shared arcs so neighbours stay together; districts are the union of
+their villages. Regencies are added on demand, Kabupaten Kudus first. The full-precision download of each regency
+is kept in `sources/batas-wilayah/` while it is small; where full precision for many regencies is kept (it is about
+370 MB gzipped for Indonesia) is still open. Apps show the boundary status and never present a boundary as legal.

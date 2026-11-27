@@ -43,6 +43,7 @@ installed tools) go into the *Blockers* of `docs/progress.md` when they block wo
 | `dapo.kemendikdasmen.go.id`, `referensi.data.kemendikdasmen.go.id`, `sekolah.data.kemendikdasmen.go.id` | School data (R-01) |
 | `www.kemenkopmk.go.id`, `jateng.kemenag.go.id` | National holidays (R-04), madrasah calendar (R-06) |
 | `worldathletics.org` | Athletics rules (R-10) |
+| `geoservices.big.go.id`, `data.go.id` | Administrative boundaries (R-18) |
 
 Blocked from cloud sessions at the time of writing (use a browser session, [data-requests.md](data-requests.md)):
 `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `disdikbud.jatengprov.go.id`, `kurikulum.kemendikdasmen.go.id`.
