@@ -9,10 +9,53 @@ Catalogue: https://data.go.id/dataset/dataset/batas_kecamatan_ar_2026 (BIG CSW r
 Download page of BIG (Ina-Geoportal > Unduh Data > Data Batas Wilayah) links the full geodatabases on
           drive.big.go.id, which resets connections from cloud sessions; the REST service carries the same edition.
 
-1) 33.19.json.gz — Kabupaten Kudus (where KDPKAB='33.19')
-   Fetched  : 2026-11-27T09:17:49Z
-   Content  : 132 polygons (123 desa, 9 kelurahan), every village of data/wilayah 33.19; full precision as served
-   SHA-256  : f4458c060cc5009002b05213b5c650e735c23746f9de14ede74f6bc4cefca791
+Full-precision downloads are kept OUTSIDE the repository (65 MB for Jawa Tengah, F-035): this file records what was
+fetched and the content_sha256 of each regency (tools/converters/batas-wilayah.py content_sha256: attributes and rings
+of every feature in OBJECTID order, independent of the fetch time). Anyone can refetch a regency with
+`batas-wilayah.py fetch <raw_dir> <regency>` and compare; servers do the same with `presisi` (docs/data.md).
+Only 33.19.json.gz (Kabupaten Kudus) stays here, as a sample that rebuilds data/batas-wilayah/*/33.19.geojson.gz
+byte for byte when built alone.
+
+Jawa Tengah, 35 regencies (user, 2026-11-27: "tambahkan juga untuk seluruh jawa tengah"), fetched 2026-11-27 with 4
+parallel workers. TIPADM 1 = desa, 2 = kelurahan, 999 = undefined area (not a village).
+
+code   fetched (UTC)         polygons  desa  kel.  999  content_sha256                                                    regency
+33.01  2026-11-27T10:25:40Z       285   269    15    1  dbeda59bd7741a465e6b3d74d770b26131ae1a56d621fd1efa6d6f4af7b0a051  Kabupaten Cilacap
+33.02  2026-11-27T10:25:33Z       331   301    30    0  95b4007ae30be729429298c51a0dcab4b3da28d720927ba13e0830e3be43fb9b  Kabupaten Banyumas
+33.03  2026-11-27T10:25:34Z       239   224    15    0  708b9c6a4652fe3e867389ca25c37046dad630753daa9f575a4ad7569247f8ae  Kabupaten Purbalingga
+33.04  2026-11-27T10:25:34Z       278   266    12    0  4ef73fdd37ee6dcdd9cadb6bcf16bc21f820d28200bb6a651253bfde02604706  Kabupaten Banjarnegara
+33.05  2026-11-27T10:25:47Z       460   449    11    0  bbfc60f274b12fceb8fd6d51e9962e87fdc28373e3f96f3280eac01a830d8e62  Kabupaten Kebumen
+33.06  2026-11-27T10:25:45Z       494   469    25    0  1fb4d6cb6133a7f91108ee63c53ab82b15927ff680c5b87c916c88efd7f1993a  Kabupaten Purworejo
+33.07  2026-11-27T10:25:45Z       265   236    29    0  2d5629b287d0280c0a13102a72ea34d608ff8b72e96f04ba47368b05c39a6c67  Kabupaten Wonosobo
+33.08  2026-11-27T10:25:58Z       372   367     5    0  4451de535c8c128b0b54ca5acf1ee6a138b79c2162e45c5e31f64a8118b0c5c7  Kabupaten Magelang
+33.09  2026-11-27T10:25:58Z       267   261     6    0  bc4e31058e310ce23b60503f9d23224f44b4631d91220a864deab6c2771e3935  Kabupaten Boyolali
+33.10  2026-11-27T10:26:01Z       401   391    10    0  22ddb98712dc70dab7f37a1c66da145f1e51ee13e31ad25ec26c1a67dbf466df  Kabupaten Klaten
+33.11  2026-11-27T10:25:55Z       167   150    17    0  b5aa448d3dfd9ea79881e5d30b9ff8b7a19c7ff84414bf6af063061a707c760e  Kabupaten Sukoharjo
+33.12  2026-11-27T10:26:06Z       294   251    43    0  b91158bdbb3417fd2efc418aa35cc431e93784b76585c78ee129979724b12162  Kabupaten Wonogiri
+33.13  2026-11-27T10:26:12Z       177   162    15    0  4e8b5ae94e157ef27432a9df37935144c869987c136b40b009dcaca66ccbb1fe  Kabupaten Karanganyar
+33.14  2026-11-27T10:26:11Z       208   196    12    0  b9c1a20f1ee36841dc3f2e86b5e9b8e1d5da0d4e9b69682a99d340b7344d97a0  Kabupaten Sragen
+33.15  2026-11-27T10:26:19Z       280   273     7    0  f1ec928dafb5e94b7657221b9593ba1ef9734826aebe470cb444e3c4f5304c60  Kabupaten Grobogan
+33.16  2026-11-27T10:26:23Z       295   271    24    0  5eb7968f4a1adb975d17de3a0893df0dab02566601878968132dc054cd587ea9  Kabupaten Blora
+33.17  2026-11-27T10:26:24Z       295   287     7    1  5cc226f7145e1bb456e9f28eead355a51731aff0932357098318a4b10ab89d9a  Kabupaten Rembang
+33.18  2026-11-27T10:26:25Z       406   401     5    0  47d6449ee40bdcb467e91e34c19e16226930bd42ae909885f7b3c7be63391bbf  Kabupaten Pati
+33.19  2026-11-27T09:17:49Z       132   123     9    0  d86c97de0f4743ef16f36ee33f34b322902fa355472cb8586eacfb1247a5d356  Kabupaten Kudus
+33.20  2026-11-27T10:26:38Z       195   184    11    0  03862d64ff5eaf8ccd27e7f9cae148501062b468a6712ee92c7deb0898784737  Kabupaten Jepara
+33.21  2026-11-27T10:26:39Z       249   243     6    0  334158cad5a2f6df3f47e3fc5f54daf7075467e3ab004619102b95e48d6170dd  Kabupaten Demak
+33.22  2026-11-27T10:26:38Z       235   208    27    0  6383f5766dd1b91265e8559829a6d4c874b837efea462c25b955b787a8247c68  Kabupaten Semarang
+33.23  2026-11-27T10:26:43Z       289   266    23    0  2a7fa0a8acacc614d4b3fb4cea0570e82595c6d4f1c4eed6d71ae0b479ded870  Kabupaten Temanggung
+33.24  2026-11-27T10:26:51Z       286   266    20    0  f2b7d266fac082d013d69c1261949c207c37ba2ac06927819fe582074e3a71a2  Kabupaten Kendal
+33.25  2026-11-27T10:26:49Z       248   239     9    0  f7cc529163223771fb231e52559d35d5fa49fddce503ce83cd504c312e9df5bb  Kabupaten Batang
+33.26  2026-11-27T10:26:49Z       285   272    13    0  65627d9f8a053b8d2e32267eb88c88f636e7aa0940a7edbffc9376bfbd6b2882  Kabupaten Pekalongan
+33.27  2026-11-27T10:26:57Z       223   212    11    0  0d4929a52dffc1a6d9d58c6b7747b4ff34c8c4de4d5e216ec88be2e3303d3cb7  Kabupaten Pemalang
+33.28  2026-11-27T10:26:57Z       287   281     6    0  194d380f5f7d481b1caa70bc662065d98c8b24af9e3cfc8ace5a342a8a861b6d  Kabupaten Tegal
+33.29  2026-11-27T10:26:57Z       297   292     5    0  1001fce5f600f79e7733b30a462ff51b80c1ac783d7bf3d17f1f32f69459045b  Kabupaten Brebes
+33.71  2026-11-27T10:26:58Z        17     0    17    0  cf670e0cceac38edf77c5a7a38dea386bd68e641ce7f9464f16c28b63f8ca1ec  Kota Magelang
+33.72  2026-11-27T10:27:10Z        54     0    54    0  7fdbcf54ee8d67dbe5cb2a5f9ff4ee7f91baecd9e521096d1e066a7f6627e7a2  Kota Surakarta
+33.73  2026-11-27T10:27:10Z        23     0    23    0  c65aacfeb98a56eb2f576ba643b3c893f2899ba3638cca1042251c6eb84ca004  Kota Salatiga
+33.74  2026-11-27T10:27:10Z       177     0   177    0  91ada41701728c3aa5b3592ff219e12c8634e38193347226e3bcf667a3087cfc  Kota Semarang
+33.75  2026-11-27T10:27:09Z        27     0    27    0  26bf02df346cdab47090639566af908afea9b633c5441ea5b25c2078b87d99a8  Kota Pekalongan
+33.76  2026-11-27T10:27:14Z        27     0    27    0  4e1252a221322be80283578f5d2226a91181781e36d3444d3d980312a06fe652  Kota Tegal
+total                             8565  7810   753    2  (8,563 villages = every village of data/wilayah 33.*)
 
 National counts on 2026-11-27 (attributes only): 84,503 polygons = 75,041 desa + 8,495 kelurahan + 967 undefined
 areas (TIPADM 999: small islands, lakes). 83,529 distinct village codes, all in data/wilayah 2026-02-13; 233
