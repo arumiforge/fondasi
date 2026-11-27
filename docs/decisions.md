@@ -181,3 +181,13 @@ with only one possible reading is normalised with a `resolved` erratum; impossib
 group on the day of the record, and one athlete printed with different birth dates stay as printed with
 `unresolved` errata. Championship records (O2SN, POPDA, POPNAS, championships the user runs) and U16/U14 national
 records are added when an organiser publishes them or the user gives the list.
+
+## F-038 — Dapodik exports: structure only, files never kept (2026-11-28)
+Status: accepted (user, 2026-11-28: sent five exports from the Dapodik application; chose "Catat susunan kolom")
+Decision: Exports from Aplikasi Dapodik that a school sends are used only for their structure: sheet names, header
+rows and column headers of the list exports, and the sections, field labels and table headers of the PTK form. The
+files themselves are never committed, because they name the school's operator and, once filled, carry personal
+data of students and staff (one PTK form arrived filled); `sources/ekspor-dapodik/SOURCE.txt` records only their
+size and SHA-256. The converter refuses to write when any source value would appear in the output. The result is
+the set `ekspor-dapodik`, which apps use to read Dapodik exports. Option values with their codes are not in the
+exports, so `referensi-dapodik` (R-07) stays open; if a school sends a filled export again, the same rule applies.

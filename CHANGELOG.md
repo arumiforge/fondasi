@@ -5,6 +5,11 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `ekspor-dapodik` 2026-10-20 (F-038): column layout of the Dapodik 2027 Excel exports (Daftar Guru, Daftar Tenaga
+  Kependidikan, Daftar Peserta Didik with the Data Ayah/Ibu/Wali sub-columns, Rekap Pembelajaran) and the PTK form
+  (sections, numbered fields, tables), from five exports the user sent. Headers and labels only: the files are not
+  kept (one PTK form came filled), and `tools/converters/ekspor-dapodik.py` refuses to write when a source value
+  would appear in the output. `referensi-dapodik` (option codes) stays open (R-07).
 - `atletik-nomor` and `atletik-kelompok-umur` 2026-11-28: PASI's site www.pbpasi.org searched for U14/U16 rules
   and Kejurnas handbooks (none published; Kejurda pages only name U14–U20 categories). The programmes of Kejurnas
   U16 & Indonesia U18 Open 2024 (U16, U18) and LPS Kejurnas 2025 (U18, U20, senior, open pole vault) come from

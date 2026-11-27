@@ -1,0 +1,17 @@
+Exports of Aplikasi Dapodik versi 2027 (semester 20261), received from the user on 2026-11-28. Downloaded from the
+application by an SMP in Kabupaten Kudus on 2026-10-13 (staff lists, teaching recap, PTK form) and 2026-10-20
+(student list). The files are NOT kept in this repository (F-038): the list exports carry the school's operator,
+and the PTK form came filled with one staff member's personal data. Only their structure is used
+(tools/converters/ekspor-dapodik.py), which refuses to write if any source value would appear in the output.
+
+file (as uploaded, name prefix removed)   bytes   SHA-256                                                           content
+dataptk.xlsx            61148  c81b54b7f9cc98947790beb5faac948ed4ca8178bdf483e2ec8aa6a9bf59f64d  sheet "Formulir PTK", filled (not kept)
+daftartendik.xlsx       12474  96e7f46def8491159e71f11cf454bb35359244aad6c479b29d3b0722d9fb5427  sheet "Daftar tendik", header only
+daftarpembelajaran.xlsx 13217  3c5c11d31d0ee31d18daaf9e878e24adce08170367ce853f1754242619d5eb7d  sheet "Rekap Mengajar", header only
+daftarguru.xlsx         12420  1bab8fc84e8a767688f48a6ba3a185a9be541573a5ac45fc5b2e416547839401  sheet "Daftar guru", header only
+datadapodik.xlsx        14612  53a1d0cac0b8b9445ff5c6fcff015893b9ca07263324a77d0252b27de71eba73  sheet "Daftar Peserta Didik", header only
+
+No export holds option lists with codes (agama, pekerjaan, penghasilan, ...): referensi-dapodik (R-07) stays open.
+The Panduan Aplikasi Dapodik versi 2027 (v1.0, July 2026, 57 pages, scanned) received the same day is a user
+manual and change log without code tables; it is not kept either (copyright Kemendikdasmen, nothing taken from it
+except the facts noted in docs/data-requests.md).
