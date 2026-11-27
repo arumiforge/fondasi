@@ -148,8 +148,12 @@ open by law (UU 4/2011 Pasal 12 huruf e, Pasal 42), credited as "Sumber: Badan I
 (no redistribution), OpenStreetMap (ODbL, incomplete) and the 2020 BPS/OCHA set (BPS codes) are not used;
 cahyadsn/wilayah_boundaries (MIT) may serve as a cross-check. `data/batas-wilayah` holds GeoJSON per regency for
 desa and kecamatan, simplified to about 11 m on shared arcs so neighbours stay together; districts are the union of
-their villages. Regencies are added on demand, Kabupaten Kudus first. The full-precision download of each regency
-is kept in `sources/batas-wilayah/` while it is small. Full precision for apps is not stored in Fondasi or in
+their villages. Regencies are added on demand, Kabupaten Kudus first, then all 35 regencies of Jawa Tengah (user,
+2026-11-27: "tambahkan juga untuk seluruh jawa tengah"). Full-precision downloads are kept outside the repository
+(65 MB for Jawa Tengah); `sources/batas-wilayah/SOURCE.txt` records the fetch time and `content_sha256` of every
+regency, and only Kudus's download stays in `sources/batas-wilayah/` as a sample that rebuilds its files. Coordinates
+have 6 decimals; arcs where rounding to 6 decimals would make a ring cross itself (BIG's own rings do not) keep up to
+9 decimals, listed per regency in the manifest (`villages_with_more_decimals`). Full precision for apps is not stored in Fondasi or in
 any bucket or drive: each server fetches it from BIG itself with `batas-wilayah.py presisi`, which refuses content
 that differs from the `content_sha256` Fondasi recorded per regency (user, 2026-11-27: "pilih A, server ambil
 langsung dari BIG"). Apps show the boundary status and never present a boundary as legal.

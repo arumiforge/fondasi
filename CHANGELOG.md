@@ -5,6 +5,16 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `batas-wilayah` 2026-06-15 now covers all of Jawa Tengah (R-18, F-035; user, 2026-11-27): 35 regencies, all 8,563
+  villages of `wilayah` 33.* and all 576 districts, 6.1 MB. Borders between regencies are identical on both sides
+  (1,792 shared border arcs); no two villages overlap and no ring crosses itself (0 crossings among 820,501
+  segments). District areas equal BIG's BATAS_KECAMATAN_AR to four decimals in 574 of 576 districts; 33.01.24 and
+  33.17.09 differ by exactly BIG's undefined areas (0.0968 and 0.0052 km², an island without a village). Kudus
+  keeps its numbers (areas, statuses); its border arcs with Jepara, Demak, Pati and Grobogan are now cut at the
+  same points as theirs. Full-precision downloads stay outside the repository; `sources/batas-wilayah/SOURCE.txt`
+  lists the fetch time and `content_sha256` of every regency, and `33.19.json.gz` stays as a sample. `tools/checks/batas-wilayah.py --big`
+  passes except for enclaves counted as holes (Kota Magelang, Kota Salatiga, a part of Badran), the two undefined
+  areas and two borders where BIG's own lines do not coincide (33.24–33.74, 33.28–33.76; under 1 m apart in BIG).
 - `tools/checks/batas-wilayah.py <data_dir> [--big] [--render <out_dir>]` (R-18, F-035): checks a `batas-wilayah`
   build (Fondasi's, a converter build elsewhere, or a server's `presisi` copy) — every village and district of
   `data/wilayah` in each listed regency has a polygon, each district is exactly the union of its villages (same
@@ -93,6 +103,16 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
   referensi.data.kemendikdasmen.go.id that matches regions to `wilayah` by name, with spelling rules that never guess
   between several candidates (R-01).
 - Decision F-028: which forms and regions `sekolah` keeps.
+
+
+### Changed
+- `batas-wilayah.py build`: one regency per worker (`--workers`, default every CPU; Jawa Tengah in about 30 s on 4
+  CPUs). Rings that crossed themselves only because of rounding to 6 decimals (34 in Jawa Tengah, none in BIG's own
+  data) no longer stop the build: only the arcs that cross are refined (half the tolerance, every point, then up to
+  9 decimals for those arcs and their junctions), every pass-2 round continues from the arcs refined so far (it used
+  to refine the same border arcs again and never converged), collapsed rings (an edge used twice, no area) and arcs
+  of different rings that cross are refined too, and arcs shorter than 0.1 m no longer break district rings.
+  Full-precision builds (`presisi`) go through the same checks. Errors name the regency and villages.
 
 ### Added
 - Data set `kaldik-madrasah-jateng` 2026-06-29 (R-06): madrasah calendar of Jawa Tengah 2026/2027 from Keputusan

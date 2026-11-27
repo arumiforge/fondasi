@@ -1,8 +1,8 @@
 {
   "version": "2026-06-15",
-  "description": "Boundaries of villages (desa/kelurahan) and districts (kecamatan), one GeoJSON file per regency and level, simplified to about 11 m with shared borders kept together; keyed by the Kemendagri codes of the wilayah set.",
-  "status": "partial: regencies listed in `regencies`; others are added on demand (F-035)",
-  "source": "Badan Informasi Geospasial, Basis Data Batas Wilayah Administrasi Edisi Juni 2026 (metadata date 2026-06-15), layer BATAS_DESAKEL_AR of https://geoservices.big.go.id/rbi/rest/services/BATASWILAYAH/BATAS_DESAKEL_AR; full-precision download kept in sources/batas-wilayah/; servers fetch full precision themselves with the presisi command (F-035)",
+  "description": "Boundaries of villages (desa/kelurahan) and districts (kecamatan), one GeoJSON file per regency and level, simplified to about 11 m with shared borders kept together, also across regencies; keyed by the Kemendagri codes of the wilayah set. Arcs where rounding would make a ring cross itself keep up to 9 decimals (villages_with_more_decimals per regency).",
+  "status": "partial: every regency of Jawa Tengah (33); regencies listed in `regencies`; others are added on demand (F-035)",
+  "source": "Badan Informasi Geospasial, Basis Data Batas Wilayah Administrasi Edisi Juni 2026 (metadata date 2026-06-15), layer BATAS_DESAKEL_AR of https://geoservices.big.go.id/rbi/rest/services/BATASWILAYAH/BATAS_DESAKEL_AR; full-precision downloads kept outside the repository, their content_sha256 per regency here and in sources/batas-wilayah/SOURCE.txt (Kudus kept there as a sample); servers fetch full precision themselves with the presisi command (F-035)",
   "licence": "Informasi Geospasial Dasar, open by law (UU 4/2011 Pasal 12 huruf e and Pasal 42); credit \"Sumber: Badan Informasi Geospasial\" (F-035)",
   "procedure": "tools/converters/batas-wilayah.py fetch <raw_dir> <regency...>, then build <raw_dir> data/wilayah/wilayah.json.gz data/batas-wilayah --tolerance=11",
   "tolerance_m": 11.0,
@@ -31,6 +31,211 @@
   },
   "regencies": [
     {
+      "code": "33.01",
+      "name": "Kabupaten Cilacap",
+      "villages": 284,
+      "districts": 24,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 1,
+      "arcs": 952,
+      "content_sha256": "dbeda59bd7741a465e6b3d74d770b26131ae1a56d621fd1efa6d6f4af7b0a051"
+    },
+    {
+      "code": "33.02",
+      "name": "Kabupaten Banyumas",
+      "villages": 331,
+      "districts": 27,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 1155,
+      "content_sha256": "95b4007ae30be729429298c51a0dcab4b3da28d720927ba13e0830e3be43fb9b"
+    },
+    {
+      "code": "33.03",
+      "name": "Kabupaten Purbalingga",
+      "villages": 239,
+      "districts": 18,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 766,
+      "content_sha256": "708b9c6a4652fe3e867389ca25c37046dad630753daa9f575a4ad7569247f8ae"
+    },
+    {
+      "code": "33.04",
+      "name": "Kabupaten Banjarnegara",
+      "villages": 278,
+      "districts": 20,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 906,
+      "content_sha256": "4ef73fdd37ee6dcdd9cadb6bcf16bc21f820d28200bb6a651253bfde02604706",
+      "villages_with_more_decimals": [
+        "33.04.14.2015",
+        "33.04.15.2015"
+      ]
+    },
+    {
+      "code": "33.05",
+      "name": "Kabupaten Kebumen",
+      "villages": 460,
+      "districts": 26,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 1501,
+      "content_sha256": "bbfc60f274b12fceb8fd6d51e9962e87fdc28373e3f96f3280eac01a830d8e62"
+    },
+    {
+      "code": "33.06",
+      "name": "Kabupaten Purworejo",
+      "villages": 494,
+      "districts": 16,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 1565,
+      "content_sha256": "1fb4d6cb6133a7f91108ee63c53ab82b15927ff680c5b87c916c88efd7f1993a"
+    },
+    {
+      "code": "33.07",
+      "name": "Kabupaten Wonosobo",
+      "villages": 265,
+      "districts": 15,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 869,
+      "content_sha256": "2d5629b287d0280c0a13102a72ea34d608ff8b72e96f04ba47368b05c39a6c67",
+      "villages_with_more_decimals": [
+        "33.07.10.2016"
+      ]
+    },
+    {
+      "code": "33.08",
+      "name": "Kabupaten Magelang",
+      "villages": 372,
+      "districts": 21,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 1161,
+      "content_sha256": "4451de535c8c128b0b54ca5acf1ee6a138b79c2162e45c5e31f64a8118b0c5c7"
+    },
+    {
+      "code": "33.09",
+      "name": "Kabupaten Boyolali",
+      "villages": 267,
+      "districts": 22,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 907,
+      "content_sha256": "bc4e31058e310ce23b60503f9d23224f44b4631d91220a864deab6c2771e3935"
+    },
+    {
+      "code": "33.10",
+      "name": "Kabupaten Klaten",
+      "villages": 401,
+      "districts": 26,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 1292,
+      "content_sha256": "22ddb98712dc70dab7f37a1c66da145f1e51ee13e31ad25ec26c1a67dbf466df"
+    },
+    {
+      "code": "33.11",
+      "name": "Kabupaten Sukoharjo",
+      "villages": 167,
+      "districts": 12,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 565,
+      "content_sha256": "b5aa448d3dfd9ea79881e5d30b9ff8b7a19c7ff84414bf6af063061a707c760e"
+    },
+    {
+      "code": "33.12",
+      "name": "Kabupaten Wonogiri",
+      "villages": 294,
+      "districts": 25,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 918,
+      "content_sha256": "b91158bdbb3417fd2efc418aa35cc431e93784b76585c78ee129979724b12162"
+    },
+    {
+      "code": "33.13",
+      "name": "Kabupaten Karanganyar",
+      "villages": 177,
+      "districts": 17,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 607,
+      "content_sha256": "4e8b5ae94e157ef27432a9df37935144c869987c136b40b009dcaca66ccbb1fe"
+    },
+    {
+      "code": "33.14",
+      "name": "Kabupaten Sragen",
+      "villages": 208,
+      "districts": 20,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 656,
+      "content_sha256": "b9c1a20f1ee36841dc3f2e86b5e9b8e1d5da0d4e9b69682a99d340b7344d97a0"
+    },
+    {
+      "code": "33.15",
+      "name": "Kabupaten Grobogan",
+      "villages": 280,
+      "districts": 19,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 980,
+      "content_sha256": "f1ec928dafb5e94b7657221b9593ba1ef9734826aebe470cb444e3c4f5304c60"
+    },
+    {
+      "code": "33.16",
+      "name": "Kabupaten Blora",
+      "villages": 295,
+      "districts": 16,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 955,
+      "content_sha256": "5eb7968f4a1adb975d17de3a0893df0dab02566601878968132dc054cd587ea9"
+    },
+    {
+      "code": "33.17",
+      "name": "Kabupaten Rembang",
+      "villages": 294,
+      "districts": 14,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 1,
+      "arcs": 949,
+      "content_sha256": "5cc226f7145e1bb456e9f28eead355a51731aff0932357098318a4b10ab89d9a"
+    },
+    {
+      "code": "33.18",
+      "name": "Kabupaten Pati",
+      "villages": 406,
+      "districts": 21,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 1346,
+      "content_sha256": "47d6449ee40bdcb467e91e34c19e16226930bd42ae909885f7b3c7be63391bbf"
+    },
+    {
       "code": "33.19",
       "name": "Kabupaten Kudus",
       "villages": 132,
@@ -38,25 +243,205 @@
       "villages_without_polygon": [],
       "districts_without_polygon": [],
       "undefined_areas": 0,
-      "arcs": 399,
+      "arcs": 443,
       "content_sha256": "d86c97de0f4743ef16f36ee33f34b322902fa355472cb8586eacfb1247a5d356"
+    },
+    {
+      "code": "33.20",
+      "name": "Kabupaten Jepara",
+      "villages": 195,
+      "districts": 16,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 717,
+      "content_sha256": "03862d64ff5eaf8ccd27e7f9cae148501062b468a6712ee92c7deb0898784737"
+    },
+    {
+      "code": "33.21",
+      "name": "Kabupaten Demak",
+      "villages": 249,
+      "districts": 14,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 863,
+      "content_sha256": "334158cad5a2f6df3f47e3fc5f54daf7075467e3ab004619102b95e48d6170dd"
+    },
+    {
+      "code": "33.22",
+      "name": "Kabupaten Semarang",
+      "villages": 235,
+      "districts": 19,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 808,
+      "content_sha256": "6383f5766dd1b91265e8559829a6d4c874b837efea462c25b955b787a8247c68"
+    },
+    {
+      "code": "33.23",
+      "name": "Kabupaten Temanggung",
+      "villages": 289,
+      "districts": 20,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 965,
+      "content_sha256": "2a7fa0a8acacc614d4b3fb4cea0570e82595c6d4f1c4eed6d71ae0b479ded870"
+    },
+    {
+      "code": "33.24",
+      "name": "Kabupaten Kendal",
+      "villages": 286,
+      "districts": 20,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 950,
+      "content_sha256": "f2b7d266fac082d013d69c1261949c207c37ba2ac06927819fe582074e3a71a2"
+    },
+    {
+      "code": "33.25",
+      "name": "Kabupaten Batang",
+      "villages": 248,
+      "districts": 15,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 783,
+      "content_sha256": "f7cc529163223771fb231e52559d35d5fa49fddce503ce83cd504c312e9df5bb"
+    },
+    {
+      "code": "33.26",
+      "name": "Kabupaten Pekalongan",
+      "villages": 285,
+      "districts": 19,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 937,
+      "content_sha256": "65627d9f8a053b8d2e32267eb88c88f636e7aa0940a7edbffc9376bfbd6b2882"
+    },
+    {
+      "code": "33.27",
+      "name": "Kabupaten Pemalang",
+      "villages": 223,
+      "districts": 14,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 772,
+      "content_sha256": "0d4929a52dffc1a6d9d58c6b7747b4ff34c8c4de4d5e216ec88be2e3303d3cb7"
+    },
+    {
+      "code": "33.28",
+      "name": "Kabupaten Tegal",
+      "villages": 287,
+      "districts": 18,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 990,
+      "content_sha256": "194d380f5f7d481b1caa70bc662065d98c8b24af9e3cfc8ace5a342a8a861b6d"
+    },
+    {
+      "code": "33.29",
+      "name": "Kabupaten Brebes",
+      "villages": 297,
+      "districts": 17,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 983,
+      "content_sha256": "1001fce5f600f79e7733b30a462ff51b80c1ac783d7bf3d17f1f32f69459045b"
+    },
+    {
+      "code": "33.71",
+      "name": "Kota Magelang",
+      "villages": 17,
+      "districts": 3,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 60,
+      "content_sha256": "cf670e0cceac38edf77c5a7a38dea386bd68e641ce7f9464f16c28b63f8ca1ec"
+    },
+    {
+      "code": "33.72",
+      "name": "Kota Surakarta",
+      "villages": 54,
+      "districts": 5,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 169,
+      "content_sha256": "7fdbcf54ee8d67dbe5cb2a5f9ff4ee7f91baecd9e521096d1e066a7f6627e7a2"
+    },
+    {
+      "code": "33.73",
+      "name": "Kota Salatiga",
+      "villages": 23,
+      "districts": 4,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 86,
+      "content_sha256": "c65aacfeb98a56eb2f576ba643b3c893f2899ba3638cca1042251c6eb84ca004"
+    },
+    {
+      "code": "33.74",
+      "name": "Kota Semarang",
+      "villages": 177,
+      "districts": 16,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 550,
+      "content_sha256": "91ada41701728c3aa5b3592ff219e12c8634e38193347226e3bcf667a3087cfc"
+    },
+    {
+      "code": "33.75",
+      "name": "Kota Pekalongan",
+      "villages": 27,
+      "districts": 4,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 100,
+      "content_sha256": "26bf02df346cdab47090639566af908afea9b633c5441ea5b25c2078b87d99a8"
+    },
+    {
+      "code": "33.76",
+      "name": "Kota Tegal",
+      "villages": 27,
+      "districts": 4,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 95,
+      "content_sha256": "4e1252a221322be80283578f5d2226a91181781e36d3444d3d980312a06fe652"
     }
   ],
-  "villages": 132,
-  "districts": 9,
+  "villages": 8563,
+  "districts": 576,
   "status_counts": {
-    "Batas Definitif": 25,
-    "Hasil Kesepakatan": 107
+    "Batas Definitif": 764,
+    "Batas Indikatif": 4135,
+    "Hasil Kesepakatan": 3664
   },
   "largest_area_change_percent": {
-    "code": "33.19.02.1017",
-    "percent": 1.661
+    "code": "33.17.05.2022",
+    "percent": 4.669
   },
-  "shared_regency_border_arcs": 0,
-  "arcs_with_smaller_tolerance": 0,
+  "shared_regency_border_arcs": 1792,
+  "arcs_with_smaller_tolerance": 88,
+  "arcs_with_more_decimals": 6,
+  "junctions_with_more_decimals": 0,
   "notes": [
     "Only 'Batas Definitif' rests on a signed regulation. 'Hasil Kesepakatan' is agreed by the villages and checked by BIG; 'Batas Indikatif' is a working line. UU 4/2011 Pasal 16 ayat (2): show boundaries that are not definitive with a different line style or colour, and never present any of them as a legal boundary.",
     "Use for maps, filters and 'which village is this point in' hints; let users correct the village they chose. Credit: Sumber: Badan Informasi Geospasial.",
-    "District areas equal BIG's own district layer (BATAS_KECAMATAN_AR) to four decimals."
+    "District areas equal BIG's own district layer (BATAS_KECAMATAN_AR) to four decimals, except in districts with undefined areas (TIPADM 999: islands or water without a village, `undefined_areas` per regency), which BIG's district polygon includes and no village does.",
+    "Borders between regencies are cut at the same points and simplified the same way on both sides (`shared_regency_border_arcs`); arcs that would make a ring collapse or cross itself or another ring are kept finer (`arcs_with_smaller_tolerance`), so no two villages overlap. Where BIG's own lines of two neighbouring regencies do not coincide (a few places, under 1 m apart in BIG), they are not shared arcs: each side is simplified on its own and the two may differ by up to the tolerance. `largest_area_change_percent` compares the simplified with the full-precision area; small villages change most."
   ]
 }
