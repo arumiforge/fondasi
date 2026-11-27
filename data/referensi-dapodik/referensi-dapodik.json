@@ -1,0 +1,1197 @@
+{
+ "name": "Referensi Dapodik",
+ "app": "Aplikasi Dapodik 2027.b, 2026/2027 Gasal",
+ "lists": {
+  "agama": {
+   "title": "Agama",
+   "type": "single",
+   "dapodik_fields": [
+    "pribadi.agama"
+   ],
+   "export": "Agama",
+   "webservice": "agama_id",
+   "options": [
+    {
+     "order": 1,
+     "label": "Islam"
+    },
+    {
+     "order": 2,
+     "label": "Kristen"
+    },
+    {
+     "order": 3,
+     "label": "Katholik"
+    },
+    {
+     "order": 4,
+     "label": "Hindu"
+    },
+    {
+     "order": 5,
+     "label": "Budha"
+    },
+    {
+     "order": 6,
+     "label": "Khonghucu"
+    },
+    {
+     "order": 7,
+     "label": "Kepercayaan kpd Tuhan YME"
+    },
+    {
+     "order": 8,
+     "label": "lainnya"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-13",
+   "recheck": true,
+   "skema_siswa_list": "agama"
+  },
+  "kebutuhan_khusus": {
+   "title": "Kebutuhan khusus",
+   "type": "multi",
+   "dapodik_fields": [
+    "pribadi.kebutuhan_khusus",
+    "ayah.kebutuhan_khusus",
+    "ibu.kebutuhan_khusus"
+   ],
+   "export": "Kebutuhan Khusus",
+   "webservice": "kebutuhan_khusus",
+   "options": [
+    {
+     "order": 1,
+     "label": "netra (A)"
+    },
+    {
+     "order": 2,
+     "label": "rungu (B)"
+    },
+    {
+     "order": 3,
+     "label": "grahita ringan (C)"
+    },
+    {
+     "order": 4,
+     "label": "grahita sedang (C1)"
+    },
+    {
+     "order": 5,
+     "label": "daksa ringan (D)"
+    },
+    {
+     "order": 6,
+     "label": "daksa sedang (D1)"
+    },
+    {
+     "order": 7,
+     "label": "laras (E)"
+    },
+    {
+     "order": 8,
+     "label": "wicara (F)"
+    },
+    {
+     "order": 9,
+     "label": "hyperaktif (H)"
+    },
+    {
+     "order": 10,
+     "label": "cerdas istimewa (I)"
+    },
+    {
+     "order": 11,
+     "label": "bakat istimewa (J)"
+    },
+    {
+     "order": 12,
+     "label": "kesulitan belajar (K)"
+    },
+    {
+     "order": 13,
+     "label": "narkoba (N)"
+    },
+    {
+     "order": 14,
+     "label": "indigo (O)"
+    },
+    {
+     "order": 15,
+     "label": "down syndrome (P)"
+    },
+    {
+     "order": 16,
+     "label": "autis (Q)"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-13",
+   "recheck": true,
+   "skema_siswa_list": "abk"
+  },
+  "tempat_tinggal": {
+   "title": "Jenis tinggal",
+   "type": "single",
+   "dapodik_fields": [
+    "pribadi.tempat_tinggal"
+   ],
+   "export": "Jenis Tinggal",
+   "options": [
+    {
+     "order": 1,
+     "label": "Bersama orang tua"
+    },
+    {
+     "order": 2,
+     "label": "Wali"
+    },
+    {
+     "order": 3,
+     "label": "Kost"
+    },
+    {
+     "order": 4,
+     "label": "Asrama"
+    },
+    {
+     "order": 5,
+     "label": "Panti asuhan"
+    },
+    {
+     "order": 6,
+     "label": "Pesantren"
+    },
+    {
+     "order": 7,
+     "label": "Lainnya"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-13",
+   "recheck": true,
+   "skema_siswa_list": "tempat_tinggal"
+  },
+  "moda_transportasi": {
+   "title": "Alat transportasi",
+   "type": "single",
+   "dapodik_fields": [
+    "pribadi.moda_transportasi"
+   ],
+   "export": "Alat Transportasi",
+   "options": [
+    {
+     "order": 1,
+     "label": "Jalan kaki"
+    },
+    {
+     "order": 2,
+     "label": "Angkutan umum/bus/pete-pete"
+    },
+    {
+     "order": 3,
+     "label": "Mobil/bus antar jemput"
+    },
+    {
+     "order": 4,
+     "label": "Kereta api"
+    },
+    {
+     "order": 5,
+     "label": "Ojek"
+    },
+    {
+     "order": 6,
+     "label": "Andong/bendi/sado/dokar/delman/becak"
+    },
+    {
+     "order": 7,
+     "label": "Perahu penyeberangan/rakit/getek"
+    },
+    {
+     "order": 8,
+     "label": "Kuda"
+    },
+    {
+     "order": 9,
+     "label": "Sepeda"
+    },
+    {
+     "order": 10,
+     "label": "Sepeda motor"
+    },
+    {
+     "order": 11,
+     "label": "Mobil pribadi"
+    },
+    {
+     "order": 12,
+     "label": "Lainnya"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-13",
+   "recheck": true,
+   "skema_siswa_list": "transportasi"
+  },
+  "pendidikan": {
+   "title": "Jenjang pendidikan orang tua/wali",
+   "type": "single",
+   "dapodik_fields": [
+    "ayah.pendidikan",
+    "ibu.pendidikan",
+    "wali.pendidikan"
+   ],
+   "export": "Data Ayah/Ibu/Wali: Jenjang Pendidikan",
+   "options": [
+    {
+     "order": 1,
+     "label": "D1"
+    },
+    {
+     "order": 2,
+     "label": "D2"
+    },
+    {
+     "order": 3,
+     "label": "D3"
+    },
+    {
+     "order": 4,
+     "label": "D4"
+    },
+    {
+     "order": 5,
+     "label": "Informal"
+    },
+    {
+     "order": 6,
+     "label": "Lainnya"
+    },
+    {
+     "order": 7,
+     "label": "Non formal"
+    },
+    {
+     "order": 8,
+     "label": "Paket A"
+    },
+    {
+     "order": 9,
+     "label": "Paket B"
+    },
+    {
+     "order": 10,
+     "label": "Paket C"
+    },
+    {
+     "order": 11,
+     "label": "PAUD"
+    },
+    {
+     "order": 12,
+     "label": "Profesi"
+    },
+    {
+     "order": 13,
+     "label": "Putus SD"
+    },
+    {
+     "order": 14,
+     "label": "S1"
+    },
+    {
+     "order": 15,
+     "label": "S2"
+    },
+    {
+     "order": 16,
+     "label": "S2 Terapan"
+    },
+    {
+     "order": 17,
+     "label": "S3"
+    },
+    {
+     "order": 18,
+     "label": "S3 Terapan"
+    },
+    {
+     "order": 19,
+     "label": "SD / sederajat"
+    },
+    {
+     "order": 20,
+     "label": "SMA / sederajat"
+    },
+    {
+     "order": 21,
+     "label": "SMP / sederajat"
+    },
+    {
+     "order": 22,
+     "label": "Sp-1"
+    },
+    {
+     "order": 23,
+     "label": "Sp-2"
+    },
+    {
+     "order": 24,
+     "label": "Tidak sekolah"
+    },
+    {
+     "order": 25,
+     "label": "TK / sederajat"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-13",
+   "recheck": true,
+   "skema_siswa_list": "pendidikan",
+   "notes": [
+    "Dapodik shows this list sorted alphabetically."
+   ]
+  },
+  "pekerjaan": {
+   "title": "Pekerjaan orang tua/wali",
+   "type": "single",
+   "dapodik_fields": [
+    "ayah.pekerjaan",
+    "ibu.pekerjaan",
+    "wali.pekerjaan"
+   ],
+   "export": "Data Ayah/Ibu/Wali: Pekerjaan",
+   "webservice": "pekerjaan_ayah_id, pekerjaan_ibu_id, pekerjaan_wali_id",
+   "options": [
+    {
+     "order": 1,
+     "label": "Tidak bekerja"
+    },
+    {
+     "order": 2,
+     "label": "Nelayan"
+    },
+    {
+     "order": 3,
+     "label": "Petani"
+    },
+    {
+     "order": 4,
+     "label": "Peternak"
+    },
+    {
+     "order": 5,
+     "label": "PNS/TNI/Polri"
+    },
+    {
+     "order": 6,
+     "label": "Karyawan Swasta"
+    },
+    {
+     "order": 7,
+     "label": "Pedagang Kecil"
+    },
+    {
+     "order": 8,
+     "label": "Pedagang Besar"
+    },
+    {
+     "order": 9,
+     "label": "Wiraswasta"
+    },
+    {
+     "order": 10,
+     "label": "Wirausaha"
+    },
+    {
+     "order": 11,
+     "label": "Buruh"
+    },
+    {
+     "order": 12,
+     "label": "Pensiunan"
+    },
+    {
+     "order": 13,
+     "label": "Tenaga Kerja Indonesia"
+    },
+    {
+     "order": 14,
+     "label": "Karyawan BUMN"
+    },
+    {
+     "order": 15,
+     "label": "Aparatur Sipil Negara"
+    },
+    {
+     "order": 16,
+     "label": "Perdagangan"
+    },
+    {
+     "order": 17,
+     "label": "Tidak dapat diterapkan"
+    },
+    {
+     "order": 18,
+     "label": "Sudah Meninggal"
+    },
+    {
+     "order": 19,
+     "label": "Lainnya"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-13",
+   "recheck": true,
+   "skema_siswa_list": "pekerjaan"
+  },
+  "penghasilan": {
+   "title": "Penghasilan orang tua/wali",
+   "type": "single",
+   "dapodik_fields": [
+    "ayah.penghasilan",
+    "ibu.penghasilan",
+    "wali.penghasilan"
+   ],
+   "export": "Data Ayah/Ibu/Wali: Penghasilan",
+   "options": [
+    {
+     "order": 1,
+     "label": "Kurang dari Rp. 500,000"
+    },
+    {
+     "order": 2,
+     "label": "Rp. 500,000 - Rp. 999,999"
+    },
+    {
+     "order": 3,
+     "label": "Rp. 1,000,000 - Rp. 1,999,999"
+    },
+    {
+     "order": 4,
+     "label": "Rp. 2,000,000 - Rp. 4,999,999"
+    },
+    {
+     "order": 5,
+     "label": "Rp. 5,000,000 - Rp. 20,000,000"
+    },
+    {
+     "order": 6,
+     "label": "Lebih dari Rp. 20,000,000"
+    },
+    {
+     "order": 7,
+     "label": "< Rp1.000.000"
+    },
+    {
+     "order": 8,
+     "label": "Rp1.000.001 Rp3.000.000"
+    },
+    {
+     "order": 9,
+     "label": "Rp3.000.001 Rp5.500.000"
+    },
+    {
+     "order": 10,
+     "label": "Rp5.500.001 Rp10.00.000"
+    },
+    {
+     "order": 11,
+     "label": "> 10.0000.000"
+    },
+    {
+     "order": 12,
+     "label": "Tidak Berpenghasilan"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-13",
+   "recheck": true,
+   "skema_siswa_list": "penghasilan",
+   "notes": [
+    "Label nominal disalin persis. Dua kelompok rentang serta dugaan salah ketik tidak dinormalisasi otomatis.",
+    "Two sets of bands are offered together: six older bands (\"Kurang dari Rp. 500,000\" … \"Lebih dari Rp. 20,000,000\") and five newer ones (\"< Rp1.000.000\" … \"> 10.0000.000\"), plus \"Tidak Berpenghasilan\"."
+   ]
+  },
+  "hobi": {
+   "title": "Hobi",
+   "type": "single",
+   "dapodik_fields": [
+    "registrasi.hobi"
+   ],
+   "options": [
+    {
+     "order": 1,
+     "label": "(belum diisi)"
+    },
+    {
+     "order": 2,
+     "label": "Belanja"
+    },
+    {
+     "order": 3,
+     "label": "Berkemah"
+    },
+    {
+     "order": 4,
+     "label": "Berlari"
+    },
+    {
+     "order": 5,
+     "label": "Bermain Biola"
+    },
+    {
+     "order": 6,
+     "label": "Bermain Bola"
+    },
+    {
+     "order": 7,
+     "label": "Bermain Bola Tenis"
+    },
+    {
+     "order": 8,
+     "label": "Bermain Boneka"
+    },
+    {
+     "order": 9,
+     "label": "Bermain Bulu Tangkis"
+    },
+    {
+     "order": 10,
+     "label": "Bermain Gitar"
+    },
+    {
+     "order": 11,
+     "label": "Bermain Gitar"
+    },
+    {
+     "order": 12,
+     "label": "Bermain Musik"
+    },
+    {
+     "order": 13,
+     "label": "Bermain Piano"
+    },
+    {
+     "order": 14,
+     "label": "Berselancar"
+    },
+    {
+     "order": 15,
+     "label": "Fitness"
+    },
+    {
+     "order": 16,
+     "label": "Fotografi"
+    },
+    {
+     "order": 17,
+     "label": "Jogging"
+    },
+    {
+     "order": 18,
+     "label": "Kesenian"
+    },
+    {
+     "order": 19,
+     "label": "Lainnya"
+    },
+    {
+     "order": 20,
+     "label": "Main Puzzle"
+    },
+    {
+     "order": 21,
+     "label": "Makan"
+    },
+    {
+     "order": 22,
+     "label": "Memancing"
+    },
+    {
+     "order": 23,
+     "label": "Membaca"
+    },
+    {
+     "order": 24,
+     "label": "mendaki"
+    },
+    {
+     "order": 25,
+     "label": "Menggambar"
+    },
+    {
+     "order": 26,
+     "label": "Menjahit"
+    },
+    {
+     "order": 27,
+     "label": "Menulis"
+    },
+    {
+     "order": 28,
+     "label": "Mewarnai"
+    },
+    {
+     "order": 29,
+     "label": "Olah Raga"
+    },
+    {
+     "order": 30,
+     "label": "Traveling"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-12",
+   "recheck": true,
+   "notes": [
+    "Dua entri Bermain Gitar dipertahankan. ID/value belum diekstrak; jangan memilih label duplikat berdasarkan posisi.",
+    "Duplicate labels kept: Bermain Gitar; never pick one by position."
+   ]
+  },
+  "cita_cita": {
+   "title": "Cita-cita",
+   "type": "single",
+   "dapodik_fields": [
+    "registrasi.cita_cita"
+   ],
+   "options": [
+    {
+     "order": 1,
+     "label": "(belum diisi)"
+    },
+    {
+     "order": 2,
+     "label": "Arsitek"
+    },
+    {
+     "order": 3,
+     "label": "Astronot"
+    },
+    {
+     "order": 4,
+     "label": "Atlet"
+    },
+    {
+     "order": 5,
+     "label": "Atlet E-Sport Profesional"
+    },
+    {
+     "order": 6,
+     "label": "Atlit Olahraga"
+    },
+    {
+     "order": 7,
+     "label": "Bidan"
+    },
+    {
+     "order": 8,
+     "label": "Content Creator"
+    },
+    {
+     "order": 9,
+     "label": "Da'i / Ustadz"
+    },
+    {
+     "order": 10,
+     "label": "Designer"
+    },
+    {
+     "order": 11,
+     "label": "Dokter"
+    },
+    {
+     "order": 12,
+     "label": "Entertainer / Pekerja Seni"
+    },
+    {
+     "order": 13,
+     "label": "Guru/Dosen"
+    },
+    {
+     "order": 14,
+     "label": "Koki"
+    },
+    {
+     "order": 15,
+     "label": "Lainnya"
+    },
+    {
+     "order": 16,
+     "label": "Masinis Kereta Api"
+    },
+    {
+     "order": 17,
+     "label": "Pegawai Negeri Sipil / PNS"
+    },
+    {
+     "order": 18,
+     "label": "Pelaut"
+    },
+    {
+     "order": 19,
+     "label": "Pemadam Kebakaran"
+    },
+    {
+     "order": 20,
+     "label": "Pembalap"
+    },
+    {
+     "order": 21,
+     "label": "Pembawa Acara / Master Ceremony"
+    },
+    {
+     "order": 22,
+     "label": "Pendeta"
+    },
+    {
+     "order": 23,
+     "label": "Pengacara"
+    },
+    {
+     "order": 24,
+     "label": "Penghafal Al-Qur'an"
+    },
+    {
+     "order": 25,
+     "label": "Pengusaha / Bisnismen"
+    },
+    {
+     "order": 26,
+     "label": "Penulis"
+    },
+    {
+     "order": 27,
+     "label": "Penyiar Radio"
+    },
+    {
+     "order": 28,
+     "label": "Perawat"
+    },
+    {
+     "order": 29,
+     "label": "Perawat / Suster"
+    },
+    {
+     "order": 30,
+     "label": "Pilot"
+    },
+    {
+     "order": 31,
+     "label": "PNS"
+    },
+    {
+     "order": 32,
+     "label": "Polisi"
+    },
+    {
+     "order": 33,
+     "label": "Politikus"
+    },
+    {
+     "order": 34,
+     "label": "Presiden"
+    },
+    {
+     "order": 35,
+     "label": "Seni/Lukis/Artis/Sejenis"
+    },
+    {
+     "order": 36,
+     "label": "TNI/Polri"
+    },
+    {
+     "order": 37,
+     "label": "Translator"
+    },
+    {
+     "order": 38,
+     "label": "Vloger"
+    },
+    {
+     "order": 39,
+     "label": "Wartawan"
+    },
+    {
+     "order": 40,
+     "label": "Wiraswasta"
+    }
+   ],
+   "codes": null,
+   "confidence": "observed_ui",
+   "observed": "2026-10-12",
+   "recheck": true
+  },
+  "jenis_pendaftaran": {
+   "title": "Jenis pendaftaran",
+   "type": "single",
+   "dapodik_fields": [
+    "registrasi.jenis_pendaftaran"
+   ],
+   "webservice": "jenis_pendaftaran_id",
+   "options": [
+    {
+     "order": 1,
+     "label": "Siswa baru"
+    },
+    {
+     "order": 2,
+     "label": "Pindahan"
+    },
+    {
+     "order": 3,
+     "label": "Kembali bersekolah"
+    }
+   ],
+   "codes": null,
+   "confidence": "operator",
+   "observed": null,
+   "recheck": true,
+   "notes": [
+    "Daftar kebutuhan dari operator; label dan kelengkapannya wajib dibaca ulang dari UI."
+   ]
+  },
+  "status_hidup": {
+   "title": "Status hidup ayah/ibu",
+   "type": "single",
+   "dapodik_fields": [
+    "ayah.status_hidup",
+    "ibu.status_hidup"
+   ],
+   "options": [
+    {
+     "order": 1,
+     "label": "Hidup"
+    },
+    {
+     "order": 2,
+     "label": "Wafat"
+    }
+   ],
+   "codes": null,
+   "confidence": "guide_screenshot",
+   "observed": "2026-07-01",
+   "recheck": true,
+   "skema_siswa_list": "status_hidup",
+   "source": "Panduan Aplikasi Dapodik versi 2027 v1.0 (Juli 2026), 5.2.6, PDF p. 51 (printed p. 50), screenshot of the Data Ayah Kandung form",
+   "notes": [
+    "New in Dapodik 2027 (radio buttons in the Orang Tua/Wali tab)."
+   ]
+  }
+ },
+ "errata": [
+  {
+   "list": "penghasilan",
+   "printed": "Rp1.000.001 Rp3.000.000",
+   "status": "unresolved",
+   "reason": "no dash between the two amounts"
+  },
+  {
+   "list": "penghasilan",
+   "printed": "Rp5.500.001 Rp10.00.000",
+   "status": "unresolved",
+   "reason": "\"Rp10.00.000\" has a missing digit (Rp10.000.000 is likely meant)"
+  },
+  {
+   "list": "penghasilan",
+   "printed": "> 10.0000.000",
+   "status": "unresolved",
+   "reason": "\"10.0000.000\" has four digits in a group (10.000.000 is likely meant)"
+  },
+  {
+   "list": "hobi",
+   "printed": "mendaki",
+   "status": "unresolved",
+   "reason": "the only label in lower case"
+  },
+  {
+   "list": "cita_cita",
+   "printed": "Atlit Olahraga",
+   "status": "unresolved",
+   "reason": "\"Atlit\" beside \"Atlet\"; both are offered"
+  }
+ ],
+ "gtk_details": [
+  {
+   "resource": "KitasPtk",
+   "label": "KITAS",
+   "label_printed": "KITAS",
+   "primary_key": "no_kitas"
+  },
+  {
+   "resource": "PasporPtk",
+   "label": "Paspor",
+   "label_printed": "PASPOR",
+   "primary_key": "no_paspor"
+  },
+  {
+   "resource": "RwySertifikasi",
+   "label": "Riwayat sertifikasi",
+   "label_printed": "Rwy.Sertifikasi",
+   "primary_key": "riwayat_sertifikasi_id"
+  },
+  {
+   "resource": "RwyPendFormal",
+   "label": "Riwayat pendidikan formal",
+   "label_printed": "Rwy.Pendidikan Formal",
+   "primary_key": "riwayat_pendidikan_formal_id"
+  },
+  {
+   "resource": "BidangSdm",
+   "label": "Kompetensi",
+   "label_printed": "Kompetensi",
+   "primary_key": "bidang_sdm_id"
+  },
+  {
+   "resource": "Anak",
+   "label": "Anak",
+   "label_printed": "Anak",
+   "primary_key": "anak_id"
+  },
+  {
+   "resource": "BeasiswaPtk",
+   "label": "Beasiswa",
+   "label_printed": "Beasiswa",
+   "primary_key": "beasiswa_ptk_id"
+  },
+  {
+   "resource": "BukuPtk",
+   "label": "Buku yang Pernah Ditulis",
+   "label_printed": "Buku yang Pernah Ditulis",
+   "primary_key": "buku_id"
+  },
+  {
+   "resource": "Diklat",
+   "label": "Diklat",
+   "label_printed": "Diklat",
+   "primary_key": "diklat_id"
+  },
+  {
+   "resource": "KaryaTulis",
+   "label": "Karya Tulis",
+   "label_printed": "Karya Tulis",
+   "primary_key": "karya_tulis_id"
+  },
+  {
+   "resource": "Kesejahteraan",
+   "label": "Kesejahteraan",
+   "label_printed": "Kesejahteraan",
+   "primary_key": "kesejahteraan_id"
+  },
+  {
+   "resource": "Tunjangan",
+   "label": "Tunjangan",
+   "label_printed": "Tunjangan",
+   "primary_key": "tunjangan_id"
+  },
+  {
+   "resource": "TugasTambahan",
+   "label": "Tugas Tambahan",
+   "label_printed": "Tugas Tambahan",
+   "primary_key": "ptk_tugas_tambahan_id"
+  },
+  {
+   "resource": "Inpassing",
+   "label": "Inpassing Non PNS",
+   "label_printed": "Inpassing Non PNS",
+   "primary_key": "inpassing_id"
+  },
+  {
+   "resource": "Penghargaan",
+   "label": "Penghargaan",
+   "label_printed": "Penghargaan",
+   "primary_key": "penghargaan_id"
+  },
+  {
+   "resource": "NilaiTest",
+   "label": "Nilai tes",
+   "label_printed": "Nilai Test",
+   "primary_key": "nilai_test_id"
+  },
+  {
+   "resource": "RiwayatGajiBerkala",
+   "label": "Riwayat gaji berkala",
+   "label_printed": "Rwy.Gaji Berkala",
+   "primary_key": "riwayat_gaji_berkala_id"
+  },
+  {
+   "resource": "RwyKepangkatan",
+   "label": "Riwayat kepangkatan",
+   "label_printed": "Rwy.Kepangkatan",
+   "primary_key": "riwayat_kepangkatan_id"
+  },
+  {
+   "resource": "RwyKerja",
+   "label": "Riwayat karier guru",
+   "label_printed": "Rwy.Karir Guru",
+   "primary_key": "rwy_kerja_id"
+  },
+  {
+   "resource": "RwyStruktural",
+   "label": "Riwayat jabatan struktural",
+   "label_printed": "Rwy.Jab.Pendidk / Tenaga Kependidikan",
+   "primary_key": "riwayat_struktural_id"
+  },
+  {
+   "resource": "RwyFungsional",
+   "label": "Riwayat jabatan fungsional",
+   "label_printed": "Rwy.Jab.Fungsional",
+   "primary_key": "riwayat_fungsional_id"
+  }
+ ],
+ "webservice": {
+  "note": "Fields the Dapodik local web service returns (read-only pull of 2026-10-13). An *_id field comes with *_id_str, the label of the same option.",
+  "semester_id": "20261",
+  "endpoints": [
+   {
+    "endpoint": "getSekolah",
+    "semester_scoped": false,
+    "fields": [
+     "alamat_jalan",
+     "bentuk_pendidikan_id",
+     "bentuk_pendidikan_id_str",
+     "bujur",
+     "desa_kelurahan",
+     "dusun",
+     "email",
+     "is_sks",
+     "is_sync_to_server",
+     "kabupaten_kota",
+     "kecamatan",
+     "kode_pos",
+     "kode_wilayah",
+     "lintang",
+     "nama",
+     "nomor_fax",
+     "nomor_telepon",
+     "npsn",
+     "nss",
+     "provinsi",
+     "rt",
+     "rw",
+     "sekolah_id",
+     "status_sekolah",
+     "status_sekolah_str",
+     "website"
+    ]
+   },
+   {
+    "endpoint": "getGtk",
+    "semester_scoped": false,
+    "fields": [
+     "agama_id",
+     "agama_id_str",
+     "bidang_studi_terakhir",
+     "is_sync_to_server_ptk",
+     "is_sync_to_server_ptk_terdaftar",
+     "jabatan_ptk_id",
+     "jabatan_ptk_id_str",
+     "jenis_kelamin",
+     "jenis_ptk_id",
+     "jenis_ptk_id_str",
+     "nama",
+     "nik",
+     "nip",
+     "nuptk",
+     "pangkat_golongan_terakhir",
+     "pendidikan_terakhir",
+     "ptk_id",
+     "ptk_induk",
+     "ptk_terdaftar_id",
+     "rwy_kepangkatan",
+     "rwy_pend_formal",
+     "status_kepegawaian_id",
+     "status_kepegawaian_id_str",
+     "tahun_ajaran_id",
+     "tanggal_lahir",
+     "tanggal_surat_tugas",
+     "tempat_lahir"
+    ]
+   },
+   {
+    "endpoint": "getRombonganBelajar",
+    "semester_scoped": true,
+    "fields": [
+     "anggota_rombel",
+     "id_ruang",
+     "id_ruang_str",
+     "is_sync_to_server",
+     "jenis_rombel",
+     "jenis_rombel_str",
+     "kurikulum_id",
+     "kurikulum_id_str",
+     "moving_class",
+     "nama",
+     "pembelajaran",
+     "ptk_id",
+     "ptk_id_str",
+     "rombongan_belajar_id",
+     "semester_id",
+     "tingkat_pendidikan_id",
+     "tingkat_pendidikan_id_str"
+    ]
+   },
+   {
+    "endpoint": "getPesertaDidik",
+    "semester_scoped": true,
+    "fields": [
+     "agama_id",
+     "agama_id_str",
+     "alamat_jalan",
+     "anak_keberapa",
+     "anggota_rombel_id",
+     "berat_badan",
+     "email",
+     "is_sync_to_server",
+     "jenis_kelamin",
+     "jenis_pendaftaran_id",
+     "jenis_pendaftaran_id_str",
+     "kebutuhan_khusus",
+     "kurikulum_id",
+     "kurikulum_id_str",
+     "nama",
+     "nama_ayah",
+     "nama_ibu",
+     "nama_rombel",
+     "nama_wali",
+     "nik",
+     "nipd",
+     "nisn",
+     "nomor_telepon_rumah",
+     "nomor_telepon_seluler",
+     "pekerjaan_ayah_id",
+     "pekerjaan_ayah_id_str",
+     "pekerjaan_ibu_id",
+     "pekerjaan_ibu_id_str",
+     "pekerjaan_wali_id",
+     "pekerjaan_wali_id_str",
+     "peserta_didik_id",
+     "registrasi_id",
+     "rombongan_belajar_id",
+     "sekolah_asal",
+     "semester_id",
+     "tanggal_lahir",
+     "tanggal_masuk_sekolah",
+     "tempat_lahir",
+     "tinggi_badan",
+     "tingkat_pendidikan_id"
+    ]
+   }
+  ]
+ },
+ "notes": [
+  "Labels are as Dapodik shows them, in the order shown. Codes (IDs) were not extracted: `codes` is null in every list, and an app must not derive a code from the position.",
+  "The web service returns codes with their labels (agama_id with agama_id_str, pekerjaan_ayah_id with pekerjaan_ayah_id_str): reading them there is the way to fill `codes` later.",
+  "Lists of skema-siswa differ from these labels (e.g. agama \"Katolik\"/\"Buddha\" vs Dapodik \"Katholik\"/\"Budha\"; its income bands are not Dapodik's). `skema_siswa_list` names the related list; a mapping is the app's decision.",
+  "Region fields are a live search in Dapodik; use the set wilayah."
+ ]
+}

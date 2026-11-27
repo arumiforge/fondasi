@@ -191,3 +191,14 @@ data of students and staff (one PTK form arrived filled); `sources/ekspor-dapodi
 size and SHA-256. The converter refuses to write when any source value would appear in the output. The result is
 the set `ekspor-dapodik`, which apps use to read Dapodik exports. Option values with their codes are not in the
 exports, so `referensi-dapodik` (R-07) stays open; if a school sends a filled export again, the same rule applies.
+
+## F-039 — `referensi-dapodik`: labels as the interface shows them, codes later from the web service (2026-11-28)
+Status: accepted (user, 2026-11-28: sent the option catalog and web service field lists of their read-only Dapodik
+tool after the code tables could not be found in the exports)
+Decision: `referensi-dapodik` starts with the option labels observed in the Dapodik 2027 interface, in the order
+shown, exactly as printed (spelling such as "Katholik", "Budha", duplicate labels, the two income band sets, labels
+that look mistyped as unresolved errata, F-031), with `codes: null`. Apps never derive a code from the position. The
+codes are filled later from the Dapodik local web service, which returns each `*_id` with its `*_id_str` label; the
+set already lists the service's endpoints and fields and the 21 GTK detail categories. Reports of the user's tools
+that describe one school (class groups, counts, paths) are not kept; their SHA-256 is recorded. skema-siswa keeps its
+own option lists; mapping them to Dapodik is decided in each app.

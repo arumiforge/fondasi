@@ -5,6 +5,11 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `referensi-dapodik` 2026-10-13 (R-07, F-039): Dapodik 2027 option labels as the interface shows them (agama,
+  kebutuhan khusus, jenis tinggal, alat transportasi, jenjang pendidikan, pekerjaan, penghasilan with both band sets,
+  status hidup, hobi, cita-cita, jenis pendaftaran; 174 options, 5 doubtful labels as unresolved errata), the 21 GTK
+  detail categories and the local web service's endpoints and fields. No codes yet (`codes: null`); they are to be
+  read from the web service's `*_id`/`*_id_str` pairs.
 - `ekspor-dapodik` 2026-10-20 (F-038): column layout of the Dapodik 2027 Excel exports (Daftar Guru, Daftar Tenaga
   Kependidikan, Daftar Peserta Didik with the Data Ayah/Ibu/Wali sub-columns, Rekap Pembelajaran) and the PTK form
   (sections, numbered fields, tables), from five exports the user sent. Headers and labels only: the files are not
