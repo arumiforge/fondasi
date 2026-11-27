@@ -69,7 +69,10 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    --threads=160` (≈ 7 h for 540,000 pages; resumable; delete the TSVs first for a new crawl), then `coords-merge
    data/sekolah sources/sekolah/koordinat sources/sekolah/batas-wilayah <date>` and `tools/data-check --write`.
    A list refresh (`build`) drops the coordinate fields: run `coords-merge` after it.
-5. When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
+5. **R-09** waits for PDDikti (user, 2026-11-28: BIMA's e-catalog is partial, see data-requests). **R-07**: the
+   uploaded Panduan Aplikasi Dapodik versi 2027 is a user manual without code tables; the user will send an export
+   from the Dapodik application. Keep only reference tables from it, never student or staff rows.
+   When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
 6. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
    data (four islands move to Aceh Singkil); `data/wilayah` 2026-02-13 matches its region totals exactly, and
