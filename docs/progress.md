@@ -27,6 +27,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 | --- | --- | --- | --- |
 | `nty/eloquent-davinci-myz72i` | session data-round 6 | R-18 `batas-wilayah`: PR #26 merged (Kudus); PR #28 `presisi` + cross-regency topology; Jawa Tengah handed over (see Next steps 7) | PR #28 open |
 | `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (F-036) | PR #27 merged |
+| `pw/exciting-goldberg-mqpkx5` | akun-2 | R-18 support: `tools/checks/batas-wilayah.py` (coverage, areas, cross-regency arcs, `--big`, `--render`), docs/data.md "Using boundaries in apps", `fondasi-data` line. Does not touch the converter or `data/batas-wilayah/` | in progress |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
