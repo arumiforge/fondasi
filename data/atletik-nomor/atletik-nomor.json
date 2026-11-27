@@ -1163,6 +1163,315 @@
     "Eligibility is in atletik-kelompok-umur (POPDA_JATENG_2026).",
     "The levels follow the athlete's school (SD, SMP, SMA); the juknis gives no separate age band per level."
    ]
+  },
+  "PASI_KEJURNAS_2024": {
+   "name": "LPS Kejurnas Atletik U16 & Indonesia U18 Open Championships 2024",
+   "organiser": "PB PASI",
+   "dates": {
+    "start": "2024-07-20",
+    "end": "2024-07-24",
+    "venue_city": "Yogyakarta",
+    "venue": "Stadion Mandala Krida",
+    "ref": "PB PASI, Final Results Kejurnas Atletik U16 & Indonesia U18 Open Championships 2024 (Yogyakarta), cover"
+   },
+   "confidence": "results_book",
+   "headings_count": 60,
+   "groups": {
+    "U16": {
+     "events": {
+      "M": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "3000m",
+       "100mH",
+       "3000mW",
+       "LJ",
+       "HJ",
+       "SP",
+       "JT"
+      ],
+      "W": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "3000m",
+       "100mH",
+       "3000mW",
+       "LJ",
+       "HJ",
+       "SP",
+       "JT"
+      ],
+      "X": [
+       "4x100mX"
+      ]
+     },
+     "birth_years_printed": [
+      2009,
+      2012
+     ],
+     "ref": "PB PASI, Final Results Kejurnas Atletik U16 & Indonesia U18 Open Championships 2024 (Yogyakarta), events 1-23"
+    },
+    "U18": {
+     "events": {
+      "M": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "1500m",
+       "5000m",
+       "110mH",
+       "400mH",
+       "2000mSC",
+       "5000mW",
+       "LJ",
+       "TJ",
+       "HJ",
+       "PV",
+       "SP",
+       "JT",
+       "DT",
+       "HT"
+      ],
+      "W": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "1500m",
+       "5000m",
+       "100mH",
+       "400mH",
+       "2000mSC",
+       "5000mW",
+       "LJ",
+       "TJ",
+       "HJ",
+       "PV",
+       "SP",
+       "JT",
+       "DT",
+       "HT",
+       "Hep"
+      ]
+     },
+     "birth_years_printed": [
+      2007,
+      2009
+     ],
+     "ref": "PB PASI, Final Results Kejurnas Atletik U16 & Indonesia U18 Open Championships 2024 (Yogyakarta), events 24-61 (no event 42 printed)"
+    }
+   },
+   "not_stated": [
+    "age limits and reference date",
+    "implement weights",
+    "hurdle heights and spacing",
+    "entry limits"
+   ],
+   "notes": [
+    "U16 boys run 100 m hurdles (printed \"U16 Boy's 100 Meter Hurdles\"); the height is not printed.",
+    "The U16 relay is mixed (printed \"U16 Boy & Girl 4x100 Meter Relay\").",
+    "birth_years_printed: lowest and highest year in the books' YR column, not a rule."
+   ]
+  },
+  "PASI_KEJURNAS_2025": {
+   "name": "LPS Kejurnas Atletik & U18 Indonesian Athletics Open 2025",
+   "organiser": "PB PASI",
+   "dates": {
+    "start": "2025-08-29",
+    "end": "2025-09-04",
+    "venue_city": "Surakarta",
+    "venue": "Stadion Sriwedari",
+    "ref": "PB PASI, Final Result LPS Kejurnas Atletik & U18 Indonesian Athletics Open 2025 (Surakarta), page headers"
+   },
+   "confidence": "results_book",
+   "headings_count": 121,
+   "groups": {
+    "U18": {
+     "events": {
+      "M": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "1500m",
+       "3000m",
+       "110mH",
+       "400mH",
+       "2000mSC",
+       "5000mW",
+       "LJ",
+       "TJ",
+       "HJ",
+       "SP",
+       "JT",
+       "DT",
+       "HT",
+       "4x100m"
+      ],
+      "W": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "1500m",
+       "3000m",
+       "100mH",
+       "400mH",
+       "2000mSC",
+       "5000mW",
+       "LJ",
+       "TJ",
+       "HJ",
+       "SP",
+       "JT",
+       "DT",
+       "HT",
+       "4x100m"
+      ],
+      "X": [
+       "4x100mX"
+      ]
+     },
+     "birth_years_printed": [
+      2008,
+      2011
+     ],
+     "ref": "PB PASI, Final Result LPS Kejurnas Atletik & U18 Indonesian Athletics Open 2025 (Surakarta), events 1-37"
+    },
+    "U20": {
+     "events": {
+      "M": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "1500m",
+       "5000m",
+       "10000m",
+       "110mH",
+       "400mH",
+       "3000mSC",
+       "20kmW",
+       "LJ",
+       "TJ",
+       "HJ",
+       "SP",
+       "JT",
+       "DT",
+       "HT",
+       "Dec"
+      ],
+      "W": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "1500m",
+       "5000m",
+       "10000m",
+       "100mH",
+       "400mH",
+       "3000mSC",
+       "20kmW",
+       "LJ",
+       "TJ",
+       "HJ",
+       "SP",
+       "JT",
+       "DT",
+       "HT",
+       "Hep"
+      ],
+      "X": [
+       "4x100mX",
+       "4x400mX"
+      ]
+     },
+     "birth_years_printed": [
+      2006,
+      2007
+     ],
+     "ref": "PB PASI, Final Result LPS Kejurnas Atletik & U18 Indonesian Athletics Open 2025 (Surakarta), events 38-77"
+    },
+    "SENIOR": {
+     "events": {
+      "M": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "1500m",
+       "5000m",
+       "10000m",
+       "110mH",
+       "400mH",
+       "3000mSC",
+       "20kmW",
+       "4x100m",
+       "4x400m",
+       "LJ",
+       "TJ",
+       "HJ",
+       "SP",
+       "JT",
+       "DT",
+       "HT",
+       "Dec"
+      ],
+      "W": [
+       "100m",
+       "200m",
+       "400m",
+       "800m",
+       "1500m",
+       "5000m",
+       "10000m",
+       "100mH",
+       "400mH",
+       "3000mSC",
+       "20kmW",
+       "4x100m",
+       "4x400m",
+       "LJ",
+       "TJ",
+       "HJ",
+       "SP",
+       "JT",
+       "DT",
+       "HT",
+       "Hep"
+      ]
+     },
+     "ref": "PB PASI, Final Result LPS Kejurnas Atletik & U18 Indonesian Athletics Open 2025 (Surakarta), events 78-119"
+    },
+    "OPEN": {
+     "events": {
+      "M": [
+       "PV"
+      ],
+      "W": [
+       "PV"
+      ]
+     },
+     "ref": "PB PASI, Final Result LPS Kejurnas Atletik & U18 Indonesian Athletics Open 2025 (Surakarta), events 120-121 (printed \"Men's/Women's Pole Vault\", no age group)"
+    }
+   },
+   "not_stated": [
+    "age limits and reference date",
+    "implement weights",
+    "hurdle heights and spacing",
+    "entry limits"
+   ],
+   "notes": [
+    "Pole vault is one event per sex for every age group.",
+    "Two U20 rows print birth year 97; left out of birth_years_printed.",
+    "birth_years_printed: lowest and highest year in the books' YR column, not a rule."
+   ]
   }
  },
  "refs": {
@@ -1175,6 +1484,7 @@
   "sexes: M putra, W putri, X campuran. Events without wind_seconds have no wind reading.",
   "O2SN 2026 (SD Kids' Athletics, SMP Trilomba, SMA/SMK Pancalomba) is under `championships`, with implements, trials and qualifying marks per level; its scoring is in atletik-hasil.",
   "POPDA Jawa Tengah 2026 is under `championships` (events and implements per level, entry limits, exhibition rule, errata); its eligibility is in atletik-kelompok-umur.",
-  "PASI U14/U16 and POPNAS events and implements: no official document reachable yet (brief R-10b)."
+  "PASI Kejurnas 2024 (U16, U18) and 2025 (U18, U20, senior) are under `championships` with confidence `results_book`: the programme as PASI's result books print it; PASI publishes no handbook, so implements, hurdle heights and age limits are not stated.",
+  "PASI U14 rules and POPNAS events and implements: no official document reachable yet (brief R-10b)."
  ]
 }

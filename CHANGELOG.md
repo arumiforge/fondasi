@@ -5,6 +5,12 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `atletik-nomor` and `atletik-kelompok-umur` 2026-11-28: PASI's site www.pbpasi.org searched for U14/U16 rules
+  and Kejurnas handbooks (none published; Kejurda pages only name U14–U20 categories). The programmes of Kejurnas
+  U16 & Indonesia U18 Open 2024 (U16, U18) and LPS Kejurnas 2025 (U18, U20, senior, open pole vault) come from
+  PASI's result books as `PASI_KEJURNAS_2024`/`PASI_KEJURNAS_2025` (`confidence: results_book`, event counts checked
+  against the books' 60 and 121 headings); no implements, hurdle heights or age limits are printed. The result books
+  list minors, so only their URL, SHA-256 and event headings are kept (`sources/atletik/pasi-kejurnas/`).
 - `atletik-rekor` 2026-11-27 (R-11, F-037): 585 records. Indonesian national records senior (65), U20 (51) and U18
   (54) from PASI's tables at www.pbpasi.org, with holders, birth dates and provinces (mapped to `wilayah` codes) as
   printed; world records (142), world U20 records (86), world U18 best performances (62) and Asian records (125)

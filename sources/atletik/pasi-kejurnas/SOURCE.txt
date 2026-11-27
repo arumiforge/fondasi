@@ -1,0 +1,42 @@
+PASI Kejurnas result books (www.pbpasi.org), searched 2026-11-28 for PASI U14/U16 rules and Kejurnas technical
+handbooks (brief R-10b leftover). Fetched with curl, one request every ~4 s. Times are UTC.
+
+What pbpasi.org has (WordPress search and media API, all 8 PDFs on the site listed):
+- No technical handbook, juknis, age-group regulation or circular for U14/U16 or for Kejurnas. The page
+  "Technical" (https://www.pbpasi.org/technical/) holds only a fragment of rule 110 (international officials)
+  and placeholder text.
+- Event pages for Kejurda 2024 (e.g. https://www.pbpasi.org/event/kejurda-sulawesi-utara/) say the provincial
+  championships have U14, U16, U18 and U20 categories, without age limits or events.
+- Result books (below) and a press release; SEA Youth 2025 schedules; PON XXI 2024 results.
+
+The two result books list hundreds of young athletes with their birth years. They are NOT kept in this
+repository (personal data of minors); only their URL, size and SHA-256 are recorded, and event-headings.txt holds
+the event headings of each book (no athletes' lines), from which atletik-nomor takes the programme.
+
+1) HASIL-LENGKAP-KEJURNAS-YOGYA-2024.pdf
+   Title     : Final Results, Kejurnas Atletik U16 & Indonesia U18 Open Championships, 20-24 July 2024,
+               Mandala Krida Stadium, Yogyakarta
+   File URL  : https://www.pbpasi.org/wp-content/uploads/2024/07/HASIL-LENGKAP-KEJURNAS-YOGYA-2024.pdf
+   Fetched   : 2026-11-27T17:47:25Z
+   Size      : 1631095 bytes, 74 pages
+   SHA-256   : c635f0f1c463c86ce1d808cae6033d9a41e6387d638cb7bcf9090c81839e2d55
+   Birth years printed (YR column): U16 events 2009-2012, U18 events 2007-2009.
+
+2) FINAL-RESULT-LPS-KEJURNAS-SOLO-2025.pdf
+   Title     : U18 Indonesian Athletics Open 2025 / LPS Kejurnas Atletik, Sriwedari Stadium, Surakarta,
+               29 Aug - 4 Sep 2025
+   File URL  : https://www.pbpasi.org/wp-content/uploads/2025/09/FINAL-RESULT-LPS-KEJURNAS-SOLO-2025.pdf
+   Fetched   : 2026-11-27T17:47:21Z
+   Size      : 1324606 bytes, 123 pages
+   SHA-256   : 308d53e44579b676ecc4bd1312d6939da49603e6e26949434c4add01ddfa816a
+   Birth years printed: U18 events 2008-2011, U20 events 2006-2007 (two rows print 97), senior events 1990-2005.
+
+3) PRESS-RELEASE-KEJURNAS-ATLETIK-2024.pdf (not kept; no rules in it)
+   File URL  : https://www.pbpasi.org/wp-content/uploads/2024/07/PRESS-RELEASE-KEJURNAS-ATLETIK-2024.pdf
+   Fetched   : 2026-11-27T17:47:29Z
+   Size      : 256108 bytes, 2 pages
+   SHA-256   : 3e734b428b5e75ab90241d5ddc6b79aacd5a957fef8f8e4bd00d0a26e881928c
+   Content   : opening of the 2024 championships; "200 nomor lomba", 38 provinces, seven countries.
+
+Still missing: PASI's U14/U16 rules (age limits, implements, hurdle heights) and the Kejurnas handbook. The
+result books print neither implements nor hurdle heights.

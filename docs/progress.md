@@ -44,8 +44,9 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    POPDA Jawa Tengah 2026 (Dispora juknis, page images; SMA putri shot printed "24 kg" kept as printed by the user's
    decision, with an unresolved erratum); POPNAS age rule as secondary. Still missing, no official copy reachable on
    2026-11-27: PASI U14/U16 rules (pasi.or.id does not resolve) and the POPNAS XVII athletics handbook; O2SN 2027 when
-   Puspresnas publishes it (now at pusatprestasinasional.kemendikdasmen.go.id). Rerun brief R-10b items 1 and 3 later; PASI's site is **www.pbpasi.org** (reachable from the cloud,
-   found 2026-11-28), so look there first for U14/U16 rules and Kejurnas handbooks. **R-11 done** (`atletik-rekor`
+   Puspresnas publishes it (now at pusatprestasinasional.kemendikdasmen.go.id). PASI's site **www.pbpasi.org** was searched on 2026-11-28 (WordPress search and media
+   API): no U14/U16 rule and no Kejurnas handbook; the Kejurnas 2024/2025 programmes from its result books are in
+   `atletik-nomor` (`PASI_KEJURNAS_2024/2025`). U14/U16 rules now need the user or a Pengprov PASI document. **R-11 done** (`atletik-rekor`
    2026-11-27, F-037): PASI national records senior/U20/U18 and World Athletics world, world U20, world U18 best and
    Asian records. Refresh: `node tools/converters/atletik-rekor-fetch.mjs sources/atletik-rekor/wa` (needs
    Playwright: `NODE_PATH=/opt/node-tools/node_modules` in the cloud), curl the seven PASI pages listed in

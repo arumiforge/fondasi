@@ -41,6 +41,9 @@ O2SN = {
 POPDA = "Juknis POPDA Tingkat Provinsi Jawa Tengah 2026 (Dispora Jateng, surat 400.3.9.2/371/2026, 27 Feb 2026)"
 POPNAS = ("Peraturan Ketua Umum PP BAPOPSI Nomor 8 Tahun 2022, Bab V Pasal 14 ayat (1) huruf h, as quoted in Kemenpora "
           "Laporan Kinerja 2025 Sesdep 3 (PDF p. 40, printed p. 31)")
+# PASI Kejurnas result books (www.pbpasi.org; sources/atletik/pasi-kejurnas/SOURCE.txt)
+KEJURNAS_2024 = "PB PASI, Final Results Kejurnas Atletik U16 & Indonesia U18 Open Championships 2024 (Yogyakarta)"
+KEJURNAS_2025 = "PB PASI, Final Result LPS Kejurnas Atletik & U18 Indonesian Athletics Open 2025 (Surakarta)"
 CATEGORIES = ["U18_W", "U20_W", "SENIOR_W", "U18_M", "U20_M", "SENIOR_M"]
 
 # ------------------------------------------------------------------ age groups
@@ -101,8 +104,10 @@ AGE_GROUPS = {
                  "A third-party copy of the 2025 conditions (Scribd, not used) gives born 1 January 2008 or later."},
     ],
     "pending": [
-        "PASI U14 and U16 (and their implements and hurdle heights): no official PASI document reachable on "
-        "2026-11-27 (pasi.or.id does not resolve; brief R-10b).",
+        "PASI U14 and U16 (age limits, implements, hurdle heights): PASI's site www.pbpasi.org (searched "
+        "2026-11-28) publishes no rule or handbook; Kejurda 2024 pages name U14, U16, U18 and U20 categories only. "
+        "The events of Kejurnas U16 2024 are in atletik-nomor `championships` (PASI_KEJURNAS_2024), from the "
+        "result book.",
         "POPNAS events, implements and the exact birth-date limit per edition: the Pedoman Umum and athletics "
         "technical handbook were not found on an official site (brief R-10b).",
     ],
@@ -408,6 +413,78 @@ CHAMPIONSHIPS = {
             "The levels follow the athlete's school (SD, SMP, SMA); the juknis gives no separate age band per level.",
         ],
     },
+    # PASI Kejurnas: no handbook is published; the programme is taken from the official result books on
+    # www.pbpasi.org (sources/atletik/pasi-kejurnas/: URL, SHA-256, event headings; the books are not kept).
+    "PASI_KEJURNAS_2024": {
+        "name": "LPS Kejurnas Atletik U16 & Indonesia U18 Open Championships 2024",
+        "organiser": "PB PASI",
+        "dates": {"start": "2024-07-20", "end": "2024-07-24", "venue_city": "Yogyakarta",
+                  "venue": "Stadion Mandala Krida", "ref": f"{KEJURNAS_2024}, cover"},
+        "confidence": "results_book",
+        "headings_count": 60,
+        "groups": {
+            "U16": {"events": {"M": ["100m", "200m", "400m", "800m", "3000m", "100mH", "3000mW", "LJ", "HJ", "SP",
+                                     "JT"],
+                               "W": ["100m", "200m", "400m", "800m", "3000m", "100mH", "3000mW", "LJ", "HJ", "SP",
+                                     "JT"],
+                               "X": ["4x100mX"]},
+                    "birth_years_printed": [2009, 2012],
+                    "ref": f"{KEJURNAS_2024}, events 1-23"},
+            "U18": {"events": {"M": ["100m", "200m", "400m", "800m", "1500m", "5000m", "110mH", "400mH", "2000mSC",
+                                     "5000mW", "LJ", "TJ", "HJ", "PV", "SP", "JT", "DT", "HT"],
+                               "W": ["100m", "200m", "400m", "800m", "1500m", "5000m", "100mH", "400mH", "2000mSC",
+                                     "5000mW", "LJ", "TJ", "HJ", "PV", "SP", "JT", "DT", "HT", "Hep"]},
+                    "birth_years_printed": [2007, 2009],
+                    "ref": f"{KEJURNAS_2024}, events 24-61 (no event 42 printed)"},
+        },
+        "not_stated": ["age limits and reference date", "implement weights", "hurdle heights and spacing",
+                       "entry limits"],
+        "notes": [
+            "U16 boys run 100 m hurdles (printed \"U16 Boy's 100 Meter Hurdles\"); the height is not printed.",
+            "The U16 relay is mixed (printed \"U16 Boy & Girl 4x100 Meter Relay\").",
+            "birth_years_printed: lowest and highest year in the books' YR column, not a rule.",
+        ],
+    },
+    "PASI_KEJURNAS_2025": {
+        "name": "LPS Kejurnas Atletik & U18 Indonesian Athletics Open 2025",
+        "organiser": "PB PASI",
+        "dates": {"start": "2025-08-29", "end": "2025-09-04", "venue_city": "Surakarta",
+                  "venue": "Stadion Sriwedari", "ref": f"{KEJURNAS_2025}, page headers"},
+        "confidence": "results_book",
+        "headings_count": 121,
+        "groups": {
+            "U18": {"events": {"M": ["100m", "200m", "400m", "800m", "1500m", "3000m", "110mH", "400mH", "2000mSC",
+                                     "5000mW", "LJ", "TJ", "HJ", "SP", "JT", "DT", "HT", "4x100m"],
+                               "W": ["100m", "200m", "400m", "800m", "1500m", "3000m", "100mH", "400mH", "2000mSC",
+                                     "5000mW", "LJ", "TJ", "HJ", "SP", "JT", "DT", "HT", "4x100m"],
+                               "X": ["4x100mX"]},
+                    "birth_years_printed": [2008, 2011],
+                    "ref": f"{KEJURNAS_2025}, events 1-37"},
+            "U20": {"events": {"M": ["100m", "200m", "400m", "800m", "1500m", "5000m", "10000m", "110mH", "400mH",
+                                     "3000mSC", "20kmW", "LJ", "TJ", "HJ", "SP", "JT", "DT", "HT", "Dec"],
+                               "W": ["100m", "200m", "400m", "800m", "1500m", "5000m", "10000m", "100mH", "400mH",
+                                     "3000mSC", "20kmW", "LJ", "TJ", "HJ", "SP", "JT", "DT", "HT", "Hep"],
+                               "X": ["4x100mX", "4x400mX"]},
+                    "birth_years_printed": [2006, 2007],
+                    "ref": f"{KEJURNAS_2025}, events 38-77"},
+            "SENIOR": {"events": {"M": ["100m", "200m", "400m", "800m", "1500m", "5000m", "10000m", "110mH", "400mH",
+                                        "3000mSC", "20kmW", "4x100m", "4x400m", "LJ", "TJ", "HJ", "SP", "JT", "DT",
+                                        "HT", "Dec"],
+                                  "W": ["100m", "200m", "400m", "800m", "1500m", "5000m", "10000m", "100mH",
+                                        "400mH", "3000mSC", "20kmW", "4x100m", "4x400m", "LJ", "TJ", "HJ", "SP",
+                                        "JT", "DT", "HT", "Hep"]},
+                       "ref": f"{KEJURNAS_2025}, events 78-119"},
+            "OPEN": {"events": {"M": ["PV"], "W": ["PV"]},
+                     "ref": f"{KEJURNAS_2025}, events 120-121 (printed \"Men's/Women's Pole Vault\", no age group)"},
+        },
+        "not_stated": ["age limits and reference date", "implement weights", "hurdle heights and spacing",
+                       "entry limits"],
+        "notes": [
+            "Pole vault is one event per sex for every age group.",
+            "Two U20 rows print birth year 97; left out of birth_years_printed.",
+            "birth_years_printed: lowest and highest year in the books' YR column, not a rule.",
+        ],
+    },
 }
 
 # ------------------------------------------------------------------ results
@@ -658,7 +735,17 @@ def check():
                     sys.exit(f"combined event part {ev} is not an event code")
     groups = {g["code"] for g in AGE_GROUPS["groups"]}
     for champ in CHAMPIONSHIPS.values():
-        for level, spec in champ["levels"].items():
+        if "groups" in champ:  # PASI Kejurnas: programme from the result book, checked against its headings
+            n = 0
+            for group, spec in champ["groups"].items():
+                for sex, evs in spec["events"].items():
+                    n += len(evs)
+                    for ev in evs:
+                        if ev not in codes:
+                            sys.exit(f"{champ['name']} {group} {sex}: {ev} is not an event code")
+            if n != champ["headings_count"]:
+                sys.exit(f"{champ['name']}: {n} events, the result book prints {champ['headings_count']} headings")
+        for level, spec in champ.get("levels", {}).items():
             if spec["age_group"] not in groups:
                 sys.exit(f"{level}: unknown age group {spec['age_group']}")
             for sex, evs in spec["events"].items():
@@ -778,7 +865,10 @@ def main(out):
             "implements, trials and qualifying marks per level; its scoring is in atletik-hasil.",
             "POPDA Jawa Tengah 2026 is under `championships` (events and implements per level, entry limits, "
             "exhibition rule, errata); its eligibility is in atletik-kelompok-umur.",
-            "PASI U14/U16 and POPNAS events and implements: no official document reachable yet (brief R-10b).",
+            "PASI Kejurnas 2024 (U16, U18) and 2025 (U18, U20, senior) are under `championships` with "
+            "confidence `results_book`: the programme as PASI's result books print it; PASI publishes no "
+            "handbook, so implements, hurdle heights and age limits are not stated.",
+            "PASI U14 rules and POPNAS events and implements: no official document reachable yet (brief R-10b).",
         ],
     })
     write(out, "atletik-kelompok-umur", AGE_GROUPS)
