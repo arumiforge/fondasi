@@ -33,6 +33,8 @@ STIMULI = [
     {"id": "sd-bi-a", "level": "SD/MI/sederajat", "subject": "Bahasa Indonesia", "questions": [1, 2, 3],
      "lead": "Teks untuk soal nomor 1 s.d. 3!", "page": 25, "figures": [fig("sd-bi-1-teks")],
      "title": "Danau untuk Semua", "text_from_image": True,
+     "attribution": {"credit": "Perka BSKAP 047/H/AN/2025, Lampiran, Contoh Soal (p. 25)",
+                     "note": "No author is printed; credit the regulation."},
      "text": [
          "Di hutan ada sebuah danau tempat semua binatang minum. Suatu pagi, air danau menjadi kotor karena Rino si "
          "badak berendam di dalamnya. Binatang-binatang lain jadi tidak bisa minum. Namun, mereka takut menegur Rino "
@@ -59,6 +61,11 @@ STIMULI = [
     {"id": "sd-bi-b", "level": "SD/MI/sederajat", "subject": "Bahasa Indonesia", "questions": [4, 5, 6],
      "lead": "Teks untuk soal nomor 4 s.d. 6!", "page": 27, "figures": [],
      "title": "Hewan Pemakan Daun, Apa Itu?", "text_from_image": False,
+     "attribution": {"credit": "Majalah Bobo (bobo.grid.id), adapted (\"dengan penyesuaian\") in Perka BSKAP "
+                               "047/H/AN/2025, Lampiran, Contoh Soal (p. 27–28)",
+                     "owner": "Bobo (bobo.grid.id)",
+                     "url": "http://bobo.grid.id/read/084266052/bukan-herbivora-inilah-sebutan-untuk-hewan-pemakan-"
+                            "daun-tanaman?page=all"},
      "text": [
          "Hewan bisa dibagi menjadi tiga kelompok berdasarkan makanan mereka. Karnivora, hewan pemakan daging. "
          "Contoh hewan karnivora adalah singa. Selanjutnya herbivora, yaitu hewan pemakan tumbuhan. Sapi adalah "
@@ -79,7 +86,10 @@ STIMULI = [
      "lead": "Teks untuk soal nomor 1 s.d. 3!", "page": 36,
      "figures": [fig("smp-bi-1-ulasan-1"), fig("smp-bi-1-ulasan-2")], "text_from_image": True,
      "parts": [
-         {"label": "Teks Ulasan 1", "title": "Pantai Glagah", "text": [
+         {"label": "Teks Ulasan 1", "title": "Pantai Glagah",
+          "attribution": {"credit": "Website screenshot printed in Perka BSKAP 047/H/AN/2025, Lampiran, Contoh Soal "
+                                    "(p. 36); byline 'Admin'", "note": "The site name is not shown; credit the "
+                                    "regulation."}, "text": [
              "Pantai Glagah di Kulon Progo adalah salah satu pantai unik di selatan Yogyakarta. Pasir hitamnya memberi "
              "kesan eksotis yang berbeda dari pantai lainnya. Ombak besar yang menerjang pemecah gelombang "
              "menciptakan suasana alam yang menakjubkan. Di sisi timur, terdapat laguna tenang yang cocok untuk "
@@ -90,7 +100,10 @@ STIMULI = [
              "Namun, pengunjung tidak disarankan berenang karena ombaknya cukup ganas. Beberapa sudut pantai juga "
              "terlihat kurang bersih. Meski begitu, Pantai Glagah tetap menjadi tempat menenangkan diri."]},
          {"label": "Teks Ulasan 2", "title": "Pantai Drini, Gunung Kidul",
-          "byline": "Noordin Ahya - WartaKU, Senin, 23 April 2025 11:04 WIB", "text": [
+          "byline": "Noordin Ahya - WartaKU, Senin, 23 April 2025 11:04 WIB",
+          "attribution": {"credit": "Noordin Ahya, WartaKU (23 April 2025), website screenshot printed in Perka BSKAP "
+                                    "047/H/AN/2025, Lampiran, Contoh Soal (p. 36)", "owner": "Noordin Ahya / WartaKU"},
+          "text": [
              "Pantai Drini di Gunung Kidul tuh beneran hidden gem yang wajib masuk bucket list liburan kamu! Nggak "
              "cuma karena pasir putih dan air lautnya yang bening banget, tapi juga karena pulau karang kecil yang "
              "unik. Pulau itu seperti pemisah dua dunia—satu sisi ombaknya tenang, sisi lainnya agak liar. Serasa "
@@ -103,6 +116,8 @@ STIMULI = [
     {"id": "smp-bi-b", "level": "SMP/MTs/sederajat", "subject": "Bahasa Indonesia", "questions": [4, 5, 6],
      "lead": "Teks untuk soal nomor 4 s.d. 6!", "page": 39, "figures": [fig("smp-bi-4-puisi")],
      "title": "Perempuan-Perempuan Perkasa", "text_from_image": True, "poem": True,
+     "attribution": {"credit": "Hartojo Andangdjaja, \"Perempuan-Perempuan Perkasa\", as printed in Perka BSKAP "
+                               "047/H/AN/2025, Lampiran, Contoh Soal (p. 39)", "owner": "Hartojo Andangdjaja"},
      "text": [
          "Perempuan-perempuan yang membawa bakul di pagi buta,\ndari manakah mereka\nKe stasiun kereta mereka datang "
          "dari bukit-bukit desa\nsebelum peluit kereta pagi terjaga\nsebelum hari bermula dalam pesta kerja",
@@ -351,6 +366,11 @@ ERRATA = [
     (37, "harmoni alam", "SMP Bahasa Indonesia no. 1: none of the four phrases (key D 'harmoni alam') occurs in Teks "
      "Ulasan 1 as printed on p. 36"),
 ]
+# User decision 2026-11-27 (F-034): third-party works may be used for education when their owners are credited.
+ATTRIBUTION_RULE = (
+    "Every stimulus and figure is reproduced from Perka BSKAP 047/H/AN/2025 for education. Show the stimulus's "
+    "`attribution.credit` (and the regulation) wherever the text or figure is shown; third-party works stay with "
+    "their owners.")
 NOTES = [
     "The degree sign is printed as a superscript letter O/o (50O, 50o) on p. 44; written $^\\circ$ here.",
     "Options and statements are printed with empty check boxes; MCMA keys are statement numbers as printed "

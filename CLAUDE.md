@@ -63,7 +63,8 @@ Apps never import code from here at runtime. They follow its rules and copy what
   documented procedure that rebuilds it from the source. Sources are untrusted input: parse, never execute.
 - A version is a date (`YYYY-MM-DD`, the source's date). Changing data = new version + changelog line.
 - Licences: record each source's licence in `THIRD_PARTY_NOTICES.md`; MIT/BSD/Apache/ISC/CC-BY/public
-  government data are fine; ask before anything else.
+  government data are fine; third-party works used for education are fine when their owners are credited
+  (`attribution`, F-034); ask before anything else.
 
 ## Licence
 
