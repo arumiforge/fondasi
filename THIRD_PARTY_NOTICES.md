@@ -15,6 +15,7 @@ Fondasi is proprietary (`LICENSE`). Data sets and tools below come from or are d
 | `sources/atletik/o2sn/` | Panduan O2SN 2026 SD, SMP, SMA (copies received from the user; not converted yet) | Public government documents |
 | `sources/wilayah/` | Keputusan Menteri Dalam Negeri Nomor 300.2.2-2430 Tahun 2025 (copy received from the user), used to check `data/wilayah` | Public government document |
 | `data/kodepos/` | [cahyadsn/wilayah_kodepos](https://github.com/cahyadsn/wilayah_kodepos) `db/wilayah_kodepos.sql`; converted by `tools/converters/kodepos.py` | MIT, Copyright (c) 2024 Cahya DSN (`data/kodepos/LICENSE.txt`) |
+| `sources/sekolah/batas-wilayah/` | [cahyadsn/wilayah_boundaries](https://github.com/cahyadsn/wilayah_boundaries) `db/kab/*.sql` (commit 2c0d8c7, simplified regency boundaries), used only to check `sekolah` coordinates (R-17); not published as data | MIT, Copyright (c) 2024 Cahya DSN (`sources/sekolah/batas-wilayah/LICENSE`) |
 | `data/atletik-*/`, `sources/atletik/` | World Athletics Book C C1.1/C2.1 Competition & Technical Rules (2026), IAAF Scoring Tables for Combined Events (2016), worldathletics.org | Copyright World Athletics; facts with references and private raw copies by decision F-027 |
 | `server/setup.sh` installs | Docker (Docker Inc. apt repository), cloudflared (Cloudflare apt repository), Cockpit (Ubuntu) | Installed on the server from their vendors; not redistributed here |
 
