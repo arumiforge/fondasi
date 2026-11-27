@@ -11,7 +11,6 @@ environment cannot reach: [../docs/data-requests.md](../docs/data-requests.md).
 | `skema-siswa` | Student data schema for SMP/MTs: 61 fields in 5 groups, types, validation, conditions, edit units, 17 option lists | 2026-11-25 | ready | Arumi Studios ([school-data.md](../docs/school-data.md)) |
 | `tahun-ajaran` | Year format, semesters, grades per level, curriculum phases | 2026-11-25 | ready | rules |
 | `sekolah` (NSM) | + NSM of madrasah and RA | — | planned (R-02) | EMIS (browser) |
-| `sekolah` (coordinates) | + latitude/longitude per unit | — | planned (R-17, F-030) | referensi.data NPSN pages (crawl, F-029) |
 | `batas-wilayah` | Village and district boundaries per regency: GeoJSON `desa/<regency>.geojson.gz` and `kecamatan/<regency>.geojson.gz`, ±11 m, shared borders kept together, boundary status and basis per village | 2026-06-15 | partial: Kabupaten Kudus (132 villages, 9 districts); other regencies on demand (F-035) | BIG Basis Data Batas Wilayah Administrasi Edisi Juni 2026 |
 | `kodepos` | Postal code per village code (83,762 villages, 10,632 codes): `[code, postal_code]` | 2025-06-30 | ready | cahyadsn/wilayah_kodepos (MIT), Kepmendagri 300.2.2-2138/2025 codes |
 | `libur-nasional` | National holidays and cuti bersama, one row per day: 2026 (17 + 8 days), 2027 (18 + 8 days) | 2026-09-15 | ready (2028 when signed, ~Sept 2027) | SKB 3 Menteri (Kemenko PMK) |
