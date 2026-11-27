@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (crawl of `/satpen/detail/<npsn>`, 160 threads on one queue, F-029) | crawl running |
+| `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (F-035) | PR open |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -50,7 +50,11 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    **R-16 done** (`kerangka-tka` 2026-03-06): framework SD/MI and SMP/MTs from 047, administration from 56/2026;
    rebuild `python3 -I tools/converters/kerangka-tka.py sources/kerangka-tka data`. Add the SMA/SMK framework when
    BSKAP publishes one (F-033). Sample questions and the 2026 category limits (secondary) are in; replace the limits
-   when an official document states them. Next: **R-17** coordinates for `sekolah` (crawl of NPSN pages, 20 workers, F-029).
+   when an official document states them. **R-17 done** (`sekolah` 2026-11-27, F-035): coordinates of every unit from `/satpen/detail/<npsn>`. To refresh:
+   `python3 -I tools/converters/sekolah.py coords data/sekolah <raw outside the repo> sources/sekolah/koordinat
+   --threads=160` (≈ 7 h for 540,000 pages; resumable; delete the TSVs first for a new crawl), then `coords-merge
+   data/sekolah sources/sekolah/koordinat sources/sekolah/batas-wilayah <date>` and `tools/data-check --write`.
+   A list refresh (`build`) drops the coordinate fields: run `coords-merge` after it.
 5. When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
 6. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
@@ -68,6 +72,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-27 · session data-round 6 · `nty/sekolah-koordinat` — R-17: 539,580 detail pages crawled (20 → 40 workers → 160 threads, F-029 without fixed cap), coordinates merged into `sekolah` 2026-11-27 (84.4 % with a pair, 1,222 sign/swap fixes, 7 default pairs null, F-035); sinaubareng cross-check 2,136/2,148 identical. PR open.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-atribusi` — PR #24 merged. F-034 (third-party works for education with credit); attribution added to every `kerangka-tka` stimulus. Next: R-17.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-contoh-soal` — PR #23 merged. `kerangka-tka`: 24 sample questions of 047 with 13 figures (keys recomputed, 4 errata) and the 2026 category limits marked secondary (F-033). Next: R-17.
 - 2026-11-26 · session data-round 5 · `nty/kerangka-tka` — PR #22 merged (religion CP Lampiran II, R-15 complete). R-16 `kerangka-tka` built from 047 and 56/2026 (4 frameworks, every text unit and table cell checked against the PDFs, schedule read on the page images, 3 errata). Next: R-17.
@@ -77,4 +82,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — R-15 started: generic CP parser for 046 (all appendices) and SK 9941 written and run (≈ 2,900 outcomes); F-032 (religion from 020 in a checked second step, full content). Handed over before the first data build (one SLB section left). Next: finish R-15.
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PRs #16 (O2SN) and #17 (sinaubareng audit) merged; R-08 `mapel` built for all levels (54 tables, 144 totals checked, 7 errata, F-031; user: Bahasa Inggris SD/MI compulsory from 2027/2028 = Pasal 33). Next: R-15.
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PR #15 found merged; R-10b O2SN part built (guides + the two scoring tables fetched from the guides' links, every row matches WA formulas; women's 60 m parameters derived). sinaubareng audited (user: mapel all levels, CP all subjects, TKA, coordinates later; repo to be made private by the user).
-- 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-06 built from the uploaded Kanwil decree 1681/2026 (45 events, HK/HL/HE of all 12 months match); O2SN 2026 guides stored for R-10b. Next: merge the R-06 PR, then O2SN.

@@ -7,11 +7,10 @@ environment cannot reach: [../docs/data-requests.md](../docs/data-requests.md).
 | Set | Content | Version | Status | Source |
 | --- | --- | --- | --- | --- |
 | `wilayah` | 38 provinces, 514 regencies/cities, 7,285 districts, 83,762 villages: `[code, name]` | 2026-02-13 | ready; matches Kepmendagri 300.2.2-2430/2025 (it changes islands only) | Kepmendagri 300.2.2-2138/2025 via cahyadsn/wilayah (MIT) |
-| `sekolah` | Active education units per province: NPSN, name, form, public/private, address, village…province, Kemendagri region codes (98.0 % to the village) | 2026-11-26 | ready (539,580): SD, MI, SMP, MTs, SMA, MA, SMK, SLB, SPK, PDF/SPM; TK, KB, RA, TPA, SPS, PAUDQ; PKBM, SKB (F-028) | Kemendikdasmen Dapodik reference pages |
+| `sekolah` | Active education units per province: NPSN, name, form, public/private, address, village…province, Kemendagri region codes (98.0 % to the village), latitude/longitude with a region check (84.4 % with a pair; F-035) | 2026-11-27 | ready (539,580): SD, MI, SMP, MTs, SMA, MA, SMK, SLB, SPK, PDF/SPM; TK, KB, RA, TPA, SPS, PAUDQ; PKBM, SKB (F-028) | Kemendikdasmen Dapodik reference pages (lists and unit detail pages) |
 | `skema-siswa` | Student data schema for SMP/MTs: 61 fields in 5 groups, types, validation, conditions, edit units, 17 option lists | 2026-11-25 | ready | Arumi Studios ([school-data.md](../docs/school-data.md)) |
 | `tahun-ajaran` | Year format, semesters, grades per level, curriculum phases | 2026-11-25 | ready | rules |
 | `sekolah` (NSM) | + NSM of madrasah and RA | — | planned (R-02) | EMIS (browser) |
-| `sekolah` (coordinates) | + latitude/longitude per unit | — | planned (R-17, F-030) | referensi.data NPSN pages (crawl, F-029) |
 | `kodepos` | Postal code per village code (83,762 villages, 10,632 codes): `[code, postal_code]` | 2025-06-30 | ready | cahyadsn/wilayah_kodepos (MIT), Kepmendagri 300.2.2-2138/2025 codes |
 | `libur-nasional` | National holidays and cuti bersama, one row per day: 2026 (17 + 8 days), 2027 (18 + 8 days) | 2026-09-15 | ready (2028 when signed, ~Sept 2027) | SKB 3 Menteri (Kemenko PMK) |
 | `kaldik-jateng` | Education calendar of Jawa Tengah: 2026/2027 in full (events per level and 5/6 school days, rules), 2025/2026 key dates | 2026-09-15 | ready (2027/2028 not yet published); holidays checked against `libur-nasional` | Dinas Pendidikan Prov. Jawa Tengah |

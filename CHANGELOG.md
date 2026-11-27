@@ -5,6 +5,17 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `sekolah` 2026-11-27 (R-17, F-035): `lintang`, `bujur`, `koordinat_cek`, `koordinat_perbaikan` and
+  `koordinat_sama` for all 539,580 units from their detail pages (`/satpen/detail/<npsn>`). 455,250 units (84.4 %)
+  have a pair: 449,014 inside their own regency (or within 5 km; at sea or on small islands the nearest regency),
+  4,023 in another regency of their province and 2,213 elsewhere in Indonesia, kept as printed and flagged. 1,222
+  lost signs or swapped pairs corrected because the corrected pair lies in the unit's own regency (printed values
+  in `coordinate_errata`). Null with a reason: 75,525 printed 0, 1,669 empty, 6,500 on one of 7 default pairs
+  shared across regencies (`bawaan`, e.g. -5.443757, 114.421127 for 5,931 units), 636 outside Indonesia.
+  Coverage per group: dikdas 96.2 %, dikmen 91.8 %, dikmas 76.8 %, PAUD 71.7 %. Cross-check with sinaubareng
+  (Pati, Kudus, Jepara): 2,136 of 2,148 pairs identical. Crawl of 539,580 pages with 160 threads (F-029 now has
+  no fixed cap); converter steps `plan`, `coords`, `coords-extract`, `coords-merge`; regency boundaries from
+  cahyadsn/wilayah_boundaries (MIT) in `sources/sekolah/batas-wilayah/`.
 - `kerangka-tka`: every sample-question stimulus carries an `attribution` (owner and where it was printed) and the
   set an `attribution_rule`; F-034 allows third-party works for education when their owners are credited.
 - `kerangka-tka` (R-16): the 24 sample questions of Perka BSKAP 047/H/AN/2025 part IV (stimuli, questions,

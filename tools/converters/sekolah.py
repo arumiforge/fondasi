@@ -539,6 +539,31 @@ def merge_coords(data_dir, coords_dir, bounds_dir, version):
             groups[n] = groups.get(n, 0) + 1
     with_pair = sum(n for n in pairs.values())
     manifest["version"] = version
+    manifest["description"] = ("Schools and other education units in Indonesia, one gzipped JSON file per province (public "
+                               "data, no personal data), linked to the Kemendagri region codes of the wilayah set, with "
+                               "the latitude/longitude of each unit's detail page.")
+    manifest["source"] = (f"{BASE}/satpen/<group>/<district>/3 (Kemendikdasmen Dapodik reference pages; Dikdas, Dikmen, "
+                          "PAUD and Dikmas lists per district, status 'all', crawled 2026-11-26) and "
+                          f"{BASE}/satpen/detail/<npsn> (Lintang, Bujur and Jenjang Pendidikan of every unit, crawled on "
+                          "the version date); the pages show no source date")
+    manifest["procedure"] = ("tools/converters/sekolah.py fetch (raw list pages) then build; regions matched by name to "
+                             "wilayah 2026-02-13, never invented (F-028 for what is kept). Coordinates (R-17): coords "
+                             "(detail pages, raw pages kept outside the repository, extracts in "
+                             "sources/sekolah/koordinat/<regency>.tsv) then coords-merge, checked against the regency "
+                             "boundaries in sources/sekolah/batas-wilayah (F-035)")
+    notes = [n for n in manifest.get("notes", []) if not n.startswith("Coordinates")]
+    notes += [
+        "Coordinates come from each unit's detail page as the source prints them; nothing is estimated (F-035). "
+        "Pairs outside the unit's regency stay as printed and are flagged (provinsi, luar_provinsi); a lost sign or "
+        "swapped Lintang/Bujur is corrected only when the result lies in the unit's own regency (coordinate_errata); "
+        "default pairs shared across regencies are null (bawaan, coordinates.default_pairs).",
+        "Coordinates cross-checked against arumiforge/sinaubareng docs/data/schools (Pati, Kudus, Jepara SD/MI, "
+        "crawled 2026-11-03): of 2,148 units with a pair in both, 2,136 are identical; the other 12 were changed at "
+        "the source since (10 moved by 0.02 to 7.3 km, 2 now print 0).",
+        "Coordinates: the detail pages of two SD in Sumba Barat and Sumba Barat Daya give Jenjang Pendidikan 'DIKTI'; "
+        "they are counted under that label in coordinates.by_group as printed.",
+    ]
+    manifest["notes"] = notes
     manifest["fields"].update(COORD_FIELDS)
     manifest["with_coordinates"] = with_pair
     manifest["coordinates"] = {
