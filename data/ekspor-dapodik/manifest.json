@@ -1,0 +1,19 @@
+{
+  "version": "2026-10-20",
+  "description": "Column layout of the Excel exports of Aplikasi Dapodik versi 2027: Daftar Guru, Daftar Tenaga Kependidikan, Daftar Peserta Didik (with the parent sub-columns), Rekap Pembelajaran, and the sections, numbered fields and tables of the PTK form (F-PTK). Headers and labels only: no personal data, no school data.",
+  "status": "ready for these five exports; option codes wait for referensi-dapodik (R-07)",
+  "source": "Exports of Aplikasi Dapodik versi 2027, semester 2026/2027 Ganjil (20261), downloaded by an SMP in Kabupaten Kudus on 2026-10-13 and 2026-10-20 and received from the user (2026-11-28); not kept (F-038): sizes and SHA-256 in sources/ekspor-dapodik/SOURCE.txt",
+  "licence": "Structure of a government application's export (public government system); no content copied",
+  "procedure": "python3 -I tools/converters/ekspor-dapodik.py <dir with the xlsx files> data/ekspor-dapodik, then tools/data-check --write. The converter refuses to write when any source value would appear in the output",
+  "counts": {
+    "tendik": 51,
+    "pembelajaran": 17,
+    "guru": 51,
+    "peserta_didik": 69,
+    "ptk_form_fields": 54,
+    "ptk_form_tables": 18
+  },
+  "files": [
+    "ekspor-dapodik.json"
+  ]
+}

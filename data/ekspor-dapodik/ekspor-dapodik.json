@@ -1,0 +1,1676 @@
+{
+ "name": "Susunan kolom ekspor Dapodik",
+ "app": "Aplikasi Dapodik versi 2027, semester 2026/2027 Ganjil (20261)",
+ "exports": {
+  "tendik": {
+   "label": "Daftar Tenaga Kependidikan",
+   "sheet": "Daftar tendik",
+   "title_rows": 4,
+   "header_row": 5,
+   "header_rows": 1,
+   "first_data_row": 6,
+   "title_lines": [
+    "judul ekspor",
+    "nama satuan pendidikan",
+    "kecamatan, kabupaten/kota, provinsi",
+    "tanggal unduh dan pengunduh"
+   ],
+   "columns": [
+    {
+     "col": "A",
+     "label": "No"
+    },
+    {
+     "col": "B",
+     "label": "Nama"
+    },
+    {
+     "col": "C",
+     "label": "NUPTK"
+    },
+    {
+     "col": "D",
+     "label": "JK"
+    },
+    {
+     "col": "E",
+     "label": "Tempat Lahir"
+    },
+    {
+     "col": "F",
+     "label": "Tanggal Lahir"
+    },
+    {
+     "col": "G",
+     "label": "NIP"
+    },
+    {
+     "col": "H",
+     "label": "Status Kepegawaian"
+    },
+    {
+     "col": "I",
+     "label": "Jenis PTK"
+    },
+    {
+     "col": "J",
+     "label": "Agama"
+    },
+    {
+     "col": "K",
+     "label": "Alamat Jalan"
+    },
+    {
+     "col": "L",
+     "label": "RT"
+    },
+    {
+     "col": "M",
+     "label": "RW"
+    },
+    {
+     "col": "N",
+     "label": "Nama Dusun"
+    },
+    {
+     "col": "O",
+     "label": "Desa/Kelurahan"
+    },
+    {
+     "col": "P",
+     "label": "Kecamatan"
+    },
+    {
+     "col": "Q",
+     "label": "Kode Pos"
+    },
+    {
+     "col": "R",
+     "label": "Telepon"
+    },
+    {
+     "col": "S",
+     "label": "HP"
+    },
+    {
+     "col": "T",
+     "label": "Email"
+    },
+    {
+     "col": "U",
+     "label": "Tugas Tambahan"
+    },
+    {
+     "col": "V",
+     "label": "SK CPNS"
+    },
+    {
+     "col": "W",
+     "label": "Tanggal CPNS"
+    },
+    {
+     "col": "X",
+     "label": "SK Pengangkatan"
+    },
+    {
+     "col": "Y",
+     "label": "TMT Pengangkatan"
+    },
+    {
+     "col": "Z",
+     "label": "Lembaga Pengangkatan"
+    },
+    {
+     "col": "AA",
+     "label": "Pangkat Golongan"
+    },
+    {
+     "col": "AB",
+     "label": "Sumber Gaji"
+    },
+    {
+     "col": "AC",
+     "label": "Nama Ibu Kandung"
+    },
+    {
+     "col": "AD",
+     "label": "Status Perkawinan"
+    },
+    {
+     "col": "AE",
+     "label": "Nama Suami/Istri"
+    },
+    {
+     "col": "AF",
+     "label": "NIP Suami/Istri"
+    },
+    {
+     "col": "AG",
+     "label": "Pekerjaan Suami/Istri"
+    },
+    {
+     "col": "AH",
+     "label": "TMT PNS"
+    },
+    {
+     "col": "AI",
+     "label": "Sudah Lisensi Kepala Sekolah"
+    },
+    {
+     "col": "AJ",
+     "label": "Pernah Diklat Kepengawasan"
+    },
+    {
+     "col": "AK",
+     "label": "Keahlian Braille"
+    },
+    {
+     "col": "AL",
+     "label": "Keahlian Bahasa Isyarat"
+    },
+    {
+     "col": "AM",
+     "label": "NPWP"
+    },
+    {
+     "col": "AN",
+     "label": "Nama Wajib Pajak"
+    },
+    {
+     "col": "AO",
+     "label": "Kewarganegaraan"
+    },
+    {
+     "col": "AP",
+     "label": "Bank"
+    },
+    {
+     "col": "AQ",
+     "label": "Nomor Rekening Bank"
+    },
+    {
+     "col": "AR",
+     "label": "Rekening Atas Nama"
+    },
+    {
+     "col": "AS",
+     "label": "NIK"
+    },
+    {
+     "col": "AT",
+     "label": "No KK"
+    },
+    {
+     "col": "AU",
+     "label": "Karpeg"
+    },
+    {
+     "col": "AV",
+     "label": "Karis/Karsu"
+    },
+    {
+     "col": "AW",
+     "label": "Lintang"
+    },
+    {
+     "col": "AX",
+     "label": "Bujur"
+    },
+    {
+     "col": "AY",
+     "label": "NUKS"
+    }
+   ]
+  },
+  "pembelajaran": {
+   "label": "Rekap Pembelajaran",
+   "sheet": "Rekap Mengajar",
+   "title_rows": 7,
+   "header_row": 8,
+   "header_rows": 1,
+   "first_data_row": 9,
+   "title_lines": [
+    "judul ekspor",
+    "nama sekolah",
+    "NPSN",
+    "semester",
+    "tanggal",
+    "pengunduh"
+   ],
+   "columns": [
+    {
+     "col": "A",
+     "label": "No"
+    },
+    {
+     "col": "B",
+     "label": "Jenis Rombel"
+    },
+    {
+     "col": "C",
+     "label": "Tingkat"
+    },
+    {
+     "col": "D",
+     "label": "Nama Rombel"
+    },
+    {
+     "col": "E",
+     "label": "Kurikulum"
+    },
+    {
+     "col": "F",
+     "label": "Program/Kompetensi Keahlian"
+    },
+    {
+     "col": "G",
+     "label": "Nama PTK"
+    },
+    {
+     "col": "H",
+     "label": "NUPTK"
+    },
+    {
+     "col": "I",
+     "label": "PTK Induk"
+    },
+    {
+     "col": "J",
+     "label": "Kepegawaian"
+    },
+    {
+     "col": "K",
+     "label": "Nama Matpel"
+    },
+    {
+     "col": "L",
+     "label": "Kode Matpel"
+    },
+    {
+     "col": "M",
+     "label": "JJM"
+    },
+    {
+     "col": "N",
+     "label": "Jml Siswa"
+    },
+    {
+     "col": "O",
+     "label": "Tgl SK Mengajar"
+    },
+    {
+     "col": "P",
+     "label": "SK Mengajar"
+    },
+    {
+     "col": "Q",
+     "label": "Status di Kurikulum"
+    }
+   ]
+  },
+  "guru": {
+   "label": "Daftar Guru",
+   "sheet": "Daftar guru",
+   "title_rows": 4,
+   "header_row": 5,
+   "header_rows": 1,
+   "first_data_row": 6,
+   "title_lines": [
+    "judul ekspor",
+    "nama satuan pendidikan",
+    "kecamatan, kabupaten/kota, provinsi",
+    "tanggal unduh dan pengunduh"
+   ],
+   "columns": [
+    {
+     "col": "A",
+     "label": "No"
+    },
+    {
+     "col": "B",
+     "label": "Nama"
+    },
+    {
+     "col": "C",
+     "label": "NUPTK"
+    },
+    {
+     "col": "D",
+     "label": "JK"
+    },
+    {
+     "col": "E",
+     "label": "Tempat Lahir"
+    },
+    {
+     "col": "F",
+     "label": "Tanggal Lahir"
+    },
+    {
+     "col": "G",
+     "label": "NIP"
+    },
+    {
+     "col": "H",
+     "label": "Status Kepegawaian"
+    },
+    {
+     "col": "I",
+     "label": "Jenis PTK"
+    },
+    {
+     "col": "J",
+     "label": "Agama"
+    },
+    {
+     "col": "K",
+     "label": "Alamat Jalan"
+    },
+    {
+     "col": "L",
+     "label": "RT"
+    },
+    {
+     "col": "M",
+     "label": "RW"
+    },
+    {
+     "col": "N",
+     "label": "Nama Dusun"
+    },
+    {
+     "col": "O",
+     "label": "Desa/Kelurahan"
+    },
+    {
+     "col": "P",
+     "label": "Kecamatan"
+    },
+    {
+     "col": "Q",
+     "label": "Kode Pos"
+    },
+    {
+     "col": "R",
+     "label": "Telepon"
+    },
+    {
+     "col": "S",
+     "label": "HP"
+    },
+    {
+     "col": "T",
+     "label": "Email"
+    },
+    {
+     "col": "U",
+     "label": "Tugas Tambahan"
+    },
+    {
+     "col": "V",
+     "label": "SK CPNS"
+    },
+    {
+     "col": "W",
+     "label": "Tanggal CPNS"
+    },
+    {
+     "col": "X",
+     "label": "SK Pengangkatan"
+    },
+    {
+     "col": "Y",
+     "label": "TMT Pengangkatan"
+    },
+    {
+     "col": "Z",
+     "label": "Lembaga Pengangkatan"
+    },
+    {
+     "col": "AA",
+     "label": "Pangkat Golongan"
+    },
+    {
+     "col": "AB",
+     "label": "Sumber Gaji"
+    },
+    {
+     "col": "AC",
+     "label": "Nama Ibu Kandung"
+    },
+    {
+     "col": "AD",
+     "label": "Status Perkawinan"
+    },
+    {
+     "col": "AE",
+     "label": "Nama Suami/Istri"
+    },
+    {
+     "col": "AF",
+     "label": "NIP Suami/Istri"
+    },
+    {
+     "col": "AG",
+     "label": "Pekerjaan Suami/Istri"
+    },
+    {
+     "col": "AH",
+     "label": "TMT PNS"
+    },
+    {
+     "col": "AI",
+     "label": "Sudah Lisensi Kepala Sekolah"
+    },
+    {
+     "col": "AJ",
+     "label": "Pernah Diklat Kepengawasan"
+    },
+    {
+     "col": "AK",
+     "label": "Keahlian Braille"
+    },
+    {
+     "col": "AL",
+     "label": "Keahlian Bahasa Isyarat"
+    },
+    {
+     "col": "AM",
+     "label": "NPWP"
+    },
+    {
+     "col": "AN",
+     "label": "Nama Wajib Pajak"
+    },
+    {
+     "col": "AO",
+     "label": "Kewarganegaraan"
+    },
+    {
+     "col": "AP",
+     "label": "Bank"
+    },
+    {
+     "col": "AQ",
+     "label": "Nomor Rekening Bank"
+    },
+    {
+     "col": "AR",
+     "label": "Rekening Atas Nama"
+    },
+    {
+     "col": "AS",
+     "label": "NIK"
+    },
+    {
+     "col": "AT",
+     "label": "No KK"
+    },
+    {
+     "col": "AU",
+     "label": "Karpeg"
+    },
+    {
+     "col": "AV",
+     "label": "Karis/Karsu"
+    },
+    {
+     "col": "AW",
+     "label": "Lintang"
+    },
+    {
+     "col": "AX",
+     "label": "Bujur"
+    },
+    {
+     "col": "AY",
+     "label": "NUKS"
+    }
+   ]
+  },
+  "peserta_didik": {
+   "label": "Daftar Peserta Didik",
+   "sheet": "Daftar Peserta Didik",
+   "title_rows": 4,
+   "header_row": 5,
+   "header_rows": 2,
+   "first_data_row": 7,
+   "title_lines": [
+    "judul ekspor",
+    "nama satuan pendidikan",
+    "kecamatan, kabupaten/kota, provinsi",
+    "tanggal unduh dan pengunduh"
+   ],
+   "columns": [
+    {
+     "col": "A",
+     "label": "No"
+    },
+    {
+     "col": "B",
+     "label": "Nama"
+    },
+    {
+     "col": "C",
+     "label": "NIPD"
+    },
+    {
+     "col": "D",
+     "label": "JK"
+    },
+    {
+     "col": "E",
+     "label": "NISN"
+    },
+    {
+     "col": "F",
+     "label": "Tempat Lahir"
+    },
+    {
+     "col": "G",
+     "label": "Tanggal Lahir"
+    },
+    {
+     "col": "H",
+     "label": "NIK"
+    },
+    {
+     "col": "I",
+     "label": "Agama"
+    },
+    {
+     "col": "J",
+     "label": "Alamat"
+    },
+    {
+     "col": "K",
+     "label": "RT"
+    },
+    {
+     "col": "L",
+     "label": "RW"
+    },
+    {
+     "col": "M",
+     "label": "Dusun"
+    },
+    {
+     "col": "N",
+     "label": "Kelurahan"
+    },
+    {
+     "col": "O",
+     "label": "Kecamatan"
+    },
+    {
+     "col": "P",
+     "label": "Kode Pos"
+    },
+    {
+     "col": "Q",
+     "label": "Jenis Tinggal"
+    },
+    {
+     "col": "R",
+     "label": "Alat Transportasi"
+    },
+    {
+     "col": "S",
+     "label": "Telepon"
+    },
+    {
+     "col": "T",
+     "label": "HP"
+    },
+    {
+     "col": "U",
+     "label": "E-Mail"
+    },
+    {
+     "col": "V",
+     "label": "SKHUN"
+    },
+    {
+     "col": "W",
+     "label": "Penerima KPS"
+    },
+    {
+     "col": "X",
+     "label": "No. KPS"
+    },
+    {
+     "col": "Y",
+     "label": "Data Ayah",
+     "sub": [
+      {
+       "col": "Y",
+       "label": "Nama"
+      },
+      {
+       "col": "Z",
+       "label": "Tahun Lahir"
+      },
+      {
+       "col": "AA",
+       "label": "Jenjang Pendidikan"
+      },
+      {
+       "col": "AB",
+       "label": "Pekerjaan"
+      },
+      {
+       "col": "AC",
+       "label": "Penghasilan"
+      },
+      {
+       "col": "AD",
+       "label": "NIK"
+      }
+     ]
+    },
+    {
+     "col": "AE",
+     "label": "Data Ibu",
+     "sub": [
+      {
+       "col": "AE",
+       "label": "Nama"
+      },
+      {
+       "col": "AF",
+       "label": "Tahun Lahir"
+      },
+      {
+       "col": "AG",
+       "label": "Jenjang Pendidikan"
+      },
+      {
+       "col": "AH",
+       "label": "Pekerjaan"
+      },
+      {
+       "col": "AI",
+       "label": "Penghasilan"
+      },
+      {
+       "col": "AJ",
+       "label": "NIK"
+      }
+     ]
+    },
+    {
+     "col": "AK",
+     "label": "Data Wali",
+     "sub": [
+      {
+       "col": "AK",
+       "label": "Nama"
+      },
+      {
+       "col": "AL",
+       "label": "Tahun Lahir"
+      },
+      {
+       "col": "AM",
+       "label": "Jenjang Pendidikan"
+      },
+      {
+       "col": "AN",
+       "label": "Pekerjaan"
+      },
+      {
+       "col": "AO",
+       "label": "Penghasilan"
+      },
+      {
+       "col": "AP",
+       "label": "NIK"
+      }
+     ]
+    },
+    {
+     "col": "AQ",
+     "label": "Rombel Saat Ini"
+    },
+    {
+     "col": "AR",
+     "label": "No Peserta Ujian Nasional"
+    },
+    {
+     "col": "AS",
+     "label": "No Seri Ijazah"
+    },
+    {
+     "col": "AT",
+     "label": "Penerima KIP"
+    },
+    {
+     "col": "AU",
+     "label": "Nomor KIP"
+    },
+    {
+     "col": "AV",
+     "label": "Nama di KIP"
+    },
+    {
+     "col": "AW",
+     "label": "Nomor KKS"
+    },
+    {
+     "col": "AX",
+     "label": "No Registrasi Akta Lahir"
+    },
+    {
+     "col": "AY",
+     "label": "Bank"
+    },
+    {
+     "col": "AZ",
+     "label": "Nomor Rekening Bank"
+    },
+    {
+     "col": "BA",
+     "label": "Rekening Atas Nama"
+    },
+    {
+     "col": "BB",
+     "label": "Layak PIP (usulan dari sekolah)"
+    },
+    {
+     "col": "BC",
+     "label": "Alasan Layak PIP"
+    },
+    {
+     "col": "BD",
+     "label": "Kebutuhan Khusus"
+    },
+    {
+     "col": "BE",
+     "label": "Sekolah Asal"
+    },
+    {
+     "col": "BF",
+     "label": "Anak ke-berapa"
+    },
+    {
+     "col": "BG",
+     "label": "Lintang"
+    },
+    {
+     "col": "BH",
+     "label": "Bujur"
+    },
+    {
+     "col": "BI",
+     "label": "No KK"
+    },
+    {
+     "col": "BJ",
+     "label": "Berat Badan"
+    },
+    {
+     "col": "BK",
+     "label": "Tinggi Badan"
+    },
+    {
+     "col": "BL",
+     "label": "Lingkar Kepala"
+    },
+    {
+     "col": "BM",
+     "label": "Jml. Saudara Kandung"
+    },
+    {
+     "col": "BN",
+     "label": "Jarak Rumah ke Sekolah (KM)"
+    }
+   ]
+  }
+ },
+ "ptk_form": {
+  "label": "Formulir Pendidik dan Tenaga Kependidikan (F-PTK)",
+  "sheet": "Formulir PTK",
+  "sections": [
+   {
+    "title": "A. IDENTITAS SEKOLAH",
+    "fields": [
+     {
+      "label": "Nama Sekolah",
+      "no": 1
+     },
+     {
+      "label": "N S S",
+      "no": 2
+     },
+     {
+      "label": "Alamat Sekolah",
+      "no": 3
+     }
+    ]
+   },
+   {
+    "title": "A. IDENTITAS PENDIDIK DAN TENAGA KEPENDIDIKAN",
+    "fields": [
+     {
+      "label": "Nama Lengkap",
+      "no": 4,
+      "hint": "(tanpa singkatan dan gelar)"
+     },
+     {
+      "label": "N I K",
+      "no": 5
+     },
+     {
+      "label": "Jenis Kelamin",
+      "no": 6
+     },
+     {
+      "label": "Tempat, Tanggal Lahir",
+      "no": 7
+     },
+     {
+      "label": "Nama Ibu Kandung",
+      "no": 8
+     }
+    ]
+   },
+   {
+    "title": "DATA PRIBADI",
+    "fields": [
+     {
+      "label": "Alamat Tempat Tinggal",
+      "no": 9
+     },
+     {
+      "label": "Dusun"
+     },
+     {
+      "label": "Kelurahan / Desa"
+     },
+     {
+      "label": "Kecamatan"
+     },
+     {
+      "label": "Kabupaten / Kota"
+     },
+     {
+      "label": "Propinsi"
+     },
+     {
+      "label": "Lintang"
+     },
+     {
+      "label": "Agama",
+      "no": 10
+     },
+     {
+      "label": "N P W P",
+      "no": 11
+     },
+     {
+      "label": "Nama Wajib Pajak",
+      "no": 12
+     },
+     {
+      "label": "Kewarganegaraan",
+      "no": 13
+     },
+     {
+      "label": "Status Kawin",
+      "no": 14
+     },
+     {
+      "label": "Nama Suami / Istri",
+      "no": 15
+     },
+     {
+      "label": "Pekerjaan Suami / Istri"
+     },
+     {
+      "label": "Jika PNS, N I P"
+     }
+    ]
+   },
+   {
+    "title": "KEPEGAWAIAN",
+    "fields": [
+     {
+      "label": "Status Pegawai",
+      "no": 16
+     },
+     {
+      "label": "Jika PNS, N I P",
+      "no": 17
+     },
+     {
+      "label": "N I Y / N I G K",
+      "no": 18
+     },
+     {
+      "label": "N I G B",
+      "no": 19
+     },
+     {
+      "label": "N U P T K",
+      "no": 20
+     },
+     {
+      "label": "Jenis PTK",
+      "no": 21
+     },
+     {
+      "label": "Status Aktif",
+      "no": 22
+     },
+     {
+      "label": "SK Pengangkatan",
+      "no": 23
+     },
+     {
+      "label": "TMT Pengangkatan",
+      "no": 24
+     },
+     {
+      "label": "Lembaga Pengangkat",
+      "no": 25
+     },
+     {
+      "label": "S K C P N S",
+      "no": 26
+     },
+     {
+      "label": "T M T C P N S",
+      "no": 27
+     },
+     {
+      "label": "T M T P N S",
+      "no": 28
+     },
+     {
+      "label": "Pangkat / Golongan",
+      "no": 29
+     },
+     {
+      "label": "Sumber Gaji",
+      "no": 30
+     },
+     {
+      "label": "Kartu Pegawai",
+      "no": 31
+     },
+     {
+      "label": "Karis / Karsu",
+      "no": 32
+     }
+    ]
+   },
+   {
+    "title": "Penugasan",
+    "fields": [
+     {
+      "label": "No Surat Tugas",
+      "no": 33
+     },
+     {
+      "label": "Tgl Surat Tugas",
+      "no": 34
+     },
+     {
+      "label": "TMT Tugas",
+      "no": 35
+     },
+     {
+      "label": "Sekolah Induk",
+      "no": 36
+     }
+    ]
+   },
+   {
+    "title": "KOMPETENSI KHUSUS",
+    "fields": [
+     {
+      "label": "Jika Jabatan Anda Kepala Sekolah"
+     },
+     {
+      "label": "Lisensi Kepala Sekolah"
+     },
+     {
+      "label": "Jika jabatan Anda teknisi laboratorium atau laboran yang memiliki program keahlian"
+     },
+     {
+      "label": "Kode Program Keahlian"
+     },
+     {
+      "label": "1. Jika Anda guru yang menangani siswa berkebutuhan khusus, jenis ketunaan apa saja yang ditangani"
+     },
+     {
+      "label": "2. Spesialisasi apa yang dimiliki untuk menangani kebutuhan khusus"
+     },
+     {
+      "label": "3. Keahlian khusus apa saja yang dimiliki untuk menangani kebutuhan khusus"
+     },
+     {
+      "label": "Braille"
+     }
+    ]
+   },
+   {
+    "title": "KONTAK",
+    "fields": [
+     {
+      "label": "No. Telepon"
+     },
+     {
+      "label": "E-Mail"
+     }
+    ]
+   },
+   {
+    "title": "Kompetensi / Bidang SDM",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Bidang Studi"
+     },
+     {
+      "col": "AI",
+      "label": "Urutan"
+     }
+    ]
+   },
+   {
+    "title": "ANAK",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Status"
+     },
+     {
+      "col": "G",
+      "label": "Jenjang"
+     },
+     {
+      "col": "L",
+      "label": "NISN"
+     },
+     {
+      "col": "Q",
+      "label": "Nama Anak"
+     },
+     {
+      "col": "AA",
+      "label": "L/P"
+     },
+     {
+      "col": "AC",
+      "label": "Tempat Lahir"
+     },
+     {
+      "col": "AI",
+      "label": "Tanggal Lahir"
+     },
+     {
+      "col": "AM",
+      "label": "Tahun Masuk"
+     }
+    ]
+   },
+   {
+    "title": "BEASISWA",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jenis"
+     },
+     {
+      "col": "R",
+      "label": "Penyelenggara"
+     },
+     {
+      "col": "AC",
+      "label": "Dari Tahun"
+     },
+     {
+      "col": "AG",
+      "label": "Sampai Tahun"
+     },
+     {
+      "col": "AK",
+      "label": "Masih Menerima"
+     }
+    ]
+   },
+   {
+    "title": "BUKU",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Judul Buku"
+     },
+     {
+      "col": "T",
+      "label": "Tahun"
+     },
+     {
+      "col": "X",
+      "label": "Penerbit"
+     }
+    ]
+   },
+   {
+    "title": "DIKLAT",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jenis Diklat"
+     },
+     {
+      "col": "M",
+      "label": "Nama"
+     },
+     {
+      "col": "W",
+      "label": "Penyelenggara"
+     },
+     {
+      "col": "AF",
+      "label": "Tahun"
+     },
+     {
+      "col": "AJ",
+      "label": "Peran"
+     }
+    ]
+   },
+   {
+    "title": "KARYA TULIS",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Judul"
+     },
+     {
+      "col": "S",
+      "label": "Tahun"
+     },
+     {
+      "col": "W",
+      "label": "Publikasi"
+     },
+     {
+      "col": "AG",
+      "label": "Keterangan"
+     }
+    ]
+   },
+   {
+    "title": "KESEJAHTERAAN",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jenis Kesejahteraan"
+     },
+     {
+      "col": "N",
+      "label": "Nama"
+     },
+     {
+      "col": "V",
+      "label": "Penyelenggara"
+     },
+     {
+      "col": "AC",
+      "label": "Dari Tahun"
+     },
+     {
+      "col": "AG",
+      "label": "Sampai Tahun"
+     },
+     {
+      "col": "AK",
+      "label": "Status"
+     }
+    ]
+   },
+   {
+    "title": "TUNJANGAN",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jenis"
+     },
+     {
+      "col": "I",
+      "label": "Nama"
+     },
+     {
+      "col": "O",
+      "label": "Instansi"
+     },
+     {
+      "col": "U",
+      "label": "Sumber Dana"
+     },
+     {
+      "col": "AA",
+      "label": "Dari Tahun"
+     },
+     {
+      "col": "AE",
+      "label": "Sampai Tahun"
+     },
+     {
+      "col": "AI",
+      "label": "Nominal"
+     },
+     {
+      "col": "AM",
+      "label": "Status"
+     }
+    ]
+   },
+   {
+    "title": "TUGAS TAMBAHAN",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jabatan PTK"
+     },
+     {
+      "col": "K",
+      "label": "Jam Per Minggu"
+     },
+     {
+      "col": "P",
+      "label": "Nomor SK"
+     },
+     {
+      "col": "AA",
+      "label": "TMT Tambahan"
+     },
+     {
+      "col": "AI",
+      "label": "TST Tambahan"
+     }
+    ]
+   },
+   {
+    "title": "PENGHARGAAN",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Tingkat Penghargaan"
+     },
+     {
+      "col": "K",
+      "label": "Jenis Penghargaan"
+     },
+     {
+      "col": "U",
+      "label": "Nama"
+     },
+     {
+      "col": "AC",
+      "label": "Tahun"
+     },
+     {
+      "col": "AG",
+      "label": "Instansi"
+     }
+    ]
+   },
+   {
+    "title": "NILAI TES",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jenis Tes"
+     },
+     {
+      "col": "K",
+      "label": "Nama"
+     },
+     {
+      "col": "U",
+      "label": "Penyelenggara"
+     },
+     {
+      "col": "AC",
+      "label": "Tahun"
+     },
+     {
+      "col": "AG",
+      "label": "Skor"
+     }
+    ]
+   },
+   {
+    "title": "RIWAYAT GAJI BERKALA",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Pangkat Golongan"
+     },
+     {
+      "col": "G",
+      "label": "No SK"
+     },
+     {
+      "col": "Q",
+      "label": "Tanggal SK"
+     },
+     {
+      "col": "W",
+      "label": "TMT KGB"
+     },
+     {
+      "col": "AC",
+      "label": "Masa Kerja Tahun"
+     },
+     {
+      "col": "AG",
+      "label": "Masa Kerja Bulan"
+     },
+     {
+      "col": "AK",
+      "label": "Gaji Pokok"
+     }
+    ]
+   },
+   {
+    "title": "RIWAYAT JABATAN STRUKTURAL",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jabatan PTK"
+     },
+     {
+      "col": "N",
+      "label": "SK Struktural"
+     },
+     {
+      "col": "AB",
+      "label": "TMT Jabatan"
+     }
+    ]
+   },
+   {
+    "title": "RIWAYAT KEPANGKATAN",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Pangkat Golongan"
+     },
+     {
+      "col": "J",
+      "label": "No SK"
+     },
+     {
+      "col": "S",
+      "label": "Tanggal SK"
+     },
+     {
+      "col": "Z",
+      "label": "Pangkat Golongan"
+     },
+     {
+      "col": "AF",
+      "label": "Masa Kerja Tahun"
+     },
+     {
+      "col": "AK",
+      "label": "Masa Kerja Bulan"
+     }
+    ]
+   },
+   {
+    "title": "RIWAYAT PENDIDIKAN FORMAL",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Bidang Studi"
+     },
+     {
+      "col": "G",
+      "label": "Jenjang"
+     },
+     {
+      "col": "K",
+      "label": "Gelar"
+     },
+     {
+      "col": "N",
+      "label": "Satuan"
+     },
+     {
+      "col": "R",
+      "label": "Fakultas"
+     },
+     {
+      "col": "U",
+      "label": "Kependidikan"
+     },
+     {
+      "col": "Z",
+      "label": "Tahun Masuk"
+     },
+     {
+      "col": "AC",
+      "label": "Tahun Lulus"
+     },
+     {
+      "col": "AF",
+      "label": "NIM"
+     },
+     {
+      "col": "AI",
+      "label": "Masih"
+     },
+     {
+      "col": "AK",
+      "label": "Smt"
+     },
+     {
+      "col": "AN",
+      "label": "IPK"
+     }
+    ]
+   },
+   {
+    "title": "RIWAYAT SERTIFIKASI",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jenis Sertifikasi"
+     },
+     {
+      "col": "J",
+      "label": "No. Sertifikasi"
+     },
+     {
+      "col": "Q",
+      "label": "Tahun Sertifikasi"
+     },
+     {
+      "col": "U",
+      "label": "Bidang Studi"
+     },
+     {
+      "col": "AC",
+      "label": "No Registrasi"
+     },
+     {
+      "col": "AJ",
+      "label": "No. Peserta"
+     }
+    ]
+   },
+   {
+    "title": "RIWAYAT JABATAN FUNGSIONAL",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jabatan Fungsional"
+     },
+     {
+      "col": "P",
+      "label": "SK Jabatan Fungsional"
+     },
+     {
+      "col": "AD",
+      "label": "TMT Jabatan"
+     }
+    ]
+   },
+   {
+    "title": "RIWAYAT KARIR GURU",
+    "fields": [],
+    "table": [
+     {
+      "col": "A",
+      "label": "No"
+     },
+     {
+      "col": "C",
+      "label": "Jenjang"
+     },
+     {
+      "col": "F",
+      "label": "Jenis Lembaga"
+     },
+     {
+      "col": "I",
+      "label": "Sts Kepegawaian"
+     },
+     {
+      "col": "L",
+      "label": "Jenis PTK"
+     },
+     {
+      "col": "O",
+      "label": "Lembaga Pengangkat"
+     },
+     {
+      "col": "R",
+      "label": "No SK Kerja"
+     },
+     {
+      "col": "U",
+      "label": "Tgl SK Kerja"
+     },
+     {
+      "col": "X",
+      "label": "TMT Kerja"
+     },
+     {
+      "col": "AA",
+      "label": "TST Kerja"
+     },
+     {
+      "col": "AD",
+      "label": "Tempat Kerja"
+     },
+     {
+      "col": "AG",
+      "label": "TTD SK Kerja"
+     },
+     {
+      "col": "AJ",
+      "label": "Mapel Diajarkan"
+     }
+    ]
+   }
+  ]
+ },
+ "notes": [
+  "Only column headers and form labels. The exports were empty of data rows; the F-PTK form came filled for one person and none of its values is kept.",
+  "Daftar Guru and Daftar Tenaga Kependidikan share the same 51 columns.",
+  "Daftar Peserta Didik has a second header row under Data Ayah, Data Ibu and Data Wali (`sub`).",
+  "Option values and their Dapodik codes are not in these exports; they wait for referensi-dapodik (R-07)."
+ ]
+}
