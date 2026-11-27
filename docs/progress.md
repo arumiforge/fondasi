@@ -94,10 +94,15 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 - Hosts blocked from cloud sessions: `jateng.kemenag.go.id` (times out since 2026-11-25; R-06 brief), `kemenag.go.id` (refused), `jdih.kemendagri.go.id` (no answer, 2026-11-26), `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
   (and `disdikbud.jatengprov.go.id`, replaced by `pdk.jatengprov.go.id`) → browser briefs.
+- R-10b (Next steps 3) needs the user's Claude in Chrome run of brief R-10b: checked from the cloud on 2026-11-27,
+  `pasi.or.id` is unreachable (proxy 502); `dispora.jatengprov.go.id` loads but lists no POPDA juknis (pages are
+  script-filled); `popnas2025.id` is unreachable; the POPNAS XVII 2025 general guideline and the Kabupaten Semarang
+  POPDA 2026 draft appear only on Scribd (not an official source). Web search found no official PASI U14/U16 rules.
 - The Claude GitHub App may need access to the renamed repository for PR notifications (GitHub → Apps → Claude).
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-27 · session data-round 7 (account A) · `nty/magical-ramanujan-54d9nu` — PR #31: `batas-wilayah` stays at Jawa Tengah (user). Next step R-10b checked from the cloud: official PASI/POPDA/POPNAS sources not reachable or not published there; waits for the user's browser run of brief R-10b.
 - 2026-11-27 · session data-round 7 (account A) · `nty/magical-ramanujan-54d9nu` — R-18 Jawa Tengah: 35 regencies fetched (4 workers, outside the repo), blocker solved (34 rings crossed only after rounding to 6 decimals, none in BIG; the halving refined whole rings and pass 2 ping-ponged border arcs), converter refines only crossing arcs, carries refinements between rounds, checks collapsed rings and arc-vs-arc crossings, extra decimals for arcs and junctions, parallel build; `batas-wilayah` covers 8,563 villages. Session 2 (account B) works on the checker.
 - 2026-11-27 · akun-2 · `pw/exciting-goldberg-mqpkx5` — R-18 support: `tools/checks/batas-wilayah.py` (coverage, district = union of villages, holes, cross-regency borders, `--big` district areas, `--render` SVG; parallel per regency) tested on Kudus and on Kudus+Pati+Jepara built outside the repo (simplified and full precision; BIG's own full-precision borders differ by < 0.5 m at two tri-junctions, reported as notes); docs/data.md "Using boundaries in apps"; `fondasi-data` line. For the Jateng build: run the check on the output with `--big --render`.
 - 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — PR #28: `presisi` (servers fetch full precision from BIG, user's choice), merged main (PR #27, F-036). Jawa Tengah started: 35 regencies fetched (65 MB, outside the repo), converter got cross-regency topology and crossing refinement; build blocked by a ring that crosses itself at full precision. Handed over.
@@ -107,4 +112,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-contoh-soal` — PR #23 merged. `kerangka-tka`: 24 sample questions of 047 with 13 figures (keys recomputed, 4 errata) and the 2026 category limits marked secondary (F-033). Next: R-17.
 - 2026-11-26 · session data-round 5 · `nty/kerangka-tka` — PR #22 merged (religion CP Lampiran II, R-15 complete). R-16 `kerangka-tka` built from 047 and 56/2026 (4 frameworks, every text unit and table cell checked against the PDFs, schedule read on the page images, 3 errata). Next: R-17.
 - 2026-11-26 · session data-round 5 · `nty/cp-agama-pendidikan-khusus` — 020 Lampiran II transcribed from page images (2.1–2.6, 192 outcomes, every pinyin/diacritic line on zoomed crops, OCR diff clean), `pendidikan-khusus-agama.json.gz` built, `capaian-pembelajaran` complete (305 subjects, 2,816 outcomes). Next: R-16 `kerangka-tka`.
-- 2026-11-26 · session data-round 4 · `nty/serene-hamilton-q7whfv` — PR #20 merged (046 + 9941). Religion CP of 020 Lampiran I transcribed from page images (6 religions, 192 outcomes; SD A–C identical to sinaubareng), `agama.json.gz` built, version 2026-06-11. Next: 020 Lampiran II.
