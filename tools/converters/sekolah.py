@@ -167,10 +167,32 @@ def detail_value(page, label):
     return text(m.group(1)) if m else None
 
 
+TSV_HEADER = "npsn\tlintang\tbujur\tnpsn_halaman\tjenjang\n"
+
+
 def coords_row(npsn, page):
-    """npsn, Lintang and Bujur exactly as printed, and the NPSN the page itself shows."""
+    """npsn, Lintang and Bujur exactly as printed, the NPSN the page itself shows, and its Jenjang Pendidikan."""
     shown = detail_value(page, "NPSN") or ""
-    return [npsn, detail_value(page, "Lintang") or "", detail_value(page, "Bujur") or "", shown.split(" ")[0]]
+    return [npsn, detail_value(page, "Lintang") or "", detail_value(page, "Bujur") or "", shown.split(" ")[0],
+            (detail_value(page, "Jenjang Pendidikan") or "").lower()]
+
+
+def extract_coords(data_dir, raw, out):
+    """Rewrite OUT/<regency>.tsv from the raw pages of every regency already finished (after a format change)."""
+    units = units_by_regency(data_dir)
+    for f in sorted(os.listdir(out)):
+        kab = f[:-4]
+        if f.endswith(".tsv") and kab in units:
+            rows_ = [coords_row(n, gzip.open(os.path.join(raw, kab, f"{n}.html.gz"), "rt", encoding="utf-8").read())
+                     for n in units[kab]]
+            write_tsv(os.path.join(out, f), rows_)
+
+
+def write_tsv(path, rows_):
+    with open(path + ".tmp", "w", encoding="utf-8") as f:
+        f.write(TSV_HEADER)
+        f.writelines("\t".join(r) + "\n" for r in rows_)
+    os.replace(path + ".tmp", path)
 
 
 def fetch_coords(data_dir, raw, out, regencies):
@@ -209,10 +231,7 @@ def fetch_coords(data_dir, raw, out, regencies):
             else:
                 page = gzip.open(path, "rt", encoding="utf-8").read()
             rows_.append(coords_row(npsn, page))
-        with open(tsv + ".tmp", "w", encoding="utf-8") as f:
-            f.write("npsn\tlintang\tbujur\tnpsn_halaman\n")
-            f.writelines("\t".join(r) + "\n" for r in rows_)
-        os.replace(tsv + ".tmp", tsv)
+        write_tsv(tsv, rows_)
         print(f"done {kab} {len(rows_)} units", file=sys.stderr, flush=True)
 
 
@@ -303,35 +322,48 @@ def in_indonesia(lat, lon):
     return LAT_RANGE[0] <= lat <= LAT_RANGE[1] and LON_RANGE[0] <= lon <= LON_RANGE[1]
 
 
+# F-035: a pair whose latitude sign was lost or whose Lintang/Bujur were swapped is corrected only when the
+# corrected pair lies in the unit's own regency; the rule used is kept in koordinat_perbaikan and in the errata
+FIXES = (("tanda_lintang", lambda a, o: (-a, o)), ("tertukar", lambda a, o: (o, a)),
+         ("tertukar_tanda", lambda a, o: (-o, a)), ("tanda_bujur", lambda a, o: (a, -o)))
+
+
 def check_point(unit, lat_s, lon_s, regions):
-    """(lintang, bujur, koordinat_cek) for one unit from the printed Lintang/Bujur.
+    """(lintang, bujur, koordinat_cek, koordinat_perbaikan) for one unit from the printed Lintang/Bujur.
 
     koordinat_cek: kabupaten (inside its regency or within NEAR_KM of it; at sea or on a small island, when its
-    regency is the nearest one within ISLAND_KM) | provinsi (another regency of its province) | luar_provinsi (elsewhere in Indonesia) | tertukar (Lintang and Bujur swapped) | luar_indonesia |
-    nol (0 or empty-like) | kosong (no value printed)."""
+    regency is the nearest one within ISLAND_KM) | provinsi (another regency of its province) | luar_provinsi
+    (elsewhere in Indonesia) | tidak_diperiksa (no region code) | luar_indonesia | nol | kosong."""
     try:
         lat, lon = float(lat_s), float(lon_s)
-    except ValueError:
-        return None, None, "kosong"
-    if lat == 0 or lon == 0:
-        return None, None, "nol"
-    if not in_indonesia(lat, lon):
-        return None, None, ("tertukar" if in_indonesia(lon, lat) else "luar_indonesia")
-    lat, lon = round(lat, 7), round(lon, 7)
+    except (TypeError, ValueError):
+        return None, None, "kosong", None
+    if lat == 0 or lon == 0 or (abs(lat) < 0.01 and abs(lon) < 0.01):
+        return None, None, "nol", None
     kab, prov = unit.get("kode_kabupaten"), unit.get("kode_provinsi")
-    if kab and regions.near(kab, lat, lon):
-        return lat, lon, "kabupaten"
-    host = regions.regency_of(lat, lon)
-    if host is None:
-        # at sea or on a small island the simplified boundaries leave out: the nearest regency counts
-        host = regions.nearest(lat, lon, ISLAND_KM)
-        if host and host == kab:
-            return lat, lon, "kabupaten"
+    if in_indonesia(lat, lon) and kab and in_own_regency(regions, kab, lat, lon):
+        return round(lat, 7), round(lon, 7), "kabupaten", None
+    if kab:
+        for name, fix in FIXES:
+            flat, flon = fix(lat, lon)
+            if in_indonesia(flat, flon) and in_own_regency(regions, kab, flat, flon):
+                return round(flat, 7), round(flon, 7), "kabupaten", name
+    if not in_indonesia(lat, lon):
+        return None, None, "luar_indonesia", None
+    lat, lon = round(lat, 7), round(lon, 7)
     if not kab and not prov:
-        return lat, lon, "tidak_diperiksa"
+        return lat, lon, "tidak_diperiksa", None
+    host = regions.regency_of(lat, lon) or regions.nearest(lat, lon, ISLAND_KM)
     if host and prov and host.startswith(prov + "."):
-        return lat, lon, "provinsi"
-    return lat, lon, "luar_provinsi"
+        return lat, lon, "provinsi", None
+    return lat, lon, "luar_provinsi", None
+
+
+def in_own_regency(regions, kab, lat, lon):
+    if regions.near(kab, lat, lon):
+        return True
+    # at sea or on a small island the simplified boundaries leave out: the nearest regency counts
+    return regions.regency_of(lat, lon) is None and regions.nearest(lat, lon, ISLAND_KM) == kab
 
 
 def load_coords(path):
@@ -339,23 +371,29 @@ def load_coords(path):
     for f in sorted(os.listdir(path)):
         if f.endswith(".tsv"):
             for line in open(os.path.join(path, f), encoding="utf-8").read().splitlines()[1:]:
-                npsn, lat, lon, shown = (line.split("\t") + ["", "", ""])[:4]
-                out[npsn] = (lat, lon, shown)
+                npsn, lat, lon, shown, group = (line.split("\t") + ["", "", "", ""])[:5]
+                out[npsn] = (lat, lon, shown, group)
     return out
+
+
+ERRATA = []
 
 
 def add_coordinates(items, coords, regions, stats):
     """Set lintang, bujur and koordinat_cek on every unit (in place) and count the results in `stats`."""
     for s in items:
-        lat_s, lon_s, shown = coords.get(s["npsn"], (None, None, None))
+        lat_s, lon_s, shown, group = coords.get(s["npsn"], (None, None, None, None))
+        fix = None
         if lat_s is None:
             lat, lon, cek = None, None, "belum_diambil"
         elif shown and shown != s["npsn"]:
             lat, lon, cek = None, None, "halaman_lain"  # the detail page belongs to another NPSN: never used
         else:
-            lat, lon, cek = check_point(s, lat_s, lon_s, regions)
-        s["lintang"], s["bujur"], s["koordinat_cek"] = lat, lon, cek
-        for key in ("all", s["bentuk_pendidikan"], s.get("kode_provinsi") or "?"):
+            lat, lon, cek, fix = check_point(s, lat_s, lon_s, regions)
+        s["lintang"], s["bujur"], s["koordinat_cek"], s["koordinat_perbaikan"] = lat, lon, cek, fix
+        if fix:
+            ERRATA.append({"npsn": s["npsn"], "printed": [lat_s, lon_s], "used": [lat, lon], "rule": fix})
+        for key in ("all", s["bentuk_pendidikan"], s.get("kode_provinsi") or "?", "jenjang:" + (group or "?")):
             stats.setdefault(key, {}).setdefault(cek, 0)
             stats[key][cek] += 1
 
@@ -382,14 +420,17 @@ def write_gz(path, items):
 
 COORD_FIELDS = {
     "lintang": "latitude in decimal degrees from the unit's detail page (Lintang), rounded to 7 decimals; null when "
-               "koordinat_cek is not kabupaten, provinsi, luar_provinsi or tidak_diperiksa",
+               "koordinat_cek is nol, kosong, luar_indonesia, halaman_lain or belum_diambil",
     "bujur": "longitude in decimal degrees (Bujur), same rules as lintang",
-    "koordinat_cek": "check of the printed pair: kabupaten (inside the unit's regency or within 5 km of it; at sea or on an "
-                     "island the simplified boundaries leave out, when its regency is the nearest within 50 km) | provinsi "
-                     "(in another regency of its province) | luar_provinsi (elsewhere in Indonesia) | tidak_diperiksa "
-                     "(no region code to check against) | nol (0 printed) | kosong (nothing printed) | tertukar "
-                     "(Lintang and Bujur swapped) | luar_indonesia | halaman_lain (page shows another NPSN) | "
-                     "belum_diambil (page not fetched)",
+    "koordinat_cek": "check of the pair (F-035): kabupaten (inside the unit's regency or within 5 km of it; at sea or on "
+                     "an island the simplified boundaries leave out, when its regency is the nearest within 50 km) | "
+                     "provinsi (in another regency of its province; kept as printed) | luar_provinsi (elsewhere in "
+                     "Indonesia; kept as printed) | tidak_diperiksa (no region code to check against) | nol (0 printed) "
+                     "| kosong (nothing printed) | luar_indonesia (outside Indonesia and no correction fits) | "
+                     "halaman_lain (the page shows another NPSN) | belum_diambil (page not fetched)",
+    "koordinat_perbaikan": "null when the pair is used as printed; otherwise the correction that puts it in the unit's "
+                           "own regency (F-035): tanda_lintang (latitude sign), tanda_bujur, tertukar (Lintang and Bujur "
+                           "swapped), tertukar_tanda (swapped, latitude sign); printed values in the manifest errata",
     "koordinat_sama": "number of units in the whole set with exactly the same pair (1 = unique); null without a pair",
 }
 
@@ -400,7 +441,7 @@ def merge_coords(data_dir, coords_dir, bounds_dir, version):
     coords = load_coords(coords_dir)
     manifest_path = os.path.join(data_dir, "manifest.json")
     manifest = json.load(open(manifest_path, encoding="utf-8"))
-    files, stats, report = {}, {}, {"outside_region": [], "swapped": [], "outside_indonesia": []}
+    files, stats, report = {}, {}, {"outside_region": [], "outside_indonesia": []}
     for entry in manifest["files"]:
         items = json.load(gzip.open(os.path.join(data_dir, entry["file"]), "rt", encoding="utf-8"))
         add_coordinates(items, coords, regions, stats)
@@ -410,9 +451,9 @@ def merge_coords(data_dir, coords_dir, bounds_dir, version):
             if c in ("provinsi", "luar_provinsi"):
                 report["outside_region"].append(
                     f"{s['npsn']} {c} {s['lintang']},{s['bujur']} {s['kabupaten']} -> {regions.regency_of(s['lintang'], s['bujur'])}")
-            elif c in ("tertukar", "luar_indonesia"):
+            elif c == "luar_indonesia":
                 raw = coords.get(s["npsn"])
-                report["swapped" if c == "tertukar" else "outside_indonesia"].append(f"{s['npsn']} {raw[0]},{raw[1]}")
+                report["outside_indonesia"].append(f"{s['npsn']} {raw[0]},{raw[1]}")
     pairs = mark_duplicates(files)
     for name, items in files.items():
         write_gz(os.path.join(data_dir, name), items)
@@ -428,11 +469,14 @@ def merge_coords(data_dir, coords_dir, bounds_dir, version):
         "checks": dict(sorted(stats["all"].items())),
         "shared_pairs": {"units_in_shared_pairs": sum(n for n in pairs.values() if n > 1),
                          "pairs_by_size": dict(sorted(groups.items()))},
+        "corrected": len(ERRATA),
+        "by_group": {k[8:]: dict(sorted(v.items())) for k, v in sorted(stats.items()) if k.startswith("jenjang:")},
         "by_province": {e["kode_provinsi"]: dict(sorted(stats.get(e["kode_provinsi"], {}).items()))
                         for e in manifest["files"]},
         "by_form": {k: dict(sorted(v.items())) for k, v in sorted(stats.items())
-                    if k not in ("all", "?") and not re.fullmatch(r"\d\d", k)},
+                    if k not in ("all", "?") and not k.startswith("jenjang:") and not re.fullmatch(r"\d\d", k)},
     }
+    manifest["coordinate_errata"] = sorted(ERRATA, key=lambda e: e["npsn"])
     for e in manifest["files"]:
         e["with_coordinates"] = sum(1 for s in files[e["file"]] if s["lintang"] is not None)
     json.dump(manifest, open(manifest_path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
@@ -778,6 +822,8 @@ if __name__ == "__main__":
         fetch_coords(args[1], args[2], args[3], args[4:])
     elif len(args) == 5 and args[0] == "coords-merge":
         merge_coords(*args[1:])
+    elif len(args) == 4 and args[0] == "coords-extract":
+        extract_coords(*args[1:])
     elif len(args) == 3 and args[0] == "plan":
         plan(args[1], args[2])
     elif len(args) == 5 and args[0] == "build":
