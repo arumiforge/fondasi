@@ -1,0 +1,59 @@
+{
+  "version": "2026-06-15",
+  "description": "Boundaries of villages (desa/kelurahan) and districts (kecamatan), one GeoJSON file per regency and level, simplified to about 11 m with shared borders kept together; keyed by the Kemendagri codes of the wilayah set.",
+  "status": "partial: regencies listed in `regencies`; others are added on demand (F-035)",
+  "source": "Badan Informasi Geospasial, Basis Data Batas Wilayah Administrasi Edisi Juni 2026 (metadata date 2026-06-15), layer BATAS_DESAKEL_AR of https://geoservices.big.go.id/rbi/rest/services/BATASWILAYAH/BATAS_DESAKEL_AR; full-precision download kept in sources/batas-wilayah/",
+  "licence": "Informasi Geospasial Dasar, open by law (UU 4/2011 Pasal 12 huruf e and Pasal 42); credit \"Sumber: Badan Informasi Geospasial\" (F-035)",
+  "procedure": "tools/converters/batas-wilayah.py fetch <raw_dir> <regency...>, then build <raw_dir> data/wilayah/wilayah.json.gz data/batas-wilayah --tolerance=11",
+  "tolerance_m": 11.0,
+  "coordinate_decimals": 6,
+  "crs": "WGS 84 (EPSG:4326), RFC 7946: outer rings counter-clockwise, holes clockwise",
+  "files": {
+    "desa/<regency>.geojson.gz": "one Feature per village",
+    "kecamatan/<regency>.geojson.gz": "one Feature per district, the union of its villages"
+  },
+  "fields": {
+    "desa": {
+      "code": "village code xx.xx.xx.xxxx (wilayah)",
+      "name": "official name from wilayah",
+      "district": "district code xx.xx.xx",
+      "type": "desa or kelurahan (from the code)",
+      "status": "boundary status as BIG writes it: Batas Definitif, Hasil Kesepakatan or Batas Indikatif",
+      "basis": "regulation the boundary rests on, as BIG writes it (null when none)",
+      "area_km2": "area of the full-precision polygon on the WGS 84 ellipsoid"
+    },
+    "kecamatan": {
+      "code": "district code xx.xx.xx",
+      "name": "official name from wilayah",
+      "villages": "number of villages with a polygon",
+      "area_km2": "sum of the villages' full-precision areas"
+    }
+  },
+  "regencies": [
+    {
+      "code": "33.19",
+      "name": "Kabupaten Kudus",
+      "villages": 132,
+      "districts": 9,
+      "villages_without_polygon": [],
+      "districts_without_polygon": [],
+      "undefined_areas": 0,
+      "arcs": 399
+    }
+  ],
+  "villages": 132,
+  "districts": 9,
+  "status_counts": {
+    "Batas Definitif": 25,
+    "Hasil Kesepakatan": 107
+  },
+  "largest_area_change_percent": {
+    "code": "33.19.02.1017",
+    "percent": 1.661
+  },
+  "notes": [
+    "Only 'Batas Definitif' rests on a signed regulation. 'Hasil Kesepakatan' is agreed by the villages and checked by BIG; 'Batas Indikatif' is a working line. UU 4/2011 Pasal 16 ayat (2): show boundaries that are not definitive with a different line style or colour, and never present any of them as a legal boundary.",
+    "Use for maps, filters and 'which village is this point in' hints; let users correct the village they chose. Credit: Sumber: Badan Informasi Geospasial.",
+    "District areas equal BIG's own district layer (BATAS_KECAMATAN_AR) to four decimals."
+  ]
+}

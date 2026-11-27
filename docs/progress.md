@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/kerangka-tka-atribusi` | session data-round 5 | F-034 attribution for third-party works in `kerangka-tka` | PR open |
+| `nty/eloquent-davinci-myz72i` | session data-round 6 | R-18 `batas-wilayah` (BIG boundaries), Kudus first (F-035) | PR open |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -57,7 +57,12 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    data (four islands move to Aceh Singkil); `data/wilayah` 2026-02-13 matches its region totals exactly, and
    `kodepos` is unaffected. Check again when Kemendagri publishes a new decree on region codes (cahyadsn usually
    follows within months; compare the header of `db/wilayah.sql`).
-7. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
+7. **R-18 `batas-wilayah`** (F-035): Kudus done. Add a regency on demand: `python3 -I tools/converters/batas-wilayah.py
+   fetch sources/batas-wilayah <regency>` then `build sources/batas-wilayah data/wilayah/wilayah.json.gz
+   data/batas-wilayah` (seconds per regency). Open: where full precision for many regencies lives (≈ 370 MB gzipped
+   for Indonesia; too big for the repository and for the Google Drive connector, which uploads only content typed
+   into the call) — the user decides between servers fetching from BIG themselves, an R2 bucket (F-006) or other.
+8. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
    via `fondasi-sync`.
 
 ## Blockers / waiting on
@@ -68,6 +73,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — Boundary sources researched (BIG Edisi Juni 2026 best: Kemendagri codes, 99.7 % of villages; GADM/OSM/HDX rejected); F-035; `batas-wilayah` 2026-06-15 for Kudus (±11 m, shared arcs, district areas equal BIG). Next: precise-data storage decision, more regencies on demand.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-atribusi` — PR #24 merged. F-034 (third-party works for education with credit); attribution added to every `kerangka-tka` stimulus. Next: R-17.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-contoh-soal` — PR #23 merged. `kerangka-tka`: 24 sample questions of 047 with 13 figures (keys recomputed, 4 errata) and the 2026 category limits marked secondary (F-033). Next: R-17.
 - 2026-11-26 · session data-round 5 · `nty/kerangka-tka` — PR #22 merged (religion CP Lampiran II, R-15 complete). R-16 `kerangka-tka` built from 047 and 56/2026 (4 frameworks, every text unit and table cell checked against the PDFs, schedule read on the page images, 3 errata). Next: R-17.
@@ -77,4 +83,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — R-15 started: generic CP parser for 046 (all appendices) and SK 9941 written and run (≈ 2,900 outcomes); F-032 (religion from 020 in a checked second step, full content). Handed over before the first data build (one SLB section left). Next: finish R-15.
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PRs #16 (O2SN) and #17 (sinaubareng audit) merged; R-08 `mapel` built for all levels (54 tables, 144 totals checked, 7 errata, F-031; user: Bahasa Inggris SD/MI compulsory from 2027/2028 = Pasal 33). Next: R-15.
 - 2026-11-26 · session data-round 3 · `nty/eager-tesla-92hwl9` — PR #15 found merged; R-10b O2SN part built (guides + the two scoring tables fetched from the guides' links, every row matches WA formulas; women's 60 m parameters derived). sinaubareng audited (user: mapel all levels, CP all subjects, TKA, coordinates later; repo to be made private by the user).
-- 2026-11-26 · session data-round 2 · `nty/amazing-knuth-svvihr` — R-06 built from the uploaded Kanwil decree 1681/2026 (45 events, HK/HL/HE of all 12 months match); O2SN 2026 guides stored for R-10b. Next: merge the R-06 PR, then O2SN.

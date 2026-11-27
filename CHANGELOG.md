@@ -5,6 +5,12 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- Data set `batas-wilayah` 2026-06-15 (R-18, F-035): village and district boundaries of Kabupaten Kudus (132
+  villages, 9 districts) from BIG's Basis Data Batas Wilayah Administrasi Edisi Juni 2026, keyed by Kemendagri codes,
+  simplified to about 11 m on shared arcs (no gaps between neighbours), districts built as the union of their
+  villages (areas equal BIG's district layer); boundary status and basis per village. Converter
+  `tools/converters/batas-wilayah.py` (fetch from BIG's REST service, build), full-precision download in
+  `sources/batas-wilayah/`.
 - `kerangka-tka`: every sample-question stimulus carries an `attribution` (owner and where it was printed) and the
   set an `attribution_rule`; F-034 allows third-party works for education when their owners are credited.
 - `kerangka-tka` (R-16): the 24 sample questions of Perka BSKAP 047/H/AN/2025 part IV (stimuli, questions,
