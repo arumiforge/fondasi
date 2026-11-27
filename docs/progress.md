@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (F-035) | PR open |
+| `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (F-036) | PR open |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -50,7 +50,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    **R-16 done** (`kerangka-tka` 2026-03-06): framework SD/MI and SMP/MTs from 047, administration from 56/2026;
    rebuild `python3 -I tools/converters/kerangka-tka.py sources/kerangka-tka data`. Add the SMA/SMK framework when
    BSKAP publishes one (F-033). Sample questions and the 2026 category limits (secondary) are in; replace the limits
-   when an official document states them. **R-17 done** (`sekolah` 2026-11-27, F-035): coordinates of every unit from `/satpen/detail/<npsn>`. To refresh:
+   when an official document states them. **R-17 done** (`sekolah` 2026-11-27, F-036): coordinates of every unit from `/satpen/detail/<npsn>`. To refresh:
    `python3 -I tools/converters/sekolah.py coords data/sekolah <raw outside the repo> sources/sekolah/koordinat
    --threads=160` (≈ 7 h for 540,000 pages; resumable; delete the TSVs first for a new crawl), then `coords-merge
    data/sekolah sources/sekolah/koordinat sources/sekolah/batas-wilayah <date>` and `tools/data-check --write`.
@@ -72,7 +72,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
-- 2026-11-27 · session data-round 6 · `nty/sekolah-koordinat` — R-17: 539,580 detail pages crawled (20 → 40 workers → 160 threads, F-029 without fixed cap), coordinates merged into `sekolah` 2026-11-27 (84.4 % with a pair, 1,222 sign/swap fixes, 7 default pairs null, F-035); sinaubareng cross-check 2,136/2,148 identical. PR open.
+- 2026-11-27 · session data-round 6 · `nty/sekolah-koordinat` — R-17: 539,580 detail pages crawled (20 → 40 workers → 160 threads, F-029 without fixed cap), coordinates merged into `sekolah` 2026-11-27 (84.4 % with a pair, 1,222 sign/swap fixes, 7 default pairs null, F-036); sinaubareng cross-check 2,136/2,148 identical. PR open.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-atribusi` — PR #24 merged. F-034 (third-party works for education with credit); attribution added to every `kerangka-tka` stimulus. Next: R-17.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-contoh-soal` — PR #23 merged. `kerangka-tka`: 24 sample questions of 047 with 13 figures (keys recomputed, 4 errata) and the 2026 category limits marked secondary (F-033). Next: R-17.
 - 2026-11-26 · session data-round 5 · `nty/kerangka-tka` — PR #22 merged (religion CP Lampiran II, R-15 complete). R-16 `kerangka-tka` built from 047 and 56/2026 (4 frameworks, every text unit and table cell checked against the PDFs, schedule read on the page images, 3 errata). Next: R-17.

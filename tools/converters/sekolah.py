@@ -362,7 +362,7 @@ def in_indonesia(lat, lon):
     return LAT_RANGE[0] <= lat <= LAT_RANGE[1] and LON_RANGE[0] <= lon <= LON_RANGE[1]
 
 
-# F-035: a pair whose latitude sign was lost or whose Lintang/Bujur were swapped is corrected only when the
+# F-036: a pair whose latitude sign was lost or whose Lintang/Bujur were swapped is corrected only when the
 # corrected pair lies in the unit's own regency; the rule used is kept in koordinat_perbaikan and in the errata
 FIXES = (("tanda_lintang", lambda a, o: (-a, o)), ("tertukar", lambda a, o: (o, a)),
          ("tertukar_tanda", lambda a, o: (-o, a)), ("tanda_bujur", lambda a, o: (a, -o)))
@@ -438,7 +438,7 @@ def add_coordinates(items, coords, regions, stats):
             stats[key][cek] += 1
 
 
-# F-035: a pair used by at least this many units in at least this many regencies is a default the source fills
+# F-036: a pair used by at least this many units in at least this many regencies is a default the source fills
 # in, not a location (e.g. -5.443757, 114.421127 at sea off Sumenep, used by thousands of PAUD units)
 DEFAULT_UNITS, DEFAULT_REGENCIES = 10, 3
 
@@ -487,7 +487,7 @@ COORD_FIELDS = {
     "lintang": "latitude in decimal degrees from the unit's detail page (Lintang), rounded to 7 decimals; null when "
                "koordinat_cek is nol, kosong, bawaan, luar_indonesia, halaman_lain or belum_diambil",
     "bujur": "longitude in decimal degrees (Bujur), same rules as lintang",
-    "koordinat_cek": "check of the pair (F-035): kabupaten (inside the unit's regency or within 5 km of it; at sea or on "
+    "koordinat_cek": "check of the pair (F-036): kabupaten (inside the unit's regency or within 5 km of it; at sea or on "
                      "an island the simplified boundaries leave out, when its regency is the nearest within 50 km) | "
                      "provinsi (in another regency of its province; kept as printed) | luar_provinsi (elsewhere in "
                      "Indonesia; kept as printed) | tidak_diperiksa (no region code to check against) | nol (0 printed) "
@@ -495,7 +495,7 @@ COORD_FIELDS = {
                      "listed in coordinates.default_pairs) | luar_indonesia (outside Indonesia and no correction fits) | "
                      "halaman_lain (the page shows another NPSN) | belum_diambil (page not fetched)",
     "koordinat_perbaikan": "null when the pair is used as printed; otherwise the correction that puts it in the unit's "
-                           "own regency (F-035): tanda_lintang (latitude sign), tanda_bujur, tertukar (Lintang and Bujur "
+                           "own regency (F-036): tanda_lintang (latitude sign), tanda_bujur, tertukar (Lintang and Bujur "
                            "swapped), tertukar_tanda (swapped, latitude sign); printed values in the manifest errata",
     "koordinat_sama": "number of units in the whole set with exactly the same pair (1 = unique); null without a pair",
 }
@@ -550,10 +550,10 @@ def merge_coords(data_dir, coords_dir, bounds_dir, version):
                              "wilayah 2026-02-13, never invented (F-028 for what is kept). Coordinates (R-17): coords "
                              "(detail pages, raw pages kept outside the repository, extracts in "
                              "sources/sekolah/koordinat/<regency>.tsv) then coords-merge, checked against the regency "
-                             "boundaries in sources/sekolah/batas-wilayah (F-035)")
+                             "boundaries in sources/sekolah/batas-wilayah (F-036)")
     notes = [n for n in manifest.get("notes", []) if not n.startswith("Coordinates")]
     notes += [
-        "Coordinates come from each unit's detail page as the source prints them; nothing is estimated (F-035). "
+        "Coordinates come from each unit's detail page as the source prints them; nothing is estimated (F-036). "
         "Pairs outside the unit's regency stay as printed and are flagged (provinsi, luar_provinsi); a lost sign or "
         "swapped Lintang/Bujur is corrected only when the result lies in the unit's own regency (coordinate_errata); "
         "default pairs shared across regencies are null (bawaan, coordinates.default_pairs).",

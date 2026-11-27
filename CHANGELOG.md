@@ -5,7 +5,7 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
-- `sekolah` 2026-11-27 (R-17, F-035): `lintang`, `bujur`, `koordinat_cek`, `koordinat_perbaikan` and
+- `sekolah` 2026-11-27 (R-17, F-036): `lintang`, `bujur`, `koordinat_cek`, `koordinat_perbaikan` and
   `koordinat_sama` for all 539,580 units from their detail pages (`/satpen/detail/<npsn>`). 455,250 units (84.4 %)
   have a pair: 449,014 inside their own regency (or within 5 km; at sea or on small islands the nearest regency),
   4,023 in another regency of their province and 2,213 elsewhere in Indonesia, kept as printed and flagged. 1,222
