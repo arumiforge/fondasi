@@ -1,0 +1,82 @@
+World Athletics record lists, rendered in Chromium; <table> element saved per tab, unchanged.
+
+world-records--women.html
+  page URL : https://worldathletics.org/records/by-category/world-records (tab "Women")
+  fetched  : 2026-11-27T16:55:15.020Z
+  size     : 84140 bytes, 73 rows
+  SHA-256  : ec8332e57982fbbcf0641a78b5c951767757e133f5673c62a4ad61e2750ea494
+
+world-records--men.html
+  page URL : https://worldathletics.org/records/by-category/world-records (tab "Men")
+  fetched  : 2026-11-27T16:55:16.921Z
+  size     : 75506 bytes, 65 rows
+  SHA-256  : 1206f294b810c3e6117be03052596a816efe4fa71ce8e40f67d34ad6a17bc413
+
+world-records--mixed.html
+  page URL : https://worldathletics.org/records/by-category/world-records (tab "Mixed")
+  fetched  : 2026-11-27T16:55:18.748Z
+  size     : 5387 bytes, 4 rows
+  SHA-256  : 4bd2acec6c0482824c8905fe7f1abd0f7458312e800463bfea19ad707ae9a095
+
+world-records legend: * Pending ratification. Mx: mixed gender race. Wo: women only race. (i): set indoor.
+
+world-u20-records--women.html
+  page URL : https://worldathletics.org/records/by-category/world-u20-records (tab "Women")
+  fetched  : 2026-11-27T16:55:34.689Z
+  size     : 45914 bytes, 39 rows
+  SHA-256  : 4f75422c81483c216743cf795dd83ad3d36f1f71bc5d365d43ceb1459fd8833b
+
+world-u20-records--men.html
+  page URL : https://worldathletics.org/records/by-category/world-u20-records (tab "Men")
+  fetched  : 2026-11-27T16:55:36.537Z
+  size     : 51676 bytes, 44 rows
+  SHA-256  : 66579740186d9de8d1a50f37b6c8a605cf82a213603c6a06c26311e2643a54e7
+
+world-u20-records--mixed.html
+  page URL : https://worldathletics.org/records/by-category/world-u20-records (tab "Mixed")
+  fetched  : 2026-11-27T16:55:38.372Z
+  size     : 4695 bytes, 3 rows
+  SHA-256  : 5fe9c8c8f09ec52fd812339cb9071c39402c439ab9dbe9a2d9b1045b742fb2ea
+
+world-u20-records legend: * Pending ratification. Mx: mixed gender race. Wo: women only race. (i): set indoor.
+
+world-u18-best-performances--women.html
+  page URL : https://worldathletics.org/records/by-category/world-u18-best-performances (tab "Women")
+  fetched  : 2026-11-27T16:55:54.491Z
+  size     : 34285 bytes, 33 rows
+  SHA-256  : 107d66bad44b6b357356fd699f7f8cd46803639a91acc536e123ff08586097a5
+
+world-u18-best-performances--men.html
+  page URL : https://worldathletics.org/records/by-category/world-u18-best-performances (tab "Men")
+  fetched  : 2026-11-27T16:55:56.339Z
+  size     : 29628 bytes, 28 rows
+  SHA-256  : f689594e9abcf629d7f2e31492d1da8935f36df3de6df22f958bbdb447b85f76
+
+world-u18-best-performances--mixed.html
+  page URL : https://worldathletics.org/records/by-category/world-u18-best-performances (tab "Mixed")
+  fetched  : 2026-11-27T16:55:58.158Z
+  size     : 2308 bytes, 1 rows
+  SHA-256  : 67d6e23631e90c55d00dff330138c9584fcec3af7ee3f2c19aa9b2732c489ff9
+
+world-u18-best-performances legend: * Pending ratification. Mx: mixed gender race. Wo: women only race. (i): set indoor.
+
+asian-records--women.html
+  page URL : https://worldathletics.org/records/by-category/asian-records (tab "Women")
+  fetched  : 2026-11-27T16:56:14.470Z
+  size     : 61225 bytes, 60 rows
+  SHA-256  : c0e7f01d3836fdba0150bbf7c3b062d94d10cc3b33437c47bb511dd8f5cf0f7c
+
+asian-records--men.html
+  page URL : https://worldathletics.org/records/by-category/asian-records (tab "Men")
+  fetched  : 2026-11-27T16:56:16.338Z
+  size     : 65692 bytes, 64 rows
+  SHA-256  : d4c950e8c1f0873c2a48b75970c5e3bb2d307313ff29f6e2d9a6686c9435ef3f
+
+asian-records--mixed.html
+  page URL : https://worldathletics.org/records/by-category/asian-records (tab "Mixed")
+  fetched  : 2026-11-27T16:56:18.154Z
+  size     : 2303 bytes, 1 rows
+  SHA-256  : a6a1bb4286e25fb19eebc5e40bbd7960f546bc35d688ceb96a7eb56e41946664
+
+asian-records legend: * Pending ratification. Mx: mixed gender race. Wo: women only race. (i): set indoor.
+

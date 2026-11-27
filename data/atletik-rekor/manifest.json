@@ -1,0 +1,23 @@
+{
+  "version": "2026-11-27",
+  "description": "Athletics records: Indonesian national records (senior, U20, U18) from PASI; world records, world U20 records, world U18 best performances and Asian records from World Athletics. Per record: event (atletik-nomor code), mark as printed and normalised (seconds, metres or points), wind, holders with birth date as published, province (wilayah code) or country, competition, date, venue, indoor/pending/hand-timed flags; errata and a Wikipedia cross-check.",
+  "status": "ready for national (PASI) and World Athletics lists; championship records (O2SN, POPDA, POPNAS, the user's championships) and U16/U14 national records not published (F-037)",
+  "source": "PASI national record tables at www.pbpasi.org (senior men updated 23 Jun 2025, senior women 9 Dec 2024, U20 and U18 5 Dec 2023), World Athletics record lists at worldathletics.org/records (fetched 2026-11-27); English Wikipedia list of Indonesian records (CC BY-SA) for the cross-check only. Raw files and SOURCE.txt in sources/atletik-rekor/",
+  "licence": "PASI and World Athletics publish the records publicly; facts with references (F-027, F-037). Holders' names and birth dates appear only as the federations publish them (F-037)",
+  "procedure": "node tools/converters/atletik-rekor-fetch.mjs sources/atletik-rekor/wa (World Athletics pages need a browser); curl for the PASI pages; then python3 -I tools/converters/atletik-rekor.py sources/atletik-rekor data and tools/data-check --write",
+  "counts": {
+    "records": 585,
+    "nasional-senior": 65,
+    "nasional-u20": 51,
+    "nasional-u18": 54,
+    "dunia-senior": 142,
+    "dunia-u20": 86,
+    "dunia-u18": 62,
+    "asia-senior": 125,
+    "errata": 19,
+    "cross_check_differences": 26
+  },
+  "files": [
+    "atletik-rekor.json"
+  ]
+}

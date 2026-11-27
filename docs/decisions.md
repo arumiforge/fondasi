@@ -162,3 +162,22 @@ langsung dari BIG"). Apps show the boundary status and never present a boundary 
 ## F-036 — `sekolah` coordinates: nothing guessed, outliers kept and flagged, sign and swap fixed only when they fit (2026-11-27)
 Status: accepted (user, 2026-11-27: "Null + alasan", "Simpan titik + tandai", "Perbaiki bila pas")
 Decision: R-17 adds `lintang`/`bujur` from each unit's detail page (`/satpen/detail/<npsn>`) to `sekolah`, with `koordinat_cek`, `koordinat_perbaikan` and `koordinat_sama`. A unit whose page prints no pair or 0 keeps `null` with the reason (`kosong`, `nol`); no point is estimated from region centroids. A pair that lies in Indonesia but outside the unit's regency is kept as printed and flagged (`provinsi`, `luar_provinsi`), so apps can filter it; nothing is moved silently. A pair whose latitude sign was lost or whose Lintang/Bujur are swapped is corrected only when the corrected pair lies in the unit's own regency; the rule goes to `koordinat_perbaikan` and the printed values to the manifest's `coordinate_errata` (as F-031 does for tables). Any other pair outside Indonesia is `null` (`luar_indonesia`). The region check uses simplified regency boundaries (cahyadsn/wilayah_boundaries, MIT) with a 5 km margin and, for points at sea or on small islands, the nearest regency within 50 km. `koordinat_sama` counts units sharing exactly the same pair. Default pairs the source fills in (a pair used by 10 or more units in 3 or more regencies, e.g. -5.443757, 114.421127 at sea off Sumenep, used by about 4,900 PAUD units across Indonesia) are not locations: they become `null` with `koordinat_cek: bawaan` and are listed in the manifest (user, 2026-11-27: "Null, alasan 'bawaan'").
+
+## F-037 — `atletik-rekor`: PASI and World Athletics lists, holders as published, championship records later (2026-11-28)
+Status: accepted (user, 2026-11-28: "daftar kejuaraan gunakan seadanya dulu"; World Athletics lists "Rekor dunia
+senior, Rekor dunia U20, Prestasi terbaik dunia U18, Rekor Asia"; holders "Lengkap dengan tanggal lahir"; national
+records from Wikipedia marked secondary when PASI is not reachable)
+Decision: R-11 uses the championships already covered (F-027) and does not wait for the user's list. `atletik-rekor`
+holds the Indonesian national records senior, U20 and U18 from PASI's own tables at www.pbpasi.org (the federation's
+site; pasi.or.id, tried before, does not resolve), and World Athletics' world records, world U20 records, world U18
+best performances and Asian records from worldathletics.org/records. Because PASI's official tables were found,
+Wikipedia's list is not used as data: it only cross-checks the PASI senior tables, and every difference is listed
+in the manifest's `cross_check_wikipedia` without changing the PASI values. Holders appear exactly as the federations
+publish them: name, birth date (or year), PASI province (mapped to the `wilayah` code) or World Athletics country.
+This is an exception to the rule "no athletes' private details" for record holders only, because the records are
+public results the federations publish with these fields; nothing else about a holder is stored, and a holder who
+asks to be removed is removed from the set (as F-034 does for owners). PASI's printing errors follow F-031: a mark
+with only one possible reading is normalised with a `resolved` erratum; impossible dates, holders older than the age
+group on the day of the record, and one athlete printed with different birth dates stay as printed with
+`unresolved` errata. Championship records (O2SN, POPDA, POPNAS, championships the user runs) and U16/U14 national
+records are added when an organiser publishes them or the user gives the list.
