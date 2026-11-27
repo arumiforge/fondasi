@@ -833,7 +833,9 @@ def build(raw_dir, wilayah_path, out_dir, tolerance, server_copy=None, matches=N
             "regency), which BIG's district polygon includes and no village does.",
             "Borders between regencies are cut at the same points and simplified the same way on both sides "
             "(`shared_regency_border_arcs`); arcs that would make a ring collapse or cross itself or another ring "
-            "are kept finer (`arcs_with_smaller_tolerance`), so no two villages overlap. "
+            "are kept finer (`arcs_with_smaller_tolerance`), so no two villages overlap. Where BIG's own lines of "
+            "two neighbouring regencies do not coincide (a few places, under 1 m apart in BIG), they are not shared "
+            "arcs: each side is simplified on its own and the two may differ by up to the tolerance. "
             "`largest_area_change_percent` compares the simplified with the full-precision area; small villages "
             "change most.",
         ],

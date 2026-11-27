@@ -13,5 +13,9 @@ description: Add, update or use Fondasi's shared public data (regions, schools o
   (the source's date); `tools/data-check --write` then `tools/data-check`; CHANGELOG line.
 - Sources blocked from cloud sessions: write or follow a brief in `docs/data-requests.md` for a Claude in Chrome
   session; it collects raw files with `SOURCE.txt`, a cloud session converts them.
+- Boundaries (`batas-wilayah`, F-035): BIG village/district polygons per regency, ±11 m; full precision only via
+  `batas-wilayah.py presisi` on servers. Check any build with `python3 -I tools/checks/batas-wilayah.py <dir>
+  [--big] [--render <out>]`; app rules (status line styles, credit, point-to-village as a suggestion, loading) in
+  `docs/data.md` "Using boundaries in apps".
 - Licences go into `THIRD_PARTY_NOTICES.md`; ask before anything other than public government data,
   MIT/BSD/Apache/ISC/CC-BY.

@@ -28,7 +28,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 | `nty/eloquent-davinci-myz72i` | session data-round 6 | R-18 `batas-wilayah`: PR #26 merged (Kudus); PR #28 `presisi` + cross-regency topology | PR #28 merged |
 | `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (F-036) | PR #27 merged |
 | `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-18 `batas-wilayah` for all of Jawa Tengah (Next steps 7); only `tools/converters/batas-wilayah.py`, `data/batas-wilayah/`, `sources/batas-wilayah/` | PR open |
-| (other account) | session 2 (account B, parallel) | Boundary checker `tools/checks/batas-wilayah.py` and "Using boundaries in apps" in `docs/data.md`; not touched by account A | in progress |
+| `pw/exciting-goldberg-mqpkx5` | akun-2 | R-18 support: `tools/checks/batas-wilayah.py` (coverage, areas, cross-regency arcs, `--big`, `--render`), docs/data.md "Using boundaries in apps", `fondasi-data` line. Does not touch the converter or `data/batas-wilayah/` | PR #29 merged |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -77,8 +77,15 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
      district areas equal BIG's BATAS_KECAMATAN_AR to 4 decimals in 574/576 (33.01.24 and 33.17.09 differ by exactly
      BIG's undefined areas); Kudus's area and status numbers unchanged and its files byte-identical when built alone;
      a full-precision build (`--tolerance=0`, what `presisi` does) of Jateng passes the same checks (6.5 min; 285 arcs
-     and 42 junctions in 265 villages keep more than 6 decimals; pass 2 ended after 2 rounds). The check scripts were ad hoc; session 2 (other account) is writing
-     `tools/checks/batas-wilayah.py` — run it once it is on `main`.
+     and 42 junctions in 265 villages keep more than 6 decimals; pass 2 ended after 2 rounds). `tools/checks/batas-wilayah.py` (session 2, PR #29) on
+     the 11 m build with `--big`: everything passes except 7 known cases, none a defect of the data: 3 "holes" that
+     are enclaves of another regency of the folder (Kota Magelang in 33.08, Kota Salatiga in 33.22, one of the 5 parts
+     of Badran 33.22.03.2001 in 33.09; the checker looks at one regency at a time), 2 districts whose BIG area
+     includes an undefined area (33.01.24, 33.17.09), and 2 borders (33.24–33.74, 33.28–33.76) where BIG's own lines
+     of the two regencies do not coincide (under 1 m apart in BIG, not shared arcs, so simplified separately, up to
+     11.4 m apart). On the full-precision copy the checker fails only on the same 3 enclaves and notes 7 places where
+     BIG's lines differ (≤ 0.94 m). Possible follow-ups for the checker's owner: count holes filled by another
+     regency of the folder as covered; subtract undefined areas before `--big`.
 8. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
    via `fondasi-sync`.
 
@@ -91,6 +98,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 ## Session log (newest first, keep the last 10)
 
 - 2026-11-27 · session data-round 7 (account A) · `nty/magical-ramanujan-54d9nu` — R-18 Jawa Tengah: 35 regencies fetched (4 workers, outside the repo), blocker solved (34 rings crossed only after rounding to 6 decimals, none in BIG; the halving refined whole rings and pass 2 ping-ponged border arcs), converter refines only crossing arcs, carries refinements between rounds, checks collapsed rings and arc-vs-arc crossings, extra decimals for arcs and junctions, parallel build; `batas-wilayah` covers 8,563 villages. Session 2 (account B) works on the checker.
+- 2026-11-27 · akun-2 · `pw/exciting-goldberg-mqpkx5` — R-18 support: `tools/checks/batas-wilayah.py` (coverage, district = union of villages, holes, cross-regency borders, `--big` district areas, `--render` SVG; parallel per regency) tested on Kudus and on Kudus+Pati+Jepara built outside the repo (simplified and full precision; BIG's own full-precision borders differ by < 0.5 m at two tri-junctions, reported as notes); docs/data.md "Using boundaries in apps"; `fondasi-data` line. For the Jateng build: run the check on the output with `--big --render`.
 - 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — PR #28: `presisi` (servers fetch full precision from BIG, user's choice), merged main (PR #27, F-036). Jawa Tengah started: 35 regencies fetched (65 MB, outside the repo), converter got cross-regency topology and crossing refinement; build blocked by a ring that crosses itself at full precision. Handed over.
 - 2026-11-27 · session data-round 6 · `nty/sekolah-koordinat` — R-17: 539,580 detail pages crawled (20 → 40 workers → 160 threads, F-029 without fixed cap), coordinates merged into `sekolah` 2026-11-27 (84.4 % with a pair, 1,222 sign/swap fixes, 7 default pairs null, F-036); sinaubareng cross-check 2,136/2,148 identical. PR open.
 - 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — Boundary sources researched (BIG Edisi Juni 2026 best: Kemendagri codes, 99.7 % of villages; GADM/OSM/HDX rejected); F-035; `batas-wilayah` 2026-06-15 for Kudus (±11 m, shared arcs, district areas equal BIG). Then `presisi` for servers (fetch from BIG, checked against `content_sha256`; user chose this over Drive/R2). Next: more regencies on demand.
@@ -99,4 +107,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-26 · session data-round 5 · `nty/kerangka-tka` — PR #22 merged (religion CP Lampiran II, R-15 complete). R-16 `kerangka-tka` built from 047 and 56/2026 (4 frameworks, every text unit and table cell checked against the PDFs, schedule read on the page images, 3 errata). Next: R-17.
 - 2026-11-26 · session data-round 5 · `nty/cp-agama-pendidikan-khusus` — 020 Lampiran II transcribed from page images (2.1–2.6, 192 outcomes, every pinyin/diacritic line on zoomed crops, OCR diff clean), `pendidikan-khusus-agama.json.gz` built, `capaian-pembelajaran` complete (305 subjects, 2,816 outcomes). Next: R-16 `kerangka-tka`.
 - 2026-11-26 · session data-round 4 · `nty/serene-hamilton-q7whfv` — PR #20 merged (046 + 9941). Religion CP of 020 Lampiran I transcribed from page images (6 religions, 192 outcomes; SD A–C identical to sinaubareng), `agama.json.gz` built, version 2026-06-11. Next: 020 Lampiran II.
-- 2026-11-26 · session data-round 4 · `nty/serene-hamilton-q7whfv` — R-15 finished without religion: last SLB section fixed, converter hardened (signature block with NIP cut, PAUD scope tables, SK 9941 merged-cell tables, ligatures, title case, F-031 errata), every outcome checked verbatim against the PDF text; `capaian-pembelajaran` 2025-11-28 built. Next: religion CP (020/2026).

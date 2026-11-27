@@ -12,7 +12,23 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
   33.17.09 differ by exactly BIG's undefined areas (0.0968 and 0.0052 km², an island without a village). Kudus
   keeps its numbers (areas, statuses); its border arcs with Jepara, Demak, Pati and Grobogan are now cut at the
   same points as theirs. Full-precision downloads stay outside the repository; `sources/batas-wilayah/SOURCE.txt`
-  lists the fetch time and `content_sha256` of every regency, and `33.19.json.gz` stays as a sample.
+  lists the fetch time and `content_sha256` of every regency, and `33.19.json.gz` stays as a sample. `tools/checks/batas-wilayah.py --big`
+  passes except for enclaves counted as holes (Kota Magelang, Kota Salatiga, a part of Badran), the two undefined
+  areas and two borders where BIG's own lines do not coincide (33.24–33.74, 33.28–33.76; under 1 m apart in BIG).
+- `tools/checks/batas-wilayah.py <data_dir> [--big] [--render <out_dir>]` (R-18, F-035): checks a `batas-wilayah`
+  build (Fondasi's, a converter build elsewhere, or a server's `presisi` copy) — every village and district of
+  `data/wilayah` in each listed regency has a polygon, each district is exactly the union of its villages (same
+  directed edges, same area, `area_km2` fields agree), no holes beyond BIG's undefined areas, borders between
+  neighbouring regencies identical point for point; `--big` compares district areas with BIG's
+  `BATAS_KECAMATAN_AR` (`LUASWH`, km²) to 4 decimals; `--render` writes SVGs per regency and for the province
+  (dashed where "Batas Indikatif"). Exit code 1 on failure; one worker per CPU. Tested on Kudus and on Kudus, Pati
+  and Jepara built together (simplified and full precision: all 46 districts equal BIG to 4 decimals, the 921
+  shared border edges of the simplified build identical) and on broken copies (missing village, wrong area, a
+  border point moved 3 m, Kudus built alone next to its neighbours).
+- `docs/data.md` "Using boundaries in apps": when ±11 m is enough and when to use `presisi`, showing the boundary
+  status (UU 4/2011 Pasal 16 ayat (2): only "Batas Definitif" solid, never a legal boundary), the credit "Sumber:
+  Badan Informasi Geospasial", "which village is this point in" as a suggestion users can correct, file sizes per
+  regency, loading gzipped GeoJSON in Leaflet and MapLibre.
 - `batas-wilayah`: servers build full-precision boundaries themselves with `batas-wilayah.py presisi <out_dir>
   <regency...>` (fetch from BIG, check against the new `content_sha256` per regency in the manifest, build at about
   0.1 m with `SHA256SUMS`); it refuses regencies Fondasi does not list or BIG has changed unless `--accept-new`
