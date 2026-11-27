@@ -5,6 +5,17 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `sekolah` 2026-11-27 (R-17, F-036): `lintang`, `bujur`, `koordinat_cek`, `koordinat_perbaikan` and
+  `koordinat_sama` for all 539,580 units from their detail pages (`/satpen/detail/<npsn>`). 455,250 units (84.4 %)
+  have a pair: 449,014 inside their own regency (or within 5 km; at sea or on small islands the nearest regency),
+  4,023 in another regency of their province and 2,213 elsewhere in Indonesia, kept as printed and flagged. 1,222
+  lost signs or swapped pairs corrected because the corrected pair lies in the unit's own regency (printed values
+  in `coordinate_errata`). Null with a reason: 75,525 printed 0, 1,669 empty, 6,500 on one of 7 default pairs
+  shared across regencies (`bawaan`, e.g. -5.443757, 114.421127 for 5,931 units), 636 outside Indonesia.
+  Coverage per group: dikdas 96.2 %, dikmen 91.8 %, dikmas 76.8 %, PAUD 71.7 %. Cross-check with sinaubareng
+  (Pati, Kudus, Jepara): 2,136 of 2,148 pairs identical. Crawl of 539,580 pages with 160 threads (F-029 now has
+  no fixed cap); converter steps `plan`, `coords`, `coords-extract`, `coords-merge`; regency boundaries from
+  cahyadsn/wilayah_boundaries (MIT) in `sources/sekolah/batas-wilayah/`.
 - Data set `batas-wilayah` 2026-06-15 (R-18, F-035): village and district boundaries of Kabupaten Kudus (132
   villages, 9 districts) from BIG's Basis Data Batas Wilayah Administrasi Edisi Juni 2026, keyed by Kemendagri codes,
   simplified to about 11 m on shared arcs (no gaps between neighbours), districts built as the union of their
