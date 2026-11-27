@@ -19,11 +19,11 @@ Two steps, so the slow crawl and the conversion are separate and repeatable:
   python3 -I tools/converters/sekolah.py plan DATA_DIR WORKERS
       Prints WORKERS lists of Dapodik regency codes (xxxx00) with about the same number of units each.
 
-  python3 -I tools/converters/sekolah.py coords DATA_DIR RAW_DIR COORDS_DIR REGENCY ...
+  python3 -I tools/converters/sekolah.py coords DATA_DIR RAW_DIR COORDS_DIR [REGENCY ...]
       R-17: fetches the detail page /satpen/detail/<npsn> of every unit of the built set (DATA_DIR) in the given
       regencies, one request per second, resumable; raw pages go gzipped to RAW_DIR (outside the repository), and
-      each finished regency gets COORDS_DIR/<regency>.tsv with Lintang and Bujur as printed. Run up to twenty
-      workers at once, each with its own regencies (F-029).
+      each finished regency gets COORDS_DIR/<regency>.tsv with Lintang and Bujur as printed. Without REGENCY the
+      workers share a queue (RAW_DIR/claims, cleared before a relaunch). Up to forty workers at once (F-029).
 
 Region codes are never invented: when a name does not match uniquely, the code stays null and the school
 is listed in the report.
@@ -195,6 +195,27 @@ def write_tsv(path, rows_):
     os.replace(path + ".tmp", path)
 
 
+def claim(path):
+    """Take a regency for this worker; a claim of a worker that no longer runs is taken over."""
+    for _ in range(2):
+        try:
+            fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.write(fd, str(os.getpid()).encode())
+            os.close(fd)
+            return True
+        except FileExistsError:
+            try:
+                pid = int(open(path).read() or 0)
+                os.kill(pid, 0)
+                return False  # its worker still runs
+            except (ValueError, ProcessLookupError, FileNotFoundError):
+                try:
+                    os.remove(path)
+                except FileNotFoundError:
+                    pass
+    return False
+
+
 def fetch_coords(data_dir, raw, out, regencies):
     """Fetch the detail page of every unit of the given Dapodik regencies (one request per second per worker).
 
@@ -202,9 +223,16 @@ def fetch_coords(data_dir, raw, out, regencies):
     complete its extract OUT/<regency>.tsv is written (npsn, Lintang, Bujur, NPSN shown on the page)."""
     units = units_by_regency(data_dir)
     os.makedirs(out, exist_ok=True)
+    claims = os.path.join(raw, "claims")
+    if not regencies:
+        # shared queue: every worker takes the next unclaimed regency, largest first, so none sits idle
+        os.makedirs(claims, exist_ok=True)
+        regencies = sorted(units, key=lambda k: -len(units[k]))
     for kab in regencies:
         tsv = os.path.join(out, f"{kab}.tsv")
         if os.path.exists(tsv):
+            continue
+        if os.path.isdir(claims) and not claim(os.path.join(claims, kab)):
             continue
         d = os.path.join(raw, kab)
         os.makedirs(d, exist_ok=True)
