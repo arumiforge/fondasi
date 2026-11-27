@@ -5,6 +5,11 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `kerangka-tka` (R-16): the 24 sample questions of Perka BSKAP 047/H/AN/2025 part IV (stimuli, questions,
+  options, statements, keys; formulas in TeX; 13 figures in `contoh-soal/`, every key recomputed, 4 errata) and the
+  2026 category limits for SD/MI and SMP/MTs (Kurang < 50, Memadai 50–< 76,67, Baik ≥ 76,67, istimewa ≥ 95),
+  marked secondary because they come from press reports of the Pusmendik briefing; the conflicting Medcom report
+  for Matematika SMP (33,33 / 56,67) is kept beside them.
 - Data set `kerangka-tka` 2026-03-06 (R-16, F-030): TKA framework for SD/MI and SMP/MTs from Perka BSKAP
   047/H/AN/2025 (Bahasa Indonesia: text types and characteristics, reading aspects, 3 competencies with 21
   subcompetencies; Matematika: elements, abilities, 3 cognitive levels with 23 thinking processes, 14 content rows
