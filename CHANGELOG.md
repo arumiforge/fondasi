@@ -5,6 +5,8 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `kerangka-tka`: every sample-question stimulus carries an `attribution` (owner and where it was printed) and the
+  set an `attribution_rule`; F-034 allows third-party works for education when their owners are credited.
 - `kerangka-tka` (R-16): the 24 sample questions of Perka BSKAP 047/H/AN/2025 part IV (stimuli, questions,
   options, statements, keys; formulas in TeX; 13 figures in `contoh-soal/`, every key recomputed, 4 errata) and the
   2026 category limits for SD/MI and SMP/MTs (Kurang < 50, Memadai 50–< 76,67, Baik ≥ 76,67, istimewa ≥ 95),

@@ -575,6 +575,10 @@ def check(src, out):
             for u in units(st["text"] + [st["title"], st.get("source", "")]):
                 if norm(u) and norm(u) not in corpus_iv:
                     bad.append(u)
+    for st in CS.STIMULI:  # every stimulus (or each of its parts) credits its owner (F-034)
+        for part in st.get("parts", [st]):
+            if not part.get("attribution", {}).get("credit"):
+                bad.append(f"stimulus without attribution: {st['id']} {part.get('label', '')}")
     for page, printed, why in CS.ERRATA:
         if norm(printed) not in norm(pages[page - 1]):
             bad.append(f"sample erratum not on p. {page}: {printed}")
@@ -625,6 +629,7 @@ def main(src, out_dir):
         "scoring": SCORING,
         "sample_questions": {
             "source": f"{REF047}, part IV Contoh Soal (PDF p. 25–46)",
+            "attribution_rule": CS.ATTRIBUTION_RULE,
             "notes": CS.NOTES,
             "stimuli": CS.STIMULI,
             "questions": CS.QUESTIONS,
