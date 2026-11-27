@@ -44,8 +44,9 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    POPDA Jawa Tengah 2026 (Dispora juknis, page images; SMA putri shot printed "24 kg" kept as printed by the user's
    decision, with an unresolved erratum); POPNAS age rule as secondary. Still missing, no official copy reachable on
    2026-11-27: PASI U14/U16 rules (pasi.or.id does not resolve) and the POPNAS XVII athletics handbook; O2SN 2027 when
-   Puspresnas publishes it (now at pusatprestasinasional.kemendikdasmen.go.id). Rerun brief R-10b items 1 and 3 later; PASI's site is **www.pbpasi.org** (reachable from the cloud,
-   found 2026-11-28), so look there first for U14/U16 rules and Kejurnas handbooks. **R-11 done** (`atletik-rekor`
+   Puspresnas publishes it (now at pusatprestasinasional.kemendikdasmen.go.id). PASI's site **www.pbpasi.org** was searched on 2026-11-28 (WordPress search and media
+   API): no U14/U16 rule and no Kejurnas handbook; the Kejurnas 2024/2025 programmes from its result books are in
+   `atletik-nomor` (`PASI_KEJURNAS_2024/2025`). U14/U16 rules now need the user or a Pengprov PASI document. **R-11 done** (`atletik-rekor`
    2026-11-27, F-037): PASI national records senior/U20/U18 and World Athletics world, world U20, world U18 best and
    Asian records. Refresh: `node tools/converters/atletik-rekor-fetch.mjs sources/atletik-rekor/wa` (needs
    Playwright: `NODE_PATH=/opt/node-tools/node_modules` in the cloud), curl the seven PASI pages listed in
@@ -68,7 +69,10 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    --threads=160` (≈ 7 h for 540,000 pages; resumable; delete the TSVs first for a new crawl), then `coords-merge
    data/sekolah sources/sekolah/koordinat sources/sekolah/batas-wilayah <date>` and `tools/data-check --write`.
    A list refresh (`build`) drops the coordinate fields: run `coords-merge` after it.
-5. When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
+5. **R-09** waits for PDDikti (user, 2026-11-28: BIMA's e-catalog is partial, see data-requests). **R-07**: the
+   uploaded Panduan Aplikasi Dapodik versi 2027 is a user manual without code tables; the user will send an export
+   from the Dapodik application. Keep only reference tables from it, never student or staff rows.
+   When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
 6. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
    data (four islands move to Aceh Singkil); `data/wilayah` 2026-02-13 matches its region totals exactly, and

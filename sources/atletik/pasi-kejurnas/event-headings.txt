@@ -1,0 +1,185 @@
+== HASIL-LENGKAP-KEJURNAS-YOGYA-2024.pdf (event headings, pdftotext -layout; athletes' lines left out)
+Event 1 U16 Boy's 100 Meter
+Event 2 U16 Boy's 200 Meter
+Event 3 U16 Boy's 400 Meter
+Event 4 U16 Boy's 800 Meter
+Event 5 U16 Boy's 3,000 Meter
+Event 6 U16 Boy's 100 Meter Hurdles
+Event 7 U16 Boy's 3,000 Meter Race Walk
+Event 8 U16 Boy's Long Jump
+Event 9 U16 Boy's High JUmp
+Event 10 U16 Boy's Shot Put
+Event 11 U16 Boy's Javelin Throw
+Event 12 U16 Girl's 100 Meter
+Event 13 U16 Girl's 200 Meter
+Event 14 U16 Girl's 400 Meter
+Event 15 U16 Girl's 800 Meter
+Event 16 U16 Girl's 3,000 Meter
+Event 17 U16 Girl's 100 Meter Hurdles
+Event 18 U16 Girl's 3,000 Meter Race Walk
+Event 19 U16 Girl's Long Jump
+Event 20 U16 Girl's High JUmp
+Event 21 U16 Girl's Shot Put
+Event 22 U16 Girl's Javelin Throw
+Event 23 U16 Boy & Girl 4x100 Meter Relay
+Event 24 U18 Boy's 100 Meter
+Event 25 U18 Boy's 200 Meter
+Event 26 U18 Boy's 400 Meter
+Event 27 U18 Boy's 800 Meter
+Event 28 U18 Boy's 1,500 Meter
+Event 29 U18 Boy's 5,000 Meter
+Event 30 U18 Boy's 110 Meter Hurdles
+Event 31 U18 Boy's 400 Meter Hurdles
+Event 32 U18 Boy's 2,000 Meter Steeplechase
+Event 33 U18 Boy's 5,000 Meter Race Walk
+Event 34 U18 Boy's Long Jump
+Event 35 U18 Boy's Triple Jump
+Event 36 U18 Boy's High Jump
+Event 37 U18 Boy's Pole Vault
+Event 38 U18 Boy's Shot Put
+Event 39 U18 Boy's Javelin Throw
+Event 40 U18 Boy's Discus Throw
+Event 41 U18 Boy's Hammer Throw
+Event 43 U18 Girl's 100 Meter
+Event 44 U18 Girl's 200 Meter
+Event 45 U18 Girl's 400 Meter
+Event 46 U18 Girl's 800 Meter
+Event 47 U18 Girl's 1,500 Meter
+Event 48 U18 Girl's 5,000 Meter
+Event 49 U18 Girl's 100 Meter Hurdles
+Event 50 U18 Girl's 400 Meter Hurdles
+Event 51 U18 Girl's 2,000 Meter Steeplechase
+Event 52 U18 Girl's 5,000 Meter Race Walk
+Event 53 U18 Girl's Long Jump
+Event 54 U18 Girl's Triple Jump
+Event 55 U18 Girl's High Jump
+Event 56 U18 Girl's Pole Vault
+Event 57 U18 Girl's Shot Put
+Event 58 U18 Girl's Javelin Throw
+Event 59 U18 Girl's Discus Throw
+Event 60 U18 Girl's Hammer Throw
+Event 61 U18 Girl's Sapta Lomba
+
+== FINAL-RESULT-LPS-KEJURNAS-SOLO-2025.pdf (event headings, pdftotext -layout; athletes' lines left out)
+Event 1 U18 Men's 100 Meter
+Event 2 U18 Men's 200 Meter
+Event 3 U18 Men's 400 Meter
+Event 4 U18 Men's 800 Meter
+Event 5 U18 Men's 1,500 Meter
+Event 6 U18 Men's 3,000 Meter
+Event 7 U18 Men's 110 Meter Hurdles
+Event 8 U18 Men's 400 Meter Hurdles
+Event 9 U18 Men's 2,000 Meter Steeplechase
+Event 10 U18 Men's 5,000 Meter Race Walk
+Event 11 U18 Men's Long Jump
+Event 12 U18 Men's Triple Jump
+Event 13 U18 Men's High Jump
+Event 14 U18 Men's Shot Put
+Event 15 U18 Men's Javelin Throw
+Event 16 U18 Men's Discus Throw
+Event 17 U18 Men's Hammer Throw
+Event 18 U18 Men's 4x100 Meter Relay
+Event 19 U18 Women's 100 Meter
+Event 20 U18 Women's 200 Meter
+Event 21 U18 Women's 400 Meter
+Event 22 U18 Women's 800 Meter
+Event 23 U18 Women's 1,500 Meter
+Event 24 U18 Women's 3,000 Meter
+Event 25 U18 Women's 100 Meter Hurdles
+Event 26 U18 Women's 400 Meter Hurdles
+Event 27 U18 Women's 2,000 Meter Steeplechase
+Event 28 U18 Women's 5,000 Meter Race Walk
+Event 29 U18 Women's Long Jump
+Event 30 U18 Women's Triple Jump
+Event 31 U18 Women's High Jump
+Event 32 U18 Women's Shot Put
+Event 33 U18 Women's Javelin Throw
+Event 34 U18 Women's Discus Throw
+Event 35 U18 Women's Hammer Throw
+Event 36 U18 Women's 4x100 Meter Relay
+Event 37 U18 Mixed 4x100 Meter Relay
+Event 38 U20 Men's 100 Meter
+Event 39 U20 Men's 200 Meter
+Event 40 U20 Men's 400 Meter
+Event 41 U20 Men's 800 Meter
+Event 42 U20 Men's 1,500 Meter
+Event 43 U20 Men's 5,000 Meter
+Event 44 U20 Men's 10,000 Meter
+Event 45 U20 Men's 110 Meter Hurdles
+Event 46 U20 Men's 400 Meter Hurdles
+Event 47 U20 Men's 3,000 Meter Steeplechase
+Event 48 U20 Men's 20KM Race Walk
+Event 49 U20 Men's Long Jump
+Event 50 U20 Men's Triple Jump
+Event 51 U20 Men's High Jump
+Event 52 U20 Men's Shot Put
+Event 53 U20 Men's Javelin Throw
+Event 54 U20 Men's Discus Throw
+Event 55 U20 Men's Hammer Throw
+Event 56 U20 Men's Decathlon
+Event 57 U20 Women's 100 Meter
+Event 58 U20 Women's 200 Meter
+Event 59 U20 Women's 400 Meter
+Event 60 U20 Women's 800 Meter
+Event 61 U20 Women's 1,500 Meter
+Event 62 U20 Women's 5,000 Meter
+Event 63 U20 Women's 10,000 Meter
+Event 64 U20 Women's 100 Meter Hurdles
+Event 65 U20 Women's 400 Meter Hurdles
+Event 66 U20 Women's 3,000 Meter Steeplechase
+Event 67 U20 Women's 20KM Race Walk
+Event 68 U20 Women's Long Jump
+Event 69 U20 Women's Triple Jump
+Event 70 U20 Women's High Jump
+Event 71 U20 Women's Shot Put
+Event 72 U20 Women's Javelin Throw
+Event 73 U20 Women's Discus Throw
+Event 74 U20 Women's Hammer Throw
+Event 75 U20 Women's Hepathlon
+Event 76 U20 Mixed 4x100 Meter Relay
+Event 77 U20 Mixed 4x400 Meter Relay
+Event 78 Senior Men's 100 Meter
+Event 79 Senior Men's 200 Meter
+Event 80 Senior Men's 400 Meter
+Event 81 Senior Men's 800 Meter
+Event 82 Senior Men's 1,500 Meter
+Event 83 Senior Men's 5,000 Meter
+Event 84 Senior Men's 10,000 Meter
+Event 85 Senior Men's 110 Meter Hurdles
+Event 86 Senior Men's 400 Meter Hurdles
+Event 87 Senior Men's 3,000 Meter Steeplechase
+Event 88 Senior Men's 20KM Race Walk
+Event 89 Senior Men's 4x100 Meter Relay
+Event 90 Senior Men's 4x400 Meter Relay
+Event 91 Senior Men's Long Jump
+Event 92 Senior Men's Triple Jump
+Event 93 Senior Men's High Jump
+Event 94 Senior Men's Shot Put
+Event 95 Senior Men's Javelin Throw
+Event 96 Senior Men's Discus Throw
+Event 97 Senior Men's Hammer Throw
+Event 98 Senior Men's Decathlon
+Event 99 Senior Women's 100 Meter
+Event 100 Senior Women's 200 Meter
+Event 101 Senior Women's 400 Meter
+Event 102 Senior Women's 800 Meter
+Event 103 Senior Women's 1,500 Meter
+Event 104 Senior Women's 5,000 Meter
+Event 105 Senior Women's 10,000 Meter
+Event 106 Senior Women's 100 Meter Hurdles
+Event 107 Senior Women's 400 Meter Hurdles
+Event 108 Senior Women's 3,000 Meter Steeplechase
+Event 109 Senior Women's 2OKM Race Walk
+Event 110 Senior Women's 4x100 Meter Relay
+Event 111 Senior Women's 4x400 Meter Relay
+Event 112 Senior Women's Long Jump
+Event 113 Senior Women's Triple Jump
+Event 114 Senior Women's High Jump
+Event 115 Senior Women's Shot Put
+Event 116 Senior Women's Javelin Throw
+Event 117 Senior Women's Discus Throw
+Event 118 Senior Women's Hammer Throw
+Event 119 Senior Women's Hepathlon
+Event 120 Men's Pole Vault
+Event 121 Women's Pole Vault
+
