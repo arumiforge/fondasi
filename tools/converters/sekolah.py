@@ -221,6 +221,7 @@ def fetch_coords(data_dir, raw, out, regencies):
 # Indonesia's extent with a margin (Weh to Rote, Sabang to Merauke); outside it a pair is never a location here
 LAT_RANGE, LON_RANGE = (-11.5, 6.5), (94.0, 141.5)
 NEAR_KM = 5.0  # simplified boundaries and coastlines: a point this close outside its regency still counts as inside
+ISLAND_KM = 50.0  # a point in no regency (sea, small islands) belongs to the nearest regency within this distance
 
 
 def load_boundaries(path):
@@ -286,6 +287,14 @@ class Regions:
     def near(self, code, lat, lon, km=NEAR_KM):
         return code in self.polys and (self.contains(code, lat, lon) or distance_km(self.polys[code], lat, lon) <= km)
 
+    def nearest(self, lat, lon, km):
+        deg = km / 100.0
+        best = (km, None)
+        for c, b in self.boxes.items():
+            if b[0] - deg <= lat <= b[1] + deg and b[2] - deg <= lon <= b[3] + deg:
+                best = min(best, (distance_km(self.polys[c], lat, lon), c))
+        return best[1]
+
     def regency_of(self, lat, lon):
         return next((c for c in self.polys if self.contains(c, lat, lon)), None)
 
@@ -297,8 +306,8 @@ def in_indonesia(lat, lon):
 def check_point(unit, lat_s, lon_s, regions):
     """(lintang, bujur, koordinat_cek) for one unit from the printed Lintang/Bujur.
 
-    koordinat_cek: kabupaten (inside its regency, or within NEAR_KM of it) | provinsi (another regency of its
-    province) | luar_provinsi (elsewhere in Indonesia) | tertukar (Lintang and Bujur swapped) | luar_indonesia |
+    koordinat_cek: kabupaten (inside its regency or within NEAR_KM of it; at sea or on a small island, when its
+    regency is the nearest one within ISLAND_KM) | provinsi (another regency of its province) | luar_provinsi (elsewhere in Indonesia) | tertukar (Lintang and Bujur swapped) | luar_indonesia |
     nol (0 or empty-like) | kosong (no value printed)."""
     try:
         lat, lon = float(lat_s), float(lon_s)
@@ -312,10 +321,16 @@ def check_point(unit, lat_s, lon_s, regions):
     kab, prov = unit.get("kode_kabupaten"), unit.get("kode_provinsi")
     if kab and regions.near(kab, lat, lon):
         return lat, lon, "kabupaten"
-    if prov and any(regions.near(c, lat, lon) for c in regions.polys if c.startswith(prov + ".")):
-        return lat, lon, "provinsi"
+    host = regions.regency_of(lat, lon)
+    if host is None:
+        # at sea or on a small island the simplified boundaries leave out: the nearest regency counts
+        host = regions.nearest(lat, lon, ISLAND_KM)
+        if host and host == kab:
+            return lat, lon, "kabupaten"
     if not kab and not prov:
         return lat, lon, "tidak_diperiksa"
+    if host and prov and host.startswith(prov + "."):
+        return lat, lon, "provinsi"
     return lat, lon, "luar_provinsi"
 
 
@@ -369,7 +384,8 @@ COORD_FIELDS = {
     "lintang": "latitude in decimal degrees from the unit's detail page (Lintang), rounded to 7 decimals; null when "
                "koordinat_cek is not kabupaten, provinsi, luar_provinsi or tidak_diperiksa",
     "bujur": "longitude in decimal degrees (Bujur), same rules as lintang",
-    "koordinat_cek": "check of the printed pair: kabupaten (inside the unit's regency or within 5 km of it) | provinsi "
+    "koordinat_cek": "check of the printed pair: kabupaten (inside the unit's regency or within 5 km of it; at sea or on an "
+                     "island the simplified boundaries leave out, when its regency is the nearest within 50 km) | provinsi "
                      "(in another regency of its province) | luar_provinsi (elsewhere in Indonesia) | tidak_diperiksa "
                      "(no region code to check against) | nol (0 printed) | kosong (nothing printed) | tertukar "
                      "(Lintang and Bujur swapped) | luar_indonesia | halaman_lain (page shows another NPSN) | "
