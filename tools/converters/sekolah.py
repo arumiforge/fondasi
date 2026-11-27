@@ -438,6 +438,31 @@ def add_coordinates(items, coords, regions, stats):
             stats[key][cek] += 1
 
 
+# F-035: a pair used by at least this many units in at least this many regencies is a default the source fills
+# in, not a location (e.g. -5.443757, 114.421127 at sea off Sumenep, used by thousands of PAUD units)
+DEFAULT_UNITS, DEFAULT_REGENCIES = 10, 3
+
+
+def mark_defaults(files):
+    """Turn default pairs into null with koordinat_cek 'bawaan'; return {pair: [units, regencies]}."""
+    seen = {}
+    for items in files.values():
+        for s in items:
+            if s["lintang"] is not None:
+                seen.setdefault((s["lintang"], s["bujur"]), set()).add((s["npsn"], s["kode_kecamatan_dapodik"][:4]))
+    defaults = {}
+    for pair, units in seen.items():
+        regencies = {k for _, k in units}
+        if len(units) >= DEFAULT_UNITS and len(regencies) >= DEFAULT_REGENCIES:
+            defaults[pair] = [len(units), len(regencies)]
+    for items in files.values():
+        for s in items:
+            if (s["lintang"], s["bujur"]) in defaults:
+                s["lintang"] = s["bujur"] = s["koordinat_perbaikan"] = None
+                s["koordinat_cek"] = "bawaan"
+    return defaults
+
+
 def mark_duplicates(files):
     """koordinat_sama = how many units in the whole set share exactly this pair (1 = no other unit)."""
     seen = {}
@@ -460,13 +485,14 @@ def write_gz(path, items):
 
 COORD_FIELDS = {
     "lintang": "latitude in decimal degrees from the unit's detail page (Lintang), rounded to 7 decimals; null when "
-               "koordinat_cek is nol, kosong, luar_indonesia, halaman_lain or belum_diambil",
+               "koordinat_cek is nol, kosong, bawaan, luar_indonesia, halaman_lain or belum_diambil",
     "bujur": "longitude in decimal degrees (Bujur), same rules as lintang",
     "koordinat_cek": "check of the pair (F-035): kabupaten (inside the unit's regency or within 5 km of it; at sea or on "
                      "an island the simplified boundaries leave out, when its regency is the nearest within 50 km) | "
                      "provinsi (in another regency of its province; kept as printed) | luar_provinsi (elsewhere in "
                      "Indonesia; kept as printed) | tidak_diperiksa (no region code to check against) | nol (0 printed) "
-                     "| kosong (nothing printed) | luar_indonesia (outside Indonesia and no correction fits) | "
+                     "| kosong (nothing printed) | bawaan (a default pair used by 10 or more units in 3 or more regencies; "
+                     "listed in coordinates.default_pairs) | luar_indonesia (outside Indonesia and no correction fits) | "
                      "halaman_lain (the page shows another NPSN) | belum_diambil (page not fetched)",
     "koordinat_perbaikan": "null when the pair is used as printed; otherwise the correction that puts it in the unit's "
                            "own regency (F-035): tanda_lintang (latitude sign), tanda_bujur, tertukar (Lintang and Bujur "
@@ -486,6 +512,16 @@ def merge_coords(data_dir, coords_dir, bounds_dir, version):
         items = json.load(gzip.open(os.path.join(data_dir, entry["file"]), "rt", encoding="utf-8"))
         add_coordinates(items, coords, regions, stats)
         files[entry["file"]] = items
+    defaults = mark_defaults(files)
+    stats = {}  # recount after the defaults are known
+    for items in files.values():
+        for s in items:
+            group = (coords.get(s["npsn"]) or (None, None, None, None))[3]
+            for key in ("all", s["bentuk_pendidikan"], s.get("kode_provinsi") or "?", "jenjang:" + (group or "?")):
+                stats.setdefault(key, {}).setdefault(s["koordinat_cek"], 0)
+                stats[key][s["koordinat_cek"]] += 1
+    ERRATA[:] = [e for e in ERRATA if e["used"] and tuple(e["used"]) not in defaults]
+    for items in files.values():
         for s in items:
             c = s["koordinat_cek"]
             if c in ("provinsi", "luar_provinsi"):
@@ -510,6 +546,8 @@ def merge_coords(data_dir, coords_dir, bounds_dir, version):
         "shared_pairs": {"units_in_shared_pairs": sum(n for n in pairs.values() if n > 1),
                          "pairs_by_size": dict(sorted(groups.items()))},
         "corrected": len(ERRATA),
+        "default_pairs": [{"lintang": a, "bujur": b, "units": n, "regencies": r}
+                          for (a, b), (n, r) in sorted(defaults.items(), key=lambda x: -x[1][0])],
         "by_group": {k[8:]: dict(sorted(v.items())) for k, v in sorted(stats.items()) if k.startswith("jenjang:")},
         "by_province": {e["kode_provinsi"]: dict(sorted(stats.get(e["kode_provinsi"], {}).items()))
                         for e in manifest["files"]},
