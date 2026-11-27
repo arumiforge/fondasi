@@ -94,7 +94,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 - Hosts blocked from cloud sessions: `jateng.kemenag.go.id` (times out since 2026-11-25; R-06 brief), `kemenag.go.id` (refused), `jdih.kemendagri.go.id` (no answer, 2026-11-26), `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
   (and `disdikbud.jatengprov.go.id`, replaced by `pdk.jatengprov.go.id`) → browser briefs.
-- R-10b (Next steps 3) needs the user's Claude in Chrome run of brief R-10b: checked from the cloud on 2026-11-27,
+- R-10b (Next steps 3) needs the user's Claude in Chrome run of brief R-10b (rewritten 2026-11-27 with these findings): checked from the cloud on 2026-11-27,
   `pasi.or.id` is unreachable (proxy 502); `dispora.jatengprov.go.id` loads but lists no POPDA juknis (pages are
   script-filled); `popnas2025.id` is unreachable; the POPNAS XVII 2025 general guideline and the Kabupaten Semarang
   POPDA 2026 draft appear only on Scribd (not an official source). Web search found no official PASI U14/U16 rules.

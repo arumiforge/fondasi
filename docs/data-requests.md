@@ -23,7 +23,7 @@ browser session only **collects raw files**; a cloud session converts and checks
 | R-07 | `referensi-dapodik` | Official code tables: agama, pekerjaan, penghasilan, jenjang pendidikan, alat transportasi, jenis tinggal, kebutuhan khusus, bentuk pendidikan, tingkat pendidikan | Dapodik user manuals (PDF), `dapo`/`referensi` pages, the Dapodik import templates (XLSX) | open — browser |
 | R-08 | `mapel` | Regulation on the curriculum structure (Kurikulum Merdeka / its successor) with subject lists per level and phase | `kurikulum.kemendikdasmen.go.id` (blocked), `jdih.kemendikdasmen.go.id` | **done 2026-11-26** from the decrees found in sinaubareng (F-030): `data/mapel` 2025-09-22, sources in `sources/mapel/` |
 | R-09 | `perguruan-tinggi` | List of higher-education institutions: code, name, type, status, province | `pddikti.kemdiktisaintek.go.id` (blocked from the cloud) — its download/search pages | open — browser |
-| R-10 | `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` | World Athletics Competition and Technical Rules (current edition, PDF), scoring tables for combined events; PASI rules for age groups; O2SN/POPNAS technical handbooks (juknis) for athletics | `worldathletics.org` (reachable), PASI site, Puspresnas/Kemenpora pages | **World Athletics part done 2026-11-26**; PASI/O2SN/POPNAS part → R-10b (O2SN 2026 SD/SMP/SMA guides received 2026-11-26, in `sources/atletik/o2sn/`, not converted yet) |
+| R-10 | `atletik-nomor`, `atletik-kelompok-umur`, `atletik-hasil` | World Athletics Competition and Technical Rules (current edition, PDF), scoring tables for combined events; PASI rules for age groups; O2SN/POPNAS technical handbooks (juknis) for athletics | `worldathletics.org` (reachable), PASI site, Puspresnas/Kemenpora pages | **World Athletics part done 2026-11-26**; O2SN 2026 done 2026-11-26 (`sources/atletik/o2sn/`); PASI U14/U16, POPDA Jateng, POPNAS → brief R-10b (rewritten 2026-11-27), open — browser |
 | R-11 | `atletik-rekor` | Current national records (senior, U-20, U-18) and the championships the user runs | PASI announcements; organisers' result books | open — needs the user's list of championships |
 | R-18 | `batas-wilayah` | Village and district boundaries | `geoservices.big.go.id` REST service (reachable from the cloud; `drive.big.go.id` with the full geodatabases resets connections) | **Kudus done 2026-11-27** by a cloud session (`tools/converters/batas-wilayah.py`); other regencies on demand |
 | R-14 | `wilayah`, `kodepos` | Kepmendagri No 300.2.2-2430 Tahun 2025 on region codes and data (the decree and every attachment: regions per province, islands) | `jdih.kemendagri.go.id` (no answer from the cloud), `kemendagri.go.id`, Ditjen Bina Administrasi Kewilayahan | **done 2026-11-26**: the user uploaded the decree; it changes only island data of Aceh and Sumatera Utara, `data/wilayah` already matches (`sources/wilayah/SOURCE.txt`) |
@@ -57,15 +57,48 @@ The cloud session then transcribes the lampiran into `data/kaldik-madrasah-jaten
 
 ## Brief R-10b
 
-Starter prompt for a Claude in Chrome session (public pages only, at most one page every 2 seconds, files unchanged
-in `R-10b-atletik/` with `SOURCE.txt`: page URL, file URL, title and date as printed, download time, size, SHA-256):
+Why: `atletik-kelompok-umur` and `atletik-nomor` cover World Athletics and O2SN 2026; the PASI youth groups (U14,
+U16) and the student games POPDA Jawa Tengah and POPNAS are missing. Checked from the cloud on 2026-11-27:
+`pasi.or.id` and `popnas2025.id` do not answer (proxy 502), `dispora.jatengprov.go.id` loads but lists no juknis
+(its pages are filled by scripts), and the POPNAS XVII 2025 general guideline and a Kabupaten Semarang POPDA 2026
+draft exist only as Scribd copies, which are not official sources.
 
-> 1. PASI (`pasi.or.id` or its official social links): the current rules or circular on age groups (U14, U16, U18,
->    U20) for Kejurnas/Kejurda, with implement weights, hurdle heights and events per group.
-> 2. ~~Puspresnas O2SN handbooks~~ — done: the 2026 guides (SD, SMP, SMA) were uploaded and converted
->    (2026-11-26, `sources/atletik/o2sn/`). Skip this item; ask again only for the O2SN 2027 guides.
-> 3. Kemenpora / Dispora Jawa Tengah: the latest POPNAS and POPDA Jawa Tengah technical handbooks for athletics.
-> 4. Zip the folder and give it to the user.
+Starter prompt for a Claude in Chrome session (the user runs it and uploads the zip to a cloud session):
+
+> Collect official athletics rules for youth age groups and student games in Indonesia. Public pages only, no
+> sign-in, no captcha, at most one page every 2 seconds. Save every file unchanged in a folder `R-10b-atletik/`,
+> with one subfolder per item (`1-pasi/`, `2-popda-jateng/`, `3-popnas/`, `4-o2sn-2027/`).
+>
+> What matters in every document: age limits (birth date or age on a reference date), age groups, events per group
+> and gender, implement weights (shot, discus, javelin, hammer), hurdle heights and spacing, how many events an
+> athlete may enter, relay rules, and how results or team standings are scored.
+>
+> 1. **PASI (PB Persatuan Atletik Seluruh Indonesia).** On `pasi.or.id` (or the links in its official Instagram
+>    or Facebook profile), find the current rules or circular on age groups for national and regional
+>    championships: U14, U16, U18, U20 (Kejurnas, Kejurda, "Kejurnas Atletik Remaja/Junior", "Indonesia U18/U20
+>    Open"). Take the latest technical handbook or regulations (often "Technical Handbook", "Ketentuan Teknis",
+>    "Peraturan Lomba", "Surat Edaran"). Also look on the site of Pengprov PASI Jawa Tengah if it has one. If PASI
+>    publishes only an announcement image or post, save the page as HTML and the image.
+> 2. **POPDA Jawa Tengah.** On `dispora.jatengprov.go.id` (menus PPID, informasi publik, events, berita) and
+>    `jdih.jatengprov.go.id`, find the latest Petunjuk Teknis (juknis) of Pekan Olahraga Pelajar Daerah (POPDA)
+>    Provinsi Jawa Tengah with the athletics section (2026, else 2025). If the province does not publish it, a copy
+>    on an official kabupaten/kota site (`*.go.id`, e.g. Dinporapar or Dindikpora pages) of the **provincial** juknis
+>    is fine; save a kabupaten's own POPDA juknis only for Kabupaten Kudus, marked as such.
+> 3. **POPNAS.** On `kemenpora.go.id`, `deputi3.kemenpora.go.id`, `dispora.jakarta.go.id` and `popnas2025.id`, find
+>    the POPNAS XVII 2025 (Jakarta) general guideline (Pedoman Umum) and the athletics technical handbook (Technical
+>    Handbook / juknis cabor atletik), and the age limits it sets. If a newer POPNAS (2027) guideline is already
+>    published, take it too.
+>    Also, only if Puspresnas (`pusatprestasinasional.kemdikbud.go.id`) has published the O2SN **2027** guides
+>    (SD, SMP, SMA) with their athletics scoring tables, save them in `4-o2sn-2027/` (the 2026 guides are done).
+> 4. Do **not** use Scribd, blogs or news sites as the source. If such a copy is the only one found, write its URL
+>    in `SOURCE.txt` with a note, and do not download anything that needs a login.
+> 5. Write `SOURCE.txt`: for each file the page URL, file URL, title, number and date as printed on the document,
+>    issuer, download time (UTC), size and SHA-256. List what you could not find and where you looked.
+> 6. Zip the folder and give it to the user.
+
+The cloud session then verifies the SHA-256 values, keeps the raw files in `sources/atletik/` (F-027), and adds the
+PASI groups and the POPDA/POPNAS eligibility, events and implements to `atletik-kelompok-umur` and `atletik-nomor`
+through `tools/converters/atletik.py`, each championship with its own reference date.
 
 ## Brief R-14
 
