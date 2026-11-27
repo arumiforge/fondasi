@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (crawl of `/satpen/detail/<npsn>`, 40 workers on a shared queue, F-029) | crawl running |
+| `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (crawl of `/satpen/detail/<npsn>`, 160 threads on one queue, F-029) | crawl running |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 

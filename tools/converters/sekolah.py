@@ -19,11 +19,11 @@ Two steps, so the slow crawl and the conversion are separate and repeatable:
   python3 -I tools/converters/sekolah.py plan DATA_DIR WORKERS
       Prints WORKERS lists of Dapodik regency codes (xxxx00) with about the same number of units each.
 
-  python3 -I tools/converters/sekolah.py coords DATA_DIR RAW_DIR COORDS_DIR [REGENCY ...]
+  python3 -I tools/converters/sekolah.py coords DATA_DIR RAW_DIR COORDS_DIR [REGENCY ...] [--threads=N]
       R-17: fetches the detail page /satpen/detail/<npsn> of every unit of the built set (DATA_DIR) in the given
       regencies, one request per second, resumable; raw pages go gzipped to RAW_DIR (outside the repository), and
-      each finished regency gets COORDS_DIR/<regency>.tsv with Lintang and Bujur as printed. Without REGENCY the
-      workers share a queue (RAW_DIR/claims, cleared before a relaunch). Up to forty workers at once (F-029).
+      each finished regency gets COORDS_DIR/<regency>.tsv with Lintang and Bujur as printed. Without REGENCY every
+      regency is fetched; N threads share one queue of units, largest regencies first (F-029).
 
 Region codes are never invented: when a name does not match uniquely, the code stays null and the school
 is listed in the report.
@@ -34,6 +34,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 import unicodedata
 import urllib.request
@@ -195,72 +196,83 @@ def write_tsv(path, rows_):
     os.replace(path + ".tmp", path)
 
 
-def claim(path):
-    """Take a regency for this worker; a claim of a worker that no longer runs is taken over."""
+def fetch_detail(npsn, path):
+    """Fetch one detail page (complete, with its detail table) and save it gzipped."""
+    page = get(DETAIL.format(npsn))
     for _ in range(2):
-        try:
-            fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
-            os.write(fd, str(os.getpid()).encode())
-            os.close(fd)
-            return True
-        except FileExistsError:
-            try:
-                pid = int(open(path).read() or 0)
-                os.kill(pid, 0)
-                return False  # its worker still runs
-            except (ValueError, ProcessLookupError, FileNotFoundError):
-                try:
-                    os.remove(path)
-                except FileNotFoundError:
-                    pass
-    return False
+        if "</html>" in page and 'class="detail-label"' in page:
+            break
+        time.sleep(15)
+        page = get(DETAIL.format(npsn))
+    if "</html>" not in page:
+        raise RuntimeError(f"incomplete page: {DETAIL.format(npsn)}")
+    tmp = f"{path}.{os.getpid()}.{threading.get_ident()}.tmp"
+    with gzip.open(tmp, "wt", encoding="utf-8") as f:
+        f.write(page)
+    os.replace(tmp, path)
 
 
-def fetch_coords(data_dir, raw, out, regencies):
-    """Fetch the detail page of every unit of the given Dapodik regencies (one request per second per worker).
+def fetch_coords(data_dir, raw, out, regencies, threads=1):
+    """Fetch the detail page of every unit of the given Dapodik regencies (all regencies when none is given).
 
-    Raw pages are kept gzipped under RAW/<regency>/<npsn>.html.gz and never fetched twice; when a regency is
-    complete its extract OUT/<regency>.tsv is written (npsn, Lintang, Bujur, NPSN shown on the page)."""
+    THREADS workers share one queue of units (largest regencies first), each waiting a second between its
+    requests (F-029). Raw pages are kept gzipped under RAW/<regency>/<npsn>.html.gz and never fetched twice;
+    when a regency is complete its extract OUT/<regency>.tsv is written. Run one process at a time."""
+    import queue
     units = units_by_regency(data_dir)
     os.makedirs(out, exist_ok=True)
-    claims = os.path.join(raw, "claims")
-    if not regencies:
-        # shared queue: every worker takes the next unclaimed regency, largest first, so none sits idle
-        os.makedirs(claims, exist_ok=True)
-        regencies = sorted(units, key=lambda k: -len(units[k]))
-    for kab in regencies:
-        tsv = os.path.join(out, f"{kab}.tsv")
-        if os.path.exists(tsv):
-            continue
-        if os.path.isdir(claims) and not claim(os.path.join(claims, kab)):
-            continue
-        d = os.path.join(raw, kab)
-        os.makedirs(d, exist_ok=True)
-        rows_, done = [], 0
-        for npsn in units.get(kab, []):
-            path = os.path.join(d, f"{npsn}.html.gz")
-            if not os.path.exists(path):
-                time.sleep(1)
-                page = get(DETAIL.format(npsn))
-                for _ in range(2):
-                    if "</html>" in page and 'class="detail-label"' in page:
-                        break
-                    time.sleep(15)
-                    page = get(DETAIL.format(npsn))
-                if "</html>" not in page:
-                    raise RuntimeError(f"incomplete page: {DETAIL.format(npsn)}")
-                tmp = f"{path}.{os.getpid()}.tmp"
-                with gzip.open(tmp, "wt", encoding="utf-8") as f:
-                    f.write(page)
-                os.replace(tmp, path)
-                done += 1
-                if done % 200 == 0:
-                    print(f"{kab} {done} fetched", file=sys.stderr, flush=True)
-            else:
-                page = gzip.open(path, "rt", encoding="utf-8").read()
-            rows_.append(coords_row(npsn, page))
-        write_tsv(tsv, rows_)
+    regencies = regencies or sorted(units, key=lambda k: -len(units[k]))
+    todo, left, lock, failed = queue.Queue(), {}, threading.Lock(), []
+
+    def finish(kab):
+        rows_ = [coords_row(n, gzip.open(os.path.join(raw, kab, f"{n}.html.gz"), "rt", encoding="utf-8").read())
+                 for n in units[kab]]
+        write_tsv(os.path.join(out, f"{kab}.tsv"), rows_)
         print(f"done {kab} {len(rows_)} units", file=sys.stderr, flush=True)
+
+    for kab in regencies:
+        if os.path.exists(os.path.join(out, f"{kab}.tsv")) or kab not in units:
+            continue
+        os.makedirs(os.path.join(raw, kab), exist_ok=True)
+        missing = [n for n in units[kab] if not os.path.exists(os.path.join(raw, kab, f"{n}.html.gz"))]
+        if not missing:
+            finish(kab)
+            continue
+        left[kab] = len(missing)
+        for n in missing:
+            todo.put((kab, n))
+    print(f"queue: {todo.qsize()} pages in {len(left)} regencies, {threads} threads", file=sys.stderr, flush=True)
+    fetched = [0]
+
+    def work():
+        while True:
+            try:
+                kab, npsn = todo.get_nowait()
+            except queue.Empty:
+                return
+            time.sleep(1)
+            try:
+                fetch_detail(npsn, os.path.join(raw, kab, f"{npsn}.html.gz"))
+            except Exception as e:  # get() already retried with pauses: note it and go on
+                print(f"failed {kab} {npsn}: {e}", file=sys.stderr, flush=True)
+                failed.append(npsn)
+                continue
+            with lock:
+                fetched[0] += 1
+                left[kab] -= 1
+                last = left[kab] == 0
+                if fetched[0] % 1000 == 0:
+                    print(f"fetched {fetched[0]}", file=sys.stderr, flush=True)
+            if last:
+                finish(kab)
+
+    pool = [threading.Thread(target=work, daemon=True) for _ in range(int(threads))]
+    for t in pool:
+        t.start()
+    for t in pool:
+        t.join()
+    if failed:
+        sys.exit(f"{len(failed)} pages failed; run again to retry them")
 
 
 # ---------------------------------------------------------------- coordinate checks
@@ -847,7 +859,10 @@ if __name__ == "__main__":
     if len(args) >= 2 and args[0] == "fetch":
         fetch(args[1], args[2:], groups)
     elif len(args) >= 4 and args[0] == "coords":
-        fetch_coords(args[1], args[2], args[3], args[4:])
+        threads = 1
+        if args[-1].startswith("--threads="):
+            threads = int(args.pop().split("=", 1)[1])
+        fetch_coords(args[1], args[2], args[3], args[4:], threads)
     elif len(args) == 5 and args[0] == "coords-merge":
         merge_coords(*args[1:])
     elif len(args) == 4 and args[0] == "coords-extract":
