@@ -16,6 +16,15 @@ Two steps, so the slow crawl and the conversion are separate and repeatable:
       Kemendagri region codes of the `wilayah` set by matching names (regency → district → village), and
       writes one gzipped JSON file per province plus manifest.json and a match report.
 
+  python3 -I tools/converters/sekolah.py plan DATA_DIR WORKERS
+      Prints WORKERS lists of Dapodik regency codes (xxxx00) with about the same number of units each.
+
+  python3 -I tools/converters/sekolah.py coords DATA_DIR RAW_DIR COORDS_DIR REGENCY ...
+      R-17: fetches the detail page /satpen/detail/<npsn> of every unit of the built set (DATA_DIR) in the given
+      regencies, one request per second, resumable; raw pages go gzipped to RAW_DIR (outside the repository), and
+      each finished regency gets COORDS_DIR/<regency>.tsv with Lintang and Bujur as printed. Run up to twenty
+      workers at once, each with its own regencies (F-029).
+
 Region codes are never invented: when a name does not match uniquely, the code stays null and the school
 is listed in the report.
 """
@@ -122,6 +131,89 @@ def fetch(raw, provinces, groups=GROUPS):
                         continue
                     cached(os.path.join(d, f"{kec}.html"), url(group, kec, 3), ">NPSN<")
             print(f"fetched {code} {group}", file=sys.stderr, flush=True)
+
+
+# ---------------------------------------------------------------- coordinates (R-17)
+
+DETAIL = BASE + "/satpen/detail/{}"
+
+
+def units_by_regency(data_dir):
+    """Dapodik regency code (xxxx00) → sorted NPSNs of the units in the built set."""
+    out = {}
+    for path in sorted(os.listdir(data_dir)):
+        if path.endswith(".json.gz"):
+            for s in json.load(gzip.open(os.path.join(data_dir, path), "rt", encoding="utf-8")):
+                out.setdefault(s["kode_kecamatan_dapodik"][:4] + "00", []).append(s["npsn"])
+    return {k: sorted(v) for k, v in out.items()}
+
+
+def plan(data_dir, workers):
+    """Split the regencies into `workers` lists of about the same number of pages (largest first)."""
+    units = units_by_regency(data_dir)
+    bins = [[0, []] for _ in range(int(workers))]
+    for kab in sorted(units, key=lambda k: -len(units[k])):
+        b = min(bins, key=lambda b: b[0])
+        b[0] += len(units[kab])
+        b[1].append(kab)
+    for size, kabs in bins:
+        print(size, " ".join(sorted(kabs)))
+
+
+def detail_value(page, label):
+    """Text of the detail-value cell after the detail-label `label` (None when the label is missing)."""
+    m = re.search(rf'<div class="detail-label">\s*{re.escape(label)}\s*</div>\s*<div class="detail-value">(.*?)</div>',
+                  page, re.S)
+    return text(m.group(1)) if m else None
+
+
+def coords_row(npsn, page):
+    """npsn, Lintang and Bujur exactly as printed, and the NPSN the page itself shows."""
+    shown = detail_value(page, "NPSN") or ""
+    return [npsn, detail_value(page, "Lintang") or "", detail_value(page, "Bujur") or "", shown.split(" ")[0]]
+
+
+def fetch_coords(data_dir, raw, out, regencies):
+    """Fetch the detail page of every unit of the given Dapodik regencies (one request per second per worker).
+
+    Raw pages are kept gzipped under RAW/<regency>/<npsn>.html.gz and never fetched twice; when a regency is
+    complete its extract OUT/<regency>.tsv is written (npsn, Lintang, Bujur, NPSN shown on the page)."""
+    units = units_by_regency(data_dir)
+    os.makedirs(out, exist_ok=True)
+    for kab in regencies:
+        tsv = os.path.join(out, f"{kab}.tsv")
+        if os.path.exists(tsv):
+            continue
+        d = os.path.join(raw, kab)
+        os.makedirs(d, exist_ok=True)
+        rows_, done = [], 0
+        for npsn in units.get(kab, []):
+            path = os.path.join(d, f"{npsn}.html.gz")
+            if not os.path.exists(path):
+                time.sleep(1)
+                page = get(DETAIL.format(npsn))
+                for _ in range(2):
+                    if "</html>" in page and 'class="detail-label"' in page:
+                        break
+                    time.sleep(15)
+                    page = get(DETAIL.format(npsn))
+                if "</html>" not in page:
+                    raise RuntimeError(f"incomplete page: {DETAIL.format(npsn)}")
+                tmp = f"{path}.{os.getpid()}.tmp"
+                with gzip.open(tmp, "wt", encoding="utf-8") as f:
+                    f.write(page)
+                os.replace(tmp, path)
+                done += 1
+                if done % 200 == 0:
+                    print(f"{kab} {done} fetched", file=sys.stderr, flush=True)
+            else:
+                page = gzip.open(path, "rt", encoding="utf-8").read()
+            rows_.append(coords_row(npsn, page))
+        with open(tsv + ".tmp", "w", encoding="utf-8") as f:
+            f.write("npsn\tlintang\tbujur\tnpsn_halaman\n")
+            f.writelines("\t".join(r) + "\n" for r in rows_)
+        os.replace(tsv + ".tmp", tsv)
+        print(f"done {kab} {len(rows_)} units", file=sys.stderr, flush=True)
 
 
 # ---------------------------------------------------------------- build
@@ -458,6 +550,10 @@ if __name__ == "__main__":
             sys.exit(f"unknown group; choose from {', '.join(GROUP_URL)}")
     if len(args) >= 2 and args[0] == "fetch":
         fetch(args[1], args[2:], groups)
+    elif len(args) >= 4 and args[0] == "coords":
+        fetch_coords(args[1], args[2], args[3], args[4:])
+    elif len(args) == 3 and args[0] == "plan":
+        plan(args[1], args[2])
     elif len(args) == 5 and args[0] == "build":
         build(*args[1:], groups=groups)
     else:

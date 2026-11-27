@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/kerangka-tka-atribusi` | session data-round 5 | F-034 attribution for third-party works in `kerangka-tka` | PR open |
+| `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (crawl of `/satpen/detail/<npsn>`, 20 workers, F-029) | crawl running |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
