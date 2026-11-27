@@ -5,6 +5,15 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `atletik-rekor` 2026-11-27 (R-11, F-037): 585 records. Indonesian national records senior (65), U20 (51) and U18
+  (54) from PASI's tables at www.pbpasi.org, with holders, birth dates and provinces (mapped to `wilayah` codes) as
+  printed; world records (142), world U20 records (86), world U18 best performances (62) and Asian records (125)
+  from worldathletics.org, rendered in Chromium by `tools/converters/atletik-rekor-fetch.mjs`. Marks are kept as
+  printed and normalised (seconds, metres, points); event codes follow `atletik-nomor` (25 extra codes such as Mile,
+  4x200m, 35kmW flagged `event_in_atletik_nomor: false`). 19 errata in the PASI tables (5 resolved readings of
+  marks, 14 unresolved: impossible dates, holders older than the age group, birth dates that differ between tables)
+  and 26 differences from Wikipedia's list (newer marks there, other dates) listed without changing PASI's values.
+  Championship records (O2SN, POPDA, POPNAS, the user's) and U16/U14 records are not published yet.
 - `atletik-nomor` and `atletik-kelompok-umur` 2026-11-27 (R-10b): POPDA Tingkat Provinsi Jawa Tengah 2026 from the
   Dispora Jateng juknis (letter 400.3.9.2/371/2026, scanned, read on the page images): 20 events per sex across SD,
   SMP and SMA (new event codes 80m, 1000m, 3000mW, TriSD), shot and javelin weights per level, at most two

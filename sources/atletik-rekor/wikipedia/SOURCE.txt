@@ -1,0 +1,13 @@
+English Wikipedia, "List of Indonesian records in athletics", wikitext (action=raw), saved unchanged.
+
+List_of_Indonesian_records_in_athletics.wikitext
+  page URL : https://en.wikipedia.org/wiki/List_of_Indonesian_records_in_athletics
+  file URL : https://en.wikipedia.org/w/index.php?title=List_of_Indonesian_records_in_athletics&action=raw
+  fetched  : 2026-11-27T14:44:42Z
+  size     : 36369 bytes
+  SHA-256  : 18ec6e717ff8f28e0c115cb84433bfd47bea3ea7882689be4560126da6f7fd18
+  licence  : CC BY-SA 4.0 (Wikipedia contributors)
+
+Use: cross-check only (F-037). Nothing from this file is copied into data/atletik-rekor; the converter compares
+its senior outdoor marks and dates with the PASI tables and lists the differences in the manifest
+(`cross_check_wikipedia`). The page cites the PASI tables at www.pbpasi.org as its general source.

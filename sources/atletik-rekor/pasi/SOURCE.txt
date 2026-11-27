@@ -1,0 +1,45 @@
+PASI (PB Persatuan Atletik Seluruh Indonesia) national record tables, www.pbpasi.org (the federation's site; pasi.or.id does not resolve).
+Fetched with curl, one page every ~4 s, saved unchanged. Times are UTC.
+
+recordpasi.html
+  page URL : https://www.pbpasi.org/recordpasi/
+  fetched  : 2026-11-27T16:53:30Z
+  size     : 147868 bytes
+  SHA-256  : 241d862680b11b4995c78f184ccb3c8df39ce2f503c50bdc35cde87e3e20bcb1
+
+tabel_rekor_men.html
+  page URL : https://www.pbpasi.org/tabel_rekor_men/
+  fetched  : 2026-11-27T16:53:34Z
+  size     : 168028 bytes
+  SHA-256  : 4860ccc25f3fc757d6cc3c5749cf1d08efecc15d951a5b0a9be4a312af9fbbba
+
+tabel_rekor_women.html
+  page URL : https://www.pbpasi.org/tabel_rekor_women/
+  fetched  : 2026-11-27T16:53:39Z
+  size     : 165950 bytes
+  SHA-256  : fd8f024b37a61a57f3db58f5c85516792199c646a2b0215bfccb13066347579b
+
+tabel_rekor_u20men.html
+  page URL : https://www.pbpasi.org/tabel_rekor_u20men/
+  fetched  : 2026-11-27T16:53:43Z
+  size     : 164450 bytes
+  SHA-256  : c1417fdd58f98aae4ea8f13f0ef252366502882064844b418782ef7e8897d796
+
+tabel_rekor_u20women.html
+  page URL : https://www.pbpasi.org/tabel_rekor_u20women/
+  fetched  : 2026-11-27T16:53:47Z
+  size     : 164478 bytes
+  SHA-256  : 74920972429a51095703ef50ca0f1dbe8567973ccc625671c62afde661b1eac5
+
+tabel_rekor_u18boys.html
+  page URL : https://www.pbpasi.org/tabel_rekor_u18boys/
+  fetched  : 2026-11-27T16:53:51Z
+  size     : 166337 bytes
+  SHA-256  : d64bff74160c7ea9e9d5478839007a3c6cda99fd858b419efc8c50c718bb9f94
+
+tabel_rekor_u18girls.html
+  page URL : https://www.pbpasi.org/tabel_rekor_u18girls/
+  fetched  : 2026-11-27T16:53:55Z
+  size     : 164905 bytes
+  SHA-256  : cb5aae2b701167750742a0599489a0b53dc9381ab9e4730e145755d023e6df20
+

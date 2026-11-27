@@ -1,0 +1,970 @@
+{{Short description|None}}
+{{Use dmy dates|date=May 2021}}
+The following are the national records in athletics in [[Indonesia]] maintained by its national athletics federation: [[Persatuan Atletik Seluruh Indonesia]] (PASI).
+
+==Outdoor==
+
+'''Key to tables''': {{legend2|#CEF6F5|''Awaiting ratification''|border=solid 1px #AAAAAA}}
+{{legend2|#f6F5CE|''Record not kept by PASI''|border=solid 1px #AAAAAA}}
+{{legend2|pink|''Not ratified or later rescinded by PASI''|border=solid 1px #AAAAAA}}
+
+===Men===
+{| class="wikitable" style="font-size:95%; width: 95%;"
+|-
+!Event
+!Record
+!Athlete
+!Date
+!Meet
+!Place
+!{{Abbr|Ref.|Reference}}
+|-
+|[[100 metres|100 m]]
+|10.03 {{wind|+1.7}}{{efn|wind measurement by World Athletics source, 0.8 m/s by federation source}}
+|[[Lalu Muhammad Zohri]]
+|19 May 2019
+|[[Osaka Grand Prix]]
+|[[Yanmar Stadium Nagai|Osaka]], Japan
+|<ref>{{cite news|title=Norman, Wang and Lalova break meeting records in Osaka|url=https://www.iaaf.org/news/report/golden-grand-prix-osaka-2019-norman-wang-lalo|publisher=IAAF|author=Jon Mulkeen|date=19 May 2019|access-date=26 May 2019}}</ref>
+|-
+|[[200 metres|200 m]]
+|20.76 {{wind|+0.8}}
+|[[Suryo Agung Wibowo]]
+|11 December 2007
+|[[Athletics at the 2007 Southeast Asian Games|Southeast Asian Games]]
+|[[Nakhon Ratchasima]], Thailand
+|
+|-
+|[[400 metres|400 m]]
+|46.37
+|[[Elieser Wattebosi]]
+|14 June 1993
+|[[Athletics at the 1993 SEA Games|Southeast Asian Games]]
+|[[Former National Stadium, Singapore|Singapore]]
+|
+|-
+|[[800 metres|800 m]]
+|1:49.93
+|[[Alexander Resmol]]
+|12 December 1995
+|[[1995 Southeast Asian Games|Southeast Asian Games]]
+|[[Chiang Mai]]. Thailand
+|
+|-
+|[[1500 metres|1500 m]]
+|3:46.21
+|[[Julius Leuwol]]
+|24 September 1995
+|[[1995 Asian Athletics Championships|Asian Athletics Championships]]
+|[[Jakarta]], Indonesia
+|
+|-
+|[[3000 metres|3000 m]]
+|8:33.49{{AthAbbr|+}}
+|[[Agus Prayogo]]
+|21 November 2010
+|[[Athletics at the 2010 Asian Games|Asian Games]]
+|[[Guangzhou]], China
+|<ref>{{cite web|title=5000 Metres Results & Intermediate Times|url=http://www.gz2010.cn/info/ENG_ENG/AT/ATR173A_ATM05005050000001ENG.html|publisher=gz2010.cn|date=21 November 2010|access-date=21 November 2010|archive-date=23 November 2010|archive-url=https://web.archive.org/web/20101123203053/http://www.gz2010.cn/info/ENG_ENG/AT/ATR173A_ATM05005050000001ENG.html|url-status=dead}}</ref>
+|-
+|[[5000 metres|5000 m]]
+|14:02.12
+|[[Agus Prayogo]]
+|23 July 2011
+|[[Track and field at the 2011 Military World Games|Military World Games]]
+|[[Rio de Janeiro]], Brazil
+|<ref>{{cite web|title=5000 Metres Results|url=http://www.rio2011.mil.br/results/ENG/AT/ATR173A_ATM05005050000001ENG.htm|publisher=rio2011.mil.br|date=23 July 2011|access-date=14 September 2011|archive-date=2 April 2012|archive-url=https://web.archive.org/web/20120402210622/http://www.rio2011.mil.br/results/ENG/AT/ATR173A_ATM05005050000001ENG.htm|url-status=dead}}</ref>
+|-style="background:#f6F5CE;"
+|[[5K run|5 km]] (road)
+|15:19{{AthAbbr|+}}
+|[[Robi Syianturi]]
+|12 July 2024
+|[[Gold Coast Half Marathon]]
+|[[Gold Coast, Queensland|Gold Coast]], Australia
+|<ref>{{cite web|title=Robi Syianturi Gold Coast Half Marathon 2024 Result|url=https://results.timingsports.com/view/goldcoastmarathon/2024/15031/|work=timingsports.com|access-date=31 July 2025}}</ref>
+|-
+|[[10,000 metres|10,000 m]]
+|29:25.77
+|[[Agus Prayogo]]
+|26 November 2010
+|[[Athletics at the 2010 Asian Games|Asian Games]]
+|[[Guangzhou]], China
+|<ref>{{cite web|title=10000 Metres Results|url=http://www.gz2010.cn/info/ENG_ENG/AT/ATR173A_ATM10010050000001ENG.html|publisher=gz2010.cn|date=26 November 2010|access-date=26 November 2010|archive-date=17 September 2018|archive-url=https://web.archive.org/web/20180917193744/http://www.gz2010.cn/info/ENG_ENG/AT/ATR173A_ATM10010050000001ENG.html|url-status=dead}}</ref>
+|-
+|[[10K run|10 km]] (road)
+|29:25
+|[[Eduardus Nabunome]]
+|20 October 1989
+|Bali 10K
+|[[Denpasar]], Indonesia
+|
+|-style="background:#f6F5CE;"
+|[[15K run|15 km]] (road)
+|45:32{{AthAbbr|+}}
+|[[Robi Syianturi]]
+|26 October 2025
+|Casablanca Half Marathon
+|[[Casablanca]], Morocco
+|<ref>{{cite web|title=Robi Syianturi Casablanca Marathon 2025 Result|url=https://results.racetimermorocco.com/event/1049/participants/251202|work=results.racetimermorocco.com|access-date=26 October 2025}}</ref>
+|-style="background:#f6F5CE;"
+|[[20K run|20 km]] (road)
+|1:01:35{{AthAbbr|+}}
+|[[Robi Syianturi]]
+|12 July 2024
+|[[Gold Coast Half Marathon]]
+|[[Gold Coast, Queensland|Gold Coast]], Australia
+|<ref>{{cite web|title=Robi Syianturi Gold Coast Half Marathon 2024 Result|url=https://results.timingsports.com/view/goldcoastmarathon/2024/15031/|work=timingsports.com|access-date=31 July 2025}}</ref>
+|-
+|[[Half marathon]]
+|1:03:24
+|[[Robi Syianturi]]
+|26 October 2025
+|Casablanca Half Marathon
+|[[Casablanca]], Morocco
+|<ref>{{cite web|title=Men's Half Marathon Result|url=https://results.racetimermorocco.com/event/1049/participants/251202|website=Casablanca Marathon|access-date=26 October 2025}}</ref><ref>{{cite web|title=Robi Syianturi Profile|url=https://worldathletics.org/athletes/indonesia/robi-syianturi-14853916|website=World Athletics|access-date=7 November 2026}}</ref>
+|-style="background:#f6F5CE;"
+|[[25K run|25 km]] (road)
+|1:18:08{{AthAbbr|+}}
+|[[Robi Syianturi]]
+|10 May 2026
+|[[Copenhagen Marathon]]
+|[[Copenhagen]], Denmark
+|<ref>{{cite web|title=Runner - Copenhagen Marathon - Robi Syianturi Results|url=https://live.copenhagenmarathon.dk/en/runner/?bib=19|work=live.copenhagenmarathon.dk|date=10 May 2026|access-date=10 May 2026}}</ref>
+|-style="background:#f6F5CE;"
+|[[Road running|30 km]] (road)
+|1:33:59{{AthAbbr|+}}
+|[[Robi Syianturi]]
+|10 May 2026
+|[[Copenhagen Marathon]]
+|[[Copenhagen]], Denmark
+|<ref>{{cite web|title=Runner - Copenhagen Marathon - Robi Syianturi Results|url=https://live.copenhagenmarathon.dk/en/runner/?bib=19|work=live.copenhagenmarathon.dk|date=10 May 2026|access-date=10 May 2026}}</ref>
+|-
+|[[Marathon]]
+|2:12:20
+|[[Robi Syianturi]]
+|10 May 2026
+|[[Copenhagen Marathon]]
+|[[Copenhagen]], Denmark
+|<ref>{{cite web|title=Runner - Copenhagen Marathon - Robi Syianturi Results|url=https://live.copenhagenmarathon.dk/en/runner/?bib=19|work=live.copenhagenmarathon.dk|date=10 May 2026|access-date=10 May 2026}}</ref><ref>{{cite web|title=Robi Syianturi Profile|url=https://worldathletics.org/athletes/indonesia/robi-syianturi-14853916|website=World Athletics|access-date=7 November 2026}}</ref>
+|-
+|[[110 metres hurdles|110 m hurdles]]
+|14.02 {{wind|-0.5}}
+|[[Rio Maholtra]]
+|27 August 2018
+|[[Athletics at the 2018 Asian Games – Men's 110 metres hurdles|Asian Games]]
+|[[Gelora Bung Karno Stadium|Jakarta]], Indonesia
+|
+|-
+|[[400 metres hurdles|400 m hurdles]]
+|50.81
+|[[Halomoan Edwin Binsar]]
+|10 December 2019
+|[[Athletics at the 2019 Southeast Asian Games|Southeast Asian Games]]
+|[[New Clark City]], Philippines
+|<ref>{{cite news|title=SEA Games: Eric Cray dashes to fourth straight 400m hurdles gold|url=https://www.cnnphilippines.com/seagames/2019/12/10/SEA-Games-Eric-Cray-400m.html|publisher=[[CNN Philippines]]|author=CJ Marquez|date=10 December 2019|access-date=7 September 2021|archive-date=7 September 2021|archive-url=https://web.archive.org/web/20210907200531/https://www.cnnphilippines.com/seagames/2019/12/10/SEA-Games-Eric-Cray-400m.html|url-status=dead}}</ref>
+|-
+|[[3000 metres steeplechase|3000 m steeplechase]]
+|8:54.32
+|[[Atjong Tio Purwanto]]
+|27 August 2018
+|[[Athletics at the 2018 Asian Games – Men's 3000 metres steeplechase|Asian Games]]
+|[[Gelora Bung Karno Stadium|Jakarta]], Indonesia
+|<ref>{{cite web|title=3000 m Steeplechase Results|url=https://en.asiangames2018.id/sport/athletics/event/athletics-men-3000m-steeplechase/phase/atm033100/|website=asiangames2018.id|date=27 August 2018|access-date=30 August 2018|archive-url=https://web.archive.org/web/20180827175438/https://en.asiangames2018.id/sport/athletics/event/athletics-men-3000m-steeplechase/phase/atm033100/|archive-date=27 August 2018|url-status=dead}}</ref>
+|-
+|[[High jump]]
+|2.16 m
+|Rafael
+|13 September 2024
+|Pekan Olahraga Nasional
+|[[Sumatera Utara]], Indonesia
+|
+|-
+|[[Pole vault]]
+|5.31 m
+|[[Idan Fauzan Richsan]]
+|12 September 2024
+|Pekan Olahraga Nasional
+|[[Sumatera Utara]], Indonesia
+|
+|-
+|[[Long jump]]
+|8.09 m {{wind|0.0}}
+|[[Sapwaturrahman]]
+|26 August 2018
+|[[Athletics at the 2018 Asian Games – Men's long jump|Asian Games]]
+|[[Gelora Bung Karno Stadium|Jakarta]], Indonesia
+|<ref>{{cite web|title=Men's Long Jump Final Results|url=https://en.asiangames2018.id/sport/athletics/event/athletics-men-long-jump/phase/atm061100/|website=asiangames2018.id|date=26 August 2018|access-date=26 August 2018}}{{Dead link|date=May 2026 |bot=InternetArchiveBot }}</ref>
+|-
+|[[Triple jump]]
+|16.21 m {{wind|-0.2}}
+|[[Sapwaturrahman]]
+|10 December 2019{{efn|by World Athletics source; 9 December 2019 by PASI source}}
+|
+|[[New Clark City]], Philippines
+|<ref>{{cite news|title=2018 June South East Asian Athletics Roundup – Sapwaturrahman|url=https://pinoyathletics.info/indonesian-jumper-sapwaturrahman-7-98m/|website=pinoyathletics.info|date=17 June 2018|access-date=25 July 2018}}{{Dead link|date=May 2026 |bot=InternetArchiveBot }}</ref>
+|-
+|[[Shot put]]
+|16.87 m
+|[[Sukraj Singh]]
+|1 July 1999  
+|
+|[[Jakarta]], Indonesia
+|
+|-
+|[[Discus throw]]
+|52.95 m
+|[[Hermanto Hermanto]]
+|1 July 2011
+|Kejuaraan Nasional Atletik 
+|[[Jakarta]], Indonesia
+|<ref>Jad Adrian (2011–07). [http://www.adriansprints.com/2011/07/sea-athletics-2011-leaders-national.html SEA Athletics 2011 Leaders & National Records]. [http://www.adriansprints.com/2011/07/sea-athletics-2011-leaders-national.html AdrianSprints.com]. Retrieved 17 July 2011.</ref>
+|-
+|[[Hammer throw]]
+|55.96 m
+|[[Dudung Suhendi]]
+|2 July 2011
+|Kejuaraan Nasional Atletik
+|[[Jakarta]], Indonesia
+|<ref>Jad Adrian (2011–07). [http://www.adriansprints.com/2011/07/sea-athletics-2011-leaders-national.html SEA Athletics 2011 Leaders & National Records]. [http://www.adriansprints.com/ AdrianSprints.com]. Retrieved 27 July 2011.</ref>
+|-
+|[[Javelin throw]]
+|75.58 m
+|[[Frans Mahuse]]
+|22 October 1991
+|[[1991 Asian Athletics Championships|Asian Championships]]
+|[[Kuala Lumpur]], Malaysia
+|
+|-
+|rowspan=2|[[Decathlon]]
+|7013 pts <small>({{AthAbbr|NWI}})</small>
+|[[Julius Uwe]]
+|13–14 June 1993
+|[[Athletics at the 1993 SEA Games|Southeast Asian Games]]
+|[[Former National Stadium, Singapore|Singapore]]
+|
+|-
+|colspan=5|{{Decathlon score|11.23 <small>({{AthAbbr|NWI}})</small>|7.00 m <small>({{AthAbbr|NWI}})</small>|12.22 m|1.77 m|50.63 m|15.66 <small>({{AthAbbr|NWI}})</small>|41.70 m|3.90 m|57.04 m|4:48.57 m}}
+|
+|-style="background:#f6F5CE;"
+|[[Racewalking|5 km walk]] (road)
+|21:35{{AthAbbr|+}}
+|[[Hendro]]
+|20 March 2016
+|[[Asian Race Walking Championships]]
+|[[Nomi, Ishikawa|Nomi]], Japan
+|<ref>{{cite news|title=Asian 20km Race Walking Championships in Nomi 2016|url=http://www.jaaf.or.jp/taikai/1303/Men20kmW.pdf|publisher=[[Japan Association of Athletics Federations]]|date=21 March 2016|access-date=21 March 2016}}</ref>
+|-
+|rowspan=2|[[10,000 metres race walk|10,000 m walk]] (track)
+|43:50.9
+|[[Rachmad Sumarsono]]
+|5 September 1986
+|
+|[[Jakarta]], Indonesia
+|
+|-style="background:pink"
+|43:49.22
+|[[Abdul Kadir Indra]]
+|2 March 2017
+|
+|[[Surabaya]], Indonesia
+|<ref>{{cite web|title=All time Top lists – 10,000 Metres Race Walk Men|url=https://www.worldathletics.org/records/all-time-toplists/race-walks/10000-metres-race-walk/outdoor/men/senior?regionType=countries&region=ina&page=1&bestResultsOnly=true&firstDay=1900-01-01&lastDay=2021-09-11|publisher=[[World Athletics]]|access-date=11 September 2021}}</ref>
+|-style="background:#f6F5CE;"
+|[[10 kilometres race walk|10 km walk]] (road)
+|43:12{{AthAbbr|+}}
+|[[Hendro]]
+|20 March 2016
+|[[Asian Race Walking Championships]]
+|[[Nomi, Ishikawa|Nomi]], Japan
+|<ref>{{cite news|title=Asian 20km Race Walking Championships in Nomi 2016|url=http://www.jaaf.or.jp/taikai/1303/Men20kmW.pdf|publisher=[[Japan Association of Athletics Federations]]|date=21 March 2016|access-date=21 March 2016}}</ref>
+|-
+|[[Racewalking|15 km walk]] (road)
+|1:05:11{{AthAbbr|+}}
+|[[Hendro]]
+|20 March 2016
+|[[Asian Race Walking Championships]]
+|[[Nomi, Ishikawa|Nomi]], Japan
+|<ref>{{cite news|title=Asian 20km Race Walking Championships in Nomi 2016|url=http://www.jaaf.or.jp/taikai/1303/Men20kmW.pdf|publisher=[[Japan Association of Athletics Federations]]|date=21 March 2016|access-date=21 March 2016}}</ref>
+|-
+|[[20,000 metres race walk|20,000 m walk]] (track)
+|1:32:11.27
+|[[Hendro]]
+|22 August 2017
+|[[Athletics at the 2017 Southeast Asian Games|Southeast Asian Games]]
+|[[Bukit Jalil National Stadium|Bukit Jalil]], Malaysia
+|<ref>{{cite news|title=Hendro Yap walks through hardships to earn gold|url=https://www.pressreader.com/indonesia/the-jakarta-post/20170825/281883003466415|via=PressReader|date=25 August 2017|access-date=29 August 2017}}</ref><ref>{{cite web|title=20000m Race Walk Results|url=http://gms.kualalumpur2017.com.my/upload/pdf/athleticsmarathon_M407_rl.pdf|website=kualalumpur2017.com.my|date=22 August 2017|access-date=12 September 2017|archive-date=12 October 2017|archive-url=https://web.archive.org/web/20171012233303/http://gms.kualalumpur2017.com.my/upload/pdf/athleticsmarathon_M407_rl.pdf|url-status=dead}}</ref>
+|-
+|[[20 kilometres race walk|20 km walk]] (road)
+|1:27:24
+|[[Hendro]]
+|20 March 2016
+|[[Asian Race Walking Championships]]
+|[[Nomi, Ishikawa|Nomi]], Japan
+|<ref>{{cite news|title=Asian 20km Race Walking Championships in Nomi 2016|url=http://www.jaaf.or.jp/taikai/1303/Men20kmW.pdf|publisher=[[Japan Association of Athletics Federations]]|date=21 March 2016|access-date=21 March 2016}}</ref>
+|-
+|[[Racewalking|Half marathon walk]] (road)
+|1:37:47
+|[[Hendro]]
+|26 October 2025
+|62nd All-Japan Takahata Walking Race
+|[[Takahata, Yamagata|Takahata]], Japan
+|
+|-style="background:#f6F5CE;"
+|[[Racewalking|30 km walk]] (road)
+|2:24:33{{AthAbbr|+}}
+|[[Hendro]]
+|16 March 2025
+|[[Asian Race Walking Championships]]
+|[[Nomi, Ishikawa|Nomi]], Japan
+|<ref>{{cite web|title=Detailed Results - Asian 20km Race Walking Championships – Nomi City, Japan, 2025 - Men's 35km Race Walk|url=https://asianathletics.com/results/74/detailed-results|website=[[Asian Athletics]]|date=16 March 2025|access-date=16 March 2025}}</ref>
+|-
+|[[35 kilometres race walk|35 km walk]] (road)
+|2:49:37
+|[[Hendro]]
+|16 March 2025
+|[[Asian Race Walking Championships]]
+|[[Nomi, Ishikawa|Nomi]], Japan
+|<ref>{{cite web|title=Men's 35km Race Walk Results|url=https://worldathletics.org/competitions/world-athletics-race-walking-tour/calendar-results/7213008/result?eventId=10229627&gender=M|website=World Athletics|access-date=31 July 2025}}</ref>
+|-
+|rowspan=2|[[50 kilometres race walk|50 km walk]] (road)
+|4:32:32{{efn|by [[World Athletics]] source: 4:32:30 by federation source}}
+|Sutrisno
+|19 May 1997
+|
+|[[Lingayen, Pangasinan|Lingayen]], Philippines
+|
+|-style="background:pink"
+|4:32:20
+|[[Hendro]]
+|30 August 2018
+|[[Athletics at the 2018 Asian Games – Men's 50 kilometres walk|Asian Games]]
+|[[Jakarta]], Indonesia
+|<ref>{{cite web|title=50km Race Walk Results|url=https://en.asiangames2018.id/sport/athletics/event/athletics-men-50km-walk/|website=asiangames2018.id|date=30 August 2018|access-date=30 August 2018|archive-url=https://web.archive.org/web/20180830110144/https://en.asiangames2018.id/sport/athletics/event/athletics-men-50km-walk/|archive-date=30 August 2018|url-status=dead}}</ref>
+|-
+|[[4 × 100 metres relay|4 × 100 m relay]]
+|38.77
+|{{flagu|Indonesia}}<br>[[Mohd Fadlin]]<br>[[Lalu Muhammad Zohri]]<br>{{ill|Eko Rimbawan|de}}<br>{{ill|Bayu Kertanegara|fr}}
+|30 August 2018
+|[[Athletics at the 2018 Asian Games – Men's 4 × 100 metres relay|Asian Games]]
+|[[Gelora Bung Karno Stadium|Jakarta]], Indonesia 
+|<ref>{{cite web|title=4×100m Relay Results|url=https://en.asiangames2018.id/sport/athletics/event/athletics-men-4x100m-relay/|website=asiangames2018.id|date=30 August 2018|access-date=30 August 2018|archive-url=https://web.archive.org/web/20180831072031/https://en.asiangames2018.id/sport/athletics/event/athletics-men-4x100m-relay/|archive-date=31 August 2018|url-status=dead}}</ref>
+|-
+|[[4 × 400 metres relay|4 × 400 m relay]]
+|3:09.54
+|{{flagu|Indonesia}}<br>[[Novi Persulessy]]<br>[[Elieser Wattebosi]]<br>[[Don Bosco (athlete)|Don Bosco]]<br>[[Herman Balagaise]]
+|17 June 1993
+|[[Athletics at the 1993 SEA Games|Southeast Asian Games]]
+|[[Former National Stadium, Singapore|Singapore]]
+|
+|}
+
+===Women===
+{| class="wikitable" style="font-size:95%; width: 95%;"
+|-
+!Event
+!Record
+!Athlete
+!Date
+!Meet
+!Place
+!{{Abbr|Ref.|Reference}}
+|-
+|rowspan=2|[[100 metres|100 m]]
+|11.56 {{wind|0.0}}
+|[[Irene Truitje Joseph]]
+|8 August 1999 {{efn|PASI erroneously lists the date as 20 October.}}
+|[[1999 Southeast Asian Games|Southeast Asian Games]]
+|[[Bandar Seri Begawan]], Brunei
+|
+|-style="background:pink"
+|11.53 {{wind|-1.2}}
+|[[Valentine Vanessa Lonteng]]
+|11 January 2023
+|National Selection Trials
+|[[Jakarta]], Indonesia
+|<ref>{{cite web|title=Results from ASIA 2023 – 06|url=http://www.athleticsasia.org/results-from-asia-2023-06/|publisher=AAA|date=9 March 2023|access-date=22 May 2023}}</ref>
+|-
+|[[200 metres|200 m]]
+|23.61 <small>({{AthAbbr|NWI}})</small>
+|[[Nella Agustin]]
+|13 September 2024
+|Pekan Olahraga Nasional
+|[[Sumatera Utara]], Indonesia
+|
+|-
+|[[400 metres|400 m]]
+|53.22{{efn|by World Athletics source; 53.21 by PASI source}}
+|[[Sri Mayasari]]
+|12 October 2021
+|
+|[[Mimika Regency|Mimika]], Indonesia
+|
+|-
+|[[800 metres|800 m]]
+|2:06.11
+|[[Esther Sumah]]
+|16 June 1993
+|[[1993 Southeast Asian Games|Southeast Asian Games]]
+|Singapore
+|
+|-
+|[[1500 metres|1500 m]]
+|4:18.69
+|[[Rini Budiarti]]
+|9 August 2007
+|[[Athletics at the 2007 Summer Universiade|Universiade]]
+|[[Bangkok]], Thailand
+|
+|-
+|[[3000 metres|3000 m]]
+|9:30.17
+|[[Supriati Sutono]]
+|8 June 1998
+|
+|[[Manila]], Philippines
+|
+|-
+|[[5000 metres|5000 m]]
+|15:54.32
+|[[Triyaningsih]]
+|8 December 2007
+|[[Athletics at the 2007 SEA Games|Southeast Asian Games]]
+|[[Nakhon Ratchasima]], Thailand
+|
+|-style="background:#f6F5CE;"
+|[[5K run|5 km]] (road)
+|16:24
+|[[Triyaningsih]]
+|18 May 2008
+|Indonesian 5 km Road Running Championships
+|[[Jakarta]], Indonesia
+|<ref>{{cite web|title=Race profile – Indonesian Championships|url=https://more.arrs.run/race/105266|publisher=[[Association of Road Racing Statisticians]]|access-date=11 September 2021}}</ref>
+|-
+|[[10,000 metres|10,000 m]]
+|32:49.47
+|[[Triyaningsih]]
+|17 December 2009
+|[[Athletics at the 2009 Southeast Asian Games|Southeast Asian Games]]
+|[[Vientiane]], Laos
+|<ref>{{cite web|title=25th SEA Games 2009 Results - Athletics Day 5|url=http://www.singaporeathletics.com/singapore-news/25th-sea-games-2009-results-athletics-day-5|publisher=singaporeathletics.com|date=18 December 2009|access-date=18 September 2010}}</ref>
+|-
+|[[10K run|10 km]] (road)
+|33:23
+|[[Triyaningsih]]
+|10 August 2008
+|
+|[[Denpasar]], Indonesia
+|
+|-
+|[[Half marathon]]
+|1:13:01{{AthAbbr|+}}
+|[[Triyaningsih]]
+|27 November 2010
+|[[Athletics at the 2010 Asian Games – Women's marathon|Asian Games]]
+|[[Guangzhou]], China
+|<ref>{{cite web|title=National Records- Half Marathon|url=https://arrs.run/NR_HMar.htm|publisher=[[Association of Road Racing Statisticians]]|access-date=11 September 2021}}</ref>
+|-style="background:#f6F5CE;"
+|[[Road running|30 km (road)]]
+|1:45:03{{AthAbbr|+}}
+|[[Triyaningsih]]
+|27 November 2010
+|[[Athletics at the 2010 Asian Games – Women's marathon|Asian Games]]
+|[[Guangzhou]], China
+|<ref>{{cite web|title=National Records- Half Marathon|url=https://arrs.run/NR_HMar.htm|publisher=[[Association of Road Racing Statisticians]]|access-date=11 September 2021}}</ref>
+|-
+|[[Marathon]]
+|2:31:49
+|[[Triyaningsih]]
+|27 November 2010
+|[[Athletics at the 2010 Asian Games|Asian Games]]
+|[[Guangzhou]], China
+|<ref>{{cite web|title=Marathon Results|url=http://www.gz2010.cn/info/ENG_ENG/AT/ATR173A_ATW09909950000001ENG.html|publisher=gz2010.cn|date=27 November 2010|access-date=27 November 2010|archive-date=30 November 2010|archive-url=https://web.archive.org/web/20101130045637/http://www.gz2010.cn/info/ENG_ENG/AT/ATR173A_ATW09909950000001ENG.html|url-status=dead}}</ref>
+|-
+|[[100 metres hurdles|100 m hurdles]]
+|13.16 <small>({{AthAbbr|NWI}})</small>
+|[[Dina Aulia]]
+|12 September 2024
+|Pekan Olahraga Nasional
+|[[Sumatera Utara]], Indonesia
+|
+|-
+|[[400 metres hurdles|400 m hurdles]]
+|58.30
+|[[Nella Agustin]]
+|16 September 2024
+|Pekan Olahraga Nasional
+|[[Sumatera Utara]], Indonesia
+|
+|-
+|[[3000 metres steeplechase|3000 m steeplechase]]
+|9:49.46
+|[[Rini Budiarti]]
+|27 September 2014
+|[[Athletics at the 2014 Asian Games - Women's 3000 metres steeplechase|Asian Games]]
+|[[Incheon Asiad Main Stadium|Incheon]], South Korea
+|<ref>{{cite web|title=3000m Steeplechase Results |url=http://www.incheon2014ag.org/Sports/AT/Result?RSC=ATW033101&lang=en |publisher=incheon2014ag.org |date=27 September 2014 |access-date=27 September 2014 |url-status=usurped |archive-url=https://web.archive.org/web/20140929061923/http://www.incheon2014ag.org/Sports/AT/Result?RSC=ATW033101&lang=en |archive-date=29 September 2014 }}</ref>
+|-
+|[[High jump]]
+|1.79 m
+|[[Nadia Anggraini]]
+|28 April 2016
+|78th Singapore Open Championships
+|[[National Stadium, Singapore|Singapore]]
+|<ref>{{cite web|title=High Jump Results|url=http://www.singaporeathletics.org.sg/results/singaporeopen2016/160428F202.htm|publisher=Singapore Athletic Association|date=28 April 2016|access-date=20 January 2017}}</ref>
+|-
+|[[Pole vault]]
+|4.20 m
+|[[Diva Renata Jayadi]]
+|18 September 2024
+|Pekan Olahraga Nasional
+|[[Sumatera Utara]], Indonesia
+|
+|-
+|[[Long jump]]
+|6.70 m {{wind|0.0}}
+|[[Maria Natalia Londa]]
+|10 June 2015
+|[[2015 Southeast Asian Games|Southeast Asian Games]]
+|[[National Stadium, Singapore|Kallang]], Singapore
+|<ref>{{cite news|title=Long Jump Results |url=http://results.seagames2015.com/resSE2015/pdf/SE2015/AT/SE2015_AT_C73P_ATW061101.pdf |publisher=seagames2015.com |date=10 June 2015 |access-date=14 June 2015 |url-status=dead |archive-url=https://web.archive.org/web/20150617170640/http://results.seagames2015.com/resSE2015/pdf/SE2015/AT/SE2015_AT_C73P_ATW061101.pdf |archive-date=17 June 2015 }}</ref>
+|-
+|[[Triple jump]]
+|14.17 m {{wind|-0.7}}
+|[[Maria Natalia Londa]]
+|17 December 2013
+|[[Athletics at the 2013 Southeast Asian Games – Women's triple jump|Southeast Asian Games]]
+|[[Naypyidaw]], Myanmar
+|<ref>{{cite web|title=Triple Jump Result|url=http://data4.seagamesmm.com/pdf/18753.pdf|publisher=seagamesmm.com|date=17 December 2013|access-date=18 December 2013|url-status=dead|archive-url=https://web.archive.org/web/20131217222852/http://data4.seagamesmm.com/pdf/18753.pdf|archive-date=17 December 2013}}</ref>
+|-
+|rowspan=2|[[Shot put]]
+|15.54 m
+|[[Eki Febri Ekawati]]
+|24 April 2017
+|Asian Grand Prix
+|[[Jinhua]], China
+|<ref>{{cite web|title=Jinhua (China) 24.04.2017 -Asian Grand Prix-|url=http://trackinsun.blogspot.de/2017/04/jinhua-china-24042017-asian-grand-prix.html|website=trackinsun.blogspot.de|date=24 April 2017|access-date=10 July 2017}}{{Dead link|date=May 2026 |bot=InternetArchiveBot }}</ref>
+|-style="background:pink"
+|15.60 m
+|[[Eki Febri Ekawati]]
+|8 December 2017
+|Indonesian Championships
+|[[Jakarta]], Indonesia
+|<ref>{{cite web|title=News from around the World- EME News (Dec 12, 2017)|url=http://american-trackandfield.com/atf/index.php/news/item/2620-news-from-around-the-world-eme-news-dec-12-2017|website=american-trackandfield.com|date=13 December 2017|access-date=25 July 2018}}{{Dead link|date=May 2026 |bot=InternetArchiveBot }}</ref>
+|-
+|[[Discus throw]]
+|50.68 m
+|[[Dwi Ratnawati]]
+|27 April 2008
+|
+|[[Bangkok]], Thailand
+|
+|-
+|[[Hammer throw]]
+|54.12 m
+|[[Rose Herlinda Inggriana]]
+|15 December 2009
+|[[Athletics at the 2009 Southeast Asian Games|Southeast Asian Games]]
+|[[Vientiane]], Laos
+|
+|-
+|[[Javelin throw]]
+|52.56 m
+|[[Atinna Nurkamilla]]
+|13 September 2024
+|Pekan Olahraga Nasional
+|[[Sumatera Utara]], Indonesia
+|
+|-
+|rowspan=2|[[Heptathlon]]
+|5386 pts
+|[[Emilia Nova]]
+|24–25 August 2017
+|[[Athletics at the 2017 Southeast Asian Games – Women's Results#Heptathlon|Southeast Asian Games]]
+|[[Bukit Jalil National Stadium|Bukit Jalil]], Malaysia
+|<ref>{{cite news|title=KL2017: Norliayana smashes Zaiton Othman's 36-year-old national record|url=https://www.nst.com.my/sports/others/2017/08/272729/kl2017-norliayana-smashes-zaiton-othmans-36-year-old-national-record|website=New Straits Times|author=Devinder Singh|date=25 August 2017|access-date=13 September 2017}}</ref>
+|-
+|colspan=5|{{Heptathlon score|13.58 {{wind|-0.2}}|1.62 m|10.84 m|25.02 {{wind|0.0}}|5.75 m {{wind|0.0}}|35.10 m|2:24.03}}
+|
+|-
+|[[10,000 metres race walk|10,000 m walk]] (track)
+|47:26.84
+|[[Tersiana Riwu Rohi]]
+|23 August 1997
+|
+|[[Jakarta]], Indonesia
+|
+|-
+|[[10 kilometres race walk|10 km walk]] (road)
+|49:05
+|[[Hasiati Lawole]]
+|27 February 1997
+|
+|[[Melbourne]], Australia
+|
+|-
+|rowspan=2|[[20 kilometres race walk|20 km walk]] (road)
+|1:40:25
+|[[Tersiana Riwu Rohi]]
+|15 July 2003
+|Indonesian Race Walking Championships
+|[[Jakarta]], Indonesia
+|<ref>{{cite web|title=All time Top lists – 20 Kilometres Race Walk Women|url=https://www.worldathletics.org/records/all-time-toplists/race-walks/20-kilometres-race-walk/outdoor/women/senior?regionType=countries&region=ina&page=1&bestResultsOnly=true&firstDay=1900-01-01&lastDay=2021-09-12|publisher=[[World Athletics]]|access-date=12 September 2021}}</ref>
+|-style="background:pink"
+|1:39:05
+|[[Darwati]]
+|29 July 2009
+|Indonesian Championships
+|[[Jakarta]], Indonesia
+|<ref>{{cite news|title=Darwati Ciptakan Rekor Nasional|url=http://www.pikiran-rakyat.com/node/94013|publisher=pikiran-rakyat.com|language=id|date=29 July 2009|access-date=24 August 2013}}{{Dead link|date=May 2026 |bot=InternetArchiveBot }}</ref>
+|-style="background:#f6F5CE;"
+|[[35 kilometres race walk|35 km walk]] (road)
+|3:28:30
+|[[Violine Intan Puspita]]
+|4 October 2023
+|[[Athletics at the 2022 Asian Games – Mixed team 35 kilometres race walk|Asian Games]]
+|[[Hangzhou]], China
+|<ref>{{cite web|title=Results from ASIA 2023 – 22|url=https://www.asianathletics.com/results-from-asia-2023-22/|website=AAA|date=11 October 2023|access-date=16 October 2023|archive-date=15 October 2024|archive-url=https://web.archive.org/web/20241015032015/https://www.asianathletics.com/results-from-asia-2023-22/|url-status=dead}}</ref>
+|-
+|[[4 × 100 metres relay|4 × 100 m relay]]
+|45.00
+|{{flagu|Indonesia}}<br>[[Nurul Imaniar]]<br>[[Tri Setyo Utami]]<br>[[Serafi Anelies Unani]]<br>[[Dedeh Erawati]]
+|15 November 2011
+|[[Athletics at the 2011 Southeast Asian Games – Results|Southeast Asian Games]]
+|[[Gelora Sriwijaya Stadium|Palembang]], Indonesia
+|<ref>{{cite news|title=SEA Games see records tumble; Thailand remains dominant|url=http://www.iaaf.org/news/newsid=62946.html|publisher=[[IAAF]]|author=Jad Adrian Washif|date=16 November 2011|access-date=17 November 2011}}</ref><ref>{{cite web|title=4x100 Metres Relay Results|url=http://apps.seag2011.com/rs2011/bm/at/result_rly.aspx?eid=1015&sid=4&r=-&sname=Athletics|publisher=apps.seag2011.com|date=15 November 2011|access-date=17 November 2011}}</ref>
+|-
+|[[4 × 400 metres relay|4 × 400 m relay]]
+|3:42.25
+|{{flagu|Indonesia}}<br>[[Henny Maspaitella]]<br>[[Indah Wahjuni]]<br>[[Martha Lekransy]]<br>[[Emma Tahapary]]
+|29 September 1985
+|[[1985 Asian Athletics Championships|Asian Championships]]
+|[[Jakarta]], Indonesia
+|
+|}
+
+===Mixed===
+{| class="wikitable" style="font-size: 95%; width: 95%;"
+|-
+!Event
+!Record
+!Athlete
+!Date
+!Meet
+!Place
+!{{Abbr|Ref.|Reference}}
+|-
+|[[Mixed 4 × 400 metres relay|4 × 400 m relay]]
+|3:28.45
+|[[Nella Agustin]]<br>[[Siska Simamora]]<br>[[M. Kahairuddin Syahputra]]<br>[[Ayyub Niti Raharja]]
+|17 September 2024
+|XXI Pekan Olahraga Nasional
+|[[Deli Serdang Regency|Deli Serdang]], Indonesia
+|
+|}
+
+==Indoor==
+
+===Men===
+{| class="wikitable" style="font-size:95%; width: 95%;"
+|-
+!Event
+!Record
+!Athlete
+!Date
+!Meet
+!Place
+!{{Abbr|Ref.|Reference}}
+|-
+|[[60 metres|60 m]]
+|6.58
+|[[Lalu Muhammad Zohri]]
+|19 March 2022
+|[[2022 World Athletics Indoor Championships – Men's 60 metres|World Championships]]
+|[[Štark Arena|Belgrade]], Serbia
+|<ref>{{Cite web|title=60m Round 1 Results Summary|url=https://media.aws.iaaf.org/competitiondocuments/pdf/7138985/AT-60-M-h----.RS4.pdf|publisher=World Athletics|date=19 March 2022|access-date=19 March 2022}}</ref>
+|-
+|[[200 metres|200 m]]
+|21.58
+|[[Mohamed Purnomo]]
+|19 January 1985
+|[[1985 IAAF World Indoor Games|World Indoor Games]]
+|[[Paris]], France
+|
+|-
+|[[400 metres|400 m]]
+|49.86
+|[[Yan Karubaba]]
+|7 February 2004
+|[[2004 Asian Indoor Athletics Championships|Asian Championships]]
+|[[Tehran]], Iran
+|
+|-
+|[[800 metres|800 m]]
+|1:59.24
+|[[Edwin Pattileamonia]]
+|13 November 2005
+|[[Indoor athletics at the 2005 Asian Indoor Games|Asian Indoor Games]]
+|[[Pattaya]], Thailand
+|
+|-
+|[[1500 metres|1500 m]]
+|
+|
+|
+|
+|
+|
+|-
+|[[3000 metres|3000 m]]
+|8:58.64
+|[[Muhammad Al Quraisy]]
+|19 February 2012
+|[[2012 Asian Indoor Athletics Championships – Results|Asian Championships]]
+|[[Hangzhou]], China
+|<ref>{{cite web|title=Asian Indoor Championships 2012 Complete Results|url=http://www.asianathletics.org/AIC2012/aic2012-finalresults.pdf|publisher=[[Asian Athletics Association|AAA]]|date=20 February 2012|access-date=20 February 2012|url-status=dead|archive-url=https://web.archive.org/web/20120303231204/http://www.asianathletics.org/AIC2012/aic2012-finalresults.pdf|archive-date=3 March 2012}}</ref>
+|-
+|[[60 metres hurdles|60 m hurdles]]
+|7.98
+|[[Rio Maholtra]]
+|3 March 2018
+|[[2018 IAAF World Indoor Championships – Men's 60 metres hurdles|World Championships]]
+|[[Arena Birmingham|Birmingham]], United Kingdom
+|<ref>{{cite web|title=Men's 60m Hurdles Heats Results|url=https://media.aws.iaaf.org/competitiondocuments/pdf/6019/AT-60H-M-h----.RS6.pdf?v=853206969|publisher=IAAF|date=3 March 2018|access-date=3 March 2018}}</ref>
+|-
+|rowspan=2|[[High jump]]
+|rowspan=2|2.00 m
+|[[Syahrial]]
+|30 October 2007
+|[[Indoor athletics at the 2007 Asian Indoor Games|Asian Indoor Games]]
+|Macau
+|
+|-
+|[[Dwiky Firmansyah]]
+|6 February 2026
+|[[2026 Asian Indoor Athletics Championships|Asian Championships]]
+|[[Tianjin]], China
+|<ref>{{cite web|title=12th Asian Indoor Athletics Championship - Men's High jump Finals|url=https://aaa-storage-ors.s3.ap-south-1.amazonaws.com/storage/app/public/data/results/1770382724_656_113_Results_Men's%20High%20Jump%20Final.pdf|access-date=10 April 2026}}</ref>
+|-
+|[[Pole vault]]
+|
+|
+|
+|
+|
+|
+|-
+|rowspan=2|[[Long jump]]
+|rowspan=2|6.95 m
+|[[Asril Abdullah]]
+|1 November 2009
+|[[Indoor athletics at the 2009 Asian Indoor Games|Asian Indoor Games]]
+|[[Hanoi]], Vietnam
+|
+|-
+|[[Noval Kurniawan]]
+|15 February 2014
+|[[2014 Asian Indoor Athletics Championships – Results#high jump|Asian Championships]]
+|[[Hangzhou]], China
+|<ref>{{cite web|title=Asian Indoor Championships Results|url=http://www.athleticsasia.org/AIC2014/AIC2014-R2.pdf|publisher=[[Asian Athletics Association|AAA]]|date=16 February 2014|access-date=31 July 2014|url-status=dead|archive-url=https://web.archive.org/web/20140222065612/http://www.athleticsasia.org/AIC2014/AIC2014-R2.pdf|archive-date=22 February 2014}}</ref>
+|-
+|[[Triple jump]]
+|
+|
+|
+|
+|
+|
+|-
+|[[Shot put]]
+|
+|
+|
+|
+|
+|
+|-
+|rowspan=2|[[Heptathlon]]
+|
+|
+|
+|
+|
+|
+|-
+|colspan=5|{{Men's Indoor Heptathlon Score}}
+|
+|-
+|[[5000 metres race walk|5000 m walk]]
+|
+|
+|
+|
+|
+|
+|-
+|[[4 × 400 metres relay|4 × 400 m relay]]
+|
+|
+|
+|
+|
+|
+|}
+
+===Women===
+{| class="wikitable" style="font-size:95%; width: 95%;"
+|- 
+!Event
+!Record
+!Athlete
+!Date
+!Meet
+!Place
+!{{Abbr|Ref.|Reference}}
+|-
+|[[60 metres|60 m]]
+|7.36
+|Valentin Vanesa Lonteng
+|10 February 2023
+|[[2023 Asian Indoor Athletics Championships – Results|Asian Championships]]
+|[[Kazakhstan Sports Palace|Astana]], Kazakhstan
+|<ref>{{cite web|title=60m Heats Results Summary|url=https://sport-online.kz/showresults/summary/&s=617a834beed44&sl=1&sex=F&r=0|website=sport-online.kz|date=10 February 2023|access-date=21 February 2023}}</ref>
+|-
+|[[200 metres|200 m]]
+|26.69
+|[[Yulia Novita]]
+|6 March 2004
+|[[2004 IAAF World Indoor Championships – Women's 200 metres|World Championships]]
+|[[Budapest]], Hungary
+|
+|-
+|[[400 metres|400 m]]
+|54.88
+|Sri Maya Sari
+|11 February 2023
+|[[2023 Asian Indoor Athletics Championships – Results|Asian Championships]]
+|[[Kazakhstan Sports Palace|Astana]], Kazakhstan
+|<ref>{{cite web|title=400m Final Results|url=https://sport-online.kz/showresults/results/&s=617a834beed44&sl=5&sex=F&r=1|website=sport-online.kz|date=11 February 2023|access-date=21 February 2023}}</ref>
+|-
+|[[800 metres|800 m]]
+|2:15.44
+|[[Ilang Lismawati]]
+|16 February 2014
+|[[2014 Asian Indoor Athletics Championships|Asian Championships]]
+|[[Hangzhou]], China
+|<ref>{{cite web|title=Asian Indoor Championships Results|url=http://www.athleticsasia.org/AIC2014/AIC2014-R2.pdf|publisher=[[Asian Athletics Association|AAA]]|date=15 February 2014|access-date=24 November 2014|url-status=dead|archive-url=https://web.archive.org/web/20140222065612/http://www.athleticsasia.org/AIC2014/AIC2014-R2.pdf|archive-date=22 February 2014}}</ref>
+|-
+|[[1500 metres|1500 m]]
+|4:44.83
+|[[Rini Budiarti]]
+|25 September 2005
+|[[2005 Women's Islamic Games|Women's Islamic Games]]
+|[[Tehran]], Iran
+|
+|-
+|[[3000 metres|3000 m]]
+|9:49.75
+|[[Rini Budiarti]]
+|11 February 2006
+|[[Asian Indoor Athletics Championships|Asian Championships]]
+|[[Pattaya]], Thailand
+|
+|-
+|[[60 metres hurdles|60 m hurdles]]
+|8.24
+|Dina Aulia
+|12 February 2023
+|[[2023 Asian Indoor Athletics Championships – Results|Asian Championships]]
+|[[Kazakhstan Sports Palace|Astana]], Kazakhstan
+|<ref>{{cite web|title=60m Hurdles Final Results|url=https://sport-online.kz/showresults/results/&s=617a834beed44&sl=14&sex=F&r=1|website=sport-online.kz|date=12 February 2023|access-date=21 February 2023}}</ref>
+|-
+|[[High jump]]
+|
+|
+|
+|
+|
+|
+|-
+|[[Pole vault]]
+|4.00 m
+|[[Ni Putu Desi Margawati]]
+|31 October 2009
+|[[Indoor athletics at the 2009 Asian Indoor Games|Asian Indoor Games]]
+|[[Hanoi]], Vietnam
+|
+|-
+|[[Long jump]]
+|6.18 m
+|[[Maria Natalia Londa]]
+|16 February 2014
+|[[2014 Asian Indoor Athletics Championships|Asian Championships]]
+|[[Hangzhou]], China
+|<ref>{{cite web|title=Asian Indoor Championships Results|url=http://www.athleticsasia.org/AIC2014/AIC2014-R2.pdf|publisher=[[Asian Athletics Association|AAA]]|date=15 February 2014|access-date=16 February 2014|url-status=dead|archive-url=https://web.archive.org/web/20140222065612/http://www.athleticsasia.org/AIC2014/AIC2014-R2.pdf|archive-date=22 February 2014}}</ref>
+|-
+|[[Triple jump]]
+|13.04 m
+|[[Maria Natalia Londa]]
+|1 November 2009
+|[[Indoor athletics at the 2009 Asian Indoor Games|Asian Indoor Games]]
+|[[Hanoi]], Vietnam
+|
+|-
+|[[Shot put]]
+|15.44 m
+|[[Eki Febri Ekawati]]
+|11 February 2023
+|[[2023 Asian Indoor Athletics Championships – Results|Asian Championships]]
+|[[Kazakhstan Sports Palace|Astana]], Kazakhstan
+|<ref>{{cite web|title=Shot Put Final Results|url=https://sport-online.kz/showresults/results/&s=617a834beed44&sl=21&sex=F&r=0|website=sport-online.kz|date=11 February 2023|access-date=21 February 2023}}</ref>
+|-
+|rowspan=2|[[Women's pentathlon|Pentathlon]]
+|
+|
+|
+|
+|
+|
+|-
+|colspan=5|{{Women's Indoor Pentathlon Score}}
+|
+|-
+|[[3000 metres race walk|3000 m walk]]
+|
+|
+|
+|
+|
+|
+|-
+|[[4 × 400 metres relay|4 × 400 m relay]]
+|
+|
+|
+|
+|
+|
+|}
+
+==Notes==
+{{notelist}}
+
+==References==
+;General
+*[https://www.pbpasi.org/tabel_rekor_men/ Indonesian Records - Men Outdoor] <small>''26 October 2025 updated''</small>
+*[https://www.pbpasi.org/tabel_rekor_women/ Indonesian Records - Women Outdoor] <small>''9 December 2024 updated''</small>
+
+*World Athletics Statistic Handbook 2022: [https://iaafmedia.s3.amazonaws.com/misc/Oregon22/Oregon%20stats%20book.pdf National Outdoor Records]
+*World Athletics Statistic Handbook 2022: [https://www.flipsnack.com/worldathleticsprofile/world-athletics-indoor-championships-statistics-handbook.html National Indoor Records]
+;Specific
+{{Reflist|30em}}
+
+==External links==
+* [https://www.pbpasi.org/ PASI web site]
+
+{{Records in athletics}}
+{{National records in athletics}}
+
+[[Category:National records in the sport of athletics|Indonesia]]
+[[Category:Athletics in Indonesia|Records]]
+[[Category:Indonesian records|Athletics]]
+[[Category:Indonesia sport-related lists|Athletics]]

@@ -58,7 +58,8 @@ Apps never import code from here at runtime. They follow its rules and copy what
 ## Data rules (strict)
 
 - Only **public data without personal data** lives here. Never names of students, parents, athletes'
-  private details, NIK, NISN, phone numbers.
+  private details, NIK, NISN, phone numbers. Only exception: record holders as PASI or World Athletics
+  publish them (name, birth date, province/country) in `atletik-rekor` (F-037).
 - Every data set has `manifest.json` (source, licence, version, counts), `SHA256SUMS`, and a converter or
   documented procedure that rebuilds it from the source. Sources are untrusted input: parse, never execute.
 - A version is a date (`YYYY-MM-DD`, the source's date). Changing data = new version + changelog line.
