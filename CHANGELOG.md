@@ -10,7 +10,7 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
   SMP and SMA (new event codes 80m, 1000m, 3000mW, TriSD), shot and javelin weights per level, at most two
   individual events per athlete, Trilomba and quota limits, the exhibition rule (fewer than 5 kabupaten/kota) and the
   medal-based overall standing; eligibility born in 2008 or later ("tahun kelahiran maksimal 2008"). The SMA putri
-  shot is printed "24 kg": stored as null with an unresolved erratum (F-031). POPNAS age rule (at most 18) added as
+  shot is printed "24 kg": kept as printed (user, "ikuti juknis") with an unresolved erratum (F-031). POPNAS age rule (at most 18) added as
   secondary, quoted by Kemenpora from Peraturan Ketua Umum PP BAPOPSI 8/2022. PASI U14/U16 and the POPNAS athletics
   handbook were not reachable on an official site (pasi.or.id does not resolve).
 - Search records of the 2026-11-27 browser runs: `sources/atletik/R-10b-SOURCE-2026-11-27.txt`,

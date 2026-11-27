@@ -1115,14 +1115,14 @@
      "implements_kg": {
       "SP": {
        "M": 5.0,
-       "W": null
+       "W": 24.0
       },
       "JT": {
        "M": 0.7,
        "W": 0.6
       }
      },
-     "implements_note": "SMA putri shot printed \"24 kg\": see errata."
+     "implements_note": "SMA putri shot kept as printed, 24 kg (user, 2026-11-27: \"ikuti juknis\"); almost certainly a misprint: see errata before showing it."
     }
    },
    "events_count": {
@@ -1146,10 +1146,11 @@
     {
      "field": "levels.SMA.implements_kg.SP.W",
      "printed": "24 kg",
-     "value": null,
+     "value": 24.0,
      "status": "unresolved",
      "page": "PDF p. 5, VII.2 Ketentuan 7",
-     "reason": "A 24 kg shot is impossible; the juknis does not show whether 3 kg (World Athletics U18) or 4 kg (U20, senior) is meant. Ask the organiser or the technical meeting minutes (F-031)."
+     "decision": "kept as printed (user, 2026-11-27: \"angka berat peluru SMA putri ikuti juknis\"; F-031)",
+     "reason": "No 24 kg shot exists; the juknis does not show whether 3 kg (World Athletics U18) or 4 kg (U20, senior) is meant. Apps should not present 24 kg without this note."
     }
    ],
    "not_stated": [

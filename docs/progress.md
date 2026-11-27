@@ -40,8 +40,8 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 2. **R-06 done** (`kaldik-madrasah-jateng` 2026-06-29, PR #15 merged). Still missing: the national guideline Keputusan Dirjen Pendis 4860/2026 (optional; the Kanwil decree
    follows it). The 4 SKB 2027 cuti bersama days not in the decree are listed in `skb_days_not_in_this_calendar`.
 3. **R-10b done as far as sources allow** (atletik sets 2026-11-27): O2SN 2026 (all 17,595 table rows checked) and
-   POPDA Jawa Tengah 2026 (Dispora juknis, page images; SMA putri shot printed "24 kg" kept as an unresolved erratum:
-   ask the organiser if an app needs it); POPNAS age rule as secondary. Still missing, no official copy reachable on
+   POPDA Jawa Tengah 2026 (Dispora juknis, page images; SMA putri shot printed "24 kg" kept as printed by the user's
+   decision, with an unresolved erratum); POPNAS age rule as secondary. Still missing, no official copy reachable on
    2026-11-27: PASI U14/U16 rules (pasi.or.id does not resolve) and the POPNAS XVII athletics handbook; O2SN 2027 when
    Puspresnas publishes it (now at pusatprestasinasional.kemendikdasmen.go.id). Rerun brief R-10b items 1 and 3 later. **R-11** records need the
    user's list of championships.
