@@ -52,6 +52,8 @@
     "code": "33.19.02.1017",
     "percent": 1.661
   },
+  "shared_regency_border_arcs": 0,
+  "arcs_with_smaller_tolerance": 0,
   "notes": [
     "Only 'Batas Definitif' rests on a signed regulation. 'Hasil Kesepakatan' is agreed by the villages and checked by BIG; 'Batas Indikatif' is a working line. UU 4/2011 Pasal 16 ayat (2): show boundaries that are not definitive with a different line style or colour, and never present any of them as a legal boundary.",
     "Use for maps, filters and 'which village is this point in' hints; let users correct the village they chose. Credit: Sumber: Badan Informasi Geospasial.",

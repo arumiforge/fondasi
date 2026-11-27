@@ -216,7 +216,7 @@ def self_crossing(ring):
 class Topology:
     """Cuts rings into shared arcs, simplifies each arc once, and rebuilds rings from the arcs."""
 
-    def __init__(self, rings):
+    def __init__(self, rings, extra_junctions=frozenset()):
         self.rings = rings  # list of closed rings (lists of (x, y) tuples)
         seen, junctions = {}, set()
         for ring in rings:
@@ -227,6 +227,8 @@ class Topology:
                 if p in seen and seen[p] != pair:
                     junctions.add(p)
                 seen.setdefault(p, pair)
+        junctions |= set(p for p in extra_junctions if p in seen)
+        self.junctions = junctions
         self.arcs, self.index, self.refs = [], {}, []
         for ring in rings:
             self.refs.append([self._add(arc) for arc in self._cut(ring[:-1], junctions)])
@@ -253,16 +255,85 @@ class Topology:
         self.arcs.append(arc)
         return (len(self.arcs) - 1, 1)
 
-    def simplify(self, tolerance):
-        self.simple = [self._simplify_arc(a, tolerance, False) for a in self.arcs]
+    def outline_arcs(self):
+        """Arc ids used by one ring only: the outline of the whole set (regency border, coast)."""
+        use = Counter(arc_id for refs in self.refs for arc_id, _ in refs)
+        return [arc_id for arc_id, n in use.items() if n == 1]
+
+    def outline_points(self):
+        """Points on the outline: {point: neighbour pair} for plain points, and the outline points that are
+        junctions inside the set."""
+        pairs, inner_junctions = {}, set()
+        for arc_id in self.outline_arcs():
+            arc = self.arcs[arc_id]
+            closed = arc[0] == arc[-1]
+            for i, p in enumerate(arc):
+                if p in self.junctions:
+                    inner_junctions.add(p)
+                elif 0 < i < len(arc) - 1:
+                    pairs[p] = frozenset((arc[i - 1], arc[i + 1]))
+                elif closed:
+                    pairs[p] = frozenset((arc[1], arc[-2]))
+        return pairs, inner_junctions
+
+    def key(self, arc_id):
+        """Identity of an arc that does not depend on direction or on which regency sees it."""
+        arc = self.arcs[arc_id]
+        if self._flip(arc):
+            arc = arc[::-1]
+        return hashlib.sha256(repr(arc).encode()).digest()
+
+    @staticmethod
+    def _flip(arc):
+        closed = arc[0] == arc[-1]
+        return (closed and len(arc) > 3 and arc[1] > arc[-2]) or (not closed and arc[0] > arc[-1])
+
+    def simplify(self, tolerance, forced=None):
+        """forced: {arc key: tolerance} for border arcs that a neighbouring regency needed finer; such arcs, and
+        every arc this method refines, are simplified with keep_one, so the same tolerance gives the same arc."""
+        self.refined = {}  # arc id -> tolerance used with keep_one (anything but the default)
+        if forced:
+            for arc_id in self.outline_arcs():
+                k = self.key(arc_id)
+                if k in forced:
+                    self.refined[arc_id] = forced[k]
+        self.simple = [self._simplify_arc(a, self.refined.get(i, tolerance), i in self.refined)
+                       for i, a in enumerate(self.arcs)]
+        if tolerance <= 0:
+            return
         # a ring made of one or two arcs can collapse to a line; keep one more point in each of its arcs
         for refs in self.refs:
             if len(self.ring(refs)) < 4:
                 for arc_id, _ in refs:
-                    self.simple[arc_id] = self._simplify_arc(self.arcs[arc_id], tolerance, True)
+                    self.refined.setdefault(arc_id, tolerance)
+                    self.simple[arc_id] = self._simplify_arc(self.arcs[arc_id], self.refined[arc_id], True)
+        # a ring that crosses itself after simplification: halve the tolerance of its arcs until it does not
+        # (narrow strips, rivers); below 0.5 m the arc keeps every point
+        todo = list(range(len(self.refs)))
+        while todo:
+            bad = [i for i in todo if self._bad(self.ring(self.refs[i]))]
+            for i in bad:
+                for arc_id, _ in self.refs[i]:
+                    if self.refined.get(arc_id) == 0:
+                        continue
+                    tol = self.refined.get(arc_id, tolerance) / 2
+                    tol = 0 if tol < 0.5 else tol
+                    self.refined[arc_id] = tol
+                    self.simple[arc_id] = self._simplify_arc(self.arcs[arc_id], tol, True)
+            if any(all(self.refined.get(a) == 0 for a, _ in self.refs[i]) and self._bad(self.ring(self.refs[i]))
+                   for i in bad):
+                raise ValueError("a ring crosses itself even at full precision")
+            todo = bad
+
+    @staticmethod
+    def _bad(ring):
+        return len(ring) < 4 or self_crossing(ring)
 
     @staticmethod
     def _simplify_arc(arc, tolerance, keep_one):
+        # simplify every arc in one canonical direction, so a border seen from both sides gives the same result
+        if Topology._flip(arc):
+            return list(reversed(Topology._simplify_arc(list(reversed(arc)), tolerance, keep_one)))
         if tolerance <= 0:
             out = arc
         elif arc[0] == arc[-1]:  # closed: split at the point farthest from the start
@@ -372,6 +443,47 @@ def build(raw_dir, wilayah_path, out_dir, tolerance, server_copy=None, matches=N
     summary = {"regencies": [], "villages": 0, "districts": 0, "villages_without_polygon": [],
                "undefined_areas": 0, "status": Counter()}
     worst = (0.0, None)
+    # pass 1: points where neighbouring regencies must cut their border arcs the same way
+    cross, seen = set(), {}
+    for fname in files:
+        villages, _, _ = read_raw(os.path.join(raw_dir, fname), fname[:5])
+        pairs, inner = Topology([r for c in sorted(villages) for part in villages[c] for r in part["rings"]]) \
+            .outline_points()
+        cross |= inner
+        for p, pair in pairs.items():
+            if p in seen and seen[p] != pair:
+                cross.add(p)
+            seen.setdefault(p, pair)
+    seen = None
+    # pass 2: border arcs that one regency had to keep finer are kept as fine in its neighbour too; repeat
+    # until both sides of every shared border arc are identical
+    forced = {}
+    for round_no in range(1, 9):
+        border, wanted, mismatches = {}, {}, 0
+        for fname in files:
+            villages, _, _ = read_raw(os.path.join(raw_dir, fname), fname[:5])
+            topo = Topology([r for c in sorted(villages) for part in villages[c] for r in part["rings"]], cross)
+            topo.simplify(tolerance, forced)
+            for arc_id in topo.outline_arcs():
+                k = topo.key(arc_id)
+                simple = topo.simple[arc_id][::-1] if topo._flip(topo.arcs[arc_id]) else topo.simple[arc_id]
+                v = hashlib.sha256(repr(simple).encode()).digest()
+                if arc_id in topo.refined:
+                    wanted[k] = min(wanted.get(k, tolerance), topo.refined[arc_id])
+                if k in border and border[k] != v:
+                    mismatches += 1
+                border.setdefault(k, v)
+        new = {k: min(t, forced.get(k, t)) for k, t in wanted.items()}
+        print(f"border round {round_no}: {mismatches} shared border arcs differ, {len(new)} kept finer")
+        if not mismatches and new == forced:
+            break
+        forced = new
+    else:
+        sys.exit("shared border arcs still differ after 8 rounds")
+    border_arcs = {}  # canonical original arc -> canonical simplified arc, across regencies
+    shared_border_arcs = 0
+    refined_arcs = 0
+    # pass 3: build each regency
     for fname in files:
         kab = fname[:5]
         if kab not in names:
@@ -390,8 +502,18 @@ def build(raw_dir, wilayah_path, out_dir, tolerance, server_copy=None, matches=N
                 for ring in part["rings"]:
                     all_rings.append(ring)
                     owner.append(code)
-        topo = Topology(all_rings)
-        topo.simplify(tolerance)
+        topo = Topology(all_rings, cross)
+        topo.simplify(tolerance, forced)
+        refined_arcs += len(topo.refined)
+        for arc_id in topo.outline_arcs():
+            simple = topo.simple[arc_id][::-1] if topo._flip(topo.arcs[arc_id]) else topo.simple[arc_id]
+            key = topo.key(arc_id)
+            value = hashlib.sha256(repr(simple).encode()).digest()
+            if key in border_arcs:
+                shared_border_arcs += 1
+                if border_arcs[key] != value:
+                    sys.exit(f"{kab}: a border arc shared with another regency was simplified differently")
+            border_arcs[key] = value
         rings_of = defaultdict(list)
         for i, code in enumerate(owner):
             rings_of[code].append(i)
@@ -463,6 +585,8 @@ def build(raw_dir, wilayah_path, out_dir, tolerance, server_copy=None, matches=N
               f"{len(missing)} villages without polygon, {undefined} undefined areas, {len(topo.arcs)} arcs")
     summary["status"] = dict(sorted(summary["status"].items()))
     summary["largest_area_change"] = {"code": worst[1], "percent": round(worst[0] * 100, 3)}
+    summary["shared_regency_border_arcs"] = shared_border_arcs
+    summary["arcs_with_smaller_tolerance"] = refined_arcs
     manifest = {
         "version": VERSION,
         "description": "Boundaries of villages (desa/kelurahan) and districts (kecamatan), one GeoJSON file per "
@@ -500,6 +624,8 @@ def build(raw_dir, wilayah_path, out_dir, tolerance, server_copy=None, matches=N
         "districts": summary["districts"],
         "status_counts": summary["status"],
         "largest_area_change_percent": summary["largest_area_change"],
+        "shared_regency_border_arcs": shared_border_arcs,
+        "arcs_with_smaller_tolerance": refined_arcs,
         "notes": [
             "Only 'Batas Definitif' rests on a signed regulation. 'Hasil Kesepakatan' is agreed by the villages and "
             "checked by BIG; 'Batas Indikatif' is a working line. UU 4/2011 Pasal 16 ayat (2): show boundaries that "
