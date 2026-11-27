@@ -25,7 +25,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 | Branch | Session label | Task | Status |
 | --- | --- | --- | --- |
-| `nty/eloquent-davinci-myz72i` | session data-round 6 | R-18 `batas-wilayah` (BIG boundaries), Kudus first (F-035) | PR open |
+| `nty/eloquent-davinci-myz72i` | session data-round 6 | R-18 `batas-wilayah`: PR #26 merged (Kudus); server full precision via `presisi` (F-035) | PR open |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
 
@@ -59,9 +59,9 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    follows within months; compare the header of `db/wilayah.sql`).
 7. **R-18 `batas-wilayah`** (F-035): Kudus done. Add a regency on demand: `python3 -I tools/converters/batas-wilayah.py
    fetch sources/batas-wilayah <regency>` then `build sources/batas-wilayah data/wilayah/wilayah.json.gz
-   data/batas-wilayah` (seconds per regency). Open: where full precision for many regencies lives (≈ 370 MB gzipped
-   for Indonesia; too big for the repository and for the Google Drive connector, which uploads only content typed
-   into the call) — the user decides between servers fetching from BIG themselves, an R2 bucket (F-006) or other.
+   data/batas-wilayah` (seconds per regency). Full precision: servers run `batas-wilayah.py presisi` themselves
+   (user chose this, F-035; `docs/data.md`). When BIG publishes a new edition, `presisi` refuses the changed
+   regencies: refetch them here, bump the version, PR.
 8. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
    via `fondasi-sync`.
 
@@ -73,7 +73,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
-- 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — Boundary sources researched (BIG Edisi Juni 2026 best: Kemendagri codes, 99.7 % of villages; GADM/OSM/HDX rejected); F-035; `batas-wilayah` 2026-06-15 for Kudus (±11 m, shared arcs, district areas equal BIG). Next: precise-data storage decision, more regencies on demand.
+- 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — Boundary sources researched (BIG Edisi Juni 2026 best: Kemendagri codes, 99.7 % of villages; GADM/OSM/HDX rejected); F-035; `batas-wilayah` 2026-06-15 for Kudus (±11 m, shared arcs, district areas equal BIG). Then `presisi` for servers (fetch from BIG, checked against `content_sha256`; user chose this over Drive/R2). Next: more regencies on demand.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-atribusi` — PR #24 merged. F-034 (third-party works for education with credit); attribution added to every `kerangka-tka` stimulus. Next: R-17.
 - 2026-11-27 · session data-round 5 · `nty/kerangka-tka-contoh-soal` — PR #23 merged. `kerangka-tka`: 24 sample questions of 047 with 13 figures (keys recomputed, 4 errata) and the 2026 category limits marked secondary (F-033). Next: R-17.
 - 2026-11-26 · session data-round 5 · `nty/kerangka-tka` — PR #22 merged (religion CP Lampiran II, R-15 complete). R-16 `kerangka-tka` built from 047 and 56/2026 (4 frameworks, every text unit and table cell checked against the PDFs, schedule read on the page images, 3 errata). Next: R-17.

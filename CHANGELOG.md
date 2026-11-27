@@ -5,6 +5,10 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `batas-wilayah`: servers build full-precision boundaries themselves with `batas-wilayah.py presisi <out_dir>
+  <regency...>` (fetch from BIG, check against the new `content_sha256` per regency in the manifest, build at about
+  0.1 m with `SHA256SUMS`); it refuses regencies Fondasi does not list or BIG has changed unless `--accept-new`
+  (F-035, `docs/data.md`).
 - Data set `batas-wilayah` 2026-06-15 (R-18, F-035): village and district boundaries of Kabupaten Kudus (132
   villages, 9 districts) from BIG's Basis Data Batas Wilayah Administrasi Edisi Juni 2026, keyed by Kemendagri codes,
   simplified to about 11 m on shared arcs (no gaps between neighbours), districts built as the union of their
