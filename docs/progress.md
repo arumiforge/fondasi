@@ -29,7 +29,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 | `nty/sekolah-koordinat` | session data-round 6 | R-17 latitude/longitude for every unit of `sekolah` (F-036) | PR #27 merged |
 | `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-18 `batas-wilayah` for all of Jawa Tengah (Next steps 7); only `tools/converters/batas-wilayah.py`, `data/batas-wilayah/`, `sources/batas-wilayah/` | PR #30 merged; scope stays at Jawa Tengah |
 | `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-10b delivery (POPDA Jateng 2026 juknis, POPNAS age rule) into `atletik-*`; R-06/R-14 search records | PRs #34, #35 merged |
-| `pw/practical-thompson-r2to0p` | session data-round 8 | R-11 `atletik-rekor` (PR #36 merged); PASI Kejurnas programmes (PR #37 merged); `ekspor-dapodik` (F-038) | PR open |
+| `pw/practical-thompson-r2to0p` | session data-round 8 | R-11 `atletik-rekor` (PR #36 merged); PASI Kejurnas programmes (PR #37 merged); `ekspor-dapodik` (PR #38 merged); `referensi-dapodik` labels (F-039) | PR open |
 | `pw/exciting-goldberg-mqpkx5` | akun-2 | R-18 support: `tools/checks/batas-wilayah.py` (coverage, areas, cross-regency arcs, `--big`, `--render`), docs/data.md "Using boundaries in apps", `fondasi-data` line. Does not touch the converter or `data/batas-wilayah/` | PR #29 merged |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
@@ -71,8 +71,9 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
    A list refresh (`build`) drops the coordinate fields: run `coords-merge` after it.
 5. **R-09** waits for PDDikti (user, 2026-11-28: BIMA's e-catalog is partial, see data-requests). **R-07**: the
    Panduan Aplikasi Dapodik versi 2027 and five exports from the application (2026-11-28) have no code tables; the
-   exports' structure is `ekspor-dapodik` (F-038, files not kept). Still needed: the Dapodik import templates or a
-   file with option values and codes. Never commit a school's export.
+   exports' structure is `ekspor-dapodik` (F-038, files not kept). `referensi-dapodik` 2026-10-13 holds the option
+   labels (F-039, no codes). Still needed: the codes, from the Dapodik local web service (`*_id` with `*_id_str`) run
+   by the user's tool. Never commit a school's export.
    When the user uploads R-12 or R-02/R-07/R-09 zips: verify SHA-256, keep raw files in `sources/<set>/`,
    build the set.
 6. `wilayah` / `kodepos`: **current** (R-14 done 2026-11-26). Kepmendagri 300.2.2-2430/2025 changes only island
@@ -116,6 +117,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-28 · session data-round 8 · `pw/practical-thompson-r2to0p` — PR #38 merged (`ekspor-dapodik`). `referensi-dapodik` 2026-10-13 from the user's read-only Dapodik tool: 11 option lists (labels only), GTK detail categories, web service fields (F-039); codes still to come.
 - 2026-11-28 · session data-round 8 · `pw/practical-thompson-r2to0p` — PR #37: pbpasi.org has no U14/U16 rule or Kejurnas handbook; Kejurnas 2024/2025 programmes from PASI's result books (books not kept, minors). R-09: BIMA e-catalog partial, user waits for PDDikti. R-07: Dapodik 2027 guide and five exports hold no codes; `ekspor-dapodik` (column layouts only, F-038).
 - 2026-11-28 · session data-round 8 · `pw/practical-thompson-r2to0p` — R-11 `atletik-rekor` (user: use the championships as they are): PASI tables found at www.pbpasi.org (senior, U20, U18; 170 records with 19 errata), World Athletics world/U20/U18/Asian lists rendered in Chromium (415 records), Wikipedia only as cross-check (26 differences); F-037 (holders with birth dates as published).
 - 2026-11-27 · session data-round 7 (account A) · `nty/magical-ramanujan-54d9nu` — R-10b delivered by the user's browser run: POPDA Jateng 2026 juknis read on page images into `atletik-nomor`/`atletik-kelompok-umur` 2026-11-27 (20 events per sex, implements, entry rules, "24 kg" erratum unresolved), POPNAS age rule secondary; PASI and POPNAS handbook not found. R-06/R-14 uploads held only search records (stored).
@@ -125,4 +127,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — PR #28: `presisi` (servers fetch full precision from BIG, user's choice), merged main (PR #27, F-036). Jawa Tengah started: 35 regencies fetched (65 MB, outside the repo), converter got cross-regency topology and crossing refinement; build blocked by a ring that crosses itself at full precision. Handed over.
 - 2026-11-27 · session data-round 6 · `nty/sekolah-koordinat` — R-17: 539,580 detail pages crawled (20 → 40 workers → 160 threads, F-029 without fixed cap), coordinates merged into `sekolah` 2026-11-27 (84.4 % with a pair, 1,222 sign/swap fixes, 7 default pairs null, F-036); sinaubareng cross-check 2,136/2,148 identical. PR open.
 - 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — Boundary sources researched (BIG Edisi Juni 2026 best: Kemendagri codes, 99.7 % of villages; GADM/OSM/HDX rejected); F-035; `batas-wilayah` 2026-06-15 for Kudus (±11 m, shared arcs, district areas equal BIG). Then `presisi` for servers (fetch from BIG, checked against `content_sha256`; user chose this over Drive/R2). Next: more regencies on demand.
-- 2026-11-27 · session data-round 5 · `nty/kerangka-tka-atribusi` — PR #24 merged. F-034 (third-party works for education with credit); attribution added to every `kerangka-tka` stimulus. Next: R-17.

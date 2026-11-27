@@ -1,0 +1,341 @@
+{
+  "catalog_schema_version": "1.0",
+  "prepared_date": "2026-10-13",
+  "context": {
+    "application": "Dapodik",
+    "observed_version": "2027.b",
+    "observed_period": "2026/2027 Gasal"
+  },
+  "notes": [
+    "Katalog pendamping PRD, bukan ID database dan bukan daftar lengkap semua dropdown Dapodik.",
+    "Urutan labels merupakan urutan observasi, bukan identifier pilihan.",
+    "Label duplikat dan ejaan asli dipertahankan.",
+    "Jenis pendaftaran berasal dari operator, bukan hasil ekstraksi UI.",
+    "Kontrol wilayah merupakan pencarian dinamis; tidak memiliki daftar tetap pada katalog ini."
+  ],
+  "catalogs": {
+    "kebutuhan_khusus": {
+      "type": "multi",
+      "fields": [
+        "pribadi.kebutuhan_khusus",
+        "ayah.kebutuhan_khusus",
+        "ibu.kebutuhan_khusus"
+      ],
+      "labels": [
+        "netra (A)",
+        "rungu (B)",
+        "grahita ringan (C)",
+        "grahita sedang (C1)",
+        "daksa ringan (D)",
+        "daksa sedang (D1)",
+        "laras (E)",
+        "wicara (F)",
+        "hyperaktif (H)",
+        "cerdas istimewa (I)",
+        "bakat istimewa (J)",
+        "kesulitan belajar (K)",
+        "narkoba (N)",
+        "indigo (O)",
+        "down syndrome (P)",
+        "autis (Q)"
+      ],
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-13",
+      "count": 16,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "agama": {
+      "type": "single",
+      "fields": [
+        "pribadi.agama"
+      ],
+      "labels": [
+        "Islam",
+        "Kristen",
+        "Katholik",
+        "Hindu",
+        "Budha",
+        "Khonghucu",
+        "Kepercayaan kpd Tuhan YME",
+        "lainnya"
+      ],
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-13",
+      "count": 8,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "tempat_tinggal": {
+      "type": "single",
+      "fields": [
+        "pribadi.tempat_tinggal"
+      ],
+      "labels": [
+        "Bersama orang tua",
+        "Wali",
+        "Kost",
+        "Asrama",
+        "Panti asuhan",
+        "Pesantren",
+        "Lainnya"
+      ],
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-13",
+      "count": 7,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "moda_transportasi": {
+      "type": "single",
+      "fields": [
+        "pribadi.moda_transportasi"
+      ],
+      "labels": [
+        "Jalan kaki",
+        "Angkutan umum/bus/pete-pete",
+        "Mobil/bus antar jemput",
+        "Kereta api",
+        "Ojek",
+        "Andong/bendi/sado/dokar/delman/becak",
+        "Perahu penyeberangan/rakit/getek",
+        "Kuda",
+        "Sepeda",
+        "Sepeda motor",
+        "Mobil pribadi",
+        "Lainnya"
+      ],
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-13",
+      "count": 12,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "pendidikan": {
+      "type": "single",
+      "fields": [
+        "ayah.pendidikan",
+        "ibu.pendidikan",
+        "wali.pendidikan"
+      ],
+      "labels": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "Informal",
+        "Lainnya",
+        "Non formal",
+        "Paket A",
+        "Paket B",
+        "Paket C",
+        "PAUD",
+        "Profesi",
+        "Putus SD",
+        "S1",
+        "S2",
+        "S2 Terapan",
+        "S3",
+        "S3 Terapan",
+        "SD / sederajat",
+        "SMA / sederajat",
+        "SMP / sederajat",
+        "Sp-1",
+        "Sp-2",
+        "Tidak sekolah",
+        "TK / sederajat"
+      ],
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-13",
+      "count": 25,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "pekerjaan": {
+      "type": "single",
+      "fields": [
+        "ayah.pekerjaan",
+        "ibu.pekerjaan",
+        "wali.pekerjaan"
+      ],
+      "labels": [
+        "Tidak bekerja",
+        "Nelayan",
+        "Petani",
+        "Peternak",
+        "PNS/TNI/Polri",
+        "Karyawan Swasta",
+        "Pedagang Kecil",
+        "Pedagang Besar",
+        "Wiraswasta",
+        "Wirausaha",
+        "Buruh",
+        "Pensiunan",
+        "Tenaga Kerja Indonesia",
+        "Karyawan BUMN",
+        "Aparatur Sipil Negara",
+        "Perdagangan",
+        "Tidak dapat diterapkan",
+        "Sudah Meninggal",
+        "Lainnya"
+      ],
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-13",
+      "count": 19,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "penghasilan": {
+      "type": "single",
+      "fields": [
+        "ayah.penghasilan",
+        "ibu.penghasilan",
+        "wali.penghasilan"
+      ],
+      "labels": [
+        "Kurang dari Rp. 500,000",
+        "Rp. 500,000 - Rp. 999,999",
+        "Rp. 1,000,000 - Rp. 1,999,999",
+        "Rp. 2,000,000 - Rp. 4,999,999",
+        "Rp. 5,000,000 - Rp. 20,000,000",
+        "Lebih dari Rp. 20,000,000",
+        "< Rp1.000.000",
+        "Rp1.000.001 Rp3.000.000",
+        "Rp3.000.001 Rp5.500.000",
+        "Rp5.500.001 Rp10.00.000",
+        "> 10.0000.000",
+        "Tidak Berpenghasilan"
+      ],
+      "notes": "Label nominal disalin persis. Dua kelompok rentang serta dugaan salah ketik tidak dinormalisasi otomatis.",
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-13",
+      "count": 12,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "hobi": {
+      "type": "single",
+      "fields": [
+        "registrasi.hobi"
+      ],
+      "labels": [
+        "(belum diisi)",
+        "Belanja",
+        "Berkemah",
+        "Berlari",
+        "Bermain Biola",
+        "Bermain Bola",
+        "Bermain Bola Tenis",
+        "Bermain Boneka",
+        "Bermain Bulu Tangkis",
+        "Bermain Gitar",
+        "Bermain Gitar",
+        "Bermain Musik",
+        "Bermain Piano",
+        "Berselancar",
+        "Fitness",
+        "Fotografi",
+        "Jogging",
+        "Kesenian",
+        "Lainnya",
+        "Main Puzzle",
+        "Makan",
+        "Memancing",
+        "Membaca",
+        "mendaki",
+        "Menggambar",
+        "Menjahit",
+        "Menulis",
+        "Mewarnai",
+        "Olah Raga",
+        "Traveling"
+      ],
+      "notes": "Dua entri Bermain Gitar dipertahankan. ID/value belum diekstrak; jangan memilih label duplikat berdasarkan posisi.",
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-12",
+      "count": 30,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "cita_cita": {
+      "type": "single",
+      "fields": [
+        "registrasi.cita_cita"
+      ],
+      "labels": [
+        "(belum diisi)",
+        "Arsitek",
+        "Astronot",
+        "Atlet",
+        "Atlet E-Sport Profesional",
+        "Atlit Olahraga",
+        "Bidan",
+        "Content Creator",
+        "Da'i / Ustadz",
+        "Designer",
+        "Dokter",
+        "Entertainer / Pekerja Seni",
+        "Guru/Dosen",
+        "Koki",
+        "Lainnya",
+        "Masinis Kereta Api",
+        "Pegawai Negeri Sipil / PNS",
+        "Pelaut",
+        "Pemadam Kebakaran",
+        "Pembalap",
+        "Pembawa Acara / Master Ceremony",
+        "Pendeta",
+        "Pengacara",
+        "Penghafal Al-Qur'an",
+        "Pengusaha / Bisnismen",
+        "Penulis",
+        "Penyiar Radio",
+        "Perawat",
+        "Perawat / Suster",
+        "Pilot",
+        "PNS",
+        "Polisi",
+        "Politikus",
+        "Presiden",
+        "Seni/Lukis/Artis/Sejenis",
+        "TNI/Polri",
+        "Translator",
+        "Vloger",
+        "Wartawan",
+        "Wiraswasta"
+      ],
+      "source": "prior_browser_observation_in_this_conversation",
+      "verified_in_ui": true,
+      "observed_date": "2026-10-12",
+      "count": 40,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    },
+    "jenis_pendaftaran": {
+      "type": "single",
+      "fields": [
+        "registrasi.jenis_pendaftaran"
+      ],
+      "labels": [
+        "Siswa baru",
+        "Pindahan",
+        "Kembali bersekolah"
+      ],
+      "source": "user_provided",
+      "verified_in_ui": false,
+      "notes": "Daftar kebutuhan dari operator; label dan kelengkapannya wajib dibaca ulang dari UI.",
+      "observed_date": null,
+      "count": 3,
+      "values_or_ids_extracted": false,
+      "requires_live_recheck": true
+    }
+  }
+}

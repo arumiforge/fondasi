@@ -1,0 +1,22 @@
+Dapodik reference structure, received from the user on 2026-11-28 (results of the user's own read-only tool run
+against Aplikasi Dapodik 2027.b on a school's computer, 2026-10-12/13). Untrusted input: parsed, never executed.
+
+referensi-dropdown.json   (kept unchanged)
+  SHA-256 : 4dcc0a185d9dcdf70e1bb4a1e1e27b0c3fed896151ef55836b8f54677e82f097
+  Content : 10 option lists as the Dapodik interface shows them (labels in order, no IDs); catalog schema 1.0,
+            prepared 2026-10-13; 9 lists verified in the interface, "jenis_pendaftaran" given by the operator.
+katalog-rincian-gtk.json  (kept unchanged)
+  SHA-256 : a250a4b0451aa7eee2c61a7c3cb6bdf010f5fe00a1042f4dc889982fc512e39f
+  Content : the 21 detail categories of a GTK record in Dapodik (resource, label, primary key).
+webservice-fields.json    (made in this session from the file below; endpoint and field names only)
+  SHA-256 : 39bcdd39a38753421eb9192e0436667e4000878fcea2fc68ad85f72f32fe0eaf
+  From    : hasil-uji-tarik-gtk-rombel.json (SHA-256 8862f5a6d2bb39243546ba43a6979806f05b834af95935454dcf946a3b39d459),
+            a read-only pull report of the Dapodik local web service; not kept, because it describes one school
+            (its class groups and counts) and local paths.
+
+Also received, not used (reports of the user's local app tests, no reference data):
+  hasil-pemetaan-datasiswa.json  SHA-256 080045d02bd1bd78c30e8b139c5b30fedffc2eb6d8715592b0d2b98496779a86
+  hasil-uji-rincian-gtk.json     SHA-256 53ae9e486af6814533df280fb4b9cb1bf654c2646e327656edb09cfec965a5e8
+
+Status hidup ayah/ibu: Panduan Aplikasi Dapodik versi 2027 v1.0 (Juli 2026), 5.2.6, PDF p. 51 (printed p. 50),
+screenshot of the form ("Hidup", "Wafat"); the guide itself is not kept (sources/ekspor-dapodik/SOURCE.txt).

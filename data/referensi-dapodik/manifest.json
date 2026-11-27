@@ -1,0 +1,19 @@
+{
+  "version": "2026-10-13",
+  "description": "Option labels of Aplikasi Dapodik 2027 for student and parent data (agama, kebutuhan khusus, jenis tinggal, alat transportasi, jenjang pendidikan, pekerjaan, penghasilan, status hidup, hobi, cita-cita, jenis pendaftaran) as the interface shows them, the 21 detail categories of a GTK record, and the field names of the Dapodik local web service. Labels only: codes are not included yet.",
+  "status": "partial: labels without codes (R-07); refill `codes` from the web service's *_id fields",
+  "source": "Read-only observation of the Dapodik 2027.b interface and local web service by the user's tool (2026-10-12/13), received 2026-11-28 (sources/referensi-dapodik/); Panduan Aplikasi Dapodik versi 2027 v1.0 p. 50 for status hidup",
+  "licence": "Labels and field names of a public government application (Kemendikdasmen); facts",
+  "procedure": "python3 -I tools/converters/referensi-dapodik.py sources/referensi-dapodik data/referensi-dapodik, then tools/data-check --write",
+  "counts": {
+    "lists": 11,
+    "options": 174,
+    "errata": 5,
+    "gtk_details": 21,
+    "webservice_endpoints": 4,
+    "webservice_fields": 110
+  },
+  "files": [
+    "referensi-dapodik.json"
+  ]
+}

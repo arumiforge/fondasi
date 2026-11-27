@@ -1,0 +1,95 @@
+{
+  "KitasPtk": {
+    "label": "KITAS",
+    "primary_key": "no_kitas"
+  },
+  "PasporPtk": {
+    "label": "Paspor",
+    "primary_key": "no_paspor",
+    "label_asli": "PASPOR"
+  },
+  "RwySertifikasi": {
+    "label": "Riwayat sertifikasi",
+    "primary_key": "riwayat_sertifikasi_id",
+    "label_asli": "Rwy.Sertifikasi"
+  },
+  "RwyPendFormal": {
+    "label": "Riwayat pendidikan formal",
+    "primary_key": "riwayat_pendidikan_formal_id",
+    "label_asli": "Rwy.Pendidikan Formal"
+  },
+  "BidangSdm": {
+    "label": "Kompetensi",
+    "primary_key": "bidang_sdm_id"
+  },
+  "Anak": {
+    "label": "Anak",
+    "primary_key": "anak_id"
+  },
+  "BeasiswaPtk": {
+    "label": "Beasiswa",
+    "primary_key": "beasiswa_ptk_id"
+  },
+  "BukuPtk": {
+    "label": "Buku yang Pernah Ditulis",
+    "primary_key": "buku_id"
+  },
+  "Diklat": {
+    "label": "Diklat",
+    "primary_key": "diklat_id"
+  },
+  "KaryaTulis": {
+    "label": "Karya Tulis",
+    "primary_key": "karya_tulis_id"
+  },
+  "Kesejahteraan": {
+    "label": "Kesejahteraan",
+    "primary_key": "kesejahteraan_id"
+  },
+  "Tunjangan": {
+    "label": "Tunjangan",
+    "primary_key": "tunjangan_id"
+  },
+  "TugasTambahan": {
+    "label": "Tugas Tambahan",
+    "primary_key": "ptk_tugas_tambahan_id"
+  },
+  "Inpassing": {
+    "label": "Inpassing Non PNS",
+    "primary_key": "inpassing_id"
+  },
+  "Penghargaan": {
+    "label": "Penghargaan",
+    "primary_key": "penghargaan_id"
+  },
+  "NilaiTest": {
+    "label": "Nilai tes",
+    "primary_key": "nilai_test_id",
+    "label_asli": "Nilai Test"
+  },
+  "RiwayatGajiBerkala": {
+    "label": "Riwayat gaji berkala",
+    "primary_key": "riwayat_gaji_berkala_id",
+    "label_asli": "Rwy.Gaji Berkala"
+  },
+  "RwyKepangkatan": {
+    "label": "Riwayat kepangkatan",
+    "primary_key": "riwayat_kepangkatan_id",
+    "label_asli": "Rwy.Kepangkatan"
+  },
+  "RwyKerja": {
+    "label": "Riwayat karier guru",
+    "primary_key": "rwy_kerja_id",
+    "label_asli": "Rwy.Karir Guru"
+  },
+  "RwyStruktural": {
+    "label": "Riwayat jabatan struktural",
+    "primary_key": "riwayat_struktural_id",
+    "label_asli": "Rwy.Jab.Pendidk / Tenaga Kependidikan"
+  },
+  "RwyFungsional": {
+    "label": "Riwayat jabatan fungsional",
+    "primary_key": "riwayat_fungsional_id",
+    "label_asli": "Rwy.Jab.Fungsional"
+  }
+}
