@@ -30,7 +30,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 | `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-18 `batas-wilayah` for all of Jawa Tengah (Next steps 7); only `tools/converters/batas-wilayah.py`, `data/batas-wilayah/`, `sources/batas-wilayah/` | PR #30 merged; scope stays at Jawa Tengah |
 | `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-10b delivery (POPDA Jateng 2026 juknis, POPNAS age rule) into `atletik-*`; R-06/R-14 search records | PRs #34, #35 merged |
 | `pw/practical-thompson-r2to0p` | session data-round 8 | R-11 `atletik-rekor` (PR #36); PASI Kejurnas programmes (PR #37); `ekspor-dapodik` (PR #38); `referensi-dapodik` labels (PR #39) | all merged; session ended 2026-11-28 |
-| `pw/dazzling-curie-jk6us8` | session admin-catalog | F-040 `docs/school-admin.md`: school administration feature catalog (38 features, basis per source) | PR open |
+| `pw/dazzling-curie-jk6us8` | session admin-catalog | F-040 `docs/school-admin.md`: school administration feature catalog (38 features, basis per source) | PR #41; filling deferred |
 | `pw/exciting-goldberg-mqpkx5` | akun-2 | R-18 support: `tools/checks/batas-wilayah.py` (coverage, areas, cross-regency arcs, `--big`, `--render`), docs/data.md "Using boundaries in apps", `fondasi-data` line. Does not touch the converter or `data/batas-wilayah/` | PR #29 merged |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
@@ -104,9 +104,10 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
      11.4 m apart). On the full-precision copy the checker fails only on the same 3 enclaves and notes 7 places where
      BIG's lines differ (≤ 0.94 m). Possible follow-ups for the checker's owner: count holes filled by another
      regency of the folder as covered; subtract undefined areas before `--big`.
-8. **School administration catalog** (F-040, `docs/school-admin.md`): keep mapping. Read the public pages of more
-   online services (register `Pr`), record the user's field observations (register `La`, no personal data), and
-   find the official documents (register `Re`). Then the follow-ups listed there: `skema-ptk`, BOSP components,
+8. **School administration catalog** (F-040, `docs/school-admin.md`): the framework is in place (catalog, basis per
+   source, registers, observation guide). Filling it is **deferred** (see Blockers). When the user resumes: read the
+   public pages of more online services (register `Pr`), record the user's field observations (register `La`, no
+   personal data), find the official documents (register `Re`), and update each feature's Basis. Then the follow-ups listed there: `skema-ptk`, BOSP components,
    archive classification codes, 7 Kebiasaan Anak Indonesia Hebat, assessment and report rules — official sources
    only, one PR each.
 9. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
@@ -121,6 +122,8 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
   - `perguruan-tinggi`: the full PDDikti list (R-09; BIMA's e-catalog is partial; pddikti/sinta answer 403).
   - PASI U14/U16 rules (age limits, implements, hurdle heights): a document from the user or a Pengprov PASI
     (pbpasi.org has none; R-10b).
+  - School administration catalog (F-040): more online services and field observations ("bisa ditunda dulu",
+    2026-11-28). The framework in `docs/school-admin.md` stays; continue from its registers.
 - Hosts blocked from cloud sessions: `jateng.kemenag.go.id` (times out since 2026-11-25; R-06 brief), `kemenag.go.id` (refused), `jdih.kemendagri.go.id` (no answer, 2026-11-26), `emis.kemenag.go.id`, `pddikti.kemdiktisaintek.go.id`, `kurikulum.kemendikdasmen.go.id`
   (and `disdikbud.jatengprov.go.id`, replaced by `pdk.jatengprov.go.id`) → browser briefs.
 - R-10b leftovers (PASI U14/U16, POPNAS handbook): the 2026-11-27 browser run found no official copy; see
