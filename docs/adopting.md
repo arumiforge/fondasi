@@ -59,6 +59,7 @@ identity) into another app — only Fondasi's rules.
 | AI assistant (if any) | `ai-assistant.md` | answer order, provider rotation and failover, limits, masking |
 | Guides | `guides.md` | per-role guide pages, article anatomy, updated with features |
 | Detailed student data (internal school apps) | `school-data.md` | agreement, permissions per field group, sensitive groups, retention |
+| School administration features (school apps) | `school-admin.md` | which catalog features the app builds (recorded as `D-…`), sensitivity of each, rules for biometrics, BK, reports, money, notifications |
 | Decoration and loading | `ui.md`, `web-baseline.md` §6 | page usable before decoration, skeletons, Codex-made art |
 | Printing, QR, visitors | `web-baseline.md` §11–12 | A4/F4, unique QR tokens, logo with level H, daily-salted visitor hash |
 | Visual assets | `visual-assets.md` | `ai/` briefs, Codex workflow, style guide |

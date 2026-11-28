@@ -202,3 +202,21 @@ codes are filled later from the Dapodik local web service, which returns each `*
 set already lists the service's endpoints and fields and the 21 GTK detail categories. Reports of the user's tools
 that describe one school (class groups, counts, paths) are not kept; their SHA-256 is recorded. skema-siswa keeps its
 own option lists; mapping them to Dapodik is decided in each app.
+
+## F-040 — School administration feature catalog (2026-11-28)
+Status: accepted (user, 2026-11-28: "nah ini maksud saya sebagai katalog fitur administrasi")
+Context: Arumi Studios will build apps for school administration. The user wants a map of the administration that
+already runs in schools, built from three sources: online services offered to schools (situntas.id first, public
+feature pages only, never the inside of the app or its data), field observation, and the official documents that
+set the standard ("kita memetakan kebutuhan administrasi yang sudah ada dan berjalan di lapangan").
+Decision: `docs/school-admin.md` is the catalog: 38 features (`ADM-01`…) in six groups (data induk, kurikulum dan
+pembelajaran, kesiswaan, tata usaha, keuangan, komunikasi), each with users, data sensitivity (R/P/S), the Fondasi
+rules and data sets it uses, a priority (Inti, Lanjutan, Tambahan) and its basis: the sources that show the need
+(`Pr` services, `La` observations, `Re` official documents), recorded in registers on the same page. Needs no source
+shows yet (mutasi, alumni, supervisi, BK, UKS, kepegawaian, sarpras, perpustakaan, rapat…) are listed as `usulan`
+until an observation or an official document confirms them. Observations keep no personal data. It also sets rules for
+the sensitive features: biometric attendance, counselling records and points, internal reports next to e-Rapor and
+Dapodik, money, notifications. Fondasi holds the catalog and the rules; features are built in the apps (F-015), and
+each app records in its own `D-…` which ones it builds. IDs stay stable. Gaps become data or schema work in Fondasi
+from official sources only: `skema-ptk`, BOSP components, archive classification codes, the 7 Kebiasaan Anak
+Indonesia Hebat, assessment and report rules.
