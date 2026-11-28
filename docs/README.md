@@ -7,6 +7,7 @@
 | [agent-workflow.md](agent-workflow.md) | How Claude/Codex sessions work in every repo: memory files, start/end, tasks, decisions, context, parallel sessions |
 | [assets.md](assets.md) | Minify served copies only, keep originals, version every asset against stale caches |
 | [ai-assistant.md](ai-assistant.md) | AI help assistant: order of answers, OpenAI-compatible providers, round robin, Gemini, limits, privacy |
+| [school-admin.md](school-admin.md) | School administration feature catalog: 38 features with users, data sensitivity, Fondasi rules and data, priority; rules for biometric attendance, counselling, reports, money, notifications |
 | [school-data.md](school-data.md) | Detailed student data in internal school apps: agreement, permissions per group, protection, retention; schema `skema-siswa` |
 | [guides.md](guides.md) | In-app guide pages in the GitHub Docs "Get started" pattern |
 | [decisions.md](decisions.md) | Decision log (`F-…`) |

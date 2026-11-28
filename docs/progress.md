@@ -30,6 +30,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 | `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-18 `batas-wilayah` for all of Jawa Tengah (Next steps 7); only `tools/converters/batas-wilayah.py`, `data/batas-wilayah/`, `sources/batas-wilayah/` | PR #30 merged; scope stays at Jawa Tengah |
 | `nty/magical-ramanujan-54d9nu` | session data-round 7 (account A) | R-10b delivery (POPDA Jateng 2026 juknis, POPNAS age rule) into `atletik-*`; R-06/R-14 search records | PRs #34, #35 merged |
 | `pw/practical-thompson-r2to0p` | session data-round 8 | R-11 `atletik-rekor` (PR #36); PASI Kejurnas programmes (PR #37); `ekspor-dapodik` (PR #38); `referensi-dapodik` labels (PR #39) | all merged; session ended 2026-11-28 |
+| `pw/dazzling-curie-jk6us8` | session admin-catalog | F-040 `docs/school-admin.md`: school administration feature catalog (38 features, basis per source) | PR open |
 | `pw/exciting-goldberg-mqpkx5` | akun-2 | R-18 support: `tools/checks/batas-wilayah.py` (coverage, areas, cross-regency arcs, `--big`, `--render`), docs/data.md "Using boundaries in apps", `fondasi-data` line. Does not touch the converter or `data/batas-wilayah/` | PR #29 merged |
 
 ## Next steps (in this order, one PR per data set; interview the user when something is ambiguous)
@@ -103,7 +104,12 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
      11.4 m apart). On the full-precision copy the checker fails only on the same 3 enclaves and notes 7 places where
      BIG's lines differ (≤ 0.94 m). Possible follow-ups for the checker's owner: count holes filled by another
      regency of the folder as covered; subtract undefined areas before `--big`.
-8. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
+8. **School administration catalog** (F-040, `docs/school-admin.md`): keep mapping. Read the public pages of more
+   online services (register `Pr`), record the user's field observations (register `La`, no personal data), and
+   find the official documents (register `Re`). Then the follow-ups listed there: `skema-ptk`, BOSP components,
+   archive classification codes, 7 Kebiasaan Anak Indonesia Hebat, assessment and report rules — official sources
+   only, one PR each.
+9. Later (in app repositories, not here): SPMB `check-app` adapter, SPMB income list migration (F-024), SPMB data
    via `fondasi-sync`.
 
 ## Blockers / waiting on
@@ -124,6 +130,7 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 
 ## Session log (newest first, keep the last 10)
 
+- 2026-11-28 · session admin-catalog · `pw/dazzling-curie-jk6us8` — F-040: `docs/school-admin.md`, a map of school administration needs from three sources (public pages of online services, field observation, official documents); 38 features with sensitivity, Fondasi rules and data, priority and basis; situntas.id read as the first service.
 - 2026-11-28 · session data-round 8 · `pw/practical-thompson-r2to0p` — PR #39 merged (`referensi-dapodik` labels). Session ended at the user's request; Dapodik codes, PDDikti list and PASI U14/U16 rules deferred (Blockers).
 - 2026-11-28 · session data-round 8 · `pw/practical-thompson-r2to0p` — PR #38 merged (`ekspor-dapodik`). `referensi-dapodik` 2026-10-13 from the user's read-only Dapodik tool: 11 option lists (labels only), GTK detail categories, web service fields (F-039); codes still to come.
 - 2026-11-28 · session data-round 8 · `pw/practical-thompson-r2to0p` — PR #37: pbpasi.org has no U14/U16 rule or Kejurnas handbook; Kejurnas 2024/2025 programmes from PASI's result books (books not kept, minors). R-09: BIMA e-catalog partial, user waits for PDDikti. R-07: Dapodik 2027 guide and five exports hold no codes; `ekspor-dapodik` (column layouts only, F-038).
@@ -133,4 +140,3 @@ retry once later; if it still fails, ask the user to merge in the GitHub UI.
 - 2026-11-27 · session data-round 7 (account A) · `nty/magical-ramanujan-54d9nu` — R-18 Jawa Tengah: 35 regencies fetched (4 workers, outside the repo), blocker solved (34 rings crossed only after rounding to 6 decimals, none in BIG; the halving refined whole rings and pass 2 ping-ponged border arcs), converter refines only crossing arcs, carries refinements between rounds, checks collapsed rings and arc-vs-arc crossings, extra decimals for arcs and junctions, parallel build; `batas-wilayah` covers 8,563 villages. Session 2 (account B) works on the checker.
 - 2026-11-27 · akun-2 · `pw/exciting-goldberg-mqpkx5` — R-18 support: `tools/checks/batas-wilayah.py` (coverage, district = union of villages, holes, cross-regency borders, `--big` district areas, `--render` SVG; parallel per regency) tested on Kudus and on Kudus+Pati+Jepara built outside the repo (simplified and full precision; BIG's own full-precision borders differ by < 0.5 m at two tri-junctions, reported as notes); docs/data.md "Using boundaries in apps"; `fondasi-data` line. For the Jateng build: run the check on the output with `--big --render`.
 - 2026-11-27 · session data-round 6 · `nty/eloquent-davinci-myz72i` — PR #28: `presisi` (servers fetch full precision from BIG, user's choice), merged main (PR #27, F-036). Jawa Tengah started: 35 regencies fetched (65 MB, outside the repo), converter got cross-regency topology and crossing refinement; build blocked by a ring that crosses itself at full precision. Handed over.
-- 2026-11-27 · session data-round 6 · `nty/sekolah-koordinat` — R-17: 539,580 detail pages crawled (20 → 40 workers → 160 threads, F-029 without fixed cap), coordinates merged into `sekolah` 2026-11-27 (84.4 % with a pair, 1,222 sign/swap fixes, 7 default pairs null, F-036); sinaubareng cross-check 2,136/2,148 identical. PR open.

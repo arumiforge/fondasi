@@ -5,6 +5,14 @@ All notable changes ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
 ## [Unreleased]
 
 ### Added
+- `docs/school-admin.md` (F-040): school administration feature catalog. 38 features (`ADM-01`…ADM-38) in six
+  groups (data induk, kurikulum dan pembelajaran, kesiswaan, tata usaha, keuangan, komunikasi), each with users,
+  data sensitivity, Fondasi rules and data sets, a priority and its basis (online services, field observation,
+  official documents, with source registers and a field observation guide); rules for biometric attendance, counselling records
+  and points, reports next to e-Rapor and Dapodik, money and notifications; five follow-ups (`skema-ptk`, BOSP
+  components, archive classification codes, character habits, assessment rules). First service read:
+  situntas.id (public pages only); linked from `CLAUDE.md`, `docs/README.md`, `docs/adopting.md` and
+  `fondasi-web`.
 - `referensi-dapodik` 2026-10-13 (R-07, F-039): Dapodik 2027 option labels as the interface shows them (agama,
   kebutuhan khusus, jenis tinggal, alat transportasi, jenjang pendidikan, pekerjaan, penghasilan with both band sets,
   status hidup, hobi, cita-cita, jenis pendaftaran; 174 options, 5 doubtful labels as unresolved errata), the 21 GTK
